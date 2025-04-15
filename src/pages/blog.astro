@@ -1,0 +1,51 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import BlogPostGrid from '../components/BlogPostGrid.astro';
+
+const posts = [
+    {
+        title: "Secure PDF Sharing Best Practices",
+        excerpt: "Learn how to securely share PDF documents while maintaining control over access and tracking viewer information.",
+        date: "2024-03-20",
+        author: "Joe Huang",
+        image: "/images/pdf-security.jpg",
+        slug: "secure-pdf-sharing",
+        category: "Security"
+    },
+    {
+        title: "Dynamic Watermarking for Document Protection",
+        excerpt: "Discover how dynamic watermarks can help protect your sensitive documents and track unauthorized sharing.",
+        date: "2024-03-18",
+        author: "Joe Huang",
+        image: "/images/watermarking.jpg",
+        slug: "dynamic-watermarking",
+        category: "Features"
+    },
+    {
+        title: "PDF Analytics: Understanding Document Engagement",
+        excerpt: "Learn how to use PDF analytics to track document views, engagement, and improve your content strategy.",
+        date: "2024-03-15",
+        author: "Joe Huang",
+        image: "/images/analytics.jpg",
+        slug: "pdf-analytics",
+        category: "Analytics"
+    },
+    {
+        title: "Industry-Specific PDF Security Solutions",
+        excerpt: "Explore how different industries can benefit from specialized PDF security features and compliance requirements.",
+        date: "2024-03-12",
+        author: "Joe Huang",
+        image: "/images/industry-security.jpg",
+        slug: "industry-security",
+        category: "Industry"
+    }
+];
+---
+
+<BaseLayout title="Blog | MaiPDF - PDF Security & Sharing">
+    <BlogPostGrid
+        title="Latest Insights"
+        description="Stay updated with the latest trends and best practices in PDF security and document sharing."
+        posts={posts}
+    />
+</BaseLayout> 

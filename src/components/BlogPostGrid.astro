@@ -1,0 +1,77 @@
+import BlogPostCard from './BlogPostCard.astro';
+
+interface Props {
+    posts: {
+        title: string;
+        excerpt: string;
+        date: string;
+        author: string;
+        image: string;
+        slug: string;
+        category?: string;
+    }[];
+    title?: string;
+    description?: string;
+}
+
+const { posts, title, description } = Astro.props;
+
+<section class="blog-grid">
+    {(title || description) && (
+        <div class="header">
+            {title && <h2>{title}</h2>}
+            {description && <p>{description}</p>}
+        </div>
+    )}
+    <div class="grid">
+        {posts.map((post) => (
+            <BlogPostCard
+                title={post.title}
+                excerpt={post.excerpt}
+                date={post.date}
+                author={post.author}
+                image={post.image}
+                slug={post.slug}
+                category={post.category}
+            />
+        ))}
+    </div>
+</section>
+
+<style>
+    .blog-grid {
+        padding: 4rem 0;
+    }
+
+    .header {
+        text-align: center;
+        margin-bottom: 3rem;
+    }
+
+    .header h2 {
+        color: var(--text-color);
+        margin-bottom: 1rem;
+    }
+
+    .header p {
+        color: var(--light-text);
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+        gap: 2rem;
+    }
+
+    @media (max-width: 768px) {
+        .blog-grid {
+            padding: 2rem 0;
+        }
+
+        .grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style> 

@@ -16,13 +16,7 @@
 
 <!-- PDF Sharing -->
 <url>
-  <loc>https://sendpdfonline.com/features/How_to_Share_PDF_Online.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/Share_PDF_Online.html</loc>
+  <loc>https://sendpdfonline.com/features/share-pdf-files-online.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
@@ -63,16 +57,22 @@
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
+<url>
+  <loc>https://sendpdfonline.com/features/share-pdf-online-securely.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
 
 <!-- Security Features -->
 <url>
-  <loc>https://sendpdfonline.com/features/Free PDF DRM.html</loc>
+  <loc>https://sendpdfonline.com/features/prevent-document-content-copying.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/features/PDF DRM.html</loc>
+  <loc>https://sendpdfonline.com/features/prevent-pdf-forwarding-dynamicqr.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
@@ -90,7 +90,7 @@
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/features/accesscontrol.html</loc>
+  <loc>https://sendpdfonline.com/features/secure-pdf-access-control.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
@@ -116,13 +116,13 @@
 
 <!-- PDF Hosting -->
 <url>
-  <loc>https://sendpdfonline.com/features/PDF_host_Online.html</loc>
+  <loc>https://sendpdfonline.com/features/pdf-host-online.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/features/maipdf_host_pdf_online.html</loc>
+  <loc>https://sendpdfonline.com/features/pdf-hosting-online.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
@@ -140,13 +140,13 @@
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/features/pdf-host-online.html</loc>
+  <loc>https://sendpdfonline.com/features/maipdf-secure-pdf-hosting.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/features/pdf-hosting-online.html</loc>
+  <loc>https://sendpdfonline.com/features/maipdf-pdf-hosting-full-cn.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
@@ -154,7 +154,7 @@
 
 <!-- Advanced Features -->
 <url>
-  <loc>https://sendpdfonline.com/features/dynamicqr.html</loc>
+  <loc>https://sendpdfonline.com/features/qrfrompdf.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.90</priority>
@@ -198,31 +198,31 @@
 
 <!-- International Versions -->
 <url>
-  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features.html</loc>
+  <loc>https://sendpdfonline.com/features/secure-pdf-sharing-advanced-features.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_de_v3.html</loc>
+  <loc>https://sendpdfonline.com/features/sicheres-pdf-teilen-erweiterte-funktionen.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_fr_v3.html</loc>
+  <loc>https://sendpdfonline.com/features/partage-pdf-securise-fonctionnalites-avancees.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_ja_v3.html</loc>
+  <loc>https://sendpdfonline.com/features/secure-pdf-sharing-advanced-features-ja.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_zh_v3.html</loc>
+  <loc>https://sendpdfonline.com/features/secure-pdf-sharing-advanced-features-zh.html</loc>
   <lastmod>2025-04-15</lastmod>
   <changefreq>monthly</changefreq>
   <priority>0.80</priority>
