@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Send PDF Online - Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <style>
+    :root {
+      --primary-color: #1a73e8;
+      --secondary-color: #34a853;
+      --text-color: #333;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      margin-bottom: 2rem;
+    }
+
+    h1 {
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+    }
+
+    .header-description {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .category {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .category h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .category-links {
+      list-style: none;
+    }
+
+    .category-links li {
+      margin-bottom: 0.8rem;
+    }
+
+    .category-links a {
+      color: var(--text-color);
+      text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .category-links a:hover {
+      background-color: rgba(26, 115, 232, 0.1);
+      transform: translateX(5px);
+    }
+
+    .category-links a i {
+      color: var(--primary-color);
+      font-size: 0.9rem;
+    }
+
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      color: #666;
+      border-top: 1px solid #eee;
+    }
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      header {
+        padding: 2rem 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Welcome to SendPDFOnline</h1>
+    <p class="header-description">Your complete solution for sharing, hosting, and protecting PDFs online</p>
+  </header>
+
+  <div class="container">
+    <div class="categories">
+      <div class="category">
+        <h2><i class="fas fa-share-alt"></i> PDF Sharing</h2>
+        <ul class="category-links">
+          <li><a href="features/How_to_Share_PDF_Online.html"><i class="fas fa-book"></i> How to Share PDF Online</a></li>
+          <li><a href="features/Share_PDF_Online.html"><i class="fas fa-share-square"></i> Share PDF Online Guide</a></li>
+          <li><a href="features/sharebylink.html"><i class="fas fa-link"></i> Share by Link</a></li>
+          <li><a href="features/shareonwechat.html"><i class="fab fa-weixin"></i> Share on WeChat</a></li>
+          <li><a href="features/socialmedia.html"><i class="fas fa-hashtag"></i> Social Media Sharing</a></li>
+          <li><a href="features/sharepdf.html"><i class="fas fa-file-pdf"></i> Share PDF Files</a></li>
+          <li><a href="features/sharepdfsfilesonline.html"><i class="fas fa-file-upload"></i> Share PDFs Online</a></li>
+          <li><a href="features/share_pdf_securely.html"><i class="fas fa-shield-alt"></i> Share PDF Securely</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-shield-alt"></i> Security Features</h2>
+        <ul class="category-links">
+          <li><a href="features/Free PDF DRM.html"><i class="fas fa-lock"></i> Free PDF DRM</a></li>
+          <li><a href="features/PDF DRM.html"><i class="fas fa-user-lock"></i> PDF DRM Solutions</a></li>
+          <li><a href="features/preventdownload.html"><i class="fas fa-ban"></i> Prevent Downloads</a></li>
+          <li><a href="features/sms_verify.html"><i class="fas fa-mobile-alt"></i> SMS Verification</a></li>
+          <li><a href="features/accesscontrol.html"><i class="fas fa-key"></i> Access Control</a></li>
+          <li><a href="features/preventcopy.html"><i class="fas fa-copy"></i> Prevent Copying</a></li>
+          <li><a href="features/prevent_downloading_maipdf.html"><i class="fas fa-download"></i> Prevent PDF Downloads</a></li>
+          <li><a href="features/pdf_prevent_forward.html"><i class="fas fa-forward"></i> Prevent Forwarding</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-cloud"></i> PDF Hosting</h2>
+        <ul class="category-links">
+          <li><a href="features/PDF_host_Online.html"><i class="fas fa-server"></i> PDF Host Online</a></li>
+          <li><a href="features/maipdf_host_pdf_online.html"><i class="fas fa-cloud-upload-alt"></i> MaiPDF Hosting</a></li>
+          <li><a href="features/hostonlineeasy.html"><i class="fas fa-magic"></i> Easy Online Hosting</a></li>
+          <li><a href="features/cloudshare.html"><i class="fas fa-cloud-share"></i> Cloud Sharing</a></li>
+          <li><a href="features/pdf-host-online.html"><i class="fas fa-hdd"></i> PDF Host Online</a></li>
+          <li><a href="features/pdf-hosting-online.html"><i class="fas fa-database"></i> PDF Hosting Online</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-tools"></i> Advanced Features</h2>
+        <ul class="category-links">
+          <li><a href="features/dynamicqr.html"><i class="fas fa-qrcode"></i> Dynamic QR Codes</a></li>
+          <li><a href="features/waterMaipdf.html"><i class="fas fa-tint"></i> Watermarking</a></li>
+          <li><a href="features/trackpdfopen.html"><i class="fas fa-chart-line"></i> Track PDF Opens</a></li>
+          <li><a href="features/time-limits-pdf-files.html"><i class="fas fa-clock"></i> Time Limits</a></li>
+          <li><a href="features/selfdestruct.html"><i class="fas fa-bomb"></i> Self-Destruct PDFs</a></li>
+          <li><a href="features/set-expiration-date-for-pdfs.html"><i class="fas fa-calendar-times"></i> Set Expiration Date</a></li>
+          <li><a href="features/pdf_open_limit.html"><i class="fas fa-stopwatch"></i> Open Limit</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-globe"></i> International Versions</h2>
+        <ul class="category-links">
+          <li><a href="localization/maipdf_advanced_features.html"><i class="fas fa-language"></i> Advanced Features (EN)</a></li>
+          <li><a href="localization/maipdf_advanced_features_de_v3.html"><i class="fas fa-language"></i> Advanced Features (DE)</a></li>
+          <li><a href="localization/maipdf_advanced_features_fr_v3.html"><i class="fas fa-language"></i> Advanced Features (FR)</a></li>
+          <li><a href="localization/maipdf_advanced_features_ja_v3.html"><i class="fas fa-language"></i> Advanced Features (JA)</a></li>
+          <li><a href="localization/maipdf_advanced_features_zh_v3.html"><i class="fas fa-language"></i> Advanced Features (ZH)</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-cogs"></i> Additional Tools</h2>
+        <ul class="category-links">
+          <li><a href="features/portifolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+          <li><a href="features/platform.html"><i class="fas fa-cube"></i> Platform</a></li>
+          <li><a href="features/privnote.html"><i class="fas fa-sticky-note"></i> Private Notes</a></li>
+          <li><a href="features/stop-pdf-sharing.html"><i class="fas fa-stop-circle"></i> Stop PDF Sharing</a></li>
+          <li><a href="features/set-pdf-print-restrictions.html"><i class="fas fa-print"></i> Print Restrictions</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <p>&copy; 2025 SendPDFOnline. All rights reserved.</p>
+  </footer>
+</body>
+</html> 

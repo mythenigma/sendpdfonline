@@ -6,762 +6,258 @@
             http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 <!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
 
-
+<!-- Main Pages -->
 <url>
   <loc>https://sendpdfonline.com/</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>weekly</changefreq>
   <priority>1.00</priority>
 </url>
+
+<!-- PDF Sharing -->
 <url>
-  <loc>https://sendpdfonline.com/Cloud%20Share%20vs.%20Offline%20Version</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://sendpdfonline.com/features/How_to_Share_PDF_Online.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/Convert_pdf_to_link</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://sendpdfonline.com/features/Share_PDF_Online.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/Fence%20view%20hamper%20screen%20grab</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://sendpdfonline.com/features/sharebylink.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/Free%20PDF%20DRM</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://sendpdfonline.com/features/shareonwechat.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/How_to_Share_PDF_Online</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://sendpdfonline.com/features/socialmedia.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/Locklizard%20and%20MaiPDF%20compare</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://sendpdfonline.com/features/sharepdf.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/MaiPDF_PDF_Hosting_Full_CN</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
+  <loc>https://sendpdfonline.com/features/sharepdfsfilesonline.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 <url>
-  <loc>https://sendpdfonline.com/MaiPDF_Secure_PDF_Hosting</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/MaiPDF_Secure_PDF_Hosting_CN</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/PDF%20DRM</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/PDF_host_Online</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/PDF_hosting_Online</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/PDFreadnotify</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/Share_PDF_Online</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/accesscontrol</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/alt</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/alternative</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/anti</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/broadcast</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/bufang</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/cloudshare</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/cnhostonline</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/convertQR</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/daoqi</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/designercn</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/destruct</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/docfly</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/dongtai</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/drmfrommaipdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/dynamicqr</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/dynamicqrES</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/dynamicqrFR</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/dynamicqrJP</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/dynaqrwatermark</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/emaillist</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/encryptCN</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/exipritr</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/exp1</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/fangzhicopied</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/fangzhifuzhi</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/fence%20view%20hamper%20screen%20grabbing</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/fence%20view%20pdf%20for%20sharing</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/freeonlinetool</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/hostonlineeasy</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/hostponline</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/jiali</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/jiami</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/jinzhi</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/keycode</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/keycodeEN</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/keycodeFR</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/keycodeItalian</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/keycodeJP</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/keycodeViet</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/kongzhi</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/kongzhiwaifa</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/lianjiepdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/likeH5</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/liulan</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maifilefenceview</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maifileormaipdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_advanced_features</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_advanced_features_de_v3</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_advanced_features_fr_v3</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_advanced_features_ja_v3</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_advanced_features_zh_v3</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_bootstrap_rich_v3</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_bootstrap_rich_v3_de</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_bootstrap_rich_v3_fr</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_bootstrap_rich_v3_ja</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_bootstrap_rich_v3_zh</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_host_pdf_online</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_host_pdf_online_de</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_host_pdf_online_fr</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_host_pdf_online_zh</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_pdf_sharing</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdf_strong%20_protection</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdfexamples</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdffenceview</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/maipdfintro2025</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/mai介绍</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/make-expiration-date-for-pdfs</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/methodsofsharing</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/mimafangwen</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/nativeview</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pdf_open_limit</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pdf_prevent_forward</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pdfhostonline</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pdflinks</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pdfreadalert</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pdftourl</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pengyouquan</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/pingtaishuoming</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/platform</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/portifolio</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/prevent_downloading_maipdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/preventbeingcopied</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/preventcopy</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/preventdownload</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/prevention</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/preventmaipdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/privnote</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/publish%20pdf%20online</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/qrfrompdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/qrmark</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/restrict</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/restriction</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/restrictsharing</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/saomiao</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/selfdestruct</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/set-expiration-date-for-pdfs</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/share_pdf_securely</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/sharebylink</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/sharedocuonlinefree</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/shareeasily</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/shareitonline</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/shareonwechat</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/sharepdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/sharepdfsfilesonline</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/sharesecure</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/shejishi</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/showonweb</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/showpdfonline</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/sms_verify</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/socialmedia</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/sshare</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/teda</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/time-limits-pdf-files</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/tourlway</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/trackpdfopen</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/upload-share-pdf%20cn</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/upload-share-pdf-cn</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/upload-share-pdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/verifyListfromEmail</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/waifa</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/waterMaipdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/waysmulti</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/waystosend</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/wendang</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/whichone</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/zihui</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/zuopinji</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/共享</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/动态水印</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/资治通鉴</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/阅读记录</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/动态水印maipdf</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/about.html</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/service.html</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.64</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/contact.html</loc>
-  <lastmod>2025-04-12T14:20:28+00:00</lastmod>
-  <priority>0.64</priority>
+  <loc>https://sendpdfonline.com/features/share_pdf_securely.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
 </url>
 
+<!-- Security Features -->
+<url>
+  <loc>https://sendpdfonline.com/features/Free PDF DRM.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/PDF DRM.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/preventdownload.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/sms_verify.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/accesscontrol.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/preventcopy.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/prevent_downloading_maipdf.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/pdf_prevent_forward.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<!-- PDF Hosting -->
+<url>
+  <loc>https://sendpdfonline.com/features/PDF_host_Online.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/maipdf_host_pdf_online.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/hostonlineeasy.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/cloudshare.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/pdf-host-online.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/pdf-hosting-online.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<!-- Advanced Features -->
+<url>
+  <loc>https://sendpdfonline.com/features/dynamicqr.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/waterMaipdf.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/trackpdfopen.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/time-limits-pdf-files.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/selfdestruct.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/set-expiration-date-for-pdfs.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/pdf_open_limit.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<!-- International Versions -->
+<url>
+  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_de_v3.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_fr_v3.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_ja_v3.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/localization/maipdf_advanced_features_zh_v3.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<!-- Additional Tools -->
+<url>
+  <loc>https://sendpdfonline.com/features/portifolio.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/platform.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/privnote.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/stop-pdf-sharing.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+<url>
+  <loc>https://sendpdfonline.com/features/set-pdf-print-restrictions.html</loc>
+  <lastmod>2025-04-15</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
 
 </urlset>
