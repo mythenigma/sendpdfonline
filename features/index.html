@@ -4,215 +4,188 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Send PDF Online - Homepage</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
+    :root {
+      --primary-color: #1a73e8;
+      --secondary-color: #34a853;
+      --text-color: #333;
+      --bg-color: #f8f9fa;
+      --card-bg: #ffffff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
     body {
-      font-family: system-ui, sans-serif;
-      margin: 2rem auto;
-      max-width: 900px;
-      padding: 1rem;
-      background-color: #f9f9f9;
-      color: #222;
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background-color: var(--bg-color);
+      color: var(--text-color);
       line-height: 1.6;
     }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 2rem;
+    }
+
+    header {
+      text-align: center;
+      padding: 3rem 1rem;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      margin-bottom: 2rem;
+    }
+
     h1 {
-      text-align: center;
-      color: #1a73e8;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
     }
-    p {
-      text-align: center;
-      color: #444;
+
+    .header-description {
+      font-size: 1.2rem;
+      opacity: 0.9;
+      max-width: 600px;
+      margin: 0 auto;
     }
-    ul {
-      margin-top: 2rem;
-      columns: 2;
-      -webkit-columns: 2;
-      -moz-columns: 2;
-      padding: 0;
+
+    .categories {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 2rem;
+      padding: 1rem;
+    }
+
+    .category {
+      background: var(--card-bg);
+      border-radius: 10px;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .category h2 {
+      color: var(--primary-color);
+      margin-bottom: 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .category-links {
       list-style: none;
     }
-    li {
-      margin-bottom: 0.5rem;
+
+    .category-links li {
+      margin-bottom: 0.8rem;
     }
-    a {
-      color: #1a0dab;
+
+    .category-links a {
+      color: var(--text-color);
       text-decoration: none;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      padding: 0.5rem;
+      border-radius: 5px;
+      transition: all 0.3s ease;
     }
-    a:hover {
-      text-decoration: underline;
+
+    .category-links a:hover {
+      background-color: rgba(26, 115, 232, 0.1);
+      transform: translateX(5px);
     }
+
+    .category-links a i {
+      color: var(--primary-color);
+      font-size: 0.9rem;
+    }
+
     footer {
       text-align: center;
       margin-top: 3rem;
-      font-size: 0.9rem;
-      color: #888;
+      padding: 2rem;
+      color: #666;
+      border-top: 1px solid #eee;
     }
-    @media (max-width: 600px) {
-      ul {
-        columns: 1;
+
+    @media (max-width: 768px) {
+      .container {
+        padding: 1rem;
+      }
+      
+      header {
+        padding: 2rem 1rem;
+      }
+
+      h1 {
+        font-size: 2rem;
+      }
+
+      .categories {
+        grid-template-columns: 1fr;
       }
     }
   </style>
 </head>
 <body>
-  <h1>Welcome to SendPDFOnline</h1>
-  <p>Explore tools, features and tutorials to share, host, and protect your PDFs online:</p>
+  <header>
+    <h1>Welcome to SendPDFOnline</h1>
+    <p class="header-description">Your complete solution for sharing, hosting, and protecting PDFs online</p>
+  </header>
 
-  <ul>
-    <li><a href="Cloud Share vs. Offline Version.html">Cloud Share vs. Offline Version.html</a></li>
-    <li><a href="Convert_pdf_to_link.html">Convert_pdf_to_link.html</a></li>
-    <li><a href="Fence view hamper screen grab.html">Fence view hamper screen grab.html</a></li>
-    <li><a href="Free PDF DRM.html">Free PDF DRM.html</a></li>
-    <li><a href="How_to_Share_PDF_Online.html">How_to_Share_PDF_Online.html</a></li>
-    <li><a href="LICENSE">LICENSE</a></li>
-    <li><a href="Locklizard and MaiPDF compare.html">Locklizard and MaiPDF compare.html</a></li>
-    <li><a href="MaiPDF_PDF_Hosting_Full_CN.html">MaiPDF_PDF_Hosting_Full_CN.html</a></li>
-    <li><a href="MaiPDF_Secure_PDF_Hosting.html">MaiPDF_Secure_PDF_Hosting.html</a></li>
-    <li><a href="MaiPDF_Secure_PDF_Hosting_CN.html">MaiPDF_Secure_PDF_Hosting_CN.html</a></li>
-    <li><a href="PDF DRM.html">PDF DRM.html</a></li>
-    <li><a href="PDF_host_Online.html">PDF_host_Online.html</a></li>
-    <li><a href="PDF_hosting_Online.html">PDF_hosting_Online.html</a></li>
-    <li><a href="PDFreadnotify.html">PDFreadnotify.html</a></li>
-    <li><a href="Share_PDF_Online.html">Share_PDF_Online.html</a></li>
-    <li><a href="accesscontrol.html">accesscontrol.html</a></li>
-    <li><a href="alt.html">alt.html</a></li>
-    <li><a href="alternative.html">alternative.html</a></li>
-    <li><a href="anti.html">anti.html</a></li>
-    <li><a href="broadcast.html">broadcast.html</a></li>
-    <li><a href="bufang.html">bufang.html</a></li>
-    <li><a href="cloudshare.html">cloudshare.html</a></li>
-    <li><a href="cnhostonline.html">cnhostonline.html</a></li>
-    <li><a href="convertQR.html">convertQR.html</a></li>
-    <li><a href="daoqi.html">daoqi.html</a></li>
-    <li><a href="designercn.html">designercn.html</a></li>
-    <li><a href="destruct.html">destruct.html</a></li>
-    <li><a href="docfly.html">docfly.html</a></li>
-    <li><a href="dongtai.html">dongtai.html</a></li>
-    <li><a href="drmfrommaipdf.html">drmfrommaipdf.html</a></li>
-    <li><a href="dynamicqr.html">dynamicqr.html</a></li>
-    <li><a href="dynamicqrES.html">dynamicqrES.html</a></li>
-    <li><a href="dynamicqrFR.html">dynamicqrFR.html</a></li>
-    <li><a href="dynamicqrJP.html">dynamicqrJP.html</a></li>
-    <li><a href="dynaqrwatermark.html">dynaqrwatermark.html</a></li>
-    <li><a href="emaillist.html">emaillist.html</a></li>
-    <li><a href="encryptCN.html">encryptCN.html</a></li>
-    <li><a href="exipritr.html">exipritr.html</a></li>
-    <li><a href="exp1.html">exp1.html</a></li>
-    <li><a href="fangzhicopied.html">fangzhicopied.html</a></li>
-    <li><a href="fangzhifuzhi.html">fangzhifuzhi.html</a></li>
-    <li><a href="fence view hamper screen grabbing.html">fence view hamper screen grabbing.html</a></li>
-    <li><a href="fence view pdf for sharing.html">fence view pdf for sharing.html</a></li>
-    <li><a href="freeonlinetool.html">freeonlinetool.html</a></li>
-    <li><a href="hostonlineeasy.html">hostonlineeasy.html</a></li>
-    <li><a href="hostponline.html">hostponline.html</a></li>
-    <li><a href="index.html">index.html</a></li>
-    <li><a href="jiali.html">jiali.html</a></li>
-    <li><a href="jiami.html">jiami.html</a></li>
-    <li><a href="jinzhi.html">jinzhi.html</a></li>
-    <li><a href="keycode.html">keycode.html</a></li>
-    <li><a href="keycodeEN.html">keycodeEN.html</a></li>
-    <li><a href="keycodeFR.html">keycodeFR.html</a></li>
-    <li><a href="keycodeItalian.html">keycodeItalian.html</a></li>
-    <li><a href="keycodeJP.html">keycodeJP.html</a></li>
-    <li><a href="keycodeViet.html">keycodeViet.html</a></li>
-    <li><a href="kongzhi.html">kongzhi.html</a></li>
-    <li><a href="kongzhiwaifa.html">kongzhiwaifa.html</a></li>
-    <li><a href="lianjiepdf.html">lianjiepdf.html</a></li>
-    <li><a href="likeH5.html">likeH5.html</a></li>
-    <li><a href="liulan.html">liulan.html</a></li>
-    <li><a href="maifilefenceview.html">maifilefenceview.html</a></li>
-    <li><a href="maifileormaipdf.html">maifileormaipdf.html</a></li>
-    <li><a href="maipdf_advanced_features.html">maipdf_advanced_features.html</a></li>
-    <li><a href="maipdf_advanced_features_de_v3.html">maipdf_advanced_features_de_v3.html</a></li>
-    <li><a href="maipdf_advanced_features_fr_v3.html">maipdf_advanced_features_fr_v3.html</a></li>
-    <li><a href="maipdf_advanced_features_ja_v3.html">maipdf_advanced_features_ja_v3.html</a></li>
-    <li><a href="maipdf_advanced_features_zh_v3.html">maipdf_advanced_features_zh_v3.html</a></li>
-    <li><a href="maipdf_bootstrap_rich_v3.html">maipdf_bootstrap_rich_v3.html</a></li>
-    <li><a href="maipdf_bootstrap_rich_v3_de.html">maipdf_bootstrap_rich_v3_de.html</a></li>
-    <li><a href="maipdf_bootstrap_rich_v3_fr.html">maipdf_bootstrap_rich_v3_fr.html</a></li>
-    <li><a href="maipdf_bootstrap_rich_v3_ja.html">maipdf_bootstrap_rich_v3_ja.html</a></li>
-    <li><a href="maipdf_bootstrap_rich_v3_zh.html">maipdf_bootstrap_rich_v3_zh.html</a></li>
-    <li><a href="maipdf_host_pdf_online.html">maipdf_host_pdf_online.html</a></li>
-    <li><a href="maipdf_host_pdf_online_de.html">maipdf_host_pdf_online_de.html</a></li>
-    <li><a href="maipdf_host_pdf_online_fr.html">maipdf_host_pdf_online_fr.html</a></li>
-    <li><a href="maipdf_host_pdf_online_zh.html">maipdf_host_pdf_online_zh.html</a></li>
-    <li><a href="maipdf_pdf_sharing.html">maipdf_pdf_sharing.html</a></li>
-    <li><a href="maipdf_strong _protection.html">maipdf_strong _protection.html</a></li>
-    <li><a href="maipdfexamples.html">maipdfexamples.html</a></li>
-    <li><a href="maipdffenceview.html">maipdffenceview.html</a></li>
-    <li><a href="maipdfintro2025.html">maipdfintro2025.html</a></li>
-    <li><a href="mai介绍.html">mai介绍.html</a></li>
-    <li><a href="make-expiration-date-for-pdfs.html">make-expiration-date-for-pdfs.html</a></li>
-    <li><a href="methodsofsharing.html">methodsofsharing.html</a></li>
-    <li><a href="mimafangwen.html">mimafangwen.html</a></li>
-    <li><a href="nativeview.html">nativeview.html</a></li>
-    <li><a href="pdf_open_limit.html">pdf_open_limit.html</a></li>
-    <li><a href="pdf_prevent_forward.html">pdf_prevent_forward.html</a></li>
-    <li><a href="pdfhostonline.html">pdfhostonline.html</a></li>
-    <li><a href="pdflinks.html">pdflinks.html</a></li>
-    <li><a href="pdfreadalert.html">pdfreadalert.html</a></li>
-    <li><a href="pdftourl.html">pdftourl.html</a></li>
-    <li><a href="pengyouquan.html">pengyouquan.html</a></li>
-    <li><a href="pingtaishuoming.html">pingtaishuoming.html</a></li>
-    <li><a href="platform.html">platform.html</a></li>
-    <li><a href="portifolio.html">portifolio.html</a></li>
-    <li><a href="prevent_downloading_maipdf.html">prevent_downloading_maipdf.html</a></li>
-    <li><a href="preventbeingcopied.html">preventbeingcopied.html</a></li>
-    <li><a href="preventcopy.html">preventcopy.html</a></li>
-    <li><a href="preventdownload.html">preventdownload.html</a></li>
-    <li><a href="prevention.html">prevention.html</a></li>
-    <li><a href="preventmaipdf.html">preventmaipdf.html</a></li>
-    <li><a href="privnote.html">privnote.html</a></li>
-    <li><a href="publish pdf online.html">publish pdf online.html</a></li>
-    <li><a href="qrfrompdf.html">qrfrompdf.html</a></li>
-    <li><a href="qrmark.html">qrmark.html</a></li>
-    <li><a href="restrict.html">restrict.html</a></li>
-    <li><a href="restriction.html">restriction.html</a></li>
-    <li><a href="restrictsharing.html">restrictsharing.html</a></li>
-    <li><a href="saomiao.html">saomiao.html</a></li>
-    <li><a href="selfdestruct.html">selfdestruct.html</a></li>
-    <li><a href="set-expiration-date-for-pdfs.html">set-expiration-date-for-pdfs.html</a></li>
-    <li><a href="share_pdf_securely.html">share_pdf_securely.html</a></li>
-    <li><a href="sharebylink.html">sharebylink.html</a></li>
-    <li><a href="sharedocuonlinefree.html">sharedocuonlinefree.html</a></li>
-    <li><a href="shareeasily.html">shareeasily.html</a></li>
-    <li><a href="shareitonline.html">shareitonline.html</a></li>
-    <li><a href="shareonwechat.html">shareonwechat.html</a></li>
-    <li><a href="sharepdf.html">sharepdf.html</a></li>
-    <li><a href="sharepdfsfilesonline.html">sharepdfsfilesonline.html</a></li>
-    <li><a href="sharesecure.html">sharesecure.html</a></li>
-    <li><a href="shejishi.html">shejishi.html</a></li>
-    <li><a href="showonweb.html">showonweb.html</a></li>
-    <li><a href="showpdfonline.html">showpdfonline.html</a></li>
-    <li><a href="sms_verify.html">sms_verify.html</a></li>
-    <li><a href="socialmedia.html">socialmedia.html</a></li>
-    <li><a href="sshare.html">sshare.html</a></li>
-    <li><a href="teda.html">teda.html</a></li>
-    <li><a href="time-limits-pdf-files.html">time-limits-pdf-files.html</a></li>
-    <li><a href="tourlway.html">tourlway.html</a></li>
-    <li><a href="trackpdfopen.html">trackpdfopen.html</a></li>
-    <li><a href="upload-share-pdf cn.html">upload-share-pdf cn.html</a></li>
-    <li><a href="upload-share-pdf-cn.html">upload-share-pdf-cn.html</a></li>
-    <li><a href="upload-share-pdf.html">upload-share-pdf.html</a></li>
-    <li><a href="verifyListfromEmail.html">verifyListfromEmail.html</a></li>
-    <li><a href="waifa.html">waifa.html</a></li>
-    <li><a href="waterMaipdf.html">waterMaipdf.html</a></li>
-    <li><a href="waysmulti.html">waysmulti.html</a></li>
-    <li><a href="waystosend.html">waystosend.html</a></li>
-    <li><a href="wendang.html">wendang.html</a></li>
-    <li><a href="whichone.html">whichone.html</a></li>
-    <li><a href="zihui.html">zihui.html</a></li>
-    <li><a href="zizhi1.png">zizhi1.png</a></li>
-    <li><a href="zizhi2.png">zizhi2.png</a></li>
-    <li><a href="zuopinji.html">zuopinji.html</a></li>
-    <li><a href="共享.html">共享.html</a></li>
-    <li><a href="动态水印.html">动态水印.html</a></li>
-    <li><a href="资治通鉴.html">资治通鉴.html</a></li>
-    <li><a href="阅读记录.html">阅读记录.html</a></li>
-    <li><a href="动态水印maipdf.html">动态水印maipdf.html</a></li>
-</ul>
+  <div class="container">
+    <div class="categories">
+      <div class="category">
+        <h2><i class="fas fa-share-alt"></i> PDF Sharing</h2>
+        <ul class="category-links">
+          <li><a href="How_to_Share_PDF_Online.html"><i class="fas fa-book"></i> How to Share PDF Online</a></li>
+          <li><a href="Share_PDF_Online.html"><i class="fas fa-share-square"></i> Share PDF Online Guide</a></li>
+          <li><a href="sharebylink.html"><i class="fas fa-link"></i> Share by Link</a></li>
+          <li><a href="shareonwechat.html"><i class="fab fa-weixin"></i> Share on WeChat</a></li>
+          <li><a href="socialmedia.html"><i class="fas fa-hashtag"></i> Social Media Sharing</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-shield-alt"></i> Security Features</h2>
+        <ul class="category-links">
+          <li><a href="Free PDF DRM.html"><i class="fas fa-lock"></i> Free PDF DRM</a></li>
+          <li><a href="PDF DRM.html"><i class="fas fa-user-lock"></i> PDF DRM Solutions</a></li>
+          <li><a href="preventdownload.html"><i class="fas fa-ban"></i> Prevent Downloads</a></li>
+          <li><a href="sms_verify.html"><i class="fas fa-mobile-alt"></i> SMS Verification</a></li>
+          <li><a href="accesscontrol.html"><i class="fas fa-key"></i> Access Control</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-cloud"></i> PDF Hosting</h2>
+        <ul class="category-links">
+          <li><a href="PDF_host_Online.html"><i class="fas fa-server"></i> PDF Host Online</a></li>
+          <li><a href="maipdf_host_pdf_online.html"><i class="fas fa-cloud-upload-alt"></i> MaiPDF Hosting</a></li>
+          <li><a href="hostonlineeasy.html"><i class="fas fa-magic"></i> Easy Online Hosting</a></li>
+          <li><a href="cloudshare.html"><i class="fas fa-cloud-share"></i> Cloud Sharing</a></li>
+        </ul>
+      </div>
+
+      <div class="category">
+        <h2><i class="fas fa-tools"></i> Advanced Features</h2>
+        <ul class="category-links">
+          <li><a href="dynamicqr.html"><i class="fas fa-qrcode"></i> Dynamic QR Codes</a></li>
+          <li><a href="waterMaipdf.html"><i class="fas fa-tint"></i> Watermarking</a></li>
+          <li><a href="trackpdfopen.html"><i class="fas fa-chart-line"></i> Track PDF Opens</a></li>
+          <li><a href="time-limits-pdf-files.html"><i class="fas fa-clock"></i> Time Limits</a></li>
+          <li><a href="selfdestruct.html"><i class="fas fa-bomb"></i> Self-Destruct PDFs</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
 
   <footer>
-    &copy; 2025 SendPDFOnline. All rights reserved.
+    <p>&copy; 2025 SendPDFOnline. All rights reserved.</p>
   </footer>
 </body>
 </html>
