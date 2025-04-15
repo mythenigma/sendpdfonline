@@ -1,220 +1,224 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>MaiPDF - Secure PDF Sharing & Tracking</title>
-  <meta name="description" content="Share PDFs securely with MaiPDF. Track views, add watermarks, and control access to your documents.">
-  <link rel="stylesheet" href="/styles/global.css">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-  <style>
-    :root {
-      --primary-color: #1a73e8;
-      --secondary-color: #34a853;
-      --text-color: #333;
-      --bg-color: #f8f9fa;
-      --card-bg: #ffffff;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaiPDF - Secure PDF Sharing & Tracking</title>
+    <meta name="description" content="Share PDFs securely with MaiPDF. Track views, add watermarks, and control access to your documents.">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --text-color: #333;
+            --bg-color: #f8f9fa;
+            --card-bg: #ffffff;
+        }
 
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-    body {
-      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-      background-color: var(--bg-color);
-      color: var(--text-color);
-      line-height: 1.6;
-    }
+        body {
+            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+        }
 
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 2rem;
-    }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
 
-    header {
-      text-align: center;
-      padding: 3rem 1rem;
-      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-      color: white;
-      margin-bottom: 2rem;
-    }
+        header {
+            text-align: center;
+            padding: 3rem 1rem;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            margin-bottom: 2rem;
+        }
 
-    h1 {
-      font-size: 2.5rem;
-      margin-bottom: 1rem;
-    }
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+        }
 
-    .header-description {
-      font-size: 1.2rem;
-      opacity: 0.9;
-      max-width: 600px;
-      margin: 0 auto;
-    }
+        .header-description {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            max-width: 600px;
+            margin: 0 auto;
+        }
 
-    .categories {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-      gap: 2rem;
-      padding: 1rem;
-    }
+        .categories {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 1rem;
+        }
 
-    .category {
-      background: var(--card-bg);
-      border-radius: 10px;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    }
+        .category {
+            background: var(--card-bg);
+            border-radius: 10px;
+            padding: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
 
-    .category h2 {
-      color: var(--primary-color);
-      margin-bottom: 1rem;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
+        .category h2 {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
 
-    .category-links {
-      list-style: none;
-    }
+        .category-links {
+            list-style: none;
+        }
 
-    .category-links li {
-      margin-bottom: 0.8rem;
-    }
+        .category-links li {
+            margin-bottom: 0.8rem;
+        }
 
-    .category-links a {
-      color: var(--text-color);
-      text-decoration: none;
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-      padding: 0.5rem;
-      border-radius: 5px;
-      transition: all 0.3s ease;
-    }
+        .category-links a {
+            color: var(--text-color);
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.5rem;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
 
-    .category-links a:hover {
-      background-color: rgba(26, 115, 232, 0.1);
-      transform: translateX(5px);
-    }
+        .category-links a:hover {
+            background-color: rgba(26, 115, 232, 0.1);
+            transform: translateX(5px);
+        }
 
-    .category-links a i {
-      color: var(--primary-color);
-      font-size: 0.9rem;
-    }
+        .category-links a i {
+            color: var(--primary-color);
+            font-size: 0.9rem;
+        }
 
-    footer {
-      text-align: center;
-      margin-top: 3rem;
-      padding: 2rem;
-      color: #666;
-      border-top: 1px solid #eee;
-    }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
 
-    @media (max-width: 768px) {
-      .container {
-        padding: 1rem;
-      }
-      
-      header {
-        padding: 2rem 1rem;
-      }
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                padding: 2rem 1rem;
+            }
 
-      h1 {
-        font-size: 2rem;
-      }
+            h1 {
+                font-size: 2rem;
+            }
 
-      .categories {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+            .categories {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
 </head>
 <body>
-  <header>
-    <nav>
-      <div class="logo">
-        <a href="/">MaiPDF</a>
-      </div>
-      <ul class="nav-links">
-        <li><a href="/features">Features</a></li>
-        <li><a href="/pricing">Pricing</a></li>
-        <li><a href="/blog">Blog</a></li>
-        <li><a href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-  </header>
+    <header>
+        <h1>Welcome to MaiPDF</h1>
+        <p class="header-description">Your complete solution for sharing, hosting, and protecting PDFs online</p>
+    </header>
 
-  <main>
-    <section class="hero">
-      <h1>Secure PDF Sharing Made Simple</h1>
-      <p>Share your PDFs with confidence. Track views, add watermarks, and control access to your documents.</p>
-      <div class="cta-buttons">
-        <a href="/signup" class="primary-button">Get Started</a>
-        <a href="/demo" class="secondary-button">View Demo</a>
-      </div>
-    </section>
+    <div class="container">
+        <div class="categories">
+            <div class="category">
+                <h2><i class="fas fa-share-alt"></i> PDF Sharing</h2>
+                <ul class="category-links">
+                    <li><a href="features/share-pdf-files-online.html"><i class="fas fa-book"></i> How to Share PDF Online</a></li>
+                    <li><a href="features/sharebylink.html"><i class="fas fa-link"></i> Share by Link</a></li>
+                    <li><a href="features/shareonwechat.html"><i class="fab fa-weixin"></i> Share on WeChat</a></li>
+                    <li><a href="features/socialmedia.html"><i class="fas fa-hashtag"></i> Social Media Sharing</a></li>
+                    <li><a href="features/sharepdf.html"><i class="fas fa-file-pdf"></i> Share PDF Files</a></li>
+                    <li><a href="features/sharepdfsfilesonline.html"><i class="fas fa-file-upload"></i> Share PDFs Online</a></li>
+                    <li><a href="features/share_pdf_securely.html"><i class="fas fa-shield-alt"></i> Share PDF Securely</a></li>
+                    <li><a href="features/share-pdf-online-securely.html"><i class="fas fa-lock"></i> Share PDF Online Securely</a></li>
+                </ul>
+            </div>
 
-    <section class="features">
-      <h2>Key Features</h2>
-      <div class="feature-grid">
-        <div class="feature-card">
-          <img src="/images/secure-sharing.jpg" alt="Secure Sharing">
-          <h3>Secure Sharing</h3>
-          <p>Share PDFs with password protection and access controls.</p>
+            <div class="category">
+                <h2><i class="fas fa-shield-alt"></i> Security Features</h2>
+                <ul class="category-links">
+                    <li><a href="features/prevent-document-content-copying.html"><i class="fas fa-lock"></i> Prevent Document Copying</a></li>
+                    <li><a href="features/prevent-pdf-forwarding-dynamicqr.html"><i class="fas fa-user-lock"></i> Prevent PDF Forwarding</a></li>
+                    <li><a href="features/preventdownload.html"><i class="fas fa-ban"></i> Prevent Downloads</a></li>
+                    <li><a href="features/sms_verify.html"><i class="fas fa-mobile-alt"></i> SMS Verification</a></li>
+                    <li><a href="features/secure-pdf-access-control.html"><i class="fas fa-key"></i> Access Control</a></li>
+                    <li><a href="features/preventcopy.html"><i class="fas fa-copy"></i> Prevent Copying</a></li>
+                    <li><a href="features/prevent_downloading_maipdf.html"><i class="fas fa-download"></i> Prevent PDF Downloads</a></li>
+                    <li><a href="features/pdf_prevent_forward.html"><i class="fas fa-forward"></i> Prevent Forwarding</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h2><i class="fas fa-cloud"></i> PDF Hosting</h2>
+                <ul class="category-links">
+                    <li><a href="features/pdf-host-online.html"><i class="fas fa-server"></i> PDF Host Online</a></li>
+                    <li><a href="features/pdf-hosting-online.html"><i class="fas fa-cloud-upload-alt"></i> PDF Hosting Online</a></li>
+                    <li><a href="features/hostonlineeasy.html"><i class="fas fa-magic"></i> Easy Online Hosting</a></li>
+                    <li><a href="features/cloudshare.html"><i class="fas fa-cloud-share"></i> Cloud Sharing</a></li>
+                    <li><a href="features/maipdf-secure-pdf-hosting.html"><i class="fas fa-hdd"></i> MaiPDF Secure Hosting</a></li>
+                    <li><a href="features/maipdf-pdf-hosting-full-cn.html"><i class="fas fa-database"></i> MaiPDF Hosting (CN)</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h2><i class="fas fa-tools"></i> Advanced Features</h2>
+                <ul class="category-links">
+                    <li><a href="features/qrfrompdf.html"><i class="fas fa-qrcode"></i> QR Code Generation</a></li>
+                    <li><a href="features/waterMaipdf.html"><i class="fas fa-tint"></i> Watermarking</a></li>
+                    <li><a href="features/trackpdfopen.html"><i class="fas fa-chart-line"></i> Track PDF Opens</a></li>
+                    <li><a href="features/time-limits-pdf-files.html"><i class="fas fa-clock"></i> Time Limits</a></li>
+                    <li><a href="features/selfdestruct.html"><i class="fas fa-bomb"></i> Self-Destruct PDFs</a></li>
+                    <li><a href="features/set-expiration-date-for-pdfs.html"><i class="fas fa-calendar-times"></i> Set Expiration Date</a></li>
+                    <li><a href="features/pdf_open_limit.html"><i class="fas fa-stopwatch"></i> Open Limit</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h2><i class="fas fa-globe"></i> International Versions</h2>
+                <ul class="category-links">
+                    <li><a href="features/secure-pdf-sharing-advanced-features.html"><i class="fas fa-language"></i> Advanced Features (EN)</a></li>
+                    <li><a href="features/sicheres-pdf-teilen-erweiterte-funktionen.html"><i class="fas fa-language"></i> Advanced Features (DE)</a></li>
+                    <li><a href="features/partage-pdf-securise-fonctionnalites-avancees.html"><i class="fas fa-language"></i> Advanced Features (FR)</a></li>
+                    <li><a href="features/secure-pdf-sharing-advanced-features-ja.html"><i class="fas fa-language"></i> Advanced Features (JA)</a></li>
+                    <li><a href="features/secure-pdf-sharing-advanced-features-zh.html"><i class="fas fa-language"></i> Advanced Features (ZH)</a></li>
+                </ul>
+            </div>
+
+            <div class="category">
+                <h2><i class="fas fa-cogs"></i> Additional Tools</h2>
+                <ul class="category-links">
+                    <li><a href="features/portifolio.html"><i class="fas fa-briefcase"></i> Portfolio</a></li>
+                    <li><a href="features/platform.html"><i class="fas fa-cube"></i> Platform</a></li>
+                    <li><a href="features/privnote.html"><i class="fas fa-sticky-note"></i> Private Notes</a></li>
+                    <li><a href="features/stop-pdf-sharing.html"><i class="fas fa-stop-circle"></i> Stop PDF Sharing</a></li>
+                    <li><a href="features/set-pdf-print-restrictions.html"><i class="fas fa-print"></i> Print Restrictions</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="feature-card">
-          <img src="/images/tracking.jpg" alt="Document Tracking">
-          <h3>Document Tracking</h3>
-          <p>Track who views your documents and when.</p>
-        </div>
-        <div class="feature-card">
-          <img src="/images/watermarking.jpg" alt="Watermarking">
-          <h3>Dynamic Watermarks</h3>
-          <p>Add customizable watermarks to protect your content.</p>
-        </div>
-      </div>
-    </section>
-
-    <section class="contact">
-      <h2>Contact Us</h2>
-      <p>Have questions? Reach out to our team.</p>
-      <div class="contact-info">
-        <p>Email: <a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></p>
-        <p>Name: Joe Huang</p>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="footer-content">
-      <div class="footer-section">
-        <h3>MaiPDF</h3>
-        <p>Secure PDF sharing and tracking solution.</p>
-      </div>
-      <div class="footer-section">
-        <h3>Quick Links</h3>
-        <ul>
-          <li><a href="/about">About Us</a></li>
-          <li><a href="/privacy">Privacy Policy</a></li>
-          <li><a href="/terms">Terms of Service</a></li>
-        </ul>
-      </div>
-      <div class="footer-section">
-        <h3>Connect</h3>
-        <ul>
-          <li><a href="https://twitter.com/maipdf">Twitter</a></li>
-          <li><a href="https://linkedin.com/company/maipdf">LinkedIn</a></li>
-          <li><a href="https://github.com/maipdf">GitHub</a></li>
-        </ul>
-      </div>
     </div>
-    <div class="footer-bottom">
-      <p>&copy; 2024 MaiPDF. All rights reserved.</p>
-    </div>
-  </footer>
+
+    <footer>
+        <p>&copy; 2024 MaiPDF. All rights reserved.</p>
+    </footer>
 </body>
 </html> 
