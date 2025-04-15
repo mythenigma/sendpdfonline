@@ -49,6 +49,49 @@
         .footer a {
             color: #007BFF;
         }
+        footer {
+            text-align: center;
+            margin-top: 3rem;
+            padding: 2rem;
+            color: #666;
+            border-top: 1px solid #eee;
+        }
+
+        .maipdf-button {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 1rem 2rem;
+            border-radius: 5px;
+            text-decoration: none;
+            font-weight: bold;
+            margin-top: 1rem;
+            transition: transform 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+
+        .maipdf-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            header {
+                padding: 2rem 1rem;
+            }
+
+            h1 {
+                font-size: 2rem;
+            }
+
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+        }
     </style>
 </head>
 <body>
@@ -91,7 +134,7 @@
             <h3>步骤二：访问 MaiPDF 阅读记录页面</h3>
             <p>打开浏览器，访问 MaiPDF 的专用页面：[https://maipdf.cn/getresult.html](https://maipdf.cn/getresult.html)。在页面中，你会看到一个输入框，提示你输入 PDF 文件的阅读码。</p>
             <h3>步骤三：输入阅读码</h3>
-            <p>将获取到的阅读码输入到页面中的指定框内，然后点击“查询”按钮。系统会自动展示该文件的详细阅读记录，包括：</p>
+            <p>将获取到的阅读码输入到页面中的指定框内，然后点击"查询"按钮。系统会自动展示该文件的详细阅读记录，包括：</p>
             <ul>
                 <li>打开次数</li>
                 <li>每次访问的时间</li>
@@ -107,6 +150,11 @@
             <a href="https://www.maiPDF.com" target="_blank">访问 MaiPDF</a></p>
         </div>
     </div>
+
+    <footer>
+        <p>&copy; 2024 MaiPDF. 保留所有权利。</p>
+        <a href="https://maipdf.cn" class="maipdf-button">访问 MaiPDF.cn</a>
+    </footer>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6F17ZzBKMrlpA54veZxHhB0v6PxL52v8SABh3bVY5j" crossorigin="anonymous"></script>

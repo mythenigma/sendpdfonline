@@ -91,6 +91,32 @@
     .footer-links a:hover {
       color: #45a3b1;
     }
+    footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding: 2rem;
+      color: #666;
+      border-top: 1px solid #eee;
+    }
+    .maipdf-button {
+      display: inline-block;
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 1rem 2rem;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+      margin-top: 1rem;
+      transition: transform 0.2s, box-shadow 0.2s;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+    .maipdf-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+    @media (max-width: 768px) {
+      /* Existing styles */
+    }
   </style>
 </head>
 
@@ -121,7 +147,7 @@
 
     <section>
       <h2 class="section-title">动态二维码水印的工作原理</h2>
-      <p>1. <strong>自动生成二维码：</strong> 当用户选择启用“动态二维码水印”功能后，MaiPDF会根据当前用户的设备信息、IP地址和文档的唯一标识生成一个二维码。这个二维码会自动嵌入到PDF文档页面上。</p>
+      <p>1. <strong>自动生成二维码：</strong> 当用户选择启用"动态二维码水印"功能后，MaiPDF会根据当前用户的设备信息、IP地址和文档的唯一标识生成一个二维码。这个二维码会自动嵌入到PDF文档页面上。</p>
       <p>2. <strong>二维码信息加密：</strong> 二维码包含的信息会被加密，确保数据的隐私性。包括用户的IP地址、设备信息、文档的访问时间和其他唯一标识。</p>
       <p>3. <strong>水印展示：</strong> 每次打开文档时，二维码内容会发生变化，使得每个打开文档的用户都看到不同的二维码。即使文件被截图或拍照，二维码中的信息仍然能够追溯到泄露源。</p>
       <p>4. <strong>信息追溯：</strong> 二维码可以让您追溯到文档的泄露源，查看谁在什么时间、用什么设备、在什么IP地址下打开了文档，从而有效防止非法转载。</p>
@@ -154,7 +180,7 @@
       <h2 class="section-title">如何使用Maipdf的动态二维码水印功能？</h2>
       <ol>
         <li>在Maipdf平台上传你的PDF文件。</li>
-        <li>选择“启用动态二维码水印”选项。</li>
+        <li>选择"启用动态二维码水印"选项。</li>
         <li>设置文档的查看限制（如打开次数、禁止下载/打印等）。</li>
         <li>生成分享链接，发送给指定的收件人。</li>
         <li>收件人在查看文件时，动态二维码水印将显示在文档页面上。</li>
@@ -165,7 +191,8 @@
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 Maipdf | <span class="footer-links"><a href="#">Privacy Policy</a> | <a href="#">Terms of Use</a></span></p>
+    <p>&copy; 2024 MaiPDF. 保留所有权利。</p>
+    <a href="https://maipdf.cn" class="maipdf-button">访问 MaiPDF.cn</a>
   </footer>
 
   <!-- Bootstrap JS -->

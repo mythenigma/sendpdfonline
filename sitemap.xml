@@ -1,263 +1,154 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
-<!-- created with Free Online Sitemap Generator www.xml-sitemaps.com -->
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+    <!-- Main Pages -->
+    <url>
+        <loc>https://maipdf.com/</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.cn/</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>daily</changefreq>
+        <priority>1.0</priority>
+    </url>
 
-<!-- Main Pages -->
-<url>
-  <loc>https://sendpdfonline.com/</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.00</priority>
-</url>
+    <!-- English Features -->
+    <url>
+        <loc>https://maipdf.com/features/design-work-sharing.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/design-project-collaboration.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/design-file-organization.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/pdf-security-features.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/design-watermark-protection.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/secure-pdf-hosting.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/pdf-tracking-analytics.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/pdf-view-tracking.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/industry-tracking-best-practices.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-<!-- PDF Sharing -->
-<url>
-  <loc>https://sendpdfonline.com/features/share-pdf-files-online.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/sharebylink.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/shareonwechat.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/socialmedia.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/sharepdf.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/sharepdfsfilesonline.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/share_pdf_securely.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/share-pdf-online-securely.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
+    <!-- Chinese Features -->
+    <url>
+        <loc>https://maipdf.cn/features/共享.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.cn/features/动态水印.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.cn/features/阅读记录.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.cn/features/secure-pdf-sharing-advanced-features-zh.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.cn/features/quick-pdf-sharing-and-link-generation-zh.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.cn/features/upload-share-pdf cn.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.9</priority>
+    </url>
 
-<!-- Security Features -->
-<url>
-  <loc>https://sendpdfonline.com/features/prevent-document-content-copying.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/prevent-pdf-forwarding-dynamicqr.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/preventdownload.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/sms_verify.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/secure-pdf-access-control.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/preventcopy.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/prevent_downloading_maipdf.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/pdf_prevent_forward.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-
-<!-- PDF Hosting -->
-<url>
-  <loc>https://sendpdfonline.com/features/pdf-host-online.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/pdf-hosting-online.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/hostonlineeasy.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/cloudshare.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/maipdf-secure-pdf-hosting.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/maipdf-pdf-hosting-full-cn.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-
-<!-- Advanced Features -->
-<url>
-  <loc>https://sendpdfonline.com/features/qrfrompdf.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/waterMaipdf.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/trackpdfopen.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/time-limits-pdf-files.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/selfdestruct.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/set-expiration-date-for-pdfs.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/pdf_open_limit.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.90</priority>
-</url>
-
-<!-- International Versions -->
-<url>
-  <loc>https://sendpdfonline.com/features/secure-pdf-sharing-advanced-features.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/sicheres-pdf-teilen-erweiterte-funktionen.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/partage-pdf-securise-fonctionnalites-avancees.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/secure-pdf-sharing-advanced-features-ja.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/secure-pdf-sharing-advanced-features-zh.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.80</priority>
-</url>
-
-<!-- Additional Tools -->
-<url>
-  <loc>https://sendpdfonline.com/features/portifolio.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/platform.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/privnote.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/stop-pdf-sharing.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.70</priority>
-</url>
-<url>
-  <loc>https://sendpdfonline.com/features/set-pdf-print-restrictions.html</loc>
-  <lastmod>2025-04-15</lastmod>
-  <changefreq>monthly</changefreq>
-  <priority>0.70</priority>
-</url>
-
+    <!-- Additional Features -->
+    <url>
+        <loc>https://maipdf.com/features/pdf-collaboration-sharing.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/pdf-watermarking-branding.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/pdf-expiration-access-control.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/upload-secure-pdf.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/google-drive-vs-maipdf.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/user-friendly-pdf-viewer.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+    <url>
+        <loc>https://maipdf.com/features/free-pdf-sharing-platform.html</loc>
+        <lastmod>2024-04-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
 </urlset>
