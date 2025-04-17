@@ -3,215 +3,419 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MaiPDF - Professional PDF Sharing and Security Solutions. Secure PDF sharing, tracking, and analytics for businesses and individuals.">
+    <meta name="keywords" content="PDF sharing, PDF security, PDF tracking, PDF analytics, PDF watermark, PDF hosting, PDF collaboration">
+    <meta name="author" content="MaiPDF">
+    <meta property="og:title" content="MaiPDF - Professional PDF Sharing and Security">
+    <meta property="og:description" content="Secure PDF sharing, tracking, and analytics for businesses and individuals. Protect your documents with advanced security features.">
+    <meta property="og:image" content="/images/maipdf-logo.png">
+    <meta property="og:url" content="https://maipdf.com">
     <title>MaiPDF - Professional PDF Sharing and Security</title>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2C8C99;
+            --secondary-color: #45a3b1;
+            --accent-color: #ff9800;
+            --text-color: #333;
+            --light-bg: #f5f7f8;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        .language-section {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .content-section {
+            margin-bottom: 30px;
+        }
+        .content-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+        }
+        .content-section a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 8px 0;
+        }
+        .content-section a:hover {
+            color: var(--primary-color);
+        }
+        .content-section a i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .footer a:hover {
+            opacity: 0.8;
+        }
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        .language-selector .btn {
+            background: white;
+            color: var(--primary-color);
+            border: none;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .language-selector .btn:hover {
+            background: var(--light-bg);
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>MaiPDF</h1>
-        <p class="header-description">Professional PDF Sharing and Security Solutions</p>
-    </header>
+    <!-- Language Selector -->
+    <div class="language-selector">
+        <div class="btn-group">
+            <a href="https://maipdf.com" class="btn btn-sm">EN</a>
+            <a href="https://maipdf.cn" class="btn btn-sm">中文</a>
+            <a href="https://maipdf.de" class="btn btn-sm">DE</a>
+            <a href="https://maipdf.fr" class="btn btn-sm">FR</a>
+            <a href="https://maipdf.jp" class="btn btn-sm">日本語</a>
+        </div>
+    </div>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1><i class="fas fa-file-pdf"></i> MaiPDF</h1>
+            <p class="lead">Professional PDF Sharing and Security Solutions</p>
+            <a href="https://maipdf.com" class="cta-button">Get Started</a>
+        </div>
+    </div>
 
     <div class="container">
+        <!-- Core Features -->
+        <div class="row mb-5">
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>Security</h3>
+                    <p>Advanced PDF security features to protect your documents</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>Analytics</h3>
+                    <p>Track and analyze document access and usage</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-globe feature-icon"></i>
+                    <h3>Global</h3>
+                    <p>Available in multiple languages worldwide</p>
+                </div>
+            </div>
+        </div>
+
         <!-- English Features -->
         <div class="language-section">
-            <h2><i class="fas fa-globe"></i> English Features</h2>
+            <h2 class="section-title"><i class="fas fa-globe"></i> English Features</h2>
             
-            <div class="content-section">
-                <h3>Security Features</h3>
-                <ul>
-                    <li><a href="features/advanced-security-configurations.html">Advanced Security Configurations</a></li>
-                    <li><a href="features/secure-pdf-access-control.html">Secure PDF Access Control</a></li>
-                    <li><a href="features/secure-pdf-hosting.html">Secure PDF Hosting</a></li>
-                    <li><a href="features/secure-pdf-sharing-methods.html">Secure PDF Sharing Methods</a></li>
-                    <li><a href="features/pdf-security-best-practices.html">PDF Security Best Practices</a></li>
-                    <li><a href="features/pdf-security-challenges.html">PDF Security Challenges</a></li>
-                    <li><a href="features/pdf-security-features.html">PDF Security Features</a></li>
-                    <li><a href="features/pdf-security-regrets.html">PDF Security Regrets</a></li>
-                    <li><a href="features/PDF DRM.html">PDF DRM</a></li>
-                    <li><a href="features/free-drm-for-pdf.html">Free DRM for PDF</a></li>
-                    <li><a href="features/prevent-document-content-copying.html">Prevent Document Content Copying</a></li>
-                    <li><a href="features/preventbeingcopied.html">Prevent Being Copied</a></li>
-                    <li><a href="features/preventcopy.html">Prevent Copy</a></li>
-                    <li><a href="features/preventdownload.html">Prevent Download</a></li>
-                    <li><a href="features/prevention.html">Prevention</a></li>
-                    <li><a href="features/prevent_downloading_maipdf.html">Prevent Downloading MaiPDF</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Sharing & Hosting</h3>
-                <ul>
-                    <li><a href="features/anonymous-pdf-sharing.html">Anonymous PDF Sharing</a></li>
-                    <li><a href="features/free-pdf-hosting-and-sharing.html">Free PDF Hosting and Sharing</a></li>
-                    <li><a href="features/free-online-pdf-sharing-tool.html">Free Online PDF Sharing Tool</a></li>
-                    <li><a href="features/free-pdf-sharing-platform.html">Free PDF Sharing Platform</a></li>
-                    <li><a href="features/host-and-share-pdf-online.html">Host and Share PDF Online</a></li>
-                    <li><a href="features/hostonlineeasy.html">Host Online Easy</a></li>
-                    <li><a href="features/hostponline.html">Host PDF Online</a></li>
-                    <li><a href="features/how-to-share-pdf-online.html">How to Share PDF Online</a></li>
-                    <li><a href="features/pdf-host-online.html">PDF Host Online</a></li>
-                    <li><a href="features/pdf-hosting-online.html">PDF Hosting Online</a></li>
-                    <li><a href="features/share-pdf-files-online.html">Share PDF Files Online</a></li>
-                    <li><a href="features/share-pdf-online-securely.html">Share PDF Online Securely</a></li>
-                    <li><a href="features/sharebylink.html">Share by Link</a></li>
-                    <li><a href="features/sharedocuonlinefree.html">Share Documents Online Free</a></li>
-                    <li><a href="features/shareeasily.html">Share Easily</a></li>
-                    <li><a href="features/shareitonline.html">Share it Online</a></li>
-                    <li><a href="features/sharepdf.html">Share PDF</a></li>
-                    <li><a href="features/sharepdfsfilesonline.html">Share PDFs Files Online</a></li>
-                    <li><a href="features/sharesecure.html">Share Secure</a></li>
-                    <li><a href="features/Share_PDF_Online.html">Share PDF Online</a></li>
-                    <li><a href="features/share_pdf_securely.html">Share PDF Securely</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Design & Portfolio</h3>
-                <ul>
-                    <li><a href="features/design-file-organization.html">Design File Organization</a></li>
-                    <li><a href="features/design-portfolio-tracking.html">Design Portfolio Tracking</a></li>
-                    <li><a href="features/design-project-collaboration.html">Design Project Collaboration</a></li>
-                    <li><a href="features/design-watermark-protection.html">Design Watermark Protection</a></li>
-                    <li><a href="features/design-work-sharing.html">Design Work Sharing</a></li>
-                    <li><a href="features/designer-portfolio-pdf.html">Designer Portfolio PDF</a></li>
-                    <li><a href="features/share-design-portfolio.html">Share Design Portfolio</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Advanced Features</h3>
-                <ul>
-                    <li><a href="features/convert-pdf-to-qr-code.html">Convert PDF to QR Code</a></li>
-                    <li><a href="features/convert-pdf-to-secure-links.html">Convert PDF to Secure Links</a></li>
-                    <li><a href="features/dynamic-watermark-tracking.html">Dynamic Watermark Tracking</a></li>
-                    <li><a href="features/email-verification-secure-pdf-access.html">Email Verification for Secure PDF Access</a></li>
-                    <li><a href="features/set-expiration-date-for-pdfs.html">Set Expiration Date for PDFs</a></li>
-                    <li><a href="features/set-pdf-print-restrictions.html">Set PDF Print Restrictions</a></li>
-                    <li><a href="features/setup-dynamic-watermarks.html">Setup Dynamic Watermarks</a></li>
-                    <li><a href="features/sms_verify.html">SMS Verify</a></li>
-                    <li><a href="features/time-limits-pdf-files.html">Time Limits PDF Files</a></li>
-                    <li><a href="features/trackpdfopen.html">Track PDF Open</a></li>
-                    <li><a href="features/pdf-tracking-analytics.html">PDF Tracking Analytics</a></li>
-                    <li><a href="features/pdf-tracking-comparison.html">PDF Tracking Comparison</a></li>
-                    <li><a href="features/pdf-view-tracking.html">PDF View Tracking</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Comparisons & Alternatives</h3>
-                <ul>
-                    <li><a href="features/cloud-share-vs-offline-version.html">Cloud Share vs Offline Version</a></li>
-                    <li><a href="features/free-alternative-to-digify-locklizard.html">Free Alternative to Digify Locklizard</a></li>
-                    <li><a href="features/google-drive-vs-maipdf.html">Google Drive vs MaiPDF</a></li>
-                    <li><a href="features/locklizard-vs-maipdf-comparison.html">Locklizard vs MaiPDF Comparison</a></li>
-                </ul>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-lock"></i> Security Features</h3>
+                        <ul>
+                            <li><a href="features/pdf-security-features.html"><i class="fas fa-shield-alt"></i> PDF Security Features</a></li>
+                            <li><a href="features/secure-pdf-access-control.html"><i class="fas fa-key"></i> Secure PDF Access Control</a></li>
+                            <li><a href="features/secure-pdf-hosting.html"><i class="fas fa-server"></i> Secure PDF Hosting</a></li>
+                            <li><a href="features/pdf-security-best-practices.html"><i class="fas fa-check-circle"></i> PDF Security Best Practices</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-chart-bar"></i> Tracking & Analytics</h3>
+                        <ul>
+                            <li><a href="features/pdf-tracking-analytics.html"><i class="fas fa-chart-line"></i> PDF Tracking & Analytics</a></li>
+                            <li><a href="features/dynamic-watermark-tracking.html"><i class="fas fa-water"></i> Dynamic Watermark Tracking</a></li>
+                            <li><a href="features/pdf-tracking-comparison.html"><i class="fas fa-balance-scale"></i> PDF Tracking Comparison</a></li>
+                            <li><a href="features/pdf-view-tracking.html"><i class="fas fa-eye"></i> PDF View Tracking</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-share-alt"></i> Sharing & Hosting</h3>
+                        <ul>
+                            <li><a href="features/share-pdf-online-securely.html"><i class="fas fa-share-square"></i> Share PDF Online Securely</a></li>
+                            <li><a href="features/pdf-host-online.html"><i class="fas fa-cloud"></i> PDF Host Online</a></li>
+                            <li><a href="features/pdf-hosting-online.html"><i class="fas fa-database"></i> PDF Hosting Online</a></li>
+                            <li><a href="features/share-pdf-files-online.html"><i class="fas fa-file-export"></i> Share PDF Files Online</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Chinese Features -->
         <div class="language-section">
-            <h2><i class="fas fa-language"></i> 中文功能</h2>
-            <div class="content-section">
-                <h3>基本功能</h3>
-                <ul>
-                    <li><a href="features/共享.html">PDF 共享</a></li>
-                    <li><a href="features/动态水印.html">动态水印</a></li>
-                    <li><a href="features/阅读记录.html">阅读记录</a></li>
-                    <li><a href="features/动态水印maipdf.html">动态水印 MaiPDF</a></li>
-                    <li><a href="features/zuopinji.html">作品集</a></li>
-                    <li><a href="features/zihui.html">自绘</a></li>
-                    <li><a href="features/whichone.html">哪一个</a></li>
-                    <li><a href="features/wendang.html">文档</a></li>
-                    <li><a href="features/waystosend.html">发送方式</a></li>
-                    <li><a href="features/waysmulti.html">多种方式</a></li>
-                    <li><a href="features/waterMaipdf.html">水印 MaiPDF</a></li>
-                    <li><a href="features/waifa.html">外发</a></li>
-                    <li><a href="features/teda.html">特打</a></li>
-                    <li><a href="features/saomiao.html">扫描</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>高级功能</h3>
-                <ul>
-                    <li><a href="features/maipdf-cloud-sharing-zh.html">MaiPDF 云共享</a></li>
-                    <li><a href="features/maipdf-pdf-hosting-full-cn.html">MaiPDF PDF 托管</a></li>
-                    <li><a href="features/maipdf-secure-pdf-hosting-cn.html">MaiPDF 安全托管</a></li>
-                    <li><a href="features/encrypt-pdf-prevent-editing-cn.html">PDF 加密防编辑</a></li>
-                    <li><a href="features/pdf-online-hosting-and-sharing-zh.html">PDF 在线托管和共享</a></li>
-                    <li><a href="features/quick-pdf-sharing-and-link-generation-zh.html">快速 PDF 共享和链接生成</a></li>
-                    <li><a href="features/convert-pdf-to-shareable-link-zh.html">将 PDF 转换为可共享链接</a></li>
-                </ul>
+            <h2 class="section-title"><i class="fas fa-language"></i> 中文功能</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-lock"></i> 安全功能</h3>
+                        <ul>
+                            <li><a href="features/动态水印.html"><i class="fas fa-water"></i> 动态水印</a></li>
+                            <li><a href="features/阅读记录.html"><i class="fas fa-history"></i> 阅读记录</a></li>
+                            <li><a href="features/动态水印maipdf.html"><i class="fas fa-qrcode"></i> 动态水印 MaiPDF</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-share-alt"></i> 共享功能</h3>
+                        <ul>
+                            <li><a href="features/共享.html"><i class="fas fa-share-square"></i> PDF 共享</a></li>
+                            <li><a href="features/waystosend.html"><i class="fas fa-paper-plane"></i> 发送方式</a></li>
+                            <li><a href="features/waysmulti.html"><i class="fas fa-exchange-alt"></i> 多种方式</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-briefcase"></i> 专业功能</h3>
+                        <ul>
+                            <li><a href="features/zuopinji.html"><i class="fas fa-images"></i> 作品集</a></li>
+                            <li><a href="features/zihui.html"><i class="fas fa-paint-brush"></i> 自绘</a></li>
+                            <li><a href="features/shejishi.html"><i class="fas fa-pencil-ruler"></i> 设计师</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
 
-        <!-- Other Languages -->
+        <!-- German Features -->
         <div class="language-section">
-            <h2><i class="fas fa-globe-americas"></i> Other Languages</h2>
-            <div class="content-section">
-                <h3>French (Français)</h3>
-                <ul>
-                    <li><a href="features/dynamic-qr-watermark-pdf-fr.html">Filigrane QR Dynamique PDF</a></li>
-                    <li><a href="features/keycodeEN.html">Code Clé</a></li>
-                    <li><a href="features/partage-pdf-securise-fonctionnalites-avancees.html">Partage PDF Sécurisé</a></li>
-                    <li><a href="features/pdf-online-hosting-and-sharing-fr.html">Hébergement et Partage PDF</a></li>
-                </ul>
+            <h2 class="section-title"><i class="fas fa-globe-europe"></i> Deutsche Funktionen</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-lock"></i> Sicherheit</h3>
+                        <ul>
+                            <li><a href="german/sicheres-pdf-teilen.html"><i class="fas fa-shield-alt"></i> Sicheres PDF Teilen</a></li>
+                            <li><a href="german/zugriffskontrolle.html"><i class="fas fa-key"></i> Zugriffskontrolle</a></li>
+                            <li><a href="german/passwortschutz.html"><i class="fas fa-lock"></i> Passwortschutz</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-chart-bar"></i> Analyse</h3>
+                        <ul>
+                            <li><a href="german/pdf-analytik.html"><i class="fas fa-chart-line"></i> PDF Analytik</a></li>
+                            <li><a href="german/nutzungsstatistiken.html"><i class="fas fa-chart-pie"></i> Nutzungsstatistiken</a></li>
+                            <li><a href="german/dynamische-wasserzeichen.html"><i class="fas fa-water"></i> Dynamische Wasserzeichen</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-cogs"></i> Funktionen</h3>
+                        <ul>
+                            <li><a href="german/pdf-zusammenarbeit.html"><i class="fas fa-users"></i> PDF Zusammenarbeit</a></li>
+                            <li><a href="german/qr-code-funktionen.html"><i class="fas fa-qrcode"></i> QR-Code Funktionen</a></li>
+                            <li><a href="german/druckkontrolle.html"><i class="fas fa-print"></i> Druckkontrolle</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="content-section">
-                <h3>German (Deutsch)</h3>
-                <ul>
-                    <li><a href="german/ablauftermine.html">PDF Ablauftermine</a></li>
-                    <li><a href="german/dokumenten-branding.html">Dokumenten-Branding</a></li>
-                    <li><a href="german/druckkontrolle.html">PDF Druckkontrolle</a></li>
-                    <li><a href="german/dynamische-wasserzeichen.html">Dynamische Wasserzeichen</a></li>
-                    <li><a href="german/email-verifizierung.html">E-Mail-Verifizierung</a></li>
-                    <li><a href="german/mobiler-zugriff.html">Mobiler PDF-Zugriff</a></li>
-                    <li><a href="german/nutzungsstatistiken.html">PDF Nutzungsstatistiken</a></li>
-                    <li><a href="german/offline-zugriff.html">PDF Offline-Zugriff</a></li>
-                    <li><a href="german/passwortschutz.html">PDF Passwortschutz</a></li>
-                    <li><a href="german/pdf-analytik.html">PDF Analytik</a></li>
-                    <li><a href="german/pdf-zusammenarbeit.html">PDF Zusammenarbeit</a></li>
-                    <li><a href="german/qr-code-funktionen.html">PDF QR-Code Funktionen</a></li>
-                    <li><a href="german/sicheres-pdf-teilen.html">Sicheres PDF Teilen</a></li>
-                    <li><a href="german/zugriffskontrolle.html">PDF Zugriffskontrolle</a></li>
-                </ul>
+        <!-- Japanese Features -->
+        <div class="language-section">
+            <h2 class="section-title"><i class="fas fa-globe-asia"></i> 日本語機能</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-lock"></i> セキュリティ機能</h3>
+                        <ul>
+                            <li><a href="japanese/pdf-security-features.html"><i class="fas fa-shield-alt"></i> PDFセキュリティ機能</a></li>
+                            <li><a href="japanese/dynamic-watermark.html"><i class="fas fa-water"></i> 動的透かし</a></li>
+                            <li><a href="japanese/view-tracking.html"><i class="fas fa-eye"></i> 閲覧追跡</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-share-alt"></i> 共有機能</h3>
+                        <ul>
+                            <li><a href="japanese/pdf-tracking-sharing.html"><i class="fas fa-share-square"></i> PDF共有と追跡</a></li>
+                            <li><a href="japanese/share-pdf.html"><i class="fas fa-paper-plane"></i> PDF共有</a></li>
+                            <li><a href="japanese/collaboration.html"><i class="fas fa-users"></i> コラボレーション</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-chart-line"></i> 分析機能</h3>
+                        <ul>
+                            <li><a href="japanese/analytics.html"><i class="fas fa-chart-bar"></i> PDF分析</a></li>
+                            <li><a href="japanese/tracking.html"><i class="fas fa-search"></i> 追跡機能</a></li>
+                            <li><a href="japanese/reports.html"><i class="fas fa-file-alt"></i> レポート</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="content-section">
-                <h3>Japanese (日本語)</h3>
-                <ul>
-                    <li><a href="features/dynamic-qr-watermark-pdf-jp.html">動的QRウォーターマークPDF</a></li>
-                    <li><a href="features/keycodeJP.html">キーコード</a></li>
-                    <li><a href="features/secure-pdf-sharing-advanced-features-ja.html">セキュアPDF共有</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Spanish (Español)</h3>
-                <ul>
-                    <li><a href="features/dynamic-qr-watermark-pdf-es.html">Marca de agua QR dinámica PDF</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Other Languages</h3>
-                <ul>
-                    <li><a href="features/keycodeItalian.html">Codice Chiave (Italian)</a></li>
-                    <li><a href="features/keycodeViet.html">Mã khóa (Vietnamese)</a></li>
-                </ul>
+        <!-- Use Cases -->
+        <div class="language-section">
+            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Use Cases</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-briefcase"></i> Business</h3>
+                        <ul>
+                            <li><a href="usecase/secure-pdf-sharing.html"><i class="fas fa-shield-alt"></i> Secure PDF Sharing</a></li>
+                            <li><a href="usecase/pdf-access-control.html"><i class="fas fa-key"></i> PDF Access Control</a></li>
+                            <li><a href="usecase/pdf-branding.html"><i class="fas fa-trademark"></i> PDF Branding</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-users"></i> Collaboration</h3>
+                        <ul>
+                            <li><a href="usecase/pdf-collaboration.html"><i class="fas fa-users"></i> PDF Collaboration</a></li>
+                            <li><a href="usecase/pdf-embedding.html"><i class="fas fa-code"></i> PDF Embedding</a></li>
+                            <li><a href="usecase/free-pdf-hosting.html"><i class="fas fa-cloud"></i> Free PDF Hosting</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="content-section">
+                        <h3><i class="fas fa-chart-line"></i> Analytics</h3>
+                        <ul>
+                            <li><a href="usecase/pdf-sharing-analytics.html"><i class="fas fa-chart-bar"></i> PDF Sharing Analytics</a></li>
+                            <li><a href="usecase/track-pdf-usage.html"><i class="fas fa-eye"></i> Track PDF Usage</a></li>
+                            <li><a href="usecase/pdf-watermarking.html"><i class="fas fa-water"></i> PDF Watermarking</a></li>
+                        </ul>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer class="content-section">
-        <div style="text-align: center;">
-            <a href="https://maipdf.com" class="maipdf-button">Visit MaiPDF.com</a>
-            <a href="https://maipdf.cn" class="maipdf-button" style="margin-left: 1rem;">访问 MaiPDF.cn</a>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>MaiPDF</h4>
+                    <p>Professional PDF Sharing and Security Solutions</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>Quick Links</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="https://maipdf.com">Home</a></li>
+                        <li><a href="features/pdf-security-features.html">Security Features</a></li>
+                        <li><a href="features/pdf-tracking-analytics.html">Tracking & Analytics</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>Contact</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:support@maipdf.com">support@maipdf.com</a></li>
+                        <li><a href="https://maipdf.com/contact">Contact Us</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+            </div>
         </div>
-        <p style="text-align: center; margin-top: 2rem;">&copy; 2025 MaiPDF. All rights reserved.</p>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

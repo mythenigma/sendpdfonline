@@ -1,147 +1,193 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="了解如何通过Maipdf网站保护发出去的PDF文件，防止文件被转发。Maipdf提供多种功能以确保文件不被随意传播，确保您的内容安全。">
-  <meta name="keywords" content="Maipdf, PDF分享, 防止转发, 文件保护, 上传PDF, 安全文件, PDF分享链接">
-  <title>发出去的PDF文件防止被转发 - Maipdf</title>
-
-  <!-- Bootstrap 5 CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-
-  <!-- Font Awesome CDN -->
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <style>
-    body {
-      background-color: #f9f9f9;
-      color: #333;
-      padding-bottom: 60px; /* 保证footer在页面底部 */
-    }
-    .header {
-      background-color: #ff6347; /* 橘色或红色 */
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-    }
-    .container {
-      margin-top: 40px;
-    }
-    .card {
-      border: 1px solid #ff6347;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .btn-primary {
-      background-color: #007bff;
-    }
-    .footer {
-      background-color: #ff6347;
-      color: white;
-      padding: 20px 0;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-    }
-    .content-section {
-      padding: 20px;
-    }
-    .icon {
-      font-size: 2rem;
-      color: #ff6347;
-    }
-    .image-section img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .row-layout {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-bottom: 20px;
-    }
-    .text-section {
-      width: 50%;
-    }
-    .image-section {
-      width: 45%;
-    }
-    .image-section img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Learn how to prevent PDF forwarding with MaiPDF. Our platform offers multiple security features including dynamic watermarks, access control, and expiration dates to protect your documents.">
+    <meta name="keywords" content="MaiPDF, PDF security, prevent forwarding, document protection, secure PDF sharing, dynamic watermark, PDF access control, PDF expiration">
+    <meta name="author" content="MaiPDF">
+    <meta property="og:title" content="Prevent PDF Forwarding - MaiPDF | Secure PDF Sharing">
+    <meta property="og:description" content="Learn how to prevent PDF forwarding with MaiPDF's advanced security features including dynamic watermarks, access control, and expiration dates.">
+    <meta property="og:image" content="/images/dynamic-qr-watermark.png">
+    <meta property="og:url" content="https://maipdf.com/features/prevent-pdf-forwarding-dynamicqr.html">
+    <title>Prevent PDF Forwarding - MaiPDF | Secure PDF Sharing</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            background-color: #f5f7f8;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(to right, #2C8C99, #45a3b1);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+        .feature-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            transition: transform 0.2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .icon {
+            font-size: 2rem;
+            color: #2C8C99;
+            margin-bottom: 15px;
+        }
+        .security-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .related-features {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .footer-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .footer-links a {
+            color: #2C8C99;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer-links a:hover {
+            color: #45a3b1;
+        }
+        .btn-primary {
+            background-color: #2C8C99;
+            border-color: #2C8C99;
+        }
+        .btn-primary:hover {
+            background-color: #45a3b1;
+            border-color: #45a3b1;
+        }
+    </style>
 </head>
 <body>
-
-  <!-- Header Section -->
-  <div class="header">
-    <h1>发出去的PDF文件防止被转发</h1>
-    <p>Maipdf网站帮助您确保发出去的PDF文件不会被随意转发和传播。</p>
-  </div>
-
-  <!-- Main Content Section -->
-  <div class="container">
-    <div class="content-section">
-      <h2><i class="fas fa-file-pdf icon"></i> 为什么需要防止PDF文件被转发？</h2>
-      <p>PDF文件作为一种常见的文件格式，广泛用于各种正式场合和文件传输。然而，文件一旦发出去，接收者可能会将其转发给其他人，导致文件内容泄露或未经授权传播。为了保护文件的机密性，Maipdf提供了多种方法来防止PDF文件被转发。</p>
-
-      <h3><i class="fas fa-shield-alt icon"></i> Maipdf如何防止PDF文件被转发？</h3>
-      <p>Maipdf通过以下几种方式，帮助您防止PDF文件被转发或共享：</p>
-
-      <h4><i class="fas fa-link icon"></i> 设置分享链接有效期</h4>
-      <p>通过Maipdf，您可以为PDF文件设置分享链接的有效期。设置一个有限的访问时间段，可以确保文件在过期后无法继续访问，避免被未授权的第三方获取。</p>
-
-      <div class="row-layout">
-        <div class="text-section">
-          <h5><i class="fas fa-clock icon"></i> 设置文件过期时间</h5>
-          <p>您可以设置PDF文件的过期时间，文件一旦过期，任何尝试访问链接的行为都会被拒绝。这有效地防止了文件被永久保存或转发给其他人。</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #2C8C99, #45a3b1);">
+        <div class="container">
+            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://maipdf.com">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pdf-security-features.html">Security Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dynamic-watermark-tracking.html">Dynamic Watermark</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pdf-tracking-analytics.html">View Tracking</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-        <div class="image-section">
-          <img src="https://maipdf.com/pictures/MaiFile/setting2025.png" alt="设置文件过期时间">
-        </div>
-      </div>
+    </nav>
 
-      <h4><i class="fas fa-key icon"></i> 密码保护</h4>
-      <p>除了设置有效期外，Maipdf还允许您为文件添加密码保护。只有输入正确的密码，接收者才能打开文件，增加了一层安全防护，避免文件被未经授权的人访问。</p>
-
-      <h4><i class="fas fa-watermark icon"></i> 动态水印</h4>
-      <p>为了进一步追踪文件的传播，Maipdf为您的PDF文件添加了动态水印。每次文件被查看时，水印中会嵌入查看者的信息，如IP地址、浏览器信息等，这样可以有效追溯文件来源。</p>
-
-      <div class="row-layout">
-        <div class="text-section">
-          <h5><i class="fas fa-search icon"></i> 动态水印展示</h5>
-          <p>通过动态水印，您可以对每一份文件的查看者进行追踪，确保文件没有被随意转发。</p>
-        </div>
-        <div class="image-section">
-          <img src="https://maipdf.com/pictures/MaiFile/jietu%20.png" alt="动态水印展示">
-        </div>
-      </div>
-
-      <h4><i class="fas fa-ban icon"></i> 禁止转发和下载</h4>
-      <p>为了确保文件不被下载或转发，Maipdf还可以限制文件的下载和转发功能。文件将仅能在线查看，避免在任何设备上保存副本。</p>
-
-      <h3><i class="fas fa-thumbs-up icon"></i> 总结</h3>
-      <p>通过Maipdf平台，您不仅能够方便地分享PDF文件，还可以利用多种安全设置来防止文件被转发或泄露。无论是通过设置过期时间、密码保护、动态水印，还是禁用下载和转发功能，Maipdf都提供了一整套解决方案，帮助您保护敏感内容，确保文件的机密性。</p>
+    <!-- Header Section -->
+    <div class="header">
+        <h1><i class="fas fa-shield-alt"></i> Prevent PDF Forwarding</h1>
+        <p class="lead">MaiPDF helps you ensure your shared PDFs remain secure and protected from unauthorized forwarding</p>
     </div>
 
-    <!-- Call to Action Section -->
-    <div class="text-center">
-      <a href="https://www.maipdf.cn" class="btn btn-primary btn-lg"><i class="fas fa-cloud-upload-alt"></i> 立即上传PDF</a>
+    <div class="container">
+        <!-- Main Content -->
+        <section>
+            <div class="feature-card">
+                <h2><i class="fas fa-file-pdf icon"></i> Why Prevent PDF Forwarding?</h2>
+                <p>PDFs are commonly used for sharing important documents, but once shared, recipients might forward them to others, potentially compromising sensitive information. MaiPDF provides multiple methods to prevent unauthorized PDF forwarding and protect your content.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fas fa-shield-alt icon"></i> How MaiPDF Prevents PDF Forwarding</h3>
+                <p>MaiPDF offers several powerful features to prevent PDF forwarding and unauthorized sharing:</p>
+            </div>
+
+            <div class="feature-card">
+                <h4><i class="fas fa-link icon"></i> Share Link Expiration</h4>
+                <p>With MaiPDF, you can set expiration dates for your PDF share links. This ensures that files become inaccessible after a specified period, preventing unauthorized access. Learn more about <a href="set-expiration-date-for-pdfs.html">setting PDF expiration dates</a>.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4><i class="fas fa-clock icon"></i> File Expiration</h4>
+                <p>Set specific expiration times for your PDFs. Once expired, any attempts to access the file will be denied, effectively preventing permanent storage or forwarding to others.</p>
+                <img src="/images/setting2025.png" alt="File expiration settings" class="security-image">
+            </div>
+
+            <div class="feature-card">
+                <h4><i class="fas fa-key icon"></i> Password Protection</h4>
+                <p>In addition to expiration dates, MaiPDF allows you to add password protection to your files. Only recipients with the correct password can access the content, adding an extra layer of security. Discover more about <a href="secure-pdf-access-control.html">PDF access control</a>.</p>
+            </div>
+
+            <div class="feature-card">
+                <h4><i class="fas fa-watermark icon"></i> Dynamic Watermark</h4>
+                <p>To track document distribution, MaiPDF adds dynamic watermarks to your PDFs. Each time the file is viewed, the watermark embeds viewer information like IP address and browser details, helping trace the source of any unauthorized sharing. Explore the <a href="dynamic-watermark-tracking.html">dynamic watermark feature</a> in detail.</p>
+                <img src="/images/dynamic-qr-watermark.png" alt="Dynamic watermark example" class="security-image">
+            </div>
+
+            <div class="feature-card">
+                <h4><i class="fas fa-ban icon"></i> Prevent Download and Forwarding</h4>
+                <p>To ensure files can't be downloaded or forwarded, MaiPDF can restrict these functions. Files can only be viewed online, preventing the creation of local copies. Learn more about <a href="preventdownload.html">preventing downloads</a>.</p>
+            </div>
+
+            <div class="feature-card">
+                <h3><i class="fas fa-thumbs-up icon"></i> Summary</h3>
+                <p>MaiPDF provides a comprehensive solution for secure PDF sharing. Whether through expiration dates, password protection, dynamic watermarks, or download restrictions, our platform offers multiple layers of security to protect your sensitive content and maintain document confidentiality.</p>
+            </div>
+
+            <!-- Related Features -->
+            <div class="related-features">
+                <h3>Related Features</h3>
+                <ul>
+                    <li><a href="dynamic-watermark-tracking.html">Dynamic Watermark</a></li>
+                    <li><a href="pdf-tracking-analytics.html">View Tracking</a></li>
+                    <li><a href="preventdownload.html">Prevent Download</a></li>
+                    <li><a href="set-pdf-print-restrictions.html">Print Restrictions</a></li>
+                    <li><a href="pdf-security-features.html">PDF Security Features</a></li>
+                </ul>
+            </div>
+
+            <!-- Call to Action -->
+            <div class="text-center mt-4">
+                <a href="https://maipdf.com" class="btn btn-primary btn-lg"><i class="fas fa-cloud-upload-alt"></i> Upload PDF Now</a>
+            </div>
+        </section>
+
+        <div class="footer-links">
+            <a href="https://maipdf.com">Visit MaiPDF.com</a>
+            <a href="features/pdf-security-features.html">Security Features</a>
+            <a href="features/secure-pdf-hosting.html">Secure Hosting</a>
+        </div>
     </div>
-  </div>
 
-  <!-- Footer Section -->
-  <div class="footer">
-    <p>&copy; 2025 Maipdf. 版权所有。</p>
-  </div>
-
-  <!-- Bootstrap 5 & Font Awesome JS -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

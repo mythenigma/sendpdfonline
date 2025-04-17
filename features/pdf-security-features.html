@@ -3,18 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Discover MaiPDF's comprehensive security features for protecting your PDF documents. Control access, prevent copying, and secure your sensitive information with advanced PDF security solutions.">
+    <meta name="keywords" content="PDF security, PDF protection, secure PDF, PDF access control, PDF security features, MaiPDF security, PDF document protection, PDF encryption, PDF DRM, PDF watermark">
+    <meta name="author" content="MaiPDF">
+    <meta property="og:title" content="PDF Security Features - MaiPDF | Protect Your PDF Documents">
+    <meta property="og:description" content="Explore MaiPDF's advanced PDF security features including access control, view limits, expiration dates, and copy prevention to protect your sensitive documents.">
+    <meta property="og:image" content="/images/security.png">
+    <meta property="og:url" content="https://maipdf.com/features/pdf-security-features.html">
     <title>PDF Security Features - MaiPDF | Protect Your PDF Documents</title>
-    <meta name="description" content="Discover MaiPDF's comprehensive security features for protecting your PDF documents. Control access, prevent copying, and secure your sensitive information.">
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     <style>
         body {
             font-family: Arial, sans-serif;
             line-height: 1.6;
-            max-width: 800px;
+            background-color: #f5f7f8;
+            color: #333;
+        }
+        .header {
+            background: linear-gradient(to right, #2C8C99, #45a3b1);
+            color: white;
+            padding: 40px 0;
+            text-align: center;
+            margin-bottom: 30px;
+        }
+        .container {
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 20px;
+            padding: 0 20px;
+        }
+        .content-wrapper {
+            background-color: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            margin-bottom: 30px;
         }
         h1, h2 {
-            color: #333;
+            color: #2C8C99;
         }
         .security-grid {
             display: grid;
@@ -24,89 +53,198 @@
         }
         .security-feature {
             background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            border-left: 4px solid #1a73e8;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #2C8C99;
+            transition: transform 0.2s;
+        }
+        .security-feature:hover {
+            transform: translateY(-5px);
         }
         .use-cases {
             background-color: #f9f9f9;
-            padding: 20px;
-            border-radius: 5px;
+            padding: 25px;
+            border-radius: 8px;
             margin: 20px 0;
+        }
+        .feature-icon {
+            color: #2C8C99;
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+        .footer-links {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .footer-links a {
+            color: #2C8C99;
+            text-decoration: none;
+            margin: 0 15px;
+        }
+        .footer-links a:hover {
+            color: #45a3b1;
+        }
+        .security-image {
+            max-width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin: 20px 0;
+        }
+        .benefits-list {
+            list-style-type: none;
+            padding-left: 0;
+        }
+        .benefits-list li {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .benefits-list li i {
+            position: absolute;
+            left: 0;
+            top: 3px;
+            color: #2C8C99;
+        }
+        .cta-button {
+            text-align: center;
+            margin: 30px 0;
+        }
+        .btn-primary {
+            background-color: #2C8C99;
+            border-color: #2C8C99;
+            padding: 12px 30px;
+            font-size: 1.1rem;
+        }
+        .btn-primary:hover {
+            background-color: #45a3b1;
+            border-color: #45a3b1;
         }
     </style>
 </head>
 <body>
-    <h1>PDF Security Features by MaiPDF</h1>
-    
-    <p>MaiPDF provides robust security features to protect your PDF documents from unauthorized access and distribution. These features are designed to give you complete control over how your documents are viewed and shared.</p>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #2C8C99, #45a3b1);">
+        <div class="container">
+            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://maipdf.com">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pdf-security-features.html">Security Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="dynamic-watermark-tracking.html">Dynamic Watermark</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pdf-tracking-analytics.html">View Tracking</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-    <div class="security-grid">
-        <div class="security-feature">
-            <h3>Access Control</h3>
-            <p>Set specific viewing permissions and control who can access your documents.</p>
+    <!-- Header Section -->
+    <div class="header">
+        <h1><i class="fas fa-shield-alt"></i> PDF Security Features by MaiPDF</h1>
+        <p class="lead">Comprehensive security solutions to protect your sensitive PDF documents</p>
+    </div>
+
+    <div class="container">
+        <div class="content-wrapper">
+            <p>MaiPDF provides robust security features to protect your PDF documents from unauthorized access and distribution. These features are designed to give you complete control over how your documents are viewed and shared.</p>
+
+            <img src="/images/security.png" alt="MaiPDF Security Features Overview" class="security-image">
+
+            <div class="security-grid">
+                <div class="security-feature">
+                    <i class="fas fa-lock feature-icon"></i>
+                    <h3>Access Control</h3>
+                    <p>Set specific viewing permissions and control who can access your documents. Learn more about <a href="secure-pdf-access-control.html">secure PDF access control</a>.</p>
+                </div>
+                <div class="security-feature">
+                    <i class="fas fa-eye feature-icon"></i>
+                    <h3>View Limits</h3>
+                    <p>Restrict the number of times a document can be viewed. Discover how to <a href="time-limits-pdf-files.html">set time limits for PDF files</a>.</p>
+                </div>
+                <div class="security-feature">
+                    <i class="fas fa-clock feature-icon"></i>
+                    <h3>Expiration Dates</h3>
+                    <p>Set automatic expiration for document access. Read about <a href="set-expiration-date-for-pdfs.html">setting expiration dates for PDFs</a>.</p>
+                </div>
+                <div class="security-feature">
+                    <i class="fas fa-copy feature-icon"></i>
+                    <h3>Copy Prevention</h3>
+                    <p>Prevent unauthorized copying of document content. Explore <a href="prevent-document-content-copying.html">document content copying prevention</a>.</p>
+                </div>
+            </div>
+
+            <h2>Key Security Features</h2>
+            <ul class="benefits-list">
+                <li><i class="fas fa-chart-line"></i> Document access tracking and analytics - <a href="pdf-tracking-analytics.html">Learn more</a></li>
+                <li><i class="fas fa-cog"></i> Customizable security settings</li>
+                <li><i class="fas fa-user-check"></i> Viewer authentication options - <a href="email-verification-secure-pdf-access.html">Email verification</a></li>
+                <li><i class="fas fa-download"></i> Download prevention - <a href="preventdownload.html">Prevent download</a></li>
+                <li><i class="fas fa-print"></i> Printing restrictions - <a href="set-pdf-print-restrictions.html">Print restrictions</a></li>
+                <li><i class="fas fa-share"></i> Forwarding prevention - <a href="prevent-pdf-forwarding-dynamicqr.html">Prevent forwarding</a></li>
+            </ul>
+
+            <div class="use-cases">
+                <h2>Common Use Cases</h2>
+                <h3>Business Documents</h3>
+                <p>Protect sensitive business information, contracts, and proposals with controlled access and viewing limits. Learn about <a href="pdf-security-best-practices.html">PDF security best practices</a> for business.</p>
+                
+                <h3>Educational Materials</h3>
+                <p>Share course materials while preventing unauthorized distribution. Discover how to <a href="prevent-document-content-copying.html">prevent content copying</a>.</p>
+                
+                <h3>Legal Documents</h3>
+                <p>Secure confidential legal documents with expiration dates and access controls. Read about <a href="secure-pdf-hosting.html">secure PDF hosting</a> for legal documents.</p>
+            </div>
+
+            <h2>How to Secure Your PDFs</h2>
+            <ol>
+                <li>Upload your PDF document to MaiPDF</li>
+                <li>Select your desired security settings</li>
+                <li>Set access controls and restrictions</li>
+                <li>Share the secure link with authorized viewers</li>
+            </ol>
+
+            <h2>Benefits of MaiPDF's Security Features</h2>
+            <ul class="benefits-list">
+                <li><i class="fas fa-check-circle"></i> <strong>Peace of Mind:</strong> Know your documents are protected</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Control:</strong> Maintain authority over document access</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Flexibility:</strong> Customize security settings to your needs</li>
+                <li><i class="fas fa-check-circle"></i> <strong>Tracking:</strong> Monitor document access and usage</li>
+            </ul>
+
+            <div class="cta-button">
+                <a href="https://maipdf.com" class="btn btn-primary btn-lg"><i class="fas fa-shield-alt"></i> Start Protecting Your PDFs</a>
+            </div>
+
+            <div class="related-content">
+                <h2>Related Features</h2>
+                <ul>
+                    <li><a href="pdf-security-best-practices.html">PDF Security Best Practices</a></li>
+                    <li><a href="secure-pdf-access-control.html">Secure PDF Access Control</a></li>
+                    <li><a href="advanced-security-configurations.html">Advanced Security Configurations</a></li>
+                    <li><a href="dynamic-watermark-tracking.html">Dynamic Watermark</a></li>
+                    <li><a href="pdf-tracking-analytics.html">View Tracking</a></li>
+                </ul>
+            </div>
         </div>
-        <div class="security-feature">
-            <h3>View Limits</h3>
-            <p>Restrict the number of times a document can be viewed.</p>
-        </div>
-        <div class="security-feature">
-            <h3>Expiration Dates</h3>
-            <p>Set automatic expiration for document access.</p>
-        </div>
-        <div class="security-feature">
-            <h3>Copy Prevention</h3>
-            <p>Prevent unauthorized copying of document content.</p>
+
+        <div class="footer-links">
+            <a href="https://maipdf.com">Visit MaiPDF.com</a>
+            <a href="features/pdf-security-best-practices.html">Security Best Practices</a>
+            <a href="features/secure-pdf-hosting.html">Secure Hosting</a>
         </div>
     </div>
 
-    <h2>Key Security Features</h2>
-    <ul>
-        <li>Document access tracking and analytics</li>
-        <li>Customizable security settings</li>
-        <li>Viewer authentication options</li>
-        <li>Download prevention</li>
-        <li>Printing restrictions</li>
-        <li>Forwarding prevention</li>
-    </ul>
-
-    <div class="use-cases">
-        <h2>Common Use Cases</h2>
-        <h3>Business Documents</h3>
-        <p>Protect sensitive business information, contracts, and proposals with controlled access and viewing limits.</p>
-        
-        <h3>Educational Materials</h3>
-        <p>Share course materials while preventing unauthorized distribution.</p>
-        
-        <h3>Legal Documents</h3>
-        <p>Secure confidential legal documents with expiration dates and access controls.</p>
-    </div>
-
-    <h2>How to Secure Your PDFs</h2>
-    <ol>
-        <li>Upload your PDF document to MaiPDF</li>
-        <li>Select your desired security settings</li>
-        <li>Set access controls and restrictions</li>
-        <li>Share the secure link with authorized viewers</li>
-    </ol>
-
-    <h2>Benefits of MaiPDF's Security Features</h2>
-    <ul>
-        <li><strong>Peace of Mind:</strong> Know your documents are protected</li>
-        <li><strong>Control:</strong> Maintain authority over document access</li>
-        <li><strong>Flexibility:</strong> Customize security settings to your needs</li>
-        <li><strong>Tracking:</strong> Monitor document access and usage</li>
-    </ul>
-
-    <p>Protect your sensitive PDF documents with MaiPDF's comprehensive security features. Whether you're sharing business documents, educational materials, or personal files, MaiPDF gives you the tools to keep your information secure.</p>
-
-    <div class="related-content">
-        <h2>Related Features</h2>
-        <ul>
-            <li><a href="pdf-security-best-practices.html">PDF Security Best Practices</a></li>
-            <li><a href="secure-pdf-access-control.html">Secure PDF Access Control</a></li>
-            <li><a href="advanced-security-configurations.html">Advanced Security Configurations</a></li>
-        </ul>
-    </div>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

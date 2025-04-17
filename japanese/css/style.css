@@ -1,0 +1,178 @@
+:root {
+    --primary-color: #2C8C99;
+    --secondary-color: #45a3b1;
+    --accent-color: #ff9800;
+    --text-color: #333;
+    --light-bg: #f5f7f8;
+}
+
+body {
+    font-family: "Hiragino Kaku Gothic Pro", "Meiryo", sans-serif;
+    line-height: 1.6;
+    background-color: var(--light-bg);
+    color: var(--text-color);
+}
+
+.hero {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    color: white;
+    padding: 80px 0;
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.feature-card {
+    background: white;
+    border-radius: 10px;
+    padding: 25px;
+    margin-bottom: 30px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease;
+}
+
+.feature-card:hover {
+    transform: translateY(-5px);
+}
+
+.feature-icon {
+    font-size: 2.5rem;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.section-title {
+    color: var(--primary-color);
+    margin-bottom: 30px;
+    position: relative;
+    padding-bottom: 15px;
+}
+
+.section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background-color: var(--accent-color);
+}
+
+.content-section {
+    margin-bottom: 30px;
+}
+
+.content-section h3 {
+    color: var(--primary-color);
+    margin-bottom: 20px;
+}
+
+.content-section ul {
+    list-style: none;
+    padding: 0;
+}
+
+.content-section li {
+    margin-bottom: 10px;
+}
+
+.content-section a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    display: block;
+    padding: 8px 0;
+}
+
+.content-section a:hover {
+    color: var(--primary-color);
+}
+
+.content-section a i {
+    margin-right: 10px;
+    color: var(--primary-color);
+}
+
+.cta-button {
+    display: inline-block;
+    background: var(--primary-color);
+    color: white;
+    padding: 15px 30px;
+    border-radius: 5px;
+    text-decoration: none;
+    transition: background 0.3s ease;
+    margin-top: 20px;
+}
+
+.cta-button:hover {
+    background: var(--secondary-color);
+    color: white;
+}
+
+.footer {
+    background: var(--primary-color);
+    color: white;
+    padding: 40px 0;
+    margin-top: 60px;
+}
+
+.footer a {
+    color: white;
+    text-decoration: none;
+    transition: opacity 0.3s ease;
+}
+
+.footer a:hover {
+    opacity: 0.8;
+}
+
+.language-selector {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 1000;
+}
+
+.language-selector .btn {
+    background: white;
+    color: var(--primary-color);
+    border: none;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.language-selector .btn:hover {
+    background: var(--light-bg);
+}
+
+/* Japanese specific styles */
+.japanese-text {
+    line-height: 1.8;
+    letter-spacing: 0.05em;
+}
+
+.japanese-title {
+    font-weight: bold;
+    margin-bottom: 1.5em;
+}
+
+.japanese-subtitle {
+    font-size: 1.2em;
+    margin-bottom: 1em;
+}
+
+.japanese-list {
+    list-style-type: none;
+    padding-left: 1.5em;
+}
+
+.japanese-list li {
+    position: relative;
+    padding-left: 1.5em;
+    margin-bottom: 0.8em;
+}
+
+.japanese-list li:before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+} 
