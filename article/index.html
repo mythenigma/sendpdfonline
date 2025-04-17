@@ -3,29 +3,28 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MaiPDF Articles - Comprehensive guides and tutorials about PDF sharing, security, and management.">
-    <meta name="keywords" content="PDF articles, PDF guides, PDF tutorials, PDF sharing, PDF security">
+    <meta name="description" content="MaiPDF Articles - Comprehensive guides and resources about PDF sharing, security, and collaboration">
+    <meta name="keywords" content="PDF articles, PDF guides, PDF security, PDF sharing, PDF collaboration">
     <meta name="author" content="MaiPDF">
     <meta property="og:title" content="MaiPDF Articles - PDF Guides and Tutorials">
     <meta property="og:description" content="Comprehensive guides and tutorials about PDF sharing, security, and management.">
     <meta property="og:image" content="/images/articles.png">
     <meta property="og:url" content="/article/index.html">
-    <title>MaiPDF Articles - PDF Guides and Tutorials</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>MaiPDF Articles - Comprehensive PDF Resources</title>
+    <link href="../styles.css" rel="stylesheet">
+    <link href="styles.css" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
 </head>
 <body>
-    <nav class="navbar navbar-expand-lg navbar-dark">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <div class="container">
-            <a class="navbar-brand" href="/">
-                <i class="fas fa-file-pdf"></i> MaiPDF
-            </a>
+            <a class="navbar-brand" href="/">MaiPDF</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
+                <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="/">Home</a>
                     </li>
@@ -35,101 +34,185 @@
                     <li class="nav-item">
                         <a class="nav-link" href="/usecase">Use Cases</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="/article">Articles</a>
+                    </li>
                 </ul>
             </div>
         </div>
     </nav>
 
-    <header class="header">
-        <div class="container">
-            <h1>MaiPDF Articles</h1>
-            <p class="lead">Comprehensive guides and tutorials about PDF sharing, security, and management</p>
-        </div>
-    </header>
-
-    <div class="container">
-        <div class="content-wrapper">
-            <div class="row">
-                <!-- PDF Sharing Articles -->
-                <div class="col-md-4">
-                    <div class="article-category">
-                        <h3><i class="fas fa-share-alt"></i> PDF Sharing</h3>
-                        <ul class="article-list">
-                            <li>
-                                <a href="share-pdf-online.html">
-                                    <i class="fas fa-link"></i> Share PDF Online
-                                    <p>Learn different methods to share PDFs online</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="send-pdf-online.html">
-                                    <i class="fas fa-paper-plane"></i> Send PDF Online
-                                    <p>Discover secure ways to send PDFs</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="show-pdf-online.html">
-                                    <i class="fas fa-eye"></i> Show PDF Online
-                                    <p>Learn how to present PDFs effectively</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pdf-sharing-methods.html">
-                                    <i class="fas fa-exchange-alt"></i> PDF Sharing Methods
-                                    <p>Explore various PDF sharing techniques</p>
-                                </a>
-                            </li>
-                        </ul>
+    <div class="container my-5">
+        <h1 class="text-center mb-5">MaiPDF Articles</h1>
+        
+        <!-- Security Articles -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title"><i class="fas fa-shield-alt"></i> Security & Protection</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Secure PDF Sharing Guide</h5>
+                                <p class="card-text">Learn how to securely share your PDF documents with advanced protection features.</p>
+                                <a href="secure-pdf-sharing-guide.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Security Articles -->
-                <div class="col-md-4">
-                    <div class="article-category">
-                        <h3><i class="fas fa-shield-alt"></i> Security</h3>
-                        <ul class="article-list">
-                            <li>
-                                <a href="pdf-sharing-security.html">
-                                    <i class="fas fa-lock"></i> PDF Sharing Security
-                                    <p>Protect your PDFs with advanced security features</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="sensitive-documents-security.html">
-                                    <i class="fas fa-user-shield"></i> Sensitive Documents Security
-                                    <p>Secure your confidential documents</p>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Sensitive Documents Security</h5>
+                                <p class="card-text">Best practices for protecting sensitive PDF documents and preventing unauthorized access.</p>
+                                <a href="sensitive-documents-security.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
                     </div>
-                </div>
-
-                <!-- Tools & Features -->
-                <div class="col-md-4">
-                    <div class="article-category">
-                        <h3><i class="fas fa-tools"></i> Tools & Features</h3>
-                        <ul class="article-list">
-                            <li>
-                                <a href="online-pdf-viewer.html">
-                                    <i class="fas fa-desktop"></i> Online PDF Viewer
-                                    <p>Discover powerful PDF viewing features</p>
-                                </a>
-                            </li>
-                            <li>
-                                <a href="pdf-tracking-analytics.html">
-                                    <i class="fas fa-chart-line"></i> PDF Tracking & Analytics
-                                    <p>Monitor and analyze document usage</p>
-                                </a>
-                            </li>
-                        </ul>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Confidential Documents Risk</h5>
+                                <p class="card-text">Understanding and mitigating risks associated with confidential PDF documents.</p>
+                                <a href="confidential-documents-risk.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </div>
 
-            <div class="cta-section">
-                <h3>Need More Information?</h3>
-                <p>Explore our features and use cases for more detailed guides</p>
-                <a href="/features" class="cta-button">View All Features</a>
+        <!-- Sharing & Collaboration -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title"><i class="fas fa-share-alt"></i> Sharing & Collaboration</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PDF Collaboration Features</h5>
+                                <p class="card-text">Explore advanced collaboration features for team-based PDF document management.</p>
+                                <a href="pdf-collaboration-features.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Share PDF Online</h5>
+                                <p class="card-text">Comprehensive guide to sharing PDFs online with various methods and tools.</p>
+                                <a href="share-pdf-online.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PDF Sharing Methods</h5>
+                                <p class="card-text">Different methods and best practices for sharing PDF documents securely.</p>
+                                <a href="pdf-sharing-methods.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Viewing & Access -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title"><i class="fas fa-eye"></i> Viewing & Access</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Online PDF Viewer</h5>
+                                <p class="card-text">Features and benefits of using an online PDF viewer for document access.</p>
+                                <a href="online-pdf-viewer.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Show PDF Online</h5>
+                                <p class="card-text">How to effectively present and display PDF documents online.</p>
+                                <a href="show-pdf-online.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Send PDF Online</h5>
+                                <p class="card-text">Methods and tools for sending PDF documents securely online.</p>
+                                <a href="send-pdf-online.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Tracking & Analytics -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title"><i class="fas fa-chart-line"></i> Tracking & Analytics</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PDF Tracking & Analytics</h5>
+                                <p class="card-text">Understanding document usage patterns and analytics features.</p>
+                                <a href="pdf-tracking-analytics.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">Limit PDF Open Times</h5>
+                                <p class="card-text">How to control and limit access to PDF documents.</p>
+                                <a href="limit-pdf-open-times.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PDF Share Expire</h5>
+                                <p class="card-text">Setting expiration dates and managing document access periods.</p>
+                                <a href="pdf-share-expire.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Security & Control -->
+        <div class="row mb-5">
+            <div class="col-12">
+                <h2 class="section-title"><i class="fas fa-lock"></i> Security & Control</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PDF Control Lost</h5>
+                                <p class="card-text">What to do when you lose control of your PDF documents.</p>
+                                <a href="pdf-control-lost.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card mb-4">
+                            <div class="card-body">
+                                <h5 class="card-title">PDF Sharing Security</h5>
+                                <p class="card-text">Advanced security features for PDF sharing and protection.</p>
+                                <a href="pdf-sharing-security.html" class="btn btn-primary">Read More</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -147,12 +230,14 @@
                         <li><a href="/">Home</a></li>
                         <li><a href="/features">Features</a></li>
                         <li><a href="/usecase">Use Cases</a></li>
+                        <li><a href="/article">Articles</a></li>
                     </ul>
                 </div>
                 <div class="col-md-4">
                     <h4>Contact</h4>
                     <ul class="list-unstyled">
                         <li><a href="mailto:support@sendpdfonline.com">support@sendpdfonline.com</a></li>
+                        <li><a href="/contact">Contact Us</a></li>
                     </ul>
                 </div>
             </div>
@@ -162,7 +247,7 @@
         </div>
     </footer>
 
-    <script src="scripts.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 </html> 
