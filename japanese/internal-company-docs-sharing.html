@@ -1,0 +1,783 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="社内文書を転送リスクなく安全に共有する方法を学び、機密レポートを制御しながら共有しましょう。">
+    <meta name="keywords" content="社内文書共有, PDF セキュリティ, 文書転送防止, 安全なPDF共有, 企業文書保護, 機密文書共有">
+    <meta name="author" content="MaiPDF">
+    <meta property="og:title" content="転送リスクなしで社内文書を共有する方法 | MaiPDF">
+    <meta property="og:description" content="機密レポートをコピーではなく、自信を持って共有。MaiPDFで安全な社内文書共有を実現。">
+    <meta property="og:image" content="/images/security.png">
+    <meta property="og:url" content="https://maipdf.com/japanese/internal-company-docs-sharing.html">
+    <title>転送リスクなしで社内文書を共有する方法 | MaiPDF</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../article/styles.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2C8C99;
+            --secondary-color: #45a3b1;
+            --accent-color: #ff9800;
+            --text-color: #333;
+            --light-bg: #f5f7f8;
+        }
+        body {
+            font-family: 'Hiragino Sans', 'Hiragino Kaku Gothic ProN', Meiryo, sans-serif;
+            line-height: 1.8;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: bold;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        .content-section {
+            margin-bottom: 30px;
+        }
+        .content-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .content-section li:before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .footer a:hover {
+            opacity: 0.8;
+        }
+        .related-features {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .related-features h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .related-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .related-features li {
+            margin-bottom: 10px;
+        }
+        .related-features a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 8px 0;
+        }
+        .related-features a:hover {
+            color: var(--primary-color);
+        }
+        .related-features a i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        .use-case {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .use-case h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .use-case p {
+            margin-bottom: 10px;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .benefit-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .benefit-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .quote-card {
+            background: #f0f7f8;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+            font-style: italic;
+        }
+        .risk-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: #fff2f2;
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+        .risk-item i {
+            color: #e74c3c;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        .solution-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            background: #f1f9f2;
+            padding: 12px 15px;
+            border-radius: 6px;
+        }
+        .solution-item i {
+            color: #27ae60;
+            font-size: 24px;
+            margin-right: 15px;
+        }
+        .step-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
+        }
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .highlight-box {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        .emoji-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        .emoji {
+            font-size: 32px;
+            margin-right: 15px;
+        }
+        .language-switcher {
+            margin-top: 30px;
+            text-align: right;
+        }
+        .language-switcher a {
+            margin-left: 15px;
+            color: var(--text-color);
+            text-decoration: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background 0.3s ease;
+        }
+        .language-switcher a:hover {
+            background: rgba(0, 0, 0, 0.05);
+        }
+        .language-switcher a.active {
+            background: var(--primary-color);
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">MaiPDF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../article/index.html">記事</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../features/index.html">機能</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                            言語
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                            <li><a class="dropdown-item" href="../article/internal-company-docs-sharing.html">English</a></li>
+                            <li><a class="dropdown-item" href="../german/interne-dokumente-teilen.html">Deutsch</a></li>
+                            <li><a class="dropdown-item active" href="#">日本語</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1><i class="fas fa-shield-alt"></i> 転送リスクなしで社内文書を公開する</h1>
+            <p class="lead">機密レポートをコピーでなく、自信を持って共有</p>
+            <a href="../features/convert-pdf-to-secure-links.html" class="cta-button">安全な文書共有を探る</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Introduction -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> 社内文書と外部リスク</h2>
+            <p>すべてのチームは社内文書を共有する必要があります：四半期報告書、OKR、戦略計画、人事方針など。</p>
+            <p>しかし、一度ファイルをメール、Slack、クラウドストレージで送信すると、制御が効かなくなります。</p>
+            
+            <div class="highlight-box">
+                <h4><i class="fas fa-question-circle"></i> 重要な問題</h4>
+                <p>その文書が転送、ダウンロード、または会社外に漏洩した場合、どうなるでしょうか？</p>
+            </div>
+            
+            <p>まだ2012年のようにPDFを配布しているなら、今日の社内共有方法を見直す時期です。</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1450101499163-c8848c66ca85?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="オフィス文書" class="img-fluid rounded">
+                </div>
+                <div class="col-md-6">
+                    <h4><i class="fas fa-exclamation-triangle text-warning"></i> リスク要因:</h4>
+                    <ul>
+                        <li>機密ビジネス情報</li>
+                        <li>戦略的競争優位性</li>
+                        <li>顧客または従業員データ</li>
+                        <li>法的コンプライアンスと責任</li>
+                        <li>バージョン管理の整合性</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Problem -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-exclamation-circle"></i> 問題点：メールとクラウドドライブは漏洩しやすい</h2>
+            
+            <p>通常、このようなことが発生します：</p>
+            
+            <div class="step-box">
+                <div class="step-number">1</div>
+                <div class="step-content">
+                    <h4>GoogleドライブやDropboxに文書をアップロード</h4>
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <div class="step-number">2</div>
+                <div class="step-content">
+                    <h4>チームチャットやメールでリンクを送信</h4>
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <div class="step-number">3</div>
+                <div class="step-content">
+                    <h4>誰かがダウンロード</h4>
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <div class="step-number">4</div>
+                <div class="step-content">
+                    <h4>転送される</h4>
+                </div>
+            </div>
+            
+            <div class="step-box">
+                <div class="step-number">5</div>
+                <div class="step-content">
+                    <h4>即座に制御を失う</h4>
+                </div>
+            </div>
+            
+            <p class="mt-4">「閲覧のみ」の権限でも、クラウドプラットフォームは以下を防止できません：</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="risk-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>スクリーンショット</span>
+                    </div>
+                    <div class="risk-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>意図しない共有</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="risk-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>オフライン保存とコピー＆ペースト</span>
+                    </div>
+                    <div class="risk-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>古いバージョンが永遠に流通</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- The Solution -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-check-circle"></i> 解決策：使用制限付きブラウザのみ閲覧</h2>
+            
+            <p>ファイルを配布するのではなく、アクセス権を配布します。</p>
+            
+            <p>最新のPDF共有プラットフォームでは以下が可能です：</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>安全なリンクまたはQRコードで社内文書を共有</span>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ファイルを開ける回数を制限</span>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>ダウンロードやコピーを防止</span>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>誰がいつファイルを閲覧したかのアクセスログを取得</span>
+                    </div>
+                    <div class="solution-item">
+                        <i class="fas fa-check-circle"></i>
+                        <span>いつでもリモートからアクセスを無効化</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-card mt-4">
+                <p>単なる権限ではなく、制御機能を備えた文書共有です。</p>
+            </div>
+            
+            <div class="row mt-4">
+                <div class="col-md-7">
+                    <h4><i class="fas fa-lock"></i> セキュリティの利点：</h4>
+                    <ul>
+                        <li>社内文書へのアクセス権の正確な制御</li>
+                        <li>すべてのアクセスイベントの自動デジタル監査証跡</li>
+                        <li>会社全体で即座にアクセスを取り消す能力</li>
+                        <li>最も一般的なデータ漏洩シナリオの防止</li>
+                        <li>古いコピーがない明確なバージョン管理</li>
+                    </ul>
+                </div>
+                <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1563013544-824ae1b704d3?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="文書セキュリティ" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-World Example -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-flask"></i> 実際の例</h2>
+            
+            <p>あなたは新しい社内方針を展開する運営責任者です。</p>
+            <p>すべてのチームメンバーにそれを読んでほしいですが、以下は望ましくありません：</p>
+            
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="risk-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>組織外の人に転送される</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="risk-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>ローカルコピーの保存や印刷</span>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="risk-item">
+                        <i class="fas fa-times-circle"></i>
+                        <span>6ヶ月後に古いバージョンを参照</span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="highlight-box mt-4">
+                <h4>スマートな共有システムを使用すると：</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ol>
+                            <li>方針をPDFとしてアップロード</li>
+                            <li>一人当たり2回の閲覧に制限を設定</li>
+                            <li>会社の会議でQRコードを共有、またはSlackでリンクを投稿</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <ol start="4">
+                            <li>アクセスログを監視して誰が閲覧したか確認</li>
+                            <li>展開が完了したらアクセスを更新または無効化</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="quote-card">これはガードレールを備えた社内コミュニケーションです。</p>
+        </div>
+
+        <!-- How it Works -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-cogs"></i> 仕組み（MaiPDFのようなツール）</h2>
+            
+            <p>MaiPDFのようなプラットフォームでは以下が可能です：</p>
+            
+            <div class="row">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-cloud-upload-alt feature-icon"></i>
+                        <h4>PDFドキュメントをアップロード</h4>
+                        <p>社内文書をクラウドに安全にアップロード</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-eye feature-icon"></i>
+                        <h4>閲覧制限を設定</h4>
+                        <p>各ユーザーが特定の回数（例：3回）だけ開くよう制限</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-download feature-icon"></i>
+                        <h4>ダウンロードを無効化</h4>
+                        <p>ダウンロード、印刷、コンテンツのコピーを防止</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-link feature-icon"></i>
+                        <h4>リンク/QRを生成</h4>
+                        <p>閲覧専用リンクまたはスキャン可能なQRコードを作成</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h4>閲覧者を追跡</h4>
+                        <p>閲覧者のIPとアクセスタイムスタンプを監視</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-edit feature-icon"></i>
+                        <h4>更新または取り消し</h4>
+                        <p>編集コードを使用していつでもアクセスを変更または取り消し</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <p>インストール不要、ログイン不要—完全に制御された安全で高速な社内アクセスのみ。</p>
+            </div>
+        </div>
+
+        <!-- Best Use Cases -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-chart-bar"></i> 最適な使用例</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-chart-pie"></i> 四半期報告書</h4>
+                        <p>機密データを含む財務・戦略文書</p>
+                        <ul>
+                            <li>財務諸表</li>
+                            <li>戦略分析</li>
+                            <li>業績指標</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-bullseye"></i> OKRレビューと計画</h4>
+                        <p>目標設定文書とパフォーマンスレビュー</p>
+                        <ul>
+                            <li>部門OKR</li>
+                            <li>戦略的イニシアチブ</li>
+                            <li>進捗報告書</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-book"></i> 従業員ハンドブック</h4>
+                        <p>HR文書と方針発表</p>
+                        <ul>
+                            <li>方針更新</li>
+                            <li>福利厚生情報</li>
+                            <li>会社手順</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-map"></i> 製品ロードマップ</h4>
+                        <p>将来を見据えた製品開発計画</p>
+                        <ul>
+                            <li>機能タイムライン</li>
+                            <li>開発優先事項</li>
+                            <li>スプリント計画</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-graduation-cap"></i> 社内トレーニング</h4>
+                        <p>教育資料とオンボーディング文書</p>
+                        <ul>
+                            <li>トレーニングマニュアル</li>
+                            <li>オンボーディングガイド</li>
+                            <li>プロセス文書</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-clipboard-list"></i> 取締役会向けプレゼン</h4>
+                        <p>非常に機密性の高い取締役会レベルの資料</p>
+                        <ul>
+                            <li>エグゼクティブブリーフィング</li>
+                            <li>投資提案</li>
+                            <li>企業ガバナンス</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Thought -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-comment"></i> 最終的な考察</h2>
+            
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="lead" style="font-weight: bold;">「社内」は「制御なし」を意味しません。</p>
+                    
+                    <p>転送されることを前提としたファイル共有をやめましょう。</p>
+                    <p>可視性、追跡可能性、そして企業が実際に必要とする制御を備えたアクセス共有を始めましょう。</p>
+                    
+                    <div class="benefit-card">
+                        <h4><i class="fas fa-shield-alt"></i> 機密情報の保護</h4>
+                        <p>意図した閲覧者の範囲内で機密情報を保持</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4><i class="fas fa-history"></i> バージョン管理の維持</h4>
+                        <p>チームが常に最新の情報を参照することを確保</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4><i class="fas fa-eye"></i> エンゲージメントの確認</h4>
+                        <p>チームメンバーが重要な文書を実際に閲覧したことを確認</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1521791136064-7986c2920216?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="チームコラボレーション" class="img-fluid rounded mb-4">
+                    
+                    <div class="quote-card">
+                        <p>「すべての文書が永遠に存在したり、どこにでも行ったりするべきではないからです。」</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-rocket"></i> 始め方</h2>
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p>社内文書共有のセキュリティ強化を始める準備はできましたか？</p>
+                    
+                    <p>MaiPDFは、会社の社内文書への安全で制御されたアクセスを作成するために必要なすべてのツールを提供します。</p>
+                    
+                    <div class="mt-4">
+                        <a href="../features/limit-pdf-open-times.html" class="btn btn-primary me-3">
+                            <i class="fas fa-eye"></i> PDF閲覧回数制限
+                        </a>
+                        <a href="../features/pdf-tracking-analytics.html" class="btn btn-outline-primary">
+                            <i class="fas fa-chart-line"></i> 文書使用状況追跡
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="デジタル文書" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Features -->
+        <div class="related-features">
+            <h3><i class="fas fa-link"></i> 関連機能</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="../features/limit-pdf-open-times.html"><i class="fas fa-eye"></i> PDF閲覧回数制限</a></li>
+                        <li><a href="../features/convert-pdf-to-secure-links.html"><i class="fas fa-link"></i> PDFを安全なリンクに変換</a></li>
+                        <li><a href="../features/email-verification-secure-pdf-access.html"><i class="fas fa-envelope"></i> アクセスのためのメール認証</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="../features/pdf-tracking-analytics.html"><i class="fas fa-chart-line"></i> PDF追跡と分析</a></li>
+                        <li><a href="../features/dynamic-watermark-tracking.html"><i class="fas fa-tint"></i> 動的透かし</a></li>
+                        <li><a href="../features/convert-pdf-to-qr-code.html"><i class="fas fa-qrcode"></i> PDFをQRコードに変換</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="../article/pdf-control-lost.html"><i class="fas fa-exclamation-triangle"></i> PDF制御が失われた場合</a></li>
+                        <li><a href="../article/pdf-share-expire.html"><i class="fas fa-hourglass-end"></i> PDF共有の有効期限</a></li>
+                        <li><a href="../article/sensitive-documents-security.html"><i class="fas fa-user-shield"></i> 機密文書のセキュリティ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>MaiPDF</h4>
+                    <p>プロフェッショナルPDF共有とセキュリティソリューション</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>クイックリンク</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="../index.html">ホーム</a></li>
+                        <li><a href="../article/index.html">記事</a></li>
+                        <li><a href="../features/index.html">機能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>お問い合わせ</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:support@maipdf.com">support@maipdf.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

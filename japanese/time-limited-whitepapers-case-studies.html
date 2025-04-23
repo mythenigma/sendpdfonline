@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="期間限定のホワイトペーパーやケーススタディを送信する方法。貴重なコンテンツを永久に手放すことなく共有します。">
+    <meta name="keywords" content="期間限定PDF, マーケティングコンテンツ, ホワイトペーパー, ケーススタディ, コントロールされた共有, 有効期限ロジック, PDFセキュリティ">
+    <meta name="author" content="MaiPDF">
+    <meta property="og:title" content="期間限定のホワイトペーパーやケーススタディを送信する方法 | MaiPDF">
+    <meta property="og:description" content="貴重なマーケティングコンテンツを永久に手放すことなく共有する方法を学びましょう。">
+    <meta property="og:image" content="/images/security.png">
+    <meta property="og:url" content="https://maipdf.com/japanese/time-limited-whitepapers-case-studies.html">
+    <title>期間限定のホワイトペーパーやケーススタディを送信する方法 | MaiPDF</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- FontAwesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="css/style.css" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2C8C99;
+            --secondary-color: #45a3b1;
+            --accent-color: #ff9800;
+            --text-color: #333;
+            --light-bg: #f5f7f8;
+        }
+        body {
+            font-family: "Hiragino Kaku Gothic Pro", "ヒラギノ角ゴ Pro W3", Meiryo, メイリオ, Osaka, "MS PGothic", arial, helvetica, sans-serif;
+            line-height: 1.8;
+            background-color: var(--light-bg);
+            color: var(--text-color);
+        }
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+            margin-bottom: 40px;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 10px;
+            padding: 25px;
+            margin-bottom: 30px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 30px;
+            position: relative;
+            padding-bottom: 15px;
+            font-weight: bold;
+        }
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+        }
+        .content-section {
+            margin-bottom: 30px;
+        }
+        .content-section h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .content-section ul {
+            list-style: none;
+            padding: 0;
+        }
+        .content-section li {
+            margin-bottom: 10px;
+            padding-left: 30px;
+            position: relative;
+        }
+        .content-section li:before {
+            content: '✓';
+            color: var(--primary-color);
+            position: absolute;
+            left: 0;
+        }
+        .cta-button {
+            display: inline-block;
+            background: var(--primary-color);
+            color: white;
+            padding: 15px 30px;
+            border-radius: 5px;
+            text-decoration: none;
+            transition: background 0.3s ease;
+            margin-top: 20px;
+        }
+        .cta-button:hover {
+            background: var(--secondary-color);
+            color: white;
+        }
+        .footer {
+            background: var(--primary-color);
+            color: white;
+            padding: 40px 0;
+            margin-top: 60px;
+        }
+        .footer a {
+            color: white;
+            text-decoration: none;
+            transition: opacity 0.3s ease;
+        }
+        .footer a:hover {
+            opacity: 0.8;
+        }
+        .related-features {
+            background: white;
+            border-radius: 10px;
+            padding: 30px;
+            margin-top: 40px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .related-features h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            font-weight: bold;
+        }
+        .related-features ul {
+            list-style: none;
+            padding: 0;
+        }
+        .related-features li {
+            margin-bottom: 10px;
+        }
+        .related-features a {
+            color: var(--text-color);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            padding: 8px 0;
+        }
+        .related-features a:hover {
+            color: var(--primary-color);
+        }
+        .related-features a i {
+            margin-right: 10px;
+            color: var(--primary-color);
+        }
+        .use-case {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .use-case h4 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            font-weight: bold;
+        }
+        .use-case p {
+            margin-bottom: 10px;
+        }
+        .feature-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 20px;
+        }
+        .benefit-card {
+            background: #f9f9f9;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            border-left: 4px solid var(--primary-color);
+        }
+        .benefit-card h4 {
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .quote-card {
+            background: #f0f7f8;
+            border-radius: 10px;
+            padding: 25px;
+            margin: 30px 0;
+            border-left: 5px solid var(--accent-color);
+            font-style: italic;
+        }
+        .highlight-box {
+            background-color: #fff8e1;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border-left: 4px solid var(--accent-color);
+        }
+        .step-box {
+            background: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            display: flex;
+            align-items: flex-start;
+        }
+        .step-number {
+            background: var(--primary-color);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            flex-shrink: 0;
+            font-weight: bold;
+        }
+        .step-content {
+            flex: 1;
+        }
+        .japanese-text {
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">MaiPDF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html">ホーム</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pdf-security-features.html">セキュリティ機能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pdf-tracking-sharing.html">トラッキングと共有</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="languageDropdown" role="button" data-bs-toggle="dropdown">
+                            言語
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item" href="../article/time-limited-whitepapers-case-studies.html">English</a></li>
+                            <li><a class="dropdown-item" href="../german/zeitlich-begrenzte-whitepaper.html">Deutsch</a></li>
+                            <li><a class="dropdown-item active" href="time-limited-whitepapers-case-studies.html">日本語</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1><i class="fas fa-hourglass-half"></i> 期間限定のホワイトペーパーやケーススタディを送信する方法</h1>
+            <p class="lead">貴重なコンテンツを永久に手放すことなく共有する</p>
+            <a href="../features/set-expiration-date-for-pdfs.html" class="cta-button">PDFの有効期限を探る</a>
+        </div>
+    </div>
+
+    <div class="container">
+        <!-- Introduction -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-file-alt"></i> マーケティング資産の保護</h2>
+            <p class="japanese-text">ホワイトペーパー、ケーススタディ、戦略PDF。これらは最も強力なマーケティングツールですが、共有後にコントロールするのが最も難しいものでもあります。</p>
+            
+            <p class="japanese-text">リンクを送信したり、ファイルを添付したり、ゲート付きダウンロードキャンペーンを実行したりします。人々はコンテンツを入手します。しかしその後：</p>
+            
+            <div class="row mt-4">
+                <div class="col-md-6">
+                    <ul class="japanese-text">
+                        <li>無期限にダウンロードされて保存される</li>
+                        <li>ターゲットオーディエンス以外に転送される</li>
+                        <li>フォーラムにアップロードされたり、競合他社によって共有されたりする</li>
+                        <li>コンテンツが古くなった後も参照される</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1586282391129-76a6df230234?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="マーケティング文書" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <p class="japanese-text mt-3">あなたの貴重な洞察は生き続けますが、しばしばあなたのコントロール外になります。</p>
+        </div>
+
+        <!-- Why Time-Limited Access Matters -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-brain"></i> 期間限定アクセスが重要な理由</h2>
+            <p class="japanese-text">マーケターやブランドチームにとって、コントロール = 信頼性です。</p>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="content-section">
+                        <h3>あなたが望むこと：</h3>
+                        <ul class="japanese-text">
+                            <li>ホワイトペーパーが公開される期間を制限する</li>
+                            <li>古い文書が再利用されるのを防ぐ</li>
+                            <li>永久公開せずに関心を検証する</li>
+                            <li>緊急性を作り出す（例：「72時間限定で利用可能」）</li>
+                            <li>競合他社の情報源にならないようにする</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="時間管理の概念" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <p class="japanese-text">「単純なダウンロードリンクではその力を得られません。しかし、制御された期間限定の閲覧ならば可能です。」</p>
+            </div>
+        </div>
+
+        <!-- The Better Way -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-check-circle"></i> より良い方法：有効期限ロジックを使用した制御されたPDF閲覧</h2>
+            
+            <p class="japanese-text">文書を添付したり無制限のアクセスを提供したりする代わりに、次のことが可能なプラットフォームを使用してください：</p>
+            
+            <div class="row">
+                <div class="col-md-7">
+                    <div class="step-box">
+                        <div class="step-number">1</div>
+                        <div class="step-content">
+                            <h4>閲覧専用リンクまたはQRコードを生成する</h4>
+                            <p class="japanese-text">ダウンロードを許可しない制限付きアクセスポイントを作成</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">2</div>
+                        <div class="step-content">
+                            <h4>正確な制限を設定する</h4>
+                            <p class="japanese-text">例えば、3回だけ開くか、一度見てから期限切れになるようにする</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">3</div>
+                        <div class="step-content">
+                            <h4>ダウンロードと印刷を無効にする</h4>
+                            <p class="japanese-text">不正なコピーと配布を防止する</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">4</div>
+                        <div class="step-content">
+                            <h4>エンゲージメントを監視する</h4>
+                            <p class="japanese-text">誰がいつどこで開いたかを確認する</p>
+                        </div>
+                    </div>
+                    
+                    <div class="step-box">
+                        <div class="step-number">5</div>
+                        <div class="step-content">
+                            <h4>アクセスの取り消しまたは更新</h4>
+                            <p class="japanese-text">何も再送信せずに後でアクセス権を変更できる</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1557804506-669a67965ba0?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="制御されたアクセス" class="img-fluid rounded mb-4">
+                    
+                    <div class="highlight-box">
+                        <h4><i class="fas fa-lightbulb"></i> プロのヒント</h4>
+                        <p class="japanese-text">基本的なPDF共有よりも、よりスマート、よりクリーン、そしてはるかにプロフェッショナルです。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Real-World Example -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-flask"></i> 実際の例</h2>
+            
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="japanese-text">あなたは新しいAIプラットフォームの限定キャンペーンを立ち上げています。キャンペーンの一部として、あなたの優位性を説明する詳細なホワイトペーパーがあります。</p>
+                    
+                    <p class="japanese-text mb-4">あなたが望まないこと：</p>
+                    <ul class="japanese-text">
+                        <li>コンテンツが無期限にダウンロードされて共有される</li>
+                        <li>古いバージョンが数ヶ月後も流通している</li>
+                        <li>競合他社があなたの洞察をあなたに対して使用する</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="マーケティングキャンペーン" class="img-fluid rounded">
+                </div>
+            </div>
+            
+            <div class="highlight-box mt-4">
+                <h4>スマート共有ツールを使用すると：</h4>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ol class="japanese-text">
+                            <li>PDFをアップロードする</li>
+                            <li>ユーザーごとに2回の開封を許可するようにリンクを設定する</li>
+                            <li>ダウンロードを無効にする</li>
+                        </ol>
+                    </div>
+                    <div class="col-md-6">
+                        <ol class="japanese-text" start="4">
+                            <li>電子メールやキャンペーンQRコードで共有する</li>
+                            <li>1週間後、自動または手動でアクセスを削除する</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+            
+            <p class="japanese-text mt-4">配布だけでなく、可視性のウィンドウをコントロールできます。</p>
+        </div>
+
+        <!-- What Tools Like MaiPDF Offer -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-tools"></i> MaiPDFのようなツールが提供するもの</h2>
+            
+            <p class="japanese-text">MaiPDFのようなプラットフォームはマーケティングチームに以下のことを支援します：</p>
+            
+            <div class="row mt-4">
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-cloud-upload-alt feature-icon"></i>
+                        <h4>クラウド管理</h4>
+                        <p class="japanese-text">ホワイトペーパーをクラウドでアップロードして管理</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-eye-slash feature-icon"></i>
+                        <h4>閲覧専用アクセス</h4>
+                        <p class="japanese-text">ダウンロードできない閲覧専用アクセスを作成</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-stopwatch feature-icon"></i>
+                        <h4>時間とアクセス制限</h4>
+                        <p class="japanese-text">PDFを開くことができる回数を制限</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-qrcode feature-icon"></i>
+                        <h4>QRコード生成</h4>
+                        <p class="japanese-text">印刷キャンペーンやブース用のQRコードを生成</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-chart-line feature-icon"></i>
+                        <h4>アクセスログ</h4>
+                        <p class="japanese-text">アクセスイベント（IP、タイムスタンプ）を記録</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6 mb-4">
+                    <div class="text-center">
+                        <i class="fas fa-edit feature-icon"></i>
+                        <h4>編集と取り消し</h4>
+                        <p class="japanese-text">編集コードを使用してアクセスの取り消し、置き換え、延長が可能</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="quote-card">
+                <p class="japanese-text">ユーザーに登録やインストールを要求することなく、すべてが可能です。つまり、ユーザーにとっては迅速な配信が可能で、あなたにとっては完全なコントロールが可能です。</p>
+            </div>
+        </div>
+
+        <!-- Best Use Cases -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-chart-bar"></i> 最適な使用例</h2>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-lock"></i> ゲート付きコンテンツ</h4>
+                        <p class="japanese-text">キャンペーン後に期限切れになるキャンペーン固有のコンテンツ</p>
+                        <ul class="japanese-text">
+                            <li>調査レポート</li>
+                            <li>業界分析</li>
+                            <li>市場予測</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-briefcase"></i> 営業資料</h4>
+                        <p class="japanese-text">短期プロモーション用の営業支援資料</p>
+                        <ul class="japanese-text">
+                            <li>ピッチデッキ</li>
+                            <li>製品比較</li>
+                            <li>価格ガイド</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-lightbulb"></i> 思想的リーダーシップ</h4>
+                        <p class="japanese-text">タイムセンシティブな思想的リーダーシップ</p>
+                        <ul class="japanese-text">
+                            <li>業界予測</li>
+                            <li>トレンド分析</li>
+                            <li>専門家インタビュー</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-users"></i> 競合資料</h4>
+                        <p class="japanese-text">公開したくない競合ケーススタディ</p>
+                        <ul class="japanese-text">
+                            <li>勝敗分析</li>
+                            <li>競合他社比較</li>
+                            <li>市場ポジショニング</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-book"></i> 限定アクセスコンテンツ</h4>
+                        <p class="japanese-text">限定アクセスの電子書籍/データシート/ROI PDF</p>
+                        <ul class="japanese-text">
+                            <li>プレミアムコンテンツ</li>
+                            <li>ROI計算機</li>
+                            <li>実装ガイド</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="use-case">
+                        <h4><i class="fas fa-calendar-alt"></i> イベント資料</h4>
+                        <p class="japanese-text">カンファレンスやイベントの資料</p>
+                        <ul class="japanese-text">
+                            <li>カンファレンスのプレゼンテーション</li>
+                            <li>スピーカー資料</li>
+                            <li>ワークショップの配布資料</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Final Thought -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-comment"></i> 最終的な考え</h2>
+            
+            <div class="row">
+                <div class="col-md-7">
+                    <p class="lead japanese-text" style="font-weight: bold;">あなたのコンテンツは価値があります。作成に苦労したのですから、ただ境界なしに与えてしまわないでください。</p>
+                    
+                    <p class="japanese-text">期間限定の閲覧専用PDFアクセスを使用すると、次のことが可能です：</p>
+                    
+                    <div class="benefit-card">
+                        <h4><i class="fas fa-clock"></i> 緊急性を作り出す</h4>
+                        <p class="japanese-text">期間限定オファーは行動を促進し、知覚価値を高めます</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4><i class="fas fa-shield-alt"></i> 知的エッジを保護する</h4>
+                        <p class="japanese-text">競争力のある洞察が公知になるのを防ぎます</p>
+                    </div>
+                    
+                    <div class="benefit-card">
+                        <h4><i class="fas fa-history"></i> アイデアの賞味期限をコントロールする</h4>
+                        <p class="japanese-text">古い情報が引き続き流通するのを防ぎます</p>
+                    </div>
+                </div>
+                <div class="col-md-5">
+                    <img src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="コンテンツ保護" class="img-fluid rounded mb-4">
+                    
+                    <div class="quote-card">
+                        <p class="japanese-text">「すべてのドキュメントが永遠に生き続けることを意図しているわけではないからです。一部のドキュメントはただインパクトを与えるために存在し、その後消えることを意図しています。」</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Getting Started -->
+        <div class="feature-card">
+            <h2 class="section-title"><i class="fas fa-rocket"></i> 始めましょう</h2>
+            
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <p class="japanese-text">期間限定アクセスで貴重なマーケティングコンテンツを保護する準備はできていますか？</p>
+                    
+                    <p class="japanese-text">MaiPDFは、ホワイトペーパー、ケーススタディ、その他のマーケティング資料に対して安全な期間限定アクセスを作成するために必要なすべてのツールを提供します。</p>
+                    
+                    <div class="mt-4">
+                        <a href="../features/set-expiration-date-for-pdfs.html" class="btn btn-primary me-3">
+                            <i class="fas fa-clock"></i> PDF有効期限を設定
+                        </a>
+                        <a href="../features/limit-pdf-open-times.html" class="btn btn-outline-primary">
+                            <i class="fas fa-eye"></i> PDFオープン回数を制限
+                        </a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="デジタルマーケティング" class="img-fluid rounded">
+                </div>
+            </div>
+        </div>
+
+        <!-- Related Features -->
+        <div class="related-features">
+            <h3><i class="fas fa-link"></i> 関連機能</h3>
+            <div class="row">
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="../features/set-expiration-date-for-pdfs.html"><i class="fas fa-clock"></i> PDF有効期限日を設定</a></li>
+                        <li><a href="../features/limit-pdf-open-times.html"><i class="fas fa-eye"></i> PDFオープン回数を制限</a></li>
+                        <li><a href="../features/prevent-pdf-forwarding-dynamicqr.html"><i class="fas fa-ban"></i> PDF転送を防止</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="../features/pdf-tracking-analytics.html"><i class="fas fa-chart-line"></i> PDFトラッキングと分析</a></li>
+                        <li><a href="../features/dynamic-watermark-tracking.html"><i class="fas fa-tint"></i> 動的ウォーターマーク</a></li>
+                        <li><a href="../features/convert-pdf-to-qr-code.html"><i class="fas fa-qrcode"></i> PDFをQRコードに変換</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <ul>
+                        <li><a href="../article/pdf-control-lost.html"><i class="fas fa-exclamation-triangle"></i> PDFコントロールを失った場合</a></li>
+                        <li><a href="../article/pdf-share-expire.html"><i class="fas fa-hourglass-end"></i> PDF共有の期限切れ</a></li>
+                        <li><a href="../article/sensitive-documents-security.html"><i class="fas fa-user-shield"></i> 機密文書のセキュリティ</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h4>MaiPDF</h4>
+                    <p class="japanese-text">プロフェッショナルなPDF共有とセキュリティソリューション</p>
+                </div>
+                <div class="col-md-4">
+                    <h4>クイックリンク</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="index.html">ホーム</a></li>
+                        <li><a href="pdf-security-features.html">セキュリティ機能</a></li>
+                        <li><a href="pdf-tracking-sharing.html">トラッキングと共有</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h4>お問い合わせ</h4>
+                    <ul class="list-unstyled">
+                        <li><a href="mailto:support@maipdf.com">support@maipdf.com</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="text-center mt-4">
+                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Custom JS -->
+    <script src="js/main.js"></script>
+</body>
+</html>
