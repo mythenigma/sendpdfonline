@@ -1,0 +1,529 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="تتبع وتحليل الوصول إلى مستندات PDF مع التحليلات المتقدمة. راقب من يشاهد مستنداتك ومتى وكيف يتفاعلون معها.">
+    <meta name="keywords" content="تتبع PDF، تحليلات PDF، تتبع المستندات، مراقبة PDF، التحكم في الوصول إلى PDF">
+    <meta name="author" content="MaiPDF">
+    <meta property="og:title" content="تتبع وتحليلات PDF | MaiPDF | مراقبة الوصول إلى المستندات">
+    <meta property="og:description" content="تتبع وتحليل الوصول إلى مستندات PDF مع التحليلات المتقدمة">
+    <meta property="og:image" content="/images/pdf-analytics-dashboard.png">
+    <meta property="og:url" content="https://maipdf.com/arabic/pdf-tracking-analytics.html">
+    <title>تتبع وتحليلات PDF | MaiPDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        .analytics-feature {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        .use-case-box {
+            background: #e8f0fe;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .pricing-table {
+            margin: 30px 0;
+            border-collapse: separate;
+            border-spacing: 0 15px;
+        }
+        .faq-item {
+            background: #fff;
+            padding: 20px;
+            margin: 15px 0;
+            border-right: 4px solid #007bff;
+            border-radius: 4px;
+        }
+        .cta-section {
+            background: #007bff;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header my-5">
+            <h1 class="text-center"><i class="fas fa-chart-line"></i> تتبع وتحليلات PDF</h1>
+            <p class="lead text-center">راقب الوصول إلى المستندات بتحليلات ورؤى متقدمة</p>
+            
+            <div class="text-center mt-4">
+                <img src="../maipdf-images/analytics-dashboard.jpg" alt="لوحة تحكم تحليلات PDF" class="img-fluid rounded shadow-sm">
+            </div>
+        </div>
+
+        <div class="content-wrapper">
+            <div class="intro-section bg-light p-4 rounded mb-5">
+                <h2><i class="fas fa-info-circle text-primary"></i> نظرة عامة على تحليلات PDF</h2>
+                <p>تمكّنك تحليلات PDF من MaiPDF من الحصول على فهم عميق لكيفية تفاعل الأشخاص مع مستنداتك. تعرف متى وأين يتم عرض ملفات PDF الخاصة بك، وكم من الوقت يقضيه المستخدمون في كل صفحة، وإلى أي مدى يتفاعلون مع المحتوى الخاص بك.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6">
+                        <div class="card h-100 border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="h5 mb-0"><i class="fas fa-key"></i> المزايا الرئيسية</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">معرفة من شاهد مستنداتك بالتفصيل</li>
+                                    <li class="list-group-item">تتبع وقت القراءة والصفحات المقروءة</li>
+                                    <li class="list-group-item">تحليل سلوك القارئ وأنماط المشاهدة</li>
+                                    <li class="list-group-item">مراقبة محاولات التنزيل والطباعة</li>
+                                    <li class="list-group-item">تلقي تنبيهات لأي نشاط مشبوه</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="card h-100 border-success">
+                            <div class="card-header bg-success text-white">
+                                <h3 class="h5 mb-0"><i class="fas fa-chart-bar"></i> أنواع البيانات المتاحة</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul class="list-group list-group-flush">
+                                    <li class="list-group-item">بيانات المشاهدة الأساسية (الوقت، التاريخ، IP)</li>
+                                    <li class="list-group-item">معلومات الجهاز والمتصفح</li>
+                                    <li class="list-group-item">سلوك القراءة والتفاعل</li>
+                                    <li class="list-group-item">بيانات الموقع الجغرافي</li>
+                                    <li class="list-group-item">أنماط الاستخدام والإحصاءات التجميعية</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="analytics-box mb-5">
+                <h2 class="border-bottom pb-3"><i class="fas fa-chart-bar text-primary"></i> مقاييس التتبع الرئيسية</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-eye text-info"></i> عدد المشاهدات</h3>
+                            <ul>
+                                <li>تتبع إجمالي المشاهدات والمشاهدات الفريدة</li>
+                                <li>مراقبة اتجاهات المشاهدة</li>
+                                <li>تحليل أوقات الذروة للمشاهدة</li>
+                                <li>مقارنة أداء المستندات المختلفة</li>
+                                <li>رسوم بيانية للمشاهدات مع مرور الوقت</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-clock text-warning"></i> أوقات الوصول</h3>
+                            <ul>
+                                <li>مراقبة متى يتم عرض المستندات</li>
+                                <li>تتبع أنماط الوصول اليومية والأسبوعية</li>
+                                <li>تحديد فترات الاستخدام الذروة</li>
+                                <li>توزيع المشاهدات حسب الوقت والتاريخ</li>
+                                <li>تحليل متوسط وقت القراءة لكل صفحة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-globe text-success"></i> تحليل الموقع</h3>
+                            <ul>
+                                <li>تتبع المواقع الجغرافية للمشاهدين</li>
+                                <li>تحليل توزيع المشاهدات حسب البلد والمدينة</li>
+                                <li>خرائط حرارية للوصول العالمي</li>
+                                <li>تقسيم البيانات حسب المنطقة</li>
+                                <li>تحديد أسواق جديدة محتملة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="insight-box p-4 bg-light rounded mb-5">
+                <h2 class="mb-4"><i class="fas fa-lightbulb text-warning"></i> رؤى الأعمال من تحليلات PDF</h2>
+                <p class="lead">لا تقتصر تحليلات MaiPDF على مجرد أرقام - بل توفر رؤى قابلة للتنفيذ يمكن أن تساعد في تعزيز استراتيجيتك:</p>
+                
+                <div class="row mt-4">
+                    <div class="col-lg-6">
+                        <div class="card mb-4 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-users text-primary"></i> فهم الجمهور</h4>
+                                <ul>
+                                    <li>تحديد جمهورك الأكثر تفاعلاً</li>
+                                    <li>معرفة أي المستندات تحظى باهتمام أكبر</li>
+                                    <li>تحليل سلوك المستخدم حسب الفئة</li>
+                                    <li>تخصيص المحتوى بناءً على اهتمامات المستخدم</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-clock text-primary"></i> تحسين التوقيت</h4>
+                                <ul>
+                                    <li>تحسين أوقات توزيع المستندات</li>
+                                    <li>تحديد أفضل الأوقات لإرسال التحديثات</li>
+                                    <li>ضبط استراتيجيات التسويق بناءً على أنماط الاستخدام</li>
+                                    <li>تعديل مواعيد نشر المحتوى لزيادة المشاركة</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-shield-alt text-primary"></i> تعزيز الأمان</h4>
+                                <ul>
+                                    <li>تحسين إجراءات أمان المستندات</li>
+                                    <li>تحديد المستندات التي تتطلب حماية إضافية</li>
+                                    <li>مراقبة محاولات الوصول غير المصرح به</li>
+                                    <li>ضبط أذونات الوصول بناءً على بيانات الاستخدام</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="card mb-4 border-0 shadow-sm">
+                            <div class="card-body">
+                                <h4 class="card-title"><i class="fas fa-file-alt text-primary"></i> تحسين المحتوى</h4>
+                                <ul>
+                                    <li>تحديد أكثر أجزاء المستند قراءة</li>
+                                    <li>معرفة المحتوى الذي يتم تخطيه</li>
+                                    <li>تطوير استراتيجية محتوى أكثر فاعلية</li>
+                                    <li>تحسين تصميم المستندات للقراءة الأفضل</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="detailed-features mb-5">
+                <h2 class="border-bottom pb-3"><i class="fas fa-list-check text-primary"></i> ميزات تحليلية متقدمة</h2>
+                <div class="row">
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-map text-danger"></i> خرائط حرارية للمحتوى</h3>
+                            <p>تتبع أكثر الصفحات قراءة والمناطق التي تحظى باهتمام القراء من خلال:</p>
+                            <ul>
+                                <li>تحليل وقت القراءة لكل صفحة</li>
+                                <li>تتبع التمرير والتوقف في مناطق محددة</li>
+                                <li>تحديد المحتوى الأكثر جاذبية</li>
+                                <li>عرض مرئي لأنماط القراءة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-users text-info"></i> تحليل الجمهور المفصل</h3>
+                            <p>فهم من يقرأ مستنداتك وكيف يتفاعلون معها من خلال:</p>
+                            <ul>
+                                <li>تقسيم البيانات حسب الديموغرافيا</li>
+                                <li>تحليل سلوك المستخدم حسب نوع الجهاز</li>
+                                <li>متابعة معدلات المشاركة بمرور الوقت</li>
+                                <li>تخصيص العروض بناءً على تفضيلات المستخدم</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-shield text-success"></i> تتبع الأمان المتقدم</h3>
+                            <p>مراقبة محاولات الوصول غير المصرح به والتنبيهات الفورية من خلال:</p>
+                            <ul>
+                                <li>تنبيهات الوصول غير العادي</li>
+                                <li>تتبع محاولات النسخ غير المصرح بها</li>
+                                <li>مراقبة الوصول من مواقع غير معتادة</li>
+                                <li>تقارير مفصلة عن محاولات الاختراق</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-file-export text-primary"></i> التقارير المخصصة</h3>
+                            <p>إنشاء تقارير تحليلية مخصصة تركز على المقاييس التي تهمك:</p>
+                            <ul>
+                                <li>تصدير البيانات بتنسيقات متعددة (CSV، PDF، Excel)</li>
+                                <li>جدولة إرسال التقارير بشكل تلقائي</li>
+                                <li>تخصيص لوحات المعلومات</li>
+                                <li>مشاركة التقارير مع أعضاء الفريق</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-bell text-warning"></i> التنبيهات والإشعارات</h3>
+                            <p>إعداد تنبيهات مخصصة لإبقائك على اطلاع دائم:</p>
+                            <ul>
+                                <li>إشعارات الوصول في الوقت الفعلي</li>
+                                <li>تنبيهات عند تجاوز حدود المشاهدة</li>
+                                <li>إشعارات بأنماط الاستخدام غير العادية</li>
+                                <li>تذكيرات للمتابعة مع القراء النشطين</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4 mb-4">
+                        <div class="analytics-feature">
+                            <h3><i class="fas fa-code text-secondary"></i> واجهة برمجة التطبيقات</h3>
+                            <p>دمج تحليلات PDF مع أنظمتك الحالية:</p>
+                            <ul>
+                                <li>واجهة برمجة تطبيقات RESTful</li>
+                                <li>تكامل مع أنظمة CRM الشائعة</li>
+                                <li>ربط بيانات التحليلات مع أدوات التسويق</li>
+                                <li>سحب بيانات التحليلات إلى لوحات معلومات مخصصة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="visualization-section text-center mb-5">
+                <h2 class="mb-4"><i class="fas fa-chart-pie text-primary"></i> عرض البيانات بطريقة سهلة الفهم</h2>
+                <p class="lead">تقدم MaiPDF تصورات بيانية سهلة الفهم تساعدك على فهم البيانات بشكل أفضل</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>خرائط حرارية للصفحات</h4>
+                                <img src="../maipdf-images/heatmap-example.jpg" alt="مثال خريطة حرارية" class="img-fluid rounded my-3">
+                                <p>تظهر المناطق الأكثر قراءة في المستندات بتدرجات لونية واضحة</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card">
+                            <div class="card-body">
+                                <h4>رسوم بيانية للمشاركة</h4>
+                                <img src="../maipdf-images/engagement-chart.jpg" alt="رسم بياني للمشاركة" class="img-fluid rounded my-3">
+                                <p>تتبع مشاركة القراء ومتوسط وقت القراءة بمرور الوقت</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="use-case-box mb-5">
+                <h2 class="border-bottom pb-3"><i class="fas fa-briefcase text-primary"></i> أمثلة على الاستخدام</h2>
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-primary">
+                            <div class="card-header bg-primary text-white">
+                                <h3 class="h5 mb-0"><i class="fas fa-graduation-cap"></i> التعليم</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>تتبع قراءة الطلاب للمواد التعليمية</strong> - معرفة من قرأ المواد المطلوبة ومن لم يقرأها بعد</li>
+                                    <li><strong>تحليل فعالية المحتوى التعليمي</strong> - تحديد المواد التي تحظى باهتمام أكبر</li>
+                                    <li><strong>قياس مشاركة الطلاب</strong> - تتبع وقت القراءة وأنماط التفاعل</li>
+                                    <li><strong>تحسين المناهج التعليمية</strong> - تطوير المحتوى بناءً على بيانات القراءة</li>
+                                    <li><strong>مراقبة الامتحانات</strong> - تتبع الوصول إلى مواد الاختبار للتأكد من عدم التسريب</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-success">
+                            <div class="card-header bg-success text-white">
+                                <h3 class="h5 mb-0"><i class="fas fa-building"></i> الأعمال</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>مراقبة مشاركة المستندات السرية</strong> - التأكد من أن المعلومات الحساسة لا تصل إلى أشخاص غير مصرح لهم</li>
+                                    <li><strong>تتبع قراءة التقارير المهمة</strong> - معرفة من قرأ التقارير الدورية ومن لم يقرأها</li>
+                                    <li><strong>تحليل اهتمامات العملاء</strong> - فهم أي أجزاء من العروض التقديمية تجذب انتباه العملاء</li>
+                                    <li><strong>قياس فعالية التسويق</strong> - تتبع مشاركة محتوى المنتج والكتالوجات</li>
+                                    <li><strong>متابعة العقود والاتفاقيات</strong> - معرفة متى ومن قرأ المستندات القانونية</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="row mt-4">
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-info">
+                            <div class="card-header bg-info text-white">
+                                <h3 class="h5 mb-0"><i class="fas fa-book"></i> النشر</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>تحليل سلوك القراءة</strong> - فهم كيفية تفاعل القراء مع المحتوى المنشور</li>
+                                    <li><strong>تتبع نجاح المنشورات</strong> - مقارنة معدلات القراءة بين المنشورات المختلفة</li>
+                                    <li><strong>حماية حقوق النشر</strong> - مراقبة محاولات النسخ غير المصرح به</li>
+                                    <li><strong>تحسين تصميم المحتوى</strong> - تطوير تنسيق أفضل بناءً على بيانات القراءة</li>
+                                    <li><strong>استهداف الإعلانات</strong> - تحديد أفضل مواضع الإعلانات بناءً على أنماط القراءة</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card h-100 border-danger">
+                            <div class="card-header bg-danger text-white">
+                                <h3 class="h5 mb-0"><i class="fas fa-heart"></i> الرعاية الصحية</h3>
+                            </div>
+                            <div class="card-body">
+                                <ul>
+                                    <li><strong>متابعة مواد تثقيف المرضى</strong> - تتبع قراءة إرشادات ما بعد العلاج</li>
+                                    <li><strong>أمان السجلات الطبية</strong> - مراقبة الوصول إلى المعلومات الطبية الحساسة</li>
+                                    <li><strong>امتثال الموظفين</strong> - التأكد من قراءة الموظفين للسياسات والإجراءات</li>
+                                    <li><strong>تحسين مواد التوعية الصحية</strong> - تطوير محتوى أكثر فعالية</li>
+                                    <li><strong>تتبع الامتثال التنظيمي</strong> - إثبات الالتزام بمتطلبات خصوصية البيانات</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="testimonials-section mb-5">
+                <h2 class="border-bottom pb-3"><i class="fas fa-quote-left text-primary"></i> ما يقوله عملاؤنا</h2>
+                
+                <div class="row">
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-light border-0">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">أحمد السعدي</h5>
+                                        <p class="text-muted mb-0">مدير المبيعات، شركة تكنولوجيا</p>
+                                    </div>
+                                </div>
+                                <p class="mb-0">"تحليلات PDF من MaiPDF غيرت طريقة فهمنا لكيفية تفاعل العملاء مع عروضنا التقديمية. نستطيع الآن معرفة أي أجزاء العرض تحظى بأكبر قدر من الاهتمام، ومن خلال ذلك تمكنا من تحسين معدل تحويل العملاء بنسبة 28%."</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 mb-4">
+                        <div class="card bg-light border-0">
+                            <div class="card-body">
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="me-3">
+                                        <i class="fas fa-user-circle fa-3x text-primary"></i>
+                                    </div>
+                                    <div>
+                                        <h5 class="mb-0">د. سارة المهدي</h5>
+                                        <p class="text-muted mb-0">أستاذة جامعية، كلية الطب</p>
+                                    </div>
+                                </div>
+                                <p class="mb-0">"أستخدم تحليلات MaiPDF لمتابعة قراءة الطلاب للمواد التعليمية. يمكنني الآن معرفة من قرأ المواد ومن لم يقرأها، وتحديد الطلاب الذين قد يحتاجون إلى دعم إضافي. أصبحت معدلات النجاح في الاختبارات أعلى بكثير منذ بدأنا استخدام هذه الأداة."</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-section mb-5">
+                <h2 class="border-bottom pb-3"><i class="fas fa-question-circle text-primary"></i> الأسئلة الشائعة</h2>
+                <div class="faq-item">
+                    <h3>كيف تعمل تحليلات PDF؟</h3>
+                    <p>تستخدم تحليلات MaiPDF تقنية متطورة لتتبع تفاعلات المستخدم مع المستند مثل وقت القراءة والصفحات المعروضة وأنماط التصفح. عندما تشارك مستنداً من خلال منصتنا، نقوم بتضمين رمز تتبع صغير يسجل بيانات الاستخدام دون التأثير على محتوى المستند أو تجربة المستخدم. يتم نقل هذه البيانات بشكل آمن إلى لوحة التحكم الخاصة بك لتوفير رؤى تفصيلية.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>هل التحليلات آمنة؟ ماذا عن خصوصية البيانات؟</h3>
+                    <p>نعم، نضع الأمان والخصوصية على رأس أولوياتنا. نستخدم تشفيراً متقدماً لحماية البيانات أثناء النقل والتخزين، ونلتزم بمعايير حماية البيانات العالمية بما في ذلك GDPR. لا نشارك بيانات العملاء مع أطراف ثالثة، ويمكنك تخصيص مستوى التتبع بما يتناسب مع متطلبات خصوصية مؤسستك. جميع البيانات التي نجمعها تستخدم فقط لتوفير الرؤى التحليلية لك كمالك للمستند.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>هل يحتاج المستخدمون إلى تثبيت برامج إضافية لتتبع المستندات؟</h3>
+                    <p>لا، المستخدمون ليسوا بحاجة إلى تثبيت أي برامج أو تطبيقات إضافية. تعمل تحليلات MaiPDF بسلاسة عندما يتم عرض المستند من خلال الرابط الذي توفره منصتنا. يمكن للمستخدمين عرض المستندات على أي جهاز أو متصفح، وسيتم تسجيل بيانات التحليلات تلقائياً دون أي خطوات إضافية من طرفهم.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>هل يمكنني تصدير بيانات التحليلات لاستخدامها في أدوات أخرى؟</h3>
+                    <p>نعم، توفر MaiPDF خيارات متعددة لتصدير بيانات التحليلات. يمكنك تصدير البيانات بتنسيقات مختلفة مثل CSV وExcel وPDF، مما يسهل استيرادها إلى أدوات التحليل الأخرى أو أنظمة CRM. بالإضافة إلى ذلك، نوفر واجهة برمجة تطبيقات (API) تتيح لك دمج بيانات التحليلات مباشرة مع أنظمتك الحالية للحصول على رؤية شاملة لأداء الأعمال.</p>
+                </div>
+                <div class="faq-item">
+                    <h3>كيف تساعد تحليلات PDF في تحسين المحتوى؟</h3>
+                    <p>توفر تحليلات PDF معلومات قيمة حول كيفية تفاعل القراء مع محتواك، مما يساعدك على تحسينه. على سبيل المثال، يمكنك معرفة أي الصفحات تحظى بأطول وقت قراءة، وأيها يتم تخطيها بسرعة. يمكنك اكتشاف أي أقسام تجذب أكبر قدر من الاهتمام، ومعرفة النقاط التي قد يواجه فيها القراء صعوبة (من خلال تتبع أوقات التوقف الطويلة). استخدم هذه الرؤى لإعادة تنظيم المحتوى، وتوضيح الأقسام الصعبة، وتعزيز الأجزاء الأكثر أهمية لتحقيق تأثير أفضل.</p>
+                </div>
+            </div>
+
+            <div class="pricing-section mb-5">
+                <h2 class="border-bottom pb-3"><i class="fas fa-tag text-primary"></i> خطط تحليلات PDF</h2>
+                <p class="lead">اختر الخطة المناسبة لاحتياجات عملك</p>
+                
+                <div class="table-responsive">
+                    <table class="table table-striped pricing-table">
+                        <thead class="bg-primary text-white">
+                            <tr>
+                                <th>الميزة</th>
+                                <th>الخطة الأساسية</th>
+                                <th>الخطة الاحترافية</th>
+                                <th>خطة المؤسسات</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>عدد المستندات المتتبعة</td>
+                                <td>10</td>
+                                <td>100</td>
+                                <td>غير محدود</td>
+                            </tr>
+                            <tr>
+                                <td>الاحتفاظ ببيانات التحليلات</td>
+                                <td>30 يوماً</td>
+                                <td>6 أشهر</td>
+                                <td>سنتان</td>
+                            </tr>
+                            <tr>
+                                <td>خرائط حرارية للصفحات</td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>تحليل المشاهدة المتقدم</td>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>تقارير مخصصة</td>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>واجهة برمجة التطبيقات</td>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td><i class="fas fa-times text-danger"></i></td>
+                                <td><i class="fas fa-check text-success"></i></td>
+                            </tr>
+                            <tr>
+                                <td>الدعم</td>
+                                <td>البريد الإلكتروني</td>
+                                <td>البريد الإلكتروني والدردشة</td>
+                                <td>دعم مخصص 24/7</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="cta-section">
+                <h2>ابدأ في تحسين أداء مستنداتك اليوم</h2>
+                <p class="lead">احصل على رؤى قيمة حول كيفية استخدام مستنداتك واتخذ قرارات أفضل لعملك</p>
+                <div class="mt-4">
+                    <a href="https://maipdf.com/signup" class="btn btn-light btn-lg mx-2">جرب MaiPDF مجاناً</a>
+                    <a href="https://maipdf.com/demo" class="btn btn-outline-light btn-lg mx-2">طلب عرض توضيحي</a>
+                </div>
+                <p class="mt-3 small">لا حاجة لبطاقة ائتمان. تجربة مجانية لمدة 14 يوماً.</p>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="container">
+            <p class="text-center">MaiPDF - حلول مشاركة وأمان PDF الاحترافية</p>
+        </div>
+    </footer>
+</body>
+</html>

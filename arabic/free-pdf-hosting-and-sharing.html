@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="utf-8">
+    <title>استضافة ومشاركة PDF مجاناً | MaiPDF</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <meta content="استضف وشارك ملفات PDF بشكل آمن ومجاني. احصل على ميزات الأمان المتقدمة والتتبع والتحليلات بدون أي تكلفة." name="description">
+    <meta name="keywords" content="استضافة PDF مجانية، مشاركة PDF آمنة، إنشاء رمز QR، تتبع المستندات، MaiPDF">
+    <meta property="og:title" content="MaiPDF - استضافة PDF آمنة">
+    <meta property="og:description" content="شارك ملفات PDF بشكل آمن وسهل عبر الإنترنت باستخدام MaiPDF. أنشئ روابط أو رموز QR وتتبع الاستخدام مع تحليلات مفصلة.">
+    <meta property="og:image" content="https://maipdf.com/favicon.ico">
+    <meta property="og:type" content="website">
+    <link href="https://maipdf.com/favicon.ico" rel="icon">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.0.0/css/all.min.css" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .feature-card {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            padding: 20px;
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+        }
+        .price-tag {
+            background: #e8f5e9;
+            color: #2e7d32;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin-bottom: 15px;
+        }
+        .highlight-box {
+            background-color: #f8f9fa;
+            border-right: 4px solid #0d6efd;
+            padding: 20px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+        .testimonial {
+            background-color: #f0f7ff;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            position: relative;
+        }
+        .testimonial::before {
+            content: "\f10d";
+            font-family: "Font Awesome 5 Free";
+            font-weight: 900;
+            color: #d4e5ff;
+            font-size: 30px;
+            position: absolute;
+            right: 15px;
+            top: 10px;
+        }
+        .testimonial-content {
+            padding-right: 35px;
+        }
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 30px 0;
+        }
+        .comparison-table th {
+            background-color: #0d6efd;
+            color: white;
+            padding: 12px;
+        }
+        .comparison-table td {
+            padding: 10px;
+            border: 1px solid #e0e0e0;
+        }
+        .comparison-table tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        .faq-item {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #e0e0e0;
+            padding-bottom: 15px;
+        }
+        .faq-question {
+            font-weight: bold;
+            color: #0d6efd;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+        .step-card {
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .step-number {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 40px;
+            height: 40px;
+            background-color: #0d6efd;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .use-case-icon {
+            font-size: 2.5rem;
+            color: #0d6efd;
+            margin-bottom: 15px;
+        }
+        /* Adding new animation styles for better engagement */
+        .fade-in {
+            animation: fadeIn 1.5s;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .feature-highlight {
+            background-color: #fff8e1;
+            border: 1px dashed #ffc107;
+            padding: 15px;
+            margin: 15px 0;
+            border-radius: 8px;
+        }
+        .security-explanation {
+            background: linear-gradient(to left, #f1f8ff, #ffffff);
+            padding: 20px;
+            border-radius: 8px;
+            margin: 25px 0;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .tips-section {
+            background-color: #e8f5ff;
+            padding: 25px;
+            border-radius: 10px;
+            margin: 30px 0;
+        }
+        .tips-list li {
+            margin-bottom: 12px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container-xxl bg-white p-0">
+        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
+            <a href="index.html" class="navbar-brand p-0">
+                <h1 class="م-0">استضافة PDF مجاناً</h1>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
+                <span class="fa fa-bars"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarCollapse">
+                <div class="navbar-nav me-auto py-0">
+                    <a href="index.html" class="nav-item nav-link">الرئيسية</a>
+                    <a href="about.html" class="nav-item nav-link">حول</a>
+                    <a href="service.html" class="nav-item nav-link">الخدمات</a>
+                    <a href="contact.html" class="nav-item nav-link">اتصل بنا</a>
+                </div>
+                <a href="https://maipdf.com/6/login.php" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">لوحة التحكم</a>
+            </div>
+        </nav>
+
+        <div class="container-xxl bg-primary page-header">
+            <div class="container text-center">
+                <h1 class="text-white animated zoomIn mb-3">استضافة ومشاركة PDF مجاناً عبر الإنترنت</h1>
+                <p class="text-white">اكتشف كيف يجعل MaiPDF استضافة ومشاركة ملفات PDF الخاصة بك سهلة وآمنة مع ميزات متقدمة مثل تتبع الروابط وإنشاء رموز QR.</p>
+            </div>
+        </div>
+
+        <div class="container my-5">
+            <h1>استضافة ومشاركة PDF مجاناً</h1>
+            <p class="lead">استضف وشارك ملفات PDF بشكل آمن بدون أي تكلفة. احصل على ميزات مستوى المؤسسات مجاناً تماماً.</p>
+
+            <div class="highlight-box">
+                <h3><i class="fas fa-info-circle text-primary"></i> ما هي استضافة PDF؟</h3>
+                <p>استضافة PDF هي خدمة تتيح لك تخزين ملفات PDF على الإنترنت ومشاركتها بسهولة مع الآخرين من خلال رابط. مع MaiPDF، تحصل على استضافة آمنة وسريعة لملفاتك مع ميزات إضافية مثل التتبع والأمان، كل ذلك مجاناً.</p>
+            </div>
+
+            <div class="price-tag mb-4">
+                <i class="fas fa-gift"></i> مجاني دائماً
+            </div>
+
+            <section class="my-5">
+                <h2>الميزات المجانية</h2>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-cloud-upload-alt text-primary mb-3 fa-2x"></i>
+                            <h3>الاستضافة</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> تخزين غير محدود</li>
+                                <li><i class="fas fa-check text-success"></i> سرعات رفع عالية</li>
+                                <li><i class="fas fa-check text-success"></i> وصول موثوق</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-shield-alt text-primary mb-3 fa-2x"></i>
+                            <h3>الأمان</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> التحكم في الوصول</li>
+                                <li><i class="fas fa-check text-success"></i> علامات مائية ديناميكية</li>
+                                <li><i class="fas fa-check text-success"></i> تشفير</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-chart-line text-primary mb-3 fa-2x"></i>
+                            <h3>التحليلات</h3>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success"></i> تتبع المشاهدات</li>
+                                <li><i class="fas fa-check text-success"></i> سجلات الوصول</li>
+                                <li><i class="fas fa-check text-success"></i> رؤى الاستخدام</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-5">
+                <h2>ميزات متقدمة لمشاركة PDF</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <i class="fas fa-qrcode text-primary mb-3 fa-2x"></i>
+                            <h3>إنشاء رموز QR</h3>
+                            <p>أنشئ رموز QR بسهولة لملفات PDF الخاصة بك. مثالية للمواد التسويقية المطبوعة، والبطاقات التعريفية، والمعارض حيث يمكن للمستخدمين مسح الرمز للوصول الفوري إلى المستند.</p>
+                            <div class="mt-3">
+                                <i class="fas fa-check-circle text-success"></i> إنشاء رموز QR بنقرة واحدة
+                                <br>
+                                <i class="fas fa-check-circle text-success"></i> تخصيص حجم وألوان رمز QR
+                                <br>
+                                <i class="fas fa-check-circle text-success"></i> تتبع عمليات المسح والوصول
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="feature-card">
+                            <i class="fas fa-history text-primary mb-3 fa-2x"></i>
+                            <h3>صلاحية مخصصة للروابط</h3>
+                            <p>تحكم في متى يمكن الوصول إلى مستنداتك. يمكنك تعيين تاريخ انتهاء صلاحية محدد أو عدد مرات المشاهدة المسموح بها، مما يضمن أن المعلومات الحساسة تظل تحت سيطرتك.</p>
+                            <div class="mt-3">
+                                <i class="fas fa-check-circle text-success"></i> تواريخ انتهاء الصلاحية المخصصة
+                                <br>
+                                <i class="fas fa-check-circle text-success"></i> حدود عدد المشاهدات
+                                <br>
+                                <i class="fas fa-check-circle text-success"></i> إلغاء الوصول في أي وقت
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-5">
+                <h2>كيفية البدء</h2>
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="step-card">
+                            <div class="step-number">1</div>
+                            <h3>قم بزيارة MaiPDF.com وقم بإنشاء حساب مجاني</h3>
+                            <p>يتطلب فقط بريدك الإلكتروني وكلمة مرور لبدء استخدام جميع الميزات المجانية.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">2</div>
+                            <h3>ارفع ملف PDF الخاص بك</h3>
+                            <p>اسحب وأفلت الملف أو انقر لتحديده من جهازك. يمكنك رفع ملفات بأي حجم وبعدد غير محدود.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">3</div>
+                            <h3>قم بتكوين خيارات المشاركة والأمان</h3>
+                            <p>اختر إعدادات العلامات المائية، وتاريخ انتهاء الصلاحية، وحدود المشاهدة، وخيارات الأمان الأخرى.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">4</div>
+                            <h3>احصل على رابط المشاركة أو رمز QR</h3>
+                            <p>يتم إنشاء رابط فريد وآمن ورمز QR اختياري لمستندك. انسخهما بسهولة أو قم بتنزيل رمز QR.</p>
+                        </div>
+                        <div class="step-card">
+                            <div class="step-number">5</div>
+                            <h3>شارك مع أي شخص وتتبع الاستخدام</h3>
+                            <p>أرسل الرابط أو شارك رمز QR ثم راقب من يشاهد المستند وكيف يتفاعل معه.</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-5">
+                <h2>مقارنة مع منصات PDF الأخرى</h2>
+                <table class="comparison-table">
+                    <tr>
+                        <th>الميزة</th>
+                        <th>MaiPDF</th>
+                        <th>خدمات تخزين الملفات</th>
+                        <th>منصات PDF المدفوعة</th>
+                    </tr>
+                    <tr>
+                        <td>تكلفة الاستخدام</td>
+                        <td>مجاني</td>
+                        <td>محدود مجاناً</td>
+                        <td>اشتراك شهري</td>
+                    </tr>
+                    <tr>
+                        <td>تحليلات المشاهدة</td>
+                        <td>متقدمة</td>
+                        <td>أساسية أو غير متوفرة</td>
+                        <td>متقدمة</td>
+                    </tr>
+                    <tr>
+                        <td>علامات مائية</td>
+                        <td>ديناميكية ومخصصة</td>
+                        <td>غير متوفرة</td>
+                        <td>أساسية</td>
+                    </tr>
+                    <tr>
+                        <td>حدود المشاهدة</td>
+                        <td>متوفرة</td>
+                        <td>غير متوفرة</td>
+                        <td>متوفرة أحياناً</td>
+                    </tr>
+                    <tr>
+                        <td>رموز QR</td>
+                        <td>توليد تلقائي</td>
+                        <td>غير متوفرة</td>
+                        <td>متوفرة أحياناً</td>
+                    </tr>
+                </table>
+            </section>
+
+            <section class="my-5 fade-in">
+                <h2>فوائد استضافة PDF المهنية مقابل مشاركة الملفات التقليدية</h2>
+                <div class="security-explanation">
+                    <h3><i class="fas fa-lightbulb text-warning"></i> لماذا تعتبر استضافة PDF المتخصصة أفضل من مشاركة الملفات العادية؟</h3>
+                    <p>عند استخدام خدمات مشاركة الملفات العامة مثل Google Drive أو Dropbox، تفتقد العديد من الميزات المهمة المصممة خصيصاً لملفات PDF:</p>
+                    
+                    <div class="row mt-4">
+                        <div class="col-md-6">
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-search-plus"></i> عرض متخصص للمستندات</h4>
+                                <p>توفر منصة MaiPDF عارض PDF متقدم مع إمكانية التكبير والتصغير السلس، والتنقل السريع بين الصفحات، وعرض مُحسّن على جميع الأجهزة.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-highlight">
+                                <h4><i class="fas fa-fingerprint"></i> خصوصية محسّنة</h4>
+                                <p>تمنع خدمتنا فهرسة محتوى المستندات بواسطة محركات البحث، وتتيح لك التحكم الكامل في من يمكنه الوصول إلى مستنداتك، وتوفر طبقات حماية إضافية.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-5 fade-in">
+                <h2>نصائح لاستخدام أكثر فعالية</h2>
+                <div class="tips-section">
+                    <p>إليك بعض النصائح لتحقيق أقصى استفادة من استضافة ومشاركة PDF مع MaiPDF:</p>
+                    <ul class="tips-list">
+                        <li><strong>استخدم العلامات المائية المخصصة</strong> - أضف اسم المستلم في العلامة المائية لمنع مشاركة المستند غير المصرح بها.</li>
+                        <li><strong>قسّم المستندات الكبيرة</strong> - بدلاً من مشاركة كتاب كامل، قم بتقسيمه إلى فصول لتتبع أفضل لما يقرأه المستخدمون.</li>
+                        <li><strong>تتبع أوقات المشاهدة</strong> - حلل متى يتم عرض مستنداتك لاختيار أفضل وقت لإرسال مستندات جديدة.</li>
+                        <li><strong>أنشئ فئات للمستندات</strong> - نظم مستنداتك في مجلدات لتسهيل الإدارة مع نمو مكتبتك.</li>
+                        <li><strong>استخدم تقارير التحليلات بانتظام</strong> - راجع بيانات الاستخدام شهرياً لفهم أفضل لسلوك القراء.</li>
+                    </ul>
+                </div>
+            </section>
+
+            <section class="my-5 fade-in">
+                <h2>الضمان والموثوقية</h2>
+                <p>في MaiPDF، نضمن توفر خدماتنا بنسبة 99.9% مع نسخ احتياطية تلقائية لجميع ملفاتك. لن تقلق أبداً بشأن فقدان مستنداتك المهمة أو عدم تمكن المستلمين من الوصول إليها.</p>
+                
+                <div class="row mt-4">
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-server text-primary fa-3x mb-3"></i>
+                        <h4>استضافة موثوقة</h4>
+                        <p>خوادم مزدوجة في مراكز بيانات متعددة تضمن الاستقرار والسرعة.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-sync text-primary fa-3x mb-3"></i>
+                        <h4>نسخ احتياطي تلقائي</h4>
+                        <p>حماية شاملة لملفاتك مع نسخ احتياطية يومية وتخزين آمن.</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-headset text-primary fa-3x mb-3"></i>
+                        <h4>دعم فني متميز</h4>
+                        <p>فريق دعم متخصص جاهز للمساعدة في أي مشكلة قد تواجهها.</p>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-5">
+                <h2>حالات استخدام شائعة</h2>
+                <div class="row text-center">
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-briefcase use-case-icon"></i>
+                            <h3>الاستخدام التجاري</h3>
+                            <p>مشاركة العروض التقديمية والعقود والتقارير مع العملاء والشركاء مع الحفاظ على التحكم الكامل في الوصول إليها.</p>
+                            <ul class="text-start">
+                                <li>حماية العقود السرية بكلمات مرور</li>
+                                <li>تتبع مشاهدات العروض التقديمية</li>
+                                <li>مراقبة من يطلع على التقارير المالية</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-graduation-cap use-case-icon"></i>
+                            <h3>التعليم</h3>
+                            <p>توزيع المواد التعليمية على الطلاب مع تتبع من قرأها، وكم من الوقت استغرق، ومدى فعالية المحتوى.</p>
+                            <ul class="text-start">
+                                <li>مشاركة الكتب والأبحاث الإلكترونية</li>
+                                <li>تحديد الطلاب الذين لم يقرؤوا المواد بعد</li>
+                                <li>تحليل أنماط الدراسة لتحسين المحتوى</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="feature-card">
+                            <i class="fas fa-bullhorn use-case-icon"></i>
+                            <h3>التسويق</h3>
+                            <p>نشر الكتيبات والكتالوجات والنشرات الإخبارية مع قياس مشاركة الجمهور وتحسين استراتيجيات المحتوى.</p>
+                            <ul class="text-start">
+                                <li>قياس معدلات قراءة الكتالوجات الرقمية</li>
+                                <li>توجيه حملات تسويقية بناءً على بيانات القراءة</li>
+                                <li>إنشاء رموز QR للمواد التسويقية</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-5">
+                <h2>آراء المستخدمين</h2>
+                <div class="row">
+                    <div class="col-md-6">
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"أستخدم MaiPDF لمشاركة عروضي التقديمية مع العملاء المحتملين. إمكانية معرفة متى يفتحون المستندات ومدة قراءتها ساعدتني في معرفة المهتمين حقًا بخدماتنا. بفضل العلامات المائية المخصصة، أشعر بالأمان عند مشاركة المعلومات الحساسة."</p>
+                                <strong>- أحمد سمير، مدير مبيعات</strong>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"كمعلمة، أستطيع الآن مشاركة الواجبات بطريقة احترافية ومعرفة من قام بالاطلاع عليها بالفعل. العلامات المائية تمنع النسخ غير المصرح به للمواد التعليمية. أتمكن من تخصيص وقت تواجد المستندات عبر الإنترنت، مما يساعد في تنظيم جدول المواد الدراسية."</p>
+                                <strong>- سارة عبدالله، أستاذة جامعية</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- إضافة شهادة مستخدم ثالثة -->
+                <div class="row mt-4">
+                    <div class="col-md-6 mx-auto">
+                        <div class="testimonial">
+                            <div class="testimonial-content">
+                                <p>"بصفتي مصمم جرافيك، كنت أواجه مشكلة في مشاركة ملفات المحفظة الخاصة بي مع العملاء دون فقدان السيطرة على من يشاهدها. مع MaiPDF، يمكنني الآن تحديد فترة صلاحية لكل ملف ومعرفة كل من وصل إليه. هذا حل عملي ومجاني أنصح به جميع المصممين."</p>
+                                <strong>- خالد محمود، مصمم جرافيك مستقل</strong>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="my-5">
+                <h2>الأسئلة الشائعة</h2>
+                <div class="faq-item">
+                    <div class="faq-question">هل استضافة PDF مجانية حقاً بدون قيود؟</div>
+                    <p>نعم، توفر MaiPDF استضافة PDF مجانية بدون قيود على عدد الملفات أو حجمها. جميع الميزات الأساسية متاحة في الحسابات المجانية، والتي تشمل الاستضافة والمشاركة والتتبع الأساسي. لكن للميزات المتقدمة مثل العلامات المائية المخصصة والتحليلات المتقدمة، قد تحتاج إلى ترقية حسابك.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">كيف يمكنني معرفة من شاهد مستنداتي؟</div>
+                    <p>توفر لوحة تحكم MaiPDF معلومات مفصلة عن كل مشاهدة، بما في ذلك الموقع الجغرافي للمشاهد، والجهاز المستخدم، ووقت المشاهدة، ومدتها، والصفحات التي تمت قراءتها. يمكنك أيضاً تصدير هذه البيانات كتقارير منتظمة للتحليل المتقدم وتتبع اتجاهات المشاهدة عبر الزمن.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">هل يمكن للآخرين تنزيل ملف PDF الخاص بي؟</div>
+                    <p>يمكنك التحكم بشكل كامل في إذن التنزيل. يمكنك السماح بالتنزيل أو تعطيله تماماً، مما يسمح للمستخدمين بعرض المستند فقط عبر الإنترنت. في حالة السماح بالتنزيل، يمكنك تتبع من قام بتنزيل الملف ومتى، وإمكانية إضافة علامات مائية على النسخة التي تم تنزيلها لتعزيز الأمان.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">ما مدى أمان ملفاتي؟</div>
+                    <p>تستخدم MaiPDF تشفيراً متقدماً لحماية ملفاتك أثناء التخزين والنقل. يمكنك أيضاً إضافة طبقات أمان إضافية مثل المصادقة وكلمات المرور وتقييد الوصول. جميع البيانات تخضع لنسخ احتياطية يومية وتُحفظ في مراكز بيانات متعددة لضمان أعلى مستويات الحماية والوصول الموثوق.</p>
+                </div>
+                <!-- إضافة أسئلة شائعة جديدة -->
+                <div class="faq-item">
+                    <div class="faq-question">كيف يمكنني إنشاء رمز QR لملف PDF؟</div>
+                    <p>بعد رفع ملف PDF إلى حسابك في MaiPDF، ستجد خيار "إنشاء رمز QR" في صفحة إدارة المستند. انقر عليه واختر حجم ولون الرمز المناسب لك. يمكنك تنزيل الرمز بصيغة PNG أو SVG لاستخدامه في المواد المطبوعة أو على موقعك الإلكتروني. سيوجه هذا الرمز المستخدمين مباشرة إلى ملف PDF الخاص بك عند مسحه.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">هل يمكنني استبدال ملف PDF دون تغيير الرابط؟</div>
+                    <p>نعم، يمكنك تحديث أو استبدال ملف PDF مع الاحتفاظ بنفس الرابط وإحصائيات المشاهدة. هذه الميزة مفيدة للغاية عند الحاجة إلى تحديث مستند دون الحاجة إلى إعادة مشاركة الرابط مع المستلمين. ما عليك سوى الذهاب إلى صفحة إدارة المستند واختيار "استبدال الملف" ثم تحميل النسخة الجديدة.</p>
+                </div>
+            </section>
+
+            <section class="my-5 fade-in">
+                <h2>كيفية الاستفادة من MaiPDF في عملك اليومي</h2>
+                <div class="row">
+                    <div class="col-lg-6">
+                        <div class="security-explanation mb-4">
+                            <h4><i class="fas fa-tasks text-primary"></i> استخدام MaiPDF في إدارة المشاريع</h4>
+                            <p>يمكن لمديري المشاريع استخدام MaiPDF لمشاركة خطط المشروع والجداول الزمنية مع أعضاء الفريق، ومتابعة من اطلع على المستندات المهمة، وتحديد من لم يقرأ التحديثات بعد.</p>
+                            <ul>
+                                <li>مشاركة وثائق المشروع مع إمكانية تتبع القراءة</li>
+                                <li>إرسال تقارير التقدم والتأكد من قراءتها</li>
+                                <li>توزيع مهام مؤمنة بكلمات مرور للفرق المختلفة</li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="security-explanation mb-4">
+                            <h4><i class="fas fa-book text-primary"></i> نشر المحتوى التعليمي</h4>
+                            <p>يمكن للمدرسين والمؤلفين استخدام MaiPDF لنشر الكتب الإلكترونية والأبحاث مع حماية حقوق الملكية الفكرية والحصول على إحصاءات دقيقة حول قراءة المحتوى.</p>
+                            <ul>
+                                <li>نشر أجزاء تجريبية من الكتب مع تقييد عدد المشاهدات</li>
+                                <li>فهم سلوك القراء وتحسين المحتوى</li>
+                                <li>حماية المواد التعليمية بعلامات مائية مخصصة</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <div class="text-center mt-5">
+                <a href="https://maipdf.com" class="btn btn-primary btn-lg mb-4">ابدأ الاستخدام المجاني الآن</a>
+                <p class="text-muted">
+                    <i class="fas fa-heart text-danger"></i> مجاني للأبد. لا حاجة لبطاقة ائتمان.
+                </p>
+                <p class="text-muted">&copy; 2025 MaiPDF. جميع الحقوق محفوظة.</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
+    <script src="https://pdfhost.online/bizcon/js/main.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

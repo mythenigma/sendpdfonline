@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>文件不落云也能远程管控：本地加密 PDF 的轻量级分享新姿势</title>
+    <meta name="description" content="了解如何通过本地加密 PDF 和离线 HTML 包安全分享文档。无需上传云端即可随时控制权限，确保数据安全。">
+    <meta name="keywords" content="PDF 加密, 离线分享, 数据安全, 离线 HTML 包, 权限管理, 文件控制">
+</head>
+<body>
+    <h1>文件不落云也能远程管控：本地加密 PDF 的轻量级分享新姿势</h1>
+    <p>核心卖点一句话：把 PDF 打包进本地 HTML，放 U 盘、NAS 随处走——每次打开先向服务器闪电验证授权，既保密又可收回。</p>
+
+    <h2>1 | 为什么选择“离线存储 + 联网授权”模式？</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>传统做法</th>
+                <th>痛点</th>
+                <th>离线版破解痛点</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>全传网盘</td>
+                <td>数据留在第三方，合规压力大</td>
+                <td>文件只在你手里或内网</td>
+            </tr>
+            <tr>
+                <td>纯本地加密</td>
+                <td>发出去就失控，撤不了回</td>
+                <td>每次打开都要验证，随时可锁</td>
+            </tr>
+            <tr>
+                <td>专业 DRM 平台</td>
+                <td>部署复杂、费用高</td>
+                <td>一键生成 HTML，个人也负担得起</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>2 | 离线版的 4 个硬核功能</h2>
+    <h3>本地存储</h3>
+    <p>PDF 被封装进单个 HTML，随便拷进 U 盘 / 私有 NAS。</p>
+    <img src="../offlinepages/upload_section_offline_maipdf.png" alt="上传离线包示例">
+
+    <h3>在线验证</h3>
+    <p>打开时后台秒级握手：校验阅读码、剩余次数、到期日。断网→直接拒绝启动。</p>
+    <img src="../offlinepages/security_setting.png" alt="安全设置示例">
+
+    <h3>读码 / 编码双通道</h3>
+    <p>读码：仅查看；编码：可替换文件、追加次数。分享文件同时保留“后悔药”。</p>
+    <img src="../offlinepages/result-check-change.png" alt="检查更改示例">
+
+    <h3>访问轨迹</h3>
+    <p>每条验证请求都记录 IP、时间，后台一目了然——谁看过，何时结束，一键导出 CSV。</p>
+    <img src="../offlinepages/success_example_offline_file_change.png" alt="成功示例">
+
+    <h2>3 | 典型使用场景</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>行业 / 场合</th>
+                <th>具体玩法</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>硬件制造交付</td>
+                <td>把蓝图打包成 HTML 随设备进现场；客户电脑没网？自带随身 Wi‑Fi 路由发射一次性热点做验证。</td>
+            </tr>
+            <tr>
+                <td>法律及审计</td>
+                <td>律师递交尽调资料，用阅读码限 5 次；审计结束后在后台按编码一键“终止授权”。</td>
+            </tr>
+            <tr>
+                <td>展会 / 培训</td>
+                <td>U 盘派发产品白皮书，首次验证后自动缓存页面，离开展馆仍可离线浏览 24 h。</td>
+            </tr>
+            <tr>
+                <td>高校科研</td>
+                <td>内部交换论文草稿，文件留在校内服务器；校外合作者扫描二维码临时验证即可查看。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>4 | 3 步生成加密 HTML</h2>
+    <p>上传 PDF → 30 秒内完成封装。</p>
+
+    <h3>设置权限</h3>
+    <p>阅读次数、到期日、是否锁定 IP / 地域。</p>
+
+    <h3>下载离线包</h3>
+    <p>获得 Project_X_Spec.html + 同步生成访问/编辑码 & 二维码。</p>
+    <img src="../offlinepages/result_download_zip_file.png" alt="下载离线包示例">
+
+    <h2>5 | 给安全意识再加一把锁</h2>
+    <p>不可打印 / 禁复制：浏览器层面禁用打印菜单、右键与快捷键。</p>
+
+    <p>动态浮水印：打开时自动叠加日期 + IP，截图也能追溯来源。</p>
+
+    <p>HTTPS 验证信道：授权握手走加密通道，防中间人篡改。</p>
+
+    <p>一次性阅读模式：打开即扣次数，窗口关闭即失效，防止截屏挂后台直播。</p>
+
+    <h2>6 | 成本与维护</h2>
+    <table>
+        <thead>
+            <tr>
+                <th>项目</th>
+                <th>说明</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>费用</td>
+                <td>个人 & 小团队版永久免费；超高并发可升级付费套餐（按验证次数计费，几乎低于传统 DRM 百分之一成本）。</td>
+            </tr>
+            <tr>
+                <td>部署</td>
+                <td>无需服务器、本地软件；浏览器即阅读器。</td>
+            </tr>
+            <tr>
+                <td>更新</td>
+                <td>若有新功能，重新上传原 PDF 即可获得新版 HTML；旧包不受影响。</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2>7 | 一分钟决策口诀</h2>
+    <p>文件一定要抓在自己手里，又想随时锁门？</p>
+    <p>选本地 HTML 离线包。</p>
+    <p>要实时修改内容、统计阅读轨迹？</p>
+    <p>再配合云端外链双线并行，最大化灵活度。</p>
+
+    <h2>结语 · 拿起你的 PDF，马上试一试</h2>
+    <p>找一份机密文档⇢上传⇢生成离线包。</p>
+
+    <p>把二维码贴进邮件或打印贴纸。</p>
+
+    <p>让对方在任何设备点开验证——感受“文件不落云、权限随时关”的掌控感。</p>
+
+    <p>下一份不能外泄的 PDF，就用离线版给自己加道智能保险。</p>
+</body>
+</html>
