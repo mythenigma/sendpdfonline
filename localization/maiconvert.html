@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
     <meta name="google" content="notranslate">
-    <title>MaiPDF Conversion - Convert PDFs to Image Format for Security and Protection</title>
+    <title>convert PDF files into image format</title>
   <!-- Google tag (gtag.js) maifile-->
 <script async src=https://www.googletagmanager.com/gtag/js?id=G-Y0TD4QTWWM></script>
 <script>
@@ -135,21 +135,6 @@ body {
     backdrop-filter: blur(5px);
 }
 
-@media (max-width: 768px) {
-    .maihead {
-        font-size: 2rem;
-    }
-    
-    .button {
-        padding: 10px 20px;
-        font-size: 14px;
-    }
-    
-    .button-group {
-        flex-direction: column;
-    }
-}
-
 /* Enhanced Tooltip Styling */
 .tooltip {
     position: relative;
@@ -193,6 +178,26 @@ body {
     opacity: 1;
     transform: translateX(-50%) translateY(0);
 }
+
+@media (max-width: 768px) {
+    .maihead {
+        font-size: 2rem;
+    }
+    
+    .button {
+        padding: 10px 20px;
+        font-size: 14px;
+    }
+    
+    .button-group {
+        flex-direction: column;
+    }
+    
+    .tooltip .tooltip-text {
+        width: 160px;
+        font-size: 12px;
+    }
+}
 </style>
 <div id="grad1">
   <div class="container">
@@ -204,31 +209,16 @@ body {
         </button>
 
         <div class="button-group">
-            <div class="tooltip">
-                <button class="button button2 button-blue" onclick="ziptupian()">Images in ZIP</button>
-                <span class="tooltip-text">Convert PDF to individual image files and compress them into a single ZIP archive for easy download and storage</span>
-            </div>
-            <div class="tooltip">
-                <button class="button button2 button-purple" onclick="pdfquanbuok()">Imaginized PDF</button>
-                <span class="tooltip-text">Convert PDF to image-based PDF that preserves appearance while preventing editing of original content</span>
-            </div>
+            <button class="button button2 button-blue" onclick="ziptupian()">Images in ZIP</button>
+            <button class="button button2 button-purple" onclick="pdfquanbuok()">Imaginized PDF</button>
         </div>
         
         <div class="button-group">
-            <div class="tooltip">
-                <button class="button button2 button-orange" onclick="zhidaying()">Imaginized PDF with Print</button>
-                <span class="tooltip-text">Create image-based PDF with print permission only - allows viewing and printing but prevents editing</span>
-            </div>
-            <div class="tooltip">
-                <button class="button button2 button-red" onclick="quanbukeyi()">PDF in all Restrictions</button>
-                <span class="tooltip-text">Create fully restricted PDF with all permissions removed - maximum protection for sensitive documents</span>
-            </div>
+            <button class="button button2 button-orange" onclick="zhidaying()">Imaginized PDF with Print</button>
+            <button class="button button2 button-red" onclick="quanbukeyi()">PDF in all Restrictions</button>
         </div>
 
-        <div class="tooltip">
-            <button id="yasuobutton" class="button button1" onclick="yasuo()">Compression: No</button>
-            <span class="tooltip-text">Toggle image compression - reduces file size but may slightly decrease image quality</span>
-        </div>
+        <button id="yasuobutton" class="button button1" onclick="yasuo()">Compression: No</button>
         
         <div class="instruction-text">Upload a PDF → Choose an Output Format</div>
     </p>

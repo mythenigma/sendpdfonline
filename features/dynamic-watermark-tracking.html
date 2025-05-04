@@ -1,338 +1,134 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Track PDF access with dynamic watermarks. Monitor who views your documents, when, and from where. Get detailed viewer information including IP, device, and access time.">
-    <meta name="keywords" content="PDF tracking, dynamic watermark, document tracking, PDF security, PDF monitoring, PDF access control, PDF viewer tracking, PDF analytics, PDF watermarking, PDF security features">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="Dynamic Watermark & Document Tracking | MaiPDF | Track PDF Access">
-    <meta property="og:description" content="Track who views your PDF documents with dynamic watermarks and detailed access logs. Get comprehensive information about document viewers, including access time, IP address, device details, and more.">
-    <meta property="og:image" content="/images/dynamic-watermark.png">
-    <meta property="og:url" content="https://maipdf.com/features/dynamic-watermark-tracking.html">
-    <title>Dynamic Watermark & Document Tracking | MaiPDF | Track PDF Access</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: #f5f7f8;
-            color: #333;
-        }
-        .header {
-            background: linear-gradient(to right, #2C8C99, #45a3b1);
-            color: white;
-            padding: 40px 0;
-            text-align: center;
-            margin-bottom: 30px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .content-wrapper {
-            background-color: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 30px;
-        }
-        h1, h2, h3 {
-            color: #2C8C99;
-        }
-        .feature-box {
-            background-color: #e8f0fe;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #2C8C99;
-        }
-        .tracking-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .tracking-feature {
-            background-color: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid #e9ecef;
-            transition: transform 0.2s;
-        }
-        .tracking-feature:hover {
-            transform: translateY(-5px);
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #2C8C99;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 20px 0;
-            transition: background-color 0.2s;
-        }
-        .cta-button:hover {
-            background-color: #45a3b1;
-            color: white;
-        }
-        .tip-box {
-            background-color: #fef2e8;
-            padding: 20px;
-            border-radius: 8px;
-            margin: 20px 0;
-            border-left: 4px solid #ff9800;
-        }
-        .tracking-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 20px 0;
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-        }
-        .tracking-table th, .tracking-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        .tracking-table th {
-            background-color: #f5f5f5;
-            color: #2C8C99;
-        }
-        .tracking-table tr:hover {
-            background-color: #f8f9fa;
-        }
-        .feature-icon {
-            color: #2C8C99;
-            font-size: 24px;
-            margin-bottom: 10px;
-        }
-        .footer-links {
-            margin-top: 30px;
-            text-align: center;
-        }
-        .footer-links a {
-            color: #2C8C99;
-            text-decoration: none;
-            margin: 0 15px;
-        }
-        .footer-links a:hover {
-            color: #45a3b1;
-        }
-    </style>
+    <meta name="description" content="了解如何通过动态水印跟踪PDF文档的查看情况，保护您的文件安全。">
+    <meta name="keywords" content="动态水印, PDF跟踪, 文件安全, 文档保护">
+    <meta name="author" content="SendPDFOnline">
+    <link rel="canonical" href="https://sendpdfonline.com/features/dynamic-watermark-tracking.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="动态水印跟踪 - SendPDFOnline">
+    <meta property="og:description" content="通过动态水印跟踪PDF文档的查看情况，保护您的文件安全">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sendpdfonline.com/features/dynamic-watermark-tracking.html">
+    <meta property="og:image" content="https://sendpdfonline.com/maipdf-images/watermark-tracking-demo.png">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="动态水印跟踪 - SendPDFOnline">
+    <meta name="twitter:description" content="通过动态水印跟踪PDF文档的查看情况，保护您的文件安全">
+    <meta name="twitter:image" content="https://sendpdfonline.com/maipdf-images/watermark-tracking-demo.png">
+    
+    <title>动态水印跟踪 | SendPDFOnline</title>
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #2C8C99, #45a3b1);">
+    <header class="section">
         <div class="container">
-            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://maipdf.com">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pdf-security-features.html">Security Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dynamic-watermark-tracking.html">Dynamic Watermark</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pdf-tracking-analytics.html">View Tracking</a>
-                    </li>
-                </ul>
-            </div>
+            <h1>动态水印跟踪</h1>
+            <p>实时追踪您的PDF文档查看情况，保护文件安全</p>
         </div>
-    </nav>
+    </header>
 
-    <!-- Header Section -->
-    <div class="header">
-        <h1><i class="fas fa-water"></i> Dynamic Watermark & Document Tracking</h1>
-        <p class="lead">Monitor PDF access with advanced tracking and watermarking features</p>
-    </div>
+    <main>
+        <div class="container">
+            <section class="section">
+                <h2>什么是动态水印跟踪？</h2>
+                <p>动态水印跟踪是一种先进的PDF保护技术，允许您实时追踪文档的查看情况。每次有人打开您的PDF文件时，系统都会记录详细的查看信息，包括查看时间、地理位置、设备类型等。</p>
+                
+                <div class="image-example" style="margin: 2rem 0;">
+                    <img src="../maipdf-images/watermark-tracking-demo.png" 
+                         alt="动态水印跟踪示例" 
+                         width="800" 
+                         height="600" 
+                         loading="lazy"
+                         style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                    <p class="text-center" style="margin-top: 1rem; color: #666;">动态水印跟踪示例</p>
+                </div>
+            </section>
 
-    <div class="container">
-        <div class="content-wrapper">
-            <p>Track who views your PDF documents with dynamic watermarks and detailed access logs. Get comprehensive information about document viewers, including access time, IP address, device details, and more.</p>
+            <section class="section">
+                <h2>主要功能</h2>
+                <ul>
+                    <li>实时查看追踪</li>
+                    <li>地理位置定位</li>
+                    <li>设备类型识别</li>
+                    <li>查看时间记录</li>
+                    <li>水印自定义</li>
+                </ul>
+            </section>
 
-            <img src="../images/qrwatermark.png" alt="MaiPDF Dynamic Watermark Tracking Interface" class="img-fluid rounded mb-4">
+            <section class="section">
+                <h2>如何工作</h2>
+                <ol>
+                    <li>上传您的PDF文件</li>
+                    <li>启用动态水印跟踪功能</li>
+                    <li>设置水印样式和追踪参数</li>
+                    <li>生成并分享带有动态水印的PDF</li>
+                    <li>实时查看追踪报告</li>
+                </ol>
+            </section>
 
-            <div class="feature-box">
-                <h2><i class="fas fa-water feature-icon"></i> Dynamic Watermark Features</h2>
-                <div class="tracking-grid">
-                    <div class="tracking-feature">
-                        <h3><i class="fas fa-user"></i> Viewer Information</h3>
-                        <ul>
-                            <li>Viewer's email address</li>
-                            <li>Access date and time</li>
-                            <li>IP address</li>
-                            <li>Device information</li>
-                        </ul>
+            <section class="section">
+                <h2>为什么选择动态水印跟踪</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>增强安全性</h3>
+                        <p>通过动态水印追踪文档的每一次查看，防止未经授权的访问。</p>
                     </div>
-                    <div class="tracking-feature">
-                        <h3><i class="fas fa-tint"></i> Watermark Types</h3>
-                        <ul>
-                            <li>Text watermarks</li>
-                            <li>Dynamic content</li>
-                            <li>Custom branding</li>
-                            <li>Security patterns</li>
-                        </ul>
+                    <div class="feature-card">
+                        <h3>实时数据</h3>
+                        <p>获取即时的查看数据，了解文档的使用情况。</p>
                     </div>
-                    <div class="tracking-feature">
-                        <h3><i class="fas fa-chart-line"></i> Tracking Features</h3>
-                        <ul>
-                            <li>View count tracking</li>
-                            <li>Access duration</li>
-                            <li>Location tracking</li>
-                            <li>Device fingerprinting</li>
-                        </ul>
+                    <div class="feature-card">
+                        <h3>自定义水印</h3>
+                        <p>根据需要自定义水印样式，包括颜色、位置和透明度。</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <h2>Tracking Capabilities</h2>
-            <table class="tracking-table">
-                <tr>
-                    <th>Tracking Element</th>
-                    <th>Information Captured</th>
-                    <th>Use Cases</th>
-                </tr>
-                <tr>
-                    <td>Viewer Identity</td>
-                    <td>Email, name, organization</td>
-                    <td>Audit trails, access control</td>
-                </tr>
-                <tr>
-                    <td>Access Details</td>
-                    <td>Date, time, duration</td>
-                    <td>Usage monitoring, security</td>
-                </tr>
-                <tr>
-                    <td>Technical Data</td>
-                    <td>IP, device, browser</td>
-                    <td>Security analysis, fraud prevention</td>
-                </tr>
-                <tr>
-                    <td>Location</td>
-                    <td>Country, city, network</td>
-                    <td>Geographic tracking, compliance</td>
-                </tr>
-            </table>
+            <section class="section">
+                <h2>典型应用场景</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>行业</th>
+                            <th>应用场景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>法律</td>
+                            <td>保护敏感文件，追踪文件查看情况</td>
+                        </tr>
+                        <tr>
+                            <td>金融</td>
+                            <td>监控财务报告的访问情况</td>
+                        </tr>
+                        <tr>
+                            <td>教育</td>
+                            <td>防止教材被盗用</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-            <div class="feature-box">
-                <h2><i class="fas fa-shield-alt feature-icon"></i> Advanced Tracking Capabilities</h2>
-                <h3>Document Access Logs</h3>
-                <ul>
-                    <li>Comprehensive access history</li>
-                    <li>Detailed viewer information</li>
-                    <li>Access patterns analysis</li>
-                    <li>Security alerts</li>
-                </ul>
-
-                <h3>Security Features</h3>
-                <ul>
-                    <li>Tamper-resistant watermarks</li>
-                    <li>Real-time tracking</li>
-                    <li>Access notifications</li>
-                    <li>Security alerts</li>
-                </ul>
-            </div>
-
-            <div class="tip-box">
-                <h2><i class="fas fa-lightbulb feature-icon"></i> Best Practices for Document Tracking</h2>
-                <ul>
-                    <li>Enable dynamic watermarks for sensitive documents</li>
-                    <li>Regularly review access logs</li>
-                    <li>Set up security alerts for suspicious activity</li>
-                    <li>Use tracking data for security analysis</li>
-                    <li>Maintain compliance with privacy regulations</li>
-                    <li>Customize watermarks for different document types</li>
-                </ul>
-            </div>
-
-            <div class="feature-box">
-                <h2><i class="fas fa-industry feature-icon"></i> Industry Applications</h2>
-                <h3>Legal Documents</h3>
-                <ul>
-                    <li>Track document access</li>
-                    <li>Monitor client viewing</li>
-                    <li>Maintain audit trails</li>
-                    <li>Ensure confidentiality</li>
-                </ul>
-
-                <h3>Financial Reports</h3>
-                <ul>
-                    <li>Monitor investor access</li>
-                    <li>Track confidential data</li>
-                    <li>Prevent unauthorized sharing</li>
-                    <li>Maintain compliance</li>
-                </ul>
-
-                <h3>Creative Content</h3>
-                <ul>
-                    <li>Protect intellectual property</li>
-                    <li>Track client reviews</li>
-                    <li>Monitor portfolio access</li>
-                    <li>Prevent unauthorized use</li>
-                </ul>
-            </div>
-
-            <div class="text-center">
-                <h2>Ready to Track Your Documents?</h2>
-                <p>Start monitoring your PDF access with MaiPDF's dynamic watermarking and tracking features:</p>
-                <a href="https://maipdf.com" class="btn btn-primary btn-lg"><i class="fas fa-shield-alt"></i> Start Tracking Documents</a>
-            </div>
-
-            <div class="related-content mt-4">
-                <h2>Related Features</h2>
-                <ul>
-                    <li><a href="pdf-tracking-analytics.html">PDF Tracking & Analytics</a></li>
-                    <li><a href="pdf-security-features.html">PDF Security Features</a></li>
-                    <li><a href="secure-pdf-access-control.html">Secure PDF Access Control</a></li>
-                    <li><a href="prevent-pdf-forwarding-dynamicqr.html">Prevent PDF Forwarding</a></li>
-                    <li><a href="pdf-security-best-practices.html">PDF Security Best Practices</a></li>
-                </ul>
-            </div>
-
-            <h3><i class="fas fa-clipboard-list"></i> Step 5: Analyze Tracking Data</h3>
-            <p>Use the tracking data collected by MaiPDF to analyze document usage patterns. This includes identifying frequently accessed documents, understanding user behavior, and improving document security based on insights.</p>
-
-            <h3><i class="fas fa-file-pdf"></i> Example of Tracking Insights</h3>
-            <p>Here’s an example of tracking insights generated for a PDF:</p>
-            <p><a href="https://maipdf.com/tracking-insights-guide.pdf" target="_blank">Click here to view the PDF guide on tracking insights.</a></p>
-
-            <h4 class="mb-4">MaiPDF Tracking Features</h4>
-            <ul class="list-group mb-4">
-                <li class="list-group-item active">Monitor document access in real-time.</li>
-                <li class="list-group-item">Receive notifications for unauthorized access attempts.</li>
-                <li class="list-group-item active">Generate detailed reports on document usage.</li>
-            </ul>
-            <div class="text-center mb-4">
-                <img src="../images/tracking-features.png" class="img-thumbnail" alt="MaiPDF Tracking Features">
-            </div>
-            <footer>
-                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
-            </footer>
+            <section class="section">
+                <h2>立即体验</h2>
+                <p>立即注册并体验动态水印跟踪功能，保护您的PDF文档安全。</p>
+                <a href="https://maipdf.com/zh/maiconvert.html" class="cta-button">开始使用</a>
+            </section>
         </div>
-    </div>
+    </main>
 
-    <div class="footer-links">
-        <a href="https://maipdf.com">Visit MaiPDF.com</a>
-        <a href="features/pdf-security-best-practices.html">Security Best Practices</a>
-        <a href="features/secure-pdf-hosting.html">Secure Hosting</a>
-    </div>
+    <footer class="section">
+        <div class="container">
+            <p>&copy; 2025 SendPDFOnline. 保留所有权利。</p>
+        </div>
+    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/main.js"></script>
 </body>
 </html>

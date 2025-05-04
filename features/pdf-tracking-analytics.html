@@ -1,349 +1,143 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Track and analyze PDF document access with advanced analytics. Monitor who views your documents, when, and how they interact with them. Get detailed insights into document engagement and security.">
-    <meta name="keywords" content="PDF tracking, PDF analytics, document tracking, PDF monitoring, PDF access control, PDF viewer tracking, PDF engagement analytics, PDF security, PDF metrics, PDF reporting, PDF watermark, PDF sharing">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="PDF Tracking & Analytics | MaiPDF | Monitor Document Access">
-    <meta property="og:description" content="Track and analyze PDF document access with advanced analytics. Monitor who views your documents, when, and how they interact with them. Get detailed insights into document engagement and security.">
-    <meta property="og:image" content="/images/pdf-analytics-dashboard.png">
-    <meta property="og:url" content="https://maipdf.com/features/pdf-tracking-analytics.html">
-    <title>PDF Tracking & Analytics | MaiPDF | Monitor Document Access</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2C8C99;
-            --secondary-color: #45a3b1;
-            --accent-color: #ff9800;
-            --text-color: #333;
-            --light-bg: #f5f7f8;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-        }
-        .header {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 60px 0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .content-wrapper {
-            background-color: white;
-            padding: 40px;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.1);
-            margin-bottom: 40px;
-        }
-        h1, h2, h3 {
-            color: var(--primary-color);
-        }
-        .analytics-box {
-            background-color: #e8f0fe;
-            padding: 30px;
-            border-radius: 12px;
-            margin: 30px 0;
-            border-left: 4px solid var(--primary-color);
-            transition: transform 0.3s ease;
-        }
-        .analytics-box:hover {
-            transform: translateY(-5px);
-        }
-        .metric-list {
-            background-color: #f8f9fa;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-            border: 1px solid #e9ecef;
-        }
-        .data-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 25px 0;
-            background-color: white;
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        .data-table th, .data-table td {
-            padding: 15px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
-        .data-table th {
-            background-color: var(--primary-color);
-            color: white;
-        }
-        .data-table tr:hover {
-            background-color: #f8f9fa;
-        }
-        .insight-box {
-            background-color: #fef2e8;
-            padding: 25px;
-            border-radius: 12px;
-            margin: 25px 0;
-            border-left: 4px solid var(--accent-color);
-        }
-        .feature-icon {
-            color: var(--primary-color);
-            font-size: 28px;
-            margin-bottom: 15px;
-        }
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 25px;
-            margin: 25px 0;
-        }
-        .analytics-feature {
-            background-color: white;
-            padding: 25px;
-            border-radius: 12px;
-            border: 1px solid #e9ecef;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        .analytics-feature:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 8px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            margin-top: 20px;
-        }
-        .cta-button:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-        .related-features {
-            background-color: #f8f9fa;
-            padding: 30px;
-            border-radius: 12px;
-            margin-top: 40px;
-        }
-        .related-features h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .related-features ul {
-            list-style: none;
-            padding: 0;
-        }
-        .related-features li {
-            margin-bottom: 10px;
-        }
-        .related-features a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .related-features a:hover {
-            color: var(--primary-color);
-        }
-        .related-features a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-    </style>
+    <meta name="description" content="深入了解PDF跟踪分析功能，实时监控文档访问情况">
+    <meta name="keywords" content="PDF跟踪分析, 文档监控, 文件追踪, 阅读统计">
+    <meta name="author" content="SendPDFOnline">
+    <link rel="canonical" href="https://sendpdfonline.com/features/pdf-tracking-analytics.html">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="PDF跟踪分析 | SendPDFOnline">
+    <meta property="og:description" content="通过高级分析功能实时监控您的PDF文档访问情况">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sendpdfonline.com/features/pdf-tracking-analytics.html">
+    <meta property="og:image" content="https://sendpdfonline.com/maipdf-images/pdf-analytics-dashboard.png">
+    
+    <!-- Twitter Cards -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="PDF跟踪分析 | SendPDFOnline">
+    <meta name="twitter:description" content="通过高级分析功能实时监控您的PDF文档访问情况">
+    <meta property="twitter:image" content="https://sendpdfonline.com/maipdf-images/pdf-analytics-dashboard.png">
+    
+    <title>PDF跟踪分析 | SendPDFOnline</title>
+    <link rel="stylesheet" href="../styles/main.css">
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+    <header class="section">
         <div class="container">
-            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://maipdf.com">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="pdf-security-features.html">Security Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="dynamic-watermark-tracking.html">Dynamic Watermark</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="pdf-tracking-analytics.html">View Tracking</a>
-                    </li>
-                </ul>
-            </div>
+            <h1>PDF跟踪分析</h1>
+            <p>获取详细的文档访问洞察，掌握文件传播路径</p>
         </div>
-    </nav>
+    </header>
 
-    <!-- Header Section -->
-    <div class="header">
+    <main>
         <div class="container">
-            <h1><i class="fas fa-chart-line"></i> PDF Tracking & Analytics</h1>
-            <p class="lead">Monitor document access with advanced analytics and insights</p>
-            <a href="https://maipdf.com" class="cta-button">Start Tracking Now</a>
-        </div>
-    </div>
+            <section class="section">
+                <h2>功能概述</h2>
+                <p>我们的PDF跟踪分析功能为您提供全方位的文档访问洞察，包括查看次数、地理位置分布、设备类型统计和阅读行为分析。通过直观的仪表盘，您可以实时监控文件的传播路径和使用情况。</p>
+                
+                <div class="image-example" style="margin: 2rem 0;">
+                    <img src="../maipdf-images/pdf-analytics-dashboard.png" 
+                         alt="PDF分析仪表盘示例" 
+                         width="1200" 
+                         height="800" 
+                         loading="lazy"
+                         style="max-width: 100%; height: auto; display: block; margin: 0 auto;">
+                    <p class="text-center" style="margin-top: 1rem; color: #666;">PDF分析仪表盘示例</p>
+                </div>
+            </section>
 
-    <div class="container">
-        <div class="content-wrapper">
-            <p>Gain valuable insights into how your PDF documents are being accessed and used. MaiPDF's advanced tracking and analytics features help you understand document engagement and improve security. Learn more about our <a href="pdf-security-features.html">security features</a> and <a href="dynamic-watermark-tracking.html">dynamic watermark tracking</a>.</p>
-
-            <img src="/images/pdf-analytics-dashboard.png" alt="MaiPDF Analytics Dashboard Interface showing document tracking metrics" class="img-fluid rounded mb-4">
-
-            <div class="analytics-box">
-                <h2><i class="fas fa-chart-bar feature-icon"></i> Key Tracking Metrics</h2>
-                <div class="analytics-grid">
-                    <div class="analytics-feature">
-                        <h3><i class="fas fa-eye"></i> View Counts</h3>
-                        <ul>
-                            <li>Track total and unique views</li>
-                            <li>Monitor view trends</li>
-                            <li>Analyze peak viewing times</li>
-                        </ul>
+            <section class="section">
+                <h2>核心分析维度</h2>
+                <div class="feature-grid">
+                    <div class="feature-card">
+                        <h3>地理位置追踪</h3>
+                        <p>精确到城市的地图展示文件访问位置</p>
                     </div>
-                    <div class="analytics-feature">
-                        <h3><i class="fas fa-clock"></i> Access Times</h3>
-                        <ul>
-                            <li>Monitor when documents are viewed</li>
-                            <li>Track access patterns</li>
-                            <li>Identify peak usage periods</li>
-                        </ul>
+                    <div class="feature-card">
+                        <h3>设备分析</h3>
+                        <p>统计移动端、桌面端和浏览器类型的使用比例</p>
                     </div>
-                    <div class="analytics-feature">
-                        <h3><i class="fas fa-globe"></i> Geographic Data</h3>
-                        <ul>
-                            <li>Track viewer locations</li>
-                            <li>Analyze regional distribution</li>
-                            <li>Monitor international access</li>
-                        </ul>
+                    <div class="feature-card">
+                        <h3>时间轴分析</h3>
+                        <p>查看文件访问的实时时间线和活跃时段</p>
+                    </div>
+                    <div class="feature-card">
+                        <h3>页面浏览深度</h3>
+                        <p>分析读者在每一页的停留时间和滚动行为</p>
                     </div>
                 </div>
-            </div>
+            </section>
 
-            <div class="metric-list">
-                <h2><i class="fas fa-tachometer-alt feature-icon"></i> Analytics Features</h2>
+            <section class="section">
+                <h2>技术优势</h2>
                 <ul>
-                    <li><i class="fas fa-sync"></i> Real-time tracking</li>
-                    <li><i class="fas fa-list-alt"></i> Detailed access logs</li>
-                    <li><i class="fas fa-file-export"></i> Exportable reports</li>
-                    <li><i class="fas fa-chart-pie"></i> Custom analytics dashboards</li>
-                    <li><i class="fas fa-bell"></i> Alert notifications</li>
+                    <li>实时数据更新（延迟<5秒）</li>
+                    <li>支持百万级文档并发追踪</li>
+                    <li>企业级数据加密传输</li>
+                    <li>自定义事件追踪功能</li>
+                    <li>多维数据交叉分析能力</li>
                 </ul>
-            </div>
+            </section>
 
-            <div class="insight-box">
-                <h2><i class="fas fa-lightbulb feature-icon"></i> Business Insights</h2>
-                <p>Use our analytics to gain valuable business insights:</p>
-                <ul>
-                    <li>Identify your most engaged audience</li>
-                    <li>Optimize document distribution times</li>
-                    <li>Improve document security measures</li>
-                    <li>Enhance user engagement strategies</li>
-                </ul>
-            </div>
+            <section class="section">
+                <h2>典型应用场景</h2>
+                <table class="responsive-table">
+                    <thead>
+                        <tr>
+                            <th>行业</th>
+                            <th>营销材料</th>
+                            <th>法律文件</th>
+                            <th>财务报告</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>市场团队</td>
+                            <td>追踪宣传册的阅读完成率</td>
+                            <td>监控合同草案的传播路径</td>
+                            <td>分析投资人的报告阅读偏好</td>
+                        </tr>
+                        <tr>
+                            <td>销售部门</td>
+                            <td>评估报价单的查看频率</td>
+                            <td>确认保密协议的签署情况</td>
+                            <td>跟踪预算方案的审阅进度</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </section>
 
-            <div class="related-features">
-                <h3><i class="fas fa-link"></i> Related Features</h3>
-                <ul>
-                    <li><a href="dynamic-watermark-tracking.html"><i class="fas fa-water"></i> Dynamic Watermark Tracking</a></li>
-                    <li><a href="pdf-security-features.html"><i class="fas fa-shield-alt"></i> PDF Security Features</a></li>
-                    <li><a href="pdf-tracking-comparison.html"><i class="fas fa-balance-scale"></i> PDF Tracking Comparison</a></li>
-                    <li><a href="pdf-view-tracking.html"><i class="fas fa-eye"></i> PDF View Tracking</a></li>
-                </ul>
-            </div>
+            <section class="section">
+                <h2>数据可视化</h2>
+                <div class="visualization-grid">
+                    <div class="viz-card">
+                        <h3>访问热力图</h3>
+                        <div class="chart-placeholder" style="height: 300px; background: #f5f5f5; margin: 1rem 0;"></div>
+                    </div>
+                    <div class="viz-card">
+                        <h3>阅读完成率图表</h3>
+                        <div class="chart-placeholder" style="height: 300px; background: #f5f5f5; margin: 1rem 0;"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="section">
+                <h2>立即开始</h2>
+                <p>注册即可免费体验完整的PDF跟踪分析功能，获取您的文档洞察报告。</p>
+                <a href="https://maipdf.com/zh/maiconvert.html" class="cta-button">免费试用</a>
+            </section>
         </div>
-    </div>
+    </main>
 
-    <section id="related-features" class="container my-5">
-        <h2 class="text-center mb-4">Related Features</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-chart-line"></i> Analytics Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="pdf-view-tracking.html">View Tracking</a></li>
-                            <li><a href="trackpdfopen.html">Open Tracking</a></li>
-                            <li><a href="pdf-tracking-comparison.html">Tracking Comparison</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-shield-alt"></i> Security Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="pdf-security-features.html">Security Features</a></li>
-                            <li><a href="prevent-pdf-forwarding-dynamicqr.html">Prevent Forwarding</a></li>
-                            <li><a href="set-pdf-print-restrictions.html">Print Restrictions</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-share-alt"></i> Sharing Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="share-pdf-online-securely.html">Secure Sharing</a></li>
-                            <li><a href="share-pdf-files-online.html">File Sharing</a></li>
-                            <li><a href="pdf-collaboration-sharing.html">Collaboration</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-4">
+    <footer class="section">
         <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>MaiPDF</h4>
-                    <p>Professional PDF Sharing and Security Solutions</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://maipdf.com" style="color: white;">Home</a></li>
-                        <li><a href="pdf-security-features.html" style="color: white;">Security Features</a></li>
-                        <li><a href="pdf-tracking-analytics.html" style="color: white;">Tracking & Analytics</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="mailto:joe@pdfhost.online" style="color: white;">joe@pdfhost.online</a></li>
-                        <li><a href="https://maipdf.com/contact" style="color: white;">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
-            </div>
+            <p>&copy; 2025 SendPDFOnline. 保留所有权利。</p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/main.js"></script>
 </body>
 </html>
