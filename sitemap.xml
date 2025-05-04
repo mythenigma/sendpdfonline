@@ -3,15 +3,95 @@
     <!-- Main Pages -->
     <url>
         <loc>https://sendpdfonline.com/</loc>
-        <lastmod>2025-04-29</lastmod>
+        <lastmod>2025-05-04</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
     </url>
     <url>
         <loc>https://sendpdfonline.cn/</loc>
-        <lastmod>2025-04-29</lastmod>
+        <lastmod>2025-05-04</lastmod>
         <changefreq>daily</changefreq>
         <priority>1.0</priority>
+    </url>
+
+    <!-- Arabic Pages -->
+    <url>
+        <loc>https://sendpdfonline.com/article/offline-maipdf-ar.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/advanced-security-configurations.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/anonymous-pdf-sharing.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/convert-pdf-to-qr-code.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/design-watermark-protection.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/dynamic-watermark-tracking.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/email-verification-secure-pdf-access.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/free-pdf-hosting-and-sharing.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/pdf-security-features.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/pdf-tracking-analytics.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/pdf-tracking-comparison.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/pdf-view-tracking.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/arabic/track-pdf-usage.html</loc>
+        <lastmod>2025-05-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.7</priority>
     </url>
 
     <!-- English Features -->

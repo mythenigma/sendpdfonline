@@ -5,63 +5,877 @@
     <meta charset="utf-8">
     <title>Share PDF Files Online Securely | MaiPDF</title>
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Share your PDF files online securely and easily with MaiPDF. Generate direct links, QR codes, and control access with advanced features." name="description">
-    <meta name="keywords" content="share PDF online, secure PDF links, QR code generation, MaiPDF, online PDF sharing, document hosting">
-    <meta property="og:title" content="MaiPDF - Share PDF Files Online">
-    <meta property="og:description" content="MaiPDF enables you to share your PDF files securely and easily through direct links and QR codes. No need for attachments or email hassle.">
+    <meta content="Share your PDF files online securely and easily with MaiPDF. Generate direct links, QR codes, and control access with advanced security features for professional document sharing." name="description">
+    <meta name="keywords" content="share PDF online, secure PDF links, QR code generation, MaiPDF, online PDF sharing, document hosting, watermarking, access control, file sharing security">
+    <meta property="og:title" content="MaiPDF - Professional Secure PDF File Sharing">
+    <meta property="og:description" content="MaiPDF enables you to share your PDF files securely and professionally through direct links and QR codes. Control access, track views, and protect sensitive documents with ease.">
     <meta property="og:image" content="https://maipdf.com/favicon.ico">
     <meta property="og:type" content="website">
-	<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860"
-     crossorigin="anonymous"></script>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
     <link href="https://maipdf.com/favicon.ico" rel="icon">
-    <link href="https://maipdf.com/bizcon/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://maipdf.com/bizcon/css/style.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #2C8C99;
+            --secondary-color: #45a3b1;
+            --accent-color: #FF9800;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #343a40;
+            --success-color: #28a745;
+            --warning-color: #ffc107;
+            --danger-color: #dc3545;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text-color);
+            line-height: 1.6;
+        }
+        
+        .navbar {
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .navbar-brand img {
+            height: 40px;
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 100px 0 80px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url('/maipdf-images/pattern-bg.svg');
+            opacity: 0.1;
+            background-size: cover;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .section-title {
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            position: relative;
+            font-weight: 600;
+        }
+        
+        .section-title::after {
+            content: '';
+            display: block;
+            width: 50px;
+            height: 3px;
+            background-color: var(--accent-color);
+            margin-top: 10px;
+        }
+        
+        .feature-card {
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            background-color: white;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            height: 100%;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+            border-bottom: 3px solid var(--primary-color);
+        }
+        
+        .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+        }
+        
+        .step-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+            position: relative;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background-color: var(--primary-color);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: bold;
+        }
+        
+        .testimonial-card {
+            padding: 30px;
+            border-radius: 8px;
+            background-color: white;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+            margin-bottom: 30px;
+        }
+        
+        .testimonial-avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-right: 15px;
+        }
+        
+        .cta-section {
+            background-color: var(--light-bg);
+            padding: 80px 0;
+            border-top: 1px solid #eee;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .btn-primary {
+            background-color: var(--primary-color);
+            border-color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            background-color: var(--secondary-color);
+            border-color: var(--secondary-color);
+            transform: translateY(-2px);
+        }
+        
+        .btn-outline-primary {
+            border-color: var(--primary-color);
+            color: var(--primary-color);
+            padding: 10px 25px;
+            border-radius: 5px;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-primary:hover {
+            background-color: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        .comparison-table {
+            border-collapse: collapse;
+            width: 100%;
+            margin: 30px 0;
+        }
+        
+        .comparison-table th, 
+        .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #eee;
+        }
+        
+        .comparison-table th {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .comparison-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        
+        .comparison-table tr:hover {
+            background-color: #f1f1f1;
+        }
+        
+        .feature-check {
+            color: var(--success-color);
+        }
+        
+        .feature-times {
+            color: var(--danger-color);
+        }
+        
+        .faq-item {
+            margin-bottom: 20px;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .faq-question {
+            background-color: white;
+            padding: 20px;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-left: 5px solid var(--primary-color);
+            font-weight: 500;
+        }
+        
+        .faq-answer {
+            padding: 0 20px;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease;
+            background-color: white;
+        }
+        
+        .faq-item.active .faq-answer {
+            padding: 20px;
+            max-height: 1000px;
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 20px;
+            color: white;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+        }
+        
+        .social-icon {
+            color: white;
+            font-size: 1.5rem;
+            margin-right: 15px;
+            transition: transform 0.3s ease;
+        }
+        
+        .social-icon:hover {
+            transform: translateY(-3px);
+        }
+        
+        .brand-highlight {
+            color: var(--primary-color);
+            font-weight: 600;
+        }
+        
+        .security-badge {
+            display: inline-block;
+            background-color: #f8f9fa;
+            padding: 5px 10px;
+            border-radius: 5px;
+            margin: 5px;
+            font-size: 0.9rem;
+            color: var(--text-color);
+            border: 1px solid #e9ecef;
+        }
+        
+        .use-case-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+            color: var(--primary-color);
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .hero-section {
+                padding: 60px 0 40px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section {
+                text-align: center;
+            }
+            
+            .hero-image {
+                margin-top: 30px;
+            }
+            
+            .section-title::after {
+                margin: 10px auto 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container-xxl bg-white p-0">
-        <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0">
-            <a href="index.html" class="navbar-brand p-0">
-                <h1 class="m-0">Free Online PDF Host</h1>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="/">
+                <img src="/maipdf-images/maipdf-logo.png" alt="MaiPDF Logo">
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse">
-                <span class="fa fa-bars"></span>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                <div class="navbar-nav ms-auto py-0">
-                    <a href="index.html" class="nav-item nav-link">Home</a>
-                    <a href="about.html" class="nav-item nav-link">About</a>
-                    <a href="service.html" class="nav-item nav-link">Service</a>
-                    <a href="contact.html" class="nav-item nav-link">Contact</a>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/features">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/pricing">Pricing</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/blog">Resources</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/contact">Contact</a>
+                    </li>
+                </ul>
+                <div class="ms-lg-4">
+                    <a href="https://maipdf.com/login" class="btn btn-outline-primary me-2">Sign In</a>
+                    <a href="https://maipdf.com/register" class="btn btn-primary">Get Started</a>
                 </div>
-                <a href="" class="btn btn-light rounded-pill text-primary py-2 px-4 ms-lg-5">Control Panel</a>
-            </div>
-        </nav>
-
-        <div class="container-xxl bg-primary page-header">
-            <div class="container text-center">
-                <h1 class="text-white animated zoomIn mb-3">Share PDF Files Online Securely</h1>
-                <p class="text-white">Discover how MaiPDF makes it easy to share your PDF files online with secure links and QR codes.</p>
             </div>
         </div>
+    </nav>
 
-        <section class="container py-5">
-            <h2>Simple Steps to Share PDFs</h2>
-            <ul>
-                <li>1. Visit MaiPDF and select "Share on Cloud"</li>
-                <li>2. Upload your PDF file</li>
-                <li>3. Set access limits like views and expiration</li>
-                <li>4. Share the generated link or QR code</li>
-            </ul>
-        </section>
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center hero-content">
+                <div class="col-lg-6">
+                    <h1 class="fw-bold mb-4">Share PDF Files Online Securely & Professionally</h1>
+                    <p class="lead mb-4">MaiPDF provides a secure, customizable platform for sharing professional documents with clients, colleagues, and stakeholders. Control access, track engagement, and protect your content with enterprise-grade security.</p>
+                    <div class="d-flex flex-wrap mb-4">
+                        <div class="security-badge me-2 mb-2">
+                            <i class="fas fa-lock-alt me-1"></i> End-to-End Encryption
+                        </div>
+                        <div class="security-badge me-2 mb-2">
+                            <i class="fas fa-eye me-1"></i> View Tracking
+                        </div>
+                        <div class="security-badge me-2 mb-2">
+                            <i class="fas fa-shield-alt me-1"></i> DRM Protection
+                        </div>
+                        <div class="security-badge me-2 mb-2">
+                            <i class="fas fa-stopwatch me-1"></i> Expiration Control
+                        </div>
+                    </div>
+                    <div class="d-flex flex-wrap">
+                        <a href="https://maipdf.com/register" class="btn btn-primary me-3 mb-2">Try For Free</a>
+                        <a href="#how-it-works" class="btn btn-outline-light mb-2">See How It Works</a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <img src="/maipdf-images/secure-sharing-illustration.png" alt="Secure PDF Sharing" class="img-fluid hero-image">
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer class="bg-dark text-white text-center py-4">
-            <p>&copy; 2025 MaiPDF. All Rights Reserved.</p>
-        </footer>
-    </div>
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">Professional PDF Sharing Features</h2>
+                    <p class="lead">Share your documents with confidence using MaiPDF's comprehensive set of sharing and security features</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-link"></i>
+                        </div>
+                        <h3>Secure Shareable Links</h3>
+                        <p>Generate secure, customizable links to your PDF files that you can share via email, messaging apps, or social media.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                        <h3>QR Code Generation</h3>
+                        <p>Create QR codes for your PDF documents, making it easy to share in presentations, business cards, or printed materials.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3>Dynamic Watermarking</h3>
+                        <p>Add custom watermarks with viewer information to protect your intellectual property and track document origins.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h3>Access Expiration</h3>
+                        <p>Set expiration dates or view limits for your documents to ensure time-limited access for sensitive information.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h3>Advanced Analytics</h3>
+                        <p>Track who views your documents, for how long, and which pages they spend the most time on with detailed analytics.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Access Controls</h3>
+                        <p>Password-protect your documents and manage who has access with email verification and domain restrictions.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-    <script src="https://maipdf.com/bizcon/js/main.js"></script>
+    <!-- How It Works Section -->
+    <section class="py-5 bg-light" id="how-it-works">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">How to Share PDFs with MaiPDF</h2>
+                    <p class="lead">Follow these simple steps to securely share your PDF files online</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3>Upload Your PDF Document</h3>
+                        <p>Sign in to your MaiPDF account and upload your PDF file through our secure interface. We support files up to 100MB.</p>
+                        <div class="text-center mt-3">
+                            <img src="/maipdf-images/upload-illustration.png" alt="Upload PDF" class="img-fluid" style="max-height: 200px;">
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3>Configure Sharing Options</h3>
+                        <p>Set sharing parameters like access expiration, view limits, password protection, and watermarking options to customize your security level.</p>
+                        <div class="text-center mt-3">
+                            <img src="/maipdf-images/settings-illustration.png" alt="Configure Settings" class="img-fluid" style="max-height: 200px;">
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3>Generate and Share Links</h3>
+                        <p>Get your secure link or QR code and share it with your intended recipients via email, messaging apps, or social media platforms.</p>
+                        <div class="text-center mt-3">
+                            <img src="/maipdf-images/share-illustration.png" alt="Share Links" class="img-fluid" style="max-height: 200px;">
+                        </div>
+                    </div>
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3>Monitor Engagement</h3>
+                        <p>Track document views, time spent on each page, and other analytics to gain insights into how your PDF is being used.</p>
+                        <div class="text-center mt-3">
+                            <img src="/maipdf-images/analytics-illustration.png" alt="Monitor Engagement" class="img-fluid" style="max-height: 200px;">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">Professional Use Cases</h2>
+                    <p class="lead">MaiPDF serves professionals across various industries with secure document sharing needs</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="use-case-icon">
+                        <i class="fas fa-briefcase"></i>
+                    </div>
+                    <h3>Business & Finance</h3>
+                    <ul class="list-unstyled">
+                        <li>• Client proposals and contracts</li>
+                        <li>• Financial reports and statements</li>
+                        <li>• Investment portfolios</li>
+                        <li>• Confidential business plans</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="use-case-icon">
+                        <i class="fas fa-paint-brush"></i>
+                    </div>
+                    <h3>Creative Professionals</h3>
+                    <ul class="list-unstyled">
+                        <li>• Design portfolios and mockups</li>
+                        <li>• Client presentations</li>
+                        <li>• Brand guidelines</li>
+                        <li>• Marketing materials</li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-4 text-center">
+                    <div class="use-case-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Legal Professionals</h3>
+                    <ul class="list-unstyled">
+                        <li>• Case documents and briefs</li>
+                        <li>• Client agreements</li>
+                        <li>• Legal research and memos</li>
+                        <li>• Confidential case files</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Comparison Table -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">How We Compare</h2>
+                    <p class="lead">See how MaiPDF stacks up against traditional PDF sharing methods</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="table-responsive">
+                        <table class="comparison-table">
+                            <thead>
+                                <tr>
+                                    <th>Features</th>
+                                    <th>MaiPDF</th>
+                                    <th>Email Attachments</th>
+                                    <th>Generic Cloud Storage</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Access Control</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>View Tracking</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Dynamic Watermarking</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Expiration Settings</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>QR Code Generation</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Document Analytics</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Password Protection</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                </tr>
+                                <tr>
+                                    <td>Prevents Unauthorized Forwarding</td>
+                                    <td><i class="fas fa-check feature-check"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                    <td><i class="fas fa-times feature-times"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">What Our Customers Say</h2>
+                    <p class="lead">Professionals across industries trust MaiPDF for secure document sharing</p>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/maipdf-images/testimonial-1.jpg" alt="Customer" class="testimonial-avatar">
+                            <div>
+                                <h5 class="mb-0">Sarah Johnson</h5>
+                                <p class="text-muted mb-0">Financial Advisor</p>
+                            </div>
+                        </div>
+                        <p>"MaiPDF has transformed how I share sensitive financial documents with clients. The access controls and tracking features give me peace of mind, knowing exactly who views each document and when."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/maipdf-images/testimonial-2.jpg" alt="Customer" class="testimonial-avatar">
+                            <div>
+                                <h5 class="mb-0">David Chen</h5>
+                                <p class="text-muted mb-0">Creative Director</p>
+                            </div>
+                        </div>
+                        <p>"The dynamic watermarking feature is a game-changer for my design agency. We can now share concept designs with clients while protecting our intellectual property. The QR code feature is also incredibly useful for presentations."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 mb-4">
+                    <div class="testimonial-card">
+                        <div class="d-flex align-items-center mb-3">
+                            <img src="/maipdf-images/testimonial-3.jpg" alt="Customer" class="testimonial-avatar">
+                            <div>
+                                <h5 class="mb-0">Maria Rodriguez</h5>
+                                <p class="text-muted mb-0">Legal Consultant</p>
+                            </div>
+                        </div>
+                        <p>"As an attorney, document security is paramount. MaiPDF provides enterprise-grade security without complexity. Setting expiration dates and tracking document access helps maintain client confidentiality requirements."</p>
+                        <div class="text-warning">
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star"></i>
+                            <i class="fas fa-star-half-alt"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <div class="row text-center mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="section-title text-center">Frequently Asked Questions</h2>
+                    <p class="lead">Get answers to common questions about sharing PDFs with MaiPDF</p>
+                </div>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Is MaiPDF secure for sharing confidential documents?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, MaiPDF uses end-to-end encryption and provides multiple security features including password protection, access controls, and dynamic watermarking to ensure your confidential documents remain secure. We also comply with industry security standards to protect your data.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Do recipients need a MaiPDF account to view shared documents?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>No, recipients do not need a MaiPDF account to view shared documents. You can share a secure link or QR code with recipients, and they can access the document directly in their web browser. Optional settings allow you to require email verification or password entry before viewing.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I limit how many times a document can be viewed?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, MaiPDF allows you to set view limits for your shared documents. You can specify the maximum number of views, after which the document will no longer be accessible. This feature is particularly useful for sensitive or time-limited offers.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>What analytics do I get with MaiPDF document sharing?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>MaiPDF provides comprehensive analytics for your shared documents, including number of views, viewer information, time spent on each page, geographic location of viewers, and device types used. These insights help you understand how your documents are being consumed.</p>
+                        </div>
+                    </div>
+                    <div class="faq-item">
+                        <div class="faq-question">
+                            <span>Can I prevent downloading or printing of my shared PDFs?</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                        <div class="faq-answer">
+                            <p>Yes, MaiPDF allows you to disable downloading and printing functionality for your shared documents. Recipients can only view the document in their browser, which helps protect your intellectual property and prevents unauthorized distribution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-5 cta-section">
+        <div class="container">
+            <div class="row justify-content-center text-center">
+                <div class="col-lg-8">
+                    <h2 class="mb-4">Ready to Share Your PDFs Securely?</h2>
+                    <p class="lead mb-4">Join thousands of professionals who trust MaiPDF for secure document sharing. Try it free today with no credit card required.</p>
+                    <a href="https://maipdf.com/register" class="btn btn-primary btn-lg me-3 mb-3">Get Started for Free</a>
+                    <a href="https://maipdf.com/contact" class="btn btn-outline-primary btn-lg mb-3">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4 mb-4">
+                    <h4 class="footer-title">About MaiPDF</h4>
+                    <p>MaiPDF is a secure document sharing platform that helps professionals share, track, and protect their PDF documents with enterprise-grade security features.</p>
+                    <div class="mt-4">
+                        <a href="#" class="social-icon"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="social-icon"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4 class="footer-title">Features</h4>
+                    <div class="footer-links">
+                        <a href="/features/secure-pdf-hosting.html">Secure Hosting</a>
+                        <a href="/features/pdf-security-features.html">Security Features</a>
+                        <a href="/features/pdf-tracking-analytics.html">Document Analytics</a>
+                        <a href="/features/dynamic-watermark-tracking.html">Dynamic Watermarking</a>
+                        <a href="/features/pdf-expiry-and-self-destruct.html">Access Expiration</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4 class="footer-title">Resources</h4>
+                    <div class="footer-links">
+                        <a href="/blog">Blog</a>
+                        <a href="/help">Help Center</a>
+                        <a href="/guides">PDF Guides</a>
+                        <a href="/api-docs">API Documentation</a>
+                        <a href="/webinars">Webinars</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4 class="footer-title">Company</h4>
+                    <div class="footer-links">
+                        <a href="/about">About Us</a>
+                        <a href="/contact">Contact</a>
+                        <a href="/careers">Careers</a>
+                        <a href="/press">Press</a>
+                        <a href="/partners">Partners</a>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-6 mb-4">
+                    <h4 class="footer-title">Legal</h4>
+                    <div class="footer-links">
+                        <a href="/terms">Terms of Service</a>
+                        <a href="/privacy">Privacy Policy</a>
+                        <a href="/compliance">Compliance</a>
+                        <a href="/security">Security</a>
+                        <a href="/gdpr">GDPR</a>
+                    </div>
+                </div>
+            </div>
+            <div class="row mt-4 pt-4 border-top">
+                <div class="col-md-6">
+                    <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <p>Secure PDF sharing made simple.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        // FAQ Accordion
+        document.querySelectorAll('.faq-question').forEach(question => {
+            question.addEventListener('click', () => {
+                const item = question.parentNode;
+                item.classList.toggle('active');
+            });
+        });
+        
+        // Sticky navbar background
+        window.addEventListener('scroll', function() {
+            const navbar = document.querySelector('.navbar');
+            if (window.scrollY > 50) {
+                navbar.classList.add('shadow-sm');
+            } else {
+                navbar.classList.remove('shadow-sm');
+            }
+        });
+    </script>
 </body>
 
 </html>
