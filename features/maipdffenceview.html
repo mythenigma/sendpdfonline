@@ -1,64 +1,927 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh-CN">
 
 <head>
     <meta charset="UTF-8">
-    <title>Protecting Your PDFs with Enhanced Security</title>
-    <meta property="og:title" content="Protecting Your PDFs with Enhanced Security">
-    <meta name="description" content="In the digital age, protecting sensitive PDF documents from unauthorized access and preventing them from being easily captured or copied is of utmost importance. This is where MaiPDF's Fence View comes into play.">
-    <meta property="og:description" content="MaiPDF's Fence View is an innovative feature designed to protect PDF content from unauthorized copying or screenshots by overlaying visual barriers over the content.">
+    <title>MaiPDF栅格视图: 增强PDF文档保护 | 更安全的文档共享</title>
+    <meta property="og:title" content="MaiPDF栅格视图: 增强PDF文档保护">
+    <meta name="description" content="在数字时代，防止敏感PDF文档被未经授权访问、捕获或复制至关重要。MaiPDF的栅格视图技术提供了创新的保护方案。">
+    <meta property="og:description" content="MaiPDF的栅格视图是一项创新功能，通过在内容上覆盖视觉屏障，保护PDF内容免受未经授权的复制或截图。">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860"
      crossorigin="anonymous"></script>
     <meta property="og:type" content="website">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.min.js"></script>
+    
+    <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary-color: #0066ff;
+            --primary-dark: #0052cc;
+            --secondary-color: #00bcd4;
+            --dark-color: #1a1a2e;
+            --light-color: #f8fafc;
+            --accent-color: #ff4d6d;
+            --gray-light: #f0f5ff;
+            --gray-dark: #4a4a6a;
+            --success-color: #00c853;
+        }
+        
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background-color: var(--light-color);
+            color: #333;
+            line-height: 1.8;
+            overflow-x: hidden;
+        }
+        
+        /* Animated background */
+        .bg-animation {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.4;
+            background: 
+                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.05) 0%, rgba(0, 102, 255, 0) 20%),
+                radial-gradient(circle at 90% 50%, rgba(0, 188, 212, 0.05) 0%, rgba(0, 188, 212, 0) 25%),
+                radial-gradient(circle at 50% 80%, rgba(255, 77, 109, 0.05) 0%, rgba(255, 77, 109, 0) 30%);
+        }
+        
+        .navbar {
+            background: rgba(255, 255, 255, 0.95) !important;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+            padding: 1rem 2rem;
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+        
+        .navbar.scrolled {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            padding: 0.7rem 2rem;
+        }
+        
+        .navbar-brand {
+            color: var(--primary-color) !important;
+            font-weight: 700;
+            font-size: 2rem;
+            position: relative;
+        }
+        
+        .navbar-brand:after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 30%;
+            height: 3px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .navbar small {
+            color: var(--gray-dark);
+            font-size: 1rem;
+            font-weight: 400;
+            opacity: 0.8;
+        }
+        
+        .hero-section {
+            position: relative;
+            overflow: hidden;
+            background: linear-gradient(120deg, var(--primary-color), var(--primary-dark));
+            color: white;
+            padding: 8rem 0 6rem;
+            border-radius: 0 0 50% 50% / 10%;
+            margin-bottom: 5rem;
+        }
+        
+        .hero-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            opacity: 0.3;
+        }
+        
+        .display-4 {
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+            font-size: 3.2rem;
+            line-height: 1.2;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .display-4::after {
+            content: "";
+            position: absolute;
+            bottom: -15px;
+            left: 0;
+            width: 80px;
+            height: 5px;
+            background: var(--accent-color);
+            border-radius: 5px;
+        }
+        
+        .hero-particles {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+        }
+        
+        .particle {
+            position: absolute;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.2);
+            animation: float 8s infinite ease-in-out;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        
+        .particle:nth-child(1) {
+            width: 80px;
+            height: 80px;
+            top: 10%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+        
+        .particle:nth-child(2) {
+            width: 120px;
+            height: 120px;
+            top: 20%;
+            right: 15%;
+            animation-delay: 1s;
+        }
+        
+        .particle:nth-child(3) {
+            width: 60px;
+            height: 60px;
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 3s;
+        }
+        
+        .particle:nth-child(4) {
+            width: 100px;
+            height: 100px;
+            bottom: 30%;
+            right: 25%;
+            animation-delay: 2s;
+        }
+        
+        .lead {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            line-height: 1.8;
+            opacity: 0.9;
+        }
+        
+        .hero-image {
+            position: relative;
+            transition: all 0.5s ease;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
+            transform: perspective(1000px) rotateY(-5deg);
+        }
+        
+        .hero-image::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom right, rgba(0, 102, 255, 0.2), rgba(0, 188, 212, 0.2));
+            z-index: 1;
+            border-radius: 20px;
+        }
+        
+        .hero-image:hover {
+            transform: perspective(1000px) rotateY(0deg) translateY(-10px);
+            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
+        }
+        
+        .cta-btn {
+            background: var(--accent-color);
+            color: white;
+            border: none;
+            padding: 1rem 2.5rem;
+            font-size: 1.1rem;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .cta-btn::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: all 0.5s ease;
+            z-index: -1;
+        }
+        
+        .cta-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.5);
+            color: white;
+        }
+        
+        .cta-btn:hover::before {
+            left: 100%;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .feature-card::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
+            transition: all 0.4s ease;
+            z-index: -1;
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .feature-card:hover::before {
+            width: 100%;
+            opacity: 0.05;
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1.5rem;
+            background: var(--gray-light);
+            width: 100px;
+            height: 100px;
+            line-height: 100px;
+            text-align: center;
+            border-radius: 50%;
+            transition: all 0.4s ease;
+        }
+        
+        .feature-card:hover .feature-icon {
+            background: var(--primary-color);
+            color: white;
+            transform: rotateY(360deg);
+            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+        }
+        
+        .feature-title {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.2rem;
+            color: var(--dark-color);
+        }
+        
+        .feature-description {
+            color: var(--gray-dark);
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+        
+        .how-it-works {
+            position: relative;
+            padding: 5rem 0;
+            margin: 5rem 0;
+            background: var(--gray-light);
+            border-radius: 40px;
+            overflow: hidden;
+        }
+        
+        .how-it-works::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230066FF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 800;
+            color: var(--primary-color);
+            margin-bottom: 3rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 20px;
+        }
+        
+        .section-title::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
+            border-radius: 2px;
+        }
+        
+        .steps-container {
+            position: relative;
+            padding-left: 60px;
+            margin-bottom: 2rem;
+        }
+        
+        .step-number {
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.3rem;
+            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
+        }
+        
+        .step-title {
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .testimonial-section {
+            padding: 5rem 0;
+            background: linear-gradient(120deg, var(--light-color), var(--gray-light));
+            border-radius: 40px;
+            position: relative;
+            overflow: hidden;
+            margin: 5rem 0;
+        }
+        
+        .testimonial-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.03) 0%, transparent 70%),
+                radial-gradient(circle at 80% 70%, rgba(255, 77, 109, 0.03) 0%, transparent 70%);
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 20px;
+            padding: 3rem;
+            margin-bottom: 2.5rem;
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
+            transition: all 0.4s ease;
+            height: 100%;
+            position: relative;
+            overflow: hidden;
+            z-index: 1;
+        }
+        
+        .testimonial-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+        
+        .quote-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            opacity: 0.2;
+            position: absolute;
+            top: 20px;
+            left: 20px;
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            line-height: 1.8;
+            color: var(--gray-dark);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 1;
+        }
+        
+        .testimonial-author {
+            font-weight: 700;
+            color: var(--primary-color);
+            display: block;
+            margin-top: 1rem;
+        }
+        
+        .testimonial-company {
+            font-size: 0.9rem;
+            color: var(--gray-dark);
+            opacity: 0.8;
+        }
+        
+        .cta-section {
+            background: linear-gradient(120deg, var(--primary-color), var(--primary-dark));
+            padding: 5rem 0;
+            border-radius: 30px;
+            margin: 5rem 0;
+            position: relative;
+            overflow: hidden;
+            color: white;
+        }
+        
+        .cta-section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .cta-section .cta-btn {
+            background: white;
+            color: var(--primary-color);
+            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-section .cta-btn:hover {
+            background: rgba(255, 255, 255, 0.9);
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 800;
+            margin-bottom: 1.5rem;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 5rem 0 3rem;
+            border-radius: 40px 40px 0 0;
+            margin-top: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        footer::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+        }
+        
+        .footer-heading {
+            font-size: 1.6rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .footer-heading::after {
+            content: "";
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--accent-color);
+            border-radius: 2px;
+        }
+        
+        .footer-links {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            display: block;
+            padding: 5px 0;
+        }
+        
+        .footer-links a:hover {
+            color: white;
+            transform: translateX(5px);
+        }
+        
+        .social-icons a {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 45px;
+            height: 45px;
+            background-color: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--accent-color);
+            transform: translateY(-5px);
+        }
+        
+        .copyright {
+            padding-top: 2rem;
+            margin-top: 3rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            text-align: center;
+            color: rgba(255, 255, 255, 0.7);
+        }
+        
+        /* Animation for section entrance */
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(50px);
+            transition: all 1s ease;
+        }
+        
+        .fade-in-up.active {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 991px) {
+            .hero-section {
+                padding: 6rem 0 5rem;
+            }
+            
+            .display-4 {
+                font-size: 2.5rem;
+            }
+            
+            .hero-image {
+                margin-top: 3rem;
+            }
+            
+            .feature-card, .testimonial-card {
+                padding: 2rem;
+            }
+            
+            .feature-icon {
+                width: 80px;
+                height: 80px;
+                line-height: 80px;
+                font-size: 2.5rem;
+            }
+            
+            .section-title {
+                font-size: 1.8rem;
+            }
+            
+            .cta-title {
+                font-size: 2rem;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .hero-section {
+                padding: 5rem 0 4rem;
+                border-radius: 0 0 30% 30% / 5%;
+            }
+            
+            .display-4 {
+                font-size: 2rem;
+            }
+            
+            .lead {
+                font-size: 1.1rem;
+            }
+            
+            .feature-icon {
+                width: 70px;
+                height: 70px;
+                line-height: 70px;
+                font-size: 2rem;
+            }
+            
+            .feature-title {
+                font-size: 1.3rem;
+            }
+            
+            .footer-heading {
+                margin-top: 2rem;
+            }
+            
+            .hero-particles {
+                display: none;
+            }
+            
+            .how-it-works, .testimonial-section, .cta-section {
+                border-radius: 30px;
+                padding: 3rem 0;
+                margin: 3rem 0;
+            }
+        }
+    </style>
 </head>
 
 <body>
-    <nav class="navbar bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://maipdf.com" style="color: white">
-                <h1>Introducing MaiPDF's Fence View</h1>
-            </a>
-            <small>an innovative feature designed to provide enhanced security for your PDF files</small>
+    <!-- Background Animation -->
+    <div class="bg-animation"></div>
+
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="container">
+            <a class="navbar-brand" href="https://maipdf.cn">MaiPDF</a>
+            <small>文档安全的创新解决方案</small>
         </div>
     </nav>
 
-    <div class="container my-2" id="containerbox">
-        <div class="px-4 pt-5 my-5 text-center border-bottom">
-            <h1 class="display-4 fw-bold">MaiPDF's Fence View: Protecting Your PDFs with Enhanced Security</h1>
-            <div class="col-lg-6 mx-auto">
-                <p class="lead mb-4">
-                    MaiPDF's Fence View adds an extra layer of protection to your PDFs by overlaying visual barriers over the content, making it difficult for unauthorized users to capture or screenshot your documents.
-                </p>
-            </div>
-            <div class="overflow-hidden" style="max-height: 30vh;">
-                <div class="container px-5">
-                    <img src="../maipdf-images/fen.png" class="img-fluid border rounded-3 shadow-lg mb-4" alt="Fence View Example" width="700" height="500" loading="lazy">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <!-- Animated particles -->
+        <div class="hero-particles">
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+            <div class="particle"></div>
+        </div>
+        
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 fade-in-up active">
+                    <h1 class="display-4">MaiPDF栅格视图<br>增强PDF安全保护</h1>
+                    <p class="lead">
+                        栅格视图技术为您的PDF文档添加额外保护层，有效防止未经授权的截图和复制，保障您的文档安全，让您共享内容更有信心。
+                    </p>
+                    <a href="https://maipdf.cn" class="btn cta-btn">立即体验 <i class="fas fa-arrow-right ms-2"></i></a>
+                </div>
+                <div class="col-lg-6 fade-in-up active">
+                    <div class="hero-image">
+                        <img src="../maipdf-images/fen.png" class="img-fluid" alt="栅格视图示例">
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <section class="py-5 text-center container">
-            <div class="row py-lg-5" id="grabify">
-                <div class="col-lg-6 col-md-8 mx-auto">
-                    <p class="lead text-body-secondary">
-                        When a PDF is opened with MaiPDF's Fence View, the content is obscured by vertical lines. The content is revealed when you hover over the fence, offering a seamless reading experience for authorized users.
-                    </p>
-                    <p class="lead text-body-secondary">
-                        This unique feature prevents screenshots by overlaying fences, disrupting traditional screen capturing methods and enhancing your document's security.
-                    </p>
-                    <p class="lead text-body-secondary">
-                        MaiPDF's Fence View is ideal for protecting confidential documents, intellectual property, and sensitive data in industries such as legal, financial, and healthcare.
+    <!-- Features Section -->
+    <section class="container fade-in-up">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3 class="feature-title">增强文档安全</h3>
+                    <p class="feature-description">
+                        当使用MaiPDF的栅格视图打开PDF时，内容被垂直线条遮挡，只有当鼠标悬停在栅格上时才会显示内容，为授权用户提供流畅的阅读体验的同时增强文档安全性。
                     </p>
                 </div>
             </div>
-        </section>
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-camera-retro"></i>
+                    </div>
+                    <h3 class="feature-title">防截图技术</h3>
+                    <p class="feature-description">
+                        这一独特功能通过覆盖栅格防止截图，干扰传统的屏幕捕获方法，大大提高了文档的安全性。即使有人尝试截图，得到的仍然是带栅格的模糊内容，保护您的知识产权。
+                    </p>
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-industry"></i>
+                    </div>
+                    <h3 class="feature-title">广泛应用场景</h3>
+                    <p class="feature-description">
+                        MaiPDF的栅格视图特别适合保护机密文档、知识产权和敏感数据，广泛应用于法律、金融和医疗保健等行业，为重要文档提供更强保障，满足各行业专业人士的需求。
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-        <footer class="py-3 my-4">
-            <p class="text-center text-muted">&copy; 2025 MaiPDF. All rights reserved.</p>
-        </footer>
-    </div>
+    <!-- How It Works Section -->
+    <section class="how-it-works fade-in-up">
+        <div class="container">
+            <h2 class="section-title">如何使用栅格视图？</h2>
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="steps-container">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">上传PDF文档</h3>
+                        <p>将您需要保护的PDF文档上传到MaiPDF平台，系统支持各种大小和类型的PDF文件。</p>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">启用栅格视图</h3>
+                        <p>在文档安全设置中，选择启用"栅格视图"功能，您还可以自定义栅格密度和显示效果。</p>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">生成安全链接</h3>
+                        <p>系统将为您的文档生成一个安全链接，您可以通过电子邮件或消息应用分享给需要查看的人。</p>
+                    </div>
+                    <div class="steps-container">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">接收者查看体验</h3>
+                        <p>当接收者打开文档时，内容会自动应用栅格保护，但鼠标悬停时可以清晰阅读，确保良好的用户体验。</p>
+                    </div>
+                    <div class="mt-4">
+                        <a href="https://maipdf.cn" class="btn cta-btn">立即体验栅格视图 <i class="fas fa-shield-alt ms-2"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="img-fluid rounded-3 hero-image">
+                        <img src="../maipdf-images/security.png" alt="文档安全示例" class="img-fluid rounded-3">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="testimonial-section fade-in-up">
+        <div class="container">
+            <h2 class="section-title">用户评价</h2>
+            <div class="row">
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"MaiPDF的栅格视图功能彻底解决了我们公司文档泄露的担忧。现在分享敏感财务报告时我们更有信心了，客户也对我们的安全措施印象深刻。"</p>
+                        <div class="text-end">
+                            <span class="testimonial-author">张经理</span>
+                            <span class="testimonial-company">金融顾问, 某资产管理公司</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"作为律师，文档安全对我来说至关重要。MaiPDF的栅格视图为我的客户文件提供了额外的保护层，特别是在处理敏感案件时，这个功能非常实用。"</p>
+                        <div class="text-end">
+                            <span class="testimonial-author">李律师</span>
+                            <span class="testimonial-company">高级合伙人, 某律师事务所</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="testimonial-card">
+                        <i class="fas fa-quote-left quote-icon"></i>
+                        <p class="testimonial-text">"我们的研发团队使用MaiPDF栅格视图保护知识产权文档。即使有人截图，内容也无法被清晰捕获，这让我们在与外部合作伙伴共享信息时更安心。"</p>
+                        <div class="text-end">
+                            <span class="testimonial-author">王总监</span>
+                            <span class="testimonial-company">技术主管, 某科技创新企业</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section fade-in-up">
+        <div class="container text-center">
+            <h2 class="cta-title">立即保护您的敏感文档</h2>
+            <p class="lead mb-4">体验MaiPDF的栅格视图技术，为您的PDF文档提供全方位保护，防止未经授权的访问和复制</p>
+            <a href="https://maipdf.cn" class="btn cta-btn">免费试用 <i class="fas fa-shield-alt ms-2"></i></a>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4">
+                    <h3 class="footer-heading">MaiPDF</h3>
+                    <p>领先的PDF文档安全与共享平台，为您的敏感文档提供全方位保护</p>
+                    <div class="social-icons mt-4">
+                        <a href="#"><i class="fab fa-weixin"></i></a>
+                        <a href="#"><i class="fab fa-weibo"></i></a>
+                        <a href="#"><i class="fab fa-qq"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-heading">产品功能</h3>
+                    <ul class="footer-links">
+                        <li><a href="https://maipdf.cn/features/likeH5.html"><i class="fas fa-angle-right me-2"></i>像H5链接一样分享</a></li>
+                        <li><a href="https://maipdf.cn/features/动态水印.html"><i class="fas fa-angle-right me-2"></i>动态水印功能</a></li>
+                        <li><a href="https://maipdf.cn/features/jinzhi.html"><i class="fas fa-angle-right me-2"></i>禁止复制功能</a></li>
+                        <li><a href="https://maipdf.cn/features/maipdf-pdf-hosting-full-cn.html"><i class="fas fa-angle-right me-2"></i>PDF云托管服务</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4">
+                    <h3 class="footer-heading">联系我们</h3>
+                    <ul class="footer-links">
+                        <li><i class="fas fa-envelope me-2"></i> <a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li>
+                        <li><i class="fas fa-globe me-2"></i> <a href="https://maipdf.cn">maipdf.cn</a></li>
+                        <li><i class="fas fa-headset me-2"></i> <a href="#">在线客服支持</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2025 MaiPDF. 保留所有权利。</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        // Scroll animation for sections
+        document.addEventListener('DOMContentLoaded', function() {
+            // Navbar scroll effect
+            window.addEventListener('scroll', function() {
+                const navbar = document.querySelector('.navbar');
+                if (window.scrollY > 50) {
+                    navbar.classList.add('scrolled');
+                } else {
+                    navbar.classList.remove('scrolled');
+                }
+            });
+            
+            // Fade in animation for sections
+            const fadeElements = document.querySelectorAll('.fade-in-up');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('active');
+                    }
+                });
+            }, {
+                threshold: 0.1
+            });
+            
+            fadeElements.forEach(element => {
+                observer.observe(element);
+            });
+        });
+    </script>
 </body>
 </html>
