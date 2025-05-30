@@ -6,90 +6,306 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <meta name="keywords" content="MaiPDF, PDF encryption, dynamic QR watermark, security protection, anti-piracy, document traceability">
   <meta name="description" content="MaiPDF makes PDF document security easier with dynamic QR watermark features, preventing unauthorized sharing and protecting copyrights.">
-  <meta name="author" content="Your Name or Company Name">
+  <meta name="author" content="MaiPDF">
   <title>MaiPDF: Smart Watermark Technology to Protect Your PDF Documents</title>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+  
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
 
   <!-- FontAwesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&family=Open+Sans:wght@400;500;600&display=swap" rel="stylesheet">
 
   <!-- Custom CSS -->
   <style>
+    :root {
+      --primary-color: #2C8C99;
+      --secondary-color: #174F59;
+      --accent-color: #F26430;
+      --light-color: #f8f9fa;
+      --dark-color: #343a40;
+    }
+    
     body {
-      background-color: #f5f7f8;
-      font-family: 'Arial', sans-serif;
+      background-color: #f8f9fa;
+      font-family: 'Open Sans', sans-serif;
       color: #444;
+      line-height: 1.7;
     }
+    
+    h1, h2, h3, h4, h5, h6 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 600;
+    }
+    
     header {
-      background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 40px 0;
+      background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+      color: white;
+      padding: 80px 0 60px;
       text-align: center;
+      margin-bottom: 40px;
+      border-radius: 0 0 20px 20px;
+      box-shadow: 0 5px 20px rgba(44, 140, 153, 0.3);
     }
+    
     .header-icon {
-      font-size: 50px;
-      color: #2C8C99;
+      font-size: 60px;
+      margin-bottom: 20px;
+      color: white;
+      text-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     }
+    
     .header-text {
       font-size: 1.4rem;
-      color: #2C8C99;
+      max-width: 800px;
+      margin: 0 auto;
+      opacity: 0.9;
     }
+    
     .container {
-      max-width: 900px;
-      margin-top: 40px;
+      max-width: 1100px;
       padding: 40px;
-      background-color: #ffffff;
+      background-color: white;
       border-radius: 15px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.05);
+      margin-bottom: 40px;
     }
-    h1, h2 {
-      color: #2C8C99;
+    
+    .section-title {
+      color: var(--primary-color);
+      font-weight: 700;
+      font-size: 1.8rem;
+      margin-bottom: 1.5rem;
+      position: relative;
+      padding-bottom: 0.8rem;
     }
-    h3 {
-      color: #555;
-      margin-top: 30px;
+    
+    .section-title:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 80px;
+      height: 3px;
+      background-color: var(--accent-color);
     }
+    
     p, ul, ol {
       font-size: 1.1rem;
-      line-height: 1.8;
+      color: #555;
     }
-    .section-title {
-      color: #2F4F4F;
-      font-weight: bold;
-      font-size: 1.3rem;
+    
+    ul li, ol li {
+      margin-bottom: 0.8rem;
     }
-    .lead {
-      font-size: 1.2rem;
-      color: #6c757d;
+    
+    strong {
+      color: var(--primary-color);
     }
-    .icon {
-      color: #2C8C99;
+    
+    .image-wrapper {
+      border-radius: 12px;
+      overflow: hidden;
+      box-shadow: 0 5px 25px rgba(0, 0, 0, 0.1);
+      margin: 30px 0;
+      position: relative;
     }
-    .img-placeholder {
+    
+    .image-wrapper img {
       width: 100%;
-      height: 300px;
-      background-color: #e1e1e1;
-      border-radius: 10px;
-      margin-top: 20px;
-      display: block;
+      transition: transform 0.3s ease;
     }
+    
+    .image-wrapper:hover img {
+      transform: scale(1.02);
+    }
+    
+    .feature-box {
+      background-color: #f9f9f9;
+      border-radius: 12px;
+      padding: 25px;
+      margin-bottom: 30px;
+      border-left: 4px solid var(--primary-color);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+    }
+    
+    .feature-icon {
+      font-size: 2.5rem;
+      color: var(--primary-color);
+      margin-bottom: 20px;
+    }
+    
+    .feature-title {
+      font-size: 1.4rem;
+      margin-bottom: 15px;
+      color: var(--dark-color);
+    }
+    
+    .cta-box {
+      background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+      border-radius: 15px;
+      padding: 40px;
+      color: white;
+      text-align: center;
+      margin: 40px 0;
+    }
+    
+    .cta-title {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 20px;
+    }
+    
+    .cta-text {
+      font-size: 1.2rem;
+      margin-bottom: 25px;
+      opacity: 0.9;
+    }
+    
+    .cta-btn {
+      background-color: white;
+      color: var(--primary-color);
+      border: none;
+      padding: 12px 30px;
+      font-size: 1.1rem;
+      border-radius: 30px;
+      font-weight: 600;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .cta-btn:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    }
+    
+    .step-box {
+      display: flex;
+      margin-bottom: 25px;
+    }
+    
+    .step-number {
+      background-color: var(--primary-color);
+      color: white;
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      font-size: 1.2rem;
+      margin-right: 20px;
+      flex-shrink: 0;
+    }
+    
+    .step-content {
+      flex-grow: 1;
+    }
+    
+    .step-title {
+      font-size: 1.3rem;
+      margin-bottom: 10px;
+      color: var(--dark-color);
+    }
+    
     footer {
-      background-color: #f1f1f1;
-      padding: 30px 0;
+      background-color: var(--dark-color);
+      color: white;
+      padding: 50px 0 30px;
       text-align: center;
       margin-top: 40px;
-      color: #777;
+      border-radius: 20px 20px 0 0;
     }
+    
+    .footer-links {
+      margin: 20px 0;
+    }
+    
     .footer-links a {
       text-decoration: none;
-      color: #2C8C99;
+      color: rgba(255, 255, 255, 0.8);
       margin: 0 15px;
       font-size: 1.1rem;
+      transition: color 0.3s ease;
     }
+    
     .footer-links a:hover {
-      color: #45a3b1;
+      color: var(--accent-color);
+    }
+    
+    .social-links {
+      margin: 25px 0;
+    }
+    
+    .social-links a {
+      display: inline-block;
+      width: 40px;
+      height: 40px;
+      line-height: 40px;
+      background-color: rgba(255, 255, 255, 0.1);
+      color: white;
+      border-radius: 50%;
+      margin: 0 10px;
+      transition: background-color 0.3s ease;
+    }
+    
+    .social-links a:hover {
+      background-color: var(--primary-color);
+    }
+    
+    .testimonal-card {
+      background-color: #fff;
+      border-radius: 12px;
+      padding: 25px;
+      box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+      margin-bottom: 30px;
+      height: 100%;
+    }
+    
+    .testimonal-text {
+      font-style: italic;
+      margin-bottom: 20px;
+      position: relative;
+      padding: 0 20px;
+    }
+    
+    .testimonal-text:before, .testimonal-text:after {
+      content: '"';
+      font-size: 50px;
+      color: rgba(44, 140, 153, 0.2);
+      position: absolute;
+    }
+    
+    .testimonal-text:before {
+      top: -20px;
+      left: -10px;
+    }
+    
+    .testimonal-text:after {
+      bottom: -40px;
+      right: -10px;
+    }
+    
+    .testimonal-author {
+      font-weight: 600;
+      color: var(--primary-color);
+      display: block;
+      text-align: right;
+    }
+    
+    .testimonal-position {
+      font-size: 0.9rem;
+      color: #777;
+      display: block;
+      text-align: right;
     }
   </style>
 </head>
@@ -98,162 +314,242 @@
 
   <!-- Header Section -->
   <header>
-    <i class="fas fa-lock header-icon"></i>
-    <h1>MaiPDF: Smart Watermark Technology to Protect Your PDF Documents</h1>
-    <p class="header-text">Make your PDF documents safer, traceable, and protected from unauthorized distribution.</p>
+    <i class="fas fa-qrcode header-icon"></i>
+    <h1>MaiPDF Dynamic QR Watermark</h1>
+    <p class="header-text">Protect your PDF documents with advanced traceability and security features that prevent unauthorized sharing.</p>
   </header>
 
   <!-- Main Content -->
   <div class="container">
-    <section>
-      <h2 class="section-title">MaiPDF: An Innovative PDF Protection Solution</h2>
-      <p>With the digital age progressing, PDF files have become one of the most commonly used document formats. However, this has also brought up issues of copyright protection and document security. MaiPDF is dedicated to providing users with a secure and reliable document protection solution. Here are the main features that MaiPDF provides:</p>
-      <ul>
-        <li><strong>Smart QR Watermark:</strong> MaiPDF adds dynamic QR watermarks to PDF files, effectively tracing the source of document leakage and protecting copyrights.</li>
-        <li><strong>Prevent Downloads and Printing:</strong> Users can disable downloading and printing of PDF files through MaiPDF settings to ensure that the document content cannot be copied illegally.</li>
-        <li><strong>Control Document Open Count:</strong> Limit the number of times a PDF can be viewed, ensuring the document is not distributed indefinitely.</li>
-        <li><strong>Generate Shareable Link:</strong> Create a unique PDF sharing link that ensures secure sharing of documents and avoids unauthorized distribution.</li>
-      </ul>
-    </section>
-
-    <!-- Image Placeholder 1 -->
-    <img src="../images/ENwatermark.png" alt="MaiPDF Features" class="img-placeholder">
-
-    <section>
-      <h2 class="section-title">How the Dynamic QR Watermark Works</h2>
-      <p>The dynamic QR watermark feature of MaiPDF is one of its core highlights. This feature automatically embeds a QR code on the pages of a PDF document. The QR code contains information about the document, the visitor's device, and IP address. Each time the document is viewed, the QR code content changes, ensuring that each view of the document is unique and traceable.</p>
-      <p>How the QR watermark works:</p>
-      <ul>
-        <li>Each time the document is opened, MaiPDF generates a dynamic QR code that contains information about the current device, the document's unique identifier, and the IP address.</li>
-        <li>By scanning the QR code, users can trace the source of document leakage. For example, if the document is screenshot, photographed, or copied, the QR code can accurately identify the leaking user and device.</li>
-        <li>The QR code information is encrypted to ensure the privacy of the user is not exposed while enhancing the security of the document.</li>
-      </ul>
-    </section>
-
-    <!-- Image Placeholder 2 -->
-    <img src="../images/qrwatermark.png" alt="Dynamic QR Watermark Example" class="img-placeholder">
-
-    <section>
-      <h2 class="section-title">MaiPDF's Security and Practicality</h2>
-      <ul>
-        <li><strong>Prevent Leaks:</strong> Even if the document is screenshot or photographed, the QR watermark will still reveal the leak source, preventing unauthorized distribution.</li>
-        <li><strong>Copyright Protection:</strong> MaiPDF, with dynamic QR watermarks and features like disabling download and printing, provides an effective copyright protection solution for content creators, publishers, and businesses.</li>
-        <li><strong>Easy to Use:</strong> Users can easily add QR watermarks to documents with no complicated steps, all functions are configurable on the MaiPDF platform.</li>
-        <li><strong>Increased Document Control:</strong> Set limits on document viewing times, and restrict download and printing, making it more controllable how the document is distributed and used.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title">Who Can Benefit from Using MaiPDF?</h2>
-      <ul>
-        <li><strong>Corporate Users:</strong> For confidential documents, financial reports, and other sensitive materials, MaiPDF offers a complete solution to protect company files.</li>
-        <li><strong>Researchers:</strong> Academic papers, research reports, and other documents require strict confidentiality, and MaiPDF can effectively prevent illegal sharing of academic materials.</li>
-        <li><strong>Legal Document Managers:</strong> Contracts, agreements, and other legal documents require high-level security, and MaiPDF can help manage these documents securely.</li>
-        <li><strong>Publishers and Creators:</strong> MaiPDF protects books, articles, and other content, preventing unauthorized copying and protecting the intellectual property of creators.</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2 class="section-title">How to Use MaiPDF's Dynamic QR Watermark Feature?</h2>
-      <ol>
-        <li>Upload the PDF document you want to protect on the MaiPDF platform.</li>
-        <li>Select the "Enable Dynamic QR Watermark" option and configure the access restrictions.</li>
-        <li>Generate a shareable link and send it to the people who need to view the document.</li>
-        <li>Every time the document is opened, MaiPDF will automatically insert a unique QR watermark on the PDF page, ensuring document security.</li>
-      </ol>
-    </section>
-
-    <div class="feature-section my-5">
-        <h2>Advanced QR Watermark Features</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3>Dynamic Content</h3>
-                    <ul>
-                        <li>Viewer information</li>
-                        <li>Access timestamp</li>
-                        <li>IP address tracking</li>
-                        <li>Device details</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3>Customization</h3>
-                    <ul>
-                        <li>Position control</li>
-                        <li>Size adjustment</li>
-                        <li>Opacity settings</li>
-                        <li>Custom designs</li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3>Security</h3>
-                    <ul>
-                        <li>Tamper detection</li>
-                        <li>Access logging</li>
-                        <li>Usage analytics</li>
-                        <li>Real-time tracking</li>
-                    </ul>
-                </div>
-            </div>
+    <div class="row">
+      <div class="col-lg-6">
+        <h2 class="section-title">Introducing Dynamic QR Watermarks</h2>
+        <p>PDF documents are the standard for sharing important information, but this also presents challenges for protecting sensitive content. MaiPDF addresses this concern with our innovative <strong>Dynamic QR Watermark</strong> technology.</p>
+        <p>Our watermarking system creates a unique digital fingerprint on your documents that:</p>
+        <ul>
+          <li><strong>Tracks the source</strong> of any unauthorized distribution</li>
+          <li><strong>Changes dynamically</strong> with each viewer and session</li>
+          <li><strong>Preserves document readability</strong> while maintaining security</li>
+          <li><strong>Works invisibly</strong> in the background to protect your content</li>
+        </ul>
+      </div>
+      <div class="col-lg-6">
+        <div class="image-wrapper">
+          <img src="../images/ENwatermark.png" alt="MaiPDF Dynamic QR Watermark" class="img-fluid">
         </div>
+      </div>
     </div>
+  </div>
 
-    <section id="related-features" class="container my-5">
-        <h2 class="text-center mb-4">Related Features</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-qrcode"></i> QR Code Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="convert-pdf-to-qr-code.html">Convert PDF to QR Code</a></li>
-                            <li><a href="qrfrompdf.html">Generate QR from PDF</a></li>
-                            <li><a href="qrmark.html">QR Code Marking</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-water"></i> Watermark Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="dynamic-watermark-tracking.html">Dynamic Watermark Tracking</a></li>
-                            <li><a href="setup-dynamic-watermarks.html">Setup Dynamic Watermarks</a></li>
-                            <li><a href="pdf-watermarking-branding.html">PDF Watermarking & Branding</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-shield-alt"></i> Security Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="pdf-security-features.html">PDF Security Features</a></li>
-                            <li><a href="prevent-pdf-forwarding-dynamicqr.html">Prevent PDF Forwarding</a></li>
-                            <li><a href="pdf-security-best-practices.html">PDF Security Best Practices</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+  <div class="container">
+    <h2 class="section-title">How Dynamic QR Watermarks Work</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <p>Our dynamic QR watermark technology embeds a unique QR code on each page of your PDF document. Unlike static watermarks, our solution creates a different watermark for each viewer and viewing session.</p>
+        <p>When someone accesses your document:</p>
+        <ol>
+          <li>The system generates a unique QR code containing viewer information (device, IP address, time)</li>
+          <li>This code is embedded into the document in real-time</li>
+          <li>If the document is shared without permission, the QR code reveals exactly who leaked it</li>
+          <li>Even screenshots or photographs of the document will contain the identifying watermark</li>
+        </ol>
+      </div>
+      <div class="col-lg-6">
+        <div class="image-wrapper">
+          <img src="../images/qrwatermark.png" alt="QR Watermark Technology" class="img-fluid">
         </div>
-    </section>
+      </div>
+    </div>
+  </div>
 
+  <div class="container">
+    <h2 class="section-title">Key Benefits</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fas fa-fingerprint feature-icon"></i>
+          <h3 class="feature-title">Leak Traceability</h3>
+          <p>Instantly identify the source of any unauthorized document sharing, even if the document is screenshot or photographed.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fas fa-shield-alt feature-icon"></i>
+          <h3 class="feature-title">Copyright Protection</h3>
+          <p>Deter unauthorized sharing by making users aware that their identity is tied to the document they've accessed.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fas fa-user-lock feature-icon"></i>
+          <h3 class="feature-title">Access Control</h3>
+          <p>Combined with MaiPDF's ability to restrict downloads and printing, our QR watermarks create a comprehensive security solution.</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="row mt-4">
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fas fa-sliders-h feature-icon"></i>
+          <h3 class="feature-title">Easy Configuration</h3>
+          <p>Implement watermarking with just a few clicks through our intuitive control panel. No technical expertise required.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fas fa-chart-line feature-icon"></i>
+          <h3 class="feature-title">Viewing Analytics</h3>
+          <p>Track document usage patterns and identify unusual access behavior that might indicate a security concern.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="feature-box">
+          <i class="fas fa-balance-scale feature-icon"></i>
+          <h3 class="feature-title">Legal Protection</h3>
+          <p>Create a stronger legal position with concrete evidence if your documents are misused or distributed without authorization.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="cta-box">
+      <h3 class="cta-title">Ready to protect your sensitive documents?</h3>
+      <p class="cta-text">Start securing your PDFs with dynamic QR watermarks today.</p>
+      <a href="https://maipdf.com" class="btn cta-btn">Try MaiPDF Now</a>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">Who Should Use Dynamic QR Watermarks?</h2>
+    <div class="row">
+      <div class="col-lg-6">
+        <div class="step-box">
+          <div class="step-number">1</div>
+          <div class="step-content">
+            <h3 class="step-title">Corporate Users</h3>
+            <p>Protect confidential reports, financial statements, strategic plans, and internal communications from unauthorized distribution.</p>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <div class="step-number">2</div>
+          <div class="step-content">
+            <h3 class="step-title">Researchers & Academics</h3>
+            <p>Safeguard unpublished research papers, confidential studies, and proprietary academic work that requires strict confidentiality.</p>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <div class="step-number">3</div>
+          <div class="step-content">
+            <h3 class="step-title">Legal Professionals</h3>
+            <p>Enhance security for sensitive legal documents, contracts, settlement agreements, and case files that need to remain confidential.</p>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="step-box">
+          <div class="step-number">4</div>
+          <div class="step-content">
+            <h3 class="step-title">Publishers & Content Creators</h3>
+            <p>Protect intellectual property, draft manuscripts, exclusive content, and proprietary methods from unauthorized copying.</p>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <div class="step-number">5</div>
+          <div class="step-content">
+            <h3 class="step-title">Healthcare Providers</h3>
+            <p>Maintain patient confidentiality and compliance with regulations when sharing sensitive medical information in PDF format.</p>
+          </div>
+        </div>
+        
+        <div class="step-box">
+          <div class="step-number">6</div>
+          <div class="step-content">
+            <h3 class="step-title">Financial Advisors</h3>
+            <p>Secure client financial plans, investment strategies, and sensitive financial data while maintaining necessary information sharing.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <h2 class="section-title">How to Implement QR Watermarks</h2>
+    <div class="row">
+      <div class="col-md-6">
+        <ol>
+          <li><strong>Upload your PDF</strong> to the MaiPDF platform using our secure interface.</li>
+          <li><strong>Enable the QR Watermark option</strong> in the document security settings.</li>
+          <li><strong>Customize watermark appearance</strong> (opacity, position, size) to suit your document.</li>
+          <li><strong>Configure additional security options</strong> like download restrictions or view limits.</li>
+          <li><strong>Share your protected document</strong> via secure link or direct email.</li>
+        </ol>
+      </div>
+      <div class="col-md-6">
+        <div class="image-wrapper">
+          <img src="../maipdf-images/watermark.png" alt="Watermark Implementation" class="img-fluid">
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="container">
+    <h2 class="section-title text-center">What Our Users Say</h2>
+    <div class="row">
+      <div class="col-md-4">
+        <div class="testimonal-card">
+          <p class="testimonal-text">MaiPDF's dynamic QR watermarking has been a game-changer for our law firm. We finally have peace of mind when sharing confidential case documents with clients.</p>
+          <span class="testimonal-author">Amanda Johnson</span>
+          <span class="testimonal-position">Legal Operations Manager</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonal-card">
+          <p class="testimonal-text">As a researcher, I need to share preliminary findings with colleagues while protecting my work. This watermarking solution has solved that challenge perfectly.</p>
+          <span class="testimonal-author">Dr. Michael Chen</span>
+          <span class="testimonal-position">Research Scientist</span>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="testimonal-card">
+          <p class="testimonal-text">Our sales team shares pricing documents with potential clients daily. MaiPDF's watermarking has decreased unauthorized sharing of our pricing strategies by 95%.</p>
+          <span class="testimonal-author">Sarah Williams</span>
+          <span class="testimonal-position">VP of Sales</span>
+        </div>
+      </div>
+    </div>
   </div>
 
   <!-- Footer -->
   <footer>
-    <p>&copy; 2025 MaiPDF | <span class="footer-links">Contact: joe@pdfhost.online</span></p>
+    <div class="container">
+      <h3>MaiPDF</h3>
+      <p>Secure Document Sharing & Protection</p>
+      
+      <div class="social-links">
+        <a href="#"><i class="fab fa-twitter"></i></a>
+        <a href="#"><i class="fab fa-linkedin-in"></i></a>
+        <a href="#"><i class="fab fa-facebook-f"></i></a>
+        <a href="#"><i class="fab fa-instagram"></i></a>
+      </div>
+      
+      <div class="footer-links">
+        <a href="https://maipdf.com/features/pdf-security-features.html">Security Features</a>
+        <a href="https://maipdf.com/features/pdf-tracking-analytics.html">Tracking Analytics</a>
+        <a href="https://maipdf.com/features/pdf-expiry-and-self-destruct.html">PDF Expiration</a>
+        <a href="https://maipdf.com">Home</a>
+      </div>
+      
+      <p class="mt-4">&copy; 2025 MaiPDF. All rights reserved.</p>
+    </div>
   </footer>
 
   <!-- Bootstrap JS -->
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"></script>
-
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
