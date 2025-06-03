@@ -45,44 +45,202 @@
   </style>
 </head>
 <body>
-
   <!-- Header Section -->
-  <div class="header">
-    <h1>欢迎来到 Maipdf</h1>
-    <p>安全、快速的PDF分享平台</p>
-  </div>
-
-  <!-- Main Content Section -->
-  <div class="container">
-    <div class="row">
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">面向国际用户</h3>
-            <p>使用 <strong>maipdf.com</strong> 安全上传并与全球用户分享PDF文件。此平台旨在保护您的内容，同时防止未经授权的下载。</p>
-            <a href="https://www.maipdf.com" class="btn btn-primary"><i class="fas fa-cloud-upload-alt"></i> 上传PDF</a>
-          </div>
-        </div>
-      </div>
-
-      <div class="col-lg-6">
-        <div class="card">
-          <div class="card-body">
-            <h3 class="card-title">面向中国用户</h3>
-            <p>如果您身处中国，<strong>maipdf.cn</strong> 和 <strong>maifile.cn</strong> 是您访问速度更快的选择。这两个平台与 maipdf.com 功能相似，但在中国地区更具优势。</p>
-            <a href="https://www.maipdf.cn" class="btn btn-primary"><i class="fas fa-cloud-upload-alt"></i> 上传PDF (中国)</a>
-          </div>
-        </div>
+  <div class="header position-relative">
+    <div class="container py-4">
+      <h1 class="text-center mb-2">欢迎来到 MaiPDF</h1>
+      <p class="text-center lead">安全、快速的 PDF 分享平台 - 为全球与中国用户量身定制</p>
+      <div class="text-center mt-3">
+        <a href="https://maipdf.cn" class="btn btn-light me-2">立即体验</a>
+        <a href="https://maipdf.com" class="btn btn-outline-light">English Version</a>
       </div>
     </div>
   </div>
 
-  <!-- Footer Section -->
-  <div class="footer">
-    <p>&copy; 2025 Maipdf. 版权所有。</p>
+  <!-- Main Content Section -->
+  <div class="container my-5">
+    <div class="row g-4">
+      <div class="col-lg-6">
+        <div class="card h-100 border-primary shadow-sm">
+          <div class="card-header bg-primary text-white">
+            <h3 class="card-title mb-0"><i class="fas fa-globe-asia"></i> 面向中国用户</h3>
+          </div>
+          <div class="card-body">
+            <div class="mb-4">
+              <h4 class="text-primary">推荐平台: <span class="badge bg-primary">maipdf.cn</span> 或 <span class="badge bg-primary">maifile.cn</span></h4>
+              <p class="fs-5">专为中国用户优化，提供更快的访问速度和本地化服务体验。</p>
+              <hr>
+              <h5 class="text-primary"><i class="fas fa-bolt"></i> 优势特点</h5>
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>采用字节跳动 ByteDance CDN 加速，访问更流畅</li>
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>中文界面和用户体验优化</li>
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>国内服务器部署，上传下载更快捷</li>
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>完全兼容国内主流浏览器和设备</li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <a href="https://maipdf.cn" class="btn btn-primary px-4 py-2">访问 maipdf.cn</a>
+            </div>
+            <div class="mt-4 alert alert-info">
+              <i class="fas fa-info-circle me-2"></i>若您主要在中国境内分享文档，强烈推荐使用此平台，体验更佳。
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="col-lg-6">
+        <div class="card h-100 border-success shadow-sm">
+          <div class="card-header bg-success text-white">
+            <h3 class="card-title mb-0"><i class="fas fa-globe"></i> 面向国际用户</h3>
+          </div>
+          <div class="card-body">
+            <div class="mb-4">
+              <h4 class="text-success">推荐平台: <span class="badge bg-success">maipdf.com</span></h4>
+              <p class="fs-5">专为全球用户设计，支持多语言，全球访问速度稳定。</p>
+              <hr>
+              <h5 class="text-success"><i class="fas fa-bolt"></i> 优势特点</h5>
+              <ul class="list-group list-group-flush mt-3">
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>全球 CDN 加速网络，世界各地访问流畅</li>
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>支持英语、日语、法语等多语言界面</li>
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>国际化功能与设计</li>
+                <li class="list-group-item"><i class="fas fa-check-circle text-success me-2"></i>全球数据中心，确保稳定性和安全性</li>
+              </ul>
+            </div>
+            <div class="text-center">
+              <a href="https://maipdf.com" class="btn btn-success px-4 py-2">访问 maipdf.com</a>
+            </div>
+            <div class="mt-4 alert alert-info">
+              <i class="fas fa-info-circle me-2"></i>若您需要与国际用户分享文档，或在全球范围使用，推荐此平台。
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Features Section -->
+    <section class="my-5">
+      <h2 class="text-center mb-4"><i class="fas fa-star"></i> 共享功能与特点</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <i class="fas fa-shield-alt fa-3x text-primary mb-3"></i>
+              <h4>高级安全保护</h4>
+              <p>两个平台均提供动态二维码水印、密码保护、访问限制等高级安全功能</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <i class="fas fa-chart-line fa-3x text-primary mb-3"></i>
+              <h4>详细访问统计</h4>
+              <p>实时监控文件的访问情况，包括查看次数、访问时间、设备信息等详细数据</p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card h-100 shadow-sm">
+            <div class="card-body text-center">
+              <i class="fas fa-user-clock fa-3x text-primary mb-3"></i>
+              <h4>时效性控制</h4>
+              <p>可设置文件自动失效时间，或限制最大查看次数，增强文件安全性</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="my-5 p-4 bg-light rounded">
+      <h2 class="text-center mb-4"><i class="fas fa-question-circle"></i> 常见问题</h2>
+      <div class="accordion" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+              两个平台的文件是否可以互通？
+            </button>
+          </h2>
+          <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              不完全互通。两个平台使用不同的服务器集群，为了最佳体验，建议根据您的主要用户群体选择适合的平台。若您同时需要服务中国和国际用户，可以在两个平台上分别上传文件。
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+              哪个平台的功能更全面？
+            </button>
+          </h2>
+          <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              两个平台的核心功能基本一致，包括文件上传、安全分享、动态水印等。maipdf.com 提供更多的国际化功能和多语言支持，而 maipdf.cn 针对中国用户习惯和网络环境进行了深度优化。
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+              是否需要付费使用这些平台？
+            </button>
+          </h2>
+          <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">
+              两个平台均提供免费的基础功能，足以满足大多数用户的需求。对于需要更高级功能的企业用户，我们也提供付费的专业版和企业版服务，包括更大的存储空间、更多的安全选项和优先技术支持。
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="my-5 text-center">
+      <div class="p-5 bg-primary text-white rounded-3">
+        <h2 class="mb-3">立即开始安全分享您的文档</h2>
+        <p class="lead mb-4">选择适合您的平台，享受专业的PDF分享服务</p>
+        <div class="d-flex justify-content-center gap-3">
+          <a href="https://maipdf.cn" class="btn btn-light btn-lg px-4">
+            <i class="fas fa-users me-2"></i>中国用户入口
+          </a>
+          <a href="https://maipdf.com" class="btn btn-outline-light btn-lg px-4">
+            <i class="fas fa-globe me-2"></i>国际用户入口
+          </a>
+        </div>
+      </div>
+    </section>
   </div>
 
-  <!-- Bootstrap 5 & Font Awesome JS -->
+  <!-- Footer -->
+  <footer class="footer mt-5 py-4">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-4">
+          <h5>MaiPDF</h5>
+          <p>专业PDF分享与安全解决方案</p>
+        </div>
+        <div class="col-md-4">
+          <h5>快速链接</h5>
+          <ul class="list-unstyled">
+            <li><a href="https://maipdf.cn">中国平台</a></li>
+            <li><a href="https://maipdf.com">国际平台</a></li>
+            <li><a href="../features/动态水印.html">动态水印功能</a></li>
+            <li><a href="../features/阅读记录.html">阅读统计功能</a></li>
+          </ul>
+        </div>
+        <div class="col-md-4">
+          <h5>联系我们</h5>
+          <p><i class="fas fa-envelope me-2"></i>support@maipdf.com</p>
+        </div>
+      </div>
+      <hr>
+      <div class="text-center">
+        <p>&copy; 2025 MaiPDF. 保留所有权利。</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Bootstrap JS -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

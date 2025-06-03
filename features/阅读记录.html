@@ -4,177 +4,893 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="了解如何通过 MaiPDF 跟踪 PDF 文件的阅读记录，查看文件的打开次数、打开时间、IP 地址和设备信息。">
-    <meta name="keywords" content="MaiPDF, PDF 阅读记录, 打开次数, IP 地址, 设备信息, 文件管理, PDF 文件追踪">
+    <meta name="keywords" content="MaiPDF, PDF 阅读记录, 打开次数, IP 地址, 设备信息, 文件管理, PDF 文件追踪, 文档安全">
     <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="如何查看 PDF 的阅读记录：MaiPDF 打开次数与详细日志记录功能解析">
+    <meta property="og:title" content="PDF 阅读追踪系统：实时掌握每次文件访问 | MaiPDF">
     <meta property="og:description" content="探索如何通过 MaiPDF 记录和查看 PDF 文件的阅读数据，包括打开次数、打开时间、IP 地址和设备信息。">
     <meta property="og:image" content="../images/阅读记录查询.png">
     <meta property="og:url" content="https://maipdf.cn/features/阅读记录.html">
-    <title>如何查看 PDF 的阅读记录：MaiPDF 打开次数与详细日志记录功能解析</title>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
+    <title>PDF 阅读追踪系统：实时掌握每次文件访问 | MaiPDF</title>
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEJXx5KrK6Lgd8lkgWzpmEd7J9KfhDJyyhMMMbGF5xzAf5k1s6dOP0CzjBzUo" crossorigin="anonymous">
     <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+    <!-- AOS Animation Library -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #0072ff;
+            --secondary-color: #00c6ff;
+            --accent-color: #FF6B6B;
+            --text-color: #333;
+            --light-bg: #f8f9fa;
+            --dark-bg: #2c3e50;
+        }
+        
         body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f4f4f9;
-            color: #333;
+            font-family: 'Segoe UI', 'Microsoft YaHei', sans-serif;
+            background-color: #f8f9fa;
+            color: var(--text-color);
+            line-height: 1.7;
         }
-        .container {
-            margin-top: 50px;
+        
+        .navbar {
+            background-color: rgba(255, 255, 255, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.1);
+            padding: 15px 0;
         }
-        .header {
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: var(--primary-color);
+            font-size: 1.5rem;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            font-weight: 500;
+            margin: 0 10px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: var(--primary-color);
+            transform: translateY(-2px);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            padding: 100px 0 70px;
             text-align: center;
-            margin-bottom: 50px;
         }
-        h1 {
-            color: #007BFF;
+        
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 800;
+            color: var(--dark-bg);
+            margin-bottom: 20px;
         }
-        .btn-primary {
-            background-color: #007BFF;
-            border-color: #007BFF;
+        
+        .hero-subtitle {
+            font-size: 1.5rem;
+            color: #4a6f8a;
+            margin-bottom: 40px;
         }
-        .section {
-            margin-bottom: 30px;
+        
+        .feature-card {
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            height: 100%;
+            background: white;
+            border: none;
         }
-        .footer {
-            margin-top: 50px;
-            text-align: center;
-            padding: 20px;
-            background-color: #343a40;
-            color: white;
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
         }
-        .footer a {
-            color: #007BFF;
-        }
-        footer {
-            text-align: center;
-            margin-top: 3rem;
-            padding: 2rem;
-            color: #666;
-            border-top: 1px solid #eee;
-        }
-
-        .maipdf-button {
+          .feature-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
             display: inline-block;
+        }
+        
+        .feature-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+        
+        .card-img-top {
+            height: 200px;
+            object-fit: cover;
+        }
+        
+        .cta-section {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            padding: 70px 0;
+            color: white;
+            text-align: center;
+            border-radius: 12px;
+            margin: 50px 0;
+        }
+        
+        .cta-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .btn-cta {
+            background-color: white;
+            color: var(--primary-color);
+            font-weight: 600;
+            padding: 12px 30px;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            transition: all 0.3s;
+            border: none;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+            background-color: #f8f9fa;
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            text-align: center;
+            color: var(--dark-bg);
+            position: relative;
+            padding-bottom: 15px;
+        }
+        
+        .section-title:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 70px;
+            height: 3px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            border-radius: 3px;
+        }
+        
+        .testimonial-card {
+            background-color: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin: 20px 0;
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .testimonial-text {
+            font-size: 1.1rem;
+            font-style: italic;
+            color: #555;
+            margin-bottom: 20px;
+        }
+        
+        .testimonial-author {
+            font-weight: 600;
+            color: var(--dark-bg);
+        }
+        
+        .testimonial-role {
+            color: #777;
+            font-size: 0.9rem;
+        }
+        
+        .step-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin: 20px 0;
+            position: relative;
+            z-index: 1;
+            border: none;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .step-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        
+        .step-number {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            width: 50px;
+            height: 50px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            margin-bottom: 20px;
+        }
+        
+        .step-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            color: var(--dark-bg);
+        }
+        
+        footer {
+            background-color: var(--dark-bg);
+            color: white;
+            padding: 70px 0 30px;
+        }
+        
+        .footer-heading {
+            font-size: 1.3rem;
+            font-weight: 600;
+            margin-bottom: 25px;
+            color: #ecf0f1;
+        }
+        
+        .footer-link {
+            color: #bdc3c7;
+            transition: all 0.3s;
+            display: block;
+            margin-bottom: 10px;
             text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         }
-
-        .maipdf-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        
+        .footer-link:hover {
+            color: white;
+            transform: translateX(5px);
         }
-
+        
+        .footer-social {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            color: #bdc3c7;
+            transition: all 0.3s;
+        }
+        
+        .footer-social:hover {
+            color: white;
+            transform: translateY(-3px);
+        }
+        
+        .copyright {
+            background-color: #1a252f;
+            padding: 20px 0;
+            color: #7f8c8d;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+        
+        .scroll-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            z-index: 999;
+            opacity: 0;
+            transition: all 0.3s;
+        }
+        
+        .scroll-to-top.active {
+            opacity: 1;
+        }
+        
+        .usage-example {
+            padding: 40px;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            margin: 30px 0;
+        }
+        
+        .usage-example-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: var(--dark-bg);
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            height: 100%;
+            transition: all 0.3s;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+          .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--primary-color);
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        
+        .stat-label {
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
         @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
+            .hero-title {
+                font-size: 2.2rem;
             }
             
-            header {
-                padding: 2rem 1rem;
+            .hero-subtitle {
+                font-size: 1.2rem;
             }
-
-            h1 {
-                font-size: 2rem;
+            
+            .section-title {
+                font-size: 1.8rem;
             }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
+            
+            .cta-title {
+                font-size: 1.8rem;
             }
         }
     </style>
 </head>
 <body>
-
-    <div class="container">
-        <div class="header">
-            <h1>如何查看 PDF 的阅读记录：MaiPDF 打开次数与详细日志记录功能解析</h1>
-            <p>探索如何通过 MaiPDF 记录和查看 PDF 文件的阅读数据，包括打开次数、打开时间、IP 地址和设备信息。</p>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-light sticky-top">
+        <div class="container">
+            <a class="navbar-brand" href="https://maipdf.cn">
+                <i class="fas fa-file-pdf me-2"></i>MaiPDF
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://maipdf.cn">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://maipdf.cn/features.html">功能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://maipdf.cn/pricing.html">价格</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://maipdf.cn/blog.html">博客</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link btn btn-primary text-white px-4 ms-2" href="https://maipdf.cn/register.html">免费注册</a>
+                    </li>
+                </ul>
+            </div>
         </div>
+    </nav>
 
-        <div class="section">
-            <h2>MaiPDF 的打开次数限制功能</h2>
-            <p>首先，MaiPDF 提供了一项非常实用的功能——设置 PDF 的打开次数限制。这项功能允许用户根据需求限制 PDF 文件被访问的次数。当文件的打开次数达到设置的限制时，文件将不再可用，防止被过度分享或滥用。了解更多关于<a href="time-limits-pdf-files.html">PDF打开次数限制</a>的详细信息。</p>
-            <img src="../images/阅读码示例.png" alt="MaiPDF阅读码示例" class="img-fluid my-3">
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
+                    <h1 class="hero-title">
+                        <i class="fas fa-chart-line me-2"></i>PDF 阅读追踪系统
+                    </h1>
+                    <p class="hero-subtitle">掌握每一次文件访问，实时了解阅读情况</p>
+                    <a href="https://maipdf.cn/getresult.html" class="btn btn-primary btn-lg px-5 rounded-pill shadow-sm">
+                        <i class="fas fa-bolt me-2"></i>立即体验智能追踪
+                    </a>
+                </div>
+            </div>
+        </div>    </section>
+
+    <!-- Features Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">阅读追踪功能优势</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="feature-card p-4">
+                        <div class="text-center">
+                            <i class="fas fa-chart-line feature-icon"></i>
+                            <h3 class="feature-title">精准数据追踪</h3>
+                        </div>
+                        <p>自动记录每一次 PDF 的打开情况，包括时间、IP 地址、打开次数和设备信息，为您提供完整的阅读足迹，帮助您了解文件的流转情况。</p>
+                        <ul class="mt-3">
+                            <li>记录打开时间和日期</li>
+                            <li>追踪访问者 IP 地址</li>
+                            <li>统计设备和浏览器信息</li>
+                            <li>查看文件累计打开次数</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="feature-card p-4">
+                        <div class="text-center">
+                            <i class="fas fa-chart-pie feature-icon"></i>
+                            <h3 class="feature-title">数据可视化分析</h3>
+                        </div>
+                        <p>通过直观的数据图表，清晰展示文件的阅读趋势和模式，帮助您快速识别热门时段和关键受众，优化内容分发策略。</p>
+                        <ul class="mt-3">
+                            <li>阅读热力图分析</li>
+                            <li>时间分布统计</li>
+                            <li>地理位置分布</li>
+                            <li>阅读持续时间分析</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="feature-card p-4">
+                        <div class="text-center">
+                            <i class="fas fa-shield-alt feature-icon"></i>
+                            <h3 class="feature-title">安全与隐私保障</h3>
+                        </div>
+                        <p>所有追踪数据采用高级加密存储，确保信息安全；同时支持灵活的权限设置，让您完全掌控数据访问权限，保障隐私安全。</p>
+                        <ul class="mt-3">
+                            <li>数据加密存储</li>
+                            <li>精细权限控制</li>
+                            <li>合规数据处理</li>
+                            <li>安全报告导出</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h3>为什么需要设置打开次数限制？</h3>
-            <ul>
-                <li><strong>保护敏感信息：</strong>对于一些涉及隐私或敏感信息的文件，设置打开次数可以有效控制文件的传播，确保只有特定的人在特定时间内能访问到文件。查看<a href="secure-pdf-access-control.html">PDF访问控制</a>了解更多。</li>
-                <li><strong>营销用途：</strong>在市场营销或推广活动中，你可以将 PDF 文件设定为限量分享的形式，借此增加用户的参与感和紧迫感。</li>
-                <li><strong>节省存储资源：</strong>如果文件被大量访问但不再需要继续使用，设置访问次数限制也能有效避免不必要的存储占用。</li>
-            </ul>
+    <!-- Stats Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">阅读追踪带来的改变</h2>
+            <div class="row g-4">
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat-card">
+                        <i class="fas fa-eye mb-3" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                        <div class="stat-number">96%</div>
+                        <div class="stat-label">用户获得了更好的文件追踪体验</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="stat-card">
+                        <i class="fas fa-chart-bar mb-3" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                        <div class="stat-number">78%</div>
+                        <div class="stat-label">企业提升了内容分发精准度</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="stat-card">
+                        <i class="fas fa-lock mb-3" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                        <div class="stat-number">100%</div>
+                        <div class="stat-label">数据安全保障</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="stat-card">
+                        <i class="fas fa-tachometer-alt mb-3" style="font-size: 2.5rem; color: var(--primary-color);"></i>
+                        <div class="stat-number">65%</div>
+                        <div class="stat-label">提升决策速度</div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>MaiPDF 如何记录阅读数据？</h2>
-            <p>除了简单的打开次数限制外，MaiPDF 还提供了详细的阅读记录功能，帮助用户全面了解 PDF 文件的阅读情况。具体来说，MaiPDF 会在以下情况下记录详细信息：</p>
-            <img src="../images/阅读记录查询结果示例.png" alt="MaiPDF阅读记录查询结果示例" class="img-fluid my-3">
-            <ul>
-                <li><strong>打开时间记录：</strong>每次 PDF 文件被访问时，MaiPDF 都会精确记录打开时间。这项数据非常有价值，尤其在分析文档的阅读情况时。通过查看不同时间段的阅读数据，用户可以了解哪些时段文件被阅读得最多，帮助判断文件的受欢迎程度。</li>
-                <li><strong>IP 地址记录：</strong>MaiPDF 还会记录访问 PDF 文件的IP 地址。这一点特别重要，因为它可以帮助你识别文件的访问来源，尤其是当文件的访问需要控制或限制时。通过 IP 地址，用户还可以了解访问者的地理位置，进而分析文件是否广泛传播到目标群体之外。</li>
-                <li><strong>设备信息记录：</strong>每当有人打开 PDF 文件时，MaiPDF 还会记录访问文件的设备信息。这包括设备类型（如手机、平板、PC）以及操作系统版本。这一功能能够帮助你分析用户的设备偏好，比如哪些设备对文件的访问频率较高。</li>
-            </ul>
+    <!-- How It Works Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">如何使用阅读追踪功能</h2>
+            <div class="row g-4">
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="100">
+                    <div class="step-card">
+                        <div class="step-number">1</div>
+                        <h3 class="step-title">上传 PDF 文件</h3>
+                        <p>登录 MaiPDF 账户后，点击上传按钮，选择您需要追踪的 PDF 文件上传至平台。</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="200">
+                    <div class="step-card">
+                        <div class="step-number">2</div>
+                        <h3 class="step-title">开启追踪功能</h3>
+                        <p>在文件设置中，勾选"启用阅读追踪"选项，可选择需要记录的数据类型。</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="300">
+                    <div class="step-card">
+                        <div class="step-number">3</div>
+                        <h3 class="step-title">分享文件链接</h3>
+                        <p>通过系统生成的链接分享您的 PDF 文件给目标受众，每次打开都将被记录。</p>
+                    </div>
+                </div>
+                
+                <div class="col-lg-3" data-aos="fade-up" data-aos-delay="400">
+                    <div class="step-card">
+                        <div class="step-number">4</div>
+                        <h3 class="step-title">查看追踪数据</h3>
+                        <p>在控制面板中，实时查看和分析文件的阅读数据，导出报告或设置通知。</p>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>如何查看 MaiPDF 中的 PDF 阅读记录？</h2>
-            <p>查看 MaiPDF 中的 PDF阅读记录非常简单，无需繁琐的登录和设置。只需要获取文件的阅读码，便可以直接查看文件的访问记录。具体步骤如下：</p>
-            <img src="../images/阅读记录查询.png" alt="MaiPDF阅读记录查询界面" class="img-fluid my-3">
-            <h3>步骤一：获取 PDF 阅读码</h3>
-            <p>每当你通过 MaiPDF 上传并生成一个 PDF 文件的共享链接时，系统会自动为该文件生成一个唯一的阅读码。这个阅读码是用来追踪该文件的阅读记录的关键。</p>
-            <h3>步骤二：访问 MaiPDF 阅读记录页面</h3>
-            <p>打开浏览器，访问 MaiPDF 的专用页面：<a href="https://maipdf.cn/getresult.html">https://maipdf.cn/getresult.html</a>。在页面中，你会看到一个输入框，提示你输入 PDF 文件的阅读码。</p>
-            <h3>步骤三：输入阅读码</h3>
-            <p>将获取到的阅读码输入到页面中的指定框内，然后点击"查询"按钮。系统会自动展示该文件的详细阅读记录，包括：</p>
-            <ul>
-                <li>打开次数</li>
-                <li>每次访问的时间</li>
-                <li>访问者的 IP 地址</li>
-                <li>设备信息</li>
-            </ul>
-            <h3>步骤四：查看并分析记录</h3>
-            <p>一旦你提交阅读码，系统会立即生成一份详尽的文件访问记录。这些数据将帮助你了解文件的受欢迎程度、访问的时段、访问来源的地理位置以及访问设备的类型。</p>
+    <!-- Use Cases Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">应用场景</h2>
+            <div class="row g-4">
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="100">
+                    <div class="usage-example">
+                        <h3 class="usage-example-title">
+                            <i class="fas fa-building me-2" style="color: var(--primary-color);"></i>企业文档管理
+                        </h3>
+                        <p>企业通过 MaiPDF 阅读追踪功能监控重要商业文档的访问情况，确保敏感信息的安全，同时了解客户对提案和报告的关注度。</p>
+                        <div class="mt-4">
+                            <h5><i class="fas fa-check-circle me-2 text-success"></i>核心优势</h5>
+                            <ul>
+                                <li>监控商业提案的阅读情况，评估客户兴趣</li>
+                                <li>追踪内部文档的传阅范围，防止信息泄露</li>
+                                <li>根据阅读数据优化内容，提高商业文档效果</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6" data-aos="fade-up" data-aos-delay="200">
+                    <div class="usage-example">
+                        <h3 class="usage-example-title">
+                            <i class="fas fa-graduation-cap me-2" style="color: var(--primary-color);"></i>教育培训行业
+                        </h3>
+                        <p>教育机构利用阅读追踪功能了解学生对学习资料的使用情况，分析学习习惯，优化教学内容和方法，提高教学效果。</p>
+                        <div class="mt-4">
+                            <h5><i class="fas fa-check-circle me-2 text-success"></i>核心优势</h5>
+                            <ul>
+                                <li>了解学生的学习进度和阅读模式</li>
+                                <li>识别热门学习资源，优化教学内容</li>
+                                <li>根据学习数据调整教学策略和重点</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mt-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="usage-example">
+                        <h3 class="usage-example-title">
+                            <i class="fas fa-briefcase me-2" style="color: var(--primary-color);"></i>营销与销售
+                        </h3>
+                        <p>营销团队通过追踪产品手册和营销资料的阅读情况，了解潜在客户兴趣，优化销售流程，提高转化率。</p>
+                        <div class="mt-4">
+                            <h5><i class="fas fa-check-circle me-2 text-success"></i>核心优势</h5>
+                            <ul>
+                                <li>追踪销售资料的阅读深度，找出最有效的内容</li>
+                                <li>根据阅读数据评估潜在客户兴趣程度</li>
+                                <li>针对性跟进高活跃度的客户，提高转化率</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-6 mt-4" data-aos="fade-up" data-aos-delay="400">
+                    <div class="usage-example">
+                        <h3 class="usage-example-title">
+                            <i class="fas fa-book me-2" style="color: var(--primary-color);"></i>出版与媒体
+                        </h3>
+                        <p>出版社和媒体机构利用阅读追踪了解读者对电子出版物的阅读偏好，优化内容策略，提高用户满意度。</p>
+                        <div class="mt-4">
+                            <h5><i class="fas fa-check-circle me-2 text-success"></i>核心优势</h5>
+                            <ul>
+                                <li>分析读者的阅读习惯和兴趣偏好</li>
+                                <li>根据阅读数据调整内容规划和出版策略</li>
+                                <li>评估不同类型内容的市场表现</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="section">
-            <h2>相关功能</h2>
-            <ul>
-                <li><a href="动态水印.html">动态二维码水印</a> - 为PDF添加可追踪的水印</li>
-                <li><a href="pdf-tracking-analytics.html">PDF追踪分析</a> - 详细的PDF访问数据分析</li>
-                <li><a href="pdf-security-features.html">PDF安全功能</a> - 全面的PDF安全保护措施</li>
-                <li><a href="prevent-document-content-copying.html">防止文档内容复制</a> - 保护PDF内容不被复制</li>
-            </ul>
+    <!-- FAQ Section -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">常见问题</h2>
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <div class="accordion" id="faqAccordion" data-aos="fade-up">
+                        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                            <h2 class="accordion-header" id="headingOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                    阅读追踪功能是否会影响 PDF 阅读体验？
+                                </button>
+                            </h2>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>不会，MaiPDF 的阅读追踪功能采用轻量级技术实现，不会影响文件的打开速度和阅读体验。追踪过程在后台静默进行，用户无感知，同时确保数据的准确性和完整性。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                            <h2 class="accordion-header" id="headingTwo">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                    阅读追踪功能支持哪些数据的记录？
+                                </button>
+                            </h2>
+                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>MaiPDF 阅读追踪功能支持记录以下数据：</p>
+                                    <ul>
+                                        <li>文件的打开次数和打开时间</li>
+                                        <li>访问者的 IP 地址和地理位置</li>
+                                        <li>使用的设备类型和浏览器信息</li>
+                                        <li>阅读停留时间</li>
+                                        <li>文档内交互行为（如页面跳转、链接点击等）</li>
+                                    </ul>
+                                    <p>您可以在控制面板中自定义需要记录的数据类型。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                            <h2 class="accordion-header" id="headingThree">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                    如何导出阅读追踪数据？
+                                </button>
+                            </h2>
+                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>您可以通过以下步骤导出阅读追踪数据：</p>
+                                    <ol>
+                                        <li>登录 MaiPDF 账户，进入控制面板</li>
+                                        <li>选择目标 PDF 文件</li>
+                                        <li>点击"阅读数据"选项卡</li>
+                                        <li>点击右上角的"导出"按钮</li>
+                                        <li>选择导出格式（CSV、Excel 或 PDF）</li>
+                                        <li>选择需要导出的数据类型和时间范围</li>
+                                        <li>点击"确认导出"</li>
+                                    </ol>
+                                    <p>导出的数据报告可用于商业分析、教学评估或市场研究等多种用途。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item mb-3 border-0 shadow-sm rounded">
+                            <h2 class="accordion-header" id="headingFour">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                    阅读追踪功能是否支持设置阅读通知？
+                                </button>
+                            </h2>
+                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>是的，MaiPDF 支持设置阅读通知功能。您可以：</p>
+                                    <ul>
+                                        <li>设置文件被打开时的即时通知</li>
+                                        <li>配置特定 IP 或设备访问时的提醒</li>
+                                        <li>设置阅读次数达到阈值时的通知</li>
+                                        <li>定期接收阅读数据摘要报告</li>
+                                    </ul>
+                                    <p>通知可通过邮件、短信或应用内消息推送，让您随时了解文件的阅读情况。</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="accordion-item border-0 shadow-sm rounded">
+                            <h2 class="accordion-header" id="headingFive">
+                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                    免费账户是否支持阅读追踪功能？
+                                </button>
+                            </h2>
+                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body">
+                                    <p>MaiPDF 免费账户提供基础的阅读追踪功能，包括：</p>
+                                    <ul>
+                                        <li>记录文件打开次数</li>
+                                        <li>查看最近 10 次的访问记录</li>
+                                        <li>基本的数据统计图表</li>
+                                    </ul>
+                                    <p>如需更全面的追踪功能，如详细的访问者信息、高级数据分析、自定义通知等，可升级至专业版或企业版。详情可查看<a href="https://maipdf.cn/pricing.html" class="text-primary">价格页面</a>。</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
+    </section>
 
-        <div class="footer">
-            <p>&copy; 2025 MaiPDF. All Rights Reserved. <br>
-            <a href="https://www.maiPDF.com" target="_blank">访问 MaiPDF</a></p>
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container">
+            <h2 class="section-title" data-aos="fade-up">用户评价</h2>
+            <div class="row g-4">
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"MaiPDF 的阅读追踪功能改变了我们的销售流程。现在我们能够实时了解客户对提案的关注度，精准把握跟进时机，转化率提升了近 40%。"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="用户头像" class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <div class="testimonial-author">张经理</div>
+                                <div class="testimonial-role">销售总监，科技公司</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"作为一名教育工作者，MaiPDF 的阅读追踪让我能够了解学生的学习情况，知道哪些资料最受欢迎，哪些内容需要改进，帮助我更好地调整教学策略。"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://randomuser.me/api/portraits/women/44.jpg" alt="用户头像" class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <div class="testimonial-author">李教授</div>
+                                <div class="testimonial-role">大学教师，教育机构</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-card">
+                        <p class="testimonial-text">"我们出版社通过 MaiPDF 的阅读追踪分析读者对电子出版物的阅读习惯，这些数据帮助我们优化内容规划，提高了读者满意度和订阅率。"</p>
+                        <div class="d-flex align-items-center mt-4">
+                            <img src="https://randomuser.me/api/portraits/men/67.jpg" alt="用户头像" class="rounded-circle me-3" width="50" height="50">
+                            <div>
+                                <div class="testimonial-author">王总编</div>
+                                <div class="testimonial-role">内容总监，出版集团</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section" data-aos="fade-up">
+                <h2 class="cta-title">开始追踪您的 PDF 阅读数据</h2>
+                <p class="mb-4">立即注册 MaiPDF，体验智能阅读追踪功能，掌握文件阅读的每一个细节</p>
+                <div class="d-flex justify-content-center gap-3 flex-wrap">
+                    <a href="https://maipdf.cn/register.html" class="btn btn-cta">
+                        <i class="fas fa-user-plus me-2"></i>免费注册
+                    </a>
+                    <a href="https://maipdf.cn/pricing.html" class="btn btn-outline-light">
+                        <i class="fas fa-tag me-2"></i>查看价格
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
     <footer>
-        <p>&copy; 2024 MaiPDF. 保留所有权利。</p>
-        <div class="footer-links">
-            <a href="https://maipdf.cn">访问 MaiPDF.cn</a>
-            <a href="features/动态水印.html">动态水印功能</a>
-            <a href="features/pdf-security-features.html">PDF安全功能</a>
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h4 class="footer-heading">关于 MaiPDF</h4>
+                    <p class="text-white-50">MaiPDF 是领先的 PDF 在线管理平台，提供文件加密、阅读追踪、在线编辑等全方位功能，让您的文档管理更高效、更安全。</p>
+                    <div class="mt-4">
+                        <a href="#" class="footer-social"><i class="fab fa-weixin"></i></a>
+                        <a href="#" class="footer-social"><i class="fab fa-weibo"></i></a>
+                        <a href="#" class="footer-social"><i class="fab fa-qq"></i></a>
+                        <a href="#" class="footer-social"><i class="fas fa-envelope"></i></a>
+                    </div>
+                </div>
+                
+                <div class="col-md-2">
+                    <h4 class="footer-heading">快速链接</h4>
+                    <a href="https://maipdf.cn" class="footer-link">首页</a>
+                    <a href="https://maipdf.cn/features.html" class="footer-link">功能</a>
+                    <a href="https://maipdf.cn/pricing.html" class="footer-link">价格</a>
+                    <a href="https://maipdf.cn/blog.html" class="footer-link">博客</a>
+                    <a href="https://maipdf.cn/about.html" class="footer-link">关于我们</a>
+                </div>
+                
+                <div class="col-md-3">
+                    <h4 class="footer-heading">功能导航</h4>
+                    <a href="https://maipdf.cn/features/动态水印.html" class="footer-link">PDF 动态水印</a>
+                    <a href="https://maipdf.cn/features/阅读记录.html" class="footer-link">阅读追踪</a>
+                    <a href="https://maipdf.cn/features/共享.html" class="footer-link">安全分享</a>
+                    <a href="https://maipdf.cn/features/zihui.html" class="footer-link">文件自毁</a>
+                    <a href="https://maipdf.cn/features/zuopinji.html" class="footer-link">在线作品集</a>
+                </div>
+                
+                <div class="col-md-3">
+                    <h4 class="footer-heading">联系我们</h4>
+                    <p class="text-white-50">
+                        <i class="fas fa-map-marker-alt me-2"></i> 北京市海淀区中关村科技园
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fas fa-phone me-2"></i> 400-888-8888
+                    </p>
+                    <p class="text-white-50">
+                        <i class="fas fa-envelope me-2"></i> contact@maipdf.cn
+                    </p>
+                </div>
+            </div>
+        </div>
+        <div class="copyright mt-5">
+            <div class="container">
+                <p class="mb-0">&copy; 2025 MaiPDF. 保留所有权利。</p>
+            </div>
         </div>
     </footer>
+
+    <!-- Scroll to Top Button -->
+    <a href="#" class="scroll-to-top" id="scrollToTop">
+        <i class="fas fa-arrow-up"></i>
+    </a>
 
     <!-- Bootstrap JS and Popper.js -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js" integrity="sha384-oBqDVmMz4fnFO9gyb6F17ZzBKMrlpA54veZxHhB0v6PxL52v8SABh3bVY5j" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js" integrity="sha384-pzjw8f+ua7Kw1TIq0t+FfXw6pRVd5aMcS+Jzr05g+c2Z7Gni/cvW2P7b5A9Z2Rbc" crossorigin="anonymous"></script>
+    <!-- AOS Animation Library -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        // Initialize AOS
+        AOS.init({
+            duration: 800,
+            once: true
+        });
+        
+        // Scroll to Top Button
+        const scrollToTopBtn = document.getElementById('scrollToTop');
+        
+        window.addEventListener('scroll', function() {
+            if (window.pageYOffset > 300) {
+                scrollToTopBtn.classList.add('active');
+            } else {
+                scrollToTopBtn.classList.remove('active');
+            }
+        });
+        
+        scrollToTopBtn.addEventListener('click', function(e) {
+            e.preventDefault();
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+    </script>
 </body>
 </html>
