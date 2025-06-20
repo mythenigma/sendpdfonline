@@ -3,9 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Convert PDFs to secure image format with MaiPDF - Protect sensitive documents from copying, editing or extraction while maintaining visual quality">
-    <meta name="keywords" content="PDF convert, secure PDF, PDF to image, document protection, prevent PDF editing, PDF security, confidential document sharing">
+    <meta name="description" content="Convert PDFs to secure image format with MaiPDF - Protect sensitive documents from copying, editing or extraction while maintaining visual quality. Free PDF security tool.">
+    <meta name="keywords" content="PDF convert, secure PDF, PDF to image, document protection, prevent PDF editing, PDF security, confidential document sharing, free PDF converter">
+    <meta name="author" content="MaiPDF">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Open Graph meta tags for social sharing -->
+    <meta property="og:title" content="MaiPDF Convert | Secure PDF to Image Conversion Tool">
+    <meta property="og:description" content="Transform PDFs into tamper-proof formats that prevent copying and editing while maintaining visual quality. Free and secure.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://maipdf.com/maiconvert-concise.html">
+    <meta property="og:image" content="https://maipdf.com/maiconver.png">
+    
+    <!-- Twitter Card meta tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MaiPDF Convert | Secure PDF to Image Conversion">
+    <meta name="twitter:description" content="Free tool to convert PDFs to secure formats that prevent copying and editing.">
+    
     <title>MaiPDF Convert | Secure PDF to Image Conversion Tool</title>
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MaiPDF Convert",
+        "description": "Convert PDFs to secure image format that prevents copying and editing",
+        "url": "https://maipdf.com/est/maiconvert.html",
+        "applicationCategory": "PDF Utility",
+        "operatingSystem": "Web Browser",
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+        },
+        "featureList": [
+            "PDF to Image Conversion",
+            "Copy Protection",
+            "Edit Prevention",
+            "Visual Integrity Preservation"
+        ]
+    }
+    </script>
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
     
     <!-- Bootstrap 5 CSS -->
@@ -14,6 +54,9 @@
     <!-- Font Awesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
     
+    <!-- Preload critical resources -->
+    <link rel="preload" href="maiconver.png" as="image">
+    
     <style>
         :root {
             --primary-color: #2C8C99;
@@ -21,6 +64,8 @@
             --accent-color: #ff9800;
             --text-color: #333;
             --light-bg: #f5f7f8;
+            --success-color: #28a745;
+            --danger-color: #dc3545;
         }
         
         body {
@@ -30,69 +75,132 @@
             line-height: 1.6;
         }
         
+        /* Improved accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        
+        /* Focus styles for better accessibility */
+        *:focus {
+            outline: 3px solid var(--accent-color);
+            outline-offset: 2px;
+        }
+        
         .hero {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            padding: 60px 0;
+            padding: 80px 0;
             text-align: center;
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.1)" stroke-width="1"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
         }
         
         .hero h1 {
-            font-size: 2.5rem;
+            font-size: 3rem;
             font-weight: 700;
             margin-bottom: 20px;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
+        }
+        
+        .hero-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
         }
         
         .feature-card {
             background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 25px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 30px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s ease;
             height: 100%;
+            border: 1px solid rgba(0,0,0,0.05);
         }
         
         .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            transform: translateY(-8px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.15);
         }
         
         .feature-icon {
-            font-size: 2.5rem;
+            font-size: 3rem;
             color: var(--primary-color);
-            margin-bottom: 15px;
+            margin-bottom: 20px;
         }
         
         .cta-button {
             background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            font-size: 1.1rem;
-            padding: 12px 35px;
+            font-size: 1.2rem;
+            padding: 15px 40px;
             border-radius: 50px;
             text-decoration: none;
             display: inline-block;
             transition: all 0.3s ease;
             font-weight: 600;
             border: none;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.2);
             margin-top: 20px;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+            transition: left 0.5s;
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
         }
         
         .cta-button:hover {
             transform: translateY(-3px);
-            box-shadow: 0 6px 20px rgba(0,0,0,0.25);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.25);
             color: white;
         }
         
         .section-title {
             color: var(--primary-color);
-            margin-bottom: 25px;
+            margin-bottom: 30px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 15px;
             text-align: center;
+            font-weight: 700;
         }
         
         .section-title:after {
@@ -101,247 +209,348 @@
             bottom: 0;
             left: 50%;
             transform: translateX(-50%);
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
+            width: 60px;
+            height: 4px;
+            background: linear-gradient(135deg, var(--accent-color), #ffb74d);
+            border-radius: 2px;
         }
         
         .section-container {
-            padding: 40px 0;
+            padding: 60px 0;
         }
         
         .step-number {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
             color: white;
-            width: 40px;
-            height: 40px;
+            width: 50px;
+            height: 50px;
             display: inline-flex;
             align-items: center;
             justify-content: center;
             border-radius: 50%;
-            margin-bottom: 10px;
+            margin-bottom: 15px;
             font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.2);
         }
         
         .benefit-list li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
             display: flex;
             align-items: flex-start;
+            padding: 10px;
+            border-radius: 8px;
+            transition: background-color 0.3s ease;
+        }
+        
+        .benefit-list li:hover {
+            background-color: rgba(44, 140, 153, 0.05);
         }
         
         .benefit-list i {
-            color: var(--accent-color);
-            margin-right: 10px;
-            font-size: 1.2rem;
+            color: var(--success-color);
+            margin-right: 15px;
+            font-size: 1.3rem;
             flex-shrink: 0;
+            margin-top: 2px;
         }
         
         .cta-section {
             background: linear-gradient(135deg, #f5f7fa, #e4e7eb);
-            padding: 50px 0;
-            border-radius: 10px;
-            margin: 40px 0;
+            padding: 60px 0;
+            border-radius: 15px;
+            margin: 50px 0;
             text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(44, 140, 153, 0.05) 0%, transparent 70%);
+            animation: pulse 4s ease-in-out infinite;
+        }
+        
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.1); }
         }
         
         .footer {
-            background: var(--primary-color);
+            background: linear-gradient(135deg, var(--primary-color), #1e6b75);
             color: white;
-            padding: 40px 0;
+            padding: 50px 0 30px;
             text-align: center;
         }
         
         .footer a {
             color: white;
             text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer a:hover {
+            color: var(--accent-color);
+        }
+        
+        .accordion-button {
+            background-color: #f8f9fa;
+            border: none;
+            font-weight: 600;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        .accordion-item {
+            border: 1px solid rgba(0,0,0,0.125);
+            margin-bottom: 10px;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        /* Loading animation for images */
+        .loading-placeholder {
+            background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+            background-size: 400% 100%;
+            animation: shimmer 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% { background-position: 100% 50%; }
+            100% { background-position: -100% 50%; }
         }
         
         @media (max-width: 768px) {
             .hero h1 {
-                font-size: 2rem;
+                font-size: 2.2rem;
+            }
+            
+            .hero-subtitle {
+                font-size: 1.1rem;
+            }
+            
+            .section-container {
+                padding: 40px 0;
+            }
+            
+            .feature-card {
+                padding: 25px;
+            }
+        }
+        
+        /* Improved print styles */
+        @media print {
+            .hero, .cta-section, .footer {
+                background: white !important;
+                color: black !important;
+            }
+            
+            .cta-button {
+                display: none;
             }
         }
     </style>
 </head>
 <body>
+    <!-- Skip to content link for screen readers -->
+    <a href="#main-content" class="sr-only">Skip to main content</a>
+    
     <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1><i class="fas fa-shield-alt"></i> MaiPDF Convert: Secure Your PDFs</h1>
-            <p>Transform PDFs into tamper-proof formats that prevent copying and editing</p>
-            <a href="https://maipdf.com/est/maiconvert.html" class="cta-button">
-                <i class="fas fa-lock"></i> Secure Your PDFs Now
-            </a>
+            <div class="hero-content">
+                <h1><i class="fas fa-shield-alt" aria-hidden="true"></i> MaiPDF Convert: Secure Your PDFs</h1>
+                <p class="hero-subtitle">Transform PDFs into tamper-proof formats that prevent copying and editing</p>
+                <a href="https://maipdf.com/est/maiconvert.html" class="cta-button" aria-label="Start using MaiPDF Convert tool">
+                    <i class="fas fa-lock" aria-hidden="true"></i> Secure Your PDFs Now
+                </a>
+            </div>
         </div>
     </div>
 
     <!-- Main Content -->
-    <div class="container">
+    <main id="main-content" class="container">
         <!-- Introduction Section -->
-        <div class="section-container">
+        <section class="section-container">
             <h2 class="section-title">PDF Security Made Simple</h2>
-            <p class="text-center mb-4">
+            <p class="text-center mb-4 lead">
                 MaiPDF Convert transforms vulnerable PDFs into secure image-based documents that 
                 <strong>cannot be edited, copied, or extracted</strong> while maintaining visual quality.
             </p>
-        </div>
+        </section>
         
         <!-- Key Features Section -->
-        <div class="section-container">
+        <section class="section-container">
+            <h2 class="section-title">Key Security Features</h2>
             <div class="row">
                 <div class="col-md-4 mb-4">
                     <div class="feature-card text-center">
-                        <i class="fas fa-lock feature-icon"></i>
+                        <i class="fas fa-lock feature-icon" aria-hidden="true"></i>
                         <h3>Copy Protection</h3>
                         <p>Prevent unauthorized copying of text and content from sensitive documents.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="feature-card text-center">
-                        <i class="fas fa-ban feature-icon"></i>
+                        <i class="fas fa-ban feature-icon" aria-hidden="true"></i>
                         <h3>Edit Prevention</h3>
                         <p>Stop others from modifying your documents while maintaining visual appearance.</p>
                     </div>
                 </div>
                 <div class="col-md-4 mb-4">
                     <div class="feature-card text-center">
-                        <i class="fas fa-eye feature-icon"></i>
+                        <i class="fas fa-eye feature-icon" aria-hidden="true"></i>
                         <h3>Visual Integrity</h3>
                         <p>Documents look exactly the same across all devices and platforms.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- How It Works Section -->
-        <div class="section-container">
+        <section class="section-container">
             <h2 class="section-title">How It Works</h2>
             
-            <div class="text-center mb-4">
-                <img src="maiconver.png" alt="MaiPDF Convert Interface" class="img-fluid rounded shadow" style="max-width: 600px;">
+            <div class="text-center mb-5">
+                <img src="maiconver.png" alt="MaiPDF Convert Interface showing upload and conversion options" class="img-fluid rounded shadow" style="max-width: 600px;" loading="lazy">
             </div>
             
             <div class="row text-center">
                 <div class="col-md-3 mb-4">
-                    <div class="step-number">1</div>
+                    <div class="step-number" aria-label="Step 1">1</div>
                     <h4>Upload PDF</h4>
                     <p>Select any PDF document you need to protect</p>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="step-number">2</div>
+                    <div class="step-number" aria-label="Step 2">2</div>
                     <h4>Choose Format</h4>
                     <p>Select your desired security level and output format</p>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="step-number">3</div>
+                    <div class="step-number" aria-label="Step 3">3</div>
                     <h4>Set Options</h4>
                     <p>Adjust compression and security settings if needed</p>
                 </div>
                 <div class="col-md-3 mb-4">
-                    <div class="step-number">4</div>
+                    <div class="step-number" aria-label="Step 4">4</div>
                     <h4>Download</h4>
                     <p>Get your secured document instantly</p>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- Benefits & Use Cases -->
-        <div class="section-container">
+        <section class="section-container">
             <div class="row">
                 <div class="col-md-6 mb-4">
                     <h3 class="section-title">Key Benefits</h3>
                     <ul class="benefit-list list-unstyled">
                         <li>
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
                             <span>Protect confidential information from unauthorized copying</span>
                         </li>
                         <li>
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
                             <span>Preserve exact document appearance across all devices</span>
                         </li>
                         <li>
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
                             <span>Prevent unauthorized editing of important documents</span>
                         </li>
                         <li>
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
                             <span>Control whether recipients can print your documents</span>
                         </li>
                         <li>
-                            <i class="fas fa-check-circle"></i>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
                             <span>All processing happens in your browser for maximum privacy</span>
+                        </li>
+                        <li>
+                            <i class="fas fa-check-circle" aria-hidden="true"></i>
+                            <span>No file size limits or watermarks</span>
                         </li>
                     </ul>
                 </div>
                 <div class="col-md-6 mb-4">
                     <h3 class="section-title">Common Use Cases</h3>
                     <div class="feature-card mb-3">
-                        <h4><i class="fas fa-briefcase text-primary"></i> Business Documents</h4>
-                        <p>Financial reports, contracts, and strategic plans</p>
+                        <h4><i class="fas fa-briefcase text-primary" aria-hidden="true"></i> Business Documents</h4>
+                        <p>Financial reports, contracts, strategic plans, and confidential presentations</p>
                     </div>
                     <div class="feature-card mb-3">
-                        <h4><i class="fas fa-graduation-cap text-primary"></i> Educational Materials</h4>
-                        <p>Study materials, exam papers, and research documents</p>
+                        <h4><i class="fas fa-graduation-cap text-primary" aria-hidden="true"></i> Educational Materials</h4>
+                        <p>Study materials, exam papers, research documents, and course content</p>
                     </div>
                     <div class="feature-card">
-                        <h4><i class="fas fa-copyright text-primary"></i> Intellectual Property</h4>
-                        <p>Creative works, designs, and proprietary information</p>
+                        <h4><i class="fas fa-copyright text-primary" aria-hidden="true"></i> Intellectual Property</h4>
+                        <p>Creative works, designs, proprietary information, and trade secrets</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
         <!-- CTA Section -->
-        <div class="cta-section">
-            <h2>Ready to Secure Your PDF Documents?</h2>
-            <a href="https://maipdf.com/est/maiconvert.html" class="cta-button">
-                <i class="fas fa-lock"></i> Start Converting Now
-            </a>
-        </div>
+        <section class="cta-section">
+            <div class="container">
+                <h2>Ready to Secure Your PDF Documents?</h2>
+                <p class="lead mb-4">Join thousands of users protecting their sensitive documents with MaiPDF Convert</p>
+                <a href="https://maipdf.com/est/maiconvert.html" class="cta-button" aria-label="Start converting PDFs with MaiPDF">
+                    <i class="fas fa-rocket" aria-hidden="true"></i> Start Converting Now - It's Free!
+                </a>
+            </div>
+        </section>
 
         <!-- FAQ Section -->
-        <div class="section-container">
-            <h2 class="section-title">FAQ</h2>
+        <section class="section-container">
+            <h2 class="section-title">Frequently Asked Questions</h2>
             
             <div class="accordion" id="faqAccordion">
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingOne">
+                    <h3 class="accordion-header" id="headingOne">
                         <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
                             Is MaiPDF Convert free to use?
                         </button>
-                    </h2>
+                    </h3>
                     <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            Yes, MaiPDF Convert is completely free to use with no hidden fees.
+                            Yes, MaiPDF Convert is completely free to use with no hidden fees, registration required, or watermarks added to your documents.
                         </div>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingTwo">
+                    <h3 class="accordion-header" id="headingTwo">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
                             Is my PDF content secure during conversion?
                         </button>
-                    </h2>
+                    </h3>
                     <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            All processing happens directly in your browser - your files are never uploaded to our servers.
+                            Absolutely! All processing happens directly in your browser using client-side JavaScript. Your files are never uploaded to our servers, ensuring complete privacy and security.
                         </div>
                     </div>
                 </div>
                 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingThree">
+                    <h3 class="accordion-header" id="headingThree">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
                             What conversion options are available?
                         </button>
-                    </h2>
+                    </h3>
                     <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            <ul>
-                                <li><strong>Images in ZIP</strong>: Each page as individual image files</li>
-                                <li><strong>Imaginized PDF</strong>: PDF with image-based pages (prevents editing)</li>
-                                <li><strong>Imaginized PDF with Print</strong>: Same as above but allows printing</li>
+                            <ul class="mb-0">
+                                <li><strong>Images in ZIP</strong>: Each page as individual image files for maximum security</li>
+                                <li><strong>Imaginized PDF</strong>: PDF with image-based pages that prevents editing and copying</li>
+                                <li><strong>Imaginized PDF with Print</strong>: Same security as above but allows printing</li>
                                 <li><strong>PDF with All Restrictions</strong>: Maximum security with all permissions removed</li>
                             </ul>
                         </div>
@@ -349,47 +558,106 @@
                 </div>
                 
                 <div class="accordion-item">
-                    <h2 class="accordion-header" id="headingFour">
+                    <h3 class="accordion-header" id="headingFour">
                         <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
                             Is there a file size limit?
                         </button>
-                    </h2>
+                    </h3>
                     <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
                         <div class="accordion-body">
-                            For optimal performance, we recommend files under 100MB, though larger files will work on computers with sufficient memory.
+                            There's no hard file size limit, but for optimal performance we recommend files under 100MB. Larger files will work on computers with sufficient memory.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="accordion-item">
+                    <h3 class="accordion-header" id="headingFive">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                            Can I batch convert multiple PDFs?
+                        </button>
+                    </h3>
+                    <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body">
+                            Currently, the tool processes one PDF at a time to ensure optimal performance and security. You can convert multiple files by repeating the process for each document.
                         </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </div>
+        </section>
+    </main>
 
     <!-- Footer -->
     <footer class="footer">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <h4>MaiPDF</h4>
-                    <p>PDF Security Solutions</p>
+                    <p>Secure PDF Solutions for Everyone</p>
+                    <div class="mt-3">
+                        <a href="#" class="me-3" aria-label="Follow us on Twitter"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-3" aria-label="Follow us on LinkedIn"><i class="fab fa-linkedin"></i></a>
+                        <a href="#" aria-label="Follow us on GitHub"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
-                <div class="col-md-4">
+                <div class="col-md-4 mb-4">
                     <h4>Quick Links</h4>
                     <ul class="list-unstyled">
                         <li><a href="index.html">Home</a></li>
                         <li><a href="features/index.html">Features</a></li>
                         <li><a href="usecase/index.html">Use Cases</a></li>
+                        <li><a href="article/index.html">Articles</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h4>Contact</h4>
-                    <a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a>
+                <div class="col-md-4 mb-4">
+                    <h4>Support</h4>
+                    <p><a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></p>
+                    <p><small>We typically respond within 24 hours</small></p>
                 </div>
             </div>
-            <p class="mt-4">&copy; 2025 MaiPDF. All rights reserved.</p>
+            <hr class="my-4" style="border-color: rgba(255,255,255,0.2);">
+            <div class="row">
+                <div class="col-md-6">
+                    <p class="mb-0">&copy; 2025 MaiPDF. All rights reserved.</p>
+                </div>
+                <div class="col-md-6 text-md-end">
+                    <small>Built with ❤️ for document security</small>
+                </div>
+            </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Simple analytics and performance optimization -->
+    <script>
+        // Lazy loading for non-critical images
+        document.addEventListener('DOMContentLoaded', function() {
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            
+            if ('IntersectionObserver' in window) {
+                const imageObserver = new IntersectionObserver((entries, observer) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const img = entry.target;
+                            img.src = img.dataset.src || img.src;
+                            img.classList.remove('loading-placeholder');
+                            observer.unobserve(img);
+                        }
+                    });
+                });
+                
+                images.forEach(img => imageObserver.observe(img));
+            }
+            
+            // Track CTA clicks
+            document.querySelectorAll('.cta-button').forEach(button => {
+                button.addEventListener('click', function() {
+                    // Analytics can be added here
+                    console.log('CTA clicked:', this.href);
+                });
+            });
+        });
+    </script>
 </body>
 </html>
