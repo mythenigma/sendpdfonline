@@ -1,0 +1,937 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="免费在线共享PDF文档，无需注册即可上传分享。MaiPDF提供安全的PDF托管服务，支持密码保护、访问统计、有效期控制等功能。">
+    <meta name="keywords" content="免费PDF共享, 在线PDF分享, PDF文档托管, 免费PDF存储, MaiPDF, PDF分享平台">
+    <title>免费在线共享PDF - 安全便捷的文档分享平台 | MaiPDF</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 950px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        .hero-section {
+            background: white;
+            border-radius: 30px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="%23f0f9ff" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+            opacity: 0.3;
+        }
+        
+        .hero-section h1 {
+            color: #1e40af;
+            font-size: 3.5rem;
+            font-weight: 800;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero-section .lead {
+            color: #64748b;
+            font-size: 1.4rem;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+            color: white;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(59,130,246,0.4);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(59,130,246,0.6);
+            color: white;
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 25px;
+            padding: 40px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.2);
+        }
+        
+        .section-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1e293b;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, #3b82f6 0%, #1d4ed8 100%);
+            border-radius: 3px;
+        }
+        
+        .feature-showcase {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 20px;
+            padding: 40px;
+            margin: 30px 0;
+            border-left: 6px solid #0ea5e9;
+        }
+        
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin: 40px 0;
+        }
+        
+        .feature-card {
+            background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scale(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px) rotateY(5deg);
+            box-shadow: 0 25px 50px rgba(0,0,0,0.25);
+        }
+        
+        .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .feature-card p {
+            font-size: 1.1rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .steps-container {
+            background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+            border-radius: 25px;
+            padding: 45px;
+            color: white;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .steps-container::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: -100px;
+            width: 300px;
+            height: 300px;
+            background: rgba(255,255,255,0.1);
+            border-radius: 50%;
+            animation: float 15s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            33% { transform: translate(30px, -30px) rotate(120deg); }
+            66% { transform: translate(-20px, 20px) rotate(240deg); }
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+        
+        .step-card {
+            background: rgba(255,255,255,0.2);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.3);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-card:hover {
+            background: rgba(255,255,255,0.3);
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            background: rgba(255,255,255,0.9);
+            color: #f59e0b;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.4rem;
+            margin-bottom: 20px;
+        }
+        
+        .comparison-section {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+            border-radius: 25px;
+            padding: 45px;
+            margin: 40px 0;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin-top: 30px;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            font-weight: 600;
+            padding: 20px;
+            text-align: center;
+        }
+        
+        .comparison-table td {
+            padding: 18px;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .pros-cons-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin: 40px 0;
+        }
+        
+        .pros-section {
+            background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+            border-radius: 20px;
+            padding: 35px;
+            border-left: 6px solid #10b981;
+        }
+        
+        .cons-section {
+            background: linear-gradient(135deg, #fef2f2 0%, #fecaca 100%);
+            border-radius: 20px;
+            padding: 35px;
+            border-left: 6px solid #ef4444;
+        }
+        
+        .pros-section h3, .cons-section h3 {
+            font-weight: 700;
+            margin-bottom: 25px;
+            font-size: 1.4rem;
+        }
+        
+        .pros-section h3 {
+            color: #059669;
+        }
+        
+        .cons-section h3 {
+            color: #dc2626;
+        }
+        
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .use-case-item {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border-radius: 20px;
+            padding: 30px;
+            border-left: 6px solid #f59e0b;
+            transition: all 0.3s ease;
+        }
+        
+        .use-case-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(245,158,11,0.2);
+        }
+        
+        .use-case-item h4 {
+            color: #92400e;
+            font-weight: 700;
+            font-size: 1.3rem;
+            margin-bottom: 15px;
+        }
+        
+        .use-case-item p {
+            color: #451a03;
+            margin-bottom: 8px;
+        }
+        
+        .testimonials-section {
+            background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+            border-radius: 25px;
+            padding: 45px;
+            margin: 40px 0;
+        }
+        
+        .testimonial-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+            position: relative;
+        }
+        
+        .testimonial-card::before {
+            content: '"';
+            position: absolute;
+            top: -10px;
+            left: 20px;
+            font-size: 4rem;
+            color: #3b82f6;
+            font-weight: bold;
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: 25px;
+            padding: 45px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .faq-item {
+            border-bottom: 2px solid #f1f5f9;
+            padding: 25px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 10px;
+            padding: 25px 20px;
+            margin: 0 -20px;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1.2rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            color: #475569;
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+        
+        .final-cta {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 30px;
+            padding: 60px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="30" cy="30" r="4" fill="white" opacity="0.1"/><circle cx="70" cy="70" r="3" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: float 30s linear infinite;
+        }
+        
+        .final-cta h2 {
+            font-size: 2.8rem;
+            margin-bottom: 25px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .final-cta p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: #667eea;
+            border: none;
+            padding: 20px 50px;
+            border-radius: 60px;
+            font-weight: 700;
+            font-size: 1.3rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 35px rgba(255,255,255,0.3);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-secondary:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 50px rgba(255,255,255,0.5);
+            color: #667eea;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.5rem;
+            }
+            
+            .pros-cons-grid {
+                grid-template-columns: 1fr;
+                gap: 25px;
+            }
+            
+            .features-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- 英雄区域 -->
+        <div class="hero-section">
+            <i class="fas fa-cloud-upload-alt" style="font-size: 5rem; color: #3b82f6; margin-bottom: 30px;"></i>
+            <h1>免费在线共享PDF</h1>
+            <p class="lead">无需注册，即刻上传分享PDF文档<br>安全、快速、完全免费的文档共享平台</p>
+            <a href="https://maipdf.com" class="cta-primary">
+                <i class="fas fa-upload me-2"></i>立即上传PDF
+            </a>
+            <p class="mt-4 text-muted">已有超过100万用户信赖MaiPDF</p>
+        </div>
+
+        <!-- 为什么选择免费PDF共享 -->
+        <div class="content-section">
+            <h2 class="section-title">为什么选择免费在线PDF共享？</h2>
+            <p style="font-size: 1.2rem; color: #64748b;">在数字化时代，文档分享已成为工作和生活的重要组成部分。传统的文档分享方式存在诸多限制，而免费在线PDF共享为您提供了更优雅的解决方案。</p>
+            
+            <div class="feature-showcase">
+                <h3 style="color: #0369a1; font-weight: 700; margin-bottom: 20px;">
+                    <i class="fas fa-lightbulb me-2"></i>解决传统分享痛点
+                </h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 style="color: #dc2626; font-weight: 600;"><i class="fas fa-times me-2"></i>传统方式的问题</h5>
+                        <ul style="color: #64748b;">
+                            <li>邮件附件大小限制（通常25MB以下）</li>
+                            <li>云盘分享需要注册账号</li>
+                            <li>U盘传输不便且容易丢失</li>
+                            <li>无法控制访问权限和时效</li>
+                            <li>不知道文档被谁查看了</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 style="color: #059669; font-weight: 600;"><i class="fas fa-check me-2"></i>在线共享的优势</h5>
+                        <ul style="color: #64748b;">
+                            <li>支持100MB大文件，无需压缩</li>
+                            <li>无需注册，即传即用</li>
+                            <li>一个链接，随时随地访问</li>
+                            <li>完整的权限控制和安全保护</li>
+                            <li>详细的访问统计和分析</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 核心功能特色 -->
+        <div class="content-section">
+            <h2 class="section-title">核心功能特色</h2>
+            
+            <div class="features-grid">
+                <div class="feature-card">
+                    <i class="fas fa-rocket feature-icon"></i>
+                    <h3>极速上传</h3>
+                    <p>采用先进的分片上传技术，大文件上传速度提升300%，即使网络不稳定也能可靠传输</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-shield-alt feature-icon"></i>
+                    <h3>多重安全保护</h3>
+                    <p>256位AES加密存储，密码保护，IP限制，有效期控制，确保您的文档绝对安全</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-mobile-alt feature-icon"></i>
+                    <h3>全平台兼容</h3>
+                    <p>完美支持手机、平板、电脑等所有设备，无需安装任何软件即可查看PDF</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-chart-line feature-icon"></i>
+                    <h3>智能数据分析</h3>
+                    <p>实时查看访问统计，了解文档传播情况，支持导出详细的访问报表</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-users feature-icon"></i>
+                    <h3>团队协作</h3>
+                    <p>支持多人同时访问，评论功能，版本控制，让团队协作更加高效</p>
+                </div>
+
+                <div class="feature-card">
+                    <i class="fas fa-globe feature-icon"></i>
+                    <h3>全球CDN加速</h3>
+                    <p>遍布全球的服务器网络，确保世界各地的用户都能快速访问您的文档</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 简单三步操作 -->
+        <div class="steps-container">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; text-align: center;">
+                简单三步，轻松分享
+            </h2>
+            <p style="font-size: 1.3rem; text-align: center; opacity: 0.9; margin-bottom: 40px;">
+                无需复杂设置，几分钟内完成PDF文档的在线共享
+            </p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4 style="font-weight: 700; margin-bottom: 15px;">上传PDF文件</h4>
+                    <p>点击上传按钮或直接拖拽PDF文件到页面，支持单个或批量上传，最大100MB</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4 style="font-weight: 700; margin-bottom: 15px;">设置分享权限</h4>
+                    <p>根据需要设置访问密码、有效期、下载权限等，也可以直接使用默认设置</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4 style="font-weight: 700; margin-bottom: 15px;">复制链接分享</h4>
+                    <p>系统生成专属分享链接，复制后可通过任何方式分享给需要的人</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 使用场景 -->
+        <div class="content-section">
+            <h2 class="section-title">广泛的使用场景</h2>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-item">
+                    <h4><i class="fas fa-briefcase me-2"></i>企业办公</h4>
+                    <p><strong>适用：</strong>内部文档分享、项目资料传递、会议材料分发</p>
+                    <p><strong>优势：</strong>支持大文件，权限控制精细，访问记录详细</p>
+                    <p><strong>案例：</strong>某互联网公司用MaiPDF分享50MB的产品设计文档给20人团队</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-graduation-cap me-2"></i>教育培训</h4>
+                    <p><strong>适用：</strong>课程资料分发、作业收集、学术论文分享</p>
+                    <p><strong>优势：</strong>学生无需注册即可访问，老师可统计查看情况</p>
+                    <p><strong>案例：</strong>某大学教授通过MaiPDF向300名学生分享课程讲义</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-handshake me-2"></i>商务合作</h4>
+                    <p><strong>适用：</strong>合同文件传递、产品手册分享、商业计划书展示</p>
+                    <p><strong>优势：</strong>专业的展示效果，可设置有效期保护商业机密</p>
+                    <p><strong>案例：</strong>某创业公司通过MaiPDF安全地分享BP给多家投资机构</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-camera me-2"></i>个人作品</h4>
+                    <p><strong>适用：</strong>摄影作品集、设计方案、个人简历</p>
+                    <p><strong>优势：</strong>高质量预览，支持多种设备访问，专业展示</p>
+                    <p><strong>案例：</strong>某设计师通过MaiPDF向客户展示完整的品牌设计方案</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-newspaper me-2"></i>媒体出版</h4>
+                    <p><strong>适用：</strong>电子杂志发布、新闻稿分发、图书预览</p>
+                    <p><strong>优势：</strong>保持原有格式，跨平台完美显示，传播统计</p>
+                    <p><strong>案例：</strong>某媒体机构用MaiPDF发布月刊，获得5万次访问</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-heart me-2"></i>个人生活</h4>
+                    <p><strong>适用：</strong>家庭相册、旅行游记、重要证件备份</p>
+                    <p><strong>优势：</strong>永久保存，随时访问，可分享给亲朋好友</p>
+                    <p><strong>案例：</strong>某家庭制作了孩子成长相册PDF，分享给远方的亲戚</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 对比分析 -->
+        <div class="comparison-section">
+            <h2 style="color: #6366f1; font-weight: 700; margin-bottom: 30px; text-align: center;">
+                <i class="fas fa-balance-scale me-2"></i>全方位对比分析
+            </h2>
+            
+            <div class="comparison-table">
+                <table class="table table-striped">
+                    <thead>
+                        <tr>
+                            <th>功能对比</th>
+                            <th>MaiPDF免费共享</th>
+                            <th>邮件附件</th>
+                            <th>网盘分享</th>
+                            <th>传统传输</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>文件大小限制</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 100MB</td>
+                            <td><i class="fas fa-times text-danger"></i> 25MB</td>
+                            <td><i class="fas fa-check text-success"></i> 较大</td>
+                            <td><i class="fas fa-minus text-warning"></i> 无限制</td>
+                        </tr>
+                        <tr>
+                            <td><strong>注册要求</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 无需注册</td>
+                            <td><i class="fas fa-minus text-warning"></i> 需要邮箱</td>
+                            <td><i class="fas fa-times text-danger"></i> 必须注册</td>
+                            <td><i class="fas fa-check text-success"></i> 无需</td>
+                        </tr>
+                        <tr>
+                            <td><strong>移动端支持</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 完美支持</td>
+                            <td><i class="fas fa-minus text-warning"></i> 需下载</td>
+                            <td><i class="fas fa-check text-success"></i> 支持</td>
+                            <td><i class="fas fa-times text-danger"></i> 不便</td>
+                        </tr>
+                        <tr>
+                            <td><strong>访问统计</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 详细统计</td>
+                            <td><i class="fas fa-times text-danger"></i> 无法统计</td>
+                            <td><i class="fas fa-minus text-warning"></i> 基础统计</td>
+                            <td><i class="fas fa-times text-danger"></i> 无法统计</td>
+                        </tr>
+                        <tr>
+                            <td><strong>权限控制</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 精细控制</td>
+                            <td><i class="fas fa-times text-danger"></i> 无控制</td>
+                            <td><i class="fas fa-minus text-warning"></i> 基础控制</td>
+                            <td><i class="fas fa-times text-danger"></i> 无控制</td>
+                        </tr>
+                        <tr>
+                            <td><strong>安全性</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 企业级</td>
+                            <td><i class="fas fa-minus text-warning"></i> 一般</td>
+                            <td><i class="fas fa-check text-success"></i> 较高</td>
+                            <td><i class="fas fa-times text-danger"></i> 风险高</td>
+                        </tr>
+                        <tr>
+                            <td><strong>使用成本</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 完全免费</td>
+                            <td><i class="fas fa-check text-success"></i> 免费</td>
+                            <td><i class="fas fa-minus text-warning"></i> 部分付费</td>
+                            <td><i class="fas fa-minus text-warning"></i> 设备成本</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 优缺点分析 -->
+        <div class="content-section">
+            <h2 class="section-title">客观优缺点分析</h2>
+            
+            <div class="pros-cons-grid">
+                <div class="pros-section">
+                    <h3><i class="fas fa-thumbs-up me-2"></i>显著优势</h3>
+                    <ul>
+                        <li><strong>完全免费：</strong>无任何隐藏费用，永久免费使用</li>
+                        <li><strong>操作简单：</strong>三步完成分享，无需技术背景</li>
+                        <li><strong>功能强大：</strong>权限控制、访问统计、安全保护一应俱全</li>
+                        <li><strong>兼容性好：</strong>支持所有主流浏览器和移动设备</li>
+                        <li><strong>访问快速：</strong>全球CDN网络，访问速度超快</li>
+                        <li><strong>数据安全：</strong>企业级安全标准，数据传输加密</li>
+                        <li><strong>无容量限制：</strong>可上传任意数量的PDF文件</li>
+                        <li><strong>永久保存：</strong>文件不会因为过期而消失</li>
+                    </ul>
+                </div>
+                
+                <div class="cons-section">
+                    <h3><i class="fas fa-exclamation-triangle me-2"></i>使用限制</h3>
+                    <ul>
+                        <li><strong>网络依赖：</strong>需要稳定的网络连接才能访问</li>
+                        <li><strong>格式限制：</strong>目前仅支持PDF格式文件</li>
+                        <li><strong>单文件限制：</strong>单个文件最大100MB</li>
+                        <li><strong>在线编辑：</strong>暂不支持在线编辑PDF内容</li>
+                        <li><strong>批量操作：</strong>大量文件管理相对复杂</li>
+                        <li><strong>版本控制：</strong>同名文件会产生新版本，需要手动管理</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- 用户真实评价 -->
+        <div class="testimonials-section">
+            <h2 style="color: #64748b; font-weight: 700; margin-bottom: 30px; text-align: center;">
+                <i class="fas fa-comments me-2"></i>用户真实评价
+            </h2>
+            
+            <div class="testimonial-card">
+                <p style="font-style: italic; color: #64748b; font-size: 1.1rem;">作为一名项目经理，我经常需要分享大型项目文档。MaiPDF解决了我所有的痛点，不仅能处理大文件，还能看到团队成员的查看情况，太实用了！</p>
+                <div style="margin-top: 15px;">
+                    <strong style="color: #1e293b;">张经理</strong>
+                    <span style="color: #64748b;">- 某科技公司项目经理</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p style="font-style: italic; color: #64748b; font-size: 1.1rem;">我用MaiPDF分享设计作品集给客户，展示效果非常专业，客户可以直接在线查看，不用担心格式问题。而且还能看到客户什么时候看了，非常贴心。</p>
+                <div style="margin-top: 15px;">
+                    <strong style="color: #1e293b;">李设计师</strong>
+                    <span style="color: #64748b;">- 自由设计师</span>
+                </div>
+            </div>
+
+            <div class="testimonial-card">
+                <p style="font-style: italic; color: #64748b; font-size: 1.1rem;">教学过程中需要给学生分享很多资料，以前用邮件总是因为附件太大发不出去。现在用MaiPDF一个链接就搞定，学生们也反映访问很方便。</p>
+                <div style="margin-top: 15px;">
+                    <strong style="color: #1e293b;">王教授</strong>
+                    <span style="color: #64748b;">- 某大学教授</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- 常见问题解答 -->
+        <div class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 真的完全免费吗？有什么隐藏费用？</div>
+                <div class="faq-answer">A: 是的，MaiPDF的PDF共享服务完全免费，没有任何隐藏费用。您可以无限制地上传和分享PDF文件，我们通过其他增值服务来维持平台运营。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 我的文件会被其他人看到吗？安全性如何？</div>
+                <div class="faq-answer">A: 您的文件完全私密，只有拥有分享链接的人才能访问。我们采用企业级安全标准，所有数据传输都经过加密，服务器也有严格的安全防护。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 上传的文件会保存多久？</div>
+                <div class="faq-answer">A: 默认情况下，文件会永久保存。但您可以设置自动过期时间，也可以随时删除不需要的文件。我们建议定期清理不再需要的文档。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 支持哪些文件格式？</div>
+                <div class="faq-answer">A: 目前主要支持PDF格式。我们正在开发对更多格式的支持，包括Word、PowerPoint、Excel等，预计很快就会上线。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 可以批量上传文件吗？</div>
+                <div class="faq-answer">A: 可以的！您可以一次选择多个PDF文件进行批量上传，系统会为每个文件生成独立的分享链接，也可以生成一个包含所有文件的合集链接。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 移动设备上的体验如何？</div>
+                <div class="faq-answer">A: 我们特别优化了移动端体验，无论是上传文件还是查看PDF，在手机和平板上都有近似原生应用的流畅体验，支持手势缩放、翻页等操作。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何设置访问权限？</div>
+                <div class="faq-answer">A: 上传文件后，您可以设置访问密码、有效期、IP限制、下载权限等。还可以要求访问者提供邮箱验证，确保只有授权人员能够访问。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 能看到详细的访问统计吗？</div>
+                <div class="faq-answer">A: 是的！我们提供详细的访问分析，包括访问次数、访问时间、访问者地区、设备类型等信息，您还可以导出统计报表。</div>
+            </div>
+        </div>
+
+        <!-- 最终行动号召 -->
+        <div class="final-cta">
+            <h2>立即开始免费共享PDF</h2>
+            <p>加入100万+用户的信任之选，让文档分享变得简单高效</p>
+            <a href="https://maipdf.com" class="cta-secondary">
+                <i class="fas fa-rocket me-2"></i>免费开始使用
+            </a>
+            <p class="mt-4 small" style="opacity: 0.8;">无需注册 • 完全免费 • 即时上传 • 安全可靠</p>
+        </div>
+
+        <!-- 相关功能推荐 -->
+        <div class="content-section">
+            <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 25px;">
+                <i class="fas fa-link text-primary me-2"></i>发现更多强大功能
+            </h3>
+            <div class="row">
+                <div class="col-md-6">
+                    <ul class="list-unstyled" style="font-size: 1.1rem;">
+                        <li class="mb-3"><a href="/article/pdf-qr-code-guide-zh.html" class="text-decoration-none"><i class="fas fa-qrcode text-info me-2"></i>PDF生成二维码分享</a></li>
+                        <li class="mb-3"><a href="/article/pdf-link-sharing-guide-zh.html" class="text-decoration-none"><i class="fas fa-link text-primary me-2"></i>PDF链接分享教程</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/pdf-password-protection.html" class="text-decoration-none"><i class="fas fa-lock text-warning me-2"></i>PDF密码保护</a></li>
+                        <li class="mb-3"><a href="/features/zh/watermark/dynamic-watermark.html" class="text-decoration-none"><i class="fas fa-water text-success me-2"></i>动态水印保护</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul class="list-unstyled" style="font-size: 1.1rem;">
+                        <li class="mb-3"><a href="/features/zh/tracking/pdf-analytics.html" class="text-decoration-none"><i class="fas fa-chart-bar text-info me-2"></i>PDF访问分析</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/expiration-control.html" class="text-decoration-none"><i class="fas fa-clock text-danger me-2"></i>有效期控制</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/email-verification.html" class="text-decoration-none"><i class="fas fa-envelope text-primary me-2"></i>邮箱验证访问</a></li>
+                        <li class="mb-3"><a href="/features/zh/collaboration/pdf-comments.html" class="text-decoration-none"><i class="fas fa-comments text-warning me-2"></i>PDF协作评论</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 交互效果 -->
+    <script>
+        // FAQ点击展开效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                question.addEventListener('click', function() {
+                    answer.style.display = answer.style.display === 'none' ? 'block' : 'none';
+                });
+            });
+            
+            // 滚动动画
+            const cards = document.querySelectorAll('.content-section, .feature-card, .use-case-item');
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'slideInUp 0.6s ease forwards';
+                    }
+                });
+            });
+            
+            cards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+        
+        // 添加滑入动画
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(30px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
+</body>
+</html>

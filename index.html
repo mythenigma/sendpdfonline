@@ -16,14 +16,513 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://sendpdfonline.com/styles.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Custom Styles -->
+    <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --danger-color: #ef4444;
+            --warning-color: #f59e0b;
+            --info-color: #06b6d4;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+            --text-muted: #64748b;
+            --border-color: #e2e8f0;
+            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
+        }
+        
+        * {
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-color);
+            scroll-behavior: smooth;
+        }
+        
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Space Grotesk', sans-serif;
+            font-weight: 600;
+            line-height: 1.3;
+        }
+        
+        /* Language Selector */
+        .language-selector {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 50px;
+            padding: 8px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+        
+        .language-selector .btn {
+            border-radius: 25px;
+            border: none;
+            padding: 8px 16px;
+            font-size: 12px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .language-selector .btn-primary {
+            background: var(--gradient-primary);
+            color: white;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .language-selector .btn-outline-primary {
+            background: transparent;
+            color: var(--primary-color);
+            border: 1px solid transparent;
+        }
+        
+        .language-selector .btn-outline-primary:hover {
+            background: var(--primary-color);
+            color: white;
+            transform: translateY(-2px);
+        }
+        
+        /* Hero Section */
+        .hero {
+            min-height: 100vh;
+            background: var(--gradient-primary);
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><defs><radialGradient id="a" cx="50%" cy="50%"><stop offset="0%" stop-color="%23ffffff" stop-opacity="0.1"/><stop offset="100%" stop-color="%23ffffff" stop-opacity="0"/></radialGradient></defs><circle cx="200" cy="200" r="100" fill="url(%23a)"/><circle cx="800" cy="300" r="150" fill="url(%23a)"/><circle cx="400" cy="700" r="120" fill="url(%23a)"/></svg>') no-repeat center center;
+            background-size: cover;
+            opacity: 0.3;
+        }
+        
+        .hero .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            font-size: 4rem;
+            font-weight: 700;
+            margin-bottom: 1.5rem;
+            color: white;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+            animation: fadeInUp 1s ease-out;
+        }
+        
+        .hero .lead {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: rgba(255, 255, 255, 0.9);
+            animation: fadeInUp 1s ease-out 0.2s both;
+        }
+        
+        .hero p:not(.lead) {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+            animation: fadeInUp 1s ease-out 0.4s both;
+        }
+        
+        .hero-buttons {
+            margin-top: 2rem;
+            animation: fadeInUp 1s ease-out 0.6s both;
+        }
+        
+        .cta-button {
+            background: white;
+            color: var(--primary-color);
+            padding: 16px 32px;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1.1rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.3);
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(255, 255, 255, 0.4);
+            color: var(--primary-color);
+        }
+        
+        .btn-outline-light {
+            border: 2px solid white;
+            color: white;
+            padding: 14px 28px;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline-light:hover {
+            background: white;
+            color: var(--primary-color);
+            transform: translateY(-3px);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes float {
+            0%, 100% {
+                transform: translateY(0px);
+            }
+            50% {
+                transform: translateY(-20px);
+            }
+        }
+        
+        /* Section Titles */
+        .section-title {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 3rem;
+            position: relative;
+            text-align: center;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 80px;
+            height: 4px;
+            background: var(--gradient-primary);
+            border-radius: 2px;
+        }
+        
+        /* Feature Cards */
+        .feature-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2.5rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            border: 1px solid var(--border-color);
+            height: 100%;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .feature-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: var(--gradient-primary);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+        }
+        
+        .feature-card:hover::before {
+            transform: scaleX(1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .feature-icon {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            display: block;
+            animation: float 6s ease-in-out infinite;
+        }
+        
+        .feature-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            color: var(--dark-color);
+        }
+        
+        .feature-card p {
+            color: var(--text-muted);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+        
+        .feature-card ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-card li {
+            margin-bottom: 0.8rem;
+            padding-left: 0;
+        }
+        
+        .feature-card a {
+            color: var(--dark-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            padding: 8px 0;
+            border-radius: 8px;
+        }
+        
+        .feature-card a:hover {
+            color: var(--primary-color);
+            padding-left: 8px;
+            background: rgba(37, 99, 235, 0.05);
+        }
+        
+        .feature-card a i {
+            margin-right: 10px;
+            width: 20px;
+            text-align: center;
+        }
+        
+        /* Language Cards */
+        .language-card {
+            background: white;
+            border-radius: 20px;
+            padding: 2rem;
+            text-align: center;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid var(--border-color);
+            height: 100%;
+        }
+        
+        .language-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 50px rgba(0, 0, 0, 0.12);
+        }
+        
+        .language-card .feature-icon {
+            font-size: 4rem;
+            margin-bottom: 1rem;
+        }
+        
+        .language-card h4 {
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+        }
+        
+        .language-card .btn {
+            border-radius: 25px;
+            padding: 10px 24px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .language-card .btn:hover {
+            transform: translateY(-2px);
+        }
+        
+        /* Call to Action Section */
+        .cta-section {
+            background: var(--gradient-secondary);
+            color: white;
+            padding: 80px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="50" cy="50" r="1" fill="%23ffffff" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>') repeat;
+            animation: float 20s ease-in-out infinite;
+        }
+        
+        .cta-section .container {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-section h2 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        .cta-section .lead {
+            font-size: 1.3rem;
+            margin-bottom: 2rem;
+            opacity: 0.95;
+        }
+        
+        .cta-section .cta-button {
+            background: white;
+            color: var(--primary-color);
+            font-size: 1.2rem;
+            padding: 18px 36px;
+            margin-right: 1rem;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--dark-color);
+            color: white;
+            padding: 60px 0 30px;
+        }
+        
+        .footer h4 {
+            color: white;
+            margin-bottom: 1.5rem;
+            font-size: 1.3rem;
+        }
+        
+        .footer ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .footer li {
+            margin-bottom: 0.8rem;
+        }
+        
+        .footer a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            transition: all 0.3s ease;
+            font-weight: 400;
+        }
+        
+        .footer a:hover {
+            color: var(--accent-color);
+            padding-left: 4px;
+        }
+        
+        .social-links a {
+            display: inline-block;
+            width: 45px;
+            height: 45px;
+            background: rgba(255, 255, 255, 0.1);
+            color: white;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 45px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        .social-links a:hover {
+            background: var(--accent-color);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+            
+            .hero .lead {
+                font-size: 1.2rem;
+            }
+            
+            .section-title {
+                font-size: 2rem;
+            }
+            
+            .feature-card {
+                padding: 1.5rem;
+                margin-bottom: 2rem;
+            }
+            
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+            
+            .language-selector {
+                position: relative;
+                top: auto;
+                right: auto;
+                margin-bottom: 2rem;
+                text-align: center;
+            }
+        }
+        
+        /* Scroll indicator */
+        .scroll-indicator {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 0%;
+            height: 4px;
+            background: var(--gradient-primary);
+            z-index: 9999;
+            transition: width 0.3s ease;
+        }
+        
+        /* Loading animation for images */
+        .img-loading {
+            background: linear-gradient(90deg, #f0f0f0 25%, transparent 37%, #f0f0f0 63%);
+            background-size: 400% 100%;
+            animation: shimmer 1.5s ease-in-out infinite;
+        }
+        
+        @keyframes shimmer {
+            0% {
+                background-position: 100% 50%;
+            }
+            100% {
+                background-position: 0% 50%;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Scroll Progress Indicator -->
+    <div class="scroll-indicator" id="scrollIndicator"></div>
+
     <!-- Language Selector -->
     <div class="language-selector">
         <div class="btn-group">
-            <a href="https://sendpdfonline.com" class="btn btn-sm">EN</a>
-            <a href="https://maipdf.cn" class="btn btn-sm">中文</a>
+            <a href="https://sendpdfonline.com" class="btn btn-sm btn-primary">EN</a>
+            <a href="https://maipdf.cn" class="btn btn-sm btn-outline-primary">中文</a>
+            <a href="https://sendpdfonline.com/japanese/" class="btn btn-sm btn-outline-primary">日本語</a>
+            <a href="https://sendpdfonline.com/german/" class="btn btn-sm btn-outline-primary">Deutsch</a>
         </div>
     </div>
 
@@ -32,558 +531,203 @@
         <div class="container">
             <h1><i class="fas fa-file-pdf"></i> MaiPDF</h1>
             <p class="lead">Professional PDF Sharing and Security Solutions</p>
-            <a href="https://sendpdfonline.com" class="cta-button">Get Started</a>
+            <p class="mb-4">Secure your documents with advanced features like dynamic watermarks, access control, and detailed analytics</p>
+            <div class="hero-buttons">
+                <a href="https://maipdf.com" class="cta-button me-3">Get Started Free</a>
+                <a href="#features" class="btn btn-outline-light">Learn More</a>
+            </div>
         </div>
     </div>
 
-    <!-- Just Updated Section -->
+    <!-- Core Features Overview -->
+    <div class="container my-5" id="features">
+        <h2 class="section-title text-center"><i class="fas fa-star"></i> Core Features</h2>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-shield-alt feature-icon text-primary"></i>
+                    <h3>Advanced Security</h3>
+                    <p>Protect your PDFs with dynamic watermarks, access controls, and DRM protection</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-chart-line feature-icon text-success"></i>
+                    <h3>Analytics & Tracking</h3>
+                    <p>Monitor document access, view time, and user engagement with detailed reports</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <i class="fas fa-share-alt feature-icon text-info"></i>
+                    <h3>Smart Sharing</h3>
+                    <p>Share via secure links, QR codes, and customizable access permissions</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Recently Updated Features -->
     <div class="container mb-5">
-        <h2 class="section-title"><i class="fas fa-sync"></i> Just Updated</h2>
+        <h2 class="section-title"><i class="fas fa-sync"></i> Recently Updated</h2>
         <div class="row">
             <div class="col-md-4">
                 <div class="feature-card">
                     <h3><i class="fas fa-shield-alt text-primary"></i> Security & Protection</h3>
                     <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com/features/en/security/advanced-security-configurations.html"><i class="fas fa-cogs text-primary"></i> Advanced Security</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/watermark/design-watermark-protection.html"><i class="fas fa-water text-primary"></i> Watermark Protection</a></li>
-                        <li><a href="https://sendpdfonline.com/features/zh/security/jiami.html"><i class="fas fa-lock text-primary"></i> Encryption & Protection</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/security/free-drm-for-pdf.html"><i class="fas fa-key text-primary"></i> DRM Protection</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/security/advanced-security-configurations.html"><i class="fas fa-cogs text-primary"></i> Advanced Security Settings</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/watermark/dynamic-qr-watermark-pdf.html"><i class="fas fa-qrcode text-primary"></i> Dynamic QR Watermarks</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/security/free-drm-for-pdf.html"><i class="fas fa-key text-primary"></i> Free DRM Protection</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/security/email-verification-secure-pdf-access.html"><i class="fas fa-envelope text-primary"></i> Email Verification Access</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card">
-                    <h3><i class="fas fa-share-alt text-primary"></i> Sharing & Access</h3>
+                    <h3><i class="fas fa-share-alt text-success"></i> Sharing & Hosting</h3>
                     <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing.html"><i class="fas fa-user-secret text-primary"></i> Anonymous Sharing</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/design/design-work-sharing.html"><i class="fas fa-share-square text-primary"></i> Design Work Sharing</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/security/email-verification-secure-pdf-access.html"><i class="fas fa-envelope text-primary"></i> Email Verification</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/hosting/free-pdf-hosting-and-sharing.html"><i class="fas fa-cloud text-primary"></i> PDF Hosting</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/sharing/convert-pdf-to-qr-code.html"><i class="fas fa-qrcode text-success"></i> PDF to QR Code</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/hosting/free-pdf-hosting-and-sharing.html"><i class="fas fa-cloud text-success"></i> Free PDF Hosting</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing.html"><i class="fas fa-user-secret text-success"></i> Anonymous Sharing</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/sharing/Share_PDF_Online.html"><i class="fas fa-share-square text-success"></i> Online PDF Sharing</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-md-4">
                 <div class="feature-card">
-                    <h3><i class="fas fa-tools text-primary"></i> Professional Tools</h3>
+                    <h3><i class="fas fa-chart-bar text-info"></i> Analytics & Tracking</h3>
                     <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com/features/en/design/design-portfolio-tracking.html"><i class="fas fa-chart-line text-primary"></i> Portfolio Tracking</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/tracking/client-feedback-management.html"><i class="fas fa-comments text-primary"></i> Client Feedback</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/design/design-file-organization.html"><i class="fas fa-folder text-primary"></i> File Organization</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/design/design-project-collaboration.html"><i class="fas fa-users text-primary"></i> Project Collaboration</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/tracking/pdf-tracking-analytics.html"><i class="fas fa-chart-line text-info"></i> PDF Analytics</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/watermark/dynamic-watermark-tracking.html"><i class="fas fa-search text-info"></i> Watermark Tracking</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/tracking/pdf-view-tracking.html"><i class="fas fa-eye text-info"></i> View Tracking</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/design/design-portfolio-tracking.html"><i class="fas fa-folder text-info"></i> Portfolio Tracking</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Iterative Improvements -->
+    <!-- Use Cases -->
     <div class="container mb-5">
-        <h2 class="section-title"><i class="fas fa-code-branch"></i> Iterative Improvements</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3><i class="fas fa-globe text-primary"></i> Global Features</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com/features/en/sharing/convert-pdf-to-qr-code.html"><i class="fas fa-qrcode text-success"></i> QR Code Generation</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/watermark/dynamic-qr-watermark-pdf.html"><i class="fas fa-water text-success"></i> Dynamic QR Watermarks</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/sharing/user-friendly-pdf-viewer.html"><i class="fas fa-eye text-success"></i> PDF Viewer</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3><i class="fas fa-laptop-code text-primary"></i> Technical Features</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com/features/en/watermark/dynamic-watermark-tracking.html"><i class="fas fa-check text-success"></i> Watermark Tracking</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/tracking/industry-tracking-best-practices.html"><i class="fas fa-check text-success"></i> Best Practices</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/comparison/cloud-share-vs-offline-version.html"><i class="fas fa-check text-success"></i> Cloud & Offline</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/security/convert-pdf-to-secure-links.html"><i class="fas fa-check text-success"></i> Secure Links</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <h3><i class="fas fa-book text-primary"></i> Documentation</h3>
-                    <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com/features/en/hosting/secure-pdf-hosting.html"><i class="fas fa-check text-success"></i> Secure Hosting Guide</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/comparison/locklizard-vs-maipdf-comparison.html"><i class="fas fa-check text-success"></i> Product Comparison</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/comparison/google-drive-vs-maipdf.html"><i class="fas fa-check text-success"></i> Service Comparison</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/comparison/free-alternative-to-digify-locklizard.html"><i class="fas fa-check text-success"></i> Alternative Solutions</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
-        <div class="text-center mt-4">
-            <p class="text-muted"><i class="fas fa-info-circle"></i> Last updated: April 17, 2025</p>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Core Features -->
-        <div class="row mb-5">
-            <div class="col-md-4">
-                <div class="feature-card text-center">
-                    <i class="fas fa-shield-alt feature-icon"></i>
-                    <h3>Security</h3>
-                    <p>Advanced PDF security features to protect your documents</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card text-center">
-                    <i class="fas fa-chart-line feature-icon"></i>
-                    <h3>Analytics</h3>
-                    <p>Track and analyze document access and usage</p>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="feature-card text-center">
-                    <i class="fas fa-globe feature-icon"></i>
-                    <h3>Global</h3>
-                    <p>Available in multiple languages worldwide</p>
-                </div>
-            </div>
-        </div>
-
-        <!-- English Features -->
-        <div class="language-section">
-            <h2 class="section-title"><i class="fas fa-globe"></i> English Features</h2>
-            
-            <div class="row">
-                <div class="col-md-4">
-            <div class="content-section">
-                    <h3><i class="fas fa-lock"></i> Security Features</h3>
-            <ul>
-                <li><a href="https://sendpdfonline.com/features/en/security/advanced-security-configurations.html">Advanced Security Configurations</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/secure-pdf-access-control.html">Secure PDF Access Control</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/hosting/secure-pdf-hosting.html">Secure PDF Hosting</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/secure-pdf-sharing-methods.html">Secure PDF Sharing Methods</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/pdf-security-best-practices.html">PDF Security Best Practices</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/pdf-security-challenges.html">PDF Security Challenges</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/pdf-security-features.html">PDF Security Features</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/pdf-security-regrets.html">PDF Security Regrets</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/PDF DRM.html">PDF DRM</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/free-drm-for-pdf.html">Free DRM for PDF</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/prevent-document-content-copying.html">Prevent Document Content Copying</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/preventbeingcopied.html">Prevent Being Copied</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/preventcopy.html">Prevent Copy</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/preventdownload.html">Prevent Download</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/prevention.html">Prevention</a></li>
-                <li><a href="https://sendpdfonline.com/features/en/security/prevent_downloading_maipdf.html">Prevent Downloading MaiPDF</a></li>
-            </ul>
-        </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                <h3>Sharing & Hosting</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing.html">Anonymous PDF Sharing</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/hosting/free-pdf-hosting-and-sharing.html">Free PDF Hosting and Sharing</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/free-online-pdf-sharing-tool.html">Free Online PDF Sharing Tool</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/free-pdf-sharing-platform.html">Free PDF Sharing Platform</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/hosting/host-and-share-pdf-online.html">Host and Share PDF Online</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/hosting/hostonlineeasy.html">Host Online Easy</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/hosting/hostponline.html">Host PDF Online</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/Share_PDF_Online.html">How to Share PDF Online</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/hosting/pdf-host-online.html">PDF Host Online</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/hosting/pdf-hosting-online.html">PDF Hosting Online</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/share-pdf-files-online.html">Share PDF Files Online</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/share-pdf-online-securely.html">Share PDF Online Securely</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/sharebylink.html">Share by Link</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/sharedocuonlinefree.html">Share Documents Online Free</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/shareeasily.html">Share Easily</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/sharepdf.html">Share PDF</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/sharing/sharepdfsfilesonline.html">Share PDFs Files Online</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/sharesecure.html">Share Secure</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/share_pdf_securely.html">Share PDF Securely</a></li>
-                </ul>
-            </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                <h3>Design & Portfolio</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/features/en/design/design-file-organization.html">Design File Organization</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/design/design-portfolio-tracking.html">Design Portfolio Tracking</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/design/design-project-collaboration.html">Design Project Collaboration</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/watermark/design-watermark-protection.html">Design Watermark Protection</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/design/design-work-sharing.html">Design Work Sharing</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/design/designer-portfolio-pdf.html">Designer Portfolio PDF</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/design/share-design-portfolio.html">Share Design Portfolio</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Advanced Features</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/features/en/security/convert-pdf-to-qr-code.html">Convert PDF to QR Code</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/convert-pdf-to-secure-links.html">Convert PDF to Secure Links</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/watermark/dynamic-watermark-tracking.html">Dynamic Watermark Tracking</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/email-verification-secure-pdf-access.html">Email Verification for Secure PDF Access</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs.html">Set Expiration Date for PDFs</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/set-pdf-print-restrictions.html">Set PDF Print Restrictions</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/watermark/setup-dynamic-watermarks.html">Setup Dynamic Watermarks</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/sms_verify.html">SMS Verify</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/security/time-limits-pdf-files.html">Time Limits PDF Files</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/tracking/trackpdfopen.html">Track PDF Open</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/tracking/pdf-tracking-analytics.html">PDF Tracking Analytics</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/comparison/pdf-tracking-comparison.html">PDF Tracking Comparison</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/tracking/pdf-view-tracking.html">PDF View Tracking</a></li>
-                </ul>
-            </div>
-
-            <div class="content-section">
-                <h3>Comparisons & Alternatives</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/features/en/comparison/cloud-share-vs-offline-version.html">Cloud Share vs Offline Version</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/comparison/free-alternative-to-digify-locklizard.html">Free Alternative to Digify Locklizard</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/comparison/google-drive-vs-maipdf.html">Google Drive vs MaiPDF</a></li>
-                    <li><a href="https://sendpdfonline.com/features/en/comparison/locklizard-vs-maipdf-comparison.html">Locklizard vs MaiPDF Comparison</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Chinese Features -->
-        <div class="language-section">
-            <h2 class="section-title"><i class="fas fa-language"></i> 中文功能</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-lock"></i> 安全功能</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/features/zh/watermark/动态水印.html"><i class="fas fa-water"></i> 动态水印</a></li>
-                            <li><a href="https://sendpdfonline.com/features/zh/tracking/阅读记录.html"><i class="fas fa-history"></i> 阅读记录</a></li>
-                            <li><a href="https://sendpdfonline.com/features/zh/watermark/动态水印maipdf.html"><i class="fas fa-qrcode"></i> 动态水印 MaiPDF</a></li>
-                            <li><a href="https://sendpdfonline.com/features/zh/security/jiami.html"><i class="fas fa-lock"></i> PDF 加密防编辑</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-share-alt"></i> 共享功能</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/features/zh/sharing/共享.html"><i class="fas fa-share-square"></i> PDF 共享</a></li>
-                            <li><a href="https://sendpdfonline.com/features/zh/sharing/waystosend.html"><i class="fas fa-paper-plane"></i> 发送方式</a></li>
-                            <li><a href="https://sendpdfonline.com/features/zh/sharing/waysmulti.html"><i class="fas fa-exchange-alt"></i> 多种方式</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                <h3>基本功能</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/features/zh/sharing/共享.html">PDF 共享</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/watermark/动态水印.html">动态水印</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/tracking/阅读记录.html">阅读记录</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/watermark/动态水印maipdf.html">动态水印 MaiPDF</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/design/zuopinji.html">作品集</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/design/zihui.html">自绘</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/comparison/whichone.html">哪一个</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/sharing/wendang.html">文档</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/sharing/waystosend.html">发送方式</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/sharing/waysmulti.html">多种方式</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/watermark/waterMaipdf.html">水印 MaiPDF</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/sharing/waifa.html">外发</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/security/teda.html">特打</a></li>
-                    <li><a href="https://sendpdfonline.com/features/zh/security/saomiao.html">扫描</a></li>
-                </ul>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-        <!-- German Features -->
-        <div class="language-section">
-            <h2 class="section-title"><i class="fas fa-globe-europe"></i> Deutsche Funktionen</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-lock"></i> Sicherheit</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/german/sicheres-pdf-teilen.html"><i class="fas fa-shield-alt"></i> Sicheres PDF Teilen</a></li>
-                            <li><a href="https://sendpdfonline.com/german/zugriffskontrolle.html"><i class="fas fa-key"></i> Zugriffskontrolle</a></li>
-                            <li><a href="https://sendpdfonline.com/german/passwortschutz.html"><i class="fas fa-lock"></i> Passwortschutz</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-chart-bar"></i> Analyse</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/german/pdf-analytik.html"><i class="fas fa-chart-line"></i> PDF Analytik</a></li>
-                            <li><a href="https://sendpdfonline.com/german/nutzungsstatistiken.html"><i class="fas fa-chart-pie"></i> Nutzungsstatistiken</a></li>
-                            <li><a href="https://sendpdfonline.com/german/dynamische-wasserzeichen.html"><i class="fas fa-water"></i> Dynamische Wasserzeichen</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-cogs"></i> Erweiterte Funktionen</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/german/ablauftermine.html">PDF Ablauftermine</a></li>
-                            <li><a href="https://sendpdfonline.com/german/dokumenten-branding.html">Dokumenten-Branding</a></li>
-                            <li><a href="https://sendpdfonline.com/german/druckkontrolle.html">PDF Druckkontrolle</a></li>
-                            <li><a href="https://sendpdfonline.com/german/email-verifizierung.html">E-Mail-Verifizierung</a></li>
-                            <li><a href="https://sendpdfonline.com/german/mobiler-zugriff.html">Mobiler PDF-Zugriff</a></li>
-                            <li><a href="https://sendpdfonline.com/german/offline-zugriff.html">PDF Offline-Zugriff</a></li>
-                            <li><a href="https://sendpdfonline.com/german/pdf-zusammenarbeit.html">PDF Zusammenarbeit</a></li>
-                            <li><a href="https://sendpdfonline.com/german/qr-code-funktionen.html">PDF QR-Code Funktionen</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Japanese Features -->
-        <div class="language-section">
-            <h2 class="section-title"><i class="fas fa-globe-asia"></i> 日本語機能</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-lock"></i> セキュリティ機能</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/japanese/pdf-security-features.html"><i class="fas fa-shield-alt"></i> PDFセキュリティ機能</a></li>
-                            <li><a href="https://sendpdfonline.com/japanese/dynamic-watermark.html"><i class="fas fa-water"></i> 動的透かし</a></li>
-                            <li><a href="https://sendpdfonline.com/japanese/view-tracking.html"><i class="fas fa-eye"></i> 閲覧追跡</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-share-alt"></i> 共有機能</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/japanese/pdf-tracking-sharing.html"><i class="fas fa-share-square"></i> PDF共有と追跡</a></li>
-                            <li><a href="https://sendpdfonline.com/japanese/share-pdf.html"><i class="fas fa-paper-plane"></i> PDF共有</a></li>
-                            <li><a href="https://sendpdfonline.com/japanese/collaboration.html"><i class="fas fa-users"></i> コラボレーション</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                        <h3><i class="fas fa-chart-line"></i> 分析機能</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/japanese/analytics.html"><i class="fas fa-chart-bar"></i> PDF分析</a></li>
-                            <li><a href="https://sendpdfonline.com/japanese/tracking.html"><i class="fas fa-search"></i> 追跡機能</a></li>
-                            <li><a href="https://sendpdfonline.com/japanese/reports.html"><i class="fas fa-file-alt"></i> レポート</a></li>
-                </ul>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-        <!-- Arabic Features -->
-        <div class="language-section">
-            <h2 class="section-title"><i class="fas fa-globe"></i> Arabic Features</h2>
-            
-            <div class="row">
-                <div class="col-md-4">
-            <div class="content-section">
-                        <h3><i class="fas fa-lock"></i> Security Features</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/arabic/advanced-security-configurations.html">Advanced Security Configurations</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/pdf-security-features.html">PDF Security Features</a></li>
-                </ul>
-            </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                <h3>Sharing & Hosting</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/arabic/anonymous-pdf-sharing.html">Anonymous PDF Sharing</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/free-pdf-hosting-and-sharing.html">Free PDF Hosting and Sharing</a></li>
-                </ul>
-            </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                <h3>Advanced Features</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/arabic/convert-pdf-to-qr-code.html">Convert PDF to QR Code</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/dynamic-watermark-tracking.html">Dynamic Watermark Tracking</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/email-verification-secure-pdf-access.html">Email Verification for Secure PDF Access</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/pdf-tracking-analytics.html">PDF Tracking Analytics</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/pdf-tracking-comparison.html">PDF Tracking Comparison</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/pdf-view-tracking.html">PDF View Tracking</a></li>
-                    <li><a href="https://sendpdfonline.com/arabic/track-pdf-usage.html">Track PDF Usage</a></li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Use Cases -->
-        <div class="language-section">
-            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Use Cases</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-briefcase"></i> Business</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/usecase/secure-pdf-sharing.html"><i class="fas fa-shield-alt"></i> Secure PDF Sharing</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/pdf-access-control.html"><i class="fas fa-key"></i> PDF Access Control</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/pdf-branding.html"><i class="fas fa-trademark"></i> PDF Branding</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/pdf-watermarking.html"><i class="fas fa-water"></i> PDF Watermarking</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/document-control-security.html"><i class="fas fa-lock"></i> Document Control & Security</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-users"></i> Collaboration</h3>
-                        <ul>
-                            <li><a href="https://sendpdfonline.com/usecase/pdf-tracking.html"><i class="fas fa-chart-line"></i> PDF Tracking</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/pdf-analytics.html"><i class="fas fa-chart-bar"></i> PDF Analytics</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/pdf-sharing-analytics.html"><i class="fas fa-share-alt"></i> PDF Sharing Analytics</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/share-pdf-online.html"><i class="fas fa-share-square"></i> Share PDF Online</a></li>
-                            <li><a href="https://sendpdfonline.com/usecase/track-pdf-usage.html"><i class="fas fa-eye"></i> Track PDF Usage</a></li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                <h3>German (Deutsch)</h3>
-                <ul>
-                    <li><a href="https://sendpdfonline.com/german/ablauftermine.html">PDF Ablauftermine</a></li>
-                    <li><a href="https://sendpdfonline.com/german/dokumenten-branding.html">Dokumenten-Branding</a></li>
-                    <li><a href="https://sendpdfonline.com/german/druckkontrolle.html">PDF Druckkontrolle</a></li>
-                    <li><a href="https://sendpdfonline.com/german/email-verifizierung.html">E-Mail-Verifizierung</a></li>
-                    <li><a href="https://sendpdfonline.com/german/mobiler-zugriff.html">Mobiler PDF-Zugriff</a></li>
-                    <li><a href="https://sendpdfonline.com/german/nutzungsstatistiken.html">PDF Nutzungsstatistiken</a></li>
-                    <li><a href="https://sendpdfonline.com/german/offline-zugriff.html">PDF Offline-Zugriff</a></li>
-                    <li><a href="https://sendpdfonline.com/german/passwortschutz.html">PDF Passwortschutz</a></li>
-                    <li><a href="https://sendpdfonline.com/german/pdf-analytik.html">PDF Analytik</a></li>
-                    <li><a href="https://sendpdfonline.com/german/pdf-zusammenarbeit.html">PDF Zusammenarbeit</a></li>
-                    <li><a href="https://sendpdfonline.com/german/qr-code-funktionen.html">PDF QR-Code Funktionen</a></li>
-                    <li><a href="https://sendpdfonline.com/german/sicheres-pdf-teilen.html">Sicheres PDF Teilen</a></li>
-                    <li><a href="https://sendpdfonline.com/german/zugriffskontrolle.html">PDF Zugriffskontrolle</a></li>
-                </ul>
-                    </div>
-                </div>
-            </div>
-            </div>
-
-        <!-- Articles -->
-        <div class="language-section">
-            <h2 class="section-title"><i class="fas fa-newspaper"></i> Articles</h2>
-            <div class="row">
-                <div class="col-md-4">
-            <div class="content-section">
-                    <h3><i class="fas fa-shield-alt"></i> Security</h3>
-                    <ul>
-                        <li><a href="https://sendpdfonline.com/article/sensitive-documents-security.html"><i class="fas fa-lock"></i> Sensitive Documents Security</a></li>
-                        <li><a href="https://sendpdfonline.com/article/confidential-documents-risk.html"><i class="fas fa-exclamation-triangle"></i> Confidential Documents Risk</a></li>
-                        <li><a href="https://sendpdfonline.com/article/pdf-control-lost.html"><i class="fas fa-key"></i> PDF Control Lost</a></li>
-            </ul>
-        </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                        <h3><i class="fas fa-chart-line"></i> Tracking & Analytics</h3>
-                <ul>
-                            <li><a href="https://sendpdfonline.com/article/pdf-tracking-analytics.html"><i class="fas fa-chart-bar"></i> PDF Tracking & Analytics</a></li>
-                            <li><a href="https://sendpdfonline.com/article/limit-pdf-open-times.html"><i class="fas fa-clock"></i> Limit PDF Open Times</a></li>
-                            <li><a href="https://sendpdfonline.com/article/pdf-share-expire.html"><i class="fas fa-hourglass-end"></i> PDF Share Expire</a></li>
-                </ul>
-            </div>
-                </div>
-                <div class="col-md-4">
-            <div class="content-section">
-                        <h3><i class="fas fa-users"></i> Collaboration</h3>
-                <ul>
-                            <li><a href="https://sendpdfonline.com/article/pdf-collaboration-features.html"><i class="fas fa-user-friends"></i> PDF Collaboration Features</a></li>
-                </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <section id="newly-adjusted" class="container my-5">
-        <h2 class="text-center mb-4">Newly Adjusted Features</h2>
-        <div class="row">
-            <div class="col-md-4">
-                <div class="feature-card">
-                    <img src="https://sendpdfonline.com/maiconver.png" alt="Convert PDF to Image" class="feature-icon mb-3">
-                    <h3>Convert PDF to Image</h3>
-                    <p>Convert your PDF documents to high-quality images for enhanced security and sharing.</p>
-                    <a href="https://sendpdfonline.com/est/maiconvert.html" class="btn btn-primary">Learn More</a>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-shield-alt"></i> Security Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="https://sendpdfonline.com/features/en/security/advanced-security-configurations.html">Advanced Security Features</a></li>
-                            <li><a href="https://sendpdfonline.com/features/en/security/free-drm-for-pdf.html">Free PDF DRM</a></li>
-                            <li><a href="https://sendpdfonline.com/features/en/comparison/cloud-share-vs-offline-version.html">Cloud Share vs Offline Version</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-chart-line"></i> Analytics Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="https://sendpdfonline.com/features/en/tracking/pdf-tracking-analytics.html">PDF Tracking & Analytics</a></li>
-                            <li><a href="https://sendpdfonline.com/features/en/design/design-portfolio-tracking.html">Design Portfolio Tracking</a></li>
-                            <li><a href="https://sendpdfonline.com/features/en/design/design-file-organization.html">Design File Organization</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4">
-                <div class="card mb-4">
-                    <div class="card-body">
-                        <h5 class="card-title"><i class="fas fa-share-alt"></i> Sharing Features</h5>
-                        <ul class="list-unstyled">
-                            <li><a href="https://sendpdfonline.com/features/en/hosting/free-pdf-hosting-and-sharing.html">Free PDF Hosting & Sharing</a></li>
-                            <li><a href="https://sendpdfonline.com/features/en/security/convert-pdf-to-secure-links.html">Convert PDF to Secure Links</a></li>
-                            <li><a href="https://sendpdfonline.com/features/en/tracking/client-feedback-management.html">Client Feedback Management</a></li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Newly Updated Pages -->
-    <div class="container mb-5">
-        <h2 class="section-title"><i class="fas fa-star"></i> Newly Enhanced Pages</h2>
+        <h2 class="section-title"><i class="fas fa-lightbulb"></i> Popular Use Cases</h2>
         <div class="row">
             <div class="col-md-6">
                 <div class="feature-card">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-share-alt feature-icon"></i>
-                        <h3 class="mb-0 ms-3">Professional PDF Sharing</h3>
-                    </div>
-                    <p>Our completely redesigned PDF sharing page provides a comprehensive guide to securely sharing your documents with enterprise-grade security features.</p>
-                    <ul class="list-unstyled mb-3">
-                        <li><i class="fas fa-check-circle text-success me-2"></i> Secure shareable links</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> QR code generation</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> Dynamic watermarking</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> Access expiration controls</li>
+                    <h3><i class="fas fa-briefcase text-primary"></i> Business & Enterprise</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="https://sendpdfonline.com/usecase/secure-pdf-sharing.html"><i class="fas fa-shield-alt"></i> Secure Document Sharing</a></li>
+                        <li><a href="https://sendpdfonline.com/usecase/pdf-access-control.html"><i class="fas fa-key"></i> Access Control Management</a></li>
+                        <li><a href="https://sendpdfonline.com/usecase/document-control-security.html"><i class="fas fa-lock"></i> Enterprise Security</a></li>
+                        <li><a href="https://sendpdfonline.com/article/confidential-investor-updates.html"><i class="fas fa-chart-line"></i> Investor Communications</a></li>
                     </ul>
-                    <a href="https://sendpdfonline.com/features/en/sharing/share-pdf-files-online.html" class="btn btn-outline-primary">View Enhanced Page</a>
                 </div>
             </div>
             <div class="col-md-6">
                 <div class="feature-card">
-                    <div class="d-flex align-items-center mb-3">
-                        <i class="fas fa-cloud-upload-alt feature-icon"></i>
-                        <h3 class="mb-0 ms-3">Free PDF Hosting</h3>
-                    </div>
-                    <p>Our updated free PDF hosting page highlights all the enterprise-level features you get at no cost, with improved visuals and fixed image paths.</p>
-                    <ul class="list-unstyled mb-3">
-                        <li><i class="fas fa-check-circle text-success me-2"></i> Unlimited storage</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> Advanced security controls</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> Detailed view analytics</li>
-                        <li><i class="fas fa-check-circle text-success me-2"></i> Professional presentation</li>
+                    <h3><i class="fas fa-users text-success"></i> Creative & Design</h3>
+                    <ul class="list-unstyled">
+                        <li><a href="https://sendpdfonline.com/features/en/design/design-portfolio-tracking.html"><i class="fas fa-palette"></i> Portfolio Management</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/design/design-project-collaboration.html"><i class="fas fa-users"></i> Client Collaboration</a></li>
+                        <li><a href="https://sendpdfonline.com/features/en/tracking/client-feedback-management.html"><i class="fas fa-comments"></i> Feedback Collection</a></li>
+                        <li><a href="https://sendpdfonline.com/article/sales-pitch-decks.html"><i class="fas fa-presentation"></i> Pitch Deck Security</a></li>
                     </ul>
-                    <a href="https://sendpdfonline.com/features/en/hosting/free-pdf-hosting-and-sharing.html" class="btn btn-outline-primary">View Enhanced Page</a>
                 </div>
             </div>
         </div>
-        <div class="text-center mt-4">
-            <p class="text-muted"><i class="fas fa-info-circle"></i> Last updated: May 4, 2025</p>
+    </div>
+
+    <!-- Multi-language Support -->
+    <div class="container mb-5">
+        <h2 class="section-title"><i class="fas fa-globe"></i> Global Platform</h2>
+        <p class="text-center mb-4">MaiPDF supports multiple languages and regions worldwide</p>
+        <div class="row">
+            <div class="col-md-3">
+                <div class="feature-card text-center">
+                    <i class="fas fa-flag-usa feature-icon text-primary"></i>
+                    <h4>English</h4>
+                    <p>Full feature set in English</p>
+                    <a href="https://sendpdfonline.com" class="btn btn-sm btn-primary">Explore</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card text-center">
+                    <i class="fas fa-flag feature-icon text-danger"></i>
+                    <h4>中文</h4>
+                    <p>完整的中文功能支持</p>
+                    <a href="https://maipdf.cn" class="btn btn-sm btn-danger">浏览</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card text-center">
+                    <i class="fas fa-flag feature-icon text-warning"></i>
+                    <h4>日本語</h4>
+                    <p>日本語での完全サポート</p>
+                    <a href="https://sendpdfonline.com/japanese/" class="btn btn-sm btn-warning">探索</a>
+                </div>
+            </div>
+            <div class="col-md-3">
+                <div class="feature-card text-center">
+                    <i class="fas fa-flag feature-icon text-dark"></i>
+                    <h4>Deutsch</h4>
+                    <p>Vollständige deutsche Unterstützung</p>
+                    <a href="https://sendpdfonline.com/german/" class="btn btn-sm btn-dark">Erkunden</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- PDF Conversion Tools -->
+    <div class="container mb-5">
+        <h2 class="section-title"><i class="fas fa-tools"></i> PDF Conversion Tools</h2>
+        <div class="row">
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center mb-3">
+                        <img src="https://sendpdfonline.com/maiconver.png" alt="PDF to Image" class="me-3" style="width: 60px; height: 60px;">
+                        <div>
+                            <h3>PDF to Image Converter</h3>
+                            <p class="mb-0">Convert PDF documents to high-quality images</p>
+                        </div>
+                    </div>
+                    <ul class="list-unstyled mb-3">
+                        <li><i class="fas fa-check text-success me-2"></i> High-quality image output</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Multiple format support</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Batch processing</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Secure conversion</li>
+                    </ul>
+                    <a href="https://sendpdfonline.com/convert-pdf-features.html" class="btn btn-primary">Try Converter</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h3><i class="fas fa-download text-primary"></i> Offline PDF Packages</h3>
+                    <p>Create secure offline PDF packages with built-in protection</p>
+                    <ul class="list-unstyled mb-3">
+                        <li><i class="fas fa-check text-success me-2"></i> No internet required</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Built-in security</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Cross-platform compatibility</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Custom branding</li>
+                    </ul>
+                    <div class="btn-group">
+                        <a href="https://sendpdfonline.com/article/offline-maipdf-en-new.html" class="btn btn-outline-primary btn-sm">English</a>
+                        <a href="https://sendpdfonline.com/article/offline-maipdf-cn.html" class="btn btn-outline-primary btn-sm">中文</a>
+                        <a href="https://sendpdfonline.com/article/offline-maipdf-ja-new.html" class="btn btn-outline-primary btn-sm">日本語</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Call to Action -->
+    <div class="hero" style="padding: 60px 0;">
+        <div class="container text-center">
+            <h2>Ready to Secure Your PDFs?</h2>
+            <p class="lead">Join thousands of users who trust MaiPDF for secure document sharing</p>
+            <div class="mt-4">
+                <a href="https://maipdf.com" class="cta-button me-3">Start Free Trial</a>
+                <a href="#features" class="btn btn-outline-light">View All Features</a>
+            </div>
+            <p class="mt-3 small">No credit card required • Full access to all features • 24/7 support</p>
         </div>
     </div>
 
@@ -592,45 +736,176 @@
         <div class="container">
             <div class="row">
                 <div class="col-md-4">
-                    <h4>MaiPDF</h4>
-                    <p>Professional PDF Sharing and Security Solutions</p>
+                    <h4><i class="fas fa-file-pdf"></i> MaiPDF</h4>
+                    <p>Professional PDF sharing and security solutions for businesses and individuals worldwide.</p>
+                    <div class="social-links">
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin"></i></a>
+                        <a href="#"><i class="fab fa-github"></i></a>
+                    </div>
                 </div>
                 <div class="col-md-4">
                     <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com/index.html">Home</a></li>
-                        <li><a href="https://sendpdfonline.com/features/index.html">Features</a></li>
-                        <li><a href="https://sendpdfonline.com/usecase/index.html">Use Cases</a></li>
-                        <li><a href="https://sendpdfonline.com/article/index.html">Articles</a></li>
-                        <li><a href="https://sendpdfonline.com/article/maipdf-convert-promo.html">PDF to Image Promo (English)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/maipdf-convert-promo-zh.html">PDF转图片推广 (中文)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/maipdf-convert-promo-ja.html">PDF画像変換プロモ (日本語)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/maipdf-convert-promo-ko.html">PDF 이미지 변환 프로모션 (한국어)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/maipdf-convert-promo-fr.html">PDF en image promo (Français)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/maipdf-convert-promo-de.html">PDF zu Bild Promo (Deutsch)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/maipdf-convert-promo-ar.html">تحويل PDF إلى صورة (عربي)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/offline-maipdf-cn.html">本地加密PDF离线包 (中文)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/offline-maipdf-en-new.html">Offline PDF HTML Package (English)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/offline-maipdf-ja-new.html">オフラインPDFパッケージ (日本語)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/offline-maipdf-ko-new.html">오프라인 PDF 패키지 (한국어)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/offline-maipdf-ar-new.html">حزمة PDF غير متصلة (عربي)</a></li>
-                        <li><a href="https://sendpdfonline.com/article/offline-maipdf-de.html">Offline-PDF-Paket (Deutsch)</a></li>
-                    </ul>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="https://sendpdfonline.com">Home</a></li>
+                                <li><a href="https://sendpdfonline.com/features/">Features</a></li>
+                                <li><a href="https://sendpdfonline.com/usecase/">Use Cases</a></li>
+                                <li><a href="https://sendpdfonline.com/article/">Articles</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li><a href="https://maipdf.com">Get Started</a></li>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="mailto:support@maipdf.com">Support</a></li>
+                                <li><a href="/privacy">Privacy</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
                 <div class="col-md-4">
-                    <h4>Contact</h4>
+                    <h4>Languages</h4>
                     <ul class="list-unstyled">
-                        <li><a href="mailto:joe@pdfhost.online">support@maipdf.com</a></li>
+                        <li><a href="https://sendpdfonline.com">🇺🇸 English</a></li>
+                        <li><a href="https://maipdf.cn">🇨🇳 中文</a></li>
+                        <li><a href="https://sendpdfonline.com/japanese/">🇯🇵 日本語</a></li>
+                        <li><a href="https://sendpdfonline.com/german/">🇩🇪 Deutsch</a></li>
+                        <li><a href="https://sendpdfonline.com/french/">🇫🇷 Français</a></li>
+                        <li><a href="https://sendpdfonline.com/arabic/">🇸🇦 العربية</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+            <hr class="my-4">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2025 MaiPDF. All rights reserved. | <a href="/terms">Terms</a> | <a href="/privacy">Privacy</a> | <a href="mailto:support@maipdf.com">Contact</a></p>
             </div>
         </div>
     </footer>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JavaScript -->
+    <script>
+        // Scroll progress indicator
+        window.addEventListener('scroll', function() {
+            const scrollIndicator = document.getElementById('scrollIndicator');
+            const scrollTop = window.pageYOffset;
+            const docHeight = document.body.offsetHeight - window.innerHeight;
+            const scrollPercent = (scrollTop / docHeight) * 100;
+            scrollIndicator.style.width = scrollPercent + '%';
+        });
+
+        // Intersection Observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Apply animation to feature cards when DOM loads
+        document.addEventListener('DOMContentLoaded', function() {
+            // Animate feature cards on scroll
+            const featureCards = document.querySelectorAll('.feature-card');
+            featureCards.forEach((card, index) => {
+                card.style.opacity = '0';
+                card.style.transform = 'translateY(30px)';
+                card.style.transition = `opacity 0.6s ease ${index * 0.1}s, transform 0.6s ease ${index * 0.1}s`;
+                observer.observe(card);
+            });
+
+            // Add loading effect to images
+            const images = document.querySelectorAll('img');
+            images.forEach(img => {
+                if (!img.complete) {
+                    img.classList.add('img-loading');
+                    img.addEventListener('load', function() {
+                        this.classList.remove('img-loading');
+                    });
+                }
+            });
+
+            // Smooth scrolling for anchor links
+            const anchorLinks = document.querySelectorAll('a[href^="#"]');
+            anchorLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.scrollIntoView({
+                            behavior: 'smooth',
+                            block: 'start'
+                        });
+                    }
+                });
+            });
+
+            // Add hover effects to buttons
+            const buttons = document.querySelectorAll('.btn, .cta-button');
+            buttons.forEach(btn => {
+                btn.addEventListener('mouseenter', function() {
+                    this.style.transform = 'translateY(-2px)';
+                });
+                btn.addEventListener('mouseleave', function() {
+                    if (!this.classList.contains('cta-button')) {
+                        this.style.transform = 'translateY(0)';
+                    }
+                });
+            });
+
+            // Parallax effect for hero section
+            window.addEventListener('scroll', function() {
+                const hero = document.querySelector('.hero');
+                const scrolled = window.pageYOffset;
+                if (hero && scrolled < hero.offsetHeight) {
+                    hero.style.transform = `translateY(${scrolled * 0.5}px)`;
+                }
+            });
+
+            // Add typing effect to hero title (optional)
+            const heroTitle = document.querySelector('.hero h1');
+            if (heroTitle) {
+                const text = heroTitle.innerHTML;
+                heroTitle.innerHTML = '';
+                let index = 0;
+                
+                setTimeout(() => {
+                    const typeWriter = setInterval(() => {
+                        if (index < text.length) {
+                            heroTitle.innerHTML += text.charAt(index);
+                            index++;
+                        } else {
+                            clearInterval(typeWriter);
+                        }
+                    }, 100);
+                }, 1000);
+            }
+        });
+
+        // Add performance monitoring
+        window.addEventListener('load', function() {
+            // Mark when page is fully loaded
+            console.log('MaiPDF page loaded successfully');
+            
+            // Add visual feedback for external links
+            const externalLinks = document.querySelectorAll('a[href^="http"]');
+            externalLinks.forEach(link => {
+                if (!link.href.includes('sendpdfonline.com') && !link.href.includes('maipdf.com')) {
+                    link.setAttribute('target', '_blank');
+                    link.setAttribute('rel', 'noopener noreferrer');
+                }
+            });
+        });
+    </script>
 </body>
 </html>

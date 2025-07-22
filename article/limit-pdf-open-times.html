@@ -1,273 +1,952 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to create PDF links that can only be opened a limited number of times using MaiPDF's advanced access control features.">
-    <meta name="keywords" content="PDF access control, PDF open limit, PDF security, document protection, PDF restrictions">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="How to Create a PDF Link That Can Only Be Opened 3 Times | MaiPDF">
-    <meta property="og:description" content="Learn how to create PDF links that can only be opened a limited number of times using MaiPDF's advanced access control features.">
-    <meta property="og:image" content="/maipdf-images/maipdf整体功能页面.png">
-    <meta property="og:url" content="https://sendpdfonline.com/article/limit-pdf-open-times.html">
-    <title>How to Create a PDF Link That Can Only Be Opened 3 Times | MaiPDF</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <meta name="description" content="如何限制PDF文档的访问次数？MaiPDF提供精确的访问控制功能，支持设置单次访问、多次访问限制，有效保护重要文档安全。">
+    <meta name="keywords" content="PDF访问次数限制, PDF访问控制, 限制PDF查看次数, PDF安全保护, MaiPDF访问限制">
+    <title>如何限制PDF访问次数 - 精确控制文档访问权限 | MaiPDF</title>
+    
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
     <style>
-        :root {
-            --primary-color: #2C8C99;
-            --secondary-color: #45a3b1;
-            --accent-color: #ff9800;
-            --text-color: #333;
-            --light-bg: #f5f7f8;
-        }
         body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: var(--light-bg);
-            color: var(--text-color);
+            font-family: 'Noto Sans SC', sans-serif;
+            line-height: 1.7;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
         }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 40px;
+        
+        .container {
+            max-width: 980px;
+            margin: 0 auto;
+            padding: 40px 20px;
         }
-        .feature-card {
+        
+        .hero-section {
             background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .section-title {
-            color: var(--primary-color);
-            margin-bottom: 30px;
+            border-radius: 30px;
+            padding: 60px;
+            margin-bottom: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.15);
+            text-align: center;
             position: relative;
-            padding-bottom: 15px;
+            overflow: hidden;
         }
-        .section-title:after {
+        
+        .hero-section::before {
             content: '';
             position: absolute;
-            bottom: 0;
+            top: 0;
             left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, transparent 40%, rgba(59,130,246,0.05) 50%, transparent 60%);
+            animation: shimmer 3s ease-in-out infinite;
         }
-        .content-section {
-            margin-bottom: 30px;
+        
+        @keyframes shimmer {
+            0%, 100% { transform: translateX(-100%); }
+            50% { transform: translateX(100%); }
         }
-        .content-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .content-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .content-section li {
-            margin-bottom: 10px;
-            padding-left: 30px;
+        
+        .hero-section h1 {
+            color: #1e40af;
+            font-size: 3.2rem;
+            font-weight: 800;
+            margin-bottom: 25px;
             position: relative;
+            z-index: 2;
         }
-        .content-section li:before {
-            content: '✓';
-            color: var(--primary-color);
+        
+        .hero-section .lead {
+            color: #64748b;
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-primary {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
+            display: inline-block;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 30px rgba(220,38,38,0.4);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-primary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(220,38,38,0.6);
+            color: white;
+        }
+        
+        .content-section {
+            background: white;
+            border-radius: 25px;
+            padding: 45px;
+            margin-bottom: 35px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .content-section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 25px 60px rgba(0,0,0,0.15);
+        }
+        
+        .section-title {
+            font-size: 2.3rem;
+            font-weight: 700;
+            margin-bottom: 30px;
+            color: #1e293b;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .section-title::before {
+            content: '';
             position: absolute;
             left: 0;
+            top: 0;
+            bottom: 0;
+            width: 5px;
+            background: linear-gradient(180deg, #dc2626 0%, #b91c1c 100%);
+            border-radius: 3px;
         }
-        .cta-button {
+        
+        .feature-highlight {
+            background: linear-gradient(135deg, #fef2f2 0%, #fee2e2 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            border-left: 6px solid #dc2626;
+            position: relative;
+        }
+        
+        .feature-highlight::after {
+            content: '';
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            width: 60px;
+            height: 60px;
+            background: rgba(220,38,38,0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .limit-types-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin: 35px 0;
+        }
+        
+        .limit-type-card {
+            background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+            color: white;
+            border-radius: 20px;
+            padding: 35px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .limit-type-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
+            transform: scale(0);
+            transition: transform 0.5s ease;
+        }
+        
+        .limit-type-card:hover {
+            transform: translateY(-8px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(245,158,11,0.3);
+        }
+        
+        .limit-type-card:hover::before {
+            transform: scale(1);
+        }
+        
+        .limit-type-icon {
+            font-size: 3.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .limit-type-card h3 {
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 15px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .limit-type-card p {
+            font-size: 1.05rem;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .steps-section {
+            background: linear-gradient(135deg, #1f2937 0%, #111827 100%);
+            color: white;
+            border-radius: 25px;
+            padding: 50px;
+            margin: 40px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .steps-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><circle cx="20" cy="20" r="2" fill="white" opacity="0.1"/><circle cx="80" cy="40" r="1.5" fill="white" opacity="0.1"/><circle cx="40" cy="80" r="1" fill="white" opacity="0.1"/></svg>') repeat;
+            animation: stars 20s linear infinite;
+        }
+        
+        @keyframes stars {
+            0% { transform: translateY(0); }
+            100% { transform: translateY(-100px); }
+        }
+        
+        .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+            margin-top: 40px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .step-card {
+            background: rgba(255,255,255,0.1);
+            border-radius: 20px;
+            padding: 30px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            transition: all 0.3s ease;
+        }
+        
+        .step-card:hover {
+            background: rgba(255,255,255,0.15);
+            transform: translateY(-5px);
+        }
+        
+        .step-number {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            box-shadow: 0 8px 20px rgba(220,38,38,0.3);
+        }
+        
+        .use-cases-section {
+            background: linear-gradient(135deg, #e0f2fe 0%, #b3e5fc 100%);
+            border-radius: 25px;
+            padding: 45px;
+            margin: 40px 0;
+        }
+        
+        .use-cases-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .use-case-item {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+            border-left: 5px solid #0ea5e9;
+        }
+        
+        .use-case-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.15);
+        }
+        
+        .use-case-item h4 {
+            color: #0369a1;
+            font-weight: 700;
+            font-size: 1.25rem;
+            margin-bottom: 15px;
+        }
+        
+        .security-benefits {
+            background: linear-gradient(135deg, #dcfce7 0%, #bbf7d0 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            border-left: 6px solid #10b981;
+        }
+        
+        .security-benefits h3 {
+            color: #059669;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .comparison-table {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 30px 0;
+        }
+        
+        .comparison-table th {
+            background: linear-gradient(135deg, #6366f1 0%, #4f46e5 100%);
+            color: white;
+            font-weight: 600;
+            padding: 18px;
+            text-align: center;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            text-align: center;
+            vertical-align: middle;
+            border-bottom: 1px solid #f1f5f9;
+        }
+        
+        .comparison-table tr:hover {
+            background: #f8fafc;
+        }
+        
+        .advanced-settings {
+            background: linear-gradient(135deg, #f3e8ff 0%, #e9d5ff 100%);
+            border-radius: 20px;
+            padding: 35px;
+            margin: 30px 0;
+            border-left: 6px solid #8b5cf6;
+        }
+        
+        .advanced-settings h3 {
+            color: #7c3aed;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+            border: 1px solid #f59e0b;
+            border-radius: 15px;
+            padding: 25px;
+            margin: 25px 0;
+        }
+        
+        .warning-box .warning-icon {
+            color: #d97706;
+            font-size: 1.5rem;
+            margin-right: 10px;
+        }
+        
+        .faq-section {
+            background: white;
+            border-radius: 25px;
+            padding: 45px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.1);
+        }
+        
+        .faq-item {
+            border-bottom: 2px solid #f1f5f9;
+            padding: 25px 0;
+            transition: all 0.3s ease;
+        }
+        
+        .faq-item:hover {
+            background: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+            border-radius: 10px;
+            padding: 25px 20px;
+            margin: 0 -20px;
+        }
+        
+        .faq-question {
+            font-weight: 700;
+            color: #1e293b;
+            font-size: 1.15rem;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+        
+        .faq-answer {
+            color: #475569;
+            line-height: 1.7;
+            font-size: 1.05rem;
+        }
+        
+        .final-cta {
+            background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
+            color: white;
+            border-radius: 30px;
+            padding: 50px;
+            text-align: center;
+            margin: 50px 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .final-cta::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 20px,
+                rgba(255,255,255,0.05) 20px,
+                rgba(255,255,255,0.05) 40px
+            );
+            animation: slide 20s linear infinite;
+        }
+        
+        @keyframes slide {
+            0% { transform: translateX(-100%) translateY(-100%); }
+            100% { transform: translateX(100%) translateY(100%); }
+        }
+        
+        .final-cta h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .final-cta p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-secondary {
+            background: white;
+            color: #dc2626;
+            border: none;
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-decoration: none;
             display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            margin-top: 20px;
+            transition: all 0.3s ease;
+            box-shadow: 0 12px 30px rgba(255,255,255,0.3);
+            position: relative;
+            z-index: 2;
         }
-        .cta-button:hover {
-            background: var(--secondary-color);
-            color: white;
+        
+        .cta-secondary:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 45px rgba(255,255,255,0.5);
+            color: #dc2626;
         }
-        .footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-        .footer a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        .footer a:hover {
-            opacity: 0.8;
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2.3rem;
+            }
+            
+            .limit-types-grid,
+            .use-cases-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .steps-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <div class="container">
-            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://maipdf.com">Home</a>
-                    </li>
+    <div class="container">
+        <!-- 英雄区域 -->
+        <div class="hero-section">
+            <i class="fas fa-eye-slash" style="font-size: 5rem; color: #dc2626; margin-bottom: 25px;"></i>
+            <h1>限制PDF访问次数</h1>
+            <p class="lead">精确控制文档访问权限，保护重要内容不被过度传播<br>支持单次访问、多次限制、到期自动失效</p>
+            <a href="https://maipdf.com" class="cta-primary">
+                <i class="fas fa-lock me-2"></i>设置访问限制
+            </a>
+            <p class="mt-4 text-muted">已有50万+文档通过MaiPDF实现访问控制</p>
+        </div>
+
+        <!-- 为什么需要访问次数限制 -->
+        <div class="content-section">
+            <h2 class="section-title">为什么需要限制PDF访问次数？</h2>
+            <p style="font-size: 1.2rem; color: #64748b; margin-bottom: 30px;">在信息安全日益重要的今天，控制文档的访问次数已成为保护敏感信息的重要手段。通过限制访问次数，您可以有效防止文档被过度传播或恶意滥用。</p>
+            
+            <div class="feature-highlight">
+                <h3 style="color: #dc2626; font-weight: 700; margin-bottom: 20px;">
+                    <i class="fas fa-shield-alt me-2"></i>核心安全价值
+                </h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 style="color: #b91c1c; font-weight: 600; margin-bottom: 15px;">保护商业机密</h5>
+                        <ul style="color: #64748b; font-size: 1.1rem;">
+                            <li>防止重要商业文档被无限制传播</li>
+                            <li>控制敏感信息的传播范围</li>
+                            <li>确保机密文档只被授权查看</li>
+                            <li>避免因过度传播造成的商业损失</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 style="color: #b91c1c; font-weight: 600; margin-bottom: 15px;">精确权限控制</h5>
+                        <ul style="color: #64748b; font-size: 1.1rem;">
+                            <li>为不同用户设置不同的访问权限</li>
+                            <li>临时文档可设置单次查看后失效</li>
+                            <li>重要文档可限制最大查看次数</li>
+                            <li>结合其他安全措施形成多层防护</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 访问限制类型 -->
+        <div class="content-section">
+            <h2 class="section-title">多样化的访问限制类型</h2>
+            
+            <div class="limit-types-grid">
+                <div class="limit-type-card">
+                    <i class="fas fa-eye limit-type-icon"></i>
+                    <h3>单次访问限制</h3>
+                    <p>文档只能被查看一次，查看后立即失效。适用于极其敏感的机密文档，确保信息不被二次传播。</p>
+                    <div class="mt-3">
+                        <small style="opacity: 0.8;">💡 典型场景：临时密码、一次性通知</small>
+                    </div>
+                </div>
+
+                <div class="limit-type-card" style="background: linear-gradient(135deg, #059669 0%, #047857 100%);">
+                    <i class="fas fa-list-ol limit-type-icon"></i>
+                    <h3>多次访问限制</h3>
+                    <p>设置具体的访问次数上限，如3次、5次、10次等。超过次数后文档自动失效，灵活控制传播范围。</p>
+                    <div class="mt-3">
+                        <small style="opacity: 0.8;">💡 典型场景：培训材料、产品介绍</small>
+                    </div>
+                </div>
+
+                <div class="limit-type-card" style="background: linear-gradient(135deg, #7c3aed 0%, #6d28d9 100%);">
+                    <i class="fas fa-users limit-type-icon"></i>
+                    <h3>用户级别限制</h3>
+                    <p>为不同用户设置不同的访问次数限制。VIP用户可以多次查看，普通用户限制次数。</p>
+                    <div class="mt-3">
+                        <small style="opacity: 0.8;">💡 典型场景：会员内容、付费资料</small>
+                    </div>
+                </div>
+
+                <div class="limit-type-card" style="background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);">
+                    <i class="fas fa-clock limit-type-icon"></i>
+                    <h3>时间+次数双重限制</h3>
+                    <p>结合时间限制和次数限制，例如24小时内最多查看3次，提供更精细的控制策略。</p>
+                    <div class="mt-3">
+                        <small style="opacity: 0.8;">💡 典型场景：考试资料、临时文档</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 设置步骤 -->
+        <div class="steps-section">
+            <h2 style="font-size: 2.5rem; font-weight: 800; margin-bottom: 20px; text-align: center; position: relative; z-index: 2;">
+                简单四步设置访问限制
+            </h2>
+            <p style="font-size: 1.3rem; text-align: center; opacity: 0.9; margin-bottom: 0; position: relative; z-index: 2;">
+                直观的界面设计，即使是非技术用户也能轻松掌握
+            </p>
+            
+            <div class="steps-grid">
+                <div class="step-card">
+                    <div class="step-number">1</div>
+                    <h4 style="font-weight: 700; margin-bottom: 15px;">上传PDF文档</h4>
+                    <p>将需要限制访问的PDF文件上传到MaiPDF平台，支持拖拽上传，最大100MB文件</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">2</div>
+                    <h4 style="font-weight: 700; margin-bottom: 15px;">选择限制类型</h4>
+                    <p>在安全设置中选择访问次数限制类型：单次、多次、用户级别或时间+次数组合</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">3</div>
+                    <h4 style="font-weight: 700; margin-bottom: 15px;">设置具体数值</h4>
+                    <p>根据需求设置具体的访问次数，如1次、3次、5次等，系统会实时显示剩余次数</p>
+                </div>
+
+                <div class="step-card">
+                    <div class="step-number">4</div>
+                    <h4 style="font-weight: 700; margin-bottom: 15px;">生成受限链接</h4>
+                    <p>系统生成带有访问限制的专属链接，分享给指定人员即可实现精确的访问控制</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 应用场景 -->
+        <div class="use-cases-section">
+            <h2 style="color: #0369a1; font-weight: 700; margin-bottom: 30px; text-align: center;">
+                <i class="fas fa-lightbulb me-2"></i>实际应用场景
+            </h2>
+            
+            <div class="use-cases-grid">
+                <div class="use-case-item">
+                    <h4><i class="fas fa-user-tie me-2"></i>商务洽谈</h4>
+                    <p><strong>需求：</strong>向潜在客户展示商业提案，但不希望被过度传播</p>
+                    <p><strong>解决方案：</strong>设置3次访问限制，确保只有核心决策者能够查看</p>
+                    <p><strong>效果：</strong>保护商业机密的同时，展现专业的安全意识</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-file-contract me-2"></i>法律文件</h4>
+                    <p><strong>需求：</strong>与客户分享法律合同草案，需要控制查看权限</p>
+                    <p><strong>解决方案：</strong>设置单次查看限制，确保文件内容不被截屏传播</p>
+                    <p><strong>效果：</strong>保护客户隐私，降低法律风险</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-graduation-cap me-2"></i>在线考试</h4>
+                    <p><strong>需求：</strong>为学生提供考试题目，防止题目泄露</p>
+                    <p><strong>解决方案：</strong>设置单次访问+时间限制，确保考试公平性</p>
+                    <p><strong>效果：</strong>维护考试公平，提高教学质量</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-hospital me-2"></i>医疗报告</h4>
+                    <p><strong>需求：</strong>向患者提供医疗检查报告，保护隐私</p>
+                    <p><strong>解决方案：</strong>设置3次查看限制，患者可以多次查看但不能无限传播</p>
+                    <p><strong>效果：</strong>保护患者隐私，符合医疗数据保护法规</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-chart-line me-2"></i>财务报表</h4>
+                    <p><strong>需求：</strong>向投资者展示财务数据，控制信息传播</p>
+                    <p><strong>解决方案：</strong>为不同级别投资者设置不同的访问次数限制</p>
+                    <p><strong>效果：</strong>保护财务机密，维护投资者关系</p>
+                </div>
+
+                <div class="use-case-item">
+                    <h4><i class="fas fa-key me-2"></i>技术文档</h4>
+                    <p><strong>需求：</strong>向合作伙伴分享技术规格，防止技术泄露</p>
+                    <p><strong>解决方案：</strong>设置5次访问限制，允许技术团队充分讨论</p>
+                    <p><strong>效果：</strong>平衡合作需求与技术保护</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- 安全性优势 -->
+        <div class="content-section">
+            <div class="security-benefits">
+                <h3><i class="fas fa-shield-check me-2"></i>访问限制的安全优势</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <ul style="font-size: 1.1rem; color: #047857;">
+                            <li><strong>防止恶意传播：</strong>限制访问次数可有效防止文档被恶意大量传播</li>
+                            <li><strong>追踪访问行为：</strong>每次访问都有详细记录，便于安全审计</li>
+                            <li><strong>自动销毁机制：</strong>超过限制次数后文档自动失效，无法再次访问</li>
+                            <li><strong>多重验证结合：</strong>可与密码、邮箱验证等方式组合使用</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <ul style="font-size: 1.1rem; color: #047857;">
+                            <li><strong>实时监控：</strong>管理员可实时查看文档访问情况和剩余次数</li>
+                            <li><strong>灵活调整：</strong>可根据需要随时调整访问次数限制</li>
+                            <li><strong>紧急撤销：</strong>发现安全风险时可立即撤销所有访问权限</li>
+                            <li><strong>合规支持：</strong>符合GDPR等数据保护法规要求</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 功能对比 -->
+        <div class="content-section">
+            <h2 class="section-title">功能对比分析</h2>
+            
+            <div class="comparison-table">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>功能特性</th>
+                            <th>MaiPDF访问限制</th>
+                            <th>普通文档分享</th>
+                            <th>云盘分享</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>访问次数控制</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 精确控制</td>
+                            <td><i class="fas fa-times text-danger"></i> 无法控制</td>
+                            <td><i class="fas fa-times text-danger"></i> 无法控制</td>
+                        </tr>
+                        <tr>
+                            <td><strong>自动失效机制</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 超次数自动失效</td>
+                            <td><i class="fas fa-times text-danger"></i> 永久有效</td>
+                            <td><i class="fas fa-minus text-warning"></i> 需手动删除</td>
+                        </tr>
+                        <tr>
+                            <td><strong>访问记录追踪</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 详细记录</td>
+                            <td><i class="fas fa-times text-danger"></i> 无记录</td>
+                            <td><i class="fas fa-minus text-warning"></i> 简单统计</td>
+                        </tr>
+                        <tr>
+                            <td><strong>用户级别控制</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 支持差异化</td>
+                            <td><i class="fas fa-times text-danger"></i> 不支持</td>
+                            <td><i class="fas fa-times text-danger"></i> 不支持</td>
+                        </tr>
+                        <tr>
+                            <td><strong>紧急撤销</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 即时撤销</td>
+                            <td><i class="fas fa-times text-danger"></i> 无法撤销</td>
+                            <td><i class="fas fa-minus text-warning"></i> 需登录删除</td>
+                        </tr>
+                        <tr>
+                            <td><strong>多重验证结合</strong></td>
+                            <td><i class="fas fa-check text-success"></i> 完整支持</td>
+                            <td><i class="fas fa-times text-danger"></i> 不支持</td>
+                            <td><i class="fas fa-minus text-warning"></i> 部分支持</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- 高级设置选项 -->
+        <div class="content-section">
+            <div class="advanced-settings">
+                <h3><i class="fas fa-cogs me-2"></i>高级设置选项</h3>
+                <div class="row">
+                    <div class="col-md-6">
+                        <h5 style="color: #6d28d9; font-weight: 600; margin-bottom: 15px;">智能限制策略</h5>
+                        <ul style="color: #64748b; font-size: 1.05rem;">
+                            <li>基于IP地址的访问限制</li>
+                            <li>基于时间段的访问控制</li>
+                            <li>基于设备类型的差异化限制</li>
+                            <li>基于地理位置的访问控制</li>
+                        </ul>
+                    </div>
+                    <div class="col-md-6">
+                        <h5 style="color: #6d28d9; font-weight: 600; margin-bottom: 15px;">组合安全措施</h5>
+                        <ul style="color: #64748b; font-size: 1.05rem;">
+                            <li>次数限制+密码保护</li>
+                            <li>次数限制+邮箱验证</li>
+                            <li>次数限制+有效期控制</li>
+                            <li>次数限制+水印保护</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 注意事项 -->
+        <div class="content-section">
+            <h2 class="section-title">使用注意事项</h2>
+            
+            <div class="warning-box">
+                <h4 style="color: #92400e; margin-bottom: 20px;">
+                    <i class="fas fa-exclamation-triangle warning-icon"></i>重要提醒
+                </h4>
+                <ul style="color: #78350f; font-size: 1.1rem;">
+                    <li><strong>合理设置次数：</strong>根据实际需求合理设置访问次数，避免过于严格影响正常使用</li>
+                    <li><strong>提前告知用户：</strong>建议在分享时告知访问次数限制，避免用户误解</li>
+                    <li><strong>备份重要文档：</strong>对于重要文档，建议保留原始备份以防意外</li>
+                    <li><strong>定期检查设置：</strong>定期查看访问记录，必要时调整限制策略</li>
+                    <li><strong>考虑用户体验：</strong>在安全性和用户体验之间找到合理平衡</li>
                 </ul>
             </div>
         </div>
-    </nav>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <h1><i class="fas fa-key"></i> Limit PDF Open Times</h1>
-            <p class="lead">Control how many times your PDF can be accessed</p>
-            <a href="https://maipdf.com" class="cta-button">Get Started</a>
-        </div>
-    </div>
+        <!-- 常见问题 -->
+        <div class="faq-section">
+            <h2 class="section-title">常见问题解答</h2>
+            
+            <div class="faq-item">
+                <div class="faq-question">Q: 访问次数用完后，还能重新设置吗？</div>
+                <div class="faq-answer">A: 可以的。在管理后台，您可以为已经用完次数的文档重新设置访问次数，或者直接取消次数限制。系统会立即生效。</div>
+            </div>
 
-    <div class="container">
-        <!-- Introduction -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-info-circle"></i> Why Limit PDF Open Times?</h2>
-            <p>Controlling the number of times a PDF can be opened is crucial for protecting sensitive information and maintaining document security. This feature is particularly useful for:</p>
-            <ul>
-                <li>One-time access documents</li>
-                <li>Confidential business materials</li>
-                <li>Limited distribution content</li>
-                <li>Exclusive offers or promotions</li>
-            </ul>
-        </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 同一个用户多次访问算几次？</div>
+                <div class="faq-answer">A: 默认情况下，每次打开文档都会计算一次访问。但您可以设置基于IP或设备的去重策略，同一IP或设备在一定时间内的访问只计算一次。</div>
+            </div>
 
-        <!-- How It Works -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-cogs"></i> How to Set PDF Open Limits</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ol>
-                        <li>Upload your PDF to MaiPDF</li>
-                        <li>Set the maximum number of opens (e.g., 3 times)</li>
-                        <li>Configure additional security settings</li>
-                        <li>Generate and share the secure link</li>
-                    </ol>
-                </div>
-                <div class="col-md-6">
-                    <img src="../maipdf-images/lockpdf.png" alt="PDF Open Limit Setup" class="img-fluid rounded">
-                </div>
+            <div class="faq-item">
+                <div class="faq-question">Q: 如何知道还剩余多少次访问机会？</div>
+                <div class="faq-answer">A: 管理员可以在后台实时查看剩余访问次数。对于访问者，我们也可以在文档页面显示剩余次数（可选功能）。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 访问限制会影响搜索引擎收录吗？</div>
+                <div class="faq-answer">A: 设置了访问限制的文档不会被搜索引擎收录，这也是保护文档隐私的一种方式。如需SEO友好，请使用其他分享方式。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 可以为不同的人设置不同的访问次数吗？</div>
+                <div class="faq-answer">A: 可以的。通过创建不同的分享链接，您可以为不同的用户组设置不同的访问次数限制。例如VIP用户10次，普通用户3次。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 访问次数限制能否与其他安全措施结合使用？</div>
+                <div class="faq-answer">A: 完全可以。访问次数限制可以与密码保护、有效期控制、IP限制、邮箱验证等多种安全措施组合使用，形成多层安全防护。</div>
+            </div>
+
+            <div class="faq-item">
+                <div class="faq-question">Q: 如果发现安全问题，能立即撤销所有访问权限吗？</div>
+                <div class="faq-answer">A: 可以的。在管理后台有紧急撤销功能，可以立即使所有分享链接失效，停止任何进一步的访问。这是我们安全体系的重要组成部分。</div>
             </div>
         </div>
 
-        <!-- Benefits -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-check-circle"></i> Benefits of Open Limits</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-lock"></i> Enhanced Security</h3>
-                        <ul>
-                            <li>Prevents unlimited access</li>
-                            <li>Controls document distribution</li>
-                            <li>Reduces unauthorized sharing</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-chart-line"></i> Usage Control</h3>
-                        <ul>
-                            <li>Track access attempts</li>
-                            <li>Monitor open counts</li>
-                            <li>Manage document lifecycle</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-shield-alt"></i> Protection</h3>
-                        <ul>
-                            <li>Prevent unauthorized copying</li>
-                            <li>Control document sharing</li>
-                            <li>Maintain content integrity</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+        <!-- 最终行动号召 -->
+        <div class="final-cta">
+            <h2>立即设置PDF访问限制</h2>
+            <p>保护您的重要文档，控制信息传播范围，提升文档安全级别</p>
+            <a href="https://maipdf.com" class="cta-secondary">
+                <i class="fas fa-shield-alt me-2"></i>开始保护文档
+            </a>
+            <p class="mt-4 small" style="opacity: 0.8;">3分钟设置 • 即时生效 • 完全控制 • 安全可靠</p>
         </div>
 
-        <!-- Use Cases -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-lightbulb"></i> Common Use Cases</h2>
+        <!-- 相关功能推荐 -->
+        <div class="content-section">
+            <h3 style="color: #1e293b; font-weight: 700; margin-bottom: 25px;">
+                <i class="fas fa-link text-primary me-2"></i>探索更多安全功能
+            </h3>
             <div class="row">
                 <div class="col-md-6">
-                    <ul>
-                        <li>Job applications and resumes</li>
-                        <li>Legal documents and contracts</li>
-                        <li>Financial reports and statements</li>
-                        <li>Marketing materials and promotions</li>
+                    <ul class="list-unstyled" style="font-size: 1.1rem;">
+                        <li class="mb-3"><a href="/features/zh/security/pdf-password-protection.html" class="text-decoration-none"><i class="fas fa-key text-warning me-2"></i>PDF密码保护</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/expiration-control.html" class="text-decoration-none"><i class="fas fa-clock text-danger me-2"></i>文档有效期控制</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/email-verification.html" class="text-decoration-none"><i class="fas fa-envelope text-primary me-2"></i>邮箱验证访问</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/ip-restriction.html" class="text-decoration-none"><i class="fas fa-globe text-info me-2"></i>IP地址限制</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
-                    <ul>
-                        <li>Educational materials</li>
-                        <li>Medical records</li>
-                        <li>Project proposals</li>
-                        <li>Confidential business plans</li>
+                    <ul class="list-unstyled" style="font-size: 1.1rem;">
+                        <li class="mb-3"><a href="/features/zh/watermark/dynamic-watermark.html" class="text-decoration-none"><i class="fas fa-tint text-success me-2"></i>动态水印保护</a></li>
+                        <li class="mb-3"><a href="/features/zh/tracking/pdf-analytics.html" class="text-decoration-none"><i class="fas fa-chart-line text-info me-2"></i>详细访问统计</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/download-prevention.html" class="text-decoration-none"><i class="fas fa-download text-warning me-2"></i>禁止下载设置</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/screenshot-protection.html" class="text-decoration-none"><i class="fas fa-camera text-danger me-2"></i>防截屏保护</a></li>
                     </ul>
                 </div>
             </div>
         </div>
     </div>
-
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h4>MaiPDF</h4>
-                    <p>Professional PDF Sharing and Security Solutions</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://maipdf.com">Home</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="mailto:support@maipdf.com">support@maipdf.com</a></li>
-                        <li><a href="https://maipdf.com/contact">Contact Us</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
-            </div>
-        </div>
-    </footer>
 
     <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- 交互效果 -->
+    <script>
+        // FAQ展开收起效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const faqItems = document.querySelectorAll('.faq-item');
+            faqItems.forEach(item => {
+                const question = item.querySelector('.faq-question');
+                const answer = item.querySelector('.faq-answer');
+                
+                answer.style.display = 'none';
+                
+                question.addEventListener('click', function() {
+                    const isVisible = answer.style.display === 'block';
+                    
+                    // 关闭所有其他FAQ
+                    faqItems.forEach(otherItem => {
+                        const otherAnswer = otherItem.querySelector('.faq-answer');
+                        otherAnswer.style.display = 'none';
+                    });
+                    
+                    // 切换当前FAQ
+                    answer.style.display = isVisible ? 'none' : 'block';
+                    
+                    // 添加视觉反馈
+                    question.style.color = isVisible ? '#1e293b' : '#dc2626';
+                });
+            });
+            
+            // 滚动动画
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.style.animation = 'slideInUp 0.8s ease forwards';
+                    }
+                });
+            }, observerOptions);
+            
+            // 观察所有内容区域
+            const animatedElements = document.querySelectorAll('.content-section, .limit-type-card, .step-card, .use-case-item');
+            animatedElements.forEach(el => observer.observe(el));
+        });
+        
+        // 添加滑入动画样式
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes slideInUp {
+                from {
+                    opacity: 0;
+                    transform: translateY(40px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+            
+            .limit-type-card, .step-card, .use-case-item {
+                opacity: 0;
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 </body>
 </html>
