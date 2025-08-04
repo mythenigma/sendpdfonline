@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Turn.js Flipbook</title>
+  
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  
+  <!-- Turn.js 使用GitHub CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/1.0.2/turn.min.js"></script>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 20px;
+      background: #444;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      font-family: Arial, sans-serif;
+    }
+
+    #flipbook {
+      width: 800px;
+      height: 600px;
+      box-shadow: 0 0 20px rgba(0,0,0,0.5);
+    }
+
+    #flipbook .page {
+      width: 400px;
+      height: 600px;
+      background: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      border: 1px solid #ccc;
+    }
+
+    #flipbook .page img {
+      max-width: 95%;
+      max-height: 95%;
+      object-fit: contain;
+    }
+
+    .loading {
+      color: white;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 10px;
+      right: 10px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 3px;
+      font-size: 12px;
+    }
+  </style>
+</head>
+<body>
+  <div id="container">
+    <div class="loading">Loading flipbook...</div>
+    <div id="flipbook" style="display: none;">
+      <!-- 页面内容会通过JavaScript动态生成 -->
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function() {
+      const folderPath = './stflip/';
+      const totalPages = 10;
+      let loadedImages = 0;
+      
+      // 预加载所有图片
+      const imagePromises = [];
+      
+      for (let i = 1; i <= totalPages; i++) {
+        const promise = new Promise((resolve, reject) => {
+          const img = new Image();
+          img.onload = function() {
+            console.log(`Image ${i} loaded successfully`);
+            loadedImages++;
+            resolve({
+              pageNum: i,
+              src: img.src,
+              width: img.width,
+              height: img.height
+            });
+          };
+          img.onerror = function() {
+            console.error(`Failed to load image ${i}`);
+            // 即使加载失败也resolve，这样不会阻塞其他图片
+            resolve({
+              pageNum: i,
+              src: null,
+              width: 400,
+              height: 600
+            });
+          };
+          img.src = `${folderPath}${i}.jpg`;
+        });
+        
+        imagePromises.push(promise);
+      }
+      
+      // 等待所有图片加载完成
+      Promise.all(imagePromises).then(function(images) {
+        console.log('All images processed, creating flipbook...');
+        
+        // 创建页面
+        images.forEach(function(imageData) {
+          const page = $('<div class="page"></div>');
+          
+          if (imageData.src) {
+            const img = $('<img>').attr('src', imageData.src).attr('alt', `Page ${imageData.pageNum}`);
+            page.append(img);
+          } else {
+            // 如果图片加载失败，显示占位内容
+            page.append(`<div>Page ${imageData.pageNum}<br>Image not found</div>`);
+          }
+          
+          // 添加页码
+          const pageNumber = $('<div class="page-number"></div>').text(imageData.pageNum);
+          page.append(pageNumber);
+          
+          $('#flipbook').append(page);
+        });
+        
+        // 隐藏加载提示，显示翻页书
+        $('.loading').hide();
+        $('#flipbook').show();
+        
+        // 初始化Turn.js
+        try {
+          $("#flipbook").turn({
+            width: 800,
+            height: 600,
+            autoCenter: true,
+            acceleration: true,
+            gradients: true,
+            elevation: 50,
+            when: {
+              turning: function(event, page, view) {
+                console.log('Turning to page', page);
+              },
+              turned: function(event, page, view) {
+                console.log('Turned to page', page);
+              }
+            }
+          });
+          
+          console.log('Turn.js initialized successfully');
+          
+          // 添加键盘导航
+          $(document).keydown(function(e) {
+            if (e.keyCode == 37) { // 左箭头
+              $("#flipbook").turn("previous");
+            } else if (e.keyCode == 39) { // 右箭头
+              $("#flipbook").turn("next");
+            }
+          });
+          
+        } catch (error) {
+          console.error('Turn.js initialization failed:', error);
+          $('.loading').text('Turn.js failed to load. Please check the library.');
+        }
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,617 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaiPDF Turn.js 翻页查看器</title>
+  
+  <!-- jQuery 和 Turn.js - 使用本地版本以避免CDN问题 -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script>
+    // 如果jQuery没有加载成功，使用本地fallback
+    if (!window.jQuery) {
+      document.write('<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"><\/script>');
+    }
+  </script>
+  
+  <!-- Turn.js 本地加载 -->
+  <script>
+    // Turn.js 库代码 - 简化版本
+    (function($) {
+      'use strict';
+      
+      $.fn.turn = function(options) {
+        var turnOptions = $.extend({
+          width: 400,
+          height: 300,
+          autoCenter: true,
+          acceleration: true,
+          gradients: true,
+          elevation: 50,
+          duration: 600,
+          pages: 1,
+          page: 1,
+          when: {}
+        }, options);
+        
+        return this.each(function() {
+          var $this = $(this);
+          var data = $this.data('turn') || {};
+          
+          if (typeof options === 'string') {
+            // 处理方法调用
+            switch(options) {
+              case 'next':
+                if (data.currentPage < data.totalPages) {
+                  turnToPage.call(this, data.currentPage + 1);
+                }
+                break;
+              case 'previous':
+                if (data.currentPage > 1) {
+                  turnToPage.call(this, data.currentPage - 1);
+                }
+                break;
+              case 'page':
+                if (arguments[1]) {
+                  turnToPage.call(this, arguments[1]);
+                }
+                return data.currentPage;
+              case 'size':
+                if (arguments[1] && arguments[2]) {
+                  $this.css({
+                    width: arguments[1],
+                    height: arguments[2]
+                  });
+                }
+                break;
+            }
+            return $this;
+          }
+          
+          // 初始化
+          data.currentPage = turnOptions.page;
+          data.totalPages = turnOptions.pages;
+          data.options = turnOptions;
+          
+          $this.css({
+            width: turnOptions.width,
+            height: turnOptions.height,
+            position: 'relative',
+            margin: '0 auto'
+          });
+          
+          // 设置页面样式
+          $this.children().each(function(index) {
+            $(this).css({
+              position: 'absolute',
+              width: turnOptions.width / 2,
+              height: turnOptions.height,
+              transition: 'transform ' + turnOptions.duration + 'ms ease-in-out',
+              transformOrigin: 'left center',
+              backfaceVisibility: 'hidden'
+            });
+            
+            if (index % 2 === 0) {
+              // 左页
+              $(this).css({
+                left: 0,
+                zIndex: data.totalPages - index
+              });
+            } else {
+              // 右页
+              $(this).css({
+                right: 0,
+                zIndex: data.totalPages - index
+              });
+            }
+            
+            if (index >= 2) {
+              $(this).css('display', 'none');
+            }
+          });
+          
+          $this.data('turn', data);
+          
+          // 绑定翻页事件
+          function turnToPage(pageNumber) {
+            var oldPage = data.currentPage;
+            data.currentPage = Math.max(1, Math.min(pageNumber, data.totalPages));
+            
+            if (data.options.when.turning) {
+              data.options.when.turning(null, data.currentPage, null);
+            }
+            
+            // 简单的页面切换动画
+            $this.children().each(function(index) {
+              var $page = $(this);
+              if (index < data.currentPage - 1) {
+                $page.css({
+                  transform: 'rotateY(-180deg)',
+                  display: 'block'
+                });
+              } else if (index === data.currentPage - 1 || index === data.currentPage) {
+                $page.css({
+                  transform: 'rotateY(0deg)',
+                  display: 'block'
+                });
+              } else {
+                $page.css('display', 'none');
+              }
+            });
+            
+            setTimeout(function() {
+              if (data.options.when.turned) {
+                data.options.when.turned(null, data.currentPage, null);
+              }
+            }, data.options.duration);
+          }
+          
+          // 鼠标拖拽翻页
+          $this.on('click', function(e) {
+            var rect = this.getBoundingClientRect();
+            var x = e.clientX - rect.left;
+            if (x > rect.width / 2) {
+              turnToPage.call(this, data.currentPage + 1);
+            } else {
+              turnToPage.call(this, data.currentPage - 1);
+            }
+          });
+        });
+      };
+    })(jQuery);
+  </script>
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #2c3e50 0%, #3498db 100%);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      color: white;
+    }
+
+    .book-container {
+      position: relative;
+      margin: 20px auto;
+    }
+
+    #flipbook {
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      border-radius: 10px;
+      overflow: hidden;
+      cursor: pointer;
+    }
+
+    .page {
+      background-color: white;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      overflow: hidden;
+      border: 1px solid #ddd;
+    }
+
+    .page img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 5px 10px;
+      border-radius: 15px;
+      font-size: 12px;
+      font-weight: bold;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px 30px;
+      border-radius: 30px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      backdrop-filter: blur(10px);
+      z-index: 1000;
+    }
+
+    .control-btn {
+      background: linear-gradient(145deg, #3498db, #2980b9);
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      min-width: 100px;
+      justify-content: center;
+    }
+
+    .control-btn:hover:not(:disabled) {
+      background: linear-gradient(145deg, #2980b9, #1abc9c);
+      transform: translateY(-2px);
+      box-shadow: 0 8px 20px rgba(52,152,219,0.4);
+    }
+
+    .control-btn:disabled {
+      background: linear-gradient(145deg, #bdc3c7, #95a5a6);
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .page-info {
+      font-size: 16px;
+      font-weight: bold;
+      color: #2c3e50;
+      min-width: 100px;
+      text-align: center;
+      background: rgba(236, 240, 241, 0.9);
+      padding: 8px 15px;
+      border-radius: 20px;
+    }
+
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(0, 0, 0, 0.9);
+      color: white;
+      padding: 30px 40px;
+      border-radius: 15px;
+      text-align: center;
+      font-size: 18px;
+      z-index: 2000;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+    }
+
+    .spinner {
+      border: 4px solid rgba(255,255,255,0.3);
+      border-top: 4px solid #3498db;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .instructions {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 15px;
+      border-radius: 10px;
+      font-size: 12px;
+      line-height: 1.5;
+      backdrop-filter: blur(10px);
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+      .controls {
+        padding: 10px 20px;
+        gap: 15px;
+      }
+      
+      .control-btn {
+        padding: 10px 15px;
+        font-size: 12px;
+        min-width: 80px;
+      }
+      
+      .instructions {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <div>正在加载翻页书...</div>
+  </div>
+
+  <div class="instructions">
+    <div><strong>操作说明:</strong></div>
+    <div>• 点击页面翻页</div>
+    <div>• 左边区域：上一页</div>
+    <div>• 右边区域：下一页</div>
+    <div>• 键盘方向键翻页</div>
+  </div>
+
+  <div class="book-container">
+    <div id="flipbook">
+      <!-- 页面将通过JavaScript动态生成 -->
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="control-btn" id="prevBtn">
+      <span>◀</span> 上一页
+    </button>
+    <div class="page-info" id="pageInfo">1 / 10</div>
+    <button class="control-btn" id="nextBtn">
+      下一页 <span>▶</span>
+    </button>
+  </div>
+
+  <script>
+    class SimpleFlipbook {
+      constructor() {
+        this.folderPath = './stflip/';
+        this.totalPages = 10;
+        this.currentPage = 1;
+        this.images = [];
+        
+        this.flipbook = $('#flipbook');
+        this.prevBtn = $('#prevBtn');
+        this.nextBtn = $('#nextBtn');
+        this.pageInfo = $('#pageInfo');
+        this.loading = $('#loading');
+        
+        this.init();
+      }
+
+      async init() {
+        try {
+          await this.loadImages();
+          this.createPages();
+          this.initializeFlipbook();
+          this.bindEvents();
+          this.updateControls();
+          this.hideLoading();
+          
+          console.log('翻页书初始化完成');
+        } catch (error) {
+          console.error('初始化失败:', error);
+          this.showError('图片加载失败，请检查图片路径');
+        }
+      }
+
+      async loadImages() {
+        const imagePaths = Array.from({ length: this.totalPages }, (_, i) => 
+          `${this.folderPath}${i + 1}.jpg`
+        );
+
+        const imagePromises = imagePaths.map((src, index) => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => {
+              console.log(`图片 ${index + 1} 加载完成`);
+              resolve({ src, img, index });
+            };
+            img.onerror = () => {
+              console.error(`图片 ${index + 1} 加载失败: ${src}`);
+              // 创建一个占位图片
+              resolve({ src: this.createPlaceholderImage(index + 1), img: null, index });
+            };
+            img.src = src;
+          });
+        });
+
+        const results = await Promise.all(imagePromises);
+        this.images = results.sort((a, b) => a.index - b.index);
+        console.log('所有图片加载完成');
+      }
+
+      createPlaceholderImage(pageNumber) {
+        // 创建一个简单的占位图片
+        const canvas = document.createElement('canvas');
+        canvas.width = 300;
+        canvas.height = 400;
+        const ctx = canvas.getContext('2d');
+        
+        // 绘制背景
+        ctx.fillStyle = '#f8f9fa';
+        ctx.fillRect(0, 0, canvas.width, canvas.height);
+        
+        // 绘制边框
+        ctx.strokeStyle = '#dee2e6';
+        ctx.lineWidth = 2;
+        ctx.strokeRect(1, 1, canvas.width - 2, canvas.height - 2);
+        
+        // 绘制文字
+        ctx.fillStyle = '#6c757d';
+        ctx.font = 'bold 24px Arial';
+        ctx.textAlign = 'center';
+        ctx.fillText(`页面 ${pageNumber}`, canvas.width / 2, canvas.height / 2 - 20);
+        ctx.fillText('图片加载失败', canvas.width / 2, canvas.height / 2 + 20);
+        
+        return canvas.toDataURL();
+      }
+
+      createPages() {
+        this.flipbook.empty();
+        
+        this.images.forEach((imageData, index) => {
+          const pageDiv = $('<div></div>')
+            .addClass('page')
+            .attr('data-page', index + 1);
+          
+          const img = $('<img>')
+            .attr('src', imageData.src)
+            .attr('alt', `Page ${index + 1}`)
+            .on('error', () => {
+              // 如果图片加载失败，使用占位图片
+              img.attr('src', this.createPlaceholderImage(index + 1));
+            });
+          
+          const pageNumber = $('<div></div>')
+            .addClass('page-number')
+            .text(index + 1);
+          
+          pageDiv.append(img);
+          pageDiv.append(pageNumber);
+          this.flipbook.append(pageDiv);
+        });
+        
+        console.log(`创建了 ${this.images.length} 个页面`);
+      }
+
+      initializeFlipbook() {
+        try {
+          this.flipbook.turn({
+            width: window.innerWidth > 768 ? 700 : 400,
+            height: window.innerWidth > 768 ? 500 : 300,
+            autoCenter: true,
+            acceleration: true,
+            gradients: true,
+            elevation: 50,
+            duration: 600,
+            pages: this.totalPages,
+            when: {
+              turning: (event, page, view) => {
+                this.currentPage = page;
+                this.updateControls();
+              },
+              turned: (event, page, view) => {
+                console.log(`翻页完成: ${page}`);
+              }
+            }
+          });
+        } catch (error) {
+          console.error('Turn.js 初始化失败，使用简单模式:', error);
+          this.useSimpleMode();
+        }
+      }
+
+      useSimpleMode() {
+        // 如果turn.js失败，使用简单的单页模式
+        this.flipbook.css({
+          width: window.innerWidth > 768 ? 500 : 350,
+          height: window.innerWidth > 768 ? 400 : 280,
+          position: 'relative'
+        });
+        
+        this.flipbook.children().each(function(index) {
+          $(this).css({
+            position: 'absolute',
+            width: '100%',
+            height: '100%',
+            display: index === 0 ? 'flex' : 'none'
+          });
+        });
+        
+        console.log('使用简单模式显示');
+      }
+
+      bindEvents() {
+        this.prevBtn.on('click', () => this.previousPage());
+        this.nextBtn.on('click', () => this.nextPage());
+        
+        $(document).on('keydown', (e) => {
+          switch(e.key) {
+            case 'ArrowLeft':
+            case 'PageUp':
+              e.preventDefault();
+              this.previousPage();
+              break;
+            case 'ArrowRight':
+            case 'PageDown':
+            case ' ':
+              e.preventDefault();
+              this.nextPage();
+              break;
+            case 'Home':
+              e.preventDefault();
+              this.goToPage(1);
+              break;
+            case 'End':
+              e.preventDefault();
+              this.goToPage(this.totalPages);
+              break;
+          }
+        });
+      }
+
+      nextPage() {
+        if (this.currentPage < this.totalPages) {
+          if (this.flipbook.data('turn')) {
+            this.flipbook.turn('next');
+          } else {
+            this.showPage(this.currentPage + 1);
+          }
+        }
+      }
+
+      previousPage() {
+        if (this.currentPage > 1) {
+          if (this.flipbook.data('turn')) {
+            this.flipbook.turn('previous');
+          } else {
+            this.showPage(this.currentPage - 1);
+          }
+        }
+      }
+
+      goToPage(pageNumber) {
+        if (pageNumber >= 1 && pageNumber <= this.totalPages) {
+          if (this.flipbook.data('turn')) {
+            this.flipbook.turn('page', pageNumber);
+          } else {
+            this.showPage(pageNumber);
+          }
+        }
+      }
+
+      showPage(pageNumber) {
+        // 简单模式的页面切换
+        this.currentPage = pageNumber;
+        this.flipbook.children().each(function(index) {
+          $(this).css('display', index === pageNumber - 1 ? 'flex' : 'none');
+        });
+        this.updateControls();
+      }
+
+      updateControls() {
+        this.pageInfo.text(`${this.currentPage} / ${this.totalPages}`);
+        this.prevBtn.prop('disabled', this.currentPage <= 1);
+        this.nextBtn.prop('disabled', this.currentPage >= this.totalPages);
+      }
+
+      hideLoading() {
+        this.loading.fadeOut(500);
+      }
+
+      showError(message) {
+        this.loading.html(`<div style="color: #e74c3c;">${message}</div>`);
+      }
+    }
+
+    // 页面加载完成后初始化
+    $(document).ready(() => {
+      new SimpleFlipbook();
+    });
+  </script>
+</body>
+</html>
