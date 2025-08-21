@@ -3,68 +3,19 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  
-  <!-- SEO Meta Tags -->
-  <title>Interactive PDF Flipbook Viewer | MaiPDF Digital Magazine Experience</title>
-  <meta name="description" content="Experience interactive PDF flipbooks with realistic page-turning effects. Create engaging digital magazines, brochures, and catalogs with MaiPDF's flipbook viewer.">
-  <meta name="keywords" content="PDF flipbook, digital magazine, interactive PDF, page turning effect, online brochure, digital catalog, PDF viewer, Turn.js flipbook">
-  <meta name="author" content="MaiPDF">
-  
-  <!-- Open Graph Tags -->
-  <meta property="og:title" content="Interactive PDF Flipbook Viewer | MaiPDF">
-  <meta property="og:description" content="Create engaging digital magazines and brochures with realistic page-turning effects using MaiPDF's interactive flipbook viewer.">
-  <meta property="og:image" content="https://sendpdfonline.com/images/flipbook-preview.png">
-  <meta property="og:url" content="https://sendpdfonline.com/flipbook/turn-simple.html">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="MaiPDF">
-  
-  <!-- Twitter Cards -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="Interactive PDF Flipbook Viewer | MaiPDF">
-  <meta name="twitter:description" content="Create engaging digital magazines and brochures with realistic page-turning effects.">
-  <meta name="twitter:image" content="https://sendpdfonline.com/images/flipbook-preview.png">
-  
-  <!-- SEO Meta Tags -->
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sendpdfonline.com/flipbook/turn-simple.html">
-  
-  <!-- Structured Data for WebApplication -->
-  <script type="application/ld+json">
-  {
-      "@context": "https://schema.org",
-      "@type": "WebApplication",
-      "name": "MaiPDF Flipbook Viewer",
-      "description": "Interactive PDF flipbook viewer with realistic page-turning effects for digital magazines and brochures",
-      "url": "https://sendpdfonline.com/flipbook/turn-simple.html",
-      "applicationCategory": "UtilityApplication",
-      "operatingSystem": "Web",
-      "browserRequirements": "Requires JavaScript",
-      "offers": {
-          "@type": "Offer",
-          "price": "0",
-          "priceCurrency": "USD"
-      },
-      "featureList": [
-          "Interactive Page Turning",
-          "Realistic Flip Animation", 
-          "Keyboard Navigation",
-          "Responsive Design",
-          "High-Quality Image Display"
-      ]
-  }
-  </script>
+  <title>MaiPDF 单页翻页查看器</title>
   
   <!-- jQuery -->
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   
-  <!-- Turn.js 使用GitHub CDN -->
+  <!-- Turn.js CDN -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/turn.js/1.0.2/turn.min.js"></script>
   
   <style>
     body {
       margin: 0;
-      padding: 20px;
-      background: #444;
+      padding: 0;
+      background: #333;
       display: flex;
       justify-content: center;
       align-items: center;
@@ -73,14 +24,13 @@
     }
 
     #flipbook {
-      width: 800px;
-      height: 600px;
       box-shadow: 0 0 20px rgba(0,0,0,0.5);
+      background: white;
     }
 
-    #flipbook .page {
-      width: 400px;
-      height: 600px;
+    .page {
+      width: 100%;
+      height: 100%;
       background: white;
       display: flex;
       align-items: center;
@@ -89,10 +39,11 @@
       border: 1px solid #ccc;
     }
 
-    #flipbook .page img {
-      max-width: 95%;
-      max-height: 95%;
+    .page img {
+      max-width: 100%;
+      max-height: 100%;
       object-fit: contain;
+      display: block;
     }
 
     .loading {
@@ -111,14 +62,58 @@
       border-radius: 3px;
       font-size: 12px;
     }
+
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 1000;
+      background: rgba(0,0,0,0.8);
+      padding: 10px 20px;
+      border-radius: 25px;
+      color: white;
+    }
+
+    .controls button {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 8px 15px;
+      margin: 0 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+    }
+
+    .controls button:hover {
+      background: #0056b3;
+    }
+
+    .controls button:disabled {
+      background: #666;
+      cursor: not-allowed;
+    }
+
+    .page-info {
+      margin: 0 15px;
+      font-size: 14px;
+    }
   </style>
 </head>
 <body>
   <div id="container">
-    <div class="loading">Loading flipbook...</div>
+    <div class="loading">加载翻页书中...</div>
     <div id="flipbook" style="display: none;">
       <!-- 页面内容会通过JavaScript动态生成 -->
     </div>
+  </div>
+
+  <!-- 控制按钮 -->
+  <div class="controls" id="controls" style="display: none;">
+    <button id="prevBtn">上一页</button>
+    <span class="page-info" id="pageInfo">1 / 10</span>
+    <button id="nextBtn">下一页</button>
   </div>
 
   <script>
@@ -126,6 +121,7 @@
       const folderPath = './stflip/';
       const totalPages = 10;
       let loadedImages = 0;
+      let currentPage = 1;
       
       // 预加载所有图片
       const imagePromises = [];
@@ -134,7 +130,7 @@
         const promise = new Promise((resolve, reject) => {
           const img = new Image();
           img.onload = function() {
-            console.log(`Image ${i} loaded successfully`);
+            console.log(`图片 ${i} 加载成功`);
             loadedImages++;
             resolve({
               pageNum: i,
@@ -144,8 +140,7 @@
             });
           };
           img.onerror = function() {
-            console.error(`Failed to load image ${i}`);
-            // 即使加载失败也resolve，这样不会阻塞其他图片
+            console.error(`图片 ${i} 加载失败`);
             resolve({
               pageNum: i,
               src: null,
@@ -161,18 +156,24 @@
       
       // 等待所有图片加载完成
       Promise.all(imagePromises).then(function(images) {
-        console.log('All images processed, creating flipbook...');
+        console.log('所有图片处理完成，创建单页翻页书...');
+        
+        // 计算合适的尺寸
+        const screenWidth = window.innerWidth;
+        const screenHeight = window.innerHeight;
+        const maxWidth = Math.min(600, screenWidth * 0.8);
+        const maxHeight = Math.min(800, screenHeight * 0.8);
         
         // 创建页面
         images.forEach(function(imageData) {
           const page = $('<div class="page"></div>');
           
           if (imageData.src) {
-            const img = $('<img>').attr('src', imageData.src).attr('alt', `Page ${imageData.pageNum}`);
+            const img = $('<img>').attr('src', imageData.src).attr('alt', `第 ${imageData.pageNum} 页`);
             page.append(img);
           } else {
             // 如果图片加载失败，显示占位内容
-            page.append(`<div>Page ${imageData.pageNum}<br>Image not found</div>`);
+            page.append(`<div>第 ${imageData.pageNum} 页<br>图片未找到</div>`);
           }
           
           // 添加页码
@@ -185,27 +186,34 @@
         // 隐藏加载提示，显示翻页书
         $('.loading').hide();
         $('#flipbook').show();
+        $('#controls').show();
         
-        // 初始化Turn.js
+        // 初始化Turn.js - 关键：单页模式配置
         try {
           $("#flipbook").turn({
-            width: 800,
-            height: 600,
+            width: maxWidth,
+            height: maxHeight,
             autoCenter: true,
             acceleration: true,
             gradients: true,
             elevation: 50,
+            display: 'single',  // 关键：强制单页显示
             when: {
               turning: function(event, page, view) {
-                console.log('Turning to page', page);
+                console.log('正在翻到第', page, '页');
+                currentPage = page;
+                updateControls();
               },
               turned: function(event, page, view) {
-                console.log('Turned to page', page);
+                console.log('已翻到第', page, '页');
+                currentPage = page;
+                updateControls();
               }
             }
           });
           
-          console.log('Turn.js initialized successfully');
+          console.log('✅ 单页翻页书初始化成功');
+          updateControls();
           
           // 添加键盘导航
           $(document).keydown(function(e) {
@@ -216,11 +224,29 @@
             }
           });
           
+          // 控制按钮事件
+          $('#prevBtn').click(function() {
+            $("#flipbook").turn("previous");
+          });
+          
+          $('#nextBtn').click(function() {
+            $("#flipbook").turn("next");
+          });
+          
         } catch (error) {
-          console.error('Turn.js initialization failed:', error);
-          $('.loading').text('Turn.js failed to load. Please check the library.');
+          console.error('翻页书初始化失败:', error);
+          $('.loading').text('翻页书加载失败，请检查Turn.js库。');
         }
       });
+      
+      // 更新控制按钮状态
+      function updateControls() {
+        $('#pageInfo').text(`${currentPage} / ${totalPages}`);
+        
+        // 更新按钮状态
+        $('#prevBtn').prop('disabled', currentPage <= 1);
+        $('#nextBtn').prop('disabled', currentPage >= totalPages);
+      }
     });
   </script>
 </body>

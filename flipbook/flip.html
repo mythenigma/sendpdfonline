@@ -1,210 +1,171 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MaiPDF Flipbook Viewer</title>
+  <link rel="stylesheet" href="./StPageFlip-2.0.0/src/Style/stPageFlip.css">
   <style>
     body {
       margin: 0;
       background: #eee;
-      font-family: Arial, sans-serif;
     }
-    
     #flipbook {
       width: 100vw;
       height: 100vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      position: relative;
     }
-    
-    .single-page-container {
-      max-width: 90vw;
-      max-height: 90vh;
+    img {
+      image-rendering: auto;
+      image-rendering: crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: pixelated;
+    }
+    .page {
       display: flex;
-      flex-direction: column;
-      align-items: center;
       justify-content: center;
+      align-items: center;
       background: white;
-      box-shadow: 0 4px 20px rgba(0,0,0,0.2);
-      border-radius: 8px;
-      padding: 20px;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    
-    .page-image {
+    .page img {
       max-width: 100%;
-      max-height: 70vh;
+      max-height: 100%;
       object-fit: contain;
-      border-radius: 4px;
+      display: block;
     }
     
-    .navigation {
-      margin-top: 20px;
+    /* 单页模式优化 */
+    .stf__parent {
       display: flex;
-      gap: 20px;
+      justify-content: center;
       align-items: center;
-    }
-    
-    .nav-button {
-      background: #007bff;
-      color: white;
-      border: none;
-      padding: 12px 24px;
-      border-radius: 6px;
-      cursor: pointer;
-      font-size: 16px;
-      transition: background 0.3s;
-    }
-    
-    .nav-button:hover:not(:disabled) {
-      background: #0056b3;
-    }
-    
-    .nav-button:disabled {
-      background: #ccc;
-      cursor: not-allowed;
-    }
-    
-    .page-info {
-      font-size: 18px;
-      font-weight: bold;
-      color: #333;
-      min-width: 120px;
-      text-align: center;
-    }
-    
-    .loading {
-      text-align: center;
-      font-size: 18px;
-      color: #666;
     }
   </style>
 </head>
 <body>
-  <div id="flipbook">
-    <div class="single-page-container">
-      <div class="loading">加载中...</div>
-    </div>
-  </div>
+  <div id="flipbook"></div>
 
+  <script src="./page-flip.browser.js"></script>
   <script>
     const folderPath = './stflip/';
     const totalPages = 10;
-    let currentPage = 0;
-    
     const imagePaths = Array.from({ length: totalPages }, (_, i) => `${folderPath}${i + 1}.jpg`);
 
-    // 预加载所有图片
-    const preloadImages = async (paths) => {
-      console.log('开始预加载图片...');
-      const images = await Promise.all(paths.map(src => {
-        return new Promise((resolve, reject) => {
+    const preloadImageSizes = async (paths) => {
+      const dimensions = await Promise.all(paths.map(src => {
+        return new Promise(resolve => {
           const img = new Image();
           img.onload = () => {
-            console.log(`图片加载成功: ${src}`);
-            resolve(img);
-          };
-          img.onerror = () => {
-            console.error(`图片加载失败: ${src}`);
-            reject(new Error(`Failed to load ${src}`));
+            resolve({ width: img.width, height: img.height, src });
           };
           img.src = src;
         });
       }));
-      console.log('所有图片预加载完成');
-      return images;
+      return dimensions;
     };
 
-    // 创建单页查看器
-    const createSinglePageViewer = (images) => {
-      const container = document.querySelector('.single-page-container');
+    preloadImageSizes(imagePaths).then(sizes => {
+      const screenHeight = window.innerHeight;
+      const screenWidth = window.innerWidth;
+      const dpr = window.devicePixelRatio || 1;
+
+      console.log('=== 单页模式初始化 ===');
       
-      // 创建图片容器
-      const imageContainer = document.createElement('div');
-      imageContainer.style.textAlign = 'center';
+      // StPageFlip 单页模式：使用较小的宽度强制单页
+      const pageWidth = Math.min(400, screenWidth * 0.6);  // 较小的单页宽度
+      const pageHeight = Math.min(600, screenHeight * 0.8);  // 单页高度
       
-      const currentImage = document.createElement('img');
-      currentImage.className = 'page-image';
-      currentImage.src = images[currentPage].src;
-      imageContainer.appendChild(currentImage);
-      
-      // 创建导航栏
-      const navigation = document.createElement('div');
-      navigation.className = 'navigation';
-      
-      const prevButton = document.createElement('button');
-      prevButton.className = 'nav-button';
-      prevButton.textContent = '← 上一页';
-      prevButton.onclick = () => goToPage(currentPage - 1);
-      
-      const pageInfo = document.createElement('div');
-      pageInfo.className = 'page-info';
-      
-      const nextButton = document.createElement('button');
-      nextButton.className = 'nav-button';
-      nextButton.textContent = '下一页 →';
-      nextButton.onclick = () => goToPage(currentPage + 1);
-      
-      navigation.appendChild(prevButton);
-      navigation.appendChild(pageInfo);
-      navigation.appendChild(nextButton);
-      
-      // 清空容器并添加新内容
-      container.innerHTML = '';
-      container.appendChild(imageContainer);
-      container.appendChild(navigation);
-      
-      // 更新页面显示
-      const updatePage = () => {
-        currentImage.src = images[currentPage].src;
-        pageInfo.textContent = `${currentPage + 1} / ${totalPages}`;
-        prevButton.disabled = currentPage === 0;
-        nextButton.disabled = currentPage === totalPages - 1;
-      };
-      
-      // 页面跳转函数
-      window.goToPage = (pageIndex) => {
-        if (pageIndex >= 0 && pageIndex < totalPages) {
-          currentPage = pageIndex;
-          updatePage();
+      console.log('Page dimensions:', pageWidth, 'x', pageHeight);
+
+      // StPageFlip 单页模式 - 最简配置
+      const pageFlip = new St.PageFlip(
+        document.getElementById('flipbook'),
+        {
+          width: pageWidth,
+          height: pageHeight,
+          size: 'fixed',
+          orientation: 'portrait',  // 强制纵向
+          minWidth: 200,
+          maxWidth: pageWidth,
+          minHeight: 300,
+          maxHeight: pageHeight,
+          maxShadowOpacity: 0.3,
+          showCover: false,
+          mobileScrollSupport: false,
+          swipeDistance: 50,
+          clickEventForward: true,
+          useMouseEvents: true,
+          drawShadow: true,
+          flippingTime: 600,
+          autoSize: false,
+          showPageCorners: false,  // 隐藏页角
+          disableFlipByClick: false
         }
-      };
+      );
+
+      // StPageFlip 单页模式：逐个添加页面
+      console.log('开始添加单页到 StPageFlip...');
       
-      // 键盘导航
-      document.addEventListener('keydown', (e) => {
-        if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-          e.preventDefault();
-          goToPage(currentPage - 1);
-        } else if (e.key === 'ArrowRight' || e.key === 'PageDown') {
-          e.preventDefault();
-          goToPage(currentPage + 1);
-        } else if (e.key === 'Home') {
-          e.preventDefault();
-          goToPage(0);
-        } else if (e.key === 'End') {
-          e.preventDefault();
-          goToPage(totalPages - 1);
+      sizes.forEach((img, index) => {
+        console.log(`添加第 ${index + 1} 页: ${img.width}x${img.height}`);
+        
+        const pageElement = document.createElement('div');
+        pageElement.className = 'page';
+        pageElement.style.width = '100%';
+        pageElement.style.height = '100%';
+        
+        const imgElement = document.createElement('img');
+        imgElement.src = img.src;
+        imgElement.alt = `Page ${index + 1}`;
+        imgElement.style.width = '100%';
+        imgElement.style.height = '100%';
+        imgElement.style.objectFit = 'contain';
+        
+        pageElement.appendChild(imgElement);
+        
+        // 使用 StPageFlip 的 loadFromImages 或类似方法
+        try {
+          pageFlip.getPages().addPage(pageElement);
+          console.log(`✅ 第 ${index + 1} 页添加成功`);
+        } catch (e) {
+          console.log(`使用备用方法添加第 ${index + 1} 页`);
+          document.getElementById('flipbook').appendChild(pageElement);
         }
       });
       
-      // 初始化页面
-      updatePage();
+      // 如果上面的方法不工作，尝试 loadFromHTML
+      try {
+        const allPages = document.getElementById('flipbook').children;
+        if (allPages.length === 0) {
+          console.log('使用 loadFromHTML 方法...');
+          const pageWrappers = sizes.map((img, index) => {
+            const wrapper = document.createElement('div');
+            wrapper.className = 'page';
+            const imgElement = document.createElement('img');
+            imgElement.src = img.src;
+            wrapper.appendChild(imgElement);
+            return wrapper;
+          });
+          pageFlip.loadFromHTML(pageWrappers);
+        }
+      } catch (e) {
+        console.error('页面加载失败:', e);
+      }
       
-      console.log('单页查看器创建完成');
-    };
-
-    // 初始化
-    preloadImages(imagePaths)
-      .then(images => {
-        createSinglePageViewer(images);
-      })
-      .catch(error => {
-        console.error('图片加载失败:', error);
-        document.querySelector('.single-page-container').innerHTML = 
-          '<div class="loading" style="color: red;">图片加载失败，请检查图片路径</div>';
+      console.log(`✅ StPageFlip 初始化完成，共 ${sizes.length} 个单页`);
+      console.log('📖 单页模式激活 - 每页显示一张图片');
+      
+      // 添加翻页事件监听
+      pageFlip.on('flip', (e) => {
+        console.log(`📄 翻页到第: ${e.data + 1} 页`);
       });
+      
+      // 添加更多调试信息
+      pageFlip.on('init', (e) => {
+        console.log('📚 StPageFlip 初始化事件触发');
+      });
+    });
   </script>
 </body>
 </html>
