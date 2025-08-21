@@ -1,0 +1,314 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>StPageFlip 单页翻页书</title>
+  <link rel="stylesheet" href="./StPageFlip-2.0.0/src/Style/stPageFlip.css">
+  
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #2c3e50 0%, #34495e 100%);
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    
+    #flipbook {
+      width: 800px;
+      height: 600px;
+      margin: 0 auto;
+    }
+    
+    /* StPageFlip 页面样式 - 完全透明容器 */
+    .stf__item {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: visible !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .stf__item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain; /* 保持完整图片，不裁剪 */
+      border-radius: 8px;
+      background: white;   /* 只给图片添加白色背景 */
+      padding: 10px;       /* 给图片一点内边距 */
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2); /* 给图片添加阴影 */
+    }
+    
+    /* 强制单页模式 */
+    .stf__wrapper.--portrait {
+      justify-content: center;
+    }
+    
+    .stf__wrapper.--portrait .stf__block {
+      width: 800px !important;
+    }
+    
+    /* 确保页面容器完全透明 */
+    .stf__item {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* 只隐藏底部书本阴影，保留翻页阴影效果 */
+    .stf__wrapper {
+      box-shadow: none !important;
+    }
+    
+    .stf__block {
+      box-shadow: none !important;
+    }
+    
+    /* 让翻页容器完全贴合 */
+    .stf__parent {
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+    
+    /* 确保图片显示完整 */
+    .page img {
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;
+      border-radius: 8px;
+    }
+    
+    /* 控制按钮 */
+    .controls {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      z-index: 1000;
+    }
+    
+    .btn {
+      background: rgba(255,255,255,0.9);
+      border: none;
+      padding: 12px 24px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 16px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    .btn:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .page-counter {
+      background: rgba(0,0,0,0.7);
+      color: white;
+      padding: 8px 16px;
+      border-radius: 20px;
+      font-size: 14px;
+      display: flex;
+      align-items: center;
+    }
+    
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: white;
+      font-size: 20px;
+      z-index: 1000;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">
+    <div>加载StPageFlip翻页书中...</div>
+    <div style="font-size: 14px; margin-top: 10px;">请稍候</div>
+  </div>
+  
+  <div id="flipbook" style="display: none;"></div>
+  
+  <div class="controls">
+    <button class="btn" onclick="prevPage()" id="prevBtn">← 上一页</button>
+    <div class="page-counter">
+      <span id="pageInfo">1 / 10</span>
+    </div>
+    <button class="btn" onclick="nextPage()" id="nextBtn">下一页 →</button>
+  </div>
+
+  <script src="./page-flip.browser.js"></script>
+  <script>
+    let pageFlip;
+    let currentPageIndex = 0;
+    let totalPages = 10;
+    
+    // 图片路径
+    const folderPath = './stflip/';
+    const imagePaths = Array.from({ length: totalPages }, (_, i) => `${folderPath}${i + 1}.jpg`);
+
+    // 预加载图片并初始化StPageFlip
+    async function loadImages() {
+      console.log('开始加载图片...');
+      const pageElements = [];
+      
+      for (let i = 0; i < totalPages; i++) {
+        try {
+          const img = await loadImage(imagePaths[i]);
+          console.log(`✅ 图片 ${i + 1} 加载成功`);
+          
+          // 创建页面元素 - 只包含图片，无额外容器
+          const pageDiv = document.createElement('div');
+          pageDiv.className = 'page';
+          pageDiv.style.cssText = 'background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; box-shadow: none !important;';
+          
+          const imgElement = document.createElement('img');
+          imgElement.src = img.src;
+          imgElement.alt = `第 ${i + 1} 页`;
+          imgElement.style.cssText = 'width: 100%; height: 100%; object-fit: contain; border-radius: 8px; display: block; background: white; box-shadow: 0 8px 25px rgba(0,0,0,0.3);';
+          
+          pageDiv.appendChild(imgElement);
+          pageElements.push(pageDiv);
+          
+        } catch (error) {
+          console.error(`❌ 图片 ${i + 1} 加载失败:`, error);
+          
+          // 创建错误页面
+          const pageDiv = document.createElement('div');
+          pageDiv.className = 'page';
+          pageDiv.innerHTML = `<div style="text-align: center; color: #666; padding: 20px;">
+            <h3>第 ${i + 1} 页</h3>
+            <p>图片加载失败</p>
+          </div>`;
+          
+          pageElements.push(pageDiv);
+        }
+      }
+      
+      // 初始化StPageFlip
+      initStPageFlip(pageElements);
+    }
+    
+    // 加载单张图片
+    function loadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    }
+    
+    // 初始化StPageFlip
+    function initStPageFlip(pageElements) {
+      console.log('初始化StPageFlip...');
+      
+      // 检查StPageFlip库是否加载
+      if (typeof St === 'undefined' || typeof St.PageFlip === 'undefined') {
+        console.error('❌ StPageFlip 库未正确加载！');
+        document.getElementById('loading').innerHTML = '<div style="color: red;">StPageFlip 库加载失败</div>';
+        return;
+      }
+      
+      // 创建StPageFlip实例 - 恢复真实翻页效果
+      pageFlip = new St.PageFlip(document.getElementById('flipbook'), {
+        width: 800,
+        height: 600,
+        size: 'fixed',
+        minWidth: 400,
+        maxWidth: 1200,
+        minHeight: 500,
+        maxHeight: 800,
+        maxShadowOpacity: 0.5,   // 恢复适度阴影
+        showCover: false,
+        mobileScrollSupport: false,
+        swipeDistance: 30,
+        clickEventForward: true,
+        useMouseEvents: true,
+        drawShadow: true,        // 恢复阴影绘制
+        flippingTime: 1000,
+        usePortrait: true,       // 保持单页模式
+        autoSize: false,
+        showPageCorners: true,   // 恢复页面卷曲效果
+        startPage: 0
+      });
+      
+      // 加载页面到StPageFlip
+      pageFlip.loadFromHTML(pageElements);
+      
+      // 监听翻页事件
+      pageFlip.on('flip', (e) => {
+        currentPageIndex = e.data;
+        updateControls();
+        console.log(`翻页到第 ${currentPageIndex + 1} 页`);
+      });
+      
+      // 监听初始化完成事件
+      pageFlip.on('init', (e) => {
+        console.log('✅ StPageFlip 初始化完成');
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('flipbook').style.display = 'block';
+        updateControls();
+      });
+    }
+    
+    // 下一页
+    function nextPage() {
+      if (pageFlip) {
+        pageFlip.flipNext();
+      }
+    }
+    
+    // 上一页
+    function prevPage() {
+      if (pageFlip) {
+        pageFlip.flipPrev();
+      }
+    }
+    
+    // 更新控制按钮
+    function updateControls() {
+      const currentPage = pageFlip ? pageFlip.getCurrentPageIndex() + 1 : 1;
+      document.getElementById('pageInfo').textContent = `${currentPage} / ${totalPages}`;
+      document.getElementById('prevBtn').disabled = currentPage === 1;
+      document.getElementById('nextBtn').disabled = currentPage === totalPages;
+    }
+    
+    // 键盘支持
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevPage();
+      } else if (e.key === 'ArrowRight') {
+        nextPage();
+      }
+    });
+    
+    // 开始加载
+    loadImages();
+  </script>
+</body>
+</html>
