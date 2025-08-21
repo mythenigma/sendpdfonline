@@ -20,9 +20,36 @@
     }
     
     #flipbook {
-      width: 800px;
-      height: 600px;
+      width: 90vw;
+      height: 70vh;
+      max-width: 800px;
+      max-height: 600px;
       margin: 0 auto;
+    }
+    
+    /* 手机端适配 */
+    @media (max-width: 768px) {
+      #flipbook {
+        width: 95vw;
+        height: 60vh;
+        min-width: 300px;
+        min-height: 400px;
+      }
+      
+      body {
+        padding: 10px;
+        overflow-x: hidden;
+      }
+      
+      /* 手机端触摸优化 */
+      .stf__wrapper.--portrait .stf__block {
+        width: 100% !important;
+        max-width: 400px !important;
+      }
+      
+      .stf__item img {
+        padding: 5px !important;
+      }
     }
     
     /* StPageFlip 页面样式 - 完全透明容器 */
@@ -109,6 +136,26 @@
       transition: all 0.3s ease;
       backdrop-filter: blur(10px);
       box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* 手机端优化 */
+    @media (max-width: 768px) {
+      .controls {
+        bottom: 20px;
+        gap: 15px;
+        padding: 0 10px;
+      }
+      
+      .btn {
+        padding: 14px 18px;
+        font-size: 14px;
+        border-radius: 20px;
+      }
+      
+      .page-counter {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
     }
     
     .btn:hover {
@@ -234,26 +281,33 @@
         return;
       }
       
-      // 创建StPageFlip实例 - 恢复真实翻页效果
+      // 响应式尺寸计算
+      const isMobile = window.innerWidth <= 768;
+      const flipbookWidth = isMobile ? Math.min(window.innerWidth * 0.95, 400) : 800;
+      const flipbookHeight = isMobile ? Math.min(window.innerHeight * 0.6, 500) : 600;
+      
+      console.log(`设备类型: ${isMobile ? '手机' : '桌面'}, 尺寸: ${flipbookWidth}x${flipbookHeight}`);
+      
+      // 创建StPageFlip实例 - 响应式配置
       pageFlip = new St.PageFlip(document.getElementById('flipbook'), {
-        width: 800,
-        height: 600,
-        size: 'fixed',
-        minWidth: 400,
-        maxWidth: 1200,
-        minHeight: 500,
-        maxHeight: 800,
-        maxShadowOpacity: 0.5,   // 恢复适度阴影
+        width: flipbookWidth,
+        height: flipbookHeight,
+        size: 'stretch',         // 手机端使用stretch
+        minWidth: 300,
+        maxWidth: 800,
+        minHeight: 400,
+        maxHeight: 600,
+        maxShadowOpacity: 0.5,
         showCover: false,
-        mobileScrollSupport: false,
-        swipeDistance: 30,
+        mobileScrollSupport: true,  // 启用手机滑动支持
+        swipeDistance: 50,          // 增加滑动距离
         clickEventForward: true,
         useMouseEvents: true,
-        drawShadow: true,        // 恢复阴影绘制
-        flippingTime: 1000,
-        usePortrait: true,       // 保持单页模式
-        autoSize: false,
-        showPageCorners: true,   // 恢复页面卷曲效果
+        drawShadow: true,
+        flippingTime: 800,          // 稍快的翻页时间
+        usePortrait: true,          // 保持单页模式
+        autoSize: true,             // 启用自动尺寸
+        showPageCorners: true,
         startPage: 0
       });
       
