@@ -38,6 +38,40 @@
       padding: 100px 0;
       text-align: center;
     }
+    
+    .expert-blog-banner {
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      padding: 30px;
+      border-radius: 20px;
+      margin: 40px 0;
+      box-shadow: 0 15px 35px rgba(102, 126, 234, 0.3);
+    }
+    
+    .blog-link-btn {
+      background: rgba(255,255,255,0.2);
+      color: white;
+      padding: 12px 24px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-size: 14px;
+      transition: all 0.3s ease;
+      display: inline-block;
+      margin: 5px;
+      backdrop-filter: blur(10px);
+    }
+    
+    .blog-link-btn:hover {
+      background: rgba(255,255,255,0.3);
+      color: white;
+      transform: translateY(-2px);
+    }
+    
+    .blog-link-btn.featured {
+      background: white;
+      color: #667eea;
+      font-weight: 600;
+    }
 
     .hero-section h1 {
       font-size: 3rem;
@@ -114,6 +148,19 @@
       <a href="#howItWorks" class="btn btn-primary-custom btn-lg">Learn More</a>
     </div>
   </section>
+
+  <!-- Expert Blog Reference -->
+  <div class="container">
+    <div class="expert-blog-banner">
+      <h3><i class="fas fa-shield-alt"></i> Security Best Practices</h3>
+      <p>Explore comprehensive security guides and advanced protection strategies on our expert blog at <strong>article.maipdf.com</strong></p>
+      <div style="margin-top: 20px;">
+        <a href="https://article.maipdf.com/blog/cn/pdf-online-preview/" target="_blank" rel="noopener" class="blog-link-btn">🔍 Online Preview Security</a>
+        <a href="https://article.maipdf.com/blog/cn/offline-pdf-drm-mode/" target="_blank" rel="noopener" class="blog-link-btn">🛡️ DRM Protection Guide</a>
+        <a href="https://article.maipdf.com/blog/" target="_blank" rel="noopener" class="blog-link-btn featured">📚 Visit Expert Blog</a>
+      </div>
+    </div>
+  </div>
 
   <!-- How It Works Section -->
   <section id="howItWorks" class="container py-5">
