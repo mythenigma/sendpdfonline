@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF翻页书 - 单页模式</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: white;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0;
+      margin: 0;
+      color: #333;
+      overflow: hidden;
+    }
+    
+    /* 针对portrait文档完全去除留白 */
+    .stf__wrapper {
+      max-width: none !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .stf__wrapper.--portrait {
+      justify-content: center !important;
+      max-width: none !important;
+      width: 100vw !important;
+      height: 100vh !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    .stf__wrapper.--portrait .stf__block {
+      width: 100vw !important;
+      height: 100vh !important;
+      max-width: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+    }
+    
+    /* 手机端优化 - 完全铺满 */
+    @media (max-width: 768px) {
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      
+      .stf__wrapper.--portrait .stf__block {
+        width: 100vw !important;
+        height: 100vh !important;
+        max-width: none !important;
+        padding: 0 !important;
+        margin: 0 !important;
+      }
+      
+      .stf__item img {
+        padding: 0px !important;
+        border-radius: 0 !important;
+      }
+    }
+    
+    /* StPageFlip 页面样式 - 完全透明容器 */
+    .stf__item {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      padding: 0 !important;
+      margin: 0 !important;
+      overflow: visible !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .stf__item img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: cover; /* 改为cover以填满空间 */
+      border-radius: 0; /* 去除圆角 */
+      background: white;
+      padding: 0;       /* 去除内边距 */
+      box-shadow: none; /* 去除阴影以获得无缝体验 */
+    }
+    
+    /* 确保页面容器完全透明 */
+    .stf__item {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+    }
+    
+    /* 只隐藏底部书本阴影，保留翻页阴影效果 */
+    .stf__wrapper {
+      box-shadow: none !important;
+    }
+    
+    .stf__block {
+      box-shadow: none !important;
+    }
+    
+    /* 让翻页容器完全贴合 */
+    .stf__parent {
+      box-shadow: none !important;
+      background: transparent !important;
+    }
+    
+    /* 确保图片显示完整 */
+    .page img {
+      max-width: 100% !important;
+      max-height: 100% !important;
+      object-fit: contain !important;
+      border-radius: 8px;
+    }
+    
+    /* 控制按钮 - 适配全屏模式 */
+    .controls {
+      position: fixed;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 15px;
+      z-index: 2000;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 10px 20px;
+      border-radius: 30px;
+      backdrop-filter: blur(10px);
+      box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+    }
+    
+    .btn {
+      background: rgba(255,255,255,0.9);
+      border: none;
+      padding: 10px 20px;
+      border-radius: 20px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      backdrop-filter: blur(10px);
+      box-shadow: none;
+      color: #333;
+    }
+    
+    /* 手机端优化 */
+    @media (max-width: 768px) {
+      .controls {
+        bottom: 20px;
+        gap: 15px;
+        padding: 0 10px;
+      }
+      
+      .btn {
+        padding: 14px 18px;
+        font-size: 14px;
+        border-radius: 20px;
+      }
+      
+      .page-counter {
+        padding: 10px 14px;
+        font-size: 12px;
+      }
+    }
+    
+    .btn:hover {
+      background: white;
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+    }
+    
+    .btn:disabled {
+      opacity: 0.5;
+      cursor: not-allowed;
+      transform: none;
+    }
+    
+    .page-counter {
+      background: rgba(255,255,255,0.9);
+      color: #333;
+      padding: 6px 12px;
+      border-radius: 15px;
+      font-size: 12px;
+      display: flex;
+      align-items: center;
+      box-shadow: none;
+    }
+    
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #333;
+      font-size: 20px;
+      z-index: 1000;
+      text-align: center;
+    }
+    
+    .error-message {
+      color: #ff6b6b;
+      background: rgba(255, 255, 255, 0.1);
+      padding: 20px;
+      border-radius: 10px;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">
+    <div>加载StPageFlip翻页书中...</div>
+    <div style="font-size: 14px; margin-top: 10px;">请稍候</div>
+  </div>
+  
+  <div id="flipbook" style="display: none;"></div>
+  
+  <div class="controls">
+    <button class="btn" onclick="prevPage()" id="prevBtn">← 上一页</button>
+    <div class="page-counter">
+      <span id="pageInfo">1 / 10</span>
+    </div>
+    <button class="btn" onclick="nextPage()" id="nextBtn">下一页 →</button>
+  </div>
+
+  <script src="./page-flip.browser.js"></script>
+  <script>
+    let pageFlip;
+    let currentPageIndex = 0;
+    let totalPages = 4;
+    
+    // 图片路径
+    const folderPath = './portrait/';
+    const imagePaths = Array.from({ length: totalPages }, (_, i) => `${folderPath}${i + 1}.jpg`);
+
+    // 预加载图片并初始化StPageFlip
+    async function loadImages() {
+      console.log('开始加载图片...');
+      const pageElements = [];
+      
+      for (let i = 0; i < totalPages; i++) {
+        try {
+          const img = await loadImage(imagePaths[i]);
+          console.log(`✅ 图片 ${i + 1} 加载成功`);
+          
+          // 创建页面元素 - 只包含图片，无额外容器
+          const pageDiv = document.createElement('div');
+          pageDiv.className = 'page';
+          pageDiv.style.cssText = 'background: none !important; border: none !important; padding: 0 !important; margin: 0 !important; box-shadow: none !important;';
+          
+          const imgElement = document.createElement('img');
+          imgElement.src = img.src;
+          imgElement.alt = `第 ${i + 1} 页`;
+          imgElement.style.cssText = 'width: 100%; height: 100%; object-fit: cover; border-radius: 0; display: block; background: white; box-shadow: none;';
+          
+          pageDiv.appendChild(imgElement);
+          pageElements.push(pageDiv);
+          
+        } catch (error) {
+          console.error(`❌ 图片 ${i + 1} 加载失败:`, error);
+          
+          // 创建错误页面
+          const pageDiv = document.createElement('div');
+          pageDiv.className = 'page';
+          pageDiv.innerHTML = `<div style="text-align: center; color: #666; padding: 20px;">
+            <h3>第 ${i + 1} 页</h3>
+            <p>图片加载失败</p>
+          </div>`;
+          
+          pageElements.push(pageDiv);
+        }
+      }
+      
+      // 初始化StPageFlip
+      initStPageFlip(pageElements);
+    }
+    
+    // 加载单张图片
+    function loadImage(src) {
+      return new Promise((resolve, reject) => {
+        const img = new Image();
+        img.onload = () => resolve(img);
+        img.onerror = reject;
+        img.src = src;
+      });
+    }
+    
+    // 初始化StPageFlip
+    function initStPageFlip(pageElements) {
+      console.log('初始化StPageFlip...');
+      
+      // 检查StPageFlip库是否加载
+      if (typeof St === 'undefined' || typeof St.PageFlip === 'undefined') {
+        console.error('❌ StPageFlip 库未正确加载！');
+        document.getElementById('loading').innerHTML = '<div class="error-message">StPageFlip 库加载失败</div>';
+        return;
+      }
+      
+      // 响应式尺寸计算 - 完全使用屏幕尺寸，无留白
+      const isMobile = window.innerWidth <= 768;
+      const flipbookWidth = window.innerWidth;
+      const flipbookHeight = window.innerHeight;
+      
+      console.log(`设备类型: ${isMobile ? '手机' : '桌面'}, 尺寸: ${flipbookWidth}x${flipbookHeight}`);
+      
+      try {
+        // 创建StPageFlip实例 - 使用全屏尺寸
+        pageFlip = new St.PageFlip(document.getElementById('flipbook'), {
+          width: flipbookWidth,
+          height: flipbookHeight,
+          size: 'stretch',         // 使用stretch模式
+          minWidth: isMobile ? window.innerWidth : window.innerWidth,
+          maxWidth: window.innerWidth,
+          minHeight: isMobile ? window.innerHeight : window.innerHeight,
+          maxHeight: window.innerHeight,
+          maxShadowOpacity: 0.3,
+          showCover: false,
+          mobileScrollSupport: true,  // 启用手机滑动支持
+          swipeDistance: 50,          // 增加滑动距离
+          clickEventForward: true,
+          useMouseEvents: true,
+          drawShadow: true,
+          flippingTime: 800,          // 稍快的翻页时间
+          usePortrait: true,          // 强制单页模式
+          autoSize: true,             // 启用自动尺寸
+          startZIndex: 100,
+          startPage: 0
+        });
+        
+        // 加载页面到StPageFlip
+        pageFlip.loadFromHTML(pageElements);
+        
+        // 监听翻页事件
+        pageFlip.on('flip', (e) => {
+          currentPageIndex = e.data;
+          updateControls();
+          console.log(`翻页到第 ${currentPageIndex + 1} 页`);
+        });
+        
+        // 监听初始化完成事件
+        pageFlip.on('init', (e) => {
+          console.log('✅ StPageFlip 初始化完成');
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('flipbook').style.display = 'block';
+          updateControls();
+        });
+        
+        // 监听状态变化
+        pageFlip.on('changeState', (e) => {
+          console.log('状态变化:', e.data);
+        });
+        
+        // 监听方向变化
+        pageFlip.on('changeOrientation', (e) => {
+          console.log('方向变化:', e.data);
+        });
+        
+      } catch (error) {
+        console.error('❌ StPageFlip 初始化失败:', error);
+        document.getElementById('loading').innerHTML = `<div class="error-message">StPageFlip 初始化失败: ${error.message}</div>`;
+      }
+    }
+    
+    // 下一页
+    function nextPage() {
+      if (pageFlip && currentPageIndex < totalPages - 1) {
+        pageFlip.flipNext();
+      }
+    }
+    
+    // 上一页
+    function prevPage() {
+      if (pageFlip && currentPageIndex > 0) {
+        pageFlip.flipPrev();
+      }
+    }
+    
+    // 更新控制按钮
+    function updateControls() {
+      const currentPage = currentPageIndex + 1;
+      document.getElementById('pageInfo').textContent = `${currentPage} / ${totalPages}`;
+      document.getElementById('prevBtn').disabled = currentPage === 1;
+      document.getElementById('nextBtn').disabled = currentPage === totalPages;
+    }
+    
+    // 键盘支持
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowLeft') {
+        prevPage();
+      } else if (e.key === 'ArrowRight') {
+        nextPage();
+      }
+    });
+    
+    // 开始加载
+    loadImages();
+  </script>
+</body>
+</html>
