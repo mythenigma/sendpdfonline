@@ -3,99 +3,284 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="将可复制的文字PDF一键转换为不可编辑的图片型PDF，防止内容被盗用，保持排版完整，实现跨平台查看">
-    <meta name="keywords" content="PDF转图片, 文字转图片PDF, 只读PDF, 防复制PDF, PDF保护, 文档安全, PDF转换工具">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="将PDF文字转换为只读图片PDF | MaiPDF">
-    <meta property="og:description" content="一键将可复制的文字PDF转换为只读图片PDF，防止复制、防二次修改，保护文档安全">
-    <meta property="og:image" content="https://sendpdfonline.com/maipdf-images/pdf_icon_of_no_printing_no_downloading.png">
-    <meta property="og:url" content="https://sendpdfonline.com/zh/features/convert-pdf-to-image.html">
+    <meta name="description" content="MaiPDF免费PDF转图片工具 - 将可复制的文字PDF一键转换为不可编辑的图片型PDF，防止内容被盗用，保持排版完整，实现跨平台查看">
+    <meta name="keywords" content="PDF转图片, 文字转图片PDF, 只读PDF, 防复制PDF, PDF保护, 文档安全, PDF转换工具, 免费PDF转换, 在线PDF转换">
+    <meta name="author" content="MaiPDF Team">
+    <meta name="robots" content="index, follow">
+    <meta name="theme-color" content="#2563eb">
+    
+    <!-- Open Graph / Facebook -->
     <meta property="og:type" content="website">
+    <meta property="og:url" content="https://sendpdfonline.com/chinese/convert-pdf-to-image.html">
+    <meta property="og:title" content="免费PDF转图片工具 - 将PDF文字转换为只读图片PDF | MaiPDF">
+    <meta property="og:description" content="MaiPDF免费PDF转图片工具 - 一键将可复制的文字PDF转换为只读图片PDF，防止复制、防二次修改，保护文档安全">
+    <meta property="og:image" content="https://sendpdfonline.com/maipdf-images/pdf_icon_of_no_printing_no_downloading.png">
+    
+    <!-- Twitter -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:site" content="@MaiPDF">
-    <meta name="twitter:title" content="将PDF文字转换为只读图片PDF | MaiPDF">
-    <meta name="twitter:description" content="一键将可复制的文字PDF转换为只读图片PDF，防止复制、防二次修改，保护文档安全">
+    <meta name="twitter:url" content="https://sendpdfonline.com/chinese/convert-pdf-to-image.html">
+    <meta name="twitter:title" content="免费PDF转图片工具 - 将PDF文字转换为只读图片PDF | MaiPDF">
+    <meta name="twitter:description" content="MaiPDF免费PDF转图片工具 - 一键将可复制的文字PDF转换为只读图片PDF，防止复制、防二次修改，保护文档安全">
     <meta name="twitter:image" content="https://sendpdfonline.com/maipdf-images/pdf_icon_of_no_printing_no_downloading.png">
-    <link rel="canonical" href="https://sendpdfonline.com/zh/features/convert-pdf-to-image.html">
-    <title>将PDF文字转换为只读图片PDF | MaiPDF</title>
+    
+    <link rel="canonical" href="https://sendpdfonline.com/chinese/convert-pdf-to-image.html">
+    <title>免费PDF转图片工具 - 将PDF文字转换为只读图片PDF | MaiPDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --primary-color: #2563eb;
+            --secondary-color: #1e40af;
+            --accent-color: #f59e0b;
+            --success-color: #10b981;
+            --text-muted: #64748b;
+            --light-color: #f8fafc;
+            --dark-color: #1e293b;
+        }
+        
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            line-height: 1.7;
+            color: var(--dark-color);
+            background: var(--light-color);
             margin: 0;
             padding: 0;
         }
+        
+        .navbar {
+            background: var(--dark-color) !important;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .hero-section {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 80px 0;
+            text-align: center;
+        }
+        
+        .hero-section h1 {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+        
         .container {
             max-width: 1200px;
             margin: 0 auto;
             padding: 20px;
         }
+        
         h1, h2, h3 {
-            color: #2c3e50;
+            color: var(--dark-color);
+            font-weight: 600;
         }
+        
         .section {
             background: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
             padding: 2rem;
             margin-bottom: 2rem;
+            border-left: 4px solid var(--primary-color);
         }
+        
         .feature-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 1.5rem;
             margin-top: 1rem;
         }
+        
         .feature-card {
-            background-color: #ecf7ff;
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            padding: 2rem;
+            border-radius: 12px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(37, 99, 235, 0.1);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.15);
+        }
+        
+        .feature-card i {
+            font-size: 2.5rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        .benefits-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            margin: 2rem 0;
+        }
+        
+        .benefit-item {
+            background: white;
             padding: 1.5rem;
             border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            text-align: center;
             transition: transform 0.3s ease;
         }
-        .feature-card:hover {
+        
+        .benefit-item:hover {
             transform: translateY(-5px);
         }
+        
+        .benefit-item i {
+            font-size: 2rem;
+            color: var(--success-color);
+            margin-bottom: 1rem;
+        }
+        
         ul {
             padding-left: 1.2rem;
         }
+        
         table {
             width: 100%;
             border-collapse: collapse;
             margin: 1rem 0;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
         }
+        
         th, td {
-            border: 1px solid #ddd;
+            border: 1px solid #e2e8f0;
             padding: 12px;
             text-align: left;
         }
+        
         th {
-            background-color: #f2f2f2;
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            font-weight: 600;
+            color: var(--dark-color);
         }
+        
         .cta-button {
             display: inline-block;
-            background-color: #3f51b5;
+            background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
             color: white;
-            padding: 12px 24px;
-            border-radius: 4px;
+            padding: 15px 30px;
+            border-radius: 25px;
             text-decoration: none;
-            font-weight: bold;
+            font-weight: 600;
             margin-top: 1rem;
-            transition: background-color 0.3s ease;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(37, 99, 235, 0.3);
         }
+        
         .cta-button:hover {
-            background-color: #303f9f;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 25px rgba(37, 99, 235, 0.4);
+            color: white;
+        }
+        
+        .free-badge {
+            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: inline-block;
+            margin-bottom: 1rem;
+        }
+        
+        .steps-list {
+            background: white;
+            padding: 2rem;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            counter-reset: step-counter;
+        }
+        
+        .steps-list li {
+            counter-increment: step-counter;
+            margin-bottom: 1rem;
+            padding-left: 3rem;
+            position: relative;
+        }
+        
+        .steps-list li::before {
+            content: counter(step-counter);
+            position: absolute;
+            left: 0;
+            top: 0;
+            background: var(--primary-color);
+            color: white;
+            width: 2rem;
+            height: 2rem;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+        }
+        
+        @media (max-width: 768px) {
+            .hero-section h1 {
+                font-size: 2rem;
+            }
+            
+            .feature-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .benefits-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 </head>
 <body>
-    <header class="section">
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
         <div class="container">
-            <h1>将PDF文字转换为只读图片PDF</h1>
-            <p>一键将可复制的文字PDF转换为只读图片PDF，防止复制、防二次修改，保护文档安全</p>
+            <a class="navbar-brand" href="/">
+                <i class="fas fa-file-pdf"></i> MaiPDF
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="/">首页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/features">功能</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="/usecase">使用案例</a>
+                    </li>
+                </ul>
+            </div>
         </div>
-    </header>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="free-badge">
+                <i class="fas fa-gift me-2"></i>100% 免费使用
+            </div>
+            <h1>免费PDF转图片工具</h1>
+            <p class="lead">一键将可复制的文字PDF转换为只读图片PDF，防止复制、防二次修改，保护文档安全</p>
+            <div class="mt-4">
+                <span class="badge bg-light text-dark me-2">无需注册</span>
+                <span class="badge bg-light text-dark me-2">安全可靠</span>
+                <span class="badge bg-light text-dark">在线转换</span>
+            </div>
+        </div>
+    </section>
 
     <main>
         <div class="container">
@@ -156,7 +341,9 @@
             <section class="section">
                 <h2>立即试试</h2>
                 <p>在浏览器打开 MaiPDF 图片化工具，30秒生成“只读”版本，把版权风险归零。</p>
-                <a href="#" class="cta-button">PDF 文字瞬间图片化</a>
+                <a href="https://maipdf.com" class="cta-button">
+                    <i class="fas fa-magic me-2"></i>免费开始转换
+                </a>
             </section>
         </div>
     </main>
@@ -311,7 +498,9 @@
         </div>
         <p style="margin-top: 1.5rem;">图片型PDF + 动态浮水印 + 阅读次数 = 轻量级数字发行系统。</p>
         <p>零部署、零代码，大文件也能随时掌控——这正是 MaiPDF 图片化工具想带给创作者与团队的“安心感”。</p>
-        <a href="https://maipdf.com/zh/maiconvert.html" class="cta-button" style="margin-top: 1.5rem; display: inline-block;">去体验吧，只需 1 分钟</a>
+        <a href="https://maipdf.com" class="cta-button" style="margin-top: 1.5rem; display: inline-block;">
+            <i class="fas fa-rocket me-2"></i>免费体验，只需 1 分钟
+        </a>
     </section>
 </body>
 </html>
