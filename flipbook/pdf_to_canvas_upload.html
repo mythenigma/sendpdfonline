@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PDF to Image with PDF.js</title>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.min.js"></script>
+  <style>
+    #preview {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+    }
+    canvas {
+      border: 1px solid #ccc;
+      width: 100%;
+      max-width: 600px;
+    }
+  </style>
+</head>
+<body>
+  <h2>Upload PDF and Preview Pages</h2>
+  <input type="file" id="pdfUpload" accept="application/pdf" />
+  <div id="preview"></div>
+  <button id="exportImagesBtn" style="margin-top:20px; display:none">Export Pages as Images</button>
+  <script>
+    const pdfjsLib = window['pdfjs-dist/build/pdf'];
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.14.305/pdf.worker.min.js';
+
+    const input = document.getElementById('pdfUpload');
+    const preview = document.getElementById('preview');
+    const exportBtn = document.getElementById('exportImagesBtn');
+
+    let renderedCanvases = [];
+
+    input.addEventListener('change', async (e) => {
+      const file = e.target.files[0];
+      if (!file) return;
+
+      const arrayBuffer = await file.arrayBuffer();
+      const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+      preview.innerHTML = '';
+      renderedCanvases = [];
+
+      for (let i = 1; i <= pdf.numPages; i++) {
+        const page = await pdf.getPage(i);
+        const scale = 2;
+        const viewport = page.getViewport({ scale });
+
+        const canvas = document.createElement('canvas');
+        const context = canvas.getContext('2d');
+        canvas.width = viewport.width;
+        canvas.height = viewport.height;
+
+        await page.render({ canvasContext: context, viewport }).promise;
+
+        preview.appendChild(canvas);
+        renderedCanvases.push(canvas);
+      }
+
+      exportBtn.style.display = 'inline-block';
+    });
+
+    exportBtn.addEventListener('click', () => {
+      renderedCanvases.forEach((canvas, index) => {
+        canvas.toBlob((blob) => {
+          const fileName = `page-${index + 1}.jpg`;
+          // Here you can use fetch to upload to R2
+          console.log(`Generated blob for: ${fileName}`, blob);
+
+          // Example: download locally
+          const link = document.createElement('a');
+          link.href = URL.createObjectURL(blob);
+          link.download = fileName;
+          link.click();
+        }, 'image/jpeg', 0.9);
+      });
+    });
+  </script>
+</body>
+</html>

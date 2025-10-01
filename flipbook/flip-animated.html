@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaiPDF 翻页效果查看器</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      font-family: 'Arial', sans-serif;
+      overflow: hidden;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .book-container {
+      perspective: 1500px;
+      position: relative;
+    }
+
+    .book {
+      position: relative;
+      width: 600px;
+      height: 400px;
+      transform-style: preserve-3d;
+      margin: 0 auto;
+    }
+
+    .page {
+      position: absolute;
+      width: 300px;
+      height: 400px;
+      background: white;
+      border: 2px solid #ddd;
+      border-radius: 5px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+      transform-origin: left center;
+      transition: transform 0.8s cubic-bezier(0.23, 1, 0.32, 1);
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .page-left {
+      left: 0;
+      z-index: 2;
+    }
+
+    .page-right {
+      right: 0;
+      z-index: 1;
+    }
+
+    .page img {
+      max-width: 100%;
+      max-height: 100%;
+      object-fit: contain;
+      border-radius: 3px;
+    }
+
+    .page.flipping {
+      transform: rotateY(-180deg);
+      z-index: 3;
+    }
+
+    .page-content {
+      padding: 20px;
+      text-align: center;
+      width: 100%;
+      height: 100%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .page-number {
+      position: absolute;
+      bottom: 10px;
+      right: 15px;
+      font-size: 12px;
+      color: #666;
+      font-weight: bold;
+    }
+
+    .controls {
+      position: fixed;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      display: flex;
+      gap: 20px;
+      align-items: center;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 15px 25px;
+      border-radius: 50px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+      backdrop-filter: blur(10px);
+    }
+
+    .control-btn {
+      background: #007bff;
+      color: white;
+      border: none;
+      padding: 12px 20px;
+      border-radius: 25px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: bold;
+      transition: all 0.3s ease;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .control-btn:hover:not(:disabled) {
+      background: #0056b3;
+      transform: translateY(-2px);
+      box-shadow: 0 5px 15px rgba(0,123,255,0.4);
+    }
+
+    .control-btn:disabled {
+      background: #ccc;
+      cursor: not-allowed;
+      transform: none;
+      box-shadow: none;
+    }
+
+    .page-indicator {
+      font-size: 16px;
+      font-weight: bold;
+      color: #333;
+      min-width: 100px;
+      text-align: center;
+    }
+
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background: rgba(255, 255, 255, 0.95);
+      padding: 30px;
+      border-radius: 15px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+      text-align: center;
+      font-size: 18px;
+      color: #333;
+      z-index: 1000;
+    }
+
+    .spinner {
+      border: 4px solid #f3f3f3;
+      border-top: 4px solid #007bff;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      animation: spin 1s linear infinite;
+      margin: 0 auto 15px;
+    }
+
+    @keyframes spin {
+      0% { transform: rotate(0deg); }
+      100% { transform: rotate(360deg); }
+    }
+
+    .book-spine {
+      position: absolute;
+      left: 299px;
+      top: 0;
+      width: 2px;
+      height: 400px;
+      background: linear-gradient(to bottom, #8b4513, #654321);
+      box-shadow: 0 0 10px rgba(0,0,0,0.5);
+      z-index: 0;
+    }
+
+    .page-shadow {
+      position: absolute;
+      width: 300px;
+      height: 400px;
+      background: linear-gradient(to right, transparent, rgba(0,0,0,0.1));
+      pointer-events: none;
+      z-index: 4;
+    }
+
+    .page-shadow.left {
+      left: 0;
+    }
+
+    .page-shadow.right {
+      right: 0;
+      background: linear-gradient(to left, transparent, rgba(0,0,0,0.1));
+    }
+
+    /* 移动端适配 */
+    @media (max-width: 768px) {
+      .book {
+        width: 400px;
+        height: 300px;
+      }
+      
+      .page {
+        width: 200px;
+        height: 300px;
+      }
+      
+      .book-spine {
+        left: 199px;
+        height: 300px;
+      }
+      
+      .page-shadow {
+        width: 200px;
+        height: 300px;
+      }
+    }
+
+    /* 键盘提示 */
+    .keyboard-hint {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background: rgba(255, 255, 255, 0.9);
+      padding: 10px 15px;
+      border-radius: 10px;
+      font-size: 12px;
+      color: #666;
+      backdrop-filter: blur(10px);
+    }
+  </style>
+</head>
+<body>
+  <div class="loading" id="loading">
+    <div class="spinner"></div>
+    <div>正在加载图片...</div>
+  </div>
+
+  <div class="keyboard-hint">
+    <div>← → 方向键翻页</div>
+    <div>Space 下一页</div>
+  </div>
+
+  <div class="book-container">
+    <div class="book" id="book">
+      <div class="book-spine"></div>
+      <div class="page-shadow left"></div>
+      <div class="page-shadow right"></div>
+      <!-- 页面将通过JavaScript动态生成 -->
+    </div>
+  </div>
+
+  <div class="controls">
+    <button class="control-btn" id="prevBtn">
+      <span>◀</span> 上一页
+    </button>
+    <div class="page-indicator" id="pageIndicator">1 / 10</div>
+    <button class="control-btn" id="nextBtn">
+      下一页 <span>▶</span>
+    </button>
+  </div>
+
+  <script>
+    class FlipBook {
+      constructor() {
+        this.folderPath = './stflip/';
+        this.totalPages = 10;
+        this.currentPage = 0;
+        this.isFlipping = false;
+        this.images = [];
+        
+        this.book = document.getElementById('book');
+        this.prevBtn = document.getElementById('prevBtn');
+        this.nextBtn = document.getElementById('nextBtn');
+        this.pageIndicator = document.getElementById('pageIndicator');
+        this.loading = document.getElementById('loading');
+        
+        this.init();
+      }
+
+      async init() {
+        try {
+          await this.loadImages();
+          this.createPages();
+          this.bindEvents();
+          this.updateControls();
+          this.hideLoading();
+        } catch (error) {
+          console.error('初始化失败:', error);
+          this.showError('图片加载失败，请检查图片路径');
+        }
+      }
+
+      async loadImages() {
+        const imagePaths = Array.from({ length: this.totalPages }, (_, i) => 
+          `${this.folderPath}${i + 1}.jpg`
+        );
+
+        this.images = await Promise.all(imagePaths.map(src => {
+          return new Promise((resolve, reject) => {
+            const img = new Image();
+            img.onload = () => resolve(img);
+            img.onerror = () => reject(new Error(`Failed to load ${src}`));
+            img.src = src;
+          });
+        }));
+        
+        console.log('所有图片加载完成');
+      }
+
+      createPages() {
+        // 创建左右两页
+        this.leftPage = this.createPage('left');
+        this.rightPage = this.createPage('right');
+        
+        this.book.appendChild(this.leftPage);
+        this.book.appendChild(this.rightPage);
+        
+        this.updatePageContent();
+      }
+
+      createPage(side) {
+        const page = document.createElement('div');
+        page.className = `page page-${side}`;
+        
+        const content = document.createElement('div');
+        content.className = 'page-content';
+        
+        const img = document.createElement('img');
+        content.appendChild(img);
+        
+        const pageNumber = document.createElement('div');
+        pageNumber.className = 'page-number';
+        content.appendChild(pageNumber);
+        
+        page.appendChild(content);
+        return page;
+      }
+
+      updatePageContent() {
+        // 左页显示当前页
+        if (this.currentPage < this.totalPages) {
+          const leftImg = this.leftPage.querySelector('img');
+          const leftPageNum = this.leftPage.querySelector('.page-number');
+          
+          leftImg.src = this.images[this.currentPage].src;
+          leftPageNum.textContent = this.currentPage + 1;
+        }
+
+        // 右页显示下一页
+        if (this.currentPage + 1 < this.totalPages) {
+          const rightImg = this.rightPage.querySelector('img');
+          const rightPageNum = this.rightPage.querySelector('.page-number');
+          
+          rightImg.src = this.images[this.currentPage + 1].src;
+          rightPageNum.textContent = this.currentPage + 2;
+          this.rightPage.style.display = 'block';
+        } else {
+          this.rightPage.style.display = 'none';
+        }
+      }
+
+      async flipNext() {
+        if (this.isFlipping || this.currentPage >= this.totalPages - 1) return;
+        
+        this.isFlipping = true;
+        
+        // 添加翻页动画
+        this.rightPage.classList.add('flipping');
+        
+        // 等待动画完成
+        await new Promise(resolve => setTimeout(resolve, 800));
+        
+        // 更新页码
+        this.currentPage += 2;
+        
+        // 重置页面
+        this.rightPage.classList.remove('flipping');
+        this.updatePageContent();
+        this.updateControls();
+        
+        this.isFlipping = false;
+      }
+
+      async flipPrev() {
+        if (this.isFlipping || this.currentPage <= 0) return;
+        
+        this.isFlipping = true;
+        
+        // 创建临时的翻页效果
+        const tempPage = this.createPage('temp');
+        tempPage.style.right = '0';
+        tempPage.style.zIndex = '5';
+        tempPage.style.transform = 'rotateY(-180deg)';
+        
+        // 设置临时页面内容为前一页
+        if (this.currentPage - 1 >= 0) {
+          const img = tempPage.querySelector('img');
+          const pageNum = tempPage.querySelector('.page-number');
+          img.src = this.images[this.currentPage - 1].src;
+          pageNum.textContent = this.currentPage;
+        }
+        
+        this.book.appendChild(tempPage);
+        
+        // 执行翻页动画
+        await new Promise(resolve => {
+          setTimeout(() => {
+            tempPage.style.transform = 'rotateY(0deg)';
+            setTimeout(resolve, 800);
+          }, 50);
+        });
+        
+        // 更新页码
+        this.currentPage -= 2;
+        if (this.currentPage < 0) this.currentPage = 0;
+        
+        // 清理和更新
+        this.book.removeChild(tempPage);
+        this.updatePageContent();
+        this.updateControls();
+        
+        this.isFlipping = false;
+      }
+
+      updateControls() {
+        this.pageIndicator.textContent = `${this.currentPage + 1} / ${this.totalPages}`;
+        this.prevBtn.disabled = this.currentPage <= 0;
+        this.nextBtn.disabled = this.currentPage >= this.totalPages - 1;
+      }
+
+      bindEvents() {
+        this.prevBtn.addEventListener('click', () => this.flipPrev());
+        this.nextBtn.addEventListener('click', () => this.flipNext());
+        
+        // 键盘事件
+        document.addEventListener('keydown', (e) => {
+          switch(e.key) {
+            case 'ArrowLeft':
+            case 'PageUp':
+              e.preventDefault();
+              this.flipPrev();
+              break;
+            case 'ArrowRight':
+            case 'PageDown':
+            case ' ':
+              e.preventDefault();
+              this.flipNext();
+              break;
+            case 'Home':
+              e.preventDefault();
+              this.goToPage(0);
+              break;
+            case 'End':
+              e.preventDefault();
+              this.goToPage(this.totalPages - 1);
+              break;
+          }
+        });
+
+        // 触摸事件（移动端）
+        let startX = 0;
+        this.book.addEventListener('touchstart', (e) => {
+          startX = e.touches[0].clientX;
+        });
+        
+        this.book.addEventListener('touchend', (e) => {
+          const endX = e.changedTouches[0].clientX;
+          const diff = startX - endX;
+          
+          if (Math.abs(diff) > 50) {
+            if (diff > 0) {
+              this.flipNext();
+            } else {
+              this.flipPrev();
+            }
+          }
+        });
+      }
+
+      goToPage(pageIndex) {
+        if (pageIndex >= 0 && pageIndex < this.totalPages && !this.isFlipping) {
+          this.currentPage = pageIndex;
+          this.updatePageContent();
+          this.updateControls();
+        }
+      }
+
+      hideLoading() {
+        this.loading.style.display = 'none';
+      }
+
+      showError(message) {
+        this.loading.innerHTML = `<div style="color: red;">${message}</div>`;
+      }
+    }
+
+    // 初始化翻页书
+    document.addEventListener('DOMContentLoaded', () => {
+      new FlipBook();
+    });
+  </script>
+</body>
+</html>

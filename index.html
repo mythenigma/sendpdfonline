@@ -11,13 +11,124 @@
     <meta property="og:image" content="https://sendpdfonline.com/images/logo.png">
     <meta property="og:url" content="https://sendpdfonline.com">
     <title>MaiPDF - Professional PDF Sharing and Security</title>
+    
+    <!-- Structured Data for Organization -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Organization",
+        "name": "MaiPDF",
+        "url": "https://sendpdfonline.com",
+        "logo": "https://sendpdfonline.com/images/logo.png",
+        "description": "Professional PDF sharing and security solutions for businesses and individuals worldwide",
+        "foundingDate": "2024",
+        "sameAs": [
+            "https://maipdf.com",
+            "https://maipdf.cn"
+        ],
+        "contactPoint": {
+            "@type": "ContactPoint",
+            "email": "support@maipdf.com",
+            "contactType": "customer service"
+        },
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "US"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data for WebSite -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "WebSite",
+        "name": "MaiPDF - PDF Sharing and Security",
+        "url": "https://sendpdfonline.com",
+        "description": "Secure PDF sharing, tracking, and analytics for businesses and individuals. Protect your documents with advanced security features.",
+        "inLanguage": ["en", "zh", "ja", "de", "fr", "ar"],
+        "potentialAction": {
+            "@type": "SearchAction",
+            "target": "https://sendpdfonline.com/search?q={search_term_string}",
+            "query-input": "required name=search_term_string"
+        }
+    }
+    </script>
+    
+    <!-- Structured Data for SoftwareApplication -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "SoftwareApplication",
+        "name": "MaiPDF",
+        "applicationCategory": "BusinessApplication",
+        "operatingSystem": "Web",
+        "url": "https://sendpdfonline.com",
+        "description": "Professional PDF sharing and security solutions with advanced features like dynamic watermarks, access control, and detailed analytics",
+        "features": [
+            "PDF Security and Protection",
+            "Dynamic Watermarks",
+            "Access Control",
+            "Document Tracking",
+            "Analytics and Reporting",
+            "Multi-language Support",
+            "QR Code Generation",
+            "Anonymous Sharing"
+        ],
+        "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD",
+            "description": "Free trial available"
+        },
+        "aggregateRating": {
+            "@type": "AggregateRating",
+            "ratingValue": "4.5",
+            "ratingCount": "1000"
+        }
+    }
+    </script>
+    
+    <!-- Additional SEO Meta Tags -->
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+    <meta name="googlebot" content="index, follow">
+    <link rel="canonical" href="https://sendpdfonline.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="MaiPDF">
+    <meta property="og:locale" content="en_US">
+    <meta property="og:locale:alternate" content="zh_CN">
+    <meta property="og:locale:alternate" content="ja_JP">
+    <meta property="og:locale:alternate" content="de_DE">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MaiPDF - Professional PDF Sharing and Security">
+    <meta name="twitter:description" content="Secure PDF sharing, tracking, and analytics for businesses and individuals. Protect your documents with advanced security features.">
+    <meta name="twitter:image" content="https://sendpdfonline.com/images/logo.png">
+    
+    <!-- Hreflang tags for multilingual SEO -->
+    <link rel="alternate" hreflang="en" href="https://sendpdfonline.com/">
+    <link rel="alternate" hreflang="zh" href="https://maipdf.cn/">
+    <link rel="alternate" hreflang="ja" href="https://sendpdfonline.com/japanese/">
+    <link rel="alternate" hreflang="de" href="https://sendpdfonline.com/german/">
+    <link rel="alternate" hreflang="fr" href="https://sendpdfonline.com/french/">
+    <link rel="alternate" hreflang="ar" href="https://sendpdfonline.com/arabic/">
+    <link rel="alternate" hreflang="x-default" href="https://sendpdfonline.com/">
+    
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <!-- FontAwesome -->
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
+    <!-- Google Fonts with preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- Performance optimizations -->
+    <link rel="dns-prefetch" href="//pagead2.googlesyndication.com">
+    <link rel="dns-prefetch" href="//cdn.jsdelivr.net">
+    <link rel="dns-prefetch" href="//cdnjs.cloudflare.com">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <noscript><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"></noscript>
     
     <!-- Custom Styles -->
     <style>
@@ -451,6 +562,60 @@
             box-shadow: 0 8px 25px rgba(245, 158, 11, 0.3);
         }
         
+        /* Hero Stats */
+        .hero-stats {
+            margin-top: 3rem;
+        }
+        
+        .stat-item {
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            margin-bottom: 1rem;
+        }
+        
+        .stat-item h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-item p {
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        
+        /* Demo Section */
+        .demo-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 1rem;
+        }
+        
+        .demo-video {
+            text-align: center;
+        }
+        
+        .video-placeholder {
+            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+            border-radius: 20px;
+            padding: 3rem 2rem;
+            border: 2px dashed var(--border-color);
+            transition: all 0.3s ease;
+        }
+        
+        .video-placeholder:hover {
+            border-color: var(--primary-color);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(37, 99, 235, 0.1);
+        }
+        
+        .video-placeholder i {
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
         /* Responsive Design */
         @media (max-width: 768px) {
             .hero h1 {
@@ -480,6 +645,19 @@
                 right: auto;
                 margin-bottom: 2rem;
                 text-align: center;
+            }
+            
+            .hero-stats .col-md-3 {
+                margin-bottom: 1rem;
+            }
+            
+            .stat-item h3 {
+                font-size: 1.5rem;
+            }
+            
+            .demo-content {
+                text-align: center;
+                margin-bottom: 2rem;
             }
         }
         
@@ -529,12 +707,70 @@
     <!-- Hero Section -->
     <div class="hero">
         <div class="container">
-            <h1><i class="fas fa-file-pdf"></i> MaiPDF</h1>
+            <h1>MaiPDF</h1>
             <p class="lead">Professional PDF Sharing and Security Solutions</p>
             <p class="mb-4">Secure your documents with advanced features like dynamic watermarks, access control, and detailed analytics</p>
             <div class="hero-buttons">
                 <a href="https://maipdf.com" class="cta-button me-3">Get Started Free</a>
                 <a href="#features" class="btn btn-outline-light">Learn More</a>
+                <a href="#demo" class="btn btn-outline-light ms-2">Watch Demo</a>
+            </div>
+            <div class="hero-stats mt-4">
+                <div class="row text-center">
+                    <div class="col-md-3">
+                        <div class="stat-item">
+                            <h3 class="text-white">10K+</h3>
+                            <p class="text-white-50">Active Users</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-item">
+                            <h3 class="text-white">1M+</h3>
+                            <p class="text-white-50">PDFs Protected</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-item">
+                            <h3 class="text-white">99.9%</h3>
+                            <p class="text-white-50">Uptime</p>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="stat-item">
+                            <h3 class="text-white">24/7</h3>
+                            <p class="text-white-50">Support</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Demo Section -->
+    <div class="container my-5" id="demo">
+        <h2 class="section-title text-center"><i class="fas fa-play-circle"></i> See MaiPDF in Action</h2>
+        <div class="row align-items-center">
+            <div class="col-md-6">
+                <div class="demo-content">
+                    <h3>Experience the Power of MaiPDF</h3>
+                    <p class="lead">Watch how easy it is to secure, share, and track your PDF documents with our advanced platform.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Dynamic watermark protection</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Real-time access tracking</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Secure sharing via QR codes</li>
+                        <li><i class="fas fa-check-circle text-success me-2"></i> Advanced analytics dashboard</li>
+                    </ul>
+                    <a href="https://maipdf.com" class="btn btn-primary btn-lg mt-3">Try It Now</a>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="demo-video">
+                    <div class="video-placeholder">
+                        <i class="fas fa-play-circle fa-4x text-primary"></i>
+                        <p class="mt-3">Interactive Demo Available</p>
+                        <a href="https://maipdf.com" class="btn btn-outline-primary">Launch Demo</a>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -631,6 +867,80 @@
                         <li><a href="https://sendpdfonline.com/features/en/tracking/client-feedback-management.html"><i class="fas fa-comments"></i> Feedback Collection</a></li>
                         <li><a href="https://sendpdfonline.com/article/sales-pitch-decks.html"><i class="fas fa-presentation"></i> Pitch Deck Security</a></li>
                     </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Expert Articles from MaiPDF Blog -->
+    <div class="container mb-5">
+        <h2 class="section-title"><i class="fas fa-newspaper"></i> Expert Articles & Insights</h2>
+        <p class="text-center mb-4">Professional guides and insights from <a href="https://article.maipdf.com/blog/" target="_blank" rel="noopener" class="text-primary">MaiPDF Blog</a></p>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3><i class="fas fa-eye text-primary"></i> PDF Online Preview</h3>
+                    <p>Learn how to convert PDF files into web links or QR codes for instant browser viewing without downloads.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i> No download required</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Cross-platform compatibility</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Instant access via links</li>
+                        <li><i class="fas fa-check text-success me-2"></i> QR code generation</li>
+                    </ul>
+                    <a href="https://article.maipdf.com/blog/cn/pdf-online-preview/" target="_blank" rel="noopener" class="btn btn-outline-primary btn-sm">Read Full Guide</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3><i class="fas fa-shield-alt text-warning"></i> Access Control & Security</h3>
+                    <p>Master advanced PDF security with access permissions, view limits, expiration dates, and dynamic watermarks.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i> View limit controls</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Time-based expiration</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Dynamic watermarking</li>
+                        <li><i class="fas fa-check text-success me-2"></i> User tracking</li>
+                    </ul>
+                    <a href="https://article.maipdf.com/blog/" target="_blank" rel="noopener" class="btn btn-outline-warning btn-sm">Explore Security</a>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <h3><i class="fas fa-download text-info"></i> Offline DRM Solutions</h3>
+                    <p>Discover offline DRM mode for secure PDF viewing without internet connection, with built-in access control.</p>
+                    <ul class="list-unstyled">
+                        <li><i class="fas fa-check text-success me-2"></i> Offline functionality</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Built-in DRM protection</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Local HTML packages</li>
+                        <li><i class="fas fa-check text-success me-2"></i> Access logging</li>
+                    </ul>
+                    <a href="https://article.maipdf.com/blog/cn/offline-pdf-drm-mode/" target="_blank" rel="noopener" class="btn btn-outline-info btn-sm">Learn DRM Mode</a>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Featured Blog Articles -->
+        <div class="row mt-4">
+            <div class="col-12">
+                <div class="feature-card">
+                    <div class="row align-items-center">
+                        <div class="col-md-8">
+                            <h3><i class="fas fa-blog text-primary"></i> MaiPDF Expert Blog</h3>
+                            <p class="mb-3">Stay updated with the latest PDF security trends, best practices, and advanced tutorials from our expert team at MaiPDF Blog.</p>
+                            <div class="d-flex flex-wrap gap-2 mb-3">
+                                <span class="badge bg-primary">PDF Security</span>
+                                <span class="badge bg-success">Document Management</span>
+                                <span class="badge bg-info">Digital Collaboration</span>
+                                <span class="badge bg-warning">Access Control</span>
+                                <span class="badge bg-danger">Watermarking</span>
+                            </div>
+                        </div>
+                        <div class="col-md-4 text-center">
+                            <a href="https://article.maipdf.com/blog/" target="_blank" rel="noopener" class="btn btn-primary btn-lg">
+                                <i class="fas fa-external-link-alt me-2"></i>Visit MaiPDF Blog
+                            </a>
+                            <p class="small text-muted mt-2">Expert insights & tutorials</p>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -758,7 +1068,7 @@
                         <div class="col-6">
                             <ul class="list-unstyled">
                                 <li><a href="https://maipdf.com">Get Started</a></li>
-                                <li><a href="#features">Features</a></li>
+                                <li><a href="https://article.maipdf.com/blog/" target="_blank" rel="noopener">Expert Blog</a></li>
                                 <li><a href="mailto:support@maipdf.com">Support</a></li>
                                 <li><a href="/privacy">Privacy</a></li>
                             </ul>
@@ -766,15 +1076,30 @@
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <h4>Languages</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://sendpdfonline.com">🇺🇸 English</a></li>
-                        <li><a href="https://maipdf.cn">🇨🇳 中文</a></li>
-                        <li><a href="https://sendpdfonline.com/japanese/">🇯🇵 日本語</a></li>
-                        <li><a href="https://sendpdfonline.com/german/">🇩🇪 Deutsch</a></li>
-                        <li><a href="https://sendpdfonline.com/french/">🇫🇷 Français</a></li>
-                        <li><a href="https://sendpdfonline.com/arabic/">🇸🇦 العربية</a></li>
-                    </ul>
+                    <h4>Languages & Resources</h4>
+                    <div class="row">
+                        <div class="col-12 mb-3">
+                            <h5 class="h6">Languages</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://sendpdfonline.com">🇺🇸 English</a></li>
+                                <li><a href="https://maipdf.cn">🇨🇳 中文</a></li>
+                                <li><a href="https://sendpdfonline.com/japanese/">🇯🇵 日本語</a></li>
+                                <li><a href="https://sendpdfonline.com/german/">🇩🇪 Deutsch</a></li>
+                                <li><a href="https://sendpdfonline.com/french/">🇫🇷 Français</a></li>
+                                <li><a href="https://sendpdfonline.com/arabic/">🇸🇦 العربية</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-12">
+                            <h5 class="h6">Popular Features</h5>
+                            <ul class="list-unstyled">
+                                <li><a href="https://sendpdfonline.com/features/en/security/advanced-security-configurations.html">PDF Security</a></li>
+                                <li><a href="https://sendpdfonline.com/features/en/watermark/dynamic-qr-watermark-pdf.html">QR Watermarks</a></li>
+                                <li><a href="https://sendpdfonline.com/features/en/tracking/pdf-tracking-analytics.html">PDF Analytics</a></li>
+                                <li><a href="https://sendpdfonline.com/features/en/sharing/convert-pdf-to-qr-code.html">PDF to QR Code</a></li>
+                                <li><a href="https://sendpdfonline.com/convert-pdf-features.html">PDF Converter</a></li>
+                            </ul>
+                        </div>
+                    </div>
                 </div>
             </div>
             <hr class="my-4">
@@ -890,6 +1215,25 @@
                     }, 100);
                 }, 1000);
             }
+            
+            // Add counter animation for hero stats
+            const statNumbers = document.querySelectorAll('.stat-item h3');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.textContent);
+                if (!isNaN(target)) {
+                    let current = 0;
+                    const increment = target / 50;
+                    const timer = setInterval(() => {
+                        current += increment;
+                        if (current >= target) {
+                            stat.textContent = stat.textContent.replace(/\d+/, target);
+                            clearInterval(timer);
+                        } else {
+                            stat.textContent = stat.textContent.replace(/\d+/, Math.floor(current));
+                        }
+                    }, 50);
+                }
+            });
         });
 
         // Add performance monitoring

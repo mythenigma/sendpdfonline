@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MaiPDF Flipbook Viewer</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      background: #f8f9fa;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+      color: #333;
+    }
+    
+    #flipbook {
+      width: 90vw;
+      height: 80vh;
+      max-width: 1000px;
+      max-height: 700px;
+      margin: 0 auto;
+    }
+    
+    /* 手机端适配 */
+    @media (max-width: 768px) {
+      #flipbook {
+        width: 95vw;
+        height: 70vh;
+        min-width: 300px;
+        min-height: 400px;
+      }
+      
+      body {
+        padding: 10px;
+      }
+    }
+    img {
+      image-rendering: auto;
+      image-rendering: crisp-edges;
+      image-rendering: -webkit-optimize-contrast;
+      image-rendering: pixelated;
+    }
+    
+    .page {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: white;
+      border-radius: 8px;
+      overflow: hidden;
+    }
+    
+    .page img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      display: block;
+    }
+    
+    /* StPageFlip 页面样式优化 */
+    .stf__item {
+      background: none !important;
+      border: none !important;
+      box-shadow: none !important;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    
+    .stf__item img {
+      border-radius: 8px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    }
+    
+    /* 加载提示 */
+    .loading {
+      position: fixed;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #333;
+      font-size: 18px;
+      z-index: 1000;
+      text-align: center;
+    }
+    
+    /* 控制面板 */
+    .controls {
+      position: fixed;
+      top: 20px;
+      left: 20px;
+      background: rgba(255, 255, 255, 0.95);
+      padding: 15px 20px;
+      border-radius: 10px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      z-index: 2000;
+      backdrop-filter: blur(10px);
+    }
+    
+    .controls h3 {
+      margin: 0 0 10px 0;
+      font-size: 16px;
+      color: #333;
+    }
+    
+    .folder-selector {
+      margin-bottom: 10px;
+    }
+    
+    .folder-selector label {
+      display: block;
+      margin-bottom: 5px;
+      font-size: 14px;
+      color: #666;
+    }
+    
+    .folder-selector select {
+      width: 200px;
+      padding: 8px 12px;
+      border: 2px solid #e9ecef;
+      border-radius: 6px;
+      font-size: 14px;
+      background: white;
+      cursor: pointer;
+      transition: border-color 0.3s ease;
+    }
+    
+    .folder-selector select:focus {
+      outline: none;
+      border-color: #667eea;
+    }
+    
+    .btn-reload {
+      background: #667eea;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      font-size: 14px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+      margin-top: 5px;
+    }
+    
+    .btn-reload:hover {
+      background: #5a6fd8;
+      transform: translateY(-1px);
+    }
+    
+    .info-display {
+      margin-top: 10px;
+      padding: 8px;
+      background: #f8f9fa;
+      border-radius: 4px;
+      font-size: 12px;
+      color: #666;
+    }
+    
+    .config-note {
+      margin-top: 5px;
+      padding: 6px;
+      background: #e7f3ff;
+      border-left: 3px solid #007bff;
+      border-radius: 3px;
+      font-size: 11px;
+      color: #0056b3;
+    }
+  </style>
+</head>
+<body>
+  <!-- 控制面板 -->
+  <div class="controls">
+    <h3>📂 文件夹选择</h3>
+    <div class="folder-selector">
+      <label for="folderSelect">选择图片文件夹:</label>
+      <select id="folderSelect" onchange="onFolderChange()">
+        <option value="stflip">stflip (横向/混合)</option>
+        <option value="portrait">portrait (纵向)</option>
+      </select>
+    </div>
+    <button class="btn-reload" onclick="reloadFlipbook()">🔄 重新加载</button>
+    <div class="info-display" id="infoDisplay">
+      当前: stflip 文件夹
+    </div>
+    <div class="config-note">
+      💡 图片数量需手动配置<br>
+      如需添加文件夹，请修改代码中的 folderConfig
+    </div>
+  </div>
+
+  <div class="loading" id="loading">
+    <div>加载翻页书中...</div>
+    <div style="font-size: 14px; margin-top: 10px;">请稍候</div>
+  </div>
+  
+  <div id="flipbook" style="display: none;"></div>
+
+  <script src="./page-flip.browser.js"></script>
+  <script>
+    let currentPageFlip = null;
+    let currentFolder = 'stflip';
+    
+    // 文件夹配置 - 手动指定每个文件夹的图片数量
+    const folderConfig = {
+      'stflip': {
+        count: 10,
+        name: '横向/混合',
+        description: '包含不同方向的图片'
+      },
+      'portrait': {
+        count: 4,
+        name: '纵向',
+        description: '主要为纵向图片'
+      }
+    };
+
+    // 获取当前选择的文件夹路径
+    function getCurrentFolderPath() {
+      const folderSelect = document.getElementById('folderSelect');
+      currentFolder = folderSelect.value;
+      return `./${currentFolder}/`;
+    }
+
+    // 文件夹选择变更事件
+    function onFolderChange() {
+      const folderSelect = document.getElementById('folderSelect');
+      const selectedFolder = folderSelect.value;
+      console.log('选择文件夹:', selectedFolder);
+      currentFolder = selectedFolder;
+      updateInfoDisplay(currentFolder);
+    }
+
+    // 更新信息显示
+    function updateInfoDisplay(folder, imageCount = 0, avgRatio = 0) {
+      const info = document.getElementById('infoDisplay');
+      if (!info) {
+        console.error('❌ 找不到 infoDisplay 元素');
+        return;
+      }
+      
+      const config = folderConfig[folder];
+      if (!config) {
+        console.error('❌ 找不到文件夹配置:', folder);
+        return;
+      }
+      
+      const folderType = config.name;
+      const expectedCount = config.count;
+      
+      info.innerHTML = `
+        当前: ${folder} 文件夹 (${folderType})<br>
+        预期图片: ${expectedCount} 张<br>
+        ${imageCount > 0 ? `实际加载: ${imageCount} 张<br>` : ''}
+        ${avgRatio > 0 ? `平均宽高比: ${avgRatio.toFixed(2)}` : ''}
+      `;
+    }
+
+    // 重新加载翻页书
+    function reloadFlipbook() {
+      const folderSelect = document.getElementById('folderSelect');
+      if (!folderSelect) {
+        console.error('❌ 找不到 folderSelect 元素');
+        alert('错误：找不到文件夹选择器！');
+        return;
+      }
+      
+      const newFolder = folderSelect.value;
+      
+      console.log('🔄 重新加载翻页书...');
+      console.log('当前选择的文件夹:', newFolder);
+      console.log('folderConfig中的配置:', folderConfig[newFolder]);
+      
+      if (!folderConfig[newFolder]) {
+        console.error('❌ 文件夹配置不存在:', newFolder);
+        alert(`错误：文件夹 "${newFolder}" 的配置不存在！`);
+        return;
+      }
+      
+      // 检查必要的DOM元素
+      const loadingElement = document.getElementById('loading');
+      const flipbookElement = document.getElementById('flipbook');
+      
+      if (!loadingElement) {
+        console.error('❌ 找不到 loading 元素');
+        return;
+      }
+      
+      if (!flipbookElement) {
+        console.error('❌ 找不到 flipbook 元素');
+        return;
+      }
+      
+      // 显示加载状态
+      loadingElement.style.display = 'block';
+      flipbookElement.style.display = 'none';
+      
+      // 更新当前文件夹
+      currentFolder = newFolder;
+      updateInfoDisplay(currentFolder);
+      
+      // 简单粗暴的方法：刷新页面
+      console.log('🔄 即将刷新页面以切换文件夹...');
+      
+      // 保存选择的文件夹到 localStorage
+      localStorage.setItem('selectedFolder', newFolder);
+      
+      // 刷新页面
+      setTimeout(() => {
+        window.location.reload();
+      }, 500);
+    }
+
+    // 检查StPageFlip库是否加载
+    function checkLibrary() {
+      if (typeof St === 'undefined' || typeof St.PageFlip === 'undefined') {
+        console.error('❌ StPageFlip 库未正确加载！');
+        const loadingElement = document.getElementById('loading');
+        if (loadingElement) {
+          loadingElement.innerHTML = '<div style="color: #ff6b6b;">StPageFlip 库加载失败</div>';
+        }
+        return false;
+      }
+      return true;
+    }
+
+    const preloadImageSizes = async (paths) => {
+      console.log(`开始预加载 ${currentFolder} 文件夹中的图片...`);
+      const dimensions = await Promise.all(paths.map((src, index) => {
+        return new Promise(resolve => {
+          const img = new Image();
+          img.onload = () => {
+            const ratio = img.width / img.height;
+            const type = ratio > 1 ? 'landscape' : 'portrait';
+            console.log(`✅ 图片 ${index + 1} (${type}): ${img.width}x${img.height}, 比例: ${ratio.toFixed(2)}`);
+            resolve({ width: img.width, height: img.height, src, ratio, type });
+          };
+          img.onerror = () => {
+            console.error(`❌ 图片 ${index + 1} 加载失败: ${src}`);
+            resolve({ width: 800, height: 600, src, ratio: 1.33, type: 'landscape' }); // 默认尺寸
+          };
+          img.src = src;
+        });
+      }));
+      return dimensions;
+    };
+
+    // 初始化函数
+    async function initFlipbook() {
+      if (!checkLibrary()) {
+        return;
+      }
+
+      try {
+        console.log('📁 当前使用的文件夹:', currentFolder);
+        const folderPath = getCurrentFolderPath();
+        const currentConfig = folderConfig[currentFolder];
+        const totalPages = currentConfig.count;
+        
+        console.log(`📁 加载文件夹: ${currentFolder} (${currentConfig.name})`);
+        console.log(`📸 预期图片数量: ${totalPages}`);
+        
+        const imagePaths = Array.from({ length: totalPages }, (_, i) => `${folderPath}${i + 1}.jpg`);
+        
+        const sizes = await preloadImageSizes(imagePaths);
+        
+        // 分析图片类型
+        const landscapeCount = sizes.filter(s => s.type === 'landscape').length;
+        const portraitCount = sizes.filter(s => s.type === 'portrait').length;
+        const avgRatio = sizes.reduce((sum, s) => sum + s.ratio, 0) / sizes.length;
+        
+        console.log(`📊 图片分析结果:`);
+        console.log(`   横向图片: ${landscapeCount} 张`);
+        console.log(`   纵向图片: ${portraitCount} 张`);
+        console.log(`   平均宽高比: ${avgRatio.toFixed(2)}`);
+        
+        updateInfoDisplay(currentFolder, sizes.length, avgRatio);
+        
+        const screenHeight = window.innerHeight;
+        const screenWidth = window.innerWidth;
+
+        let fitWidth = screenWidth * 0.8; // 使用80%的屏幕宽度
+        let fitHeight = fitWidth / avgRatio;
+        
+        if (fitHeight > screenHeight * 0.8) {
+          fitHeight = screenHeight * 0.8;
+          fitWidth = fitHeight * avgRatio;
+        }
+
+        const forceSinglePage = true; // 强制所有页面都单页展示
+        console.log('强制单页模式:', forceSinglePage);
+
+        // 确保 flipbook 容器处于正确状态
+        const flipbookContainer = document.getElementById('flipbook');
+        if (!flipbookContainer) {
+          console.error('❌ 找不到 flipbook 容器');
+          document.getElementById('loading').innerHTML = '<div style="color: #ff6b6b;">找不到翻页书容器</div>';
+          return;
+        }
+        
+        // 确保容器是空的和可见的
+        flipbookContainer.innerHTML = '';
+        flipbookContainer.style.display = 'block';
+
+        console.log('🚀 开始创建 StPageFlip 实例...');
+        const pageFlip = new St.PageFlip(
+          flipbookContainer,
+          {
+            width: Math.round(fitWidth),
+            height: Math.round(fitHeight),
+            size: 'stretch',
+            minWidth: 315,
+            maxWidth: 1200,
+            minHeight: 400,
+            maxHeight: 800,
+            maxShadowOpacity: 0.5,
+            showCover: false,
+            mobileScrollSupport: true,
+            useMouseEvents: true,
+            drawShadow: true,
+            usePortrait: true,
+            swipeDistance: 50,
+            flippingTime: 800,
+            autoSize: true,
+            startZIndex: 100
+          }
+        );
+        
+        console.log('✅ StPageFlip 实例创建成功');
+
+        const pages = sizes.map((img, index) => {
+          console.log(`图片 ${index + 1} (${img.type}): 宽度=${img.width}, 高度=${img.height}, 比例=${img.ratio.toFixed(2)}`);
+          return [img.src];
+        });
+
+        const pageWrappers = pages.map((pair, index) => {
+          const wrapper = document.createElement('div');
+          wrapper.className = 'page';
+          
+          // 根据图片类型调整页面样式
+          const imgType = sizes[index].type;
+          const styleColor = imgType === 'landscape' ? '#fff3cd' : '#d1ecf1';
+          wrapper.style.cssText = `background: ${styleColor}; padding: 10px; border-radius: 8px; border: 2px solid ${imgType === 'landscape' ? '#ffc107' : '#17a2b8'};`;
+          
+          pair.forEach(src => {
+            const img = document.createElement('img');
+            img.src = src;
+            img.alt = `第 ${index + 1} 页 (${imgType})`;
+            img.style.cssText = 'width: 100%; height: 100%; object-fit: contain; border-radius: 4px;';
+            wrapper.appendChild(img);
+          });
+          
+          console.log(`创建页面 ${index + 1} (${imgType})，包含 ${pair.length} 张图片`);
+          return wrapper;
+        });
+
+        // 加载页面
+        currentPageFlip = pageFlip;
+        pageFlip.loadFromHTML(pageWrappers);
+        
+        // 监听事件
+        pageFlip.on('init', () => {
+          console.log('✅ StPageFlip 初始化完成');
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('flipbook').style.display = 'block';
+        });
+        
+        pageFlip.on('flip', (e) => {
+          console.log(`翻页到第 ${e.data + 1} 页`);
+        });
+        
+      } catch (error) {
+        console.error('❌ 初始化失败:', error);
+        const loadingElement = document.getElementById('loading');
+        if (loadingElement) {
+          loadingElement.innerHTML = `
+            <div style="color: #ff6b6b; text-align: center;">
+              <h3>初始化失败</h3>
+              <p>错误: ${error.message}</p>
+              <p style="font-size: 12px; color: #666; margin-top: 10px;">
+                请检查控制台获取更多详细信息
+              </p>
+            </div>
+          `;
+        }
+      }
+    }
+
+    // 启动应用
+    document.addEventListener('DOMContentLoaded', function() {
+      console.log('🚀 页面加载完成，开始初始化...');
+      
+      // 检查是否有保存的文件夹选择
+      const savedFolder = localStorage.getItem('selectedFolder');
+      if (savedFolder && folderConfig[savedFolder]) {
+        console.log('📂 恢复保存的文件夹选择:', savedFolder);
+        currentFolder = savedFolder;
+        const folderSelect = document.getElementById('folderSelect');
+        if (folderSelect) {
+          folderSelect.value = savedFolder;
+        }
+        // 清除保存的选择
+        localStorage.removeItem('selectedFolder');
+      }
+      
+      // 检查关键元素是否存在
+      const folderSelect = document.getElementById('folderSelect');
+      const flipbook = document.getElementById('flipbook');
+      const loading = document.getElementById('loading');
+      
+      if (!folderSelect) {
+        console.error('❌ 找不到 folderSelect 元素');
+        return;
+      }
+      if (!flipbook) {
+        console.error('❌ 找不到 flipbook 元素');
+        return;
+      }
+      if (!loading) {
+        console.error('❌ 找不到 loading 元素');
+        return;
+      }
+      
+      console.log('✅ 所有必要元素都存在');
+      
+      // 初始化显示信息
+      updateInfoDisplay(currentFolder);
+      
+      // 启动翻页书
+      initFlipbook();
+    });
+  </script>
+</body>
+</html>

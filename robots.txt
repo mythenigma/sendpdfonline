@@ -1,0 +1,49 @@
+User-agent: *
+Allow: /
+
+# Allow all major search engines
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+User-agent: DuckDuckBot
+Allow: /
+
+User-agent: Baiduspider
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+User-agent: facebookexternalhit
+Allow: /
+
+# Disallow certain file types and directories that don't need indexing
+Disallow: *.js$
+Disallow: *.css$
+Disallow: *.png$
+Disallow: *.jpg$
+Disallow: *.jpeg$
+Disallow: *.gif$
+Disallow: *.svg$
+Disallow: /grabify/
+Disallow: /flipbook/stflip/
+Disallow: /maifle/
+Disallow: /maipdf-images/
+Disallow: /images/
+
+# Allow important image files that may be referenced in content
+Allow: /favicon.ico
+Allow: /maiconver.png
+Allow: /images/logo.png
+
+# Sitemap location
+Sitemap: https://sendpdfonline.com/sitemap.xml
+
+# Crawl delay (optional - helps prevent overwhelming server)
+Crawl-delay: 1
