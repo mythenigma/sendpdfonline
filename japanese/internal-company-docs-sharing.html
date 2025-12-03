@@ -277,8 +277,41 @@
             color: white;
         }
     </style>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "転送リスクなしで社内文書を公開する",
+                "item": "https://sendpdfonline.com/japanese/internal-company-docs-sharing.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">転送リスクなしで社内文書を公開する</li>
+            </ol>
+        </div>
+    </nav>
+    
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
         <div class="container">

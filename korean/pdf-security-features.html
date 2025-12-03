@@ -124,8 +124,41 @@
             border-color: #45a3b1;
         }
     </style>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "MaiPDF의 PDF 보안 기능",
+                "item": "https://sendpdfonline.com/korean/pdf-security-features.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">MaiPDF의 PDF 보안 기능</li>
+            </ol>
+        </div>
+    </nav>
+    
     <!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(to right, #2C8C99, #45a3b1);">
         <div class="container">

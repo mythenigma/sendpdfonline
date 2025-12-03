@@ -59,8 +59,48 @@
             border-left: 4px solid #ff9800;
         }
     </style>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Features",
+                "item": "https://sendpdfonline.com/features/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "PDF Expiration & Access Control: Manage Document Access",
+                "item": "https://sendpdfonline.com/features/en/security/pdf-expiration-access-control.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+                <li class="breadcrumb-item active" aria-current="page">PDF Expiration & Access Control: Manage Document A</li>
+            </ol>
+        </div>
+    </nav>
+    
     <h1>PDF Expiration & Access Control: Manage Document Access</h1>
     
     <p>Take control of your PDF documents with advanced expiration settings and access controls. Learn how to manage document availability and security with MaiPDF's comprehensive features.</p>

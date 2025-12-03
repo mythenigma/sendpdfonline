@@ -23,24 +23,11 @@ Allow: /
 User-agent: facebookexternalhit
 Allow: /
 
-# Disallow certain file types and directories that don't need indexing
-Disallow: *.js$
-Disallow: *.css$
-Disallow: *.png$
-Disallow: *.jpg$
-Disallow: *.jpeg$
-Disallow: *.gif$
-Disallow: *.svg$
+# Disallow only specific directories that shouldn't be indexed
 Disallow: /grabify/
 Disallow: /flipbook/stflip/
+Disallow: /flipbook/portrait/
 Disallow: /maifle/
-Disallow: /maipdf-images/
-Disallow: /images/
-
-# Allow important image files that may be referenced in content
-Allow: /favicon.ico
-Allow: /maiconver.png
-Allow: /images/logo.png
 
 # Sitemap location
 Sitemap: https://sendpdfonline.com/sitemap.xml

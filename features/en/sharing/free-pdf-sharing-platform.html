@@ -27,8 +27,48 @@
             margin: 20px 0;
         }
     </style>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Features",
+                "item": "https://sendpdfonline.com/features/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Free PDF Sharing Platform",
+                "item": "https://sendpdfonline.com/features/en/sharing/free-pdf-sharing-platform.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Free PDF Sharing Platform</li>
+            </ol>
+        </div>
+    </nav>
+    
     <h1>Free PDF Sharing Platform - MaiPDF</h1>
     
     <p>MaiPDF offers a completely free platform for sharing and managing your PDF documents online. Unlike many other services that require subscriptions or charge per document, MaiPDF provides all its core features at no cost.</p>

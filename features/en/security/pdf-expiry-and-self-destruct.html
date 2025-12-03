@@ -462,9 +462,49 @@
       }
     }
   </style>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Features",
+                "item": "https://sendpdfonline.com/features/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Expiring a File: Set a Limit on PDF Views with MaiPDF",
+                "item": "https://sendpdfonline.com/features/en/security/pdf-expiry-and-self-destruct.html"
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Expiring a File: Set a Limit on PDF Views with Mai</li>
+            </ol>
+        </div>
+    </nav>
+    
   <!-- Floating Shapes -->
   <div class="floating-shapes">
     <div class="shape shape-1"></div>
@@ -536,7 +576,49 @@
       </div>
     </section>
 
-    <div class="cta-section">
+    
+                <!-- Related Articles -->
+                <div class="mt-5">
+                    <h2><i class="fas fa-newspaper"></i> Related Articles & Resources</h2>
+                    <p class="lead mb-4">Explore more guides about secure PDF sharing and document management.</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/share-pdf-online.html">Share PDF Online Free</a></h5>
+                                    <p class="card-text small">Complete guide to sharing PDFs securely</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/controlling-pdf-access.html">Control PDF Access</a></h5>
+                                    <p class="card-text small">Advanced access control features</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-tracking-analytics.html">PDF Analytics</a></h5>
+                                    <p class="card-text small">Track and analyze PDF engagement</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/features/">All Features</a></h5>
+                                    <p class="card-text small">Explore all MaiPDF features</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            <div class="cta-section">
       <h2 class="cta-title">Ready to Control Your Document Access?</h2>
       <p class="cta-text">Start protecting your sensitive PDFs today with MaiPDF's powerful expiration features. Set view limits, track access, and maintain complete control over your shared documents.</p>
       <a href="https://maipdf.com" class="cta-btn">Try MaiPDF Now</a>

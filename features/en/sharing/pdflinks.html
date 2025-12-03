@@ -56,9 +56,49 @@
             border: 1px solid rgba(255, 255, 255, 0.2);
         }
     </style>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Features",
+                "item": "https://sendpdfonline.com/features/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "MaiPDF",
+                "item": "https://sendpdfonline.com/features/en/sharing/pdflinks.html"
+            }
+        ]
+    }
+    </script>
 </head>
 
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+                <li class="breadcrumb-item active" aria-current="page">MaiPDF</li>
+            </ol>
+        </div>
+    </nav>
+    
     <div class="container-xxl bg-white p-0">
         <!-- Navigation -->
         <nav class="navbar navbar-expand-lg navbar-light px-4 px-lg-5 py-3 py-lg-0 shadow-sm">

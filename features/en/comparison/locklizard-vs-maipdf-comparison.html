@@ -64,8 +64,48 @@
             color: white;
         }
     </style>
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Features",
+                "item": "https://sendpdfonline.com/features/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Locklizard vs MaiPDF: The Ultimate Comparison",
+                "item": "https://sendpdfonline.com/features/en/comparison/locklizard-vs-maipdf-comparison.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Locklizard vs MaiPDF: The Ultimate Comparison</li>
+            </ol>
+        </div>
+    </nav>
+    
     <!-- Navigation -->
     <nav class="navbar navbar-expand-lg navbar-dark" style="background-color: var(--primary-color);">
         <div class="container">

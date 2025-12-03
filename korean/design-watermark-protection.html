@@ -148,8 +148,41 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&display=swap" rel="stylesheet">
+
+    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Home",
+                "item": "https://sendpdfonline.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "디자인 작업 보호",
+                "item": "https://sendpdfonline.com/korean/design-watermark-protection.html"
+            }
+        ]
+    }
+    </script>
 </head>
 <body>
+
+    <!-- Breadcrumb Navigation -->
+    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+        <div class="container">
+            <ol class="breadcrumb mb-0">
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item active" aria-current="page">디자인 작업 보호</li>
+            </ol>
+        </div>
+    </nav>
+    
     <header>
         <h1>디자인 작업 보호</h1>
         <p class="header-description">고급 워터마킹 및 보호 기능으로 창작물을 안전하게 보호하세요</p>
@@ -236,7 +269,48 @@
                 <li>자세한 프로젝트 정보에 대한 접근 제어</li>
             </ul>
         </div>
-    </div>
+    
+                <!-- Related Articles -->
+                <div class="mt-5">
+                    <h2><i class="fas fa-newspaper"></i> Related Articles & Resources</h2>
+                    <p class="lead mb-4">Explore more guides about secure PDF sharing and document management.</p>
+                    
+                    <div class="row g-3">
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/share-pdf-online.html">Share PDF Online Free</a></h5>
+                                    <p class="card-text small">Complete guide to sharing PDFs securely</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/controlling-pdf-access.html">Control PDF Access</a></h5>
+                                    <p class="card-text small">Advanced access control features</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-tracking-analytics.html">PDF Analytics</a></h5>
+                                    <p class="card-text small">Track and analyze PDF engagement</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body">
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/features/">All Features</a></h5>
+                                    <p class="card-text small">Explore all MaiPDF features</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
 
     <footer>
         <p>&copy; 2025 MaiPDF. All rights reserved.</p>
