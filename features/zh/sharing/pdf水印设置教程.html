@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PDF水印设置教程 - 详细教程教你如何为PDF文件添加水印保护，包括文字水印、图片水印、动态水印等。使用MaiPDF实现PDF文档的水印保护，防止未授权使用。">
+    <meta name="keywords" content="PDF水印, PDF水印设置, PDF水印教程, PDF动态水印, PDF水印保护, PDF版权保护, MaiPDF水印">
+    <meta name="author" content="MaiPDF 团队">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="PDF水印设置教程 - 完整水印保护指南">
+    <meta property="og:description" content="详细教程教你如何为PDF文件添加水印保护，包括文字水印、图片水印、动态水印等。">
+    <link rel="canonical" href="https://sendpdfonline.com/features/zh/sharing/pdf水印设置教程.html">
+    <title>PDF水印设置教程 - 完整水印保护指南 | MaiPDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "PDF水印设置教程",
+        "description": "详细教程教你如何为PDF文件添加水印保护，包括文字水印、图片水印、动态水印等。",
+        "author": {
+            "@type": "Organization",
+            "name": "MaiPDF 团队"
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15"
+    }
+    </script>
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .watermark-demo {
+            background: #f8f9fa;
+            border: 2px dashed #667eea;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+            position: relative;
+            min-height: 300px;
+        }
+        .watermark-text {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-45deg);
+            font-size: 3rem;
+            color: rgba(102, 126, 234, 0.3);
+            font-weight: bold;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1><i class="fas fa-tint"></i> PDF水印设置教程</h1>
+        <p class="lead">完整指南：如何为PDF文件添加水印保护，防止未授权使用和传播</p>
+        <a href="https://maipdf.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即添加水印</a>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-info-circle text-primary"></i> 为什么需要PDF水印？</h2>
+        <p>PDF水印是保护文档版权和防止未授权使用的重要手段。无论是商业文档、设计作品还是个人资料，水印都能有效标识所有权。</p>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-copyright fa-3x text-primary mb-3"></i>
+                        <h5>版权保护</h5>
+                        <p>明确标识文档所有权，防止他人盗用</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-user-secret fa-3x text-success mb-3"></i>
+                        <h5>追踪来源</h5>
+                        <p>动态水印可以显示查看者信息，追踪泄露源头</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-shield-alt fa-3x text-warning mb-3"></i>
+                        <h5>防止传播</h5>
+                        <p>水印让未授权分享的文档失去价值</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-sitemap text-primary"></i> PDF水印设置流程</h2>
+        <div class="row mt-4">
+            <div class="col-md-12">
+                <div class="card mb-3" style="border-left: 5px solid #667eea;">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center">
+                                <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-cloud-upload-alt"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h4>步骤 1：上传PDF文件</h4>
+                                <p class="mb-0">访问 MaiPDF 官网，上传需要添加水印的PDF文件</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-3" style="border-left: 5px solid #f5576c;">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center">
+                                <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h4>步骤 2：选择水印类型</h4>
+                                <p class="mb-0">选择文字水印、图片水印或动态水印</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-3" style="border-left: 5px solid #00f2fe;">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center">
+                                <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-edit"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h4>步骤 3：设置水印内容</h4>
+                                <p class="mb-0">输入水印文字、上传水印图片或配置动态水印参数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card mb-3" style="border-left: 5px solid #fee140;">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center">
+                                <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-cog"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h4>步骤 4：调整水印样式</h4>
+                                <p class="mb-0">设置水印位置、大小、透明度、角度等样式参数</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card" style="border-left: 5px solid #330867;">
+                    <div class="card-body">
+                        <div class="row align-items-center">
+                            <div class="col-md-2 text-center">
+                                <div style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                                    <i class="fas fa-check-circle"></i>
+                                </div>
+                            </div>
+                            <div class="col-md-10">
+                                <h4>步骤 5：应用水印并分享</h4>
+                                <p class="mb-0">预览效果后应用水印，生成带水印的PDF分享链接</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-tint text-primary"></i> 水印类型介绍</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><i class="fas fa-font text-primary"></i> 文字水印</h5>
+                        <p>使用文字作为水印，如"内部资料"、"保密"、"版权所有"等</p>
+                        <div class="watermark-demo">
+                            <div class="watermark-text">内部资料</div>
+                        </div>
+                        <ul class="mt-3">
+                            <li>简单易用</li>
+                            <li>可自定义文字</li>
+                            <li>支持多种字体</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><i class="fas fa-image text-success"></i> 图片水印</h5>
+                        <p>使用Logo或图片作为水印，适合品牌标识</p>
+                        <div class="watermark-demo">
+                            <div style="opacity: 0.3; font-size: 4rem;">
+                                <i class="fas fa-image"></i>
+                            </div>
+                        </div>
+                        <ul class="mt-3">
+                            <li>品牌识别度高</li>
+                            <li>视觉效果专业</li>
+                            <li>支持PNG透明背景</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-4">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><i class="fas fa-sync-alt text-warning"></i> 动态水印</h5>
+                        <p>显示查看者信息的水印，如用户名、IP地址、查看时间等</p>
+                        <div class="watermark-demo">
+                            <div class="watermark-text" style="font-size: 1.5rem;">用户：张三<br>时间：2025-01-15</div>
+                        </div>
+                        <ul class="mt-3">
+                            <li>可追踪查看者</li>
+                            <li>防止截图传播</li>
+                            <li>自动生成信息</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- FAQ Section -->
+    <div class="content-card">
+        <h2><i class="fas fa-question-circle text-primary"></i> 常见问题</h2>
+        <div class="accordion mt-4" id="faqAccordion">
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
+                        水印会影响PDF的阅读体验吗？
+                    </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        合理设置的水印不会影响阅读。建议将透明度设置为30-50%，位置放在角落或背景区域，这样既能保护文档，又不会干扰内容阅读。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                        动态水印是如何工作的？
+                    </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        动态水印会在每次查看PDF时，自动将查看者的信息（如用户名、IP地址、查看时间）嵌入到PDF中。这样即使有人截图或打印，也能追踪到查看者身份。
+                    </div>
+                </div>
+            </div>
+            <div class="accordion-item">
+                <h2 class="accordion-header">
+                    <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                        可以同时使用多种水印吗？
+                    </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                    <div class="accordion-body">
+                        可以！您可以同时使用文字水印和图片水印，或者在不同页面使用不同的水印样式。这样可以实现更全面的文档保护。
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="content-card">
+        <h2><i class="fas fa-link text-primary"></i> 相关文章</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="pdf安全分享完整指南.html"><i class="fas fa-shield-alt"></i> PDF安全分享完整指南</a></h5>
+                        <p class="text-muted small">企业级安全分享解决方案</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="../security/pdf密码保护教程.html"><i class="fas fa-key"></i> PDF密码保护教程</a></h5>
+                        <p class="text-muted small">完整密码保护指南</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="../watermark/动态水印.html"><i class="fas fa-sync-alt"></i> PDF动态水印</a></h5>
+                        <p class="text-muted small">添加动态水印保护PDF</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="../index.html" class="btn btn-outline-primary">查看所有中文文章</a>
+        </div>
+    </div>
+
+    <div class="content-card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2>开始保护您的PDF文档</h2>
+        <p class="lead">使用 MaiPDF 为您的PDF添加水印，享受专业的文档保护</p>
+        <a href="https://maipdf.com" class="btn btn-light btn-lg mt-3" target="_blank">立即添加水印</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

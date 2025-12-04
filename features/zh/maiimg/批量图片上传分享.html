@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="批量图片上传分享教程 - 使用MaiImg一次上传最多25张图片，生成一个分享链接，方便批量管理和分享图片。详细教程包含上传步骤、设置选项和使用技巧。">
+    <meta name="keywords" content="批量上传图片, 图片批量上传, 一次上传多张图片, 图片批量分享, 批量图片管理, MaiImg批量上传">
+    <meta name="author" content="MaiImg 团队">
+    <meta name="robots" content="index, follow">
+    <title>批量图片上传分享教程 - 一次上传25张图片 | MaiImg</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .upload-demo {
+            background: #f8f9fa;
+            border: 2px dashed #667eea;
+            border-radius: 12px;
+            padding: 40px;
+            text-align: center;
+            margin: 20px 0;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1><i class="fas fa-layer-group"></i> 批量图片上传分享教程</h1>
+        <p class="lead">一次上传最多25张图片，生成一个分享链接，方便批量管理和分享</p>
+        <a href="https://maiimg.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即开始上传</a>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-info-circle text-primary"></i> 为什么需要批量上传？</h2>
+        <p>批量上传功能让您可以一次性上传多张图片，生成一个统一的分享链接，非常适合以下场景：</p>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-images fa-3x text-primary mb-3"></i>
+                        <h5>产品图片集</h5>
+                        <p>电商产品多角度展示图片</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-camera fa-3x text-success mb-3"></i>
+                        <h5>活动照片</h5>
+                        <p>活动、会议、聚会的多张照片</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-palette fa-3x text-warning mb-3"></i>
+                        <h5>设计作品集</h5>
+                        <p>设计师作品展示的多张图片</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-sitemap text-primary"></i> 批量上传完整流程</h2>
+        
+        <div class="card mb-3" style="border-left: 5px solid #667eea;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <span>1</span>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>选择多张图片</h4>
+                        <p>在 MaiImg 上传页面，按住 Ctrl（Windows）或 Command（Mac）键，点击选择多张图片。也可以直接拖拽多个图片文件到上传区域。</p>
+                        <div class="upload-demo">
+                            <i class="fas fa-cloud-upload-alt fa-4x text-primary mb-3"></i>
+                            <p class="text-muted">支持一次选择最多25张图片</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="border-left: 5px solid #f5576c;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <span>2</span>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>等待上传完成</h4>
+                        <p>系统会自动上传所有选中的图片。您可以看到上传进度，每张图片上传完成后会显示预览。所有图片上传完成后，系统会自动处理。</p>
+                        <div class="progress mt-3" style="height: 25px;">
+                            <div class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar" style="width: 85%">上传中 85%</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="border-left: 5px solid #00f2fe;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <span>3</span>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>生成分享链接</h4>
+                        <p>所有图片上传完成后，系统会生成一个统一的分享链接。这个链接可以访问所有上传的图片，形成一个图片画廊。</p>
+                        <div class="alert alert-success mt-3">
+                            <i class="fas fa-check-circle"></i> <strong>提示：</strong>所有图片会按照上传顺序排列，形成一个完整的图片集。
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="border-left: 5px solid #fee140;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <span>4</span>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>分享图片集</h4>
+                        <p>复制分享链接，通过微信、邮件、QQ等方式分享给他人。接收者点击链接即可查看所有图片，可以左右滑动浏览。</p>
+                        <div class="row mt-3">
+                            <div class="col-md-3 text-center">
+                                <i class="fab fa-weixin fa-2x text-success mb-2"></i>
+                                <p class="small">微信分享</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <i class="fas fa-envelope fa-2x text-primary mb-2"></i>
+                                <p class="small">邮件分享</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <i class="fas fa-qrcode fa-2x text-info mb-2"></i>
+                                <p class="small">二维码分享</p>
+                            </div>
+                            <div class="col-md-3 text-center">
+                                <i class="fas fa-link fa-2x text-warning mb-2"></i>
+                                <p class="small">复制链接</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-lightbulb text-primary"></i> 使用技巧</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-sort text-primary"></i> 图片排序</h5>
+                        <p>上传后可以拖拽调整图片顺序，确保重要图片排在前面。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-edit text-success"></i> 添加描述</h5>
+                        <p>可以为每张图片添加标题和描述，让查看者更好地理解图片内容。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-lock text-warning"></i> 设置密码</h5>
+                        <p>为整个图片集设置密码保护，只有知道密码的人才能查看。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-eye text-info"></i> 查看限制</h5>
+                        <p>设置查看次数限制，防止图片被无限次分享和查看。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="content-card">
+        <h2><i class="fas fa-link text-primary"></i> 相关文章</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="免费图片托管分享指南.html"><i class="fas fa-images"></i> 免费图片托管分享指南</a></h5>
+                        <p class="text-muted small">完整的图片托管和分享教程</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="图片二维码分享.html"><i class="fas fa-qrcode"></i> 图片二维码分享</a></h5>
+                        <p class="text-muted small">生成二维码用于离线分享</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="图片查看追踪分析.html"><i class="fas fa-chart-line"></i> 图片查看追踪分析</a></h5>
+                        <p class="text-muted small">追踪图片查看情况</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2>开始批量上传图片</h2>
+        <p class="lead">一次上传最多25张图片，生成统一的分享链接</p>
+        <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3" target="_blank">立即开始</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

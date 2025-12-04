@@ -76,25 +76,133 @@
     </section>
 
     <div class="container mt-5">
+        <!-- 流程图 -->
+        <div class="card mb-5">
+            <h3 class="card-title mb-4 text-center"><i class="fas fa-sitemap"></i> PDF 转链接完整流程</h3>
+            <div class="workflow-diagram" style="max-width: 100%; margin: 30px auto; padding: 20px;">
+                <div class="row text-center">
+                    <div class="col-md-3 mb-4">
+                        <div class="workflow-step" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                            <div class="step-icon" style="font-size: 3rem; margin-bottom: 15px;">
+                                <i class="fas fa-globe"></i>
+                            </div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 10px;">步骤 1</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">访问官网<br>maipdf.com</p>
+                        </div>
+                        <div class="arrow-down" style="margin: 15px auto; width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 20px solid #667eea;"></div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="workflow-step" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                            <div class="step-icon" style="font-size: 3rem; margin-bottom: 15px;">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 10px;">步骤 2</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">上传 PDF<br>文件</p>
+                        </div>
+                        <div class="arrow-down" style="margin: 15px auto; width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 20px solid #f5576c;"></div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="workflow-step" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                            <div class="step-icon" style="font-size: 3rem; margin-bottom: 15px;">
+                                <i class="fas fa-link"></i>
+                            </div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 10px;">步骤 3</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">生成安全<br>链接</p>
+                        </div>
+                        <div class="arrow-down" style="margin: 15px auto; width: 0; height: 0; border-left: 15px solid transparent; border-right: 15px solid transparent; border-top: 20px solid #00f2fe;"></div>
+                    </div>
+                    <div class="col-md-3 mb-4">
+                        <div class="workflow-step" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; padding: 25px; border-radius: 15px; box-shadow: 0 5px 15px rgba(0,0,0,0.2);">
+                            <div class="step-icon" style="font-size: 3rem; margin-bottom: 15px;">
+                                <i class="fas fa-share-alt"></i>
+                            </div>
+                            <h4 style="font-size: 1.1rem; margin-bottom: 10px;">步骤 4</h4>
+                            <p style="font-size: 0.9rem; margin: 0;">分享链接<br>给他人</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
         <!-- 操作步骤 -->
         <div class="card">
             <h3 class="card-title mb-4"><i class="fas fa-upload"></i> 步骤一：访问 MaiPDF 官网</h3>
             <p>打开浏览器，直接进入 MaiPDF 官网 <a href="https://www.maiPDF.com" target="_blank">https://www.maiPDF.com</a>，你会看到一个简洁的首页。无需注册，也无需下载任何软件，直接进入页面开始操作。</p>
+            <div class="alert alert-info mt-3">
+                <i class="fas fa-lightbulb"></i> <strong>提示：</strong>中国用户可以使用 <a href="https://maipdf.cn" target="_blank">maipdf.cn</a> 获得更快的访问速度。
+            </div>
         </div>
 
         <div class="card">
             <h3 class="card-title mb-4"><i class="fas fa-file-upload"></i> 步骤二：上传 PDF 文件</h3>
-            <p>在主页上，点击“上传文件”按钮，选择你想要转化为链接的 PDF 文件。MaiPDF 支持各种格式的 PDF 文件，无论是单页文件还是多页文档，都可以顺利上传。</p>
+            <p>在主页上，点击"上传文件"按钮，选择你想要转化为链接的 PDF 文件。MaiPDF 支持各种格式的 PDF 文件，无论是单页文件还是多页文档，都可以顺利上传。</p>
+            <div class="row mt-3">
+                <div class="col-md-6">
+                    <ul>
+                        <li>支持单页和多页 PDF</li>
+                        <li>支持大文件上传</li>
+                        <li>无需注册账号</li>
+                    </ul>
+                </div>
+                <div class="col-md-6">
+                    <ul>
+                        <li>自动处理文件</li>
+                        <li>保持原始质量</li>
+                        <li>快速上传速度</li>
+                    </ul>
+                </div>
+            </div>
         </div>
 
         <div class="card">
             <h3 class="card-title mb-4"><i class="fas fa-link"></i> 步骤三：生成链接</h3>
             <p>文件上传完成后，MaiPDF 会自动处理文件，并生成一个唯一的访问链接。这个链接可以通过复制、分享等方式与他人共享。你也可以选择设置文件的隐私权限，确保只有授权的人能够查看文件。</p>
+            <div class="row mt-3">
+                <div class="col-md-4 text-center mb-3">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                        <i class="fas fa-lock fa-2x text-primary mb-2"></i>
+                        <h5>密码保护</h5>
+                        <p class="small">设置访问密码</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                        <i class="fas fa-eye fa-2x text-success mb-2"></i>
+                        <h5>查看次数</h5>
+                        <p class="small">限制查看次数</p>
+                    </div>
+                </div>
+                <div class="col-md-4 text-center mb-3">
+                    <div style="background: #f8f9fa; padding: 20px; border-radius: 10px;">
+                        <i class="fas fa-calendar-times fa-2x text-warning mb-2"></i>
+                        <h5>有效期</h5>
+                        <p class="small">设置过期时间</p>
+                    </div>
+                </div>
+            </div>
         </div>
 
         <div class="card">
             <h3 class="card-title mb-4"><i class="fas fa-share-alt"></i> 步骤四：分享链接</h3>
             <p>链接生成后，你可以将其通过各种渠道分享给他人。无论是通过邮件、社交媒体，还是即时通讯工具，都能轻松将文件传递出去。接受者只需点击链接，即可在浏览器中打开 PDF 文件，查看其中的内容。</p>
+            <div class="row mt-3">
+                <div class="col-md-3 text-center mb-3">
+                    <i class="fab fa-weixin fa-3x text-success mb-2"></i>
+                    <p class="small">微信分享</p>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <i class="fas fa-envelope fa-3x text-primary mb-2"></i>
+                    <p class="small">邮件分享</p>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <i class="fas fa-qrcode fa-3x text-info mb-2"></i>
+                    <p class="small">二维码分享</p>
+                </div>
+                <div class="col-md-3 text-center mb-3">
+                    <i class="fas fa-link fa-3x text-warning mb-2"></i>
+                    <p class="small">直接复制链接</p>
+                </div>
+            </div>
         </div>
     </div>
 

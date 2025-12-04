@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="社交媒体图片分享教程 - 使用MaiImg在微信、微博、QQ等社交媒体平台分享图片，支持查看次数限制、快速访问、Cloudflare CDN加速等功能。">
+    <meta name="keywords" content="社交媒体图片分享, 微信分享图片, 微博分享图片, QQ分享图片, 图片社交分享, 社交媒体图片, MaiImg社交分享">
+    <meta name="author" content="MaiImg 团队">
+    <meta name="robots" content="index, follow">
+    <title>社交媒体图片分享教程 - 在微信、微博等平台分享图片 | MaiImg</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .social-icon {
+            font-size: 3rem;
+            margin-bottom: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1><i class="fas fa-share-alt"></i> 社交媒体图片分享教程</h1>
+        <p class="lead">在微信、微博、QQ等社交媒体平台快速分享图片，支持查看限制和快速访问</p>
+        <a href="https://maiimg.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即开始分享</a>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-info-circle text-primary"></i> 为什么使用 MaiImg 分享图片？</h2>
+        <p>在社交媒体分享图片时，MaiImg 提供了更好的体验和更多的控制选项：</p>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-bolt feature-icon text-warning"></i>
+                        <h5>快速加载</h5>
+                        <p>Cloudflare CDN加速，图片加载速度快</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-eye feature-icon text-success"></i>
+                        <h5>查看限制</h5>
+                        <p>设置查看次数，控制图片传播范围</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-chart-line feature-icon text-info"></i>
+                        <h5>访问追踪</h5>
+                        <p>追踪图片查看情况，了解传播效果</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-share-alt text-primary"></i> 支持的社交媒体平台</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fab fa-weixin social-icon text-success"></i>
+                        <h5>微信</h5>
+                        <p>在微信朋友圈、微信群、私聊中分享图片链接</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fab fa-weibo social-icon text-danger"></i>
+                        <h5>微博</h5>
+                        <p>在微博发布图片链接，粉丝点击即可查看</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100 text-center">
+                    <div class="card-body">
+                        <i class="fab fa-qq social-icon text-primary"></i>
+                        <h5>QQ</h5>
+                        <p>在QQ空间、QQ群、QQ聊天中分享图片</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-sitemap text-primary"></i> 社交媒体分享流程</h2>
+        
+        <div class="card mb-3" style="border-left: 5px solid #667eea;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-cloud-upload-alt"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>步骤 1：上传图片</h4>
+                        <p>在 MaiImg 上传您要分享的图片，系统自动生成分享链接。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="border-left: 5px solid #f5576c;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-cog"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>步骤 2：设置分享选项</h4>
+                        <p>设置查看次数限制（如100次），防止图片被无限传播。设置有效期，确保时效性内容自动过期。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card mb-3" style="border-left: 5px solid #00f2fe;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fas fa-link"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>步骤 3：复制分享链接</h4>
+                        <p>复制生成的分享链接，链接会自动适配社交媒体平台，显示图片预览。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="card" style="border-left: 5px solid #fee140;">
+            <div class="card-body">
+                <div class="row align-items-center">
+                    <div class="col-md-2 text-center">
+                        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
+                            <i class="fab fa-weixin"></i>
+                        </div>
+                    </div>
+                    <div class="col-md-10">
+                        <h4>步骤 4：在社交媒体分享</h4>
+                        <p>将链接粘贴到微信、微博、QQ等平台，发布后好友点击即可查看图片。链接会自动显示图片预览，吸引点击。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-lightbulb text-primary"></i> 分享技巧</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-check-circle text-success"></i> 最佳实践</h5>
+                        <ul>
+                            <li>为重要图片设置查看次数限制</li>
+                            <li>使用吸引人的描述文字</li>
+                            <li>选择合适的时间发布</li>
+                            <li>定期查看访问统计</li>
+                            <li>及时回复评论和互动</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-exclamation-triangle text-warning"></i> 注意事项</h5>
+                        <ul>
+                            <li>注意图片版权问题</li>
+                            <li>避免分享敏感内容</li>
+                            <li>设置合理的查看限制</li>
+                            <li>定期检查链接有效性</li>
+                            <li>保护个人隐私信息</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="content-card">
+        <h2><i class="fas fa-link text-primary"></i> 相关文章</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="免费图片托管分享指南.html"><i class="fas fa-images"></i> 免费图片托管分享指南</a></h5>
+                        <p class="text-muted small">完整的图片托管和分享教程</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="图片查看追踪分析.html"><i class="fas fa-chart-line"></i> 图片查看追踪分析</a></h5>
+                        <p class="text-muted small">追踪图片查看情况</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="图片二维码分享.html"><i class="fas fa-qrcode"></i> 图片二维码分享</a></h5>
+                        <p class="text-muted small">生成二维码用于离线分享</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2>开始在社交媒体分享图片</h2>
+        <p class="lead">使用 MaiImg 快速分享图片到微信、微博等平台，享受便捷的社交分享体验</p>
+        <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3" target="_blank">立即开始分享</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

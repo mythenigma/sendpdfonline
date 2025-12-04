@@ -1,0 +1,308 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PDF密码保护教程 - 详细教程教你如何为PDF文件设置密码保护，防止未授权访问。包括密码设置、密码强度建议、密码分享最佳实践等完整指南。">
+    <meta name="keywords" content="PDF密码保护, PDF密码设置, PDF加密, PDF安全, PDF密码教程, PDF访问控制, MaiPDF密码保护">
+    <meta name="author" content="MaiPDF 团队">
+    <meta name="robots" content="index, follow">
+    <meta property="og:title" content="PDF密码保护教程 - 完整密码保护指南">
+    <meta property="og:description" content="详细教程教你如何为PDF文件设置密码保护，防止未授权访问。包括密码设置、密码强度建议、密码分享最佳实践等完整指南。">
+    <link rel="canonical" href="https://sendpdfonline.com/features/zh/security/pdf密码保护教程.html">
+    <title>PDF密码保护教程 - 完整密码保护指南 | MaiPDF</title>
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "PDF密码保护教程",
+        "description": "详细教程教你如何为PDF文件设置密码保护，防止未授权访问。",
+        "author": {
+            "@type": "Organization",
+            "name": "MaiPDF 团队"
+        },
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-01-15"
+    }
+    </script>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .workflow-diagram {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px 0;
+        }
+        .workflow-box {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            text-align: center;
+            margin: 15px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+        }
+        .arrow-connector {
+            text-align: center;
+            font-size: 2rem;
+            color: #667eea;
+            margin: 10px 0;
+        }
+        .password-strength {
+            padding: 15px;
+            border-radius: 8px;
+            margin: 10px 0;
+        }
+        .weak { background: #fee2e2; border-left: 4px solid #ef4444; }
+        .medium { background: #fef3c7; border-left: 4px solid #f59e0b; }
+        .strong { background: #d1fae5; border-left: 4px solid #10b981; }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1><i class="fas fa-lock"></i> PDF密码保护教程</h1>
+        <p class="lead">完整指南：如何为您的PDF文件设置密码保护，防止未授权访问</p>
+        <a href="https://maipdf.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即设置密码保护</a>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-question-circle text-primary"></i> 为什么需要PDF密码保护？</h2>
+        <p>PDF密码保护是保护敏感文档的第一道防线。无论是个人隐私文件还是企业机密文档，密码保护都能有效防止未授权访问。</p>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-shield-alt text-primary"></i> 保护隐私</h5>
+                        <p>防止他人未经授权查看您的个人或商业敏感信息。</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-user-secret text-success"></i> 访问控制</h5>
+                        <p>只有知道密码的人才能访问文档，实现精确的访问控制。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-sitemap text-primary"></i> PDF密码保护设置流程</h2>
+        <div class="workflow-diagram">
+            <div class="workflow-box">
+                <div style="font-size: 3rem; margin-bottom: 15px;">
+                    <i class="fas fa-cloud-upload-alt"></i>
+                </div>
+                <h3>步骤 1：上传PDF文件</h3>
+                <p>访问 MaiPDF 官网，上传您需要保护的PDF文件</p>
+            </div>
+            <div class="arrow-connector"><i class="fas fa-arrow-down"></i></div>
+            
+            <div class="workflow-box" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
+                <div style="font-size: 3rem; margin-bottom: 15px;">
+                    <i class="fas fa-key"></i>
+                </div>
+                <h3>步骤 2：启用密码保护</h3>
+                <p>在安全设置中，勾选"密码保护"选项</p>
+            </div>
+            <div class="arrow-connector"><i class="fas fa-arrow-down"></i></div>
+            
+            <div class="workflow-box" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
+                <div style="font-size: 3rem; margin-bottom: 15px;">
+                    <i class="fas fa-edit"></i>
+                </div>
+                <h3>步骤 3：设置密码</h3>
+                <p>输入您想要设置的密码（建议使用强密码）</p>
+            </div>
+            <div class="arrow-connector"><i class="fas fa-arrow-down"></i></div>
+            
+            <div class="workflow-box" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
+                <div style="font-size: 3rem; margin-bottom: 15px;">
+                    <i class="fas fa-link"></i>
+                </div>
+                <h3>步骤 4：生成安全链接</h3>
+                <p>系统生成带密码保护的分享链接</p>
+            </div>
+            <div class="arrow-connector"><i class="fas fa-arrow-down"></i></div>
+            
+            <div class="workflow-box" style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%);">
+                <div style="font-size: 3rem; margin-bottom: 15px;">
+                    <i class="fas fa-share-alt"></i>
+                </div>
+                <h3>步骤 5：安全分享</h3>
+                <p>将链接和密码分别发送给授权人员</p>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-key text-primary"></i> 密码强度建议</h2>
+        <p>设置一个强密码是保护文档安全的关键。以下是不同强度密码的示例：</p>
+        
+        <div class="password-strength weak">
+            <h5><i class="fas fa-times-circle text-danger"></i> 弱密码（不推荐）</h5>
+            <p><code>123456</code> 或 <code>password</code></p>
+            <p class="small">容易被破解，安全性极低</p>
+        </div>
+        
+        <div class="password-strength medium">
+            <h5><i class="fas fa-exclamation-triangle text-warning"></i> 中等密码（一般）</h5>
+            <p><code>MyPDF2024</code> 或 <code>Document123</code></p>
+            <p class="small">包含字母和数字，但仍有被破解风险</p>
+        </div>
+        
+        <div class="password-strength strong">
+            <h5><i class="fas fa-check-circle text-success"></i> 强密码（推荐）</h5>
+            <p><code>MyP@ssw0rd#2024!</code> 或 <code>D0c$ecure&2024</code></p>
+            <p class="small">包含大小写字母、数字和特殊字符，安全性高</p>
+        </div>
+
+        <div class="alert alert-info mt-4">
+            <h5><i class="fas fa-lightbulb"></i> 密码设置最佳实践</h5>
+            <ul>
+                <li>使用至少8个字符的密码</li>
+                <li>混合使用大小写字母、数字和特殊字符</li>
+                <li>避免使用个人信息（如生日、姓名）</li>
+                <li>不同文档使用不同密码</li>
+                <li>定期更换密码</li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-share-alt text-primary"></i> 密码分享最佳实践</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-3">
+                <div class="card border-danger">
+                    <div class="card-body">
+                        <h5><i class="fas fa-times-circle text-danger"></i> 错误做法</h5>
+                        <ul>
+                            <li>在同一个消息中发送链接和密码</li>
+                            <li>使用弱密码或默认密码</li>
+                            <li>通过不安全的渠道分享密码</li>
+                            <li>多人共享同一个密码</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card border-success">
+                    <div class="card-body">
+                        <h5><i class="fas fa-check-circle text-success"></i> 正确做法</h5>
+                        <ul>
+                            <li>链接和密码分开发送（如：链接发邮件，密码发短信）</li>
+                            <li>使用强密码，定期更换</li>
+                            <li>通过安全渠道（加密邮件、安全消息）分享密码</li>
+                            <li>为不同人员设置不同密码</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-cog text-primary"></i> 密码管理功能</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-edit fa-3x text-primary mb-3"></i>
+                        <h5>修改密码</h5>
+                        <p>随时可以修改已设置的密码，无需重新上传文件</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-unlock fa-3x text-success mb-3"></i>
+                        <h5>移除密码</h5>
+                        <p>如果不再需要密码保护，可以随时移除</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card text-center">
+                    <div class="card-body">
+                        <i class="fas fa-history fa-3x text-info mb-3"></i>
+                        <h5>密码历史</h5>
+                        <p>查看密码修改历史，追踪安全变更记录</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Related Articles -->
+    <div class="content-card">
+        <h2><i class="fas fa-link text-primary"></i> 相关文章</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="../sharing/pdf安全分享完整指南.html"><i class="fas fa-shield-alt"></i> PDF安全分享完整指南</a></h5>
+                        <p class="text-muted small">企业级安全分享解决方案</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="../tracking/pdf查看追踪完整指南.html"><i class="fas fa-chart-line"></i> PDF查看追踪完整指南</a></h5>
+                        <p class="text-muted small">全面了解谁在何时查看了您的PDF</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body">
+                        <h5><a href="../sharing/pdf水印设置教程.html"><i class="fas fa-tint"></i> PDF水印设置教程</a></h5>
+                        <p class="text-muted small">为PDF添加水印保护</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-3">
+            <a href="../index.html" class="btn btn-outline-primary">查看所有中文文章</a>
+        </div>
+    </div>
+
+    <div class="content-card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2>开始保护您的PDF文档</h2>
+        <p class="lead">使用 MaiPDF 为您的敏感文档添加密码保护，享受企业级安全保障</p>
+        <a href="https://maipdf.com" class="btn btn-light btn-lg mt-3" target="_blank">立即设置密码</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

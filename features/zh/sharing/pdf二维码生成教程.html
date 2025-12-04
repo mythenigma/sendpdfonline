@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="PDF二维码生成教程 - 详细教程教你如何将PDF文件转换成二维码，支持离线分享、打印、扫码查看等功能。包括二维码设置、密码保护、查看限制等完整指南。">
+    <meta name="keywords" content="PDF二维码, PDF转二维码, PDF二维码生成, PDF二维码教程, PDF二维码分享, PDF二维码打印, MaiPDF二维码">
+    <meta name="author" content="MaiPDF 团队">
+    <meta name="robots" content="index, follow">
+    <title>PDF二维码生成教程 - 完整二维码生成指南 | MaiPDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Noto Sans SC', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding-bottom: 50px;
+        }
+        .hero {
+            background: white;
+            border-radius: 20px;
+            padding: 60px 40px;
+            margin: 40px auto;
+            max-width: 1200px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            text-align: center;
+        }
+        .content-card {
+            background: white;
+            border-radius: 15px;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 1200px;
+            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
+        }
+        .qr-workflow {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 20px;
+            margin: 40px 0;
+        }
+        .qr-step {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            width: 100%;
+            max-width: 600px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            position: relative;
+        }
+        .qr-step::before {
+            content: '';
+            position: absolute;
+            left: -15px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 0;
+            height: 0;
+            border-top: 15px solid transparent;
+            border-bottom: 15px solid transparent;
+            border-right: 15px solid white;
+        }
+        .qr-step:first-child::before {
+            display: none;
+        }
+        .step-number {
+            position: absolute;
+            left: -40px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        .qr-preview {
+            text-align: center;
+            padding: 30px;
+            background: #f8f9fa;
+            border-radius: 12px;
+            margin: 20px 0;
+        }
+        .qr-code-placeholder {
+            width: 200px;
+            height: 200px;
+            background: #e9ecef;
+            border: 3px dashed #667eea;
+            border-radius: 8px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 3rem;
+            color: #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="hero">
+        <h1><i class="fas fa-qrcode"></i> PDF二维码生成教程</h1>
+        <p class="lead">将PDF文件转换成二维码，实现离线分享、打印展示、扫码查看等多种应用场景</p>
+        <a href="https://maipdf.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即生成二维码</a>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-lightbulb text-primary"></i> PDF二维码的应用场景</h2>
+        <div class="row mt-4">
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-print fa-3x text-primary mb-3"></i>
+                        <h5>打印物料</h5>
+                        <p>将二维码打印在宣传册、海报、名片上，扫码即可查看PDF</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-mobile-alt fa-3x text-success mb-3"></i>
+                        <h5>移动分享</h5>
+                        <p>无需输入链接，扫码即可在手机上查看PDF文档</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="card h-100">
+                    <div class="card-body text-center">
+                        <i class="fas fa-store fa-3x text-warning mb-3"></i>
+                        <h5>线下展示</h5>
+                        <p>在展会、门店等场景，通过二维码展示产品资料</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-sitemap text-primary"></i> PDF二维码生成完整流程</h2>
+        <div class="qr-workflow">
+            <div class="qr-step">
+                <div class="step-number">1</div>
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4><i class="fas fa-cloud-upload-alt text-primary"></i> 上传PDF文件</h4>
+                        <p>访问 MaiPDF 官网，上传您需要生成二维码的PDF文件</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-file-pdf fa-4x text-primary"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-step">
+                <div class="step-number">2</div>
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4><i class="fas fa-cog text-primary"></i> 设置安全选项</h4>
+                        <p>可选设置：密码保护、查看次数限制、有效期等安全功能</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-shield-alt fa-4x text-success"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-step">
+                <div class="step-number">3</div>
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4><i class="fas fa-qrcode text-primary"></i> 生成二维码</h4>
+                        <p>系统自动生成PDF访问链接，并转换为二维码图片</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <div class="qr-code-placeholder">
+                            <i class="fas fa-qrcode"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-step">
+                <div class="step-number">4</div>
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4><i class="fas fa-download text-primary"></i> 下载二维码</h4>
+                        <p>下载二维码图片（PNG、SVG格式），可用于打印或电子展示</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-download fa-4x text-info"></i>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="qr-step">
+                <div class="step-number">5</div>
+                <div class="row align-items-center">
+                    <div class="col-md-8">
+                        <h4><i class="fas fa-mobile-alt text-primary"></i> 扫码查看</h4>
+                        <p>用户使用手机扫描二维码，即可在浏览器中查看PDF文档</p>
+                    </div>
+                    <div class="col-md-4 text-center">
+                        <i class="fas fa-mobile-alt fa-4x text-warning"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-qrcode text-primary"></i> 二维码预览示例</h2>
+        <div class="qr-preview">
+            <div class="qr-code-placeholder">
+                <i class="fas fa-qrcode"></i>
+            </div>
+            <p class="mt-3">扫描此二维码即可查看PDF文档</p>
+            <div class="alert alert-info mt-3">
+                <i class="fas fa-info-circle"></i> <strong>提示：</strong>二维码包含完整的PDF访问链接，支持所有安全功能（密码、查看次数、有效期等）
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-cog text-primary"></i> 二维码高级设置</h2>
+        <div class="row mt-4">
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-lock text-primary"></i> 密码保护</h5>
+                        <p>为二维码设置密码，扫码后需要输入密码才能查看PDF</p>
+                        <ul>
+                            <li>增强安全性</li>
+                            <li>防止未授权访问</li>
+                            <li>密码可单独告知</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-eye text-success"></i> 查看次数限制</h5>
+                        <p>限制二维码的扫描查看次数，达到限制后自动失效</p>
+                        <ul>
+                            <li>控制访问范围</li>
+                            <li>防止无限分享</li>
+                            <li>适合限时活动</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-calendar-times text-warning"></i> 有效期设置</h5>
+                        <p>设置二维码的有效期，过期后自动失效</p>
+                        <ul>
+                            <li>适合临时活动</li>
+                            <li>自动过期管理</li>
+                            <li>保护时效性内容</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-3">
+                <div class="card">
+                    <div class="card-body">
+                        <h5><i class="fas fa-chart-line text-info"></i> 查看追踪</h5>
+                        <p>追踪二维码的扫描情况，了解访问统计</p>
+                        <ul>
+                            <li>扫描次数统计</li>
+                            <li>访问时间记录</li>
+                            <li>设备信息分析</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card">
+        <h2><i class="fas fa-print text-primary"></i> 二维码使用建议</h2>
+        <div class="row mt-4">
+            <div class="col-md-6">
+                <h5><i class="fas fa-check-circle text-success"></i> 最佳实践</h5>
+                <ul>
+                    <li>确保二维码清晰可扫描（建议尺寸≥2cm×2cm）</li>
+                    <li>打印时使用高分辨率，避免模糊</li>
+                    <li>二维码周围留白，避免干扰</li>
+                    <li>测试打印效果后再批量打印</li>
+                    <li>在二维码旁添加说明文字</li>
+                </ul>
+            </div>
+            <div class="col-md-6">
+                <h5><i class="fas fa-exclamation-triangle text-warning"></i> 注意事项</h5>
+                <ul>
+                    <li>避免二维码被遮挡或损坏</li>
+                    <li>确保打印质量足够清晰</li>
+                    <li>考虑光线条件对扫描的影响</li>
+                    <li>定期检查二维码是否仍然有效</li>
+                    <li>为重要文档设置密码保护</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="content-card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
+        <h2>开始生成PDF二维码</h2>
+        <p class="lead">使用 MaiPDF 将您的PDF文件转换成二维码，实现便捷的离线分享</p>
+        <a href="https://maipdf.com" class="btn btn-light btn-lg mt-3" target="_blank">立即生成</a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+

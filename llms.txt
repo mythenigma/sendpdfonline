@@ -1,0 +1,221 @@
+# MaiPDF - PDF Security & Sharing Platform
+
+> Free PDF security, sharing, and tracking platform with 210+ features, 60+ expert guides, and 16+ real-world use cases. Comprehensive resource for PDF protection, watermarking, DRM, analytics, and secure document sharing.
+
+MaiPDF (sendpdfonline.com) is a comprehensive platform providing free PDF security, sharing, and tracking solutions. The website serves as both a product showcase and an extensive knowledge base with 60+ detailed articles covering PDF security best practices, sharing methods, tracking analytics, QR code generation, and business use cases.
+
+## Main Sections
+
+### Homepage
+- [Homepage](https://sendpdfonline.com/): Main directory page listing all articles, features, and use cases
+
+### Expert Guides & Articles (60+)
+Core educational content covering PDF security, sharing, and best practices:
+
+**PDF Security & Protection (8 articles)**
+- [Complete Guide to Sharing PDFs Online Securely](https://sendpdfonline.com/article/share-pdf-online.html): Comprehensive guide to secure PDF sharing
+- [Secure PDF Sharing Best Practices Guide](https://sendpdfonline.com/article/secure-pdf-sharing-guide.html): Best practices for secure PDF sharing
+- [PDF Sharing Security: What You Need to Know](https://sendpdfonline.com/article/pdf-sharing-security.html): Security considerations for PDF sharing
+- [Preventing PDF Control Loss After Distribution](https://sendpdfonline.com/article/pdf-control-lost.html): How to maintain control over shared PDFs
+- [Controlling PDF Access: Advanced Techniques](https://sendpdfonline.com/article/controlling-pdf-access.html): Advanced access control methods
+- [Protecting Sensitive Documents](https://sendpdfonline.com/article/sensitive-documents-security.html): Guide to protecting sensitive PDF documents
+- [Managing Confidential Document Risks](https://sendpdfonline.com/article/confidential-documents-risk.html): Risk management for confidential documents
+- [Securing Confidential Investor Updates](https://sendpdfonline.com/article/confidential-investor-updates.html): Security for investor communications
+
+**QR Code & Link Sharing (6 articles)**
+- [PDF to QR Code Tutorial: Step-by-Step Guide](https://sendpdfonline.com/article/pdf-to-qr-tutorial.html): Complete tutorial for converting PDFs to QR codes
+- [PDF QR码分享完整指南](https://sendpdfonline.com/article/pdf-qr-code-guide-zh.html): Chinese guide to PDF QR code sharing
+- [Easy PDF QR Code Sharing Methods](https://sendpdfonline.com/article/pdf-qr-code-sharing-easy.html): Simple methods for QR code sharing
+- [Real-World QR Code PDF Scenarios](https://sendpdfonline.com/article/qr-code-pdf-scenarios.html): Practical use cases for PDF QR codes
+- [PDF Link Sharing Guide (English)](https://sendpdfonline.com/article/pdf-link-sharing-guide-en.html): Guide to PDF link sharing
+- [PDF链接分享指南](https://sendpdfonline.com/article/pdf-link-sharing-guide-zh.html): Chinese guide to PDF link sharing
+
+**Tracking & Analytics (5 articles)**
+- [PDF Tracking & Analytics: Complete Guide](https://sendpdfonline.com/article/pdf-tracking-analytics.html): Comprehensive guide to PDF tracking and analytics
+- [Understanding User Behavior with PDF Tracking](https://sendpdfonline.com/article/user-behavior-tracking.html): Analyzing user behavior through tracking
+- [PDF View Limits for Enhanced Security](https://sendpdfonline.com/article/pdf-view-limits-security.html): Setting view limits for security
+- [How to Limit PDF Access Times](https://sendpdfonline.com/article/limit-pdf-access-times-en.html): Controlling PDF access frequency
+- [Limiting PDF Open Times Guide](https://sendpdfonline.com/article/limit-pdf-open-times.html): Guide to limiting PDF access
+
+**Business Use Cases (5 articles)**
+- [Internal Company Document Sharing Best Practices](https://sendpdfonline.com/article/internal-company-docs-sharing.html): Best practices for internal document sharing
+- [Secure Sales Pitch Decks: Prevent Forwarding & Track Engagement](https://sendpdfonline.com/article/sales-pitch-decks.html): Securing sales presentations
+- [Secure Pricing Sheets: Protect Confidential Pricing Information](https://sendpdfonline.com/article/secure-pricing-sheets.html): Protecting pricing information
+- [Training Materials Distribution Guide](https://sendpdfonline.com/article/training-materials-distribution.html): Distributing training materials securely
+- [Time-Limited Whitepapers and Case Studies Guide](https://sendpdfonline.com/article/time-limited-whitepapers.html): Time-limited content sharing
+
+**Publishing & E-books (3 articles)**
+- [Secure Ebook Previews: Share Without Downloads & Track Reader Engagement](https://sendpdfonline.com/article/ebook-preview.html): Ebook preview sharing
+- [Online PDF Viewer Free - View PDF Files Online Without Downloading](https://sendpdfonline.com/article/online-pdf-viewer.html): Online PDF viewing solutions
+- [How to Show PDF Online Free - Complete Guide](https://sendpdfonline.com/article/show-pdf-online.html): Guide to displaying PDFs online
+
+**PDF Sharing Methods (3 articles)**
+- [PDF Sharing Methods Guide](https://sendpdfonline.com/article/pdf-sharing-methods.html): Comprehensive guide to PDF sharing methods
+- [Send PDF Online Free - Complete Guide](https://sendpdfonline.com/article/send-pdf-online.html): Guide to sending PDFs online
+- [Free PDF Sharing Online](https://sendpdfonline.com/article/free-pdf-sharing-online-zh.html): Free PDF sharing solutions
+
+### Features Directory (210+)
+Comprehensive feature documentation organized by category:
+
+**Security Features (80+)**
+- [Security Features Overview](https://sendpdfonline.com/features/en/security/): Complete security features directory
+- [Advanced Security Configurations](https://sendpdfonline.com/features/en/security/advanced-security-configurations.html): Advanced security settings
+- [Free DRM for PDF Documents](https://sendpdfonline.com/features/en/security/free-drm-for-pdf.html): DRM protection features
+- [Email Verification Access Control](https://sendpdfonline.com/features/en/security/email-verification-secure-pdf-access.html): Email-based access control
+- [Anonymous PDF Sharing](https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing.html): Anonymous sharing options
+- [Prevent Document Content Copying](https://sendpdfonline.com/features/en/security/prevent-document-content-copying.html): Content protection features
+- [Set PDF Expiration Date](https://sendpdfonline.com/features/en/security/set-pdf-expiration-date.html): Expiration date settings
+- [Convert PDF to Secure Links](https://sendpdfonline.com/features/en/security/convert-pdf-to-secure-links.html): Secure link generation
+
+**Sharing Features (60+)**
+- [Sharing Features Overview](https://sendpdfonline.com/features/en/sharing/): Complete sharing features directory
+- [Convert PDF to QR Code](https://sendpdfonline.com/features/en/sharing/convert-pdf-to-qr-code.html): QR code generation
+- [Share PDF Online Securely](https://sendpdfonline.com/features/en/sharing/share-pdf-online-securely.html): Secure sharing methods
+- [Free Online PDF Sharing Tool](https://sendpdfonline.com/features/en/sharing/free-online-pdf-sharing-tool.html): Free sharing tools
+- [PDF Link Sharing](https://sendpdfonline.com/features/en/sharing/pdf-link-sharing.html): Link sharing features
+- [Fast & Free PDF Sharing](https://sendpdfonline.com/features/en/sharing/fast-free-pdf-sharing.html): Fast sharing solutions
+
+**Tracking & Analytics (20+)**
+- [Tracking Features Overview](https://sendpdfonline.com/features/en/tracking/): Complete tracking features directory
+- [PDF Tracking & Analytics](https://sendpdfonline.com/features/en/tracking/pdf-tracking-analytics.html): Analytics features
+- [PDF View Tracking](https://sendpdfonline.com/features/en/tracking/pdf-view-tracking.html): View tracking capabilities
+- [Track PDF Usage Statistics](https://sendpdfonline.com/features/en/tracking/track-pdf-usage.html): Usage statistics
+
+**Hosting Features (15+)**
+- [Hosting Features Overview](https://sendpdfonline.com/features/en/hosting/): Complete hosting features directory
+- [Free PDF Hosting & Sharing](https://sendpdfonline.com/features/en/hosting/free-pdf-hosting-and-sharing.html): Free hosting solutions
+- [Secure PDF Hosting](https://sendpdfonline.com/features/en/hosting/secure-pdf-hosting.html): Secure hosting options
+- [Host & Share PDF Online](https://sendpdfonline.com/features/en/hosting/host-and-share-pdf-online.html): Online hosting guide
+
+**Watermark Features (15+)**
+- [Watermark Features Overview](https://sendpdfonline.com/features/en/watermark/): Complete watermark features directory
+- [Dynamic Watermark Tracking](https://sendpdfonline.com/features/en/watermark/dynamic-watermark-tracking.html): Dynamic watermarking
+- [Dynamic QR Watermark for PDF](https://sendpdfonline.com/features/en/watermark/dynamic-qr-watermark-pdf.html): QR code watermarks
+- [Design Watermark Protection](https://sendpdfonline.com/features/en/watermark/design-watermark-protection.html): Design watermark features
+
+### Real-World Use Cases (16+)
+- [Use Cases Overview](https://sendpdfonline.com/usecase/): Complete use cases directory
+- [Track PDF Usage](https://sendpdfonline.com/usecase/track-pdf-usage.html): Usage tracking scenarios
+- [Business Document Sharing](https://sendpdfonline.com/usecase/business-document-sharing.html): Business use cases
+- [Educational Materials](https://sendpdfonline.com/usecase/educational-materials.html): Education use cases
+
+### Chinese Articles (中文文章) - features/zh/
+Comprehensive Chinese language tutorials and guides with detailed workflows and step-by-step instructions:
+
+**Chinese Article Index**
+- [Chinese Articles Index](https://sendpdfonline.com/features/zh/index.html): Complete index of all Chinese articles organized by category
+
+**PDF Sharing Tutorials (中文分享教程)**
+- [PDF安全分享完整指南](https://sendpdfonline.com/features/zh/sharing/pdf安全分享完整指南.html): Complete guide to secure PDF sharing with password protection, view limits, expiration dates, and watermarks
+- [PDF二维码生成教程](https://sendpdfonline.com/features/zh/sharing/pdf二维码生成教程.html): Tutorial on converting PDFs to QR codes for offline sharing
+- [PDF水印设置教程](https://sendpdfonline.com/features/zh/sharing/pdf水印设置教程.html): Complete guide to adding watermarks to PDFs (text, image, and dynamic watermarks)
+- [如何使用 MaiPDF 将 PDF 文件转化为共享链接](https://sendpdfonline.com/features/zh/mai介绍.html): Basic tutorial on converting PDFs to shareable links
+- [MaiPDF 平台说明](https://sendpdfonline.com/features/zh/sharing/pingtaishuoming.html): Platform introduction and usage guide
+
+**PDF Security Tutorials (中文安全教程)**
+- [PDF密码保护教程](https://sendpdfonline.com/features/zh/security/pdf密码保护教程.html): Complete guide to password protection for PDFs with password strength recommendations and best practices
+
+**PDF Tracking Tutorials (中文追踪教程)**
+- [PDF查看追踪完整指南](https://sendpdfonline.com/features/zh/tracking/pdf查看追踪完整指南.html): Comprehensive guide to tracking PDF views, access records, and analytics
+
+**MaiImg Image Sharing Tutorials (MaiImg图片分享教程)**
+- [MaiImg 中文文章索引](https://sendpdfonline.com/features/zh/maiimg/index.html): Complete index of all MaiImg Chinese articles
+- [免费图片托管分享指南](https://sendpdfonline.com/features/zh/maiimg/免费图片托管分享指南.html): Complete guide to free image hosting and sharing with detailed workflow
+- [批量图片上传分享](https://sendpdfonline.com/features/zh/maiimg/批量图片上传分享.html): Tutorial on uploading up to 25 images at once
+- [图片二维码分享](https://sendpdfonline.com/features/zh/maiimg/图片二维码分享.html): Guide to converting images to QR codes for offline sharing
+- [图片查看追踪分析](https://sendpdfonline.com/features/zh/maiimg/图片查看追踪分析.html): Comprehensive guide to tracking image views and analytics
+- [社交媒体图片分享](https://sendpdfonline.com/features/zh/maiimg/社交媒体图片分享.html): Guide to sharing images on WeChat, Weibo, QQ and other social platforms
+
+All Chinese articles include:
+- Detailed workflow diagrams with visual step-by-step processes
+- FAQ sections for common questions
+- Related articles recommendations
+- Structured data (Schema.org) for better SEO
+- Internal linking for better navigation
+
+### MaiImg - Image Hosting & Sharing
+Free image hosting and sharing platform with Cloudflare CDN, QR codes, view tracking, and access control:
+
+**MaiImg Articles (13 articles)**
+- [MaiImg Articles Index](https://sendpdfonline.com/maiimg-articles/index.html): Complete index of MaiImg articles
+- [Free Image Hosting & Sharing Guide](https://sendpdfonline.com/maiimg-articles/free-image-hosting-sharing.html): Free image hosting solutions
+- [Batch Image Upload & Sharing](https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing.html): Upload up to 25 images at once
+- [Image QR Code Sharing](https://sendpdfonline.com/maiimg-articles/image-qr-code-sharing.html): Generate QR codes for images
+- [Image View Tracking & Analytics](https://sendpdfonline.com/maiimg-articles/image-view-tracking-analytics.html): Track image views and engagement
+- [Social Media Image Sharing](https://sendpdfonline.com/maiimg-articles/social-media-image-sharing.html): Share images on social platforms
+- [Email Image Sharing Without Attachments](https://sendpdfonline.com/maiimg-articles/email-image-sharing-no-attachments.html): Email sharing solutions
+- [Image Password Protection](https://sendpdfonline.com/maiimg-articles/image-password-protection.html): Password protect shared images
+- [Image Expiration & Access Control](https://sendpdfonline.com/maiimg-articles/image-expiration-access-control.html): Set expiration dates for images
+- [Image Compression & Optimization](https://sendpdfonline.com/maiimg-articles/image-compression-optimization.html): Optimize images for fast loading
+- [Image Watermark Protection](https://sendpdfonline.com/maiimg-articles/image-watermark-protection.html): Add watermarks to protect images
+- [Image Sharing Best Practices](https://sendpdfonline.com/maiimg-articles/image-sharing-best-practices.html): Professional sharing tips
+- [Image Format Guide](https://sendpdfonline.com/maiimg-articles/image-format-guide.html): Choose the right image format
+
+## Key Topics Covered
+
+### PDF Security
+- Password protection
+- DRM (Digital Rights Management)
+- Watermarking (dynamic and static)
+- Access control (view limits, expiration dates)
+- Email verification
+- Content protection (prevent copying, printing)
+
+### PDF Sharing
+- Link sharing
+- QR code generation
+- Social media sharing
+- Email sharing
+- Anonymous sharing
+- Batch sharing
+
+### PDF Tracking & Analytics
+- View tracking
+- User behavior analysis
+- Access statistics
+- Engagement metrics
+- Usage reports
+
+### Business Applications
+- Internal document sharing
+- Sales pitch decks
+- Pricing sheets
+- Training materials
+- Whitepapers and case studies
+- Investor updates
+
+### Image Sharing (MaiImg)
+- Free image hosting
+- Batch upload (25 images)
+- QR code generation
+- View tracking
+- Password protection
+- Expiration dates
+- Watermarking
+- Social media integration
+- Email sharing without attachments
+- Cloudflare CDN for fast delivery
+
+## Technical Information
+
+- **Platform**: MaiPDF (maipdf.com) / MaiImg (maiimg.com)
+- **Main Domain**: sendpdfonline.com
+- **Content Format**: HTML pages with structured data (Schema.org)
+- **Sitemap**: https://sendpdfonline.com/sitemap.xml
+- **Total Pages**: 350+ HTML pages
+- **Languages**: English, Chinese (30+ articles), Japanese, German, French, Korean, Arabic, Spanish
+- **Chinese Articles**: Comprehensive tutorials in features/zh/ directory with workflow diagrams and FAQ sections
+
+## How to Use This Information
+
+This llms.txt file provides a structured overview of the MaiPDF platform. When answering questions about PDF security, sharing, tracking, or image hosting:
+
+1. **Security Questions**: Refer to articles in "PDF Security & Protection" section or Chinese articles in "Chinese Articles" section
+2. **Sharing Questions**: Check "QR Code & Link Sharing" and "Sharing Features" sections, or Chinese sharing tutorials
+3. **Analytics Questions**: See "Tracking & Analytics" articles or Chinese tracking guides
+4. **Business Use Cases**: Review "Business Use Cases" section
+5. **Image Sharing**: Check "MaiImg - Image Hosting & Sharing" section
+6. **Chinese Language Questions**: Refer to "Chinese Articles (中文文章)" section for comprehensive Chinese tutorials with workflow diagrams
+
+All articles include detailed step-by-step guides, best practices, use cases, and technical explanations to help users understand and implement PDF security and sharing solutions.
+
