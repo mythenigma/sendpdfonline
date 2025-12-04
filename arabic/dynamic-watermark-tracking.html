@@ -3,663 +3,205 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="تتبع الوصول إلى PDF مع العلامات المائية الديناميكية. راقب من يشاهد مستنداتك ومتى ومن أين.">
-    <meta name="keywords" content="تتبع PDF، علامة مائية ديناميكية، تتبع المستندات، أمان PDF، مراقبة PDF">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="العلامة المائية الديناميكية وتتبع المستندات | MaiPDF">
-    <meta property="og:description" content="تتبع من يشاهد مستندات PDF الخاصة بك مع العلامات المائية الديناميكية وسجلات الوصول التفصيلية">
-    <meta property="og:image" content="/images/dynamic-watermark.png">
-    <title>العلامة المائية الديناميكية وتتبع المستندات | MaiPDF</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <title>تتبع العلامات المائية الديناميكية للـ PDF | MaiPDF</title>
+    <meta name="description" content="تعرف على كيفية استخدام العلامات المائية الديناميكية لتتبع مستندات PDF وحمايتها. اكتشف ميزات التتبع المتقدمة من MaiPDF.">
+    <meta name="keywords" content="علامة مائية ديناميكية, تتبع PDF, حماية المستندات, MaiPDF, أمان PDF">
+    <link rel="canonical" href="https://sendpdfonline.com/arabic/dynamic-watermark-tracking.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background-color: #f5f7fa;
-        }
-        .header {
-            background: linear-gradient(to left, #1e88e5, #4fc3f7);
-            color: white;
-            padding: 3rem 0;
-            text-align: center;
-            margin-bottom: 2rem;
-            border-radius: 0 0 10px 10px;
-        }
-        .content-wrapper {
-            background-color: white;
-            padding: 2rem;
-            border-radius: 10px;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-            margin-bottom: 2rem;
-        }
-        .feature-section {
-            margin-bottom: 2rem;
-            padding: 1rem;
-            border-bottom: 1px solid #eee;
-        }
-        .tip-box {
-            background-color: #e8f5e9;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-right: 4px solid #4caf50;
-            margin: 2rem 0;
-        }
-        .tip-box h2 {
-            color: #2e7d32;
-        }
-        .use-case-box {
-            background-color: #e3f2fd;
-            padding: 1.5rem;
-            border-radius: 8px;
-            border-right: 4px solid #1976d2;
-            margin: 2rem 0;
-        }
-        .use-case-box h2 {
-            color: #1565c0;
-        }
-        .faq-item {
-            background-color: #fff;
-            padding: 1.5rem;
-            border-radius: 8px;
-            margin: 1rem 0;
-            box-shadow: 0 1px 3px rgba(0,0,0,0.1);
-        }
-        .faq-item h3 {
-            color: #0d47a1;
-            font-size: 1.2rem;
-            border-bottom: 1px solid #e0e0e0;
-            padding-bottom: 0.5rem;
-        }
-        .watermark-types {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .watermark-type {
-            flex: 1;
-            background-color: #f5f5f5;
-            padding: 1.5rem;
-            border-radius: 8px;
-            min-width: 250px;
-        }
-        .watermark-type h3 {
-            color: #1976d2;
-            font-size: 1.2rem;
-            margin-bottom: 1rem;
-        }
-        .watermark-example {
-            background-color: #f5f9ff;
-            border: 1px dashed #1976d2;
-            padding: 2rem;
-            position: relative;
-            margin: 2rem 0;
-            text-align: center;
-        }
-        .watermark-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            color: rgba(200, 0, 0, 0.2);
-            transform: rotate(-30deg);
-            pointer-events: none;
-        }
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 1.5rem;
-            margin: 2rem 0;
-        }
-        .feature-card {
-            background-color: #fff;
-            border: 1px solid #e0e0e0;
-            border-radius: 8px;
-            padding: 1.5rem;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        .feature-icon {
-            color: #1976d2;
-            font-size: 2rem;
-            margin-bottom: 1rem;
-        }
-        .footer {
-            background-color: #263238;
-            color: white;
-            padding: 2rem 0;
-            text-align: center;
-            border-radius: 10px 10px 0 0;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #2196f3;
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 4px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: background-color 0.3s ease;
-        }
-        .cta-button:hover {
-            background-color: #1976d2;
-            color: white;
-        }
-        .testimonial {
-            background-color: #f8f9fa;
-            border-radius: 8px;
-            padding: 1.5rem;
-            margin: 1.5rem 0;
-            position: relative;
-        }
-        .testimonial-content {
-            position: relative;
-            padding-right: 2.5rem;
-        }
-        .testimonial-icon {
-            position: absolute;
-            right: 0;
-            top: 0;
-            color: #1976d2;
-            font-size: 1.5rem;
-        }
-        .comparison-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin: 2rem 0;
-        }
-        .comparison-table th {
-            background-color: #1976d2;
-            color: white;
-            padding: 1rem;
-        }
-        .comparison-table td {
-            padding: 1rem;
-            border: 1px solid #e0e0e0;
-        }
-        .comparison-table tr:nth-child(even) {
-            background-color: #f5f5f5;
-        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; }
+        .main-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); margin: 2rem auto; max-width: 900px; }
+        .card-header-custom { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; border-radius: 20px 20px 0 0; padding: 2rem; }
+        .feature-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-right: 4px solid #667eea; }
+        .step-number { width: 36px; height: 36px; background: linear-gradient(135deg, #667eea, #764ba2); color: white; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-weight: bold; margin-left: 1rem; }
+        .cta-section { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); border-radius: 15px; padding: 2rem; color: white; text-align: center; }
+        .breadcrumb { background: transparent; padding: 0; margin-bottom: 1rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .breadcrumb a:hover { color: white; }
+        .meta-info { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .related-link { display: block; padding: 0.75rem 1rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 0.5rem; text-decoration: none; color: #333; transition: all 0.3s; }
+        .related-link:hover { background: #667eea; color: white; transform: translateX(-5px); }
     </style>
-
-    <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "العلامة المائية الديناميكية وتتبع المستندات",
-                "item": "https://sendpdfonline.com/arabic/dynamic-watermark-tracking.html"
-            }
-        ]
+        "@type": "Article",
+        "headline": "تتبع العلامات المائية الديناميكية للـ PDF",
+        "description": "دليل شامل لاستخدام العلامات المائية الديناميكية لتتبع وحماية مستندات PDF",
+        "author": {"@type": "Organization", "name": "MaiPDF"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "logo": {"@type": "ImageObject", "url": "https://sendpdfonline.com/images/logo.png"}},
+        "datePublished": "2024-12-01",
+        "dateModified": "2025-06-15",
+        "mainEntityOfPage": {"@type": "WebPage", "@id": "https://sendpdfonline.com/arabic/dynamic-watermark-tracking.html"}
     }
     </script>
 </head>
 <body>
+    <div class="container py-4">
+        <!-- Breadcrumb Navigation -->
+        <nav class="breadcrumb">
+            <a href="../index.html">الرئيسية</a>
+            <span class="mx-2 text-white">/</span>
+            <a href="index.html">العربية</a>
+            <span class="mx-2 text-white">/</span>
+            <span class="text-white">تتبع العلامات المائية</span>
+        </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">العلامة المائية الديناميكية وتتبع المستندات</li>
-            </ol>
-        </div>
-    </nav>
-    
-    <div class="container">
-        <div class="header">
-            <h1><i class="fas fa-water"></i> العلامة المائية الديناميكية وتتبع المستندات</h1>
-            <p class="lead">حماية وتتبع متقدم للمستندات مع العلامات المائية الديناميكية التي تعرض معلومات المشاهد لمنع التسريب</p>
-        </div>
-
-        <div class="content-wrapper">
-            <div class="feature-section">
-                <h2 class="mb-4"><i class="fas fa-shield-alt"></i> ما هي العلامة المائية الديناميكية؟</h2>
-                
-                <p>العلامة المائية الديناميكية هي طبقة نصية أو صورة تُضاف تلقائياً إلى مستند PDF عند عرضه، وتحتوي على معلومات فريدة عن الشخص الذي يشاهد المستند. على عكس العلامات المائية التقليدية الثابتة، تتغير العلامة المائية الديناميكية مع كل مشاهدة وكل مشاهد، مما يوفر حماية متقدمة ضد التسريب والنسخ غير المصرح به.</p>
-                
-                <div class="watermark-example">
-                    <p>هذا مثال على مستند محمي بالعلامة المائية الديناميكية.</p>
-                    <p>يحتوي هذا المستند على معلومات سرية للشركة.</p>
-                    <div class="watermark-overlay">محمد أحمد - ahmad@example.com - 03/05/2025 - 10:45</div>
-                </div>
-                
-                <h3 class="mt-4 mb-3">كيف تعمل العلامات المائية الديناميكية؟</h3>
-                <p>عند مشاركة مستند PDF عبر منصة MaiPDF، يتم تحديد المشاهد من خلال عنوان IP أو معلومات تسجيل الدخول أو البريد الإلكتروني. عندما يفتح المشاهد المستند، تقوم المنصة تلقائياً بإضافة علامة مائية تحتوي على معلومات المشاهد. تظهر هذه العلامة المائية في جميع صفحات المستند وتكون مرئية عند الطباعة أو التقاط الشاشة.</p>
-                
-                <div class="watermark-types">
-                    <div class="watermark-type">
-                        <h3><i class="fas fa-user"></i> معلومات المشاهد</h3>
-                        <ul>
-                            <li>اسم المشاهد</li>
-                            <li>البريد الإلكتروني</li>
-                            <li>رقم الهاتف</li>
-                            <li>شركة أو مؤسسة</li>
-                        </ul>
-                    </div>
-                    <div class="watermark-type">
-                        <h3><i class="fas fa-clock"></i> معلومات الوقت</h3>
-                        <ul>
-                            <li>تاريخ ووقت المشاهدة</li>
-                            <li>المنطقة الزمنية</li>
-                            <li>مدة المشاهدة</li>
-                            <li>عدد مرات المشاهدة</li>
-                        </ul>
-                    </div>
-                    <div class="watermark-type">
-                        <h3><i class="fas fa-globe"></i> معلومات الموقع</h3>
-                        <ul>
-                            <li>عنوان IP</li>
-                            <li>الموقع الجغرافي</li>
-                            <li>المدينة/البلد</li>
-                            <li>نوع الشبكة</li>
-                        </ul>
-                    </div>
+        <div class="main-card">
+            <!-- Header Section -->
+            <div class="card-header-custom">
+                <h1 class="mb-3"><i class="bi bi-droplet-fill me-2"></i>تتبع العلامات المائية الديناميكية للـ PDF</h1>
+                <p class="lead mb-2">حماية وتتبع مستنداتك بعلامات مائية ذكية تتغير لكل مستخدم</p>
+                <div class="meta-info">
+                    <i class="bi bi-calendar3 me-1"></i> آخر تحديث: يونيو 2025
+                    <span class="mx-3">|</span>
+                    <i class="bi bi-clock me-1"></i> وقت القراءة: 5 دقائق
                 </div>
             </div>
 
-            <div class="feature-section">
-                <h2 class="mb-4"><i class="fas fa-chart-line"></i> قدرات التتبع المتقدمة</h2>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-book-open"></i></div>
-                        <h3>سجلات الوصول للمستندات</h3>
-                        <p>تتبع مفصل لكل مشاهدة للمستند مع بيانات شاملة:</p>
-                        <ul>
-                            <li>سجل كامل للمشاهدات والوصول</li>
-                            <li>معلومات تفصيلية عن جلسات المشاهدة</li>
-                            <li>تتبع الصفحات التي تمت مشاهدتها</li>
-                            <li>مدة مشاهدة كل صفحة</li>
-                            <li>تسجيل محاولات التنزيل أو الطباعة</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-fingerprint"></i></div>
-                        <h3>تحديد هوية المشاهد</h3>
-                        <p>تحديد دقيق لهوية من يشاهد مستنداتك:</p>
-                        <ul>
-                            <li>تتبع بيانات المستخدم المسجل</li>
-                            <li>تحديد عنوان IP ومعلومات الجهاز</li>
-                            <li>معرفة موقع المشاهدة الجغرافي</li>
-                            <li>تفاصيل المتصفح ونظام التشغيل</li>
-                            <li>بصمة رقمية فريدة لكل مشاهد</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-chart-bar"></i></div>
-                        <h3>تحليل أنماط الوصول</h3>
-                        <p>فهم عميق لكيفية استخدام المستندات:</p>
-                        <ul>
-                            <li>إحصاءات المشاهدة والتفاعل</li>
-                            <li>تحليل أوقات الذروة للمشاهدة</li>
-                            <li>مخططات بيانية للوصول عبر الزمن</li>
-                            <li>تقارير تفصيلية للمستندات الأكثر مشاهدة</li>
-                            <li>تحليل أنماط قراءة المستندات</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-bell"></i></div>
-                        <h3>تنبيهات الأمان</h3>
-                        <p>إشعارات فورية لحماية المستندات الهامة:</p>
-                        <ul>
-                            <li>تنبيهات فورية عند فتح المستند</li>
-                            <li>إشعارات بمحاولات الوصول المشبوهة</li>
-                            <li>تنبيهات عند تجاوز حدود المشاهدة</li>
-                            <li>إشعارات لمحاولات الطباعة أو التنزيل</li>
-                            <li>تنبيهات أمان مخصصة</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
+            <div class="card-body p-4">
+                <!-- Introduction -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-info-circle text-primary me-2"></i>ما هي العلامات المائية الديناميكية؟</h2>
+                    <p>العلامات المائية الديناميكية هي تقنية متقدمة تضيف معلومات فريدة لكل نسخة من مستند PDF. على عكس العلامات المائية الثابتة، تتضمن العلامات الديناميكية معلومات مثل:</p>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>عنوان البريد الإلكتروني للمستلم</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>تاريخ ووقت الوصول</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>عنوان IP الخاص بالمشاهد</li>
+                        <li class="mb-2"><i class="bi bi-check-circle-fill text-success me-2"></i>معرف فريد للتتبع</li>
+                    </ul>
+                </section>
 
-            <div class="feature-section">
-                <h2 class="mb-4"><i class="fas fa-lock"></i> ميزات الأمان المتقدمة</h2>
-                
-                <div class="feature-grid">
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-water"></i></div>
-                        <h3>علامات مائية مقاومة للعبث</h3>
-                        <p>تقنية متطورة لضمان أن العلامات المائية لا يمكن إزالتها:</p>
-                        <ul>
-                            <li>طبقات متعددة من العلامات المائية</li>
-                            <li>دمج العلامة المائية مع محتوى المستند</li>
-                            <li>تقنيات مضادة للتلاعب</li>
-                            <li>علامات مائية مرئية وغير مرئية</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-clock"></i></div>
-                        <h3>قيود الوصول الزمنية</h3>
-                        <p>تحكم في متى وكم مرة يمكن عرض المستند:</p>
-                        <ul>
-                            <li>تعيين تاريخ انتهاء صلاحية للمستند</li>
-                            <li>تحديد عدد مرات المشاهدة المسموحة</li>
-                            <li>تقييد الوصول لأوقات معينة من اليوم</li>
-                            <li>تعطيل الوصول بعد فترة عدم نشاط</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-ban"></i></div>
-                        <h3>منع النسخ والتنزيل</h3>
-                        <p>حماية المحتوى من النسخ أو التنزيل غير المصرح به:</p>
-                        <ul>
-                            <li>منع نسخ النص من المستند</li>
-                            <li>تعطيل وظائف التنزيل والحفظ</li>
-                            <li>منع التقاط الشاشة</li>
-                            <li>تقييد وظائف الطباعة</li>
-                        </ul>
-                    </div>
-                    <div class="feature-card">
-                        <div class="feature-icon"><i class="fas fa-key"></i></div>
-                        <h3>التحكم في الوصول</h3>
-                        <p>إدارة متقدمة لمن يمكنه الوصول إلى المستندات:</p>
-                        <ul>
-                            <li>حماية المستندات بكلمة مرور</li>
-                            <li>المصادقة متعددة العوامل</li>
-                            <li>تقييد الوصول حسب المجال أو الشبكة</li>
-                            <li>إمكانية إلغاء الوصول في أي وقت</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="use-case-box">
-                <h2 class="mb-4"><i class="fas fa-briefcase"></i> استخدامات عملية للعلامات المائية الديناميكية</h2>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <h3><i class="fas fa-balance-scale"></i> القطاع القانوني</h3>
-                        <p>حماية المستندات القانونية السرية من التسريب:</p>
-                        <ul>
-                            <li>مشاركة العقود مع العملاء مع تتبع كامل</li>
-                            <li>حماية الاتفاقيات القانونية من النسخ غير المصرح به</li>
-                            <li>توزيع المستندات القانونية مع تحديد هوية المستلم</li>
-                            <li>مراقبة الوصول إلى الوثائق القضائية الحساسة</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <h3><i class="fas fa-chart-pie"></i> الخدمات المالية</h3>
-                        <p>تأمين المعلومات المالية والتقارير الحساسة:</p>
-                        <ul>
-                            <li>مشاركة التقارير المالية مع المستثمرين بأمان</li>
-                            <li>توزيع تقارير التدقيق مع القدرة على تتبع المشاهدات</li>
-                            <li>حماية المعلومات المالية من التسريب</li>
-                            <li>مراقبة وصول المحللين إلى البيانات السرية</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <h3><i class="fas fa-graduation-cap"></i> التعليم والبحث</h3>
-                        <p>حماية الملكية الفكرية والمواد التعليمية:</p>
-                        <ul>
-                            <li>توزيع المواد التعليمية مع حماية حقوق النشر</li>
-                            <li>منع تسريب أسئلة الاختبارات</li>
-                            <li>مشاركة الأبحاث مع تتبع الاستخدام</li>
-                            <li>حماية الأطروحات والدراسات الأكاديمية</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <h3><i class="fas fa-handshake"></i> الأعمال والشركات</h3>
-                        <p>حماية المعلومات التجارية الحساسة:</p>
-                        <ul>
-                            <li>مشاركة خطط الأعمال مع المستثمرين المحتملين</li>
-                            <li>توزيع المستندات الداخلية مع تتبع الوصول</li>
-                            <li>حماية استراتيجيات التسويق والمبيعات</li>
-                            <li>مشاركة العروض التقديمية للعملاء بأمان</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-
-            <div class="tip-box">
-                <h2 class="mb-4"><i class="fas fa-lightbulb"></i> أفضل ممارسات تتبع المستندات</h2>
-                
-                <div class="row">
-                    <div class="col-md-6">
-                        <h3>ضبط العلامات المائية</h3>
-                        <ul>
-                            <li><strong>تخصيص نص العلامة المائية</strong> - استخدم معلومات المشاهد المناسبة للسياق</li>
-                            <li><strong>ضبط الموضع والشفافية</strong> - اختر مستوى مرئي كافٍ دون إعاقة المحتوى</li>
-                            <li><strong>استخدم العلامات المائية المتكررة</strong> - للمستندات الأكثر حساسية</li>
-                            <li><strong>دمج العلامة المائية مع المحتوى</strong> - لجعلها أكثر مقاومة للتلاعب</li>
-                        </ul>
-                    </div>
-                    <div class="col-md-6">
-                        <h3>مراقبة الوصول</h3>
-                        <ul>
-                            <li><strong>مراجعة سجلات الوصول بانتظام</strong> - للكشف عن أنماط الاستخدام غير العادية</li>
-                            <li><strong>إعداد تنبيهات الأمان للنشاط المشبوه</strong> - مثل محاولات الوصول المتعددة</li>
-                            <li><strong>تحليل بيانات المشاهدة</strong> - لفهم من يصل إلى المستندات وكيفية استخدامها</li>
-                            <li><strong>تحديث أذونات الوصول بشكل دوري</strong> - لإلغاء الوصول غير الضروري</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div class="alert alert-info mt-4">
-                    <strong><i class="fas fa-info-circle"></i> نصيحة هامة:</strong> قم بإخبار المستلمين مسبقاً بوجود العلامات المائية الديناميكية وتتبع المشاهدة، فهذا يعمل كرادع إضافي ضد تسريب المعلومات، ويساعد على الامتثال لقوانين حماية البيانات والخصوصية.
-                </div>
-            </div>
-
-            <div class="feature-section">
-                <h2 class="mb-4"><i class="fas fa-sliders-h"></i> خيارات التخصيص المتاحة</h2>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="faq-item">
-                            <h3>تخصيص محتوى العلامة المائية</h3>
-                            <p>اختر المعلومات التي تظهر في العلامة المائية:</p>
-                            <ul>
-                                <li>معلومات المشاهد (الاسم، البريد الإلكتروني، الهاتف)</li>
-                                <li>التاريخ والوقت</li>
-                                <li>معلومات الجهاز وعنوان IP</li>
-                                <li>رسائل مخصصة أو تحذيرات السرية</li>
-                                <li>شعار الشركة أو العلامة التجارية</li>
-                            </ul>
+                <!-- Benefits Section -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-star text-warning me-2"></i>فوائد العلامات المائية الديناميكية</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-shield-check text-primary me-2"></i>منع التسريب</h5>
+                                <p class="mb-0">تحديد مصدر أي تسريب للمستندات بسهولة من خلال العلامة المائية الفريدة.</p>
+                            </div>
                         </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="faq-item">
-                            <h3>تخصيص مظهر العلامة المائية</h3>
-                            <p>اضبط كيفية ظهور العلامة المائية في المستند:</p>
-                            <ul>
-                                <li>الحجم والخط ولون النص</li>
-                                <li>درجة الشفافية والتدوير</li>
-                                <li>الموضع (خلفية، مقدمة، هامش)</li>
-                                <li>التكرار (كل صفحة، صفحات محددة)</li>
-                                <li>النمط (عادي، خط متقطع، ظل)</li>
-                            </ul>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-graph-up text-success me-2"></i>تتبع الاستخدام</h5>
+                                <p class="mb-0">معرفة من قرأ المستند ومتى وكم مرة.</p>
+                            </div>
                         </div>
-                    </div>
-                </div>
-                
-                <div class="comparison-table">
-                    <h3 class="mb-3">مقارنة بين خيارات العلامات المائية</h3>
-                    <table class="table">
-                        <thead>
-                            <tr>
-                                <th>نوع العلامة المائية</th>
-                                <th>مستوى الحماية</th>
-                                <th>الاستخدامات المثالية</th>
-                                <th>الميزات الرئيسية</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td>علامة مائية أساسية</td>
-                                <td>متوسط</td>
-                                <td>المستندات العامة، العروض التقديمية</td>
-                                <td>معلومات المشاهد الأساسية، سهلة الإعداد</td>
-                            </tr>
-                            <tr>
-                                <td>علامة مائية متقدمة</td>
-                                <td>عالي</td>
-                                <td>تقارير الأعمال، العقود</td>
-                                <td>معلومات تفصيلية، تغيير ديناميكي، خيارات تخصيص متعددة</td>
-                            </tr>
-                            <tr>
-                                <td>علامة مائية للمؤسسات</td>
-                                <td>عالي جداً</td>
-                                <td>المستندات السرية، الملكية الفكرية</td>
-                                <td>علامات مائية مرئية وغير مرئية، دمج العلامة مع المستند، مقاومة عالية للتلاعب</td>
-                            </tr>
-                            <tr>
-                                <td>علامة مائية هجينة</td>
-                                <td>الأعلى</td>
-                                <td>معلومات شديدة السرية، مستندات قانونية حساسة</td>
-                                <td>مزيج من العلامات المائية المرئية وغير المرئية، تشفير البيانات، تتبع متقدم للمصدر</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-
-            <div class="testimonials-section">
-                <h2 class="mb-4"><i class="fas fa-quote-right"></i> تجارب المستخدمين</h2>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="testimonial">
-                            <div class="testimonial-content">
-                                <i class="fas fa-quote-right testimonial-icon"></i>
-                                <p>"منذ بدأنا في استخدام العلامات المائية الديناميكية من MaiPDF، انخفضت حالات تسريب المستندات الداخلية بنسبة 95%. الآن نستطيع تحديد مصدر أي تسريب بدقة، مما يوفر رادعاً قوياً ضد المشاركة غير المصرح بها للمعلومات."</p>
-                                <strong>- سمير الخالدي، مدير أمن المعلومات في شركة استشارات مالية</strong>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-lock text-danger me-2"></i>حماية قانونية</h5>
+                                <p class="mb-0">دليل قوي في حالة انتهاك حقوق النشر.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-eye text-info me-2"></i>رؤية شفافة</h5>
+                                <p class="mb-0">علامات مائية غير مزعجة لا تؤثر على قراءة المحتوى.</p>
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="testimonial">
-                            <div class="testimonial-content">
-                                <i class="fas fa-quote-right testimonial-icon"></i>
-                                <p>"كمؤسسة تعليمية، كان تسريب الاختبارات والمواد الدراسية مشكلة كبيرة. مع نظام العلامات المائية الديناميكية، أصبح بإمكاننا معرفة مصدر أي تسريب فوراً. الإعداد بسيط، والنتائج مذهلة."</p>
-                                <strong>- د. نورة السعيد، عميدة الشؤون الأكاديمية في جامعة خاصة</strong>
+                </section>
+
+                <!-- How to Use Section -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-gear text-secondary me-2"></i>كيفية استخدام العلامات المائية الديناميكية</h2>
+                    <div class="mb-3">
+                        <span class="step-number">1</span>
+                        <strong>رفع المستند:</strong> قم برفع ملف PDF إلى MaiPDF
+                    </div>
+                    <div class="mb-3">
+                        <span class="step-number">2</span>
+                        <strong>تفعيل العلامة المائية:</strong> اختر "علامة مائية ديناميكية" من إعدادات الأمان
+                    </div>
+                    <div class="mb-3">
+                        <span class="step-number">3</span>
+                        <strong>تخصيص المحتوى:</strong> حدد المعلومات التي تريد تضمينها (بريد إلكتروني، تاريخ، إلخ)
+                    </div>
+                    <div class="mb-3">
+                        <span class="step-number">4</span>
+                        <strong>مشاركة الرابط:</strong> شارك رابط المستند مع المستلمين
+                    </div>
+                    <div class="mb-3">
+                        <span class="step-number">5</span>
+                        <strong>تتبع النتائج:</strong> راقب من يصل إلى مستندك من لوحة التحكم
+                    </div>
+                </section>
+
+                <!-- Use Cases Section -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-briefcase text-primary me-2"></i>حالات الاستخدام</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-file-earmark-text display-4 text-primary mb-3"></i>
+                                    <h5>العقود القانونية</h5>
+                                    <p class="small">حماية العقود السرية من التسريب</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-graph-up-arrow display-4 text-success mb-3"></i>
+                                    <h5>التقارير المالية</h5>
+                                    <p class="small">تتبع من يطلع على البيانات المالية</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="card h-100 border-0 shadow-sm">
+                                <div class="card-body text-center">
+                                    <i class="bi bi-book display-4 text-info mb-3"></i>
+                                    <h5>المحتوى التعليمي</h5>
+                                    <p class="small">منع مشاركة المواد التعليمية غير المصرح بها</p>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-                
-                <div class="row">
-                    <div class="col-md-6 mb-4">
-                        <div class="testimonial">
-                            <div class="testimonial-content">
-                                <i class="fas fa-quote-right testimonial-icon"></i>
-                                <p>"نستخدم العلامات المائية الديناميكية لحماية تقاريرنا المالية عند مشاركتها مع المستثمرين. الميزة الأكثر إفادة هي قدرتنا على تتبع من قام بالاطلاع على المستندات ومتى، مما يوفر طبقة إضافية من الشفافية والأمان."</p>
-                                <strong>- فهد العتيبي، المدير المالي لشركة ناشئة</strong>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-md-6 mb-4">
-                        <div class="testimonial">
-                            <div class="testimonial-content">
-                                <i class="fas fa-quote-right testimonial-icon"></i>
-                                <p>"كمكتب محاماة، نتعامل مع معلومات سرية للغاية. العلامات المائية الديناميكية تساعدنا في تلبية متطلبات الامتثال القانوني والحفاظ على سرية بيانات العملاء. أصبح تتبع المستندات جزءاً أساسياً من ممارساتنا اليومية."</p>
-                                <strong>- ليلى الراشد، شريك في مكتب محاماة</strong>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
+                </section>
 
-            <div class="faq-section">
-                <h2 class="mb-4"><i class="fas fa-question-circle"></i> الأسئلة الشائعة</h2>
-                
-                <div class="faq-item">
-                    <h3>هل يمكن للمستخدمين إزالة العلامات المائية الديناميكية؟</h3>
-                    <p>لا، العلامات المائية الديناميكية في MaiPDF مصممة لتكون مقاومة للعبث والإزالة. يتم دمجها مع المستند بطريقة متقدمة تجعل إزالتها صعبة للغاية دون تدمير جودة المستند. بالإضافة إلى ذلك، تستخدم المنصة طبقات متعددة من العلامات المائية المرئية وغير المرئية، بحيث حتى لو تمكن شخص ما من إزالة العلامة المائية المرئية، فستظل هناك علامات غير مرئية يمكن استخدامها لتحديد مصدر التسريب.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>هل يمكنني تخصيص العلامات المائية وفقاً لاحتياجات مؤسستي؟</h3>
-                    <p>نعم، توفر MaiPDF مجموعة واسعة من خيارات التخصيص للعلامات المائية الديناميكية. يمكنك تخصيص المحتوى (اختيار أي معلومات تظهر في العلامة المائية)، والمظهر (الحجم، اللون، الشفافية)، والموضع، ونمط العرض. يمكنك أيضاً إضافة شعار شركتك أو رسائل مخصصة إلى العلامات المائية. للحسابات المؤسسية، تتوفر خيارات تخصيص متقدمة إضافية تسمح بإنشاء قوالب متعددة للعلامات المائية وتطبيقها تلقائياً بناءً على نوع المستند أو المستلم.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>هل تؤثر العلامات المائية على قابلية قراءة المستند؟</h3>
-                    <p>صممت العلامات المائية الديناميكية في MaiPDF لتحقيق التوازن المثالي بين الأمان وسهولة الاستخدام. يمكنك ضبط مستوى الشفافية والحجم لضمان عدم تداخل العلامة المائية مع محتوى المستند الأساسي. افتراضياً، يتم ضبط العلامات المائية لتكون مرئية بوضوح كافٍ للعمل كرادع للتسريب، ولكن ليست مزعجة بشكل يؤثر على قراءة المستند. يمكنك أيضاً اختيار وضع العلامات المائية في هوامش الصفحة أو زوايا معينة لتقليل تداخلها مع النص الرئيسي.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>هل يمكنني رؤية من شاهد مستنداتي وما هي الصفحات التي اطلعوا عليها؟</h3>
-                    <p>نعم، توفر MaiPDF تقارير تفصيلية عن كل مشاهدة للمستند. يمكنك رؤية من شاهد المستند، ومتى، ومن أي جهاز وموقع. بالإضافة إلى ذلك، يمكنك الاطلاع على الصفحات التي تمت قراءتها، ومدة المشاهدة لكل صفحة، وأي محاولات للطباعة أو التنزيل. هذه البيانات متاحة في لوحة تحكم سهلة الاستخدام، ويمكن تصديرها بتنسيقات مختلفة للتحليل الإضافي. كما يمكنك إعداد تنبيهات لإشعارك عند مشاهدة مستنداتك الهامة.</p>
-                </div>
-                
-                <div class="faq-item">
-                    <h3>كيف تساعد العلامات المائية الديناميكية في الامتثال للوائح حماية البيانات؟</h3>
-                    <p>تساعد العلامات المائية الديناميكية المؤسسات على الامتثال للوائح حماية البيانات مثل GDPR من خلال توفير آلية لتتبع وإثبات من وصل إلى المعلومات الحساسة. يمكن استخدام سجلات التتبع كدليل على الإجراءات المتخذة لحماية البيانات، وإثبات المسؤولية في حالة حدوث خرق. بالإضافة إلى ذلك، تعمل العلامات المائية كإشعار واضح للمستخدمين بأن وصولهم للمستند يتم تتبعه، مما يشجع على الاستخدام المسؤول للمعلومات. تتضمن المنصة أيضاً أدوات للإبلاغ الآلي وإدارة حقوق الوصول التي تساعد في الامتثال التنظيمي.</p>
-                </div>
-            </div>
+                <!-- CTA Section -->
+                <section class="cta-section mb-4">
+                    <h3 class="mb-3">ابدأ حماية مستنداتك اليوم</h3>
+                    <p class="mb-4">جرب ميزات العلامات المائية الديناميكية مجاناً</p>
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg px-5">
+                        <i class="bi bi-rocket-takeoff me-2"></i>ابدأ مجاناً
+                    </a>
+                </section>
 
-            <div class="cta-section text-center my-5 py-5 bg-light rounded">
-                <h2><i class="fas fa-shield-alt"></i> احمِ مستنداتك الآن مع العلامات المائية الديناميكية</h2>
-                <p class="lead">ابدأ في تأمين مستنداتك ضد التسريب وتتبع كل مشاهدة بدقة</p>
-                <a href="https://maipdf.com/signup" class="cta-button">
-                    ابدأ مجاناً <i class="fas fa-arrow-left ms-2"></i>
-                </a>
-                <p class="mt-3 text-muted">لا حاجة لبطاقة ائتمان. ابدأ مجاناً واختبر جميع الميزات.</p>
-            </div>
+                <!-- Related Articles -->
+                <section class="mb-4">
+                    <h2 class="h4 mb-3"><i class="bi bi-link-45deg text-primary me-2"></i>مقالات ذات صلة</h2>
+                    <a href="pdf-tracking-analytics.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>تحليلات تتبع PDF
+                    </a>
+                    <a href="design-watermark-protection.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>تصميم حماية العلامة المائية
+                    </a>
+                    <a href="pdf-security-features.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>ميزات أمان PDF
+                    </a>
+                    <a href="anonymous-pdf-sharing.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>مشاركة PDF المجهولة
+                    </a>
+                </section>
 
-            <div class="related-content">
-                <h2>روابط لميزات أخرى</h2>
-                <ul>
-                    <li><a href="advanced-security-configurations.html">إعدادات الأمان المتقدمة</a></li>
-                    <li><a href="anonymous-pdf-sharing.html">مشاركة PDF مجهولة</a></li>
-                    <li><a href="convert-pdf-to-qr-code.html">تحويل PDF إلى رمز QR</a></li>
-                    <li><a href="design-watermark-protection.html">حماية العلامة المائية للتصميم</a></li>
-                    <li><a href="dynamic-watermark-tracking.html">تتبع العلامة المائية الديناميكية</a></li>
-                    <li><a href="email-verification-secure-pdf-access.html">التحقق من البريد الإلكتروني للوصول الآمن إلى PDF</a></li>
-                    <li><a href="free-pdf-hosting-and-sharing.html">استضافة ومشاركة PDF مجانية</a></li>
-                    <li><a href="pdf-security-features.html">ميزات أمان PDF</a></li>
-                    <li><a href="pdf-tracking-analytics.html">تحليلات تتبع PDF</a></li>
-                    <li><a href="pdf-tracking-comparison.html">مقارنة تتبع PDF</a></li>
-                    <li><a href="pdf-view-tracking.html">تتبع عرض PDF</a></li>
-                    <li><a href="track-pdf-usage.html">تتبع استخدام PDF</a></li>
-                </ul>
+                <!-- Back Navigation -->
+                <div class="text-center pt-3 border-top">
+                    <a href="index.html" class="btn btn-outline-primary me-2">
+                        <i class="bi bi-arrow-right me-1"></i>العودة للفهرس العربي
+                    </a>
+                    <a href="../index.html" class="btn btn-outline-secondary">
+                        <i class="bi bi-house me-1"></i>الصفحة الرئيسية
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-6 text-center text-md-start">
-                    <h4>MaiPDF</h4>
-                    <p>الحل الأمثل لحماية وتتبع مستندات PDF</p>
-                </div>
-                <div class="col-md-6 text-center text-md-end">
-                    <p>
-                        <a href="https://maipdf.com/privacy" class="text-white me-3">سياسة الخصوصية</a>
-                        <a href="https://maipdf.com/terms" class="text-white me-3">شروط الاستخدام</a>
-                        <a href="https://maipdf.com/contact" class="text-white">اتصل بنا</a>
-                    </p>
-                </div>
-            </div>
-            <div class="text-center mt-3">
-                <p>&copy; 2025 MaiPDF. جميع الحقوق محفوظة.</p>
-            </div>
-        </div>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

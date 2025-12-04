@@ -1,429 +1,244 @@
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="تعلم كيفية تحويل ملفات PDF إلى رموز QR باستخدام MaiPDF. خطوات بسيطة لمشاركة ملفاتك بأمان.">
-  <meta name="keywords" content="MaiPDF، تحويل PDF إلى QR، مشاركة الملفات، عرض PDF، أمان الملفات، عرض رمز QR">
-  <title>كيفية تحويل ملفات PDF إلى رموز QR للعرض - MaiPDF</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-  <style>
-    body {
-      background: linear-gradient(145deg, #a8c0ff, #3f4c67);
-      color: #333;
-      padding-bottom: 60px;
-    }
-    .header {
-      background: linear-gradient(45deg, #ff8b8b, #ff5959);
-      color: white;
-      padding: 30px 0;
-      text-align: center;
-    }
-    .container {
-      margin-top: 40px;
-    }
-    .card {
-      border: 1px solid #007bff;
-      border-radius: 10px;
-      margin-bottom: 20px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    .btn-primary {
-      background-color: #007bff;
-    }
-    .footer {
-      background-color: #ff8b8b;
-      color: white;
-      padding: 20px 0;
-      position: relative;
-      bottom: 0;
-      width: 100%;
-      text-align: center;
-    }
-    .content-section {
-      padding: 20px;
-    }
-    .icon {
-      font-size: 2rem;
-      color: #007bff;
-    }
-    .image-section img {
-      max-width: 100%;
-      border-radius: 10px;
-      margin-bottom: 20px;
-    }
-    .feature-icon {
-      font-size: 3rem;
-      margin-bottom: 10px;
-    }
-    .feature-card {
-      padding: 30px;
-      background-color: #ffffff;
-      border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-      text-align: center;
-      transition: transform 0.3s ease;
-    }
-    .feature-card:hover {
-      transform: scale(1.05);
-    }
-    .icon-upload { color: #3498db; }
-    .icon-qrcode { color: #9b59b6; }
-    .icon-share { color: #f39c12; }
-  </style>
-
-    <!-- Breadcrumb Structured Data -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تحويل PDF إلى رمز QR | MaiPDF</title>
+    <meta name="description" content="تعلم كيفية تحويل ملفات PDF إلى رموز QR للمشاركة السريعة. دليل شامل مع أمثلة عملية من MaiPDF.">
+    <meta name="keywords" content="PDF إلى QR, رمز QR, مشاركة PDF, QR code, MaiPDF">
+    <link rel="canonical" href="https://sendpdfonline.com/arabic/convert-pdf-to-qr-code.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); min-height: 100vh; }
+        .main-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); margin: 2rem auto; max-width: 900px; }
+        .card-header-custom { background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); color: white; border-radius: 20px 20px 0 0; padding: 2rem; }
+        .feature-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-right: 4px solid #ff6b6b; }
+        .qr-preview { background: white; border: 2px dashed #ddd; border-radius: 15px; padding: 2rem; text-align: center; }
+        .qr-icon { font-size: 5rem; color: #ff6b6b; }
+        .step-item { display: flex; align-items: flex-start; margin-bottom: 1.5rem; }
+        .step-number { width: 50px; height: 50px; background: linear-gradient(135deg, #ff6b6b, #feca57); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; font-size: 1.2rem; flex-shrink: 0; margin-left: 1rem; }
+        .cta-section { background: linear-gradient(135deg, #ff6b6b 0%, #feca57 100%); border-radius: 15px; padding: 2rem; color: white; text-align: center; }
+        .breadcrumb { background: transparent; padding: 0; margin-bottom: 1rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .breadcrumb a:hover { color: white; }
+        .meta-info { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .related-link { display: block; padding: 0.75rem 1rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 0.5rem; text-decoration: none; color: #333; transition: all 0.3s; }
+        .related-link:hover { background: #ff6b6b; color: white; transform: translateX(-5px); }
+        .use-case-card { background: linear-gradient(135deg, #f8f9fa, #ffffff); border-radius: 15px; padding: 1.5rem; height: 100%; border: 1px solid #eee; }
+    </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "كيفية تحويل ملفات PDF إلى رموز QR للعرض",
-                "item": "https://sendpdfonline.com/arabic/convert-pdf-to-qr-code.html"
-            }
+        "@type": "HowTo",
+        "name": "تحويل PDF إلى رمز QR",
+        "description": "خطوات تحويل ملف PDF إلى رمز QR للمشاركة السريعة",
+        "step": [
+            {"@type": "HowToStep", "name": "رفع الملف", "text": "ارفع ملف PDF الخاص بك"},
+            {"@type": "HowToStep", "name": "إنشاء الرابط", "text": "احصل على رابط المشاركة"},
+            {"@type": "HowToStep", "name": "توليد QR", "text": "حول الرابط إلى رمز QR"},
+            {"@type": "HowToStep", "name": "المشاركة", "text": "شارك الرمز مع الآخرين"}
         ]
     }
     </script>
 </head>
 <body>
+    <div class="container py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html">الرئيسية</a>
+            <span class="mx-2 text-white">/</span>
+            <a href="index.html">العربية</a>
+            <span class="mx-2 text-white">/</span>
+            <span class="text-white">تحويل PDF إلى QR</span>
+        </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">كيفية تحويل ملفات PDF إلى رموز QR للعرض</li>
-            </ol>
-        </div>
-    </nav>
-    
-  <div class="header">
-    <h1>كيفية تحويل ملفات PDF إلى رموز QR للعرض</h1>
-    <p>من خلال منصة MaiPDF، يمكنك بسهولة تحويل ملفات PDF إلى رموز QR للمشاركة، مع ضمان أمان المحتوى ومنع النسخ أو التحميل.</p>
-  </div>
-
-  <div class="container">
-    <div class="content-section">
-      <h2><i class="fas fa-file-pdf icon"></i> مقدمة</h2>
-      <p>إذا كنت بحاجة إلى عرض ملفات PDF عبر الإنترنت مع حماية محتواها من التحميل أو النسخ، فإن إنشاء رمز QR هو خيار ممتاز. من خلال MaiPDF، يمكنك تحويل ملفات PDF إلى رموز QR ومشاركتها. يمكن للمستلمين مسح رمز QR لعرض محتوى الملف.</p>
-
-      <div class="card mb-4">
-        <div class="card-body">
-          <h3 class="card-title text-center mb-4">مزايا استخدام رموز QR للمستندات</h3>
-          <div class="row">
-            <div class="col-md-4 text-center mb-3">
-              <i class="fas fa-mobile-alt feature-icon" style="color: #e74c3c;"></i>
-              <h5>سهولة الوصول من الهاتف المحمول</h5>
-              <p>يمكن للمستخدمين مسح الرمز بسهولة باستخدام كاميرا الهاتف للوصول الفوري إلى المستند دون كتابة روابط طويلة.</p>
-            </div>
-            <div class="col-md-4 text-center mb-3">
-              <i class="fas fa-shield-alt feature-icon" style="color: #27ae60;"></i>
-              <h5>أمان محسّن</h5>
-              <p>يمكنك تتبع من يصل إلى المستند ومتى، ويمكنك إلغاء الوصول في أي وقت، حتى بعد توزيع رمز QR.</p>
-            </div>
-            <div class="col-md-4 text-center mb-3">
-              <i class="fas fa-chart-line feature-icon" style="color: #3498db;"></i>
-              <h5>تحليلات المشاهدة</h5>
-              <p>احصل على إحصاءات تفصيلية حول عدد مرات مسح الرمز، ووقت المشاهدة، والموقع الجغرافي للمشاهدين.</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h3><i class="fas fa-cogs icon"></i> خطوات تحويل ملف PDF إلى رمز QR</h3>
-
-      <div class="image-section text-center">
-        <img src="../maipdf-images/maipdf_landing_page.png" alt="توليد رمز QR في MaiPDF" class="img-fluid">
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="feature-card">
-            <i class="fas fa-upload feature-icon icon-upload"></i>
-            <h4>الخطوة الأولى: رفع ملف PDF</h4>
-            <p>أولاً، قم بزيارة موقع MaiPDF وارفع ملف PDF الذي تريد عرضه. المنصة تدعم رفع ملفات PDF بصيغ متعددة.</p>
-            <div class="mt-3">
-              <strong>تفاصيل إضافية:</strong>
-              <ul class="text-start">
-                <li>يمكن رفع ملفات بحجم يصل إلى 50 ميجابايت</li>
-                <li>تدعم المنصة ملفات PDF المحمية بكلمة مرور</li>
-                <li>يمكن رفع ملفات متعددة في وقت واحد</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="feature-card">
-            <i class="fas fa-qrcode feature-icon icon-qrcode"></i>
-            <h4>الخطوة الثانية: إنشاء رمز QR</h4>
-            <p>بعد رفع الملف، سيقوم MaiPDF تلقائياً بإنشاء رمز QR فريد لملف PDF الخاص بك. يمكنك اختيار السماح بالتحميل أو نسخ المحتوى.</p>
-            <div class="mt-3">
-              <strong>خيارات التخصيص:</strong>
-              <ul class="text-start">
-                <li>ضبط حجم رمز QR (صغير، متوسط، كبير)</li>
-                <li>اختيار ألوان مخصصة للرمز تتماشى مع علامتك التجارية</li>
-                <li>إضافة شعار في وسط رمز QR</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="row">
-        <div class="col-md-6">
-          <div class="feature-card">
-            <i class="fas fa-share-alt feature-icon icon-share"></i>
-            <h4>الخطوة الثالثة: مشاركة رمز QR</h4>
-            <p>بعد إنشاء رمز QR، يمكنك تحميل صورة الرمز أو نسخها ومشاركتها مع أصدقائك أو زملائك. يمكن للمستلم ببساطة مسح رمز QR باستخدام هاتفه لعرض الملف عبر الإنترنت.</p>
-            <div class="mt-3">
-              <strong>طرق المشاركة:</strong>
-              <ul class="text-start">
-                <li>طباعة الرمز على المواد التسويقية (بطاقات العمل، المنشورات، الملصقات)</li>
-                <li>مشاركة الرمز عبر وسائل التواصل الاجتماعي</li>
-                <li>تضمين الرمز في العروض التقديمية والمستندات</li>
-                <li>إرسال الرمز عبر البريد الإلكتروني أو تطبيقات المراسلة</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="feature-card">
-            <i class="fas fa-link feature-icon icon-link"></i>
-            <h4>الخطوة الرابعة: تعيين قيود الوصول</h4>
-            <p>عند إنشاء رمز QR، يمكنك تعيين أذونات الوصول، مثل تحديد عدد مرات العرض المسموح بها، لضمان أن محتوى الملف متاح فقط للمستخدمين المحددين.</p>
-            <div class="mt-3">
-              <strong>إعدادات الأمان المتاحة:</strong>
-              <ul class="text-start">
-                <li>تحديد تاريخ انتهاء صلاحية (يصبح الرمز غير صالح بعد هذا التاريخ)</li>
-                <li>قيود عدد المشاهدات (مثلاً: 5 مشاهدات كحد أقصى)</li>
-                <li>حماية بكلمة مرور للوصول إلى المستند</li>
-                <li>منع التحميل والطباعة والنسخ</li>
-                <li>إضافة علامة مائية ديناميكية</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card my-5">
-        <div class="card-body">
-          <h3 class="card-title text-center">استخدامات عملية لرموز QR للمستندات</h3>
-          
-          <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-              <div class="p-3 border rounded h-100" style="background-color: #f8f9fa;">
-                <h5><i class="fas fa-briefcase me-2" style="color: #3498db;"></i> في مجال الأعمال</h5>
-                <ul>
-                  <li>كتالوجات المنتجات وأوراق المواصفات</li>
-                  <li>بطاقات العمل مع روابط السيرة الذاتية المفصلة</li>
-                  <li>عروض الأسعار والعقود</li>
-                  <li>تقارير الشركة والنشرات الإخبارية</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <div class="p-3 border rounded h-100" style="background-color: #f8f9fa;">
-                <h5><i class="fas fa-graduation-cap me-2" style="color: #e74c3c;"></i> في مجال التعليم</h5>
-                <ul>
-                  <li>مواد تعليمية للطلاب</li>
-                  <li>خطط الدروس والمناهج</li>
-                  <li>شهادات وإثباتات الدورات التدريبية</li>
-                  <li>دليل المعلم والموارد التعليمية</li>
-                </ul>
-              </div>
-            </div>
-            <div class="col-md-4 mb-3">
-              <div class="p-3 border rounded h-100" style="background-color: #f8f9fa;">
-                <h5><i class="fas fa-hospital me-2" style="color: #27ae60;"></i> في مجال الرعاية الصحية</h5>
-                <ul>
-                  <li>كتيبات إرشادية للمرضى</li>
-                  <li>معلومات الأدوية والتعليمات</li>
-                  <li>جداول المواعيد والتعليمات</li>
-                  <li>نشرات توعوية صحية</li>
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <h3><i class="fas fa-question-circle icon"></i> الأسئلة الشائعة حول تحويل PDF إلى رمز QR</h3>
-      
-      <div class="accordion" id="faqAccordion">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-              هل يمكن للمستخدمين تحميل الملف عند مسح رمز QR؟
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              يمكنك التحكم في هذا الإعداد. افتراضياً، سيتمكن المستخدمون من عرض المستند فقط دون تنزيله. ولكن يمكنك السماح بتنزيل الملف إذا كنت ترغب في ذلك من خلال تغيير إعدادات الأمان. حتى عند السماح بالتنزيل، يمكنك تتبع من قام بتنزيل الملف ومتى.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-              هل يمكنني معرفة عدد مرات مسح رمز QR الخاص بي؟
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              نعم، توفر منصة MaiPDF تحليلات مفصلة لكل رمز QR، بما في ذلك:
-              <ul>
-                <li>عدد مرات مسح الرمز</li>
-                <li>توقيت عمليات المسح</li>
-                <li>الأجهزة المستخدمة للمسح</li>
-                <li>المواقع الجغرافية للمستخدمين</li>
-                <li>مدة مشاهدة المستند</li>
-              </ul>
-              هذه البيانات مفيدة لتحليل فعالية حملاتك التسويقية أو مشاركة المستندات.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-              ماذا يحدث عندما أقوم بتحديث ملف PDF بعد إنشاء رمز QR له؟
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              عند تحديث ملف PDF في حسابك على MaiPDF، يظل رمز QR كما هو دون تغيير، لكن المحتوى الذي يعرضه سيكون النسخة المحدثة. هذه ميزة قوية تتيح لك تحديث المعلومات (مثل الأسعار، العروض، أو المواصفات) دون الحاجة إلى إعادة طباعة أو توزيع رموز QR جديدة.
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingFour">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-              هل يمكنني تخصيص مظهر رمز QR ليتماشى مع علامتي التجارية؟
-            </button>
-          </h2>
-          <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-            <div class="accordion-body">
-              نعم، توفر MaiPDF خيارات تخصيص متعددة لرموز QR:
-              <ul>
-                <li>تغيير ألوان النقاط والخلفية</li>
-                <li>إضافة شعار شركتك في وسط الرمز</li>
-                <li>تغيير شكل النقاط (مربعات، دوائر، إلخ)</li>
-                <li>ضبط مستوى تصحيح الخطأ (يؤثر على قدرة الرمز على العمل حتى عند تلفه جزئياً)</li>
-              </ul>
-              كل هذه التخصيصات تحافظ على وظيفة الرمز مع توفير مظهر يتماشى مع هوية علامتك التجارية.
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card my-5" style="background-color: #f0faff; border-color: #3498db;">
-        <div class="card-body">
-          <h3 class="card-title text-center mb-4">نصائح لاستخدام فعّال لرموز QR للمستندات</h3>
-          <div class="row">
-            <div class="col-md-6">
-              <h5><i class="fas fa-check-circle me-2" style="color: #3498db;"></i> أفضل الممارسات</h5>
-              <ul>
-                <li>استخدم جملة وصفية بجانب رمز QR لتوضيح محتواه</li>
-                <li>اختبر رمز QR قبل توزيعه على نطاق واسع</li>
-                <li>حافظ على حجم مناسب للرمز (لا يقل عن 2×2 سم للمواد المطبوعة)</li>
-                <li>أضف تباين كافٍ بين الرمز والخلفية</li>
-                <li>استخدم عنوان URL مختصر لتقليل تعقيد الرمز</li>
-              </ul>
-            </div>
-            <div class="col-md-6">
-              <h5><i class="fas fa-exclamation-triangle me-2" style="color: #e74c3c;"></i> ما يجب تجنبه</h5>
-              <ul>
-                <li>تجنب وضع رموز QR على أسطح غير مستوية</li>
-                <li>لا تستخدم رموز QR صغيرة جداً أو معقدة بشكل زائد</li>
-                <li>تجنب وضع الرمز في أماكن ذات إضاءة ضعيفة أو انعكاسات</li>
-                <li>لا تبالغ في تخصيص الرمز بما يؤثر على وظيفته</li>
-                <li>تجنب استخدام رمز QR دون توفير طريقة بديلة للوصول إلى المحتوى</li>
-              </ul>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="card my-5" style="background-color: #fffaf0; border-color: #f39c12;">
-        <div class="card-body">
-          <h3 class="card-title text-center">تجارب المستخدمين مع رموز QR للمستندات</h3>
-          
-          <div class="row mt-4">
-            <div class="col-md-6 mb-3">
-              <div class="p-3 border rounded" style="background-color: #ffffff;">
-                <div class="d-flex align-items-center mb-3">
-                  <i class="fas fa-user-circle fa-2x me-3" style="color: #3498db;"></i>
-                  <div>
-                    <h5 class="mb-0">أحمد العمري</h5>
-                    <p class="small text-muted mb-0">مدير تسويق، شركة الصفا للتقنية</p>
-                  </div>
+        <div class="main-card">
+            <div class="card-header-custom">
+                <h1 class="mb-3"><i class="bi bi-qr-code me-2"></i>تحويل PDF إلى رمز QR</h1>
+                <p class="lead mb-2">شارك مستنداتك بمسح سريع - الطريقة الأسهل للمشاركة</p>
+                <div class="meta-info">
+                    <i class="bi bi-calendar3 me-1"></i> آخر تحديث: يونيو 2025
+                    <span class="mx-3">|</span>
+                    <i class="bi bi-clock me-1"></i> وقت القراءة: 4 دقائق
                 </div>
-                <p>"استخدمنا رموز QR لربط كتالوجات المنتجات المطبوعة بأوراق المواصفات التفصيلية والفيديوهات التوضيحية. النتائج كانت مذهلة - زيادة بنسبة 40% في تفاعل العملاء مع محتوانا، مع توفير تكاليف الطباعة بنسبة 60%."</p>
-              </div>
             </div>
-            <div class="col-md-6 mb-3">
-              <div class="p-3 border rounded" style="background-color: #ffffff;">
-                <div class="d-flex align-items-center mb-3">
-                  <i class="fas fa-user-circle fa-2x me-3" style="color: #27ae60;"></i>
-                  <div>
-                    <h5 class="mb-0">سارة الدوسري</h5>
-                    <p class="small text-muted mb-0">أستاذة جامعية، كلية الهندسة</p>
-                  </div>
+
+            <div class="card-body p-4">
+                <!-- Introduction -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-info-circle text-primary me-2"></i>لماذا رموز QR؟</h2>
+                    <p>رموز QR تجعل مشاركة المستندات أسهل من أي وقت مضى. بدلاً من إرسال روابط طويلة، يمكن للمستلم مسح الرمز بكاميرا هاتفه للوصول الفوري للمستند.</p>
+                    
+                    <div class="qr-preview mt-4">
+                        <i class="bi bi-qr-code qr-icon"></i>
+                        <p class="mt-3 mb-0 text-muted">امسح هذا الرمز للوصول للمستند</p>
+                    </div>
+                </section>
+
+                <!-- Benefits -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-star text-warning me-2"></i>فوائد استخدام QR</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-lightning text-warning me-2"></i>سرعة الوصول</h5>
+                                <p class="mb-0">الوصول للمستند بثانية واحدة فقط.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-phone text-primary me-2"></i>صديق للموبايل</h5>
+                                <p class="mb-0">مثالي للوصول من الهواتف الذكية.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-printer text-success me-2"></i>قابل للطباعة</h5>
+                                <p class="mb-0">أضفه للمواد المطبوعة والكروت.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-graph-up text-info me-2"></i>قابل للتتبع</h5>
+                                <p class="mb-0">تتبع عدد مرات المسح والموقع.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Steps -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-list-ol text-success me-2"></i>خطوات التحويل</h2>
+                    
+                    <div class="step-item">
+                        <div class="step-number">1</div>
+                        <div>
+                            <h5>رفع ملف PDF</h5>
+                            <p class="text-muted mb-0">اذهب إلى MaiPDF وارفع ملف PDF الذي تريد مشاركته.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">2</div>
+                        <div>
+                            <h5>ضبط إعدادات المشاركة</h5>
+                            <p class="text-muted mb-0">حدد خيارات الأمان والتتبع المطلوبة.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">3</div>
+                        <div>
+                            <h5>الحصول على رابط المشاركة</h5>
+                            <p class="text-muted mb-0">انقر على "إنشاء رابط" للحصول على رابط فريد.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">4</div>
+                        <div>
+                            <h5>توليد رمز QR</h5>
+                            <p class="text-muted mb-0">انقر على أيقونة QR لتحويل الرابط إلى رمز.</p>
+                        </div>
+                    </div>
+
+                    <div class="step-item">
+                        <div class="step-number">5</div>
+                        <div>
+                            <h5>تنزيل ومشاركة</h5>
+                            <p class="text-muted mb-0">نزّل صورة الرمز واستخدمها في أي مكان.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Use Cases -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-briefcase text-primary me-2"></i>حالات الاستخدام</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="use-case-card">
+                                <i class="bi bi-person-badge display-5 text-primary mb-3"></i>
+                                <h5>بطاقات العمل</h5>
+                                <p class="small text-muted mb-0">أضف QR لملف السيرة الذاتية أو البورتفوليو على بطاقتك.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="use-case-card">
+                                <i class="bi bi-calendar-event display-5 text-success mb-3"></i>
+                                <h5>المؤتمرات</h5>
+                                <p class="small text-muted mb-0">شارك العروض التقديمية مع الحضور بسهولة.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="use-case-card">
+                                <i class="bi bi-shop display-5 text-warning mb-3"></i>
+                                <h5>المتاجر</h5>
+                                <p class="small text-muted mb-0">قوائم المنتجات والكتالوجات الرقمية.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="use-case-card">
+                                <i class="bi bi-mortarboard display-5 text-info mb-3"></i>
+                                <h5>التعليم</h5>
+                                <p class="small text-muted mb-0">مشاركة المواد الدراسية مع الطلاب.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="use-case-card">
+                                <i class="bi bi-building display-5 text-danger mb-3"></i>
+                                <h5>العقارات</h5>
+                                <p class="small text-muted mb-0">كتيبات العقارات على لافتات "للبيع".</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="use-case-card">
+                                <i class="bi bi-cup-hot display-5 text-secondary mb-3"></i>
+                                <h5>المطاعم</h5>
+                                <p class="small text-muted mb-0">قوائم الطعام الرقمية على الطاولات.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section mb-4">
+                    <h3 class="mb-3">أنشئ رمز QR الآن</h3>
+                    <p class="mb-4">حول ملف PDF إلى رمز QR في ثوانٍ</p>
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg px-5">
+                        <i class="bi bi-qr-code me-2"></i>ابدأ الآن
+                    </a>
+                </section>
+
+                <!-- Related Articles -->
+                <section class="mb-4">
+                    <h2 class="h4 mb-3"><i class="bi bi-link-45deg text-primary me-2"></i>مقالات ذات صلة</h2>
+                    <a href="free-pdf-hosting-and-sharing.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>استضافة ومشاركة PDF مجانية
+                    </a>
+                    <a href="pdf-tracking-analytics.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>تحليلات تتبع PDF
+                    </a>
+                    <a href="pdf-view-tracking.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>تتبع مشاهدات PDF
+                    </a>
+                    <a href="anonymous-pdf-sharing.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>مشاركة PDF المجهولة
+                    </a>
+                </section>
+
+                <!-- Back Navigation -->
+                <div class="text-center pt-3 border-top">
+                    <a href="index.html" class="btn btn-outline-primary me-2">
+                        <i class="bi bi-arrow-right me-1"></i>العودة للفهرس العربي
+                    </a>
+                    <a href="../index.html" class="btn btn-outline-secondary">
+                        <i class="bi bi-house me-1"></i>الصفحة الرئيسية
+                    </a>
                 </div>
-                <p>"أضفت رموز QR إلى المواد التعليمية للطلاب للوصول إلى ملفات PDF للموارد الإضافية. الميزة المفضلة لدي هي إمكانية تحديث المحتوى دون تغيير الرمز، وتتبع من قام بالاطلاع على المواد، مما ساعدني في تقييم مشاركة الطلاب."</p>
-              </div>
             </div>
-          </div>
         </div>
-      </div>
-
-      <h3><i class="fas fa-thumbs-up icon"></i> الخلاصة</h3>
-      <p>من خلال MaiPDF، لا يمكنك فقط تحويل ملفات PDF إلى رموز QR، بل يمكنك أيضاً تعيين صلاحية الملف وأمانه. يوفر رمز QR طريقة بسيطة وآمنة لمشاركة ملفات PDF، مع ضمان عدم نسخ أو تحميل ملفاتك من قبل مستخدمين غير مصرح لهم.</p>
-      
-      <div class="alert alert-info mt-4">
-        <i class="fas fa-info-circle me-2"></i> باستخدام رموز QR للمستندات، ستحصل على تجربة رقمية سلسة تجمع بين سهولة الوصول في العالم المادي والمرونة والأمان في العالم الرقمي. جرب هذه الميزة اليوم وشاهد كيف يمكنها تحسين استراتيجية مشاركة المستندات لديك.
-      </div>
     </div>
 
-    <div class="related-content">
-        <h2>روابط لميزات أخرى</h2>
-        <ul>
-            <li><a href="advanced-security-configurations.html">إعدادات الأمان المتقدمة</a></li>
-            <li><a href="anonymous-pdf-sharing.html">مشاركة PDF مجهولة</a></li>
-            <li><a href="convert-pdf-to-qr-code.html">تحويل PDF إلى رمز QR</a></li>
-            <li><a href="design-watermark-protection.html">حماية العلامة المائية للتصميم</a></li>
-            <li><a href="dynamic-watermark-tracking.html">تتبع العلامة المائية الديناميكية</a></li>
-            <li><a href="email-verification-secure-pdf-access.html">التحقق من البريد الإلكتروني للوصول الآمن إلى PDF</a></li>
-            <li><a href="free-pdf-hosting-and-sharing.html">استضافة ومشاركة PDF مجانية</a></li>
-            <li><a href="pdf-security-features.html">ميزات أمان PDF</a></li>
-            <li><a href="pdf-tracking-analytics.html">تحليلات تتبع PDF</a></li>
-            <li><a href="pdf-tracking-comparison.html">مقارنة تتبع PDF</a></li>
-            <li><a href="pdf-view-tracking.html">تتبع عرض PDF</a></li>
-            <li><a href="track-pdf-usage.html">تتبع استخدام PDF</a></li>
-        </ul>
-    </div>
-
-    <div class="text-center my-5">
-      <a href="https://www.maipdf.cn" class="btn btn-primary btn-lg px-5 py-3">
-        <i class="fas fa-cloud-upload-alt me-2"></i> ارفع ملف PDF وأنشئ رمز QR الآن
-      </a>
-      <p class="mt-3 text-muted">لا حاجة للتسجيل. ابدأ المشاركة الآمنة لمستنداتك في أقل من دقيقة.</p>
-    </div>
-  </div>
-
-  <div class="footer">
-    <p>&copy; 2025 MaiPDF. جميع الحقوق محفوظة.</p>
-  </div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

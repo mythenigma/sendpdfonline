@@ -3,199 +3,220 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>PDF Passwortschutz & Verschlüsselung | MaiPDF</title>
-    <meta name="description" content="Professioneller PDF-Passwortschutz mit 256-bit Verschlüsselung. Schützen Sie vertrauliche Dokumente mit mehrstufiger Authentifizierung und granularer Zugriffskontrolle.">
-    <meta name="keywords" content="PDF Passwortschutz, PDF Verschlüsselung, Dokumentensicherheit, PDF Zugriffskontrolle, sichere PDFs">
-    <link rel="stylesheet" href="../styles.css">
-    <link rel="canonical" href="https://sendpdfonline.com/german/passwortschutz.html" />
-
-    <!-- Breadcrumb Structured Data -->
+    <title>PDF-Passwortschutz | MaiPDF</title>
+    <meta name="description" content="Schützen Sie Ihre PDF-Dokumente mit sicheren Passwörtern. Erfahren Sie, wie Sie effektiven Passwortschutz einrichten.">
+    <meta name="keywords" content="PDF Passwortschutz, PDF verschlüsseln, Dokumentenschutz, sichere PDF, MaiPDF">
+    <link rel="canonical" href="https://sendpdfonline.com/german/passwortschutz.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
+    <style>
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); min-height: 100vh; }
+        .main-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); margin: 2rem auto; max-width: 900px; }
+        .card-header-custom { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); color: white; border-radius: 20px 20px 0 0; padding: 2rem; }
+        .feature-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-left: 4px solid #2c3e50; }
+        .password-strength { height: 10px; border-radius: 5px; margin-top: 0.5rem; }
+        .strength-weak { background: linear-gradient(90deg, #dc3545 0%, #dc3545 33%, #eee 33%); }
+        .strength-medium { background: linear-gradient(90deg, #ffc107 0%, #ffc107 66%, #eee 66%); }
+        .strength-strong { background: #28a745; }
+        .cta-section { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); border-radius: 15px; padding: 2rem; color: white; text-align: center; }
+        .breadcrumb { background: transparent; padding: 0; margin-bottom: 1rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .breadcrumb a:hover { color: white; }
+        .meta-info { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .related-link { display: block; padding: 0.75rem 1rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 0.5rem; text-decoration: none; color: #333; transition: all 0.3s; }
+        .related-link:hover { background: #2c3e50; color: white; transform: translateX(5px); }
+        .tip-box { background: #e8f4f8; border-radius: 10px; padding: 1rem; border-left: 4px solid #4ca1af; }
+    </style>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "PDF Passwortschutz & Verschlüsselung",
-                "item": "https://sendpdfonline.com/german/passwortschutz.html"
-            }
-        ]
+        "@type": "Article",
+        "headline": "PDF-Passwortschutz",
+        "description": "Umfassender Leitfaden zum Passwortschutz für PDF-Dokumente",
+        "author": {"@type": "Organization", "name": "MaiPDF"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF"},
+        "datePublished": "2024-09-15",
+        "dateModified": "2025-06-15"
     }
     </script>
 </head>
 <body>
+    <div class="container py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="mx-2 text-white">/</span>
+            <a href="index.html">Deutsch</a>
+            <span class="mx-2 text-white">/</span>
+            <span class="text-white">Passwortschutz</span>
+        </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">PDF Passwortschutz & Verschlüsselung</li>
-            </ol>
+        <div class="main-card">
+            <div class="card-header-custom">
+                <h1 class="mb-3"><i class="bi bi-key-fill me-2"></i>PDF-Passwortschutz</h1>
+                <p class="lead mb-2">Schützen Sie Ihre Dokumente mit starken Passwörtern</p>
+                <div class="meta-info">
+                    <i class="bi bi-calendar3 me-1"></i> Letzte Aktualisierung: Juni 2025
+                    <span class="mx-3">|</span>
+                    <i class="bi bi-clock me-1"></i> Lesezeit: 4 Minuten
+                </div>
+            </div>
+
+            <div class="card-body p-4">
+                <!-- Introduction -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-lock text-primary me-2"></i>Warum Passwortschutz?</h2>
+                    <p>Passwortschutz ist die erste Verteidigungslinie für Ihre sensiblen Dokumente. Er verhindert unbefugten Zugriff und stellt sicher, dass nur autorisierte Personen Ihre PDFs öffnen können.</p>
+                    
+                    <div class="tip-box mt-4">
+                        <h5><i class="bi bi-lightbulb text-warning me-2"></i>Tipp</h5>
+                        <p class="mb-0">Kombinieren Sie Passwortschutz mit anderen Sicherheitsfunktionen wie E-Mail-Verifizierung für maximalen Schutz.</p>
+                    </div>
+                </section>
+
+                <!-- Password Types -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-shield text-success me-2"></i>Arten von Passwortschutz</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-eye text-primary me-2"></i>Öffnungspasswort</h5>
+                                <p class="mb-0">Erforderlich zum Öffnen und Anzeigen des Dokuments.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-pencil text-warning me-2"></i>Bearbeitungspasswort</h5>
+                                <p class="mb-0">Erforderlich zum Bearbeiten oder Ändern des Dokuments.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Password Strength -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-speedometer2 text-warning me-2"></i>Passwortstärke</h2>
+                    <div class="card border-0 shadow-sm p-3 mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><strong>Schwach:</strong> 123456</span>
+                            <span class="badge bg-danger">Nicht empfohlen</span>
+                        </div>
+                        <div class="password-strength strength-weak"></div>
+                    </div>
+                    <div class="card border-0 shadow-sm p-3 mb-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><strong>Mittel:</strong> MaiPdf2024</span>
+                            <span class="badge bg-warning text-dark">Akzeptabel</span>
+                        </div>
+                        <div class="password-strength strength-medium"></div>
+                    </div>
+                    <div class="card border-0 shadow-sm p-3">
+                        <div class="d-flex justify-content-between align-items-center">
+                            <span><strong>Stark:</strong> M@iPdf#2024!Sec</span>
+                            <span class="badge bg-success">Empfohlen</span>
+                        </div>
+                        <div class="password-strength strength-strong"></div>
+                    </div>
+                </section>
+
+                <!-- Best Practices -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-check2-all text-success me-2"></i>Best Practices</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-box" style="border-left-color: #28a745;">
+                                <h5><i class="bi bi-check-circle text-success me-2"></i>Empfohlen</h5>
+                                <ul class="mb-0 small">
+                                    <li>Mindestens 12 Zeichen</li>
+                                    <li>Groß- und Kleinbuchstaben</li>
+                                    <li>Zahlen und Sonderzeichen</li>
+                                    <li>Einzigartige Passwörter</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box" style="border-left-color: #dc3545;">
+                                <h5><i class="bi bi-x-circle text-danger me-2"></i>Vermeiden</h5>
+                                <ul class="mb-0 small">
+                                    <li>Persönliche Informationen</li>
+                                    <li>Wörterbuchbegriffe</li>
+                                    <li>Sequenzen (123, abc)</li>
+                                    <li>Wiederverwendete Passwörter</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- How to Set -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-gear text-secondary me-2"></i>So setzen Sie ein Passwort</h2>
+                    <ol class="list-group list-group-numbered">
+                        <li class="list-group-item d-flex">
+                            <div class="ms-2">
+                                <strong>PDF hochladen</strong>
+                                <p class="mb-0 small text-muted">Laden Sie Ihr Dokument auf MaiPDF hoch</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex">
+                            <div class="ms-2">
+                                <strong>Sicherheitseinstellungen öffnen</strong>
+                                <p class="mb-0 small text-muted">Klicken Sie auf "Sicherheit" in den Optionen</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex">
+                            <div class="ms-2">
+                                <strong>Passwort eingeben</strong>
+                                <p class="mb-0 small text-muted">Geben Sie ein starkes Passwort ein</p>
+                            </div>
+                        </li>
+                        <li class="list-group-item d-flex">
+                            <div class="ms-2">
+                                <strong>Speichern & Teilen</strong>
+                                <p class="mb-0 small text-muted">Speichern Sie und teilen Sie den Link</p>
+                            </div>
+                        </li>
+                    </ol>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section mb-4">
+                    <h3 class="mb-3">Schützen Sie Ihre PDFs jetzt</h3>
+                    <p class="mb-4">Fügen Sie Passwortschutz in Sekunden hinzu</p>
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg px-5">
+                        <i class="bi bi-lock me-2"></i>Jetzt schützen
+                    </a>
+                </section>
+
+                <!-- Related Articles -->
+                <section class="mb-4">
+                    <h2 class="h4 mb-3"><i class="bi bi-link-45deg text-primary me-2"></i>Verwandte Artikel</h2>
+                    <a href="email-verifizierung.html" class="related-link">
+                        <i class="bi bi-arrow-right me-2"></i>E-Mail-Verifizierung
+                    </a>
+                    <a href="sicheres-pdf-teilen.html" class="related-link">
+                        <i class="bi bi-arrow-right me-2"></i>Sicheres PDF-Teilen
+                    </a>
+                    <a href="zugriffskontrolle.html" class="related-link">
+                        <i class="bi bi-arrow-right me-2"></i>Zugriffskontrolle
+                    </a>
+                    <a href="druckkontrolle.html" class="related-link">
+                        <i class="bi bi-arrow-right me-2"></i>Druckkontrolle
+                    </a>
+                </section>
+
+                <!-- Back Navigation -->
+                <div class="text-center pt-3 border-top">
+                    <a href="index.html" class="btn btn-outline-primary me-2">
+                        <i class="bi bi-arrow-left me-1"></i>Zurück zur Übersicht
+                    </a>
+                    <a href="../index.html" class="btn btn-outline-secondary">
+                        <i class="bi bi-house me-1"></i>Startseite
+                    </a>
+                </div>
+            </div>
         </div>
-    </nav>
-    
-    <header>
-        <h1>PDF Passwortschutz & Verschlüsselung</h1>
-        <p class="header-description">Professionelle Sicherheitslösungen für Ihre PDF-Dokumente</p>
-    </header>
-    <main>
-        <section class="content-section">
-            <h2>Umfassender Dokumentenschutz</h2>
-            <p>Unsere Passwortschutz-Lösung bietet:</p>
-            <ul>
-                <li>256-bit AES-Verschlüsselung</li>
-                <li>Mehrstufige Authentifizierung</li>
-                <li>Granulare Zugriffsrechte</li>
-                <li>Automatische Verschlüsselung</li>
-            </ul>
-        </section>
+    </div>
 
-        <section class="content-section">
-            <h2>Sicherheitsfunktionen</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Zugriffssteuerung</h3>
-                    <ul>
-                        <li>Benutzer- und Gruppenrechte</li>
-                        <li>Zeitlich begrenzte Zugriffe</li>
-                        <li>IP-basierte Beschränkungen</li>
-                        <li>Gerätespezifische Kontrollen</li>
-                    </ul>
-                </div>
-                <div class="feature-item">
-                    <h3>Passwort-Management</h3>
-                    <ul>
-                        <li>Sichere Passwortgenerierung</li>
-                        <li>Passwort-Reset-Optionen</li>
-                        <li>Zweifaktor-Authentifizierung</li>
-                        <li>Passwort-Ablaufsteuerung</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Unternehmensintegration</h2>
-            <ul>
-                <li>Active Directory Integration</li>
-                <li>Single Sign-On (SSO)</li>
-                <li>LDAP-Unterstützung</li>
-                <li>API für automatisierte Prozesse</li>
-                <li>Batch-Verschlüsselung</li>
-            </ul>
-        </section>
-
-        <section class="content-section">
-            <h2>Compliance & Sicherheit</h2>
-            <div class="compliance-grid">
-                <div class="compliance-item">
-                    <h3>Standardkonformität</h3>
-                    <ul>
-                        <li>DSGVO-konform</li>
-                        <li>ISO 27001</li>
-                        <li>HIPAA-kompatibel</li>
-                        <li>SOC 2 zertifiziert</li>
-                    </ul>
-                </div>
-                <div class="compliance-item">
-                    <h3>Audit & Kontrolle</h3>
-                    <ul>
-                        <li>Detaillierte Zugriffsprotokoll</li>
-                        <li>Sicherheitsbenachrichtigungen</li>
-                        <li>Versuchte Zugriffe</li>
-                        <li>Automatische Berichte</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Benutzerfreundlichkeit</h2>
-            <ul>
-                <li>Intuitive Benutzeroberfläche</li>
-                <li>Schnelle Implementierung</li>
-                <li>Mobiler Zugriff</li>
-                <li>24/7 Support</li>
-                <li>Ausführliche Dokumentation</li>
-            </ul>
-        </section>
-
-        <div class="verwandte-funktionen mt-5">
-            <h2>Verwandte Funktionen</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <a href="zugriffskontrolle.html" class="text-decoration-none">
-                        <div class="feature-card text-center">
-                            <i class="fas fa-lock text-primary mb-2"></i>
-                            <h4>Zugriffskontrolle</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="email-verifizierung.html" class="text-decoration-none">
-                        <div class="feature-card text-center">
-                            <i class="fas fa-envelope text-primary mb-2"></i>
-                            <h4>E-Mail-Verifizierung</h4>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4">
-                    <a href="sicheres-pdf-teilen.html" class="text-decoration-none">
-                        <div class="feature-card text-center">
-                            <i class="fas fa-share-alt text-primary mb-2"></i>
-                            <h4>Sicheres PDF Teilen</h4>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <section class="content-section">
-            <h2>Erweiterte Sicherheitsfunktionen</h2>
-            <div class="feature-grid">
-                <div class="feature-item">
-                    <h3>Passwortoptionen</h3>
-                    <ul>
-                        <li>Komplexitätsanforderungen</li>
-                        <li>Passwortablaufzeiten</li>
-                        <li>Sichere Passwortübertragung</li>
-                        <li>Passwort-Wiederherstellung</li>
-                    </ul>
-                </div>
-                <div class="feature-item">
-                    <h3>Zusätzliche Sicherheit</h3>
-                    <ul>
-                        <li>Zwei-Faktor-Authentifizierung</li>
-                        <li>Biometrische Integration</li>
-                        <li>SSO-Unterstützung</li>
-                        <li>Geräte-Authentifizierung</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Unternehmensintegration</h2>
-            <ul>
-                <li>Active Directory Integration</li>
-                <li>LDAP-Unterstützung</li>
-                <li>Passwort-Richtlinien</li>
-                <li>Audit-Protokollierung</li>
-                <li>Compliance-Reporting</li>
-            </ul>
-        </section>
-    </main>
-    <footer>
-        <p>&copy; 2025 MaiPDF. Alle Rechte vorbehalten.</p>
-    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

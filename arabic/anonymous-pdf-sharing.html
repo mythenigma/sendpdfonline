@@ -3,444 +3,218 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>مشاركة PDF بدون تسجيل دخول | MaiPDF | مشاركة المستندات بشكل آمن</title>
-    <meta name="description" content="شارك ملفات PDF بشكل آمن دون الحاجة إلى تسجيل الدخول. تعرف على كيفية حماية المستندات الحساسة مع ميزات المشاركة المجهولة للمتخصصين في المجال المالي والقانوني والإبداعي.">
+    <title>مشاركة PDF المجهولة - حماية الخصوصية | MaiPDF</title>
+    <meta name="description" content="شارك ملفات PDF بشكل مجهول مع حماية كاملة للخصوصية. تعرف على كيفية إخفاء هويتك عند مشاركة المستندات.">
+    <meta name="keywords" content="مشاركة مجهولة, PDF خاص, حماية الخصوصية, مشاركة آمنة, MaiPDF">
+    <link rel="canonical" href="https://sendpdfonline.com/arabic/anonymous-pdf-sharing.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-        }
-        h1, h2, h3 {
-            color: #333;
-        }
-        .feature-box {
-            background-color: #e8f0fe;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-right: 4px solid #1a73e8;
-        }
-        .security-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .security-feature {
-            background-color: #f8f9fa;
-            padding: 15px;
-            border-radius: 5px;
-            border: 1px solid #e9ecef;
-        }
-        .cta-button {
-            display: inline-block;
-            background-color: #1a73e8;
-            color: white;
-            padding: 12px 24px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
-        .tip-box {
-            background-color: #fef2e8;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-            border-right: 4px solid #ff9800;
-        }
-        .industry-section {
-            background-color: #f5f5f5;
-            padding: 15px;
-            border-radius: 5px;
-            margin: 20px 0;
-        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); min-height: 100vh; }
+        .main-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); margin: 2rem auto; max-width: 900px; }
+        .card-header-custom { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); color: white; border-radius: 20px 20px 0 0; padding: 2rem; }
+        .feature-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-right: 4px solid #4ca1af; }
+        .privacy-badge { display: inline-block; padding: 0.5rem 1rem; border-radius: 20px; font-size: 0.85rem; margin: 0.25rem; }
+        .badge-hidden { background: #e8f5e9; color: #2e7d32; }
+        .badge-protected { background: #e3f2fd; color: #1565c0; }
+        .badge-anonymous { background: #fce4ec; color: #c62828; }
+        .cta-section { background: linear-gradient(135deg, #2c3e50 0%, #4ca1af 100%); border-radius: 15px; padding: 2rem; color: white; text-align: center; }
+        .breadcrumb { background: transparent; padding: 0; margin-bottom: 1rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .breadcrumb a:hover { color: white; }
+        .meta-info { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .related-link { display: block; padding: 0.75rem 1rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 0.5rem; text-decoration: none; color: #333; transition: all 0.3s; }
+        .related-link:hover { background: #4ca1af; color: white; transform: translateX(-5px); }
+        .step-card { background: white; border-radius: 15px; padding: 1.5rem; box-shadow: 0 5px 15px rgba(0,0,0,0.08); height: 100%; }
+        .step-number { width: 40px; height: 40px; background: linear-gradient(135deg, #2c3e50, #4ca1af); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: bold; margin-bottom: 1rem; }
     </style>
-
-    <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "مشاركة PDF بدون تسجيل دخول: مشاركة المستندات بشكل آمن",
-                "item": "https://sendpdfonline.com/arabic/anonymous-pdf-sharing.html"
-            }
-        ]
+        "@type": "Article",
+        "headline": "مشاركة PDF المجهولة - حماية الخصوصية",
+        "description": "دليل شامل لمشاركة ملفات PDF بشكل مجهول وآمن",
+        "author": {"@type": "Organization", "name": "MaiPDF"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF"},
+        "datePublished": "2024-09-10",
+        "dateModified": "2025-06-15"
     }
     </script>
 </head>
 <body>
+    <div class="container py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html">الرئيسية</a>
+            <span class="mx-2 text-white">/</span>
+            <a href="index.html">العربية</a>
+            <span class="mx-2 text-white">/</span>
+            <span class="text-white">مشاركة PDF المجهولة</span>
+        </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">مشاركة PDF بدون تسجيل دخول: مشاركة المستندات بشكل </li>
-            </ol>
-        </div>
-    </nav>
-    
-    <h1>مشاركة PDF بدون تسجيل دخول: مشاركة المستندات بشكل آمن</h1>
-    
-    <p>شارك ملفات PDF الخاصة بك بأمان دون الحاجة إلى إنشاء حسابات للمستلمين. تعرف على كيفية حماية المستندات الحساسة مع الحفاظ على سهولة الوصول للجمهور المستهدف.</p>
-
-    <div class="feature-box">
-        <h2>ميزات المشاركة المجهولة</h2>
-        <div class="security-grid">
-            <div class="security-feature">
-                <h3>لا حاجة لتسجيل الدخول</h3>
-                <ul>
-                    <li>وصول فوري للمستلمين</li>
-                    <li>لا حاجة لإنشاء حساب</li>
-                    <li>مشاركة بسيطة عبر الروابط</li>
-                    <li>عرض عبر المتصفح</li>
-                </ul>
+        <div class="main-card">
+            <div class="card-header-custom">
+                <h1 class="mb-3"><i class="bi bi-incognito me-2"></i>مشاركة PDF المجهولة</h1>
+                <p class="lead mb-2">شارك مستنداتك بأمان مع الحفاظ على خصوصيتك الكاملة</p>
+                <div class="meta-info">
+                    <i class="bi bi-calendar3 me-1"></i> آخر تحديث: يونيو 2025
+                    <span class="mx-3">|</span>
+                    <i class="bi bi-clock me-1"></i> وقت القراءة: 5 دقائق
+                </div>
             </div>
-            <div class="security-feature">
-                <h3>ضوابط الأمان</h3>
-                <ul>
-                    <li>حدود المشاهدة</li>
-                    <li>منع التحميل</li>
-                    <li>تواريخ انتهاء الصلاحية</li>
-                    <li>تتبع IP</li>
-                </ul>
-            </div>
-            <div class="security-feature">
-                <h3>إدارة الوصول</h3>
-                <ul>
-                    <li>حماية بكلمة المرور</li>
-                    <li>حدود وقت العرض</li>
-                    <li>منع إعادة التوجيه</li>
-                    <li>قيود الطباعة</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div class="feature-box">
-        <h2>كيف تعمل المشاركة المجهولة في MaiPDF؟</h2>
-        <p>تتيح لك ميزة المشاركة المجهولة في MaiPDF مشاركة ملفات PDF مع أي شخص دون الحاجة إلى تسجيل دخول المستلم أو إنشاء حساب:</p>
-        
-        <ol>
-            <li><strong>ارفع الملف</strong> - قم بتحميل ملف PDF الخاص بك إلى منصة MaiPDF</li>
-            <li><strong>قم بإعداد خيارات الحماية</strong> - اختر إعدادات الأمان المناسبة للمستند</li>
-            <li><strong>احصل على رابط المشاركة</strong> - انسخ الرابط الفريد للمستند</li>
-            <li><strong>شارك الرابط</strong> - أرسل الرابط للمستلمين عبر البريد الإلكتروني أو الرسائل</li>
-            <li><strong>راقب المشاهدات</strong> - تتبع من شاهد المستند وكيف تم استخدامه</li>
-        </ol>
-        
-        <div class="security-feature">
-            <h3>ميزة فريدة: العلامات المائية الديناميكية لمشاهدين مجهولين</h3>
-            <p>حتى عندما يكون المشاهدون مجهولين، يمكن لـ MaiPDF إنشاء علامات مائية تتضمن:</p>
-            <ul>
-                <li>عنوان IP الخاص بالمشاهد</li>
-                <li>الوقت والتاريخ الدقيق للمشاهدة</li>
-                <li>نوع الجهاز المستخدم للوصول</li>
-                <li>الموقع الجغرافي التقريبي</li>
-            </ul>
-            <p>هذا يعني أنه حتى مع المشاركة المجهولة، يمكنك تتبع أي توزيع غير مصرح به للمستند.</p>
-        </div>
-    </div>
+            <div class="card-body p-4">
+                <!-- Introduction -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-question-circle text-primary me-2"></i>ما هي المشاركة المجهولة؟</h2>
+                    <p>المشاركة المجهولة تتيح لك إرسال ملفات PDF دون الكشف عن هويتك أو معلوماتك الشخصية. هذا مفيد في حالات عديدة مثل:</p>
+                    <div class="text-center my-4">
+                        <span class="privacy-badge badge-hidden"><i class="bi bi-eye-slash me-1"></i>إخفاء الهوية</span>
+                        <span class="privacy-badge badge-protected"><i class="bi bi-shield me-1"></i>حماية البيانات</span>
+                        <span class="privacy-badge badge-anonymous"><i class="bi bi-person-x me-1"></i>بدون تسجيل</span>
+                    </div>
+                </section>
 
-    <div class="feature-box">
-        <h2>مقارنة بين المشاركة المجهولة والمشاركة المعتادة</h2>
-        <table style="width: 100%; border-collapse: collapse; margin: 20px 0;">
-            <tr style="background-color: #1a73e8; color: white;">
-                <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">الميزة</th>
-                <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">المشاركة المجهولة</th>
-                <th style="padding: 10px; text-align: right; border: 1px solid #ddd;">المشاركة المعتادة (مع تسجيل دخول)</th>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">سهولة الوصول</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">عالية - وصول فوري</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">متوسطة - تتطلب إنشاء حساب</td>
-            </tr>
-            <tr style="background-color: #f8f9fa;">
-                <td style="padding: 10px; border: 1px solid #ddd;">تتبع المستخدم</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">محدود (IP، الجهاز، الموقع)</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">مفصل (البيانات الشخصية، التاريخ)</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">العلامات المائية</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">معلومات المشاهدة التقنية</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">معلومات المستخدم الشخصية</td>
-            </tr>
-            <tr style="background-color: #f8f9fa;">
-                <td style="padding: 10px; border: 1px solid #ddd;">حماية البيانات</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">قوية</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">قوية جداً</td>
-            </tr>
-            <tr>
-                <td style="padding: 10px; border: 1px solid #ddd;">توثيق المستخدم</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">غير متوفر</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">متوفر</td>
-            </tr>
-            <tr style="background-color: #f8f9fa;">
-                <td style="padding: 10px; border: 1px solid #ddd;">المناسبة لـ</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">مشاركة واسعة، نشرات، كتالوجات</td>
-                <td style="padding: 10px; border: 1px solid #ddd;">المستندات السرية، العقود، التقارير المالية</td>
-            </tr>
-        </table>
-    </div>
+                <!-- Use Cases -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-lightbulb text-warning me-2"></i>متى تحتاج المشاركة المجهولة؟</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-megaphone text-primary me-2"></i>الإبلاغ عن المخالفات</h5>
+                                <p class="mb-0">مشاركة وثائق تكشف عن مخالفات دون تعريض نفسك للخطر.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-newspaper text-success me-2"></i>الصحافة الاستقصائية</h5>
+                                <p class="mb-0">إرسال مستندات للصحفيين بشكل آمن ومجهول.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-briefcase text-warning me-2"></i>العروض التنافسية</h5>
+                                <p class="mb-0">تقديم عروض دون الكشف عن هوية شركتك مبدئياً.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-heart text-danger me-2"></i>المساعدة الإنسانية</h5>
+                                <p class="mb-0">مشاركة معلومات حساسة لحماية الأشخاص المعرضين للخطر.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    <div class="industry-section">
-        <h2>تطبيقات خاصة بالصناعات</h2>
-        
-        <div class="feature-box">
-            <h3>الخدمات المالية</h3>
-            <ul>
-                <li>مشاركة آمنة للتقارير المالية</li>
-                <li>كشوف الحساب السرية للعملاء</li>
-                <li>مقترحات الاستثمار</li>
-                <li>وثائق المراجعة</li>
-            </ul>
-            <p>ميزات الأمان: حدود المشاهدة، منع التحميل، تتبع IP، وتواريخ انتهاء الصلاحية تضمن حماية البيانات المالية الحساسة.</p>
-        </div>
+                <!-- How It Works -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-gear text-secondary me-2"></i>كيف تعمل المشاركة المجهولة؟</h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-3">
+                            <div class="step-card">
+                                <div class="step-number">1</div>
+                                <h5>رفع بدون تسجيل</h5>
+                                <p class="small text-muted mb-0">لا حاجة لإنشاء حساب أو تقديم بريد إلكتروني.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="step-card">
+                                <div class="step-number">2</div>
+                                <h5>إزالة البيانات الوصفية</h5>
+                                <p class="small text-muted mb-0">نحذف تلقائياً جميع المعلومات التي قد تكشف هويتك.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-3">
+                            <div class="step-card">
+                                <div class="step-number">3</div>
+                                <h5>رابط مجهول</h5>
+                                <p class="small text-muted mb-0">تحصل على رابط عشوائي لا يمكن تتبعه.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-        <div class="feature-box">
-            <h3>المحترفون القانونيون</h3>
-            <ul>
-                <li>مستندات القضايا</li>
-                <li>المذكرات القانونية</li>
-                <li>مراسلات العملاء</li>
-                <li>الملفات القضائية</li>
-            </ul>
-            <p>ميزات الأمان: العلامات المائية، تتبع المشاهدة، وسجلات الوصول تساعد في الحفاظ على سرية المستندات وتتبع الاستخدام.</p>
-        </div>
+                <!-- Privacy Features -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-shield-lock text-danger me-2"></i>ميزات الخصوصية</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>الميزة</th>
+                                    <th>الوصف</th>
+                                    <th class="text-center">متاح</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="bi bi-person-x text-primary me-2"></i>بدون تسجيل</td>
+                                    <td>رفع الملفات دون إنشاء حساب</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-file-earmark-x text-warning me-2"></i>حذف البيانات الوصفية</td>
+                                    <td>إزالة معلومات المؤلف والتاريخ</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-globe text-info me-2"></i>إخفاء IP</td>
+                                    <td>عدم تخزين عنوان IP الخاص بك</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-clock-history text-danger me-2"></i>حذف تلقائي</td>
+                                    <td>حذف الملف بعد فترة محددة</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-link-45deg text-success me-2"></i>روابط عشوائية</td>
+                                    <td>روابط غير قابلة للتخمين</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
 
-        <div class="feature-box">
-            <h3>المحترفون الإبداعيون</h3>
-            <ul>
-                <li>ملفات التصميم</li>
-                <li>المقترحات الإبداعية</li>
-                <li>عروض العملاء</li>
-                <li>نماذج الأعمال</li>
-            </ul>
-            <p>ميزات الأمان: العلامات المائية الديناميكية، حدود المشاهدة، ومنع التحميل تحمي الملكية الفكرية مع السماح بسهولة المشاركة.</p>
-        </div>
-    </div>
+                <!-- CTA Section -->
+                <section class="cta-section mb-4">
+                    <h3 class="mb-3">شارك بخصوصية تامة</h3>
+                    <p class="mb-4">ابدأ المشاركة المجهولة الآن - بدون تسجيل</p>
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg px-5">
+                        <i class="bi bi-incognito me-2"></i>ابدأ المشاركة
+                    </a>
+                </section>
 
-    <div class="tip-box">
-        <h2>أفضل ممارسات المشاركة المجهولة</h2>
-        <ul>
-            <li>تعيين حدود مشاهدة مناسبة</li>
-            <li>استخدام كلمات مرور قوية عند الحاجة</li>
-            <li>تفعيل منع التحميل</li>
-            <li>تعيين تواريخ انتهاء صلاحية معقولة</li>
-            <li>مراقبة الوصول للمستندات</li>
-            <li>استخدام العلامات المائية للمحتوى الحساس</li>
-        </ul>
-    </div>
+                <!-- Related Articles -->
+                <section class="mb-4">
+                    <h2 class="h4 mb-3"><i class="bi bi-link-45deg text-primary me-2"></i>مقالات ذات صلة</h2>
+                    <a href="free-pdf-hosting-and-sharing.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>استضافة ومشاركة PDF مجانية
+                    </a>
+                    <a href="pdf-security-features.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>ميزات أمان PDF
+                    </a>
+                    <a href="email-verification-secure-pdf-access.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>التحقق بالبريد الإلكتروني
+                    </a>
+                    <a href="dynamic-watermark-tracking.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>العلامات المائية الديناميكية
+                    </a>
+                </section>
 
-    <div class="tip-box">
-        <h2>أفضل الممارسات للتوازن بين الأمان وسهولة الوصول</h2>
-        <p>عند استخدام ميزات المشاركة المجهولة، قد تحتاج إلى الموازنة بين سهولة الوصول والأمان. إليك بعض النصائح العملية:</p>
-        
-        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 20px; margin-top: 20px;">
-            <div style="background-color: #f0f4f8; padding: 15px; border-radius: 5px;">
-                <h3 style="color: #1a73e8;">للمستندات العامة</h3>
-                <ul>
-                    <li>استخدم المشاركة المجهولة البسيطة</li>
-                    <li>فعّل العلامات المائية الأساسية</li>
-                    <li>اسمح بالتحميل إذا كان مناسباً</li>
-                    <li>تتبع المشاهدات للحصول على إحصائيات</li>
-                </ul>
-            </div>
-            <div style="background-color: #f0f4f8; padding: 15px; border-radius: 5px;">
-                <h3 style="color: #1a73e8;">للمستندات الحساسة</h3>
-                <ul>
-                    <li>أضف حماية بكلمة مرور للرابط المجهول</li>
-                    <li>فعّل العلامات المائية الديناميكية المفصلة</li>
-                    <li>حدد عدد المشاهدات (1-3 مرات فقط)</li>
-                    <li>عيّن تاريخ انتهاء صلاحية قصير الأمد</li>
-                    <li>امنع التحميل والطباعة</li>
-                </ul>
+                <!-- Back Navigation -->
+                <div class="text-center pt-3 border-top">
+                    <a href="index.html" class="btn btn-outline-primary me-2">
+                        <i class="bi bi-arrow-right me-1"></i>العودة للفهرس العربي
+                    </a>
+                    <a href="../index.html" class="btn btn-outline-secondary">
+                        <i class="bi bi-house me-1"></i>الصفحة الرئيسية
+                    </a>
+                </div>
             </div>
         </div>
     </div>
 
-    <div class="feature-box">
-        <h2>ميزات الأمان المتقدمة</h2>
-        <h3>حماية المستندات</h3>
-        <ul>
-            <li>علامات مائية ديناميكية</li>
-            <li>تحديد هوية المشاهد</li>
-            <li>تسجيل الوصول</li>
-            <li>تتبع IP</li>
-        </ul>
-
-        <h3>التحكم في الوصول</h3>
-        <ul>
-            <li>وصول محدد بالوقت</li>
-            <li>حدود عدد المشاهدات</li>
-            <li>منع التحميل</li>
-            <li>قيود الطباعة</li>
-        </ul>
-    </div>
-
-    <div class="feature-box">
-        <h2>حالات استخدام متقدمة للمشاركة المجهولة</h2>
-        
-        <div class="security-feature">
-            <h3>استخدام رموز QR للمشاركة المجهولة</h3>
-            <p>يمكنك دمج المشاركة المجهولة مع رموز QR لاستخدامات مبتكرة:</p>
-            <ul>
-                <li><strong>المعارض والمؤتمرات</strong> - ضع رموز QR للكتيبات والمواد التسويقية</li>
-                <li><strong>المنتجات المادية</strong> - أضف رموز QR للوصول إلى أدلة المستخدم</li>
-                <li><strong>اللوحات الإعلانية</strong> - مكّن المشاهدين من الوصول للمحتوى التفصيلي</li>
-                <li><strong>بطاقات العمل</strong> - شارك ملف تعريفي مفصل عبر رمز QR</li>
-            </ul>
-            <p>يمكنك إنشاء رمز QR لأي رابط مشاركة مجهول، وسيتم تتبع كل عملية مسح ومشاهدة.</p>
-        </div>
-        
-        <div class="security-feature" style="margin-top: 20px;">
-            <h3>المشاركة المجهولة لفترة محدودة</h3>
-            <p>في بعض الأحيان، تحتاج إلى مشاركة المستندات بشكل مجهول لفترة زمنية محددة فقط:</p>
-            <ul>
-                <li><strong>الحملات التسويقية المحدودة</strong> - إتاحة عروض خاصة لفترة محدودة</li>
-                <li><strong>عروض الأسعار</strong> - جعل عرض الأسعار متاحاً حتى تاريخ معين</li>
-                <li><strong>الاختبارات عبر الإنترنت</strong> - توفير الوصول للاختبارات خلال وقت محدد</li>
-                <li><strong>الوثائق الموسمية</strong> - مشاركة المستندات المرتبطة بمواسم أو أحداث محددة</li>
-            </ul>
-            <p>يتيح لك MaiPDF تعيين وقت دقيق لبدء وانتهاء صلاحية المشاركة المجهولة، مع دقة تصل إلى الدقيقة.</p>
-        </div>
-    </div>
-
-    <div class="industry-section">
-        <h2>تجارب المستخدمين مع المشاركة المجهولة</h2>
-        
-        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin: 20px 0; position: relative;">
-            <div style="color: #1a73e8; font-size: 24px; position: absolute; right: 20px; top: 15px;">❝</div>
-            <div style="padding-right: 40px;">
-                <p>"كوكالة تسويق، نحتاج إلى مشاركة الكتالوجات والعروض التقديمية مع العملاء المحتملين بسرعة. ميزة المشاركة المجهولة في MaiPDF تتيح لنا إرسال روابط مباشرة دون الحاجة لإنشاء حسابات للعملاء، مع الاستمرار في تتبع من شاهد العروض ومدة المشاهدة. هذا حسّن معدلات تحويل العملاء لدينا بنسبة 27%."</p>
-                <strong>- سمير القحطاني، مدير تسويق</strong>
-            </div>
-        </div>
-        
-        <div style="background-color: #f5f5f5; padding: 20px; border-radius: 5px; margin: 20px 0; position: relative;">
-            <div style="color: #1a73e8; font-size: 24px; position: absolute; right: 20px; top: 15px;">❝</div>
-            <div style="padding-right: 40px;">
-                <p>"نستخدم ميزة المشاركة المجهولة لتوزيع التقارير المالية السنوية على المساهمين. بفضل إعدادات الأمان المتقدمة، نتمكن من مشاركة معلومات حساسة مع العلم أن المستندات محمية بالعلامات المائية ولا يمكن تنزيلها. كما نستطيع معرفة من قام بالاطلاع على التقارير، حتى مع عدم وجود تسجيل دخول."</p>
-                <strong>- نورة المطيري، مديرة علاقات المستثمرين</strong>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-box">
-        <h2>الأسئلة الشائعة حول المشاركة المجهولة</h2>
-        
-        <div style="margin-top: 20px;">
-            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 15px;">
-                <h3 style="color: #1a73e8; font-size: 1.2rem;">هل المشاركة المجهولة آمنة حقاً؟</h3>
-                <p>نعم، المشاركة المجهولة في MaiPDF توفر طبقات متعددة من الحماية رغم عدم الحاجة إلى تسجيل دخول. يتم تطبيق التشفير القوي على جميع المستندات، ويتم تسجيل كل عملية وصول من خلال IP وبيانات الجهاز. مع إضافة حماية كلمة المرور وتقييد عدد المشاهدات، تصبح المشاركة المجهولة آمنة للغاية.</p>
-            </div>
-            
-            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 15px;">
-                <h3 style="color: #1a73e8; font-size: 1.2rem;">كيف يمكنني تتبع من شاهد مستنداتي المشاركة بشكل مجهول؟</h3>
-                <p>توفر لوحة تحكم MaiPDF تقارير مفصلة حول كل مشاهدة، تتضمن:</p>
-                <ul>
-                    <li>عنوان IP للمشاهد والموقع الجغرافي</li>
-                    <li>الوقت والتاريخ الدقيق لكل مشاهدة</li>
-                    <li>نوع الجهاز ونظام التشغيل والمتصفح المستخدم</li>
-                    <li>الصفحات التي تمت مشاهدتها ومدة المشاهدة</li>
-                    <li>محاولات التحميل أو الطباعة</li>
-                </ul>
-                <p>يمكنك تحميل هذه التقارير بتنسيق CSV أو الاطلاع عليها مباشرة في لوحة التحكم.</p>
-            </div>
-            
-            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 15px; margin-bottom: 15px;">
-                <h3 style="color: #1a73e8; font-size: 1.2rem;">هل يمكن إلغاء الوصول لمستند تمت مشاركته بشكل مجهول؟</h3>
-                <p>نعم، يمكنك إلغاء الوصول إلى أي مستند تمت مشاركته بشكل مجهول في أي وقت. عند إلغاء الوصول، سيتم تعطيل الرابط فوراً وسيتلقى أي شخص يحاول الوصول إليه رسالة تفيد بأن المستند لم يعد متاحاً. هذه الميزة مفيدة جداً عند مشاركة معلومات حساسة أو عند تغيير الظروف.</p>
-            </div>
-            
-            <div>
-                <h3 style="color: #1a73e8; font-size: 1.2rem;">هل يمكنني تحديث مستند تمت مشاركته بشكل مجهول دون تغيير الرابط؟</h3>
-                <p>نعم، يمكنك تحديث محتوى أي ملف PDF تمت مشاركته بشكل مجهول مع الاحتفاظ بنفس رابط المشاركة. هذا مفيد للغاية عندما تحتاج إلى:</p>
-                <ul>
-                    <li>تصحيح أخطاء في نسخة سابقة من المستند</li>
-                    <li>إضافة معلومات جديدة إلى كتالوج أو عرض تقديمي</li>
-                    <li>تحديث أسعار أو تفاصيل المنتجات في نشرة</li>
-                    <li>تغيير الشروط والأحكام في مستند مشترك</li>
-                </ul>
-                <p>سيتم تطبيق التحديث فوراً لجميع المشاهدات المستقبلية، مع استمرار جميع إعدادات الأمان وتاريخ المشاهدات السابقة.</p>
-            </div>
-        </div>
-    </div>
-
-    <div class="feature-box" style="margin-top: 30px;">
-        <h2>معلومات متقدمة عن تتبع المشاهدين المجهولين</h2>
-        
-        <div class="security-feature">
-            <h3>بصمة الجهاز الرقمية</h3>
-            <p>تستخدم MaiPDF تقنية متقدمة لإنشاء "بصمة رقمية" للجهاز المستخدم في مشاهدة المستند المشارك بشكل مجهول. هذه البصمة تجمع بين عدة عوامل:</p>
-            <ul>
-                <li>نظام التشغيل وإصداره</li>
-                <li>نوع المتصفح وإصداره</li>
-                <li>دقة الشاشة وإعدادات اللغة</li>
-                <li>البرامج المساعدة المثبتة</li>
-                <li>إعدادات الوقت والمنطقة الزمنية</li>
-            </ul>
-            <p>هذه البصمة تساعد في تحديد إذا كان نفس الشخص يستخدم أجهزة مختلفة للوصول إلى المستند، أو إذا كان عدة أشخاص يستخدمون نفس الجهاز.</p>
-        </div>
-        
-        <div class="security-feature" style="margin-top: 20px;">
-            <h3>تحليلات سلوك المشاهدة</h3>
-            <p>لا تكتفي MaiPDF بتسجيل حقيقة المشاهدة فقط، بل تحلل أيضاً سلوك المشاهد خلال تفاعله مع المستند:</p>
-            <ul>
-                <li>الوقت المستغرق في كل صفحة</li>
-                <li>الأنماط السلوكية (مثل القراءة السريعة مقابل القراءة المتعمقة)</li>
-                <li>الصفحات التي تمت العودة إليها عدة مرات</li>
-                <li>المحتوى الذي تم تخطيه أو تجاهله</li>
-                <li>التفاعل مع عناصر المستند (الروابط، النماذج، إلخ)</li>
-            </ul>
-            <p>هذه المعلومات توفر رؤى قيمة حول مدى فعالية المستند وكيفية تفاعل المشاهدين معه.</p>
-        </div>
-    </div>
-
-    <div style="text-align: center; margin: 40px 0; background-color: #e8f0fe; padding: 30px; border-radius: 8px;">
-        <h2 style="color: #1a73e8; margin-bottom: 20px;">جاهز للبدء في المشاركة المجهولة الآمنة؟</h2>
-        <p style="font-size: 1.1rem; margin-bottom: 25px;">استفد من قوة المشاركة المجهولة مع حماية كاملة لمستنداتك الحساسة.</p>
-        <a href="https://maipdf.com/pdf/anon-share.php" class="cta-button" style="font-size: 1.1rem; padding: 15px 30px;">
-            ابدأ المشاركة المجهولة الآن
-        </a>
-        <p style="margin-top: 15px; font-size: 0.9rem; color: #666;">لا حاجة لتسجيل الدخول للمستلمين. لا حاجة لإنشاء حسابات. حماية قصوى.</p>
-    </div>
-
-    <h2>هل أنت جاهز للمشاركة بأمان؟</h2>
-    <p>ابدأ مشاركة ملفات PDF بشكل مجهول مع ميزات المشاركة الآمنة من MaiPDF:</p>
-    <a href="https://maipdf.com/pdf/maipdf.php" class="cta-button">ابدأ المشاركة الآمنة</a>
-
-    <p>مع ميزات المشاركة المجهولة من MaiPDF، يمكنك حماية مستنداتك الحساسة مع جعلها سهلة الوصول للمستلمين المقصودين - دون الحاجة لتسجيل الدخول.</p>
-
-    <div class="related-content">
-        <h2>روابط لميزات أخرى</h2>
-        <ul>
-            <li><a href="advanced-security-configurations.html">إعدادات الأمان المتقدمة</a></li>
-            <li><a href="anonymous-pdf-sharing.html">مشاركة PDF مجهولة</a></li>
-            <li><a href="convert-pdf-to-qr-code.html">تحويل PDF إلى رمز QR</a></li>
-            <li><a href="design-watermark-protection.html">حماية العلامة المائية للتصميم</a></li>
-            <li><a href="dynamic-watermark-tracking.html">تتبع العلامة المائية الديناميكية</a></li>
-            <li><a href="email-verification-secure-pdf-access.html">التحقق من البريد الإلكتروني للوصول الآمن إلى PDF</a></li>
-            <li><a href="free-pdf-hosting-and-sharing.html">استضافة ومشاركة PDF مجانية</a></li>
-            <li><a href="pdf-security-features.html">ميزات أمان PDF</a></li>
-            <li><a href="pdf-tracking-analytics.html">تحليلات تتبع PDF</a></li>
-            <li><a href="pdf-tracking-comparison.html">مقارنة تتبع PDF</a></li>
-            <li><a href="pdf-view-tracking.html">تتبع عرض PDF</a></li>
-            <li><a href="track-pdf-usage.html">تتبع استخدام PDF</a></li>
-        </ul>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

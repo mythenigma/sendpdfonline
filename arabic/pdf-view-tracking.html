@@ -3,260 +3,281 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تتبع مشاهدات PDF | MaiPDF | مراقبة الوصول إلى المستندات</title>
-    <meta name="description" content="تتبع من يشاهد ملفات PDF الخاصة بك مع ميزات التتبع والتحليلات الشاملة من MaiPDF">
+    <title>تتبع مشاهدات PDF - من يقرأ مستنداتك؟ | MaiPDF</title>
+    <meta name="description" content="تتبع من يشاهد ملفات PDF الخاصة بك في الوقت الفعلي. إشعارات فورية وتحليلات مفصلة مع MaiPDF.">
+    <meta name="keywords" content="تتبع مشاهدات PDF, من يقرأ PDF, إشعارات PDF, تتبع الوقت الفعلي, MaiPDF">
+    <link rel="canonical" href="https://sendpdfonline.com/arabic/pdf-view-tracking.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.0/font/bootstrap-icons.css" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-            direction: rtl;
-            color: #333;
-        }
-        .analytics-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .metric-card {
-            background-color: #e8f0fe;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            transition: transform 0.2s;
-        }
-        .metric-card:hover {
-            transform: translateY(-5px);
-        }
-        .use-case-section {
-            margin: 40px 0;
-            padding: 20px;
-            background: #f8f9fa;
-            border-radius: 10px;
-        }
-        .faq-section {
-            margin: 40px 0;
-        }
-        .faq-item {
-            margin-bottom: 20px;
-            padding: 15px;
-            border-left: 4px solid #007bff;
-            background: #fff;
-        }
-        .cta-section {
-            text-align: center;
-            margin: 40px 0;
-            padding: 40px;
-            background: #007bff;
-            color: white;
-            border-radius: 10px;
-        }
-        .btn-primary {
-            background: #fff;
-            color: #007bff;
-            padding: 12px 30px;
-            border-radius: 25px;
-            text-decoration: none;
-            display: inline-block;
-            margin-top: 20px;
-            font-weight: bold;
-        }
+        body { font-family: 'Segoe UI', Tahoma, sans-serif; background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%); min-height: 100vh; }
+        .main-card { background: white; border-radius: 20px; box-shadow: 0 20px 60px rgba(0,0,0,0.15); margin: 2rem auto; max-width: 900px; }
+        .card-header-custom { background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%); color: white; border-radius: 20px 20px 0 0; padding: 2rem; }
+        .feature-box { background: #f8f9fa; border-radius: 12px; padding: 1.5rem; margin-bottom: 1rem; border-right: 4px solid #e17055; }
+        .notification-preview { background: #f8f9fa; border-radius: 15px; padding: 1.5rem; border-right: 5px solid #e17055; }
+        .notification-icon { width: 50px; height: 50px; background: linear-gradient(135deg, #e17055, #fdcb6e); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; }
+        .live-indicator { display: inline-flex; align-items: center; }
+        .live-dot { width: 10px; height: 10px; background: #e74c3c; border-radius: 50%; margin-left: 0.5rem; animation: pulse 1.5s infinite; }
+        @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+        .cta-section { background: linear-gradient(135deg, #e17055 0%, #fdcb6e 100%); border-radius: 15px; padding: 2rem; color: white; text-align: center; }
+        .breadcrumb { background: transparent; padding: 0; margin-bottom: 1rem; }
+        .breadcrumb a { color: rgba(255,255,255,0.8); text-decoration: none; }
+        .breadcrumb a:hover { color: white; }
+        .meta-info { color: rgba(255,255,255,0.7); font-size: 0.9rem; }
+        .related-link { display: block; padding: 0.75rem 1rem; background: #f8f9fa; border-radius: 8px; margin-bottom: 0.5rem; text-decoration: none; color: #333; transition: all 0.3s; }
+        .related-link:hover { background: #e17055; color: white; transform: translateX(-5px); }
+        .tracking-stat { text-align: center; padding: 1.5rem; }
+        .tracking-number { font-size: 3rem; font-weight: bold; background: linear-gradient(135deg, #e17055, #fdcb6e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
-
-    <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "تتبع مشاهدات PDF والتحليلات",
-                "item": "https://sendpdfonline.com/arabic/pdf-view-tracking.html"
-            }
-        ]
+        "@type": "Article",
+        "headline": "تتبع مشاهدات PDF",
+        "description": "دليل شامل لتتبع من يشاهد ملفات PDF الخاصة بك",
+        "author": {"@type": "Organization", "name": "MaiPDF"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF"},
+        "datePublished": "2024-04-05",
+        "dateModified": "2025-06-15"
     }
     </script>
 </head>
 <body>
+    <div class="container py-4">
+        <nav class="breadcrumb">
+            <a href="../index.html">الرئيسية</a>
+            <span class="mx-2 text-white">/</span>
+            <a href="index.html">العربية</a>
+            <span class="mx-2 text-white">/</span>
+            <span class="text-white">تتبع مشاهدات PDF</span>
+        </nav>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item active" aria-current="page">تتبع مشاهدات PDF والتحليلات</li>
-            </ol>
-        </div>
-    </nav>
-    
-    <h1>تتبع مشاهدات PDF والتحليلات</h1>
-    
-    <p>معرفة من يشاهد ملفات PDF الخاصة بك وكيف يتفاعلون معها أمر بالغ الأهمية لأمان المستندات وذكاء الأعمال. يوفر MaiPDF تتبعًا وتحليلات شاملة لمنحك رؤية كاملة عن استخدام مستنداتك.</p>
-
-    <div class="analytics-grid">
-        <div class="metric-card">
-            <h3>عدد المشاهدات</h3>
-            <p>تتبع عدد مرات مشاهدة مستندك</p>
-        </div>
-        <div class="metric-card">
-            <h3>مدة المشاهدة</h3>
-            <p>مراقبة المدة التي يقضيها المشاهدون مع مستندك</p>
-        </div>
-        <div class="metric-card">
-            <h3>مواقع الوصول</h3>
-            <p>معرفة من أين يتم الوصول إلى مستندك</p>
-        </div>
-        <div class="metric-card">
-            <h3>معلومات المشاهد</h3>
-            <p>جمع معلومات أساسية عن مشاهدي المستند</p>
-        </div>
-    </div>
-
-    <div class="feature-section">
-        <h2>ميزات التتبع الرئيسية</h2>
-        <ul>
-            <li>إشعارات المشاهدة في الوقت الفعلي</li>
-            <li>سجلات وصول مفصلة</li>
-            <li>مقاييس تفاعل المشاهدين</li>
-            <li>تحليل أنماط المشاركة</li>
-            <li>تقارير تحليلية قابلة للتصدير</li>
-        </ul>
-    </div>
-
-    <h2>فوائد تتبع مشاهدات PDF</h2>
-    <ul>
-        <li><strong>الأمان:</strong> تحديد محاولات الوصول غير المصرح به</li>
-        <li><strong>المشاركة:</strong> فهم كيفية تفاعل المشاهدين مع المحتوى</li>
-        <li><strong>المساءلة:</strong> تتبع توزيع المستندات واستخدامها</li>
-        <li><strong>الرؤى:</strong> جمع بيانات قيمة عن جمهورك</li>
-    </ul>
-
-    <h2>كيفية عمل تتبع المشاهدات</h2>
-    <ol>
-        <li>قم بتحميل ملف PDF الخاص بك إلى MaiPDF</li>
-        <li>قم بتمكين ميزات التتبع</li>
-        <li>شارك مستندك</li>
-        <li>راقب المشاهدات والوصول في الوقت الفعلي</li>
-        <li>راجع التحليلات والتقارير</li>
-    </ol>
-
-    <p>تحكم في مشاركة مستنداتك مع تتبع وتحليلات MaiPDF الشاملة. سواء كنت تشارك مستندات الأعمال أو المواد التعليمية أو المحتوى التسويقي، ستحصل على رؤية كاملة لكيفية استخدام ملفات PDF الخاصة بك.</p>
-
-    <div class="use-case-section">
-        <h2>حالات الاستخدام الشائعة</h2>
-        <div class="analytics-grid">
-            <div class="metric-card">
-                <h3>المؤسسات التعليمية</h3>
-                <p>تتبع مشاركة الطلاب مع المواد التعليمية وقياس مستوى المشاركة في المناهج الدراسية.</p>
-                <ul>
-                    <li>مراقبة وقت دراسة الطلاب</li>
-                    <li>تحديد المواد الأكثر فعالية</li>
-                    <li>تحسين المحتوى التعليمي</li>
-                </ul>
+        <div class="main-card">
+            <div class="card-header-custom">
+                <h1 class="mb-3"><i class="bi bi-eye-fill me-2"></i>تتبع مشاهدات PDF</h1>
+                <p class="lead mb-2">اعرف من يقرأ مستنداتك في الوقت الفعلي</p>
+                <div class="meta-info">
+                    <i class="bi bi-calendar3 me-1"></i> آخر تحديث: يونيو 2025
+                    <span class="mx-3">|</span>
+                    <i class="bi bi-clock me-1"></i> وقت القراءة: 5 دقائق
+                </div>
             </div>
-            <div class="metric-card">
-                <h3>الشركات</h3>
-                <p>حماية المستندات السرية ومراقبة توزيع المعلومات الداخلية.</p>
-                <ul>
-                    <li>تتبع الوصول إلى المستندات السرية</li>
-                    <li>مراقبة مشاركة التقارير</li>
-                    <li>تحليل اهتمامات الموظفين</li>
-                </ul>
-            </div>
-        </div>
-    </div>
 
-    <div class="faq-section">
-        <h2>الأسئلة الشائعة</h2>
-        <div class="faq-item">
-            <h3>كيف يمكنني بدء تتبع مشاهدات PDF؟</h3>
-            <p>ما عليك سوى تحميل ملف PDF الخاص بك إلى منصتنا، وتمكين التتبع، ومشاركة الرابط مع جمهورك المستهدف. سنقوم تلقائياً بجمع البيانات وإنشاء التقارير.</p>
-        </div>
-        <div class="faq-item">
-            <h3>هل يمكنني تخصيص التتبع؟</h3>
-            <p>نعم، يمكنك تحديد المقاييس التي تريد تتبعها وتخصيص التقارير حسب احتياجاتك.</p>
-        </div>
-        <div class="faq-item">
-            <h3>هل البيانات آمنة؟</h3>
-            <p>نعم، نستخدم تشفيراً من طرف إلى طرف ونتبع أفضل ممارسات الأمان لحماية بياناتك ومعلومات مشاهديك.</p>
-        </div>
-    </div>
+            <div class="card-body p-4">
+                <!-- Introduction -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-question-circle text-primary me-2"></i>ما هو تتبع المشاهدات؟</h2>
+                    <p>تتبع مشاهدات PDF يتيح لك معرفة متى يفتح شخص ما مستندك، وكم من الوقت يقضيه في قراءته. هذه المعلومات قيمة جداً في:</p>
+                    <div class="row mt-4">
+                        <div class="col-md-4">
+                            <div class="tracking-stat">
+                                <div class="tracking-number">24/7</div>
+                                <div class="text-muted">مراقبة مستمرة</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tracking-stat">
+                                <div class="tracking-number">&lt;1s</div>
+                                <div class="text-muted">إشعار فوري</div>
+                            </div>
+                        </div>
+                        <div class="col-md-4">
+                            <div class="tracking-stat">
+                                <div class="tracking-number">100%</div>
+                                <div class="text-muted">دقة التتبع</div>
+                            </div>
+                        </div>
+                    </div>
+                </section>
 
-    
-                <!-- Related Articles -->
-                <div class="mt-5">
-                    <h2><i class="fas fa-newspaper"></i> Related Articles & Resources</h2>
-                    <p class="lead mb-4">Explore more guides about secure PDF sharing and document management.</p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-3">
+                <!-- Live Notification Preview -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3">
+                        <span class="live-indicator">
+                            <i class="bi bi-bell text-warning me-2"></i>إشعار مباشر
+                            <span class="live-dot"></span>
+                        </span>
+                    </h2>
+                    <div class="notification-preview">
+                        <div class="d-flex align-items-center">
+                            <div class="notification-icon me-3">
+                                <i class="bi bi-eye"></i>
+                            </div>
+                            <div>
+                                <strong>شخص ما يقرأ مستندك الآن!</strong>
+                                <p class="mb-0 text-muted small">
+                                    📄 عقد-المشروع.pdf<br>
+                                    📍 دبي، الإمارات<br>
+                                    🕐 منذ دقيقتين
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- What You Can Track -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-list-check text-success me-2"></i>ما يمكنك تتبعه</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-clock text-primary me-2"></i>وقت الفتح</h5>
+                                <p class="mb-0">متى بالضبط تم فتح المستند.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-hourglass-split text-warning me-2"></i>مدة القراءة</h5>
+                                <p class="mb-0">كم من الوقت قضاه القارئ.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-geo-alt text-danger me-2"></i>الموقع الجغرافي</h5>
+                                <p class="mb-0">من أي بلد ومدينة تم الوصول.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-laptop text-info me-2"></i>نوع الجهاز</h5>
+                                <p class="mb-0">كمبيوتر، هاتف، أو تابلت.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-file-earmark text-success me-2"></i>الصفحات المقروءة</h5>
+                                <p class="mb-0">أي صفحات تم الاطلاع عليها.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-box">
+                                <h5><i class="bi bi-arrow-repeat text-secondary me-2"></i>مرات الفتح</h5>
+                                <p class="mb-0">كم مرة عاد نفس الشخص للمستند.</p>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <!-- Use Cases -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-briefcase text-primary me-2"></i>حالات الاستخدام</h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/share-pdf-online.html">Share PDF Online Free</a></h5>
-                                    <p class="card-text small">Complete guide to sharing PDFs securely</p>
+                                    <i class="bi bi-currency-dollar display-5 text-success mb-3"></i>
+                                    <h5>عروض المبيعات</h5>
+                                    <p class="small text-muted">اعرف متى يقرأ العميل عرضك للمتابعة في الوقت المناسب. إذا قضى 10 دقائق في قراءة العرض، فهو مهتم!</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 mb-3">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/controlling-pdf-access.html">Control PDF Access</a></h5>
-                                    <p class="card-text small">Advanced access control features</p>
+                                    <i class="bi bi-file-earmark-text display-5 text-primary mb-3"></i>
+                                    <h5>العقود</h5>
+                                    <p class="small text-muted">تأكد من أن الطرف الآخر قد قرأ العقد بالكامل قبل المفاوضات.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 mb-3">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-tracking-analytics.html">PDF Analytics</a></h5>
-                                    <p class="card-text small">Track and analyze PDF engagement</p>
+                                    <i class="bi bi-person-workspace display-5 text-warning mb-3"></i>
+                                    <h5>التوظيف</h5>
+                                    <p class="small text-muted">تتبع من يراجع السيرة الذاتية من مسؤولي التوظيف.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
+                        <div class="col-md-6 mb-3">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/features/">All Features</a></h5>
-                                    <p class="card-text small">Explore all MaiPDF features</p>
+                                    <i class="bi bi-graph-up display-5 text-danger mb-3"></i>
+                                    <h5>التقارير</h5>
+                                    <p class="small text-muted">تأكد من أن المدراء قد اطلعوا على التقارير المهمة.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
+                </section>
+
+                <!-- Notification Options -->
+                <section class="mb-5">
+                    <h2 class="h4 mb-3"><i class="bi bi-bell text-warning me-2"></i>خيارات الإشعارات</h2>
+                    <div class="table-responsive">
+                        <table class="table table-hover">
+                            <thead class="table-light">
+                                <tr>
+                                    <th>نوع الإشعار</th>
+                                    <th>الوصف</th>
+                                    <th class="text-center">متاح</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><i class="bi bi-envelope text-primary me-2"></i>بريد إلكتروني</td>
+                                    <td>إشعار فوري عند كل مشاهدة</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-browser-chrome text-info me-2"></i>إشعار المتصفح</td>
+                                    <td>تنبيه على سطح المكتب</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-chat-dots text-success me-2"></i>Webhook</td>
+                                    <td>للتكامل مع أنظمتك</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                                <tr>
+                                    <td><i class="bi bi-file-earmark-text text-warning me-2"></i>تقرير يومي</td>
+                                    <td>ملخص لكل المشاهدات</td>
+                                    <td class="text-center"><i class="bi bi-check-circle-fill text-success"></i></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </section>
+
+                <!-- CTA Section -->
+                <section class="cta-section mb-4">
+                    <h3 class="mb-3">ابدأ تتبع مستنداتك</h3>
+                    <p class="mb-4">اعرف من يقرأ ملفاتك في الوقت الفعلي</p>
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg px-5">
+                        <i class="bi bi-eye me-2"></i>ابدأ التتبع مجاناً
+                    </a>
+                </section>
+
+                <!-- Related Articles -->
+                <section class="mb-4">
+                    <h2 class="h4 mb-3"><i class="bi bi-link-45deg text-primary me-2"></i>مقالات ذات صلة</h2>
+                    <a href="pdf-tracking-analytics.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>تحليلات تتبع PDF
+                    </a>
+                    <a href="track-pdf-usage.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>تتبع استخدام PDF
+                    </a>
+                    <a href="pdf-tracking-comparison.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>مقارنة أدوات التتبع
+                    </a>
+                    <a href="dynamic-watermark-tracking.html" class="related-link">
+                        <i class="bi bi-arrow-left me-2"></i>العلامات المائية الديناميكية
+                    </a>
+                </section>
+
+                <!-- Back Navigation -->
+                <div class="text-center pt-3 border-top">
+                    <a href="index.html" class="btn btn-outline-primary me-2">
+                        <i class="bi bi-arrow-right me-1"></i>العودة للفهرس العربي
+                    </a>
+                    <a href="../index.html" class="btn btn-outline-secondary">
+                        <i class="bi bi-house me-1"></i>الصفحة الرئيسية
+                    </a>
                 </div>
-
-            <div class="cta-section">
-        <h2>ابدأ في تتبع مشاهدات PDF اليوم</h2>
-        <p>احصل على رؤى قيمة حول كيفية استخدام مستنداتك وحسّن أداء محتواك</p>
-        <a href="#" class="btn-primary">جرب MaiPDF مجاناً</a>
+            </div>
+        </div>
     </div>
 
-    <div class="related-content">
-        <h2>روابط لميزات أخرى</h2>
-        <ul>
-            <li><a href="advanced-security-configurations.html">إعدادات الأمان المتقدمة</a></li>
-            <li><a href="anonymous-pdf-sharing.html">مشاركة PDF مجهولة</a></li>
-            <li><a href="convert-pdf-to-qr-code.html">تحويل PDF إلى رمز QR</a></li>
-            <li><a href="design-watermark-protection.html">حماية العلامة المائية للتصميم</a></li>
-            <li><a href="dynamic-watermark-tracking.html">تتبع العلامة المائية الديناميكية</a></li>
-            <li><a href="email-verification-secure-pdf-access.html">التحقق من البريد الإلكتروني للوصول الآمن إلى PDF</a></li>
-            <li><a href="free-pdf-hosting-and-sharing.html">استضافة ومشاركة PDF مجانية</a></li>
-            <li><a href="pdf-security-features.html">ميزات أمان PDF</a></li>
-            <li><a href="pdf-tracking-analytics.html">تحليلات تتبع PDF</a></li>
-            <li><a href="pdf-tracking-comparison.html">مقارنة تتبع PDF</a></li>
-            <li><a href="pdf-view-tracking.html">تتبع عرض PDF</a></li>
-            <li><a href="track-pdf-usage.html">تتبع استخدام PDF</a></li>
-        </ul>
-    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
