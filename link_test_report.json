@@ -1,0 +1,120 @@
+{
+  "summary": {
+    "total_pages_visited": 50,
+    "total_valid_links": 835,
+    "total_broken_links": 15,
+    "total_redirects_to_home": 0
+  },
+  "redirects_to_home": [],
+  "broken_links": [
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/features"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/article/time-limited-whitepapers-case-studies.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/features/en/security"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/usecase/limit-pdf-open-times.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/article/controlling-pdf-access.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/article/secure-pdf-sharing-guide.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/features/en/sharing"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/usecase/sensitive-documents-security.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/arabic"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/article/pdf-view-limits-security.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/korean"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/usecase/limit-pdf-access-times-en.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/article/pdf-tracking-analytics.html"
+    },
+    {
+      "status": "broken",
+      "url": "https://sendpdfonline.com/cdn-cgi/l/email-protection",
+      "status_code": 404,
+      "referer": "https://sendpdfonline.com/article"
+    }
+  ],
+  "link_map": {
+    "https://sendpdfonline.com/cdn-cgi/l/email-protection": [
+      "https://sendpdfonline.com/",
+      "https://sendpdfonline.com/features",
+      "https://sendpdfonline.com/article/time-limited-whitepapers-case-studies.html",
+      "https://sendpdfonline.com/features/en/security",
+      "https://sendpdfonline.com/usecase/limit-pdf-open-times.html",
+      "https://sendpdfonline.com/article/controlling-pdf-access.html",
+      "https://sendpdfonline.com/article/secure-pdf-sharing-guide.html",
+      "https://sendpdfonline.com/features/en/sharing",
+      "https://sendpdfonline.com/usecase/sensitive-documents-security.html",
+      "https://sendpdfonline.com/arabic",
+      "https://sendpdfonline.com/article/pdf-view-limits-security.html",
+      "https://sendpdfonline.com/korean",
+      "https://sendpdfonline.com/usecase/limit-pdf-access-times-en.html",
+      "https://sendpdfonline.com/article/pdf-tracking-analytics.html",
+      "https://sendpdfonline.com/article"
+    ]
+  }
+}

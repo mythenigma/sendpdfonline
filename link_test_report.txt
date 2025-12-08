@@ -1,0 +1,72 @@
+网站链接测试报告
+================================================================================
+
+测试时间: 2025-12-05 12:25:29
+已访问页面数: 50
+有效链接数: 835
+损坏链接数: 15
+跳转回首页的链接数: 0
+
+
+损坏的链接:
+--------------------------------------------------------------------------------
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/features
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/article/time-limited-whitepapers-case-studies.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/features/en/security
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/usecase/limit-pdf-open-times.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/article/controlling-pdf-access.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/article/secure-pdf-sharing-guide.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/features/en/sharing
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/usecase/sensitive-documents-security.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/arabic
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/article/pdf-view-limits-security.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/korean
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/usecase/limit-pdf-access-times-en.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/article/pdf-tracking-analytics.html
+
+链接: https://sendpdfonline.com/cdn-cgi/l/email-protection
+状态: broken
+来源页面: https://sendpdfonline.com/article
