@@ -62,9 +62,46 @@
                 
       <img src="../maiconver.png" alt="MaiPDF PDF to Image Tool Interface" style="max-width: 100%; height: auto; margin: 24px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
     </header>
+
+    <!-- PDF to Image Flowchart -->
+    <div style="text-align: center; margin: 30px 0;">
+        <img src="../maipdf-flowcharts/en-pdf-to-image.svg" alt="PDF to Image Complete Workflow" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+
     <section>
       <p>This page is the <strong>MaiPDF</strong> online "PDF → Image" conversion tool. You can upload any PDF, choose different output formats, and turn your file into a "view-only, hard-to-edit" image-based document. All operations are completed in your browser, no software installation required.</p>
     </section>
+
+    <!-- Mermaid Format Comparison -->
+    <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+graph TD
+    A[Upload PDF] --> B{Choose Output Format}
+    B --> C[Images in ZIP]
+    B --> D[Imaginized PDF]
+    B --> E[Imaginized PDF with Print]
+    B --> F[PDF in All Restrictions]
+    
+    C --> C1[📦 Individual Images<br/>Packaged in ZIP]
+    D --> D1[📄 Image-based PDF<br/>Cannot Edit]
+    E --> E1[🖨️ Image-based PDF<br/>Print Only]
+    F --> F1[🔒 Super Restricted PDF<br/>All Operations Disabled]
+    
+    C1 --> G[Download/Share]
+    D1 --> G
+    E1 --> G
+    F1 --> G
+    
+    style A fill:#dbeafe,stroke:#3b82f6
+    style B fill:#fef3c7,stroke:#f59e0b
+    style C fill:#d1fae5,stroke:#10b981
+    style D fill:#e0e7ff,stroke:#6366f1
+    style E fill:#fce7f3,stroke:#ec4899
+    style F fill:#fee2e2,stroke:#dc2626
+    style G fill:#d1fae5,stroke:#10b981
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+
     <section>
       <h2>Four Output Options</h2>
       <ul>

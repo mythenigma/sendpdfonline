@@ -62,9 +62,46 @@
                 
       <img src="../maiconver.png" alt="MaiPDF PDF转图片工具界面" style="max-width: 100%; height: auto; margin: 24px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
     </header>
+
+    <!-- PDF转图片流程图 -->
+    <div style="text-align: center; margin: 30px 0;">
+        <img src="../maipdf-flowcharts/zh-pdf-to-image.svg" alt="PDF转图片完整流程" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+
     <section>
-      <p>这个页面是 <strong>MaiPDF</strong> 的在线「PDF → 图片化」转换工具。你可以上传任意 PDF，选择不同的输出格式，将文件变成“只看、不易改”的图片型文档。全部操作在浏览器内完成，无需安装软件。</p>
+      <p>这个页面是 <strong>MaiPDF</strong> 的在线「PDF → 图片化」转换工具。你可以上传任意 PDF，选择不同的输出格式，将文件变成"只看、不易改"的图片型文档。全部操作在浏览器内完成，无需安装软件。</p>
     </section>
+
+    <!-- Mermaid 格式对比图 -->
+    <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+graph TD
+    A[上传PDF] --> B{选择输出格式}
+    B --> C[Images in ZIP]
+    B --> D[Imaginized PDF]
+    B --> E[Imaginized PDF with Print]
+    B --> F[PDF in All Restrictions]
+    
+    C --> C1[📦 每页独立图片<br/>打包成ZIP]
+    D --> D1[📄 图片型PDF<br/>无法编辑]
+    E --> E1[🖨️ 图片型PDF<br/>仅可打印]
+    F --> F1[🔒 超级受限PDF<br/>全面禁止操作]
+    
+    C1 --> G[下载/分享]
+    D1 --> G
+    E1 --> G
+    F1 --> G
+    
+    style A fill:#dbeafe,stroke:#3b82f6
+    style B fill:#fef3c7,stroke:#f59e0b
+    style C fill:#d1fae5,stroke:#10b981
+    style D fill:#e0e7ff,stroke:#6366f1
+    style E fill:#fce7f3,stroke:#ec4899
+    style F fill:#fee2e2,stroke:#dc2626
+    style G fill:#d1fae5,stroke:#10b981
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+
     <section>
       <h2>四种输出选项</h2>
       <ul>

@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="recipientGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="700" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#1e3a8a">MaiPDF User Journey</text>
+  <text x="700" y="70" font-size="16" text-anchor="middle" fill="#64748b">From Upload to Tracking - Complete Document Lifecycle</text>
+  
+  <!-- Left Side: Document Owner -->
+  <text x="350" y="120" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e40af">👤 Document Owner</text>
+  
+  <!-- Step 1: Upload -->
+  <rect x="200" y="140" width="300" height="80" rx="10" fill="url(#userGrad)" filter="url(#shadow)"/>
+  <text x="350" y="170" font-size="16" font-weight="bold" text-anchor="middle" fill="white">1. Upload PDF Document</text>
+  <text x="350" y="195" font-size="12" text-anchor="middle" fill="#dbeafe">• Drag & drop file</text>
+  <text x="350" y="212" font-size="12" text-anchor="middle" fill="#dbeafe">• Max 100MB per file</text>
+  
+  <!-- Arrow down -->
+  <path d="M 350 220 L 350 260" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- Step 2: Configure -->
+  <rect x="200" y="260" width="300" height="120" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="350" y="285" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e40af">2. Configure Security</text>
+  <text x="230" y="310" font-size="11" text-anchor="start" fill="#475569">☑️ Set view limits (e.g., 5 views)</text>
+  <text x="230" y="330" font-size="11" text-anchor="start" fill="#475569">☑️ Add expiration date</text>
+  <text x="230" y="350" font-size="11" text-anchor="start" fill="#475569">☑️ Enable dynamic watermark</text>
+  <text x="230" y="370" font-size="11" text-anchor="start" fill="#475569">☑️ Require email verification</text>
+  
+  <!-- Arrow down -->
+  <path d="M 350 380 L 350 420" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- Step 3: Generate Link -->
+  <rect x="200" y="420" width="300" height="80" rx="10" fill="url(#userGrad)" filter="url(#shadow)"/>
+  <text x="350" y="450" font-size="16" font-weight="bold" text-anchor="middle" fill="white">3. Generate Secure Link</text>
+  <text x="350" y="475" font-size="12" text-anchor="middle" fill="#dbeafe">🔗 https://maipdf.com/v/abc123</text>
+  <text x="350" y="492" font-size="12" text-anchor="middle" fill="#dbeafe">or QR Code for scanning</text>
+  
+  <!-- Arrow right to sharing -->
+  <path d="M 500 460 L 600 460" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- Middle: Sharing Methods -->
+  <rect x="600" y="400" width="200" height="120" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="425" font-size="16" font-weight="bold" text-anchor="middle" fill="#92400e">📤 Share Via</text>
+  <text x="700" y="455" font-size="12" text-anchor="middle" fill="#475569">📧 Email</text>
+  <text x="700" y="475" font-size="12" text-anchor="middle" fill="#475569">💬 Messaging Apps</text>
+  <text x="700" y="495" font-size="12" text-anchor="middle" fill="#475569">📱 QR Code</text>
+  <text x="700" y="515" font-size="12" text-anchor="middle" fill="#475569">🌐 Social Media</text>
+  
+  <!-- Arrow right to recipient -->
+  <path d="M 800 460 L 900 280" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- Right Side: Recipient -->
+  <text x="1050" y="120" font-size="20" font-weight="bold" text-anchor="middle" fill="#047857">👥 Document Recipient</text>
+  
+  <!-- Step 4: Access -->
+  <rect x="900" y="140" width="300" height="80" rx="10" fill="url(#recipientGrad)" filter="url(#shadow)"/>
+  <text x="1050" y="170" font-size="16" font-weight="bold" text-anchor="middle" fill="white">4. Receive Link/QR Code</text>
+  <text x="1050" y="195" font-size="12" text-anchor="middle" fill="#d1fae5">Click link or scan QR</text>
+  <text x="1050" y="212" font-size="12" text-anchor="middle" fill="#d1fae5">From any device</text>
+  
+  <!-- Arrow down -->
+  <path d="M 1050 220 L 1050 260" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- Step 5: Verify -->
+  <rect x="900" y="260" width="300" height="80" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1050" y="290" font-size="16" font-weight="bold" text-anchor="middle" fill="#047857">5. Verify Identity (if required)</text>
+  <text x="1050" y="315" font-size="12" text-anchor="middle" fill="#475569">Enter email address</text>
+  <text x="1050" y="332" font-size="12" text-anchor="middle" fill="#475569">or password</text>
+  
+  <!-- Arrow down -->
+  <path d="M 1050 340 L 1050 380" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- Step 6: View -->
+  <rect x="900" y="380" width="300" height="100" rx="10" fill="url(#recipientGrad)" filter="url(#shadow)"/>
+  <text x="1050" y="410" font-size="16" font-weight="bold" text-anchor="middle" fill="white">6. View Protected PDF</text>
+  <text x="1050" y="435" font-size="12" text-anchor="middle" fill="#d1fae5">• Online viewer</text>
+  <text x="1050" y="452" font-size="12" text-anchor="middle" fill="#d1fae5">• Watermark applied</text>
+  <text x="1050" y="469" font-size="12" text-anchor="middle" fill="#d1fae5">• Restrictions enforced</text>
+  
+  <!-- Arrow back to owner (tracking) -->
+  <path d="M 900 430 L 500 580" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow-purple)"/>
+  
+  <!-- Step 7: Real-time Tracking -->
+  <rect x="200" y="580" width="300" height="140" rx="10" fill="#e9d5ff" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="350" y="605" font-size="16" font-weight="bold" text-anchor="middle" fill="#6b21a8">7. Monitor Activity (Real-time)</text>
+  <text x="230" y="630" font-size="11" text-anchor="start" fill="#475569">📊 View count: 3/5 remaining</text>
+  <text x="230" y="650" font-size="11" text-anchor="start" fill="#475569">👤 Viewed by: john@company.com</text>
+  <text x="230" y="670" font-size="11" text-anchor="start" fill="#475569">⏰ Last access: 10 minutes ago</text>
+  <text x="230" y="690" font-size="11" text-anchor="start" fill="#475569">📍 Location: New York, USA</text>
+  <text x="230" y="710" font-size="11" text-anchor="start" fill="#475569">⌚ Reading time: 3 min 42 sec</text>
+  
+  <!-- Step 8: Manage -->
+  <rect x="200" y="750" width="300" height="100" rx="10" fill="url(#userGrad)" filter="url(#shadow)"/>
+  <text x="350" y="780" font-size="16" font-weight="bold" text-anchor="middle" fill="white">8. Manage Access</text>
+  <text x="350" y="805" font-size="12" text-anchor="middle" fill="#dbeafe">🔄 Update settings anytime</text>
+  <text x="350" y="822" font-size="12" text-anchor="middle" fill="#dbeafe">🚫 Revoke access instantly</text>
+  <text x="350" y="839" font-size="12" text-anchor="middle" fill="#dbeafe">📝 Edit document content</text>
+  
+  <!-- Annotation: Control retained -->
+  <rect x="600" y="630" width="200" height="90" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="655" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">✨ Key Benefit</text>
+  <text x="700" y="680" font-size="11" text-anchor="middle" fill="#475569">You maintain full</text>
+  <text x="700" y="697" font-size="11" text-anchor="middle" fill="#475569">control even after</text>
+  <text x="700" y="714" font-size="11" text-anchor="middle" fill="#475569">sharing the document!</text>
+  
+  <!-- Annotation: Recipient Experience -->
+  <rect x="900" y="520" width="300" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1050" y="545" font-size="11" text-anchor="middle" fill="#475569">✅ Simple, professional viewing experience</text>
+  <text x="1050" y="562" font-size="11" text-anchor="middle" fill="#475569">No software installation required</text>
+  
+  <!-- Timeline indicator -->
+  <text x="700" y="870" font-size="12" text-anchor="middle" fill="#94a3b8" font-style="italic">← Entire process takes less than 2 minutes →</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981" />
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
+    </marker>
+  </defs>
+</svg>

@@ -1,0 +1,139 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 900" font-family="'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'SimSun', sans-serif">
+  <defs>
+    <linearGradient id="mainGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#8b5cf6;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 标题 -->
+  <rect x="0" y="0" width="1200" height="70" fill="url(#mainGrad)"/>
+  <text x="600" y="35" font-size="28" font-weight="bold" text-anchor="middle" fill="white">替换/更新已分享的 PDF 文件</text>
+  <text x="600" y="58" font-size="14" text-anchor="middle" fill="#e0e7ff">无需更改分享链接即可更新内容</text>
+  
+  <!-- 场景说明框 -->
+  <rect x="50" y="90" width="1100" height="70" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="115" font-size="16" font-weight="bold" text-anchor="middle" fill="#92400e">📋 使用场景</text>
+  <text x="600" y="140" font-size="13" text-anchor="middle" fill="#475569">您已经分享了 PDF 给客户，但发现内容有误或需要更新价格。</text>
+  <text x="600" y="157" font-size="13" text-anchor="middle" fill="#475569">好消息：您可以替换文件而不用更改已分享的链接！</text>
+  
+  <!-- 步骤1: 原始分享 -->
+  <g id="step1">
+    <rect x="100" y="200" width="450" height="100" rx="10" fill="#e0e7ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <text x="325" y="230" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e40af">步骤 1：已分享原始文档</text>
+    <rect x="120" y="245" width="120" height="40" rx="5" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+    <text x="180" y="268" font-size="11" text-anchor="middle" fill="#1e40af">产品手册_v1.pdf</text>
+    
+    <path d="M 250 265 L 280 265" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+    
+    <rect x="280" y="245" width="120" height="40" rx="5" fill="#3b82f6"/>
+    <text x="340" y="262" font-size="10" text-anchor="middle" fill="white">分享链接:</text>
+    <text x="340" y="276" font-size="9" text-anchor="middle" fill="white">maipdf.com/v/abc123</text>
+    
+    <path d="M 410 265 L 440 265" stroke="#3b82f6" stroke-width="2" marker-end="url(#arrow-blue)"/>
+    
+    <text x="485" y="270" font-size="13" text-anchor="middle" fill="#475569">👥 客户</text>
+  </g>
+  
+  <!-- 发现问题 -->
+  <rect x="650" y="200" width="500" height="100" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2" filter="url(#shadow)"/>
+  <text x="900" y="230" font-size="18" font-weight="bold" text-anchor="middle" fill="#991b1b">❌ 发现问题！</text>
+  <text x="900" y="255" font-size="13" text-anchor="middle" fill="#475569">• 文档中价格有误</text>
+  <text x="900" y="275" font-size="13" text-anchor="middle" fill="#475569">• 需要添加新功能说明</text>
+  <text x="900" y="295" font-size="13" text-anchor="middle" fill="#475569">• 信息需要更新</text>
+  
+  <!-- 箭头向下 -->
+  <path d="M 325 300 L 325 340" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- 步骤2: 替换文件 -->
+  <rect x="100" y="340" width="450" height="160" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="325" y="370" font-size="18" font-weight="bold" text-anchor="middle" fill="#065f46">步骤 2：替换文件</text>
+  
+  <rect x="140" y="390" width="350" height="100" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+  <text x="315" y="415" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">登录 MaiPDF 控制面板</text>
+  <text x="315" y="440" font-size="12" text-anchor="middle" fill="#475569">1. 找到已分享的文档</text>
+  <text x="315" y="460" font-size="12" text-anchor="middle" fill="#475569">2. 点击"替换文件"按钮</text>
+  <text x="315" y="480" font-size="12" text-anchor="middle" fill="#475569">3. 上传新版本（产品手册_v2.pdf）</text>
+  
+  <!-- 箭头向下 -->
+  <path d="M 325 500 L 325 540" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- 步骤3: 神奇发生 -->
+  <rect x="100" y="540" width="450" height="140" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="325" y="570" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">步骤 3：神奇的事情发生了 ✨</text>
+  
+  <g id="magic-details">
+    <rect x="120" y="585" width="130" height="80" rx="5" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="185" y="608" font-size="11" font-weight="bold" text-anchor="middle" fill="#92400e">旧文件</text>
+    <text x="185" y="625" font-size="10" text-anchor="middle" fill="#475569">产品手册_v1.pdf</text>
+    <text x="185" y="642" font-size="9" text-anchor="middle" fill="#dc2626">❌ 已替换</text>
+    <text x="185" y="658" font-size="9" text-anchor="middle" fill="#475569">(用户不可见)</text>
+    
+    <text x="275" y="630" font-size="24" text-anchor="middle" fill="#f59e0b">→</text>
+    
+    <rect x="300" y="585" width="130" height="80" rx="5" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="365" y="608" font-size="11" font-weight="bold" text-anchor="middle" fill="#065f46">新文件</text>
+    <text x="365" y="625" font-size="10" text-anchor="middle" fill="#475569">产品手册_v2.pdf</text>
+    <text x="365" y="642" font-size="9" text-anchor="middle" fill="#10b981">✓ 已激活</text>
+    <text x="365" y="658" font-size="9" text-anchor="middle" fill="#475569">(自动显示)</text>
+  </g>
+  
+  <!-- 箭头向右 -->
+  <path d="M 550 610 L 650 610" stroke="#f59e0b" stroke-width="3" fill="none" marker-end="url(#arrow-orange)"/>
+  
+  <!-- 关键优势框 -->
+  <rect x="650" y="540" width="500" height="140" rx="10" fill="#e0e7ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="900" y="570" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e40af">🔑 核心优势</text>
+  <text x="900" y="600" font-size="13" text-anchor="middle" fill="#475569">✅ 链接不变：maipdf.com/v/abc123</text>
+  <text x="900" y="620" font-size="13" text-anchor="middle" fill="#475569">✅ 无需重新分享给客户</text>
+  <text x="900" y="640" font-size="13" text-anchor="middle" fill="#475569">✅ 所有设置保持不变（次数、期限等）</text>
+  <text x="900" y="660" font-size="13" text-anchor="middle" fill="#475569">✅ 所有接收者无缝更新</text>
+  
+  <!-- 箭头向下 -->
+  <path d="M 325 680 L 325 720" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- 步骤4: 结果 -->
+  <rect x="100" y="720" width="1050" height="140" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="625" y="750" font-size="18" font-weight="bold" text-anchor="middle" fill="#065f46">步骤 4：客户自动看到更新后的内容</text>
+  
+  <g id="result">
+    <rect x="150" y="770" width="280" height="70" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="290" y="795" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">👤 客户体验</text>
+    <text x="290" y="815" font-size="11" text-anchor="middle" fill="#475569">打开相同链接</text>
+    <text x="290" y="832" font-size="11" text-anchor="middle" fill="#10b981">✓ 立即看到新内容</text>
+    
+    <text x="480" y="810" font-size="20" text-anchor="middle" fill="#10b981">+</text>
+    
+    <rect x="530" y="770" width="280" height="70" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="670" y="795" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">📊 您获得追踪</text>
+    <text x="670" y="815" font-size="11" text-anchor="middle" fill="#475569">监控谁查看了新版本</text>
+    <text x="670" y="832" font-size="11" text-anchor="middle" fill="#10b981">✓ 比较参与度指标</text>
+    
+    <text x="860" y="810" font-size="20" text-anchor="middle" fill="#10b981">+</text>
+    
+    <rect x="910" y="770" width="200" height="70" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="1010" y="795" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">🔒 安全性</text>
+    <text x="1010" y="815" font-size="11" text-anchor="middle" fill="#475569">所有权限</text>
+    <text x="1010" y="832" font-size="11" text-anchor="middle" fill="#10b981">✓ 依然有效</text>
+  </g>
+  
+  <!-- 页脚示例 -->
+  <text x="600" y="885" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e3a8a">常见应用场景：</text>
+  <text x="600" y="905" font-size="11" text-anchor="middle" fill="#475569">📄 修复销售方案错误 • 💰 更新价格表 • 📊 刷新季度报告 • 📚 修正课程资料</text>
+  
+  <!-- 箭头标记定义 -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981" />
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f59e0b" />
+    </marker>
+  </defs>
+</svg>

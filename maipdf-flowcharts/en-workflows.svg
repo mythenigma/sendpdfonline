@@ -1,0 +1,198 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1600" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e3a8a;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="greenGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="orangeGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="purpleGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <text x="600" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#1e3a8a">MaiPDF Complete Workflow</text>
+  <text x="600" y="70" font-size="16" text-anchor="middle" fill="#64748b">Secure PDF Sharing with Full Control</text>
+  
+  <!-- Step 1: Upload -->
+  <rect x="425" y="100" width="350" height="80" rx="10" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="600" y="135" font-size="20" font-weight="bold" text-anchor="middle" fill="white">📤 Step 1: Upload Your PDF</text>
+  <text x="600" y="160" font-size="14" text-anchor="middle" fill="white">Drag & drop or select PDF file</text>
+  
+  <!-- Arrow -->
+  <path d="M 600 180 L 600 220" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 2: Configure Security -->
+  <rect x="150" y="220" width="900" height="200" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="250" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e3a8a">⚙️ Step 2: Configure Security Settings</text>
+  
+  <!-- Security Options Grid -->
+  <g id="security-options">
+    <!-- Access Control -->
+    <rect x="180" y="270" width="200" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
+    <text x="280" y="295" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e3a8a">🔐 Access Control</text>
+    <text x="280" y="315" font-size="12" text-anchor="middle" fill="#475569">• View limits</text>
+    <text x="280" y="335" font-size="12" text-anchor="middle" fill="#475569">• Expiration dates</text>
+    <text x="280" y="355" font-size="12" text-anchor="middle" fill="#475569">• Email verification</text>
+    <text x="280" y="375" font-size="12" text-anchor="middle" fill="#475569">• Password protection</text>
+    
+    <!-- Watermark -->
+    <rect x="410" y="270" width="200" height="120" rx="8" fill="#d1fae5" stroke="#10b981" stroke-width="2"/>
+    <text x="510" y="295" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">💧 Dynamic Watermark</text>
+    <text x="510" y="315" font-size="12" text-anchor="middle" fill="#475569">• User email/name</text>
+    <text x="510" y="335" font-size="12" text-anchor="middle" fill="#475569">• View timestamp</text>
+    <text x="510" y="355" font-size="12" text-anchor="middle" fill="#475569">• IP address</text>
+    <text x="510" y="375" font-size="12" text-anchor="middle" fill="#475569">• Custom text</text>
+    
+    <!-- DRM Protection -->
+    <rect x="640" y="270" width="200" height="120" rx="8" fill="#fed7aa" stroke="#f59e0b" stroke-width="2"/>
+    <text x="740" y="295" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">🛡️ DRM Protection</text>
+    <text x="740" y="315" font-size="12" text-anchor="middle" fill="#475569">• Prevent download</text>
+    <text x="740" y="335" font-size="12" text-anchor="middle" fill="#475569">• Disable printing</text>
+    <text x="740" y="355" font-size="12" text-anchor="middle" fill="#475569">• Block screenshots</text>
+    <text x="740" y="375" font-size="12" text-anchor="middle" fill="#475569">• Copy protection</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 600 420 L 600 460" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 3: Generate Link -->
+  <rect x="425" y="460" width="350" height="80" rx="10" fill="url(#greenGrad)" filter="url(#shadow)"/>
+  <text x="600" y="495" font-size="20" font-weight="bold" text-anchor="middle" fill="white">🔗 Step 3: Generate Secure Link</text>
+  <text x="600" y="520" font-size="14" text-anchor="middle" fill="white">Get shareable link or QR code</text>
+  
+  <!-- Arrow splits -->
+  <path d="M 600 540 L 600 580" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 600 580 L 300 620" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 600 580 L 900 620" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 4A: Share -->
+  <rect x="150" y="620" width="280" height="100" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="290" y="650" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e3a8a">📲 Step 4A: Share</text>
+  <text x="290" y="675" font-size="13" text-anchor="middle" fill="#475569">• Email link</text>
+  <text x="290" y="695" font-size="13" text-anchor="middle" fill="#475569">• QR code (print/scan)</text>
+  <text x="290" y="715" font-size="13" text-anchor="middle" fill="#475569">• Messaging apps</text>
+  
+  <!-- Step 4B: Recipients View -->
+  <rect x="770" y="620" width="280" height="100" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="910" y="650" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">👥 Step 4B: Recipients</text>
+  <text x="910" y="675" font-size="13" text-anchor="middle" fill="#475569">• Access via link/QR</text>
+  <text x="910" y="695" font-size="13" text-anchor="middle" fill="#475569">• Verify email (if required)</text>
+  <text x="910" y="715" font-size="13" text-anchor="middle" fill="#475569">• View secure PDF</text>
+  
+  <!-- Arrows converge -->
+  <path d="M 290 720 L 600 760" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  <path d="M 910 720 L 600 760" stroke="#64748b" stroke-width="2" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Step 5: Real-time Tracking -->
+  <rect x="350" y="760" width="500" height="120" rx="10" fill="url(#purpleGrad)" filter="url(#shadow)"/>
+  <text x="600" y="795" font-size="20" font-weight="bold" text-anchor="middle" fill="white">📊 Step 5: Real-time Tracking & Analytics</text>
+  <text x="600" y="825" font-size="14" text-anchor="middle" fill="white">Monitor document activity</text>
+  
+  <!-- Tracking Details -->
+  <g id="tracking-details">
+    <text x="380" y="850" font-size="12" text-anchor="start" fill="white">✓ Who viewed the document</text>
+    <text x="380" y="870" font-size="12" text-anchor="start" fill="white">✓ When they accessed it</text>
+    <text x="650" y="850" font-size="12" text-anchor="start" fill="white">✓ Device & location info</text>
+    <text x="650" y="870" font-size="12" text-anchor="start" fill="white">✓ Time spent viewing</text>
+  </g>
+  
+  <!-- Arrow -->
+  <path d="M 600 880 L 600 920" stroke="#64748b" stroke-width="3" fill="none" marker-end="url(#arrowhead)"/>
+  
+  <!-- Benefits Section -->
+  <rect x="100" y="920" width="1000" height="200" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="950" font-size="22" font-weight="bold" text-anchor="middle" fill="#1e3a8a">✨ Key Benefits</text>
+  
+  <!-- Benefits Grid -->
+  <g id="benefits">
+    <rect x="130" y="970" width="220" height="120" rx="8" fill="white" stroke="#3b82f6" stroke-width="2"/>
+    <text x="240" y="995" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e3a8a">🔒 Complete Control</text>
+    <text x="240" y="1015" font-size="11" text-anchor="middle" fill="#475569">Maintain control even</text>
+    <text x="240" y="1032" font-size="11" text-anchor="middle" fill="#475569">after sharing. Revoke</text>
+    <text x="240" y="1049" font-size="11" text-anchor="middle" fill="#475569">access anytime.</text>
+    <text x="240" y="1066" font-size="11" text-anchor="middle" fill="#475569">Update content live.</text>
+    
+    <rect x="380" y="970" width="220" height="120" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="490" y="995" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">🛡️ Prevent Leaks</text>
+    <text x="490" y="1015" font-size="11" text-anchor="middle" fill="#475569">Dynamic watermarks</text>
+    <text x="490" y="1032" font-size="11" text-anchor="middle" fill="#475569">trace leaks back to</text>
+    <text x="490" y="1049" font-size="11" text-anchor="middle" fill="#475569">the source. DRM stops</text>
+    <text x="490" y="1066" font-size="11" text-anchor="middle" fill="#475569">unauthorized copies.</text>
+    
+    <rect x="630" y="970" width="220" height="120" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="740" y="995" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">📈 Track Engagement</text>
+    <text x="740" y="1015" font-size="11" text-anchor="middle" fill="#475569">See who's actually</text>
+    <text x="740" y="1032" font-size="11" text-anchor="middle" fill="#475569">reading your docs.</text>
+    <text x="740" y="1049" font-size="11" text-anchor="middle" fill="#475569">Understand audience</text>
+    <text x="740" y="1066" font-size="11" text-anchor="middle" fill="#475569">behavior patterns.</text>
+    
+    <rect x="880" y="970" width="220" height="120" rx="8" fill="white" stroke="#8b5cf6" stroke-width="2"/>
+    <text x="990" y="995" font-size="14" font-weight="bold" text-anchor="middle" fill="#5b21b6">⚡ Easy to Use</text>
+    <text x="990" y="1015" font-size="11" text-anchor="middle" fill="#475569">No software install.</text>
+    <text x="990" y="1032" font-size="11" text-anchor="middle" fill="#475569">Share in seconds.</text>
+    <text x="990" y="1049" font-size="11" text-anchor="middle" fill="#475569">Works on any device.</text>
+    <text x="990" y="1066" font-size="11" text-anchor="middle" fill="#475569">Cloud-based platform.</text>
+  </g>
+  
+  <!-- Use Cases Section -->
+  <rect x="100" y="1150" width="1000" height="180" rx="10" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="600" y="1180" font-size="22" font-weight="bold" text-anchor="middle" fill="#3730a3">💼 Common Use Cases</text>
+  
+  <g id="use-cases">
+    <text x="150" y="1210" font-size="13" font-weight="bold" fill="#3730a3">📊 Business:</text>
+    <text x="150" y="1230" font-size="11" fill="#475569">• Sales proposals & pitch decks</text>
+    <text x="150" y="1248" font-size="11" fill="#475569">• Confidential reports & pricing</text>
+    <text x="150" y="1266" font-size="11" fill="#475569">• Internal company documents</text>
+    <text x="150" y="1284" font-size="11" fill="#475569">• Client presentations</text>
+    <text x="150" y="1302" font-size="11" fill="#475569">• Financial statements</text>
+    
+    <text x="420" y="1210" font-size="13" font-weight="bold" fill="#3730a3">📚 Education:</text>
+    <text x="420" y="1230" font-size="11" fill="#475569">• Course materials & handouts</text>
+    <text x="420" y="1248" font-size="11" fill="#475569">• Exam papers & answer keys</text>
+    <text x="420" y="1266" font-size="11" fill="#475569">• Research publications</text>
+    <text x="420" y="1284" font-size="11" fill="#475569">• Study guides & notes</text>
+    <text x="420" y="1302" font-size="11" fill="#475569">• Assignment distribution</text>
+    
+    <text x="690" y="1210" font-size="13" font-weight="bold" fill="#3730a3">📖 Publishing:</text>
+    <text x="690" y="1230" font-size="11" fill="#475569">• E-book previews & samples</text>
+    <text x="690" y="1248" font-size="11" fill="#475569">• Manuscript reviews</text>
+    <text x="690" y="1266" font-size="11" fill="#475569">• White papers & case studies</text>
+    <text x="690" y="1284" font-size="11" fill="#475569">• Magazine articles</text>
+    <text x="690" y="1302" font-size="11" fill="#475569">• Digital catalogs</text>
+    
+    <text x="950" y="1210" font-size="13" font-weight="bold" fill="#3730a3">⚖️ Legal:</text>
+    <text x="950" y="1230" font-size="11" fill="#475569">• Contracts & agreements</text>
+    <text x="950" y="1248" font-size="11" fill="#475569">• Legal briefs & filings</text>
+    <text x="950" y="1266" font-size="11" fill="#475569">• Compliance documents</text>
+    <text x="950" y="1284" font-size="11" fill="#475569">• NDA & confidential files</text>
+    <text x="950" y="1302" font-size="11" fill="#475569">• Evidence documentation</text>
+  </g>
+  
+  <!-- Call to Action -->
+  <rect x="400" y="1370" width="400" height="80" rx="15" fill="url(#blueGrad)" filter="url(#shadow)"/>
+  <text x="600" y="1405" font-size="20" font-weight="bold" text-anchor="middle" fill="white">🚀 Get Started with MaiPDF</text>
+  <text x="600" y="1432" font-size="14" text-anchor="middle" fill="white">Visit maipdf.com to start sharing securely</text>
+  
+  <!-- Footer -->
+  <text x="600" y="1500" font-size="12" text-anchor="middle" fill="#94a3b8">MaiPDF - Professional PDF Security & Sharing Platform</text>
+  <text x="600" y="1520" font-size="11" text-anchor="middle" fill="#cbd5e1">Protect • Share • Track • Control</text>
+  
+  <!-- Arrow marker definition -->
+  <defs>
+    <marker id="arrowhead" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#64748b" />
+    </marker>
+  </defs>
+</svg>

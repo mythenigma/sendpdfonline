@@ -1,0 +1,130 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1100 1000" font-family="Arial, sans-serif">
+  <defs>
+    <linearGradient id="convertGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#dc2626;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- Title -->
+  <rect x="0" y="0" width="1100" height="70" fill="url(#convertGrad)"/>
+  <text x="550" y="30" font-size="28" font-weight="bold" text-anchor="middle" fill="white">PDF to Image Converter</text>
+  <text x="550" y="55" font-size="14" text-anchor="middle" fill="#fed7aa">Protect your PDFs by converting them to images</text>
+  
+  <!-- Problem Statement -->
+  <rect x="50" y="90" width="1000" height="70" rx="10" fill="#fee2e2" stroke="#dc2626" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="115" font-size="16" font-weight="bold" text-anchor="middle" fill="#991b1b">❓ Problem</text>
+  <text x="550" y="140" font-size="13" text-anchor="middle" fill="#475569">PDFs can be easily copied, edited, or redistributed without permission</text>
+  <text x="550" y="157" font-size="13" text-anchor="middle" fill="#991b1b">Solution: Convert to images to prevent unauthorized editing!</text>
+  
+  <!-- Step 1: Upload -->
+  <rect x="100" y="200" width="350" height="100" rx="10" fill="#e0e7ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="275" y="230" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e40af">Step 1: Upload PDF</text>
+  <rect x="140" y="245" width="270" height="40" rx="5" fill="white" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="275" y="268" font-size="12" text-anchor="middle" fill="#1e40af">📄 Confidential_Report.pdf</text>
+  <text x="275" y="288" font-size="10" text-anchor="middle" fill="#64748b">(Editable, copyable)</text>
+  
+  <!-- Arrow -->
+  <path d="M 275 300 L 275 340" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- Step 2: Choose Format -->
+  <rect x="100" y="340" width="900" height="180" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="370" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">Step 2: Choose Output Format</text>
+  
+  <g id="formats">
+    <!-- Format 1 -->
+    <rect x="130" y="390" width="200" height="110" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="230" y="415" font-size="13" font-weight="bold" text-anchor="middle" fill="#92400e">📦 Images in ZIP</text>
+    <text x="230" y="435" font-size="10" text-anchor="middle" fill="#475569">Each page → image</text>
+    <text x="230" y="452" font-size="10" text-anchor="middle" fill="#475569">PNG/JPG format</text>
+    <text x="230" y="469" font-size="10" text-anchor="middle" fill="#475569">Download as ZIP</text>
+    <text x="230" y="488" font-size="9" text-anchor="middle" fill="#10b981">✓ For web use</text>
+    
+    <!-- Format 2 -->
+    <rect x="360" y="390" width="200" height="110" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="460" y="415" font-size="13" font-weight="bold" text-anchor="middle" fill="#92400e">🖼️ Image PDF</text>
+    <text x="460" y="435" font-size="10" text-anchor="middle" fill="#475569">Still a PDF file</text>
+    <text x="460" y="452" font-size="10" text-anchor="middle" fill="#475569">But image-based</text>
+    <text x="460" y="469" font-size="10" text-anchor="middle" fill="#475569">No text selection</text>
+    <text x="460" y="488" font-size="9" text-anchor="middle" fill="#10b981">✓ Keep layout</text>
+    
+    <!-- Format 3 -->
+    <rect x="590" y="390" width="200" height="110" rx="8" fill="white" stroke="#f59e0b" stroke-width="2"/>
+    <text x="690" y="415" font-size="13" font-weight="bold" text-anchor="middle" fill="#92400e">🖨️ Print-Only PDF</text>
+    <text x="690" y="435" font-size="10" text-anchor="middle" fill="#475569">Image PDF +</text>
+    <text x="690" y="452" font-size="10" text-anchor="middle" fill="#475569">Print enabled</text>
+    <text x="690" y="469" font-size="10" text-anchor="middle" fill="#475569">No copy/edit</text>
+    <text x="690" y="488" font-size="9" text-anchor="middle" fill="#10b981">✓ View & print</text>
+    
+    <!-- Format 4 -->
+    <rect x="820" y="390" width="200" height="110" rx="8" fill="white" stroke="#dc2626" stroke-width="2"/>
+    <text x="920" y="415" font-size="13" font-weight="bold" text-anchor="middle" fill="#991b1b">🔒 All Restricted</text>
+    <text x="920" y="435" font-size="10" text-anchor="middle" fill="#475569">Maximum security</text>
+    <text x="920" y="452" font-size="10" text-anchor="middle" fill="#475569">No print, copy, edit</text>
+    <text x="920" y="469" font-size="10" text-anchor="middle" fill="#475569">View only</text>
+    <text x="920" y="488" font-size="9" text-anchor="middle" fill="#dc2626">✓ Ultra secure</text>
+  </g>
+  
+  <!-- Optional Compression -->
+  <rect x="200" y="540" width="700" height="60" rx="8" fill="#e0e7ff" stroke="#3b82f6" stroke-width="2"/>
+  <text x="550" y="565" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e40af">🎛️ Optional: Enable Compression</text>
+  <text x="550" y="588" font-size="11" text-anchor="middle" fill="#475569">Reduce file size (smaller) OR Keep best quality (larger)</text>
+  
+  <!-- Arrow -->
+  <path d="M 550 600 L 550 640" stroke="#f59e0b" stroke-width="3" fill="none" marker-end="url(#arrow-orange)"/>
+  
+  <!-- Step 3: Convert -->
+  <rect x="200" y="640" width="700" height="80" rx="10" fill="url(#convertGrad)" filter="url(#shadow)"/>
+  <text x="550" y="670" font-size="18" font-weight="bold" text-anchor="middle" fill="white">⚡ Step 3: Convert (Automatic)</text>
+  <text x="550" y="695" font-size="13" text-anchor="middle" fill="#fed7aa">Converting... usually takes 5-30 seconds</text>
+  <text x="550" y="713" font-size="11" text-anchor="middle" fill="white">All processing happens in your browser - no upload needed!</text>
+  
+  <!-- Arrow -->
+  <path d="M 550 720 L 550 760" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- Step 4: Result -->
+  <rect x="100" y="760" width="900" height="140" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="790" font-size="18" font-weight="bold" text-anchor="middle" fill="#065f46">✅ Step 4: Download Protected File</text>
+  
+  <g id="benefits">
+    <rect x="140" y="810" width="270" height="70" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="275" y="835" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">🛡️ Protected</text>
+    <text x="275" y="855" font-size="11" text-anchor="middle" fill="#475569">✓ No text editing</text>
+    <text x="275" y="872" font-size="11" text-anchor="middle" fill="#475569">✓ No content copying</text>
+    
+    <text x="440" y="848" font-size="20" text-anchor="middle" fill="#10b981">+</text>
+    
+    <rect x="480" y="810" width="270" height="70" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="615" y="835" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">🎨 Original Look</text>
+    <text x="615" y="855" font-size="11" text-anchor="middle" fill="#475569">✓ Layout preserved</text>
+    <text x="615" y="872" font-size="11" text-anchor="middle" fill="#475569">✓ Fonts intact</text>
+    
+    <text x="780" y="848" font-size="20" text-anchor="middle" fill="#10b981">+</text>
+    
+    <rect x="790" y="810" width="170" height="70" rx="8" fill="white" stroke="#10b981" stroke-width="2"/>
+    <text x="875" y="835" font-size="13" font-weight="bold" text-anchor="middle" fill="#065f46">📤 Ready</text>
+    <text x="875" y="855" font-size="11" text-anchor="middle" fill="#475569">✓ Share safely</text>
+    <text x="875" y="872" font-size="11" text-anchor="middle" fill="#475569">✓ Embed online</text>
+  </g>
+  
+  <!-- Use Cases -->
+  <rect x="50" y="920" width="1000" height="70" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2" filter="url(#shadow)"/>
+  <text x="550" y="945" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e3a8a">💡 Perfect For:</text>
+  <text x="550" y="970" font-size="12" text-anchor="middle" fill="#475569">📊 Share reports without editing • 💼 Distribute pricing sheets • 📚 Publish templates • 🎨 Protect design work</text>
+  
+  <!-- Arrow markers -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f59e0b" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981" />
+    </marker>
+  </defs>
+</svg>

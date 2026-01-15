@@ -247,6 +247,11 @@
             <p class="lead">用MaiPDF 3分钟把PDF转成二维码，支持密码保护、查看次数限制、有效期、下载限制与扫码统计，满足活动资料、培训课件、产品手册、电子宣传册等多种分享场景。免费使用，无需安装软件。</p>
         </div>
 
+        <!-- 二维码生成流程图 -->
+        <div style="text-align: center; margin: 30px 0;">
+            <img src="../maipdf-flowcharts/zh-qr-code.svg" alt="PDF生成二维码完整流程" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        </div>
+
         <!-- 什么是PDF二维码 -->
         <div class="content-card">
             <h2><i class="fas fa-question-circle text-primary me-2"></i>什么是PDF二维码？</h2>
@@ -272,6 +277,24 @@
         <!-- 3步教程 -->
         <div class="content-card">
             <h2><i class="fas fa-list-ol text-primary me-2"></i>简单3步操作</h2>
+
+            <!-- Mermaid流程图 -->
+            <div class="mermaid" style="background: #f8fafc; padding: 20px; border-radius: 12px; margin: 25px 0;">
+sequenceDiagram
+    participant U as 👤 你
+    participant M as 🌐 MaiPDF
+    participant Q as 📱 扫码者
+    
+    U->>M: ① 上传PDF文件
+    M->>M: ② 自动生成二维码
+    M->>U: ③ 返回二维码图片
+    U->>Q: ④ 分享二维码
+    Q->>M: ⑤ 扫码访问
+    M->>Q: ⑥ 显示PDF内容
+    M->>U: ⑦ 统计数据通知
+    </div>
+            <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+            <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
             
             <div class="step-card">
                 <div class="step-number">1</div>
@@ -394,7 +417,7 @@
                         <div class="col-md-3">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/share-pdf-online.html">Share PDF Online Free</a></h5>
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/share-pdf-online">Share PDF Online Free</a></h5>
                                     <p class="card-text small">Complete guide to sharing PDFs securely</p>
                                 </div>
                             </div>
@@ -402,7 +425,7 @@
                         <div class="col-md-3">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/controlling-pdf-access.html">Control PDF Access</a></h5>
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/controlling-pdf-access">Control PDF Access</a></h5>
                                     <p class="card-text small">Advanced access control features</p>
                                 </div>
                             </div>
@@ -410,7 +433,7 @@
                         <div class="col-md-3">
                             <div class="card h-100 border-0 shadow-sm">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-tracking-analytics.html">PDF Analytics</a></h5>
+                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-tracking-analytics">PDF Analytics</a></h5>
                                     <p class="card-text small">Track and analyze PDF engagement</p>
                                 </div>
                             </div>
@@ -478,14 +501,14 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-unstyled">
-                        <li><a href="/features/zh/sharing/pdf-link-sharing.html" class="text-decoration-none"><i class="fas fa-link text-primary me-2"></i>PDF链接分享</a></li>
-                        <li><a href="/features/zh/security/pdf-password-protection.html" class="text-decoration-none"><i class="fas fa-lock text-primary me-2"></i>PDF密码保护</a></li>
+                        <li><a href="/features/zh/sharing/pdf-link-sharing" class="text-decoration-none"><i class="fas fa-link text-primary me-2"></i>PDF链接分享</a></li>
+                        <li><a href="/features/zh/security/pdf-password-protection" class="text-decoration-none"><i class="fas fa-lock text-primary me-2"></i>PDF密码保护</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-unstyled">
-                        <li><a href="/features/zh/tracking/pdf-view-analytics.html" class="text-decoration-none"><i class="fas fa-chart-line text-primary me-2"></i>PDF查看统计</a></li>
-                        <li><a href="/features/zh/hosting/free-pdf-hosting.html" class="text-decoration-none"><i class="fas fa-cloud text-primary me-2"></i>免费PDF托管</a></li>
+                        <li><a href="/features/zh/tracking/pdf-view-analytics" class="text-decoration-none"><i class="fas fa-chart-line text-primary me-2"></i>PDF查看统计</a></li>
+                        <li><a href="/features/zh/hosting/free-pdf-hosting" class="text-decoration-none"><i class="fas fa-cloud text-primary me-2"></i>免费PDF托管</a></li>
                     </ul>
                 </div>
             </div>

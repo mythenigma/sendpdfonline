@@ -75,6 +75,14 @@
             position: relative;
             z-index: 2;
         }
+
+        .flowchart-container {
+            background: white;
+            border-radius: 20px;
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
         
         .cta-primary {
             background: linear-gradient(135deg, #dc2626 0%, #b91c1c 100%);
@@ -565,6 +573,33 @@
             <p class="mt-4 text-muted">已有50万+文档通过MaiPDF实现访问控制</p>
         </div>
 
+        <!-- 访问控制流程图 -->
+        <div class="flowchart-container">
+            <h3 style="color: #1e40af; text-align: center; margin-bottom: 25px;">📊 访问次数限制工作流程</h3>
+            <div class="mermaid">
+stateDiagram-v2
+    [*] --> 上传PDF
+    上传PDF --> 设置次数限制
+    设置次数限制 --> 生成安全链接
+    生成安全链接 --> 分享
+    
+    分享 --> 用户访问
+    用户访问 --> 检查剩余次数
+    
+    检查剩余次数 --> 允许查看: 次数>0
+    检查剩余次数 --> 拒绝访问: 次数=0
+    
+    允许查看 --> 减少计数
+    减少计数 --> 记录日志
+    记录日志 --> [*]
+    
+    拒绝访问 --> 显示限制信息
+    显示限制信息 --> [*]
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+            <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+        </div>
+
         <!-- 为什么需要访问次数限制 -->
         <div class="content-section">
             <h2 class="section-title">为什么需要限制PDF访问次数？</h2>
@@ -911,18 +946,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-unstyled" style="font-size: 1.1rem;">
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/pdf-password-protection.html" class="text-decoration-none"><i class="fas fa-key text-warning me-2"></i>PDF密码保护</a></li>
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/expiration-control.html" class="text-decoration-none"><i class="fas fa-clock text-danger me-2"></i>文档有效期控制</a></li>
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/email-verification.html" class="text-decoration-none"><i class="fas fa-envelope text-primary me-2"></i>邮箱验证访问</a></li>
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/ip-restriction.html" class="text-decoration-none"><i class="fas fa-globe text-info me-2"></i>IP地址限制</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/pdf-password-protection" class="text-decoration-none"><i class="fas fa-key text-warning me-2"></i>PDF密码保护</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/expiration-control" class="text-decoration-none"><i class="fas fa-clock text-danger me-2"></i>文档有效期控制</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/email-verification" class="text-decoration-none"><i class="fas fa-envelope text-primary me-2"></i>邮箱验证访问</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/ip-restriction" class="text-decoration-none"><i class="fas fa-globe text-info me-2"></i>IP地址限制</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-unstyled" style="font-size: 1.1rem;">
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/watermark/dynamic-watermark.html" class="text-decoration-none"><i class="fas fa-tint text-success me-2"></i>动态水印保护</a></li>
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/tracking/pdf-analytics.html" class="text-decoration-none"><i class="fas fa-chart-line text-info me-2"></i>详细访问统计</a></li>
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/download-prevention.html" class="text-decoration-none"><i class="fas fa-download text-warning me-2"></i>禁止下载设置</a></li>
-                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/screenshot-protection.html" class="text-decoration-none"><i class="fas fa-camera text-danger me-2"></i>防截屏保护</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/watermark/dynamic-watermark" class="text-decoration-none"><i class="fas fa-tint text-success me-2"></i>动态水印保护</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/tracking/pdf-analytics" class="text-decoration-none"><i class="fas fa-chart-line text-info me-2"></i>详细访问统计</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/download-prevention" class="text-decoration-none"><i class="fas fa-download text-warning me-2"></i>禁止下载设置</a></li>
+                        <li class="mb-3"><a href="https://sendpdfonline.com/features/zh/security/screenshot-protection" class="text-decoration-none"><i class="fas fa-camera text-danger me-2"></i>防截屏保护</a></li>
                     </ul>
                 </div>
             </div>

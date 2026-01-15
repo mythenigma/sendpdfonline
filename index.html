@@ -36,6 +36,10 @@
         .link-list a:hover { color: #3b82f6; text-decoration: underline; }
         .category-box { background: #f8fafc; border-left: 4px solid #3b82f6; padding: 1.5rem; margin-bottom: 1.5rem; }
         .stat { text-align: center; padding: 1rem; background: white; border-radius: 8px; box-shadow: 0 2px 8px rgba(0,0,0,0.1); }
+        .card { transition: transform 0.2s, box-shadow 0.2s; }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 4px 12px rgba(0,0,0,0.15); }
+        .card-title a { color: #1e3a8a; }
+        .card-title a:hover { color: #3b82f6; }
         @media (max-width: 768px) { .link-list { column-count: 1; } }
     </style>
 </head>
@@ -81,6 +85,58 @@
                 </div>
             </div>
         </div>
+
+        <!-- Recently Updated Blogs -->
+        <section class="mb-5">
+            <h2 class="section-title"><i class="fas fa-clock"></i> Recently Updated Blogs</h2>
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Updated Jan 2026</span>
+                            <h5 class="card-title"><a href="/article/free-pdf-sharing-online-zh" class="text-decoration-none">免费在线PDF分享完整指南</a></h5>
+                            <p class="card-text text-muted">了解如何使用MaiPDF免费分享PDF文件，包括安全功能、访问控制和跟踪分析。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Updated Jan 2026</span>
+                            <h5 class="card-title"><a href="/article/pdf-qr-code-guide-zh" class="text-decoration-none">PDF QR码分享完整指南</a></h5>
+                            <p class="card-text text-muted">学习如何将PDF转换为QR码，实现快速便捷的移动端分享。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Updated Jan 2026</span>
+                            <h5 class="card-title"><a href="/article/controlling-pdf-access" class="text-decoration-none">Controlling PDF Access: Advanced Techniques</a></h5>
+                            <p class="card-text text-muted">Master advanced techniques for controlling who can access your PDFs and when.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Updated Jan 2026</span>
+                            <h5 class="card-title"><a href="/article/pdf-tracking-analytics" class="text-decoration-none">PDF Tracking & Analytics: Complete Guide</a></h5>
+                            <p class="card-text text-muted">Comprehensive guide to tracking PDF views, engagement metrics, and user behavior analytics.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <div class="card h-100 border-primary">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Updated Jan 2026</span>
+                            <h5 class="card-title"><a href="/article/limit-pdf-open-times" class="text-decoration-none">Limiting PDF Open Times Guide</a></h5>
+                            <p class="card-text text-muted">Learn how to set time limits and control when recipients can open your PDFs.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
         <!-- Featured Guides & Articles (60+ articles) -->
         <section>

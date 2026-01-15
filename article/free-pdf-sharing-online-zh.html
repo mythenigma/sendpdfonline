@@ -559,6 +559,11 @@
             <p class="mt-4 text-muted">已有超过100万用户信赖MaiPDF</p>
         </div>
 
+        <!-- MaiPDF 完整工作流程图 -->
+        <div style="text-align: center; margin: 40px 0;">
+            <img src="../maipdf-flowcharts/zh-workflows.svg" alt="MaiPDF完整工作流程" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        </div>
+
         <!-- 为什么选择免费PDF共享 -->
         <div class="content-section">
             <h2 class="section-title">为什么选择免费在线PDF共享？</h2>
@@ -596,6 +601,34 @@
         <!-- 核心功能特色 -->
         <div class="content-section">
             <h2 class="section-title">核心功能特色</h2>
+
+            <!-- Mermaid 功能关系图 -->
+            <div class="mermaid" style="background: #f8fafc; padding: 25px; border-radius: 15px; margin: 30px 0;">
+mindmap
+  root((MaiPDF<br/>核心功能))
+    安全保护
+      密码保护
+      访问次数限制
+      有效期控制
+      IP地域限制
+    内容控制
+      禁止下载
+      禁止打印
+      禁止复制
+      动态水印
+    数据分析
+      访问统计
+      地域分析
+      设备信息
+      时间追踪
+    分享方式
+      链接分享
+      二维码分享
+      嵌入网页
+      邮件通知
+            </div>
+            <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+            <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
             
             <div class="features-grid">
                 <div class="feature-card">
@@ -914,18 +947,18 @@
             <div class="row">
                 <div class="col-md-6">
                     <ul class="list-unstyled" style="font-size: 1.1rem;">
-                        <li class="mb-3"><a href="/article/pdf-qr-code-guide-zh.html" class="text-decoration-none"><i class="fas fa-qrcode text-info me-2"></i>PDF生成二维码分享</a></li>
-                        <li class="mb-3"><a href="/article/pdf-link-sharing-guide-zh.html" class="text-decoration-none"><i class="fas fa-link text-primary me-2"></i>PDF链接分享教程</a></li>
-                        <li class="mb-3"><a href="/features/zh/security/pdf-password-protection.html" class="text-decoration-none"><i class="fas fa-lock text-warning me-2"></i>PDF密码保护</a></li>
-                        <li class="mb-3"><a href="/features/zh/watermark/dynamic-watermark.html" class="text-decoration-none"><i class="fas fa-water text-success me-2"></i>动态水印保护</a></li>
+                        <li class="mb-3"><a href="/article/pdf-qr-code-guide-zh" class="text-decoration-none"><i class="fas fa-qrcode text-info me-2"></i>PDF生成二维码分享</a></li>
+                        <li class="mb-3"><a href="/article/pdf-link-sharing-guide-zh" class="text-decoration-none"><i class="fas fa-link text-primary me-2"></i>PDF链接分享教程</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/pdf-password-protection" class="text-decoration-none"><i class="fas fa-lock text-warning me-2"></i>PDF密码保护</a></li>
+                        <li class="mb-3"><a href="/features/zh/watermark/dynamic-watermark" class="text-decoration-none"><i class="fas fa-water text-success me-2"></i>动态水印保护</a></li>
                     </ul>
                 </div>
                 <div class="col-md-6">
                     <ul class="list-unstyled" style="font-size: 1.1rem;">
-                        <li class="mb-3"><a href="/features/zh/tracking/pdf-analytics.html" class="text-decoration-none"><i class="fas fa-chart-bar text-info me-2"></i>PDF访问分析</a></li>
-                        <li class="mb-3"><a href="/features/zh/security/expiration-control.html" class="text-decoration-none"><i class="fas fa-clock text-danger me-2"></i>有效期控制</a></li>
-                        <li class="mb-3"><a href="/features/zh/security/email-verification.html" class="text-decoration-none"><i class="fas fa-envelope text-primary me-2"></i>邮箱验证访问</a></li>
-                        <li class="mb-3"><a href="/features/zh/collaboration/pdf-comments.html" class="text-decoration-none"><i class="fas fa-comments text-warning me-2"></i>PDF协作评论</a></li>
+                        <li class="mb-3"><a href="/features/zh/tracking/pdf-analytics" class="text-decoration-none"><i class="fas fa-chart-bar text-info me-2"></i>PDF访问分析</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/expiration-control" class="text-decoration-none"><i class="fas fa-clock text-danger me-2"></i>有效期控制</a></li>
+                        <li class="mb-3"><a href="/features/zh/security/email-verification" class="text-decoration-none"><i class="fas fa-envelope text-primary me-2"></i>邮箱验证访问</a></li>
+                        <li class="mb-3"><a href="/features/zh/collaboration/pdf-comments" class="text-decoration-none"><i class="fas fa-comments text-warning me-2"></i>PDF协作评论</a></li>
                     </ul>
                 </div>
             </div>

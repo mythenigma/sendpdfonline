@@ -1,0 +1,137 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1400 900" font-family="'Microsoft YaHei', 'PingFang SC', 'Hiragino Sans GB', 'SimSun', sans-serif">
+  <defs>
+    <linearGradient id="userGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#1e40af;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="recipientGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#047857;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 标题 -->
+  <text x="700" y="40" font-size="32" font-weight="bold" text-anchor="middle" fill="#1e3a8a">MaiPDF 用户旅程</text>
+  <text x="700" y="70" font-size="16" text-anchor="middle" fill="#64748b">从上传到追踪 - 完整的文档生命周期</text>
+  
+  <!-- 左侧：文档所有者 -->
+  <text x="350" y="120" font-size="20" font-weight="bold" text-anchor="middle" fill="#1e40af">👤 文档所有者</text>
+  
+  <!-- 步骤1: 上传 -->
+  <rect x="200" y="140" width="300" height="80" rx="10" fill="url(#userGrad)" filter="url(#shadow)"/>
+  <text x="350" y="170" font-size="16" font-weight="bold" text-anchor="middle" fill="white">1. 上传 PDF 文档</text>
+  <text x="350" y="195" font-size="12" text-anchor="middle" fill="#dbeafe">• 拖拽上传文件</text>
+  <text x="350" y="212" font-size="12" text-anchor="middle" fill="#dbeafe">• 单文件最大 100MB</text>
+  
+  <!-- 箭头向下 -->
+  <path d="M 350 220 L 350 260" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- 步骤2: 配置 -->
+  <rect x="200" y="260" width="300" height="120" rx="10" fill="#eff6ff" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="350" y="285" font-size="16" font-weight="bold" text-anchor="middle" fill="#1e40af">2. 配置安全设置</text>
+  <text x="230" y="310" font-size="11" text-anchor="start" fill="#475569">☑️ 设置查看次数限制（如 5 次）</text>
+  <text x="230" y="330" font-size="11" text-anchor="start" fill="#475569">☑️ 添加过期时间</text>
+  <text x="230" y="350" font-size="11" text-anchor="start" fill="#475569">☑️ 启用动态水印</text>
+  <text x="230" y="370" font-size="11" text-anchor="start" fill="#475569">☑️ 要求邮箱验证</text>
+  
+  <!-- 箭头向下 -->
+  <path d="M 350 380 L 350 420" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- 步骤3: 生成链接 -->
+  <rect x="200" y="420" width="300" height="80" rx="10" fill="url(#userGrad)" filter="url(#shadow)"/>
+  <text x="350" y="450" font-size="16" font-weight="bold" text-anchor="middle" fill="white">3. 生成安全链接</text>
+  <text x="350" y="475" font-size="12" text-anchor="middle" fill="#dbeafe">🔗 https://maipdf.com/v/abc123</text>
+  <text x="350" y="492" font-size="12" text-anchor="middle" fill="#dbeafe">或生成二维码供扫描</text>
+  
+  <!-- 箭头向右到分享 -->
+  <path d="M 500 460 L 600 460" stroke="#3b82f6" stroke-width="3" fill="none" marker-end="url(#arrow-blue)"/>
+  
+  <!-- 中间：分享方式 -->
+  <rect x="600" y="400" width="200" height="120" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="425" font-size="16" font-weight="bold" text-anchor="middle" fill="#92400e">📤 分享方式</text>
+  <text x="700" y="455" font-size="12" text-anchor="middle" fill="#475569">📧 电子邮件</text>
+  <text x="700" y="475" font-size="12" text-anchor="middle" fill="#475569">💬 即时通讯软件</text>
+  <text x="700" y="495" font-size="12" text-anchor="middle" fill="#475569">📱 二维码</text>
+  <text x="700" y="515" font-size="12" text-anchor="middle" fill="#475569">🌐 社交媒体</text>
+  
+  <!-- 箭头向右到接收者 -->
+  <path d="M 800 460 L 900 280" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- 右侧：接收者 -->
+  <text x="1050" y="120" font-size="20" font-weight="bold" text-anchor="middle" fill="#047857">👥 文档接收者</text>
+  
+  <!-- 步骤4: 访问 -->
+  <rect x="900" y="140" width="300" height="80" rx="10" fill="url(#recipientGrad)" filter="url(#shadow)"/>
+  <text x="1050" y="170" font-size="16" font-weight="bold" text-anchor="middle" fill="white">4. 接收链接/二维码</text>
+  <text x="1050" y="195" font-size="12" text-anchor="middle" fill="#d1fae5">点击链接或扫描二维码</text>
+  <text x="1050" y="212" font-size="12" text-anchor="middle" fill="#d1fae5">任何设备均可访问</text>
+  
+  <!-- 箭头向下 -->
+  <path d="M 1050 220 L 1050 260" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- 步骤5: 验证 -->
+  <rect x="900" y="260" width="300" height="80" rx="10" fill="#d1fae5" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1050" y="290" font-size="16" font-weight="bold" text-anchor="middle" fill="#047857">5. 验证身份（如需要）</text>
+  <text x="1050" y="315" font-size="12" text-anchor="middle" fill="#475569">输入邮箱地址</text>
+  <text x="1050" y="332" font-size="12" text-anchor="middle" fill="#475569">或密码</text>
+  
+  <!-- 箭头向下 -->
+  <path d="M 1050 340 L 1050 380" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
+  
+  <!-- 步骤6: 查看 -->
+  <rect x="900" y="380" width="300" height="100" rx="10" fill="url(#recipientGrad)" filter="url(#shadow)"/>
+  <text x="1050" y="410" font-size="16" font-weight="bold" text-anchor="middle" fill="white">6. 查看受保护的 PDF</text>
+  <text x="1050" y="435" font-size="12" text-anchor="middle" fill="#d1fae5">• 在线查看器</text>
+  <text x="1050" y="452" font-size="12" text-anchor="middle" fill="#d1fae5">• 应用水印</text>
+  <text x="1050" y="469" font-size="12" text-anchor="middle" fill="#d1fae5">• 强制执行限制</text>
+  
+  <!-- 箭头返回到所有者（追踪） -->
+  <path d="M 900 430 L 500 580" stroke="#8b5cf6" stroke-width="3" stroke-dasharray="5,5" fill="none" marker-end="url(#arrow-purple)"/>
+  
+  <!-- 步骤7: 实时追踪 -->
+  <rect x="200" y="580" width="300" height="140" rx="10" fill="#e9d5ff" stroke="#8b5cf6" stroke-width="2" filter="url(#shadow)"/>
+  <text x="350" y="605" font-size="16" font-weight="bold" text-anchor="middle" fill="#6b21a8">7. 监控活动（实时）</text>
+  <text x="230" y="630" font-size="11" text-anchor="start" fill="#475569">📊 查看次数：已用 3/5 次</text>
+  <text x="230" y="650" font-size="11" text-anchor="start" fill="#475569">👤 查看者：john@company.com</text>
+  <text x="230" y="670" font-size="11" text-anchor="start" fill="#475569">⏰ 最后访问：10 分钟前</text>
+  <text x="230" y="690" font-size="11" text-anchor="start" fill="#475569">📍 位置：美国纽约</text>
+  <text x="230" y="710" font-size="11" text-anchor="start" fill="#475569">⌚ 阅读时长：3 分 42 秒</text>
+  
+  <!-- 步骤8: 管理 -->
+  <rect x="200" y="750" width="300" height="100" rx="10" fill="url(#userGrad)" filter="url(#shadow)"/>
+  <text x="350" y="780" font-size="16" font-weight="bold" text-anchor="middle" fill="white">8. 管理访问权限</text>
+  <text x="350" y="805" font-size="12" text-anchor="middle" fill="#dbeafe">🔄 随时更新设置</text>
+  <text x="350" y="822" font-size="12" text-anchor="middle" fill="#dbeafe">🚫 立即撤销访问</text>
+  <text x="350" y="839" font-size="12" text-anchor="middle" fill="#dbeafe">📝 编辑文档内容</text>
+  
+  <!-- 注释：保持控制 -->
+  <rect x="600" y="630" width="200" height="90" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="700" y="655" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">✨ 核心优势</text>
+  <text x="700" y="680" font-size="11" text-anchor="middle" fill="#475569">即使分享后</text>
+  <text x="700" y="697" font-size="11" text-anchor="middle" fill="#475569">您仍保持完全控制！</text>
+  <text x="700" y="714" font-size="11" text-anchor="middle" fill="#475569">随时可撤销或修改</text>
+  
+  <!-- 注释：接收者体验 -->
+  <rect x="900" y="520" width="300" height="50" rx="8" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
+  <text x="1050" y="545" font-size="11" text-anchor="middle" fill="#475569">✅ 简单专业的查看体验</text>
+  <text x="1050" y="562" font-size="11" text-anchor="middle" fill="#475569">无需安装任何软件</text>
+  
+  <!-- 时间线指示 -->
+  <text x="700" y="870" font-size="12" text-anchor="middle" fill="#94a3b8" font-style="italic">← 整个过程不到 2 分钟 →</text>
+  
+  <!-- 箭头标记定义 -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981" />
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
+    </marker>
+  </defs>
+</svg>
