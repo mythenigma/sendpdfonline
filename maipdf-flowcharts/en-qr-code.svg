@@ -54,7 +54,7 @@
     <rect x="180" y="420" width="200" height="70" rx="8" fill="white" stroke="#3b82f6" stroke-width="2"/>
     <text x="280" y="445" font-size="13" font-weight="bold" text-anchor="middle" fill="#1e40af">🔗 Share Link</text>
     <text x="280" y="465" font-size="10" text-anchor="middle" fill="#475569">maipdf.com/v/xyz789</text>
-    <text x="280" y="482" font-size="9" text-anchor="middle" fill="#10b981">✓ Copy & paste</text>
+    <text x="280" y="482" font-size="9" text-anchor="middle" fill="#10b981">✓ Copy &amp; paste</text>
     
     <text x="405" y="460" font-size="20" text-anchor="middle" fill="#8b5cf6">+</text>
     
@@ -82,7 +82,7 @@
   
   <text x="240" y="660" font-size="12" font-weight="bold" text-anchor="middle" fill="#1e40af">Print on:</text>
   <text x="240" y="685" font-size="12" text-anchor="middle" fill="#475569">📇 Business cards</text>
-  <text x="240" y="705" font-size="12" text-anchor="middle" fill="#475569">📋 Flyers & posters</text>
+  <text x="240" y="705" font-size="12" text-anchor="middle" fill="#475569">📋 Flyers &amp; posters</text>
   <text x="240" y="725" font-size="12" text-anchor="middle" fill="#475569">📦 Product packaging</text>
   <text x="240" y="745" font-size="12" text-anchor="middle" fill="#475569">🎪 Event banners</text>
   <text x="240" y="765" font-size="12" text-anchor="middle" fill="#475569">📊 Presentations</text>
@@ -103,7 +103,7 @@
   
   <!-- Step 5: User Scans -->
   <rect x="100" y="830" width="800" height="120" rx="10" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" filter="url(#shadow)"/>
-  <text x="500" y="860" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">📱 Step 5: Users Scan & Access</text>
+  <text x="500" y="860" font-size="18" font-weight="bold" text-anchor="middle" fill="#92400e">📱 Step 5: Users Scan &amp; Access</text>
   
   <g id="user-scan">
     <rect x="140" y="880" width="200" height="50" rx="5" fill="white" stroke="#f59e0b" stroke-width="2"/>

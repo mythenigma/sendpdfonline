@@ -1,0 +1,553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MaiPDF Visual Guides - Comprehensive flowcharts and diagrams for PDF security, sharing, and tracking features. Available in English and Chinese.">
+    <meta name="keywords" content="PDF flowcharts, MaiPDF diagrams, PDF workflow visualization, PDF security diagrams">
+    <title>MaiPDF Visual Guides - Interactive Flowcharts & Diagrams</title>
+    <link rel="canonical" href="https://sendpdfonline.com/flowcharts.html">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: #f8fafc;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            color: white;
+            padding: 3rem 0;
+            margin-bottom: 2rem;
+        }
+        .flowchart-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .flowchart-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+        }
+        .flowchart-preview {
+            width: 100%;
+            height: 300px;
+            object-fit: contain;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            background: white;
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+        .flowchart-preview:hover {
+            opacity: 0.9;
+        }
+        .language-tabs {
+            margin-bottom: 2rem;
+        }
+        .language-tabs .btn {
+            margin: 0 0.5rem;
+        }
+        .section-title {
+            color: #1e3a8a;
+            border-bottom: 3px solid #3b82f6;
+            padding-bottom: 0.5rem;
+            margin: 2rem 0 1.5rem;
+        }
+        .badge-lang {
+            font-size: 0.75rem;
+            padding: 0.25rem 0.5rem;
+        }
+        .modal-img {
+            width: 100%;
+            height: auto;
+        }
+        .download-btn {
+            margin-top: 1rem;
+        }
+        .stats-box {
+            background: white;
+            padding: 1.5rem;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <h1><i class="fas fa-project-diagram"></i> MaiPDF Visual Guides</h1>
+            <p class="lead mb-0">Interactive Flowcharts & Workflow Diagrams</p>
+            <p class="mt-2">Comprehensive visual documentation for all MaiPDF features</p>
+        </div>
+    </header>
+
+    <div class="container">
+        <!-- Quick Stats -->
+        <div class="row mb-4">
+            <div class="col-md-4 mb-3">
+                <div class="stats-box">
+                    <h3 class="text-primary mb-0">14</h3>
+                    <p class="text-muted mb-0">Total Flowcharts</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="stats-box">
+                    <h3 class="text-success mb-0">2</h3>
+                    <p class="text-muted mb-0">Languages (EN/中文)</p>
+                </div>
+            </div>
+            <div class="col-md-4 mb-3">
+                <div class="stats-box">
+                    <h3 class="text-info mb-0">7</h3>
+                    <p class="text-muted mb-0">Feature Categories</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Language Filter Tabs -->
+        <div class="language-tabs text-center">
+            <button class="btn btn-primary" onclick="filterLanguage('all')">
+                <i class="fas fa-globe"></i> All Languages
+            </button>
+            <button class="btn btn-outline-primary" onclick="filterLanguage('en')">
+                <i class="fas fa-flag-usa"></i> English
+            </button>
+            <button class="btn btn-outline-primary" onclick="filterLanguage('zh')">
+                <i class="fas fa-flag"></i> 中文
+            </button>
+        </div>
+
+        <!-- Navigation -->
+        <div class="mb-4">
+            <a href="/" class="btn btn-outline-secondary">
+                <i class="fas fa-home"></i> Back to Home
+            </a>
+            <a href="/article/" class="btn btn-outline-primary ms-2">
+                <i class="fas fa-book"></i> View Articles
+            </a>
+        </div>
+
+        <!-- Complete Workflow -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-route"></i> Complete Workflow Diagrams</h2>
+            
+            <div class="row">
+                <div class="col-md-6 flowchart-item" data-lang="en">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">Complete MaiPDF Workflow</h3>
+                            <span class="badge bg-primary badge-lang">English</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/en-workflows.svg" 
+                             alt="MaiPDF Complete Workflow" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'Complete MaiPDF Workflow')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> End-to-end workflow from upload to tracking
+                        </p>
+                        <a href="/maipdf-flowcharts/en-workflows.svg" 
+                           download="maipdf-workflow-en.svg" 
+                           class="btn btn-sm btn-outline-primary download-btn">
+                            <i class="fas fa-download"></i> Download SVG
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 flowchart-item" data-lang="zh">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">MaiPDF完整工作流程</h3>
+                            <span class="badge bg-success badge-lang">中文</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/zh-workflows.svg" 
+                             alt="MaiPDF完整工作流程" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'MaiPDF完整工作流程')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> 从上传到跟踪的端到端工作流程
+                        </p>
+                        <a href="/maipdf-flowcharts/zh-workflows.svg" 
+                           download="maipdf-workflow-zh.svg" 
+                           class="btn btn-sm btn-outline-success download-btn">
+                            <i class="fas fa-download"></i> 下载 SVG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Security Features -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-shield-alt"></i> Security & Protection Features</h2>
+            
+            <div class="row">
+                <div class="col-md-6 flowchart-item" data-lang="en">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">Security Features Overview</h3>
+                            <span class="badge bg-primary badge-lang">English</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/en-security-features.svg" 
+                             alt="MaiPDF Security Features" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'Security Features Overview')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> Comprehensive security and access control features
+                        </p>
+                        <a href="/maipdf-flowcharts/en-security-features.svg" 
+                           download="maipdf-security-en.svg" 
+                           class="btn btn-sm btn-outline-primary download-btn">
+                            <i class="fas fa-download"></i> Download SVG
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 flowchart-item" data-lang="zh">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">安全功能概览</h3>
+                            <span class="badge bg-success badge-lang">中文</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/zh-security-features.svg" 
+                             alt="MaiPDF安全功能" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, '安全功能概览')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> 全面的安全和访问控制功能
+                        </p>
+                        <a href="/maipdf-flowcharts/zh-security-features.svg" 
+                           download="maipdf-security-zh.svg" 
+                           class="btn btn-sm btn-outline-success download-btn">
+                            <i class="fas fa-download"></i> 下载 SVG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- User Journey -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-users"></i> User Journey & Experience</h2>
+            
+            <div class="row">
+                <div class="col-md-6 flowchart-item" data-lang="en">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">User Journey Map</h3>
+                            <span class="badge bg-primary badge-lang">English</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/en-user-journey.svg" 
+                             alt="MaiPDF User Journey" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'User Journey Map')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> Complete document lifecycle from both perspectives
+                        </p>
+                        <a href="/maipdf-flowcharts/en-user-journey.svg" 
+                           download="maipdf-user-journey-en.svg" 
+                           class="btn btn-sm btn-outline-primary download-btn">
+                            <i class="fas fa-download"></i> Download SVG
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 flowchart-item" data-lang="zh">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">用户旅程地图</h3>
+                            <span class="badge bg-success badge-lang">中文</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/zh-user-journey.svg" 
+                             alt="MaiPDF用户旅程" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, '用户旅程地图')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> 从双方视角看完整的文档生命周期
+                        </p>
+                        <a href="/maipdf-flowcharts/zh-user-journey.svg" 
+                           download="maipdf-user-journey-zh.svg" 
+                           class="btn btn-sm btn-outline-success download-btn">
+                            <i class="fas fa-download"></i> 下载 SVG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- QR Code Feature -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-qrcode"></i> QR Code Generation & Sharing</h2>
+            
+            <div class="row">
+                <div class="col-md-6 flowchart-item" data-lang="en">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">PDF to QR Code Workflow</h3>
+                            <span class="badge bg-primary badge-lang">English</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/en-qr-code.svg" 
+                             alt="PDF to QR Code" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'PDF to QR Code Workflow')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> Generate and share PDFs via QR codes
+                        </p>
+                        <a href="/maipdf-flowcharts/en-qr-code.svg" 
+                           download="maipdf-qr-code-en.svg" 
+                           class="btn btn-sm btn-outline-primary download-btn">
+                            <i class="fas fa-download"></i> Download SVG
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 flowchart-item" data-lang="zh">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">PDF转QR码工作流程</h3>
+                            <span class="badge bg-success badge-lang">中文</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/zh-qr-code.svg" 
+                             alt="PDF转QR码" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'PDF转QR码工作流程')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> 通过QR码生成和分享PDF
+                        </p>
+                        <a href="/maipdf-flowcharts/zh-qr-code.svg" 
+                           download="maipdf-qr-code-zh.svg" 
+                           class="btn btn-sm btn-outline-success download-btn">
+                            <i class="fas fa-download"></i> 下载 SVG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- PDF Conversion -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-file-image"></i> PDF to Image Conversion</h2>
+            
+            <div class="row">
+                <div class="col-md-6 flowchart-item" data-lang="en">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">PDF to Image Workflow</h3>
+                            <span class="badge bg-primary badge-lang">English</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/en-pdf-to-image.svg" 
+                             alt="PDF to Image Conversion" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'PDF to Image Workflow')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> Convert PDFs to multiple image formats
+                        </p>
+                        <a href="/maipdf-flowcharts/en-pdf-to-image.svg" 
+                           download="maipdf-pdf-to-image-en.svg" 
+                           class="btn btn-sm btn-outline-primary download-btn">
+                            <i class="fas fa-download"></i> Download SVG
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 flowchart-item" data-lang="zh">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">PDF转图片工作流程</h3>
+                            <span class="badge bg-success badge-lang">中文</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/zh-pdf-to-image.svg" 
+                             alt="PDF转图片" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'PDF转图片工作流程')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> 将PDF转换为多种图片格式
+                        </p>
+                        <a href="/maipdf-flowcharts/zh-pdf-to-image.svg" 
+                           download="maipdf-pdf-to-image-zh.svg" 
+                           class="btn btn-sm btn-outline-success download-btn">
+                            <i class="fas fa-download"></i> 下载 SVG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- File Replacement -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-sync-alt"></i> File Replacement Feature</h2>
+            
+            <div class="row">
+                <div class="col-md-6 flowchart-item" data-lang="en">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">Replace File Workflow</h3>
+                            <span class="badge bg-primary badge-lang">English</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/en-replace-file.svg" 
+                             alt="Replace File Feature" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'Replace File Workflow')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> Update files without changing shared links
+                        </p>
+                        <a href="/maipdf-flowcharts/en-replace-file.svg" 
+                           download="maipdf-replace-file-en.svg" 
+                           class="btn btn-sm btn-outline-primary download-btn">
+                            <i class="fas fa-download"></i> Download SVG
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 flowchart-item" data-lang="zh">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">替换文件工作流程</h3>
+                            <span class="badge bg-success badge-lang">中文</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/zh-replace-file.svg" 
+                             alt="替换文件功能" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, '替换文件工作流程')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> 更新文件而不改变分享链接
+                        </p>
+                        <a href="/maipdf-flowcharts/zh-replace-file.svg" 
+                           download="maipdf-replace-file-zh.svg" 
+                           class="btn btn-sm btn-outline-success download-btn">
+                            <i class="fas fa-download"></i> 下载 SVG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Offline Version -->
+        <section>
+            <h2 class="section-title"><i class="fas fa-download"></i> Offline Version & Desktop Solution</h2>
+            
+            <div class="row">
+                <div class="col-md-6 flowchart-item" data-lang="en">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">Offline Version Workflow</h3>
+                            <span class="badge bg-primary badge-lang">English</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/en-offline-version.svg" 
+                             alt="Offline Version" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, 'Offline Version Workflow')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> Desktop solution for secure offline PDF processing
+                        </p>
+                        <a href="/maipdf-flowcharts/en-offline-version.svg" 
+                           download="maipdf-offline-en.svg" 
+                           class="btn btn-sm btn-outline-primary download-btn">
+                            <i class="fas fa-download"></i> Download SVG
+                        </a>
+                    </div>
+                </div>
+
+                <div class="col-md-6 flowchart-item" data-lang="zh">
+                    <div class="flowchart-card">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <h3 class="h5 mb-0">离线版工作流程</h3>
+                            <span class="badge bg-success badge-lang">中文</span>
+                        </div>
+                        <img src="/maipdf-flowcharts/zh-offline-version.svg" 
+                             alt="离线版" 
+                             class="flowchart-preview"
+                             onclick="openModal(this.src, '离线版工作流程')">
+                        <p class="text-muted mt-3 mb-2">
+                            <i class="fas fa-info-circle"></i> 安全离线PDF处理的桌面解决方案
+                        </p>
+                        <a href="/maipdf-flowcharts/zh-offline-version.svg" 
+                           download="maipdf-offline-zh.svg" 
+                           class="btn btn-sm btn-outline-success download-btn">
+                            <i class="fas fa-download"></i> 下载 SVG
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to Action -->
+        <section class="text-center my-5 py-5" style="background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%); border-radius: 12px; color: white;">
+            <h2 class="mb-3">Ready to Secure Your PDFs?</h2>
+            <p class="lead mb-4">Start using MaiPDF today for free!</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg me-2" target="_blank" rel="noopener">
+                <i class="fas fa-upload"></i> Start Sharing PDFs
+            </a>
+            <a href="/article/" class="btn btn-outline-light btn-lg">
+                <i class="fas fa-book"></i> Read More Guides
+            </a>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white py-4 mt-5">
+        <div class="container text-center">
+            <p class="mb-0">&copy; 2026 MaiPDF. All rights reserved. | <a href="/" class="text-white">Home</a> | <a href="/article/" class="text-white">Articles</a></p>
+        </div>
+    </footer>
+
+    <!-- Modal for Full-Size View -->
+    <div class="modal fade" id="imageModal" tabindex="-1">
+        <div class="modal-dialog modal-xl modal-dialog-centered">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalTitle">Flowchart</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
+                </div>
+                <div class="modal-body">
+                    <img id="modalImage" src="" alt="" class="modal-img">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Open modal with full-size image
+        function openModal(src, title) {
+            document.getElementById('modalImage').src = src;
+            document.getElementById('modalTitle').textContent = title;
+            const modal = new bootstrap.Modal(document.getElementById('imageModal'));
+            modal.show();
+        }
+
+        // Filter by language
+        function filterLanguage(lang) {
+            const items = document.querySelectorAll('.flowchart-item');
+            const buttons = document.querySelectorAll('.language-tabs .btn');
+            
+            // Update button states
+            buttons.forEach(btn => {
+                btn.classList.remove('btn-primary');
+                btn.classList.add('btn-outline-primary');
+            });
+            event.target.classList.remove('btn-outline-primary');
+            event.target.classList.add('btn-primary');
+            
+            // Filter items
+            items.forEach(item => {
+                if (lang === 'all') {
+                    item.style.display = 'block';
+                } else {
+                    if (item.dataset.lang === lang) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>

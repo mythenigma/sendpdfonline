@@ -21,9 +21,9 @@
   <text x="600" y="175" font-size="13" text-anchor="middle" fill="#475569">✅ Maintain remote control (revoke access anytime)</text>
   <text x="600" y="195" font-size="13" text-anchor="middle" fill="#3730a3">Perfect for: Compliance, security-sensitive industries, air-gapped environments</text>
   
-  <!-- Step 1: Upload & Package -->
+  <!-- Step 1: Upload &amp; Package -->
   <rect x="100" y="230" width="450" height="120" rx="10" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
-  <text x="325" y="260" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e40af">Step 1: Upload & Package</text>
+  <text x="325" y="260" font-size="18" font-weight="bold" text-anchor="middle" fill="#1e40af">Step 1: Upload &amp; Package</text>
   
   <rect x="140" y="280" width="150" height="50" rx="5" fill="white" stroke="#cbd5e1" stroke-width="2"/>
   <text x="215" y="310" font-size="12" text-anchor="middle" fill="#1e40af">📄 Blueprint.pdf</text>
