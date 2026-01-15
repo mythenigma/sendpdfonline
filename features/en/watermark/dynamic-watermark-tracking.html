@@ -67,10 +67,58 @@
     
     <header class="section">
         <div class="container">
-            <h1>动态水印跟踪</h1>
-            <p>实时追踪您的PDF文档查看情况，保护文件安全</p>
+            <h1>💧 动态水印跟踪</h1>
+            <div class="mb-3">
+                <small class="text-muted">
+                    <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
+                    <i class="fas fa-sync-alt"></i> Updated: January 15, 2026
+                </small>
+            </div>
+            <p>实时追踪您的PDF文档查看情况，保护文件安全。了解更多<a href="/article/user-behavior-tracking">用户行为跟踪</a>和<a href="/article/pdf-tracking-analytics">PDF跟踪分析</a>功能。</p>
         </div>
     </header>
+
+    <!-- Watermark Flow -->
+    <div class="container my-5">
+        <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+flowchart TD
+    A[📄 上传PDF] --> B[⚙️ 启用动态水印]
+    B --> C[🎨 设置水印样式]
+    
+    C --> D[👤 用户名]
+    C --> E[⏰ 时间戳]
+    C --> F[🌐 IP地址]
+    C --> G[📱 设备信息]
+    
+    D --> H[🔗 生成链接]
+    E --> H
+    F --> H
+    G --> H
+    
+    H --> I[📤 分享文档]
+    I --> J[👁️ 用户查看]
+    
+    J --> K[💧 显示个性化水印]
+    K --> L[📊 记录查看数据]
+    
+    L --> M[📍 地理位置]
+    L --> N[⏱️ 查看时长]
+    L --> O[💻 设备类型]
+    
+    M --> P[📈 实时仪表板]
+    N --> P
+    O --> P
+    
+    P --> Q[🔔 发送通知]
+    
+    style A fill:#dbeafe,stroke:#3b82f6
+    style H fill:#d1fae5,stroke:#10b981
+    style K fill:#fef3c7,stroke:#f59e0b
+    style P fill:#e0e7ff,stroke:#6366f1
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+    </div>
 
     <main>
         <div class="container">

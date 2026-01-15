@@ -107,6 +107,7 @@
             }
         },
         "datePublished": "2025-01-15",
+        "dateModified": "2026-01-15",
         "dateModified": "2025-12-03",
         "mainEntityOfPage": {
             "@type": "WebPage",
@@ -184,7 +185,7 @@
                 <div class="mb-3">
                     <small class="text-muted">
                         <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
+                        <i class="fas fa-sync-alt"></i> Updated: January 15, 2026
                     </small>
                 </div>
                 
@@ -193,11 +194,125 @@
         </div>
     </div>
 
+    <!-- Ebook Preview Strategy Flowchart -->
+    <div class="container my-5">
+        <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+flowchart TD
+    A[📖 Your Ebook] --> B{Preview Strategy}
+    
+    B --> C[🎯 Define Preview Scope]
+    C --> D[Chapter 1-3 Only]
+    C --> E[First 20%]
+    C --> F[Sample Pages]
+    
+    D --> G[🔒 Apply Security]
+    E --> G
+    F --> G
+    
+    G --> H[🚫 Disable Downloads]
+    G --> I[👁️ Set View Limits]
+    G --> J[💧 Add Watermarks]
+    G --> K[⏰ Set Expiration]
+    
+    H --> L[🔗 Generate Preview Link]
+    I --> L
+    J --> L
+    K --> L
+    
+    L --> M[📧 Share with Readers]
+    
+    M --> N{Reader Action}
+    N -->|View Preview| O[✅ Read Online Only]
+    N -->|Try Download| P[❌ Download Blocked]
+    N -->|Share Link| Q[📊 Track Sharing]
+    
+    O --> R[📋 Collect Analytics]
+    Q --> R
+    
+    R --> S{Purchase Interest?}
+    S -->|Yes| T[💰 Conversion Success]
+    S -->|No| U[📩 Follow-up Marketing]
+    
+    style A fill:#dbeafe,stroke:#3b82f6
+    style G fill:#fef3c7,stroke:#f59e0b
+    style L fill:#d1fae5,stroke:#10b981
+    style O fill:#d1fae5,stroke:#10b981
+    style P fill:#fee2e2,stroke:#dc2626
+    style T fill:#d1fae5,stroke:#10b981
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+
+        <!-- SVG Reader Journey -->
+        <div style="text-align: center; margin: 40px 0;">
+            <svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
+                <rect width="900" height="300" fill="#f8fafc"/>
+                
+                <text x="450" y="30" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Ebook Preview Reader Journey</text>
+                
+                <!-- Step 1 -->
+                <g>
+                    <rect x="30" y="70" width="180" height="180" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="10"/>
+                    <text x="120" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#1e40af">🔍</text>
+                    <text x="120" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e40af">1. Discovery</text>
+                    <text x="120" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Reader finds your</text>
+                    <text x="120" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">ebook preview link</text>
+                    <text x="120" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">through marketing</text>
+                </g>
+                
+                <!-- Arrow 1 -->
+                <path d="M 215 160 L 245 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowblue)"/>
+                
+                <!-- Step 2 -->
+                <g>
+                    <rect x="250" y="70" width="180" height="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="10"/>
+                    <text x="340" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#92400e">📚</text>
+                    <text x="340" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">2. Preview</text>
+                    <text x="340" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Read first chapters</text>
+                    <text x="340" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">online (no download)</text>
+                    <text x="340" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">with watermark</text>
+                </g>
+                
+                <!-- Arrow 2 -->
+                <path d="M 435 160 L 465 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowblue)"/>
+                
+                <!-- Step 3 -->
+                <g>
+                    <rect x="470" y="70" width="180" height="180" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" rx="10"/>
+                    <text x="560" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#3730a3">❤️</text>
+                    <text x="560" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#3730a3">3. Engagement</text>
+                    <text x="560" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Gets interested</text>
+                    <text x="560" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">in full content</text>
+                    <text x="560" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">wants to buy</text>
+                </g>
+                
+                <!-- Arrow 3 -->
+                <path d="M 655 160 L 685 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowblue)"/>
+                
+                <!-- Step 4 -->
+                <g>
+                    <rect x="690" y="70" width="180" height="180" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="10"/>
+                    <text x="780" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#065f46">💰</text>
+                    <text x="780" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">4. Conversion</text>
+                    <text x="780" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Purchases full</text>
+                    <text x="780" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">ebook version</text>
+                    <text x="780" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">becomes customer</text>
+                </g>
+                
+                <defs>
+                    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+                        <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+                    </marker>
+                </defs>
+            </svg>
+        </div>
+    </div>
+
     <div class="container">
         <!-- Why Secure Ebook Previews Matter -->
         <div class="content-section">
             <h2><i class="fas fa-shield-alt"></i> Why Secure Ebook Previews Matter</h2>
-            <p>For content creators and publishers, offering a preview of your ebook is an essential marketing strategy to attract readers and drive sales. However, traditional preview methods often expose your intellectual property to significant risks:</p>
+            <p>For content creators and publishers, offering a preview of your ebook is an essential marketing strategy to attract readers and drive sales. However, traditional preview methods often expose your intellectual property to significant risks. Learn about <a href="/article/pdf-sharing-security">PDF sharing security</a> and <a href="/article/controlling-pdf-access">controlling PDF access</a> for comprehensive protection.</p>
             
             <div class="row mt-4">
                 <div class="col-md-6">

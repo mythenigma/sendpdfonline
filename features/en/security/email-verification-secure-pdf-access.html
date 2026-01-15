@@ -86,12 +86,46 @@
                 <div class="mb-3">
                     <small class="text-muted">
                         <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
+                        <i class="fas fa-sync-alt"></i> Updated: January 15, 2026
                     </small>
                 </div>
                 
 
-    <p>Looking for a secure and user-friendly way to protect your PDF documents before sharing? <strong>MaiPDF</strong> now offers <strong>Email Verification</strong> to ensure only authorized users can open your files — with no login or password required.</p>
+    <p>Looking for a secure and user-friendly way to protect your PDF documents before sharing? <strong>MaiPDF</strong> now offers <strong>Email Verification</strong> to ensure only authorized users can open your files — with no login or password required. Learn more about <a href="/article/controlling-pdf-access">controlling PDF access</a> and <a href="/article/pdf-sharing-security">PDF sharing security</a>.</p>
+
+    <!-- Email Verification Flow -->
+    <div class="my-5">
+        <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+flowchart LR
+    A[📄 Upload PDF] --> B[⚙️ Enable Email Verification]
+    B --> C[📧 Add Authorized Emails]
+    C --> D[🔗 Generate Secure Link]
+    D --> E[📤 Share Link]
+    
+    E --> F[👤 Recipient Clicks Link]
+    F --> G{📧 Email Authorized?}
+    
+    G -->|Yes| H[📬 Send 6-digit Code]
+    G -->|No| I[❌ Access Denied]
+    
+    H --> J[🔢 Enter Code]
+    J --> K{Code Valid?}
+    
+    K -->|Yes| L[✅ View PDF]
+    K -->|No| M[❌ Try Again]
+    
+    L --> N[📊 Track Access]
+    
+    style A fill:#dbeafe,stroke:#3b82f6
+    style D fill:#d1fae5,stroke:#10b981
+    style L fill:#d1fae5,stroke:#10b981
+    style I fill:#fee2e2,stroke:#dc2626
+    style M fill:#fee2e2,stroke:#dc2626
+    style N fill:#e0e7ff,stroke:#6366f1
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+    </div>
 
     <hr />
 

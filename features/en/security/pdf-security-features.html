@@ -195,11 +195,49 @@
                 <div class="mb-3">
                     <small class="text-muted">
                         <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
+                        <i class="fas fa-sync-alt"></i> Updated: January 15, 2026
                     </small>
                 </div>
                 
-        <p class="lead">Comprehensive security solutions to protect your sensitive PDF documents</p>
+        <p class="lead">Comprehensive security solutions to protect your sensitive PDF documents. Learn about <a href="/article/controlling-pdf-access">controlling PDF access</a> and <a href="/article/pdf-sharing-security">PDF sharing security</a> best practices.</p>
+    </div>
+
+    <!-- Security Architecture Flowchart -->
+    <div class="container my-5">
+        <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+graph TB
+    A[📝 Document] --> B{Security Level}
+    B --> C[🔴 Basic]
+    B --> D[🟡 Advanced]
+    B --> E[🔵 Enterprise]
+    C --> C1[🔒 Password]
+    C --> C2[👁️ View Limits]
+    D --> D1[📧 Email Verify]
+    D --> D2[💧 Watermark]
+    D --> D3[⏰ Expiration]
+    E --> E1[🌐 IP Control]
+    E --> E2[🔐 DRM]
+    E --> E3[📊 Analytics]
+    C1 --> F[🔗 Secure Link]
+    C2 --> F
+    D1 --> F
+    D2 --> F
+    D3 --> F
+    E1 --> F
+    E2 --> F
+    E3 --> F
+    F --> G[📤 Share]
+    G --> H{Access?}
+    H -->|Yes| I[✅ Grant]
+    H -->|No| J[❌ Block]
+    I --> K[📊 Track]
+    style A fill:#dbeafe,stroke:#3b82f6
+    style F fill:#d1fae5,stroke:#10b981
+    style I fill:#d1fae5,stroke:#10b981
+    style J fill:#fee2e2,stroke:#dc2626
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
     </div>
 
     <div class="container">
