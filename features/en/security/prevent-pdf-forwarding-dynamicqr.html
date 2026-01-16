@@ -3,11 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to prevent PDF forwarding with MaiPDF. Our platform offers multiple security features including dynamic watermarks, access control, and expiration dates to protect your documents.">
-    <meta name="keywords" content="MaiPDF, PDF security, prevent forwarding, document protection, secure PDF sharing, dynamic watermark, PDF access control, PDF expiration">
+    <meta name="description" content="Learn how to prevent PDF forwarding with MaiPDF. Our platform offers multiple security features including dynamic watermarks, access control, and view count limits to protect your documents.">
+    <meta name="keywords" content="MaiPDF, PDF security, prevent forwarding, document protection, secure PDF sharing, dynamic watermark, PDF access control, PDF view limits">
     <meta name="author" content="MaiPDF">
     <meta property="og:title" content="Prevent PDF Forwarding - MaiPDF | Secure PDF Sharing">
-    <meta property="og:description" content="Learn how to prevent PDF forwarding with MaiPDF's advanced security features including dynamic watermarks, access control, and expiration dates.">
+    <meta property="og:description" content="Learn how to prevent PDF forwarding with MaiPDF's advanced security features including dynamic watermarks, access control, and view count limits.">
     <meta property="og:image" content="/images/dynamic-qr-watermark.png">
     <meta property="og:url" content="https://maipdf.com/features/prevent-pdf-forwarding-dynamicqr.html">
     <title>Prevent PDF Forwarding - MaiPDF | Secure PDF Sharing</title>
@@ -156,7 +156,61 @@
         <h1><i class="fas fa-shield-alt"></i> Prevent PDF Forwarding</h1>
                 <!-- Publication Date -->
                 <div class="mb-3">
-                    <small class="text-muted">
+                    <small class="text-muted" style="opacity: 0.9;">
+                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
+                        <i class="fas fa-sync-alt"></i> Updated: January 15, 2026
+                    </small>
+                </div>
+        <p class="lead">Stop unauthorized PDF forwarding with dynamic watermarks and access control. Learn more about <a href="/article/pdf-sharing-security" style="color: white; text-decoration: underline;">PDF sharing security</a> and <a href="/features/en/watermark/dynamic-watermark-tracking" style="color: white; text-decoration: underline;">dynamic watermark tracking</a>.</p>
+    </div>
+
+    <!-- Anti-Forwarding Flow -->
+    <div class="container my-5">
+        <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+flowchart TD
+    A[📄 Upload PDF] --> B[⚙️ Security Settings]
+    
+    B --> C[💧 Dynamic Watermark]
+    B --> D[� View Count Limits]
+    B --> E[📧 Email Verification]
+    B --> F[🔒 Password Protection]
+    
+    C --> G[👤 User Name]
+    C --> H[⏰ Timestamp]
+    C --> I[🌐 IP Address]
+    
+    G --> J[🔗 Generate Link]
+    H --> J
+    I --> J
+    D --> J
+    E --> J
+    F --> J
+    
+    J --> K[📤 Share Document]
+    K --> L[👤 Recipient Views]
+    
+    L --> M[💧 See Personal Watermark]
+    M --> N{Try to Forward?}
+    
+    N -->|Forward Link| O[📊 Track Original Owner]
+    N -->|Screenshot| P[💧 Watermark Visible]
+    N -->|Print| Q[🚫 Print Disabled]
+    
+    O --> R[🔔 Alert Owner]
+    P --> R
+    
+    style A fill:#dbeafe,stroke:#3b82f6
+    style J fill:#d1fae5,stroke:#10b981
+    style M fill:#fef3c7,stroke:#f59e0b
+    style Q fill:#fee2e2,stroke:#dc2626
+    style R fill:#e0e7ff,stroke:#6366f1
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+        <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container">
                         <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
                         <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
                     </small>
@@ -179,19 +233,19 @@
             </div>
 
             <div class="feature-card">
-                <h4><i class="fas fa-link icon"></i> Share Link Expiration</h4>
-                <p>With MaiPDF, you can set expiration dates for your PDF share links. This ensures that files become inaccessible after a specified period, preventing unauthorized access. Learn more about <a href="set-expiration-date-for-pdfs.html">setting PDF expiration dates</a>.</p>
+                <h4><i class="fas fa-eye icon"></i> View Count Limits</h4>
+                <p>With MaiPDF, you can set view count limits for your PDF share links. This ensures that files become inaccessible after being viewed a specific number of times, preventing unlimited access. Learn more about <a href="/article/limit-pdf-open-times">limiting PDF open times</a>.</p>
             </div>
 
             <div class="feature-card">
-                <h4><i class="fas fa-clock icon"></i> File Expiration</h4>
-                <p>Set specific expiration times for your PDFs. Once expired, any attempts to access the file will be denied, effectively preventing permanent storage or forwarding to others.</p>
-                <img src="/images/setting2025.png" alt="File expiration settings" class="security-image">
+                <h4><i class="fas fa-hashtag icon"></i> Limited Access Count</h4>
+                <p>Set specific view count limits for your PDFs. Once the limit is reached, any attempts to access the file will be denied, effectively preventing unlimited sharing or forwarding to others.</p>
+                <img src="/images/setting2025.png" alt="View limit settings" class="security-image">
             </div>
 
             <div class="feature-card">
                 <h4><i class="fas fa-key icon"></i> Password Protection</h4>
-                <p>In addition to expiration dates, MaiPDF allows you to add password protection to your files. Only recipients with the correct password can access the content, adding an extra layer of security. Discover more about <a href="secure-pdf-access-control.html">PDF access control</a>.</p>
+                <p>In addition to view count limits, MaiPDF allows you to add password protection to your files. Only recipients with the correct password can access the content, adding an extra layer of security. Discover more about <a href="/article/controlling-pdf-access">PDF access control</a>.</p>
             </div>
 
             <div class="feature-card">
@@ -207,7 +261,7 @@
 
             <div class="feature-card">
                 <h3><i class="fas fa-thumbs-up icon"></i> Summary</h3>
-                <p>MaiPDF provides a comprehensive solution for secure PDF sharing. Whether through expiration dates, password protection, dynamic watermarks, or download restrictions, our platform offers multiple layers of security to protect your sensitive content and maintain document confidentiality.</p>
+                <p>MaiPDF provides a comprehensive solution for secure PDF sharing. Whether through view count limits, password protection, dynamic watermarks, or download restrictions, our platform offers multiple layers of security to protect your sensitive content and maintain document confidentiality.</p>
             </div>
 
             <!-- Related Features -->

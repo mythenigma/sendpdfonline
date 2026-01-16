@@ -7,7 +7,7 @@
     <meta name="keywords" content="PDF security, PDF protection, secure PDF, PDF access control, PDF security features, MaiPDF security, PDF document protection, PDF encryption, PDF DRM, PDF watermark">
     <meta name="author" content="MaiPDF">
     <meta property="og:title" content="PDF Security Features - MaiPDF | Protect Your PDF Documents">
-    <meta property="og:description" content="Explore MaiPDF's advanced PDF security features including access control, view limits, expiration dates, and copy prevention to protect your sensitive documents.">
+    <meta property="og:description" content="Explore MaiPDF's advanced PDF security features including access control, view limits, and copy prevention to protect your sensitive documents.">
     <meta property="og:image" content="/images/security.png">
     <meta property="og:url" content="https://maipdf.com/features/pdf-security-features.html">
     <title>PDF Security Features - MaiPDF | Protect Your PDF Documents</title>
@@ -206,26 +206,23 @@
     <div class="container my-5">
         <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
 graph TB
-    A[📝 Document] --> B{Security Level}
+    A[📝 Document] --> B{Security Options}
     B --> C[🔴 Basic]
     B --> D[🟡 Advanced]
-    B --> E[🔵 Enterprise]
     C --> C1[🔒 Password]
-    C --> C2[👁️ View Limits]
+    C --> C2[👁️ View Count Limit]
     D --> D1[📧 Email Verify]
     D --> D2[💧 Watermark]
-    D --> D3[⏰ Expiration]
-    E --> E1[🌐 IP Control]
-    E --> E2[🔐 DRM]
-    E --> E3[📊 Analytics]
+    D --> D3[🌐 IP Control]
+    D --> D4[🔐 DRM]
+    D --> D5[📊 Analytics]
     C1 --> F[🔗 Secure Link]
     C2 --> F
     D1 --> F
     D2 --> F
     D3 --> F
-    E1 --> F
-    E2 --> F
-    E3 --> F
+    D4 --> F
+    D5 --> F
     F --> G[📤 Share]
     G --> H{Access?}
     H -->|Yes| I[✅ Grant]
@@ -258,9 +255,9 @@ graph TB
                     <p>Restrict the number of times a document can be viewed. Discover how to <a href="time-limits-pdf-files.html">set time limits for PDF files</a>.</p>
                 </div>
                 <div class="security-feature">
-                    <i class="fas fa-clock feature-icon"></i>
-                    <h3>Expiration Dates</h3>
-                    <p>Set automatic expiration for document access. Read about <a href="set-expiration-date-for-pdfs.html">setting expiration dates for PDFs</a>.</p>
+                    <i class="fas fa-hashtag feature-icon"></i>
+                    <h3>View Count Limits</h3>
+                    <p>Set maximum view counts for document access. Learn more about <a href="/article/limit-pdf-open-times">limiting PDF open times</a>.</p>
                 </div>
                 <div class="security-feature">
                     <i class="fas fa-copy feature-icon"></i>
@@ -288,7 +285,7 @@ graph TB
                 <p>Share course materials while preventing unauthorized distribution. Discover how to <a href="prevent-document-content-copying.html">prevent content copying</a>.</p>
                 
                 <h3>Legal Documents</h3>
-                <p>Secure confidential legal documents with expiration dates and access controls. Read about <a href="secure-pdf-hosting.html">secure PDF hosting</a> for legal documents.</p>
+                <p>Secure confidential legal documents with view count limits and access controls. Read about <a href="/article/controlling-pdf-access">PDF access control</a> for legal documents.</p>
             </div>
 
             <h2>How to Secure Your PDFs</h2>
@@ -352,7 +349,7 @@ graph TB
                         <ul class="list-unstyled">
                             <li><a href="preventdownload.html">Prevent Download</a></li>
                             <li><a href="set-pdf-print-restrictions.html">Print Restrictions</a></li>
-                            <li><a href="pdf-expiration-access-control.html">Expiration Control</a></li>
+                            <li><a href="/article/limit-pdf-open-times">View Limits Control</a></li>
                         </ul>
                     </div>
                 </div>
