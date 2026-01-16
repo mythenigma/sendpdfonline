@@ -485,7 +485,6 @@ flowchart LR
       <p>When converting PDFs to QR codes with MaiPDF, you can implement multiple layers of security to protect your documents:</p>
       <ul class="list-group mb-4">
         <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>Password Protection:</strong> Require a password before accessing the PDF through the QR code.</li>
-        <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>View Limits:</strong> Restrict the number of times the PDF can be accessed via the QR code.</li>
         <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>View Count Limits:</strong> Set maximum number of times the PDF can be accessed via the QR code.</li>
         <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>Download Restrictions:</strong> Prevent recipients from downloading the PDF, forcing online-only viewing.</li>
         <li class="list-group-item"><i class="fas fa-check text-success me-2"></i><strong>Watermark Protection:</strong> Add dynamic watermarks that display viewer information to deter unauthorized sharing.</li>
@@ -519,7 +518,7 @@ flowchart LR
         <p>Yes! This was the feature that sold me. You get detailed analytics - I can see when someone scanned it, what device they used, even their approximate location. Super useful for trade shows. I know exactly which leads are most interested based on how many times they scanned.</p>
         
         <h4 class="mt-4">How long do these QR codes stay active?</h4>
-        <p>You're in control. I set mine to expire after 30 days for event materials, but you can set them to never expire, expire after a certain date, or even after a certain number of scans. I use the "expire after 5 scans" option for exclusive content - creates urgency.</p>
+        <p>In practice, the QR code stays active unless you revoke access or a view limit is reached. If you want tighter control, set a view count limit (like 5 opens) and it will automatically stop working after the limit. You can also revoke the link anytime.</p>
         
         <h4 class="mt-4">What if I need to update the PDF later?</h4>
         <p>This is huge - you can update the PDF and the QR code automatically points to the new version. I use this all the time. Printed 500 business cards with a QR code, then updated my portfolio PDF 3 times. The QR code stayed the same, but the PDF content updated. No reprinting needed.</p>
