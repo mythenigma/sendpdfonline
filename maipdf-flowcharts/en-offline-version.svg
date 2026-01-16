@@ -120,7 +120,7 @@
     <text x="900" y="810" font-size="11" text-anchor="middle" fill="#475569">🔒 Revoke access instantly (Edit Code)</text>
     <text x="900" y="830" font-size="11" text-anchor="middle" fill="#475569">🔄 Replace file content (same HTML)</text>
     <text x="900" y="850" font-size="11" text-anchor="middle" fill="#475569">📊 Track who accessed, when, where</text>
-    <text x="900" y="870" font-size="11" text-anchor="middle" fill="#475569">⏱️ Set/extend expiration dates</text>
+    <text x="900" y="870" font-size="11" text-anchor="middle" fill="#475569">👁️ Set/adjust view count limits</text>
   </g>
   
   <!-- Key Advantage Box -->

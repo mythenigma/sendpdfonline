@@ -40,7 +40,7 @@
   <text x="725" y="250" font-size="18" font-weight="bold" text-anchor="middle" fill="#065f46">Step 2: Set Options</text>
   <text x="725" y="275" font-size="12" text-anchor="middle" fill="#475569">☑️ Password protection</text>
   <text x="725" y="293" font-size="12" text-anchor="middle" fill="#475569">☑️ View limits</text>
-  <text x="725" y="311" font-size="12" text-anchor="middle" fill="#475569">☑️ Expiration date</text>
+  <text x="725" y="311" font-size="12" text-anchor="middle" fill="#475569">☑️ View count limit</text>
   
   <!-- Arrow down -->
   <path d="M 500 320 L 500 370" stroke="#10b981" stroke-width="3" fill="none" marker-end="url(#arrow-green)"/>
@@ -130,7 +130,7 @@
   <text x="500" y="1052" font-size="11" text-anchor="middle" fill="#6b21a8">Perfect for measuring campaign effectiveness!</text>
   
   <!-- Footer -->
-  <text x="500" y="1085" font-size="11" text-anchor="middle" fill="#94a3b8">QR codes never expire unless you set an expiration date</text>
+  <text x="500" y="1085" font-size="11" text-anchor="middle" fill="#94a3b8">QR codes stay active unless you revoke access or a view limit is reached</text>
   
   <!-- Arrow markers -->
   <defs>

@@ -43,7 +43,7 @@
     <rect x="180" y="270" width="200" height="120" rx="8" fill="#dbeafe" stroke="#3b82f6" stroke-width="2"/>
     <text x="280" y="295" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e3a8a">🔐 Access Control</text>
     <text x="280" y="315" font-size="12" text-anchor="middle" fill="#475569">• View limits</text>
-    <text x="280" y="335" font-size="12" text-anchor="middle" fill="#475569">• Expiration dates</text>
+    <text x="280" y="335" font-size="12" text-anchor="middle" fill="#475569">• View count limit</text>
     <text x="280" y="355" font-size="12" text-anchor="middle" fill="#475569">• Email verification</text>
     <text x="280" y="375" font-size="12" text-anchor="middle" fill="#475569">• Password protection</text>
     
