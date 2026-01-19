@@ -1,0 +1,134 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 520" font-family="Arial, 'Segoe UI', sans-serif">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="headerGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#3b82f6"/>
+      <stop offset="100%" style="stop-color:#8b5cf6"/>
+    </linearGradient>
+    <linearGradient id="oldBoxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#e0e7ff"/>
+      <stop offset="100%" style="stop-color:#c7d2fe"/>
+    </linearGradient>
+    <linearGradient id="newBoxGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#d1fae5"/>
+      <stop offset="100%" style="stop-color:#a7f3d0"/>
+    </linearGradient>
+    <linearGradient id="arrowGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#10b981"/>
+      <stop offset="100%" style="stop-color:#3b82f6"/>
+    </linearGradient>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="6" flood-opacity="0.15"/>
+    </filter>
+    <filter id="smallShadow" x="-5%" y="-5%" width="110%" height="110%">
+      <feDropShadow dx="0" dy="2" stdDeviation="3" flood-opacity="0.1"/>
+    </filter>
+  </defs>
+
+  <!-- Background -->
+  <rect width="900" height="520" fill="#f8fafc"/>
+  
+  <!-- Header -->
+  <rect x="0" y="0" width="900" height="60" fill="url(#headerGrad)"/>
+  <text x="450" y="28" font-size="22" font-weight="bold" text-anchor="middle" fill="white">🔄 Replace PDF: Same Link, New Content</text>
+  <text x="450" y="48" font-size="13" text-anchor="middle" fill="#e0e7ff">Old link stays unchanged • New file's content &amp; settings injected</text>
+
+  <!-- OLD LINK Box (Left) -->
+  <g transform="translate(40, 80)">
+    <rect width="350" height="320" rx="16" fill="url(#oldBoxGrad)" stroke="#3b82f6" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="350" height="50" rx="16" fill="#3b82f6"/>
+    <rect x="0" y="35" width="350" height="15" fill="#3b82f6"/>
+    <text x="175" y="35" font-size="18" font-weight="bold" text-anchor="middle" fill="white">🔗 OLD LINK</text>
+    
+    <!-- Link URL -->
+    <g transform="translate(20, 65)">
+      <rect width="310" height="35" rx="8" fill="#3b82f6" filter="url(#smallShadow)"/>
+      <text x="155" y="23" font-size="12" text-anchor="middle" fill="white" font-weight="600">maipdf.com/v/abc123</text>
+    </g>
+    
+    <!-- Original Content -->
+    <text x="20" y="125" font-size="11" fill="#6b7280" font-weight="600">ORIGINAL CONTENT (will be replaced):</text>
+    
+    <g transform="translate(20, 135)">
+      <rect width="310" height="35" rx="8" fill="white" filter="url(#smallShadow)"/>
+      <text x="15" y="23" font-size="11" fill="#64748b">📁 File: Product_v1.pdf</text>
+    </g>
+    
+    <g transform="translate(20, 180)">
+      <rect width="310" height="35" rx="8" fill="white" filter="url(#smallShadow)"/>
+      <text x="15" y="23" font-size="11" fill="#64748b">📝 Notes: Draft version</text>
+    </g>
+    
+    <!-- Original Settings -->
+    <text x="20" y="240" font-size="11" fill="#6b7280" font-weight="600">ORIGINAL SETTINGS (will be replaced):</text>
+    
+    <g transform="translate(20, 250)">
+      <rect width="310" height="60" rx="8" fill="white" filter="url(#smallShadow)"/>
+      <text x="15" y="18" font-size="10" fill="#64748b">👁️ Views: 10 | ⏰ Expires: Jan 20</text>
+      <text x="15" y="35" font-size="10" fill="#64748b">🔐 Verify: Off | ⬇️ Download: Yes</text>
+      <text x="15" y="52" font-size="10" fill="#64748b">💧 Watermark: No | 📧 Alert: Off</text>
+    </g>
+    
+    <!-- Status -->
+    <rect x="20" y="320" width="310" height="25" rx="8" fill="#3b82f6"/>
+    <text x="175" y="337" font-size="11" text-anchor="middle" fill="white" font-weight="bold">🔗 LINK STAYS THE SAME</text>
+  </g>
+
+  <!-- NEW FILE Box (Right) -->
+  <g transform="translate(510, 80)">
+    <rect width="350" height="320" rx="16" fill="url(#newBoxGrad)" stroke="#10b981" stroke-width="2" filter="url(#shadow)"/>
+    <rect width="350" height="50" rx="16" fill="#10b981"/>
+    <rect x="0" y="35" width="350" height="15" fill="#10b981"/>
+    <text x="175" y="35" font-size="18" font-weight="bold" text-anchor="middle" fill="white">📄 NEW FILE</text>
+    
+    <!-- New Link URL (for reference) -->
+    <g transform="translate(20, 65)">
+      <rect width="310" height="35" rx="8" fill="#10b981" filter="url(#smallShadow)"/>
+      <text x="155" y="23" font-size="12" text-anchor="middle" fill="white" font-weight="600">maipdf.com/v/xyz789 (source)</text>
+    </g>
+    
+    <!-- New Content -->
+    <text x="20" y="125" font-size="11" fill="#065f46" font-weight="600">NEW CONTENT (injected to old link):</text>
+    
+    <g transform="translate(20, 135)">
+      <rect width="310" height="35" rx="8" fill="white" filter="url(#smallShadow)"/>
+      <text x="15" y="23" font-size="11" fill="#047857" font-weight="600">📁 File: Product_v2.pdf ✨</text>
+    </g>
+    
+    <g transform="translate(20, 180)">
+      <rect width="310" height="35" rx="8" fill="white" filter="url(#smallShadow)"/>
+      <text x="15" y="23" font-size="11" fill="#047857" font-weight="600">📝 Notes: Final release ✨</text>
+    </g>
+    
+    <!-- New Settings -->
+    <text x="20" y="240" font-size="11" fill="#065f46" font-weight="600">NEW SETTINGS (injected to old link):</text>
+    
+    <g transform="translate(20, 250)">
+      <rect width="310" height="60" rx="8" fill="white" filter="url(#smallShadow)"/>
+      <text x="15" y="18" font-size="10" fill="#047857" font-weight="600">👁️ Views: 50 ✨ | ⏰ Expires: Feb 28 ✨</text>
+      <text x="15" y="35" font-size="10" fill="#047857" font-weight="600">🔐 Verify: On ✨ | ⬇️ Download: No ✨</text>
+      <text x="15" y="52" font-size="10" fill="#047857" font-weight="600">💧 Watermark: Yes ✨ | 📧 Alert: On ✨</text>
+    </g>
+    
+    <!-- Status -->
+    <rect x="20" y="320" width="310" height="25" rx="8" fill="#10b981"/>
+    <text x="175" y="337" font-size="11" text-anchor="middle" fill="white" font-weight="bold">✅ CONTENT &amp; SETTINGS TRANSFERRED</text>
+  </g>
+
+  <!-- Center Arrow -->
+  <g transform="translate(390, 240)">
+    <rect x="0" y="-40" width="120" height="80" rx="10" fill="white" stroke="#e2e8f0" stroke-width="2" filter="url(#shadow)"/>
+    <text x="60" y="-15" font-size="11" text-anchor="middle" fill="#6b7280" font-weight="bold">REPLACE</text>
+    <path d="M 20 10 L 100 10" stroke="url(#arrowGrad)" stroke-width="4" stroke-linecap="round"/>
+    <polygon points="95,0 110,10 95,20" fill="#3b82f6"/>
+    <text x="60" y="35" font-size="9" text-anchor="middle" fill="#6b7280">Inject into</text>
+  </g>
+
+  <!-- Bottom Result Box -->
+  <rect x="150" y="420" width="600" height="70" rx="12" fill="url(#headerGrad)" filter="url(#shadow)"/>
+  <text x="450" y="448" font-size="14" font-weight="bold" text-anchor="middle" fill="white">🎯 RESULT: Old link maipdf.com/v/abc123</text>
+  <text x="450" y="470" font-size="12" text-anchor="middle" fill="#e0e7ff">Now displays NEW file content with NEW settings • Recipients don't need a new link!</text>
+
+  <!-- MaiPDF Branding -->
+  <text x="880" y="510" font-size="10" text-anchor="end" fill="#94a3b8">MaiPDF • sendpdfonline.com</text>
+</svg>
