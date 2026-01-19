@@ -6,6 +6,7 @@
     <title>Free PDF Hosting | MaiPDF</title>
     <meta name="description" content="Host your PDFs securely online for free with MaiPDF's reliable hosting service.">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <style>
         :root {
             --primary-color: #1a73e8;
@@ -178,17 +179,38 @@
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/usecase/">Usecase</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Free PDF Hosting</li>
-            </ol>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> Upload PDF</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
-    
+
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-section" style="background: #fff; padding: 1rem 0; border-bottom: 1px solid #e9ecef;">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/usecase/">Usecase</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Free PDF Hosting</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
+
     <header>
         <h1>Free PDF Hosting</h1>
                 <!-- Publication Date -->
@@ -200,42 +222,100 @@
                 </div>
                 
         <p>Welcome to MaiPDF, your trusted platform for secure and free PDF hosting. Learn how to host your documents online with ease and reliability.</p>
+        <a href="https://maipdf.com" class="maipdf-button">Get Started Free</a>
     </header>
-    <main>
-        <section>
+
+    <!-- How It Works Animation -->
+    <section class="py-5" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2>How It Works</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+          <img src="/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg" alt="PDF Sharing Workflow" class="img-fluid" style="width: 100%;">
+        </div>
+      </div>
+    </section>
+
+    <main class="container" class="container">
+        <section class="content-section">
             <h2>Why Host PDFs Online?</h2>
             <p>Hosting PDFs online provides easy access, secure sharing, and the ability to manage your documents from anywhere. It's an essential tool for businesses, educators, and individuals.</p>
         </section>
-        <section>
+        <section class="content-section">
             <h2>MaiPDF's Free Hosting Features</h2>
             <p>MaiPDF offers a range of features to make hosting your PDFs simple and effective:</p>
-            <ul>
-                <li>Unlimited document hosting</li>
-                <li>Advanced security measures</li>
-                <li>Customizable sharing options</li>
-                <li>Real-time analytics and tracking</li>
-            </ul>
+            <div class="feature-grid">
+                <div class="feature-card">
+                    <h3><i class="fas fa-infinity"></i> Unlimited Hosting</h3>
+                    <p>Upload and host unlimited PDF documents without restrictions.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-shield-alt"></i> Advanced Security</h3>
+                    <p>Protect your documents with view limits, watermarks, and access controls.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-share-alt"></i> Easy Sharing</h3>
+                    <p>Generate shareable links and QR codes for your PDF documents.</p>
+                </div>
+                <div class="feature-card">
+                    <h3><i class="fas fa-chart-line"></i> Analytics & Tracking</h3>
+                    <p>Monitor who views your documents with real-time analytics.</p>
+                </div>
+            </div>
         </section>
-        <section>
+        <section class="content-section">
             <h2>How to Host PDFs with MaiPDF</h2>
             <ol>
-                <li>Create a free MaiPDF account.</li>
+                <li>Visit <a href="https://maipdf.com">maipdf.com</a> - no account required!</li>
                 <li>Upload your PDF document.</li>
-                <li>Configure your hosting and sharing settings.</li>
+                <li>Configure your hosting and sharing settings (Views, Verify, Download, Watermark, Alert).</li>
                 <li>Share the secure link with your audience.</li>
             </ol>
+            <div class="tip-box">
+                <strong><i class="fas fa-lightbulb"></i> Pro Tip:</strong> MaiPDF supports view limits to control how many times your document can be opened. Perfect for confidential sharing!
+            </div>
         </section>
-        <section>
+        <section class="content-section">
             <h2>Benefits of Using MaiPDF for Hosting</h2>
             <ul>
-                <li>Access your documents anytime, anywhere.</li>
-                <li>Ensure the security and privacy of your files.</li>
-                <li>Track document usage and engagement.</li>
+                <li><i class="fas fa-check text-success"></i> Access your documents anytime, anywhere.</li>
+                <li><i class="fas fa-check text-success"></i> Ensure the security and privacy of your files.</li>
+                <li><i class="fas fa-check text-success"></i> Track document usage and engagement.</li>
+                <li><i class="fas fa-check text-success"></i> No software installation required.</li>
             </ul>
+            <div class="text-center mt-4">
+                <a href="https://maipdf.com" class="maipdf-button"><i class="fas fa-upload me-2"></i>Start Hosting Now</a>
+            </div>
         </section>
     </main>
-    <footer>
-        <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 0; margin-top: 3rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span></h5>
+                    <p class="text-muted">Secure PDF Sharing & Protection Solutions</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="https://sendpdfonline.com/" class="text-muted">Home</a></li>
+                        <li><a href="https://sendpdfonline.com/features/" class="text-muted">Features</a></li>
+                        <li><a href="https://maipdf.com/" class="text-muted">Upload PDF</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Contact</h6>
+                    <p class="text-muted"><i class="fas fa-envelope me-2"></i>joe@pdfhost.online</p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <p class="text-center text-muted mb-0">&copy; 2025 MaiPDF. All rights reserved.</p>
+        </div>
     </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

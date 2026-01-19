@@ -4,12 +4,12 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta name="keywords" content="pdf,maipdf,qr,Prevent Saving,Prevent sharing,Prevent pdf,pdf expired,set an expiration date on a PDF file">
-  <meta name="description" content="MaiPDF offers its free PDF DRM to the public. MaiPDF lets you share your PDF files with restrictions, to protect your PDFs. You can simply upload a PDF file and get a shared link that is protected in view-only.">
+  <meta name="keywords" content="pdf view limits, limit pdf access, pdf view count, restrict pdf views, maipdf, pdf security, control pdf access, pdf tracking">
+  <meta name="description" content="Control PDF access by setting view limits. MaiPDF lets you restrict how many times your PDF can be viewed, track who opens it, and protect sensitive documents with email verification.">
   <meta name="author" content="MaiPDF">
   <meta name="robots" content="index, follow">
   <link rel="canonical" href="https://sendpdfonline.com/features/en/security/time-limits-pdf-files">
-  <title>Time Limits on PDF Files | MaiPDF</title>
+  <title>Set View Limits on PDF Files | Control PDF Access | MaiPDF</title>
 
   <!-- Bootstrap 5 CSS -->
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -20,44 +20,103 @@
   <!-- Custom CSS -->
   <style>
     body {
-      font-family: 'Arial', sans-serif;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
       background-color: #f8f9fa;
     }
 
+    /* Navigation */
+    .navbar {
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      padding: 1rem 0;
+      box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+    }
+    
+    .navbar-brand {
+      font-weight: 700;
+      font-size: 1.5rem;
+      color: #fff !important;
+    }
+    
+    .navbar-brand span {
+      color: #00d4ff;
+    }
+    
+    .nav-link {
+      color: rgba(255,255,255,0.8) !important;
+      font-weight: 500;
+      margin: 0 0.5rem;
+      transition: color 0.3s ease;
+    }
+    
+    .nav-link:hover {
+      color: #00d4ff !important;
+    }
+
+    /* Breadcrumb */
+    .breadcrumb-section {
+      background: #fff;
+      padding: 1rem 0;
+      border-bottom: 1px solid #e9ecef;
+    }
+
+    .breadcrumb {
+      margin-bottom: 0;
+      background: transparent;
+    }
+
+    .breadcrumb-item a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .breadcrumb-item.active {
+      color: #6c757d;
+    }
+
     .hero-section {
-      background-color: #007bff;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
-      padding: 80px 0;
+      padding: 100px 0;
       text-align: center;
     }
 
     .hero-section h1 {
-      font-size: 3.5rem;
+      font-size: 3rem;
       font-weight: bold;
+      margin-bottom: 1rem;
     }
 
     .hero-section p {
       font-size: 1.25rem;
       margin-bottom: 30px;
+      opacity: 0.9;
     }
 
     .feature-box {
       padding: 30px;
-      border-radius: 10px;
+      border-radius: 15px;
       background-color: white;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
       margin: 20px 0;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      height: 100%;
     }
 
-    .feature-box img {
-      max-width: 100%;
-      border-radius: 10px;
+    .feature-box:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+    }
+
+    .feature-box i {
+      color: #667eea;
+      margin-bottom: 15px;
     }
 
     .feature-box h5 {
-      font-size: 1.5rem;
+      font-size: 1.4rem;
       font-weight: 600;
-      margin-top: 20px;
+      margin-top: 15px;
+      color: #1a1a2e;
     }
 
     .feature-box p {
@@ -66,192 +125,282 @@
     }
 
     .btn-primary-custom {
-      background-color: #28a745;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
       color: white;
       border-radius: 50px;
-      font-size: 1.25rem;
+      font-size: 1.1rem;
+      padding: 12px 35px;
+      border: none;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
     .btn-primary-custom:hover {
-      background-color: #218838;
+      transform: translateY(-2px);
+      box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+      color: white;
+    }
+
+    /* Animation Section */
+    .animation-section {
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+      padding: 60px 0;
+    }
+
+    .animation-container {
+      max-width: 800px;
+      margin: 0 auto;
+      background: white;
+      border-radius: 20px;
+      padding: 30px;
+      box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      background: white;
+      border-radius: 15px;
+      padding: 30px;
+      margin-bottom: 30px;
+      box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+      border-left: 4px solid #667eea;
+    }
+
+    .feature-card h4 {
+      color: #1a1a2e;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    .feature-card p {
+      color: #6c757d;
+      margin-bottom: 0;
+    }
+
+    /* Settings List */
+    .settings-list {
+      list-style: none;
+      padding: 0;
+    }
+
+    .settings-list li {
+      padding: 15px 20px;
+      margin: 10px 0;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      color: white;
+      border-radius: 10px;
+      display: flex;
+      align-items: center;
+      font-weight: 500;
+    }
+
+    .settings-list li i {
+      margin-right: 15px;
+      font-size: 1.2rem;
     }
 
     footer {
-      background-color: #f1f1f1;
-      padding: 20px 0;
+      background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%);
+      color: white;
+      padding: 40px 0;
       text-align: center;
     }
 
-    .ads {
-      display: flex;
-      justify-content: center;
-      margin-bottom: 30px;
+    footer a {
+      color: #00d4ff;
+      text-decoration: none;
     }
 
-    .ads img {
-      width: 100%;
+    .section-title {
+      font-size: 2.2rem;
+      font-weight: 700;
+      color: #1a1a2e;
+      margin-bottom: 1rem;
     }
 
-    .feature-box img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-
-    .card {
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-      margin: 20px 0;
-    }
-
-    .card-body {
-      padding: 30px;
+    .section-subtitle {
+      color: #6c757d;
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
     }
   </style>
 
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Features",
-                "item": "https://sendpdfonline.com/features/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Set an Expiration Date for Your PDF Files",
-                "item": "https://sendpdfonline.com/features/en/security/time-limits-pdf-files.html"
-            }
-        ]
-    }
-    </script>
+  <!-- Breadcrumb Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sendpdfonline.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Features",
+        "item": "https://sendpdfonline.com/features/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Security",
+        "item": "https://sendpdfonline.com/features/en/security/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 4,
+        "name": "Set View Limits on PDF Files",
+        "item": "https://sendpdfonline.com/features/en/security/time-limits-pdf-files.html"
+      }
+    ]
+  }
+  </script>
 </head>
 
 <body id="page-top">
 
+  <!-- Navigation -->
+  <nav class="navbar navbar-expand-lg navbar-dark">
+    <div class="container">
+      <a class="navbar-brand" href="https://sendpdfonline.com/">
+        <i class="fas fa-file-pdf me-2"></i>Mai<span>PDF</span>
+      </a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> Features</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> Upload PDF</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Breadcrumb -->
+  <section class="breadcrumb-section">
+    <div class="container">
+      <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+          <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+          <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/en/security/">Security</a></li>
+          <li class="breadcrumb-item active" aria-current="page">Set View Limits on PDF Files</li>
+        </ol>
+      </nav>
+    </div>
+  </section>
+
   <!-- Hero Section -->
   <section class="hero-section">
     <div class="container">
-      <h1>Set an Expiration Date for Your PDF Files</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
-                </div>
-                
-      <p>Securely share your confidential PDFs with time-limited access, set expiration dates, and prevent downloading, printing, or sharing.</p>
-      <a href="#howItWorks" class="btn btn-primary-custom btn-lg">Learn More</a>
+      <h1><i class="fas fa-eye-slash me-3"></i>Set View Limits on PDF Files</h1>
+      <div class="mb-3">
+        <small style="opacity: 0.8;">
+          <i class="fas fa-calendar-alt me-1"></i> Published: January 15, 2025 | 
+          <i class="fas fa-sync-alt me-1"></i> Updated: January 20, 2025
+        </small>
+      </div>
+      <p class="lead">Control how many times your PDF can be viewed. Set view limits, require email verification, and track every access with MaiPDF's powerful security features.</p>
+      <a href="#howItWorks" class="btn btn-primary-custom btn-lg"><i class="fas fa-arrow-down me-2"></i>Learn More</a>
+    </div>
+  </section>
+
+  <!-- Animation Section -->
+  <section class="animation-section">
+    <div class="container">
+      <div class="text-center mb-4">
+        <h2 class="section-title">How PDF View Limits Work</h2>
+        <p class="section-subtitle">Visualize the secure PDF sharing workflow with view restrictions</p>
+      </div>
+      <div class="animation-container">
+        <img src="/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg" alt="PDF View Limits Workflow Animation" class="img-fluid" style="width: 100%;">
+      </div>
     </div>
   </section>
 
   <!-- Main Content Section -->
   <section id="howItWorks" class="container py-5">
-    <h2 class="text-center mb-5">How MaiPDF Helps You Set PDF Expiry Dates</h2>
+    <h2 class="text-center section-title mb-2">How MaiPDF Helps You Control PDF Access</h2>
+    <p class="text-center section-subtitle">Set view limits and security restrictions to protect your documents</p>
     <div class="row">
       <!-- Feature 1: Upload PDFs -->
       <div class="col-md-4 mb-4">
         <div class="feature-box text-center">
           <i class="fas fa-upload fa-3x"></i>
           <h5>Upload Your PDF</h5>
-          <p>Upload your password-protected PDFs directly to MaiPDF, and generate a secure sharing link or QR code. No software installation required!</p>
+          <p>Upload your PDF directly to MaiPDF and generate a secure sharing link or QR code. No software installation required!</p>
         </div>
       </div>
-      <!-- Feature 2: Set Expiry Date -->
+      <!-- Feature 2: Set View Limits -->
       <div class="col-md-4 mb-4">
         <div class="feature-box text-center">
-          <i class="fas fa-calendar-times fa-3x"></i>
-          <h5>Set Expiry Date</h5>
-          <p>Choose when your PDF file will expire. After the set date, the document becomes inaccessible to the recipient, ensuring your content is secure.</p>
+          <i class="fas fa-eye-slash fa-3x"></i>
+          <h5>Set View Limits</h5>
+          <p>Choose how many times your PDF can be viewed. After the limit is reached, the document becomes inaccessible, ensuring your content stays protected.</p>
         </div>
       </div>
       <!-- Feature 3: Track Views -->
       <div class="col-md-4 mb-4">
         <div class="feature-box text-center">
-          <i class="fas fa-eye fa-3x"></i>
+          <i class="fas fa-chart-line fa-3x"></i>
           <h5>Track PDF Views</h5>
-          <p>Monitor how many times your document has been viewed and by whom. Get insights on access time, IP addresses, and devices used to view your document.</p>
+          <p>Monitor how many times your document has been viewed and by whom. Get insights on access time, IP addresses, and devices used.</p>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- Detailed Explanation Section -->
+  <!-- MaiPDF Settings Section -->
   <section class="container py-5">
-    <h2 class="text-center mb-5">MaiPDF's Online and Offline DRM Options</h2>
-    <div class="row">
-      <div class="col-md-6">
-        <h4>Offline DRM: Secure, No Installation</h4>
-        <p>Convert your PDF into an HTML file that works across all modern browsers. The file is encrypted and includes tracking features such as view time, user details, and IP address tracking, similar to expensive DRM services like Adobe DRM or Locklizard PDC.</p>
-        <p>MaiPDF ensures compatibility with various operating systems, and users do not need to install additional software or plugins.</p>
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4">
+        <h2 class="section-title">MaiPDF Security Settings</h2>
+        <p class="text-muted mb-4">MaiPDF provides 5 powerful settings to control how your PDF is accessed and shared:</p>
+        <ul class="settings-list">
+          <li><i class="fas fa-eye"></i> <strong>Views</strong> - Limit the number of times your PDF can be opened</li>
+          <li><i class="fas fa-envelope-open-text"></i> <strong>Verify</strong> - Require email verification before viewing</li>
+          <li><i class="fas fa-download"></i> <strong>Download</strong> - Allow or prevent PDF downloads</li>
+          <li><i class="fas fa-tint"></i> <strong>Watermark</strong> - Add visible watermarks for protection</li>
+          <li><i class="fas fa-bell"></i> <strong>Alert</strong> - Get notified when someone views your PDF</li>
+        </ul>
       </div>
-      <div class="col-md-6">
-        <h4>Online DRM: Easy and Accessible</h4>
-        <p>Share your PDFs with a simple web link or QR code. Set expiration dates, view limits, and prevent actions like printing, copying, or downloading. Once the set limits are reached, the document will no longer be accessible.</p>
-        <p>With MaiPDF’s online DRM, you can easily control access without requiring any additional software. It's fast, secure, and simple to use.</p>
+      <div class="col-lg-6">
+        <div class="feature-card">
+          <h4><i class="fas fa-shield-alt me-2 text-primary"></i>Why View Limits Matter</h4>
+          <p>View limits are essential for:</p>
+          <ul class="mt-3">
+            <li><strong>Confidential Documents:</strong> Ensure sensitive information is only viewed a limited number of times</li>
+            <li><strong>Trial Content:</strong> Allow preview access before requiring purchase</li>
+            <li><strong>Exclusive Access:</strong> Control distribution of premium content</li>
+            <li><strong>Compliance:</strong> Meet regulatory requirements for document access control</li>
+          </ul>
+        </div>
       </div>
     </div>
   </section>
-
-  <!-- MaiPDF Features Section -->
-  <section class="container py-5 bg-light">
-    <h2 class="text-center mb-4">Key Features of MaiPDF</h2>
-    <div class="row">
-      <div class="col-md-6 mb-4">
-        <h5>Stronger Encryption</h5>
-        <p>MaiPDF uses robust encryption methods to protect your PDFs, ensuring that no unauthorized person can access or share your documents.</p>
-        <img class="img-fluid" src="https://maipdf.com/pictures/MaiPDF/security.png" alt="Stronger Encryption">
-      </div>
-      <div class="col-md-6 mb-4">
-        <h5>No Software Installation</h5>
-        <p>MaiPDF operates directly in your web browser. There’s no need to download additional plugins or software. Your PDFs are ready to view across all devices and operating systems with ease.</p>
-        <img class="img-fluid" src="https://maipdf.com/pictures/MaiPDF/upload.png" alt="No Software Installation">
-      </div>
-    </div>
-
-    <h5 class="text-center mt-4">MaiPDF Features Summary</h5>
-    <ul class="list-group text-center">
-      <li class="list-group-item list-group-item-success">Stronger Encryption</li>
-      <li class="list-group-item list-group-item-secondary">Set Expiration Dates</li>
-      <li class="list-group-item list-group-item-info">No Plug-ins or Downloads</li>
-      <li class="list-group-item list-group-item-warning">Supports All Platforms</li>
-      <li class="list-group-item list-group-item-danger">Control Printing, Copying, and Saving</li>
-      <li class="list-group-item list-group-item-primary">Track Views and User Data</li>
-      <li class="list-group-item list-group-item-dark">Offline and Online Access Options</li>
-    </ul>
-  </section>
-
-  <!-- Ads Section -->
-  <div class="ads">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
-    <ins class="adsbygoogle"
-      style="display:inline-block;width:628px;height:70px"
-      data-ad-client="ca-pub-9224406325142860"
-      data-ad-slot="1729213866"></ins>
-    <script>
-      (adsbygoogle = window.adsbygoogle || []).push({});
-    </script>
-  </div>
-
   <!-- Footer -->
-  <footer class="footer">
+  <footer>
     <div class="container">
-      <p>&copy; 2025 MaiPDF | All Rights Reserved</p>
-    
+      <p class="mb-2">&copy; 2025 MaiPDF | All Rights Reserved</p>
+      <p>
+        <a href="https://sendpdfonline.com/">Home</a> | 
+        <a href="https://sendpdfonline.com/features/">Features</a> | 
+        <a href="https://maipdf.com/">Upload PDF</a>
+      </p>
     </div>
   </footer>
 
-  <!-- Bootstrap 5 and Popper.js -->
+  <!-- Bootstrap 5 -->
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

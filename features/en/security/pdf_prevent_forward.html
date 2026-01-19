@@ -32,8 +32,57 @@
             color: #1a73e8;
             margin-bottom: 1.5rem;
         }
-        .list-group-item {
-            margin-bottom: 0.5rem;
+        h2 {
+            color: #dc2626;
+            margin-top: 2rem;
+            margin-bottom: 1rem;
+        }
+        .feature-card {
+            background: white;
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        .feature-card:hover {
+            transform: translateY(-5px);
+        }
+        .feature-icon {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        .animation-container {
+            background: white;
+            border-radius: 16px;
+            padding: 1.5rem;
+            margin: 2rem 0;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+        .animation-container img {
+            width: 100%;
+            max-width: 800px;
+            height: auto;
+            border-radius: 8px;
+        }
+        .highlight-box {
+            background: linear-gradient(135deg, #dc2626 0%, #7c3aed 100%);
+            color: white;
+            padding: 2rem;
+            border-radius: 12px;
+            margin: 2rem 0;
+        }
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 40px;
+            height: 40px;
+            background: #1a73e8;
+            color: white;
+            border-radius: 50%;
+            font-weight: bold;
+            margin-right: 1rem;
         }
         footer {
             background-color: #f1f1f1;
@@ -73,42 +122,150 @@
 </head>
 
 <body id="page-top">
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav" style="background-color: white; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
         <div class="container">
-            <a class="navbar-brand js-scroll-trigger" style="color: Blue;" href="https://www.maipdf.com">MaiPDF</a>
+            <a class="navbar-brand" style="color: #1a73e8; font-weight: bold;" href="https://www.maipdf.com">
+                <i class="fas fa-file-pdf"></i> MaiPDF
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sendpdfonline.com/">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://sendpdfonline.com/features/">Features</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="https://maipdf.com" target="_blank">Try MaiPDF</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <section class="page-section" id="contact">
+    <section class="page-section py-5">
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-lg-8 text-center">
-                    <h1 class="mt-0">How to Prevent PDF Files from Being Forwarded</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
-                </div>
-                
+                <div class="col-lg-10">
+                    <!-- Breadcrumb -->
+                    <nav aria-label="breadcrumb" class="mb-4">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+                            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/en/security/">Security</a></li>
+                            <li class="breadcrumb-item active">Prevent PDF Forwarding</li>
+                        </ol>
+                    </nav>
+
+                    <div class="text-center">
+                        <h1 class="mt-0"><i class="fas fa-shield-alt text-danger"></i> How to Prevent PDF Files from Being Forwarded</h1>
+                        <!-- Publication Date -->
+                        <div class="mb-3">
+                            <small class="text-muted">
+                                <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
+                                <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
+                            </small>
+                        </div>
+                    </div>
+                    
                     <hr class="divider my-4">
-                    <p class="text-muted mb-5">
+                    
+                    <p class="lead text-center mb-5">
                         MaiPDF helps you control PDF file access by setting limits on the number of views, preventing copying and printing, and even blocking forwarding. This tool is perfect for protecting your document's content.
                     </p>
 
-                    <h4 class="mb-4">MaiPDF Features</h4>
-                    <ul class="list-group mb-4">
-                        <li class="list-group-item active">Limit the number of times a PDF can be opened to prevent unauthorized sharing.</li>
-                        <li class="list-group-item">Prevent downloading, printing, and copying of your PDF file.</li>
-                        <li class="list-group-item active">Track when and where the PDF file is opened using email notifications.</li>
-                    </ul>
-
-                    <div class="text-center mb-4">
-                        <img src="../maipdf-images/sett.png" class="img-thumbnail" alt="MaiPDF Features">
+                    <!-- Animated Diagram -->
+                    <div class="animation-container text-center">
+                        <h3 class="mb-4"><i class="fas fa-play-circle text-primary"></i> How PDF Protection Works</h3>
+                        <img src="/maipdf-flowcharts/en-prevent-forward-animation.svg" alt="PDF Prevent Forwarding Animation - Shows how MaiPDF blocks unauthorized access while allowing verified users">
+                        <p class="text-muted mt-3"><small>Animation: Unauthorized users are blocked while verified recipients can access the protected PDF</small></p>
                     </div>
 
-                    <p class="text-muted mb-5">
+                    <h2><i class="fas fa-cog"></i> MaiPDF Security Features</h2>
+                    
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon text-primary">
+                                    <i class="fas fa-eye-slash"></i>
+                                </div>
+                                <h5>View Limit Control</h5>
+                                <p class="text-muted">Limit the number of times a PDF can be opened to prevent unauthorized sharing. Once the limit is reached, the link becomes inactive.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon text-danger">
+                                    <i class="fas fa-download"></i>
+                                </div>
+                                <h5>Prevent Downloading</h5>
+                                <p class="text-muted">Block users from downloading your PDF. They can only view it online, ensuring your content stays under your control.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon text-warning">
+                                    <i class="fas fa-print"></i>
+                                </div>
+                                <h5>Disable Printing</h5>
+                                <p class="text-muted">Prevent recipients from printing your PDF document, keeping your content protected from physical distribution.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon text-success">
+                                    <i class="fas fa-bell"></i>
+                                </div>
+                                <h5>Email Notifications</h5>
+                                <p class="text-muted">Track when and where the PDF file is opened using email notifications. Get alerted every time someone views your document.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon text-info">
+                                    <i class="fas fa-user-check"></i>
+                                </div>
+                                <h5>Email Verification</h5>
+                                <p class="text-muted">Require recipients to verify their email before accessing the PDF. Only authorized viewers can see your content.</p>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="feature-card">
+                                <div class="feature-icon text-secondary">
+                                    <i class="fas fa-tint"></i>
+                                </div>
+                                <h5>Dynamic Watermark</h5>
+                                <p class="text-muted">Add dynamic watermarks showing viewer's email or IP address. Discourages screenshots and unauthorized sharing.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- How It Works Section -->
+                    <div class="highlight-box">
+                        <h3 class="text-center mb-4"><i class="fas fa-magic"></i> How to Protect Your PDF in 3 Steps</h3>
+                        <div class="row">
+                            <div class="col-md-4 text-center mb-3">
+                                <span class="step-number">1</span>
+                                <h5>Upload PDF</h5>
+                                <p>Upload your PDF file to MaiPDF</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <span class="step-number">2</span>
+                                <h5>Set Protection</h5>
+                                <p>Configure view limits, downloads, and alerts</p>
+                            </div>
+                            <div class="col-md-4 text-center mb-3">
+                                <span class="step-number">3</span>
+                                <h5>Share Securely</h5>
+                                <p>Share the secure link with recipients</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <p class="text-muted mb-5 text-center">
                         MaiPDF ensures the safety of your PDFs with secure online sharing options. You can also modify the content after sharing the link, making document management simple.
                     </p>
 
@@ -119,39 +276,10 @@
                         <a href="https://sendpdfonline.com/" class="btn btn-outline-primary me-2">
                             <i class="fas fa-home"></i> Home
                         </a>
-                        <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
-                            <i class="fas fa-rocket"></i> Try MaiPDF
+                        <a href="https://maipdf.com" class="btn btn-success btn-lg" target="_blank" rel="noopener">
+                            <i class="fas fa-rocket"></i> Try MaiPDF Free
                         </a>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-<div class="container">
-  <footer class="py-3 my-4">
-  </footer>
-    <ul class="nav justify-content-center border-bottom pb-3 mb-3">
-    
-    </ul>
-    <p class="text-center text-muted">&copy; 2025 MaiPDF</p>
- 
-</div>
-
-
-<script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'910ab505edd7e014',t:'MTczOTM0MzY4NC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
-
-<style>
-
-
-</style>
-
-<script>
- 
-</script>
-                    </footer>
                 </div>
             </div>
         </div>

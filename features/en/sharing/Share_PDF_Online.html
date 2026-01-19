@@ -27,7 +27,6 @@
         body {
             font-family: 'Merriweather', sans-serif;
             background-color: #f8f9fa;
-            padding-top: 60px;
         }
         .page-section {
             padding: 4rem 0;
@@ -73,11 +72,36 @@
 <body id="page-top">
 
     <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
-        <div class="container">
-            <a class="navbar-brand js-scroll-trigger" style="color: Blue;" href="https://www.maipdf.com">MaiPDF</a>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> Upload PDF</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
+
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-section" style="background: #fff; padding: 1rem 0; border-bottom: 1px solid #e9ecef;">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Effortless PDF Sharing</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
 
     <!-- Main Content -->
     <section class="page-section" id="contact">
@@ -97,7 +121,28 @@
                     <p class="text-muted mb-5">
                         Sharing PDFs online has never been easier. MaiPDF offers a simple tool that converts PDF documents into shareable links and QR codes, eliminating the hassle of attachments and complicated sharing methods.
                     </p>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <!-- How It Works Animation -->
+    <section class="py-5" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2>How It Works</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+          <img src="/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg" alt="PDF Sharing Workflow" class="img-fluid" style="width: 100%;">
+        </div>
+      </div>
+    </section>
+
+    <!-- Why Convert PDF Section -->
+    <section class="page-section" id="why-convert">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8 text-center">
                     <h5 class="mb-4">Why Convert PDF to a Link?</h5>
                     <p class="text-muted">
                         Converting your PDFs into links offers several advantages. Unlike traditional email attachments, PDF links can be shared instantly without size limitations. The recipient simply clicks on the link to access the content, anytime and anywhere, with no need to worry about email inbox restrictions or download issues.
@@ -139,9 +184,29 @@
         </div>
     </section>
 
-    <footer class="bg-light py-5">
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 0;">
         <div class="container">
-            <div class="small text-center text-muted">Copyright &copy; 2025 MaiPDF. All rights reserved.</div>
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span></h5>
+                    <p class="text-muted">Secure PDF Sharing & Protection Solutions</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="https://sendpdfonline.com/" class="text-muted">Home</a></li>
+                        <li><a href="https://sendpdfonline.com/features/" class="text-muted">Features</a></li>
+                        <li><a href="https://maipdf.com/" class="text-muted">Upload PDF</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Contact</h6>
+                    <p class="text-muted"><i class="fas fa-envelope me-2"></i>joe@pdfhost.online</p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <p class="text-center text-muted mb-0">&copy; 2025 MaiPDF. All rights reserved.</p>
         </div>
     </footer>
 

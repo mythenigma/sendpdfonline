@@ -65,63 +65,66 @@
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Convert Your PDFs to Secure Links with Ease</li>
-            </ol>
+    <!-- Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> Upload PDF</a></li>
+          </ul>
         </div>
+      </div>
     </nav>
-    
 
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark custom-gradient">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#features">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#how-it-works">How It Works</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#share-pdf">Share PDF Online</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#contact">Contact</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
+    <!-- Breadcrumb Section -->
+    <section class="breadcrumb-section" style="background: #fff; padding: 1rem 0; border-bottom: 1px solid #e9ecef;">
+      <div class="container">
+        <nav aria-label="breadcrumb">
+          <ol class="breadcrumb mb-0">
+            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+            <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">Features</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Convert PDFs to Secure Links</li>
+          </ol>
+        </nav>
+      </div>
+    </section>
 
     <!-- Hero Section -->
-    <header class="hero text-center text-white py-5">
+    <header class="hero text-center text-white py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
         <div class="container">
             <h1 class="display-4">Convert Your PDFs to Secure Links with Ease</h1>
                 <!-- Publication Date -->
                 <div class="mb-3">
-                    <small class="text-muted">
+                    <small>
                         <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
                         <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
                     </small>
                 </div>
                 
             <p class="lead">Share your PDFs effortlessly without the need for software installation. Accessible on any platform!</p>
-            <a href="#get-started" class="btn btn-primary btn-lg">Get Started</a>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg">Get Started</a>
         </div>
     </header>
+
+    <!-- How It Works Animation -->
+    <section class="py-5" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+      <div class="container">
+        <div class="text-center mb-4">
+          <h2>How It Works</h2>
+        </div>
+        <div style="max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
+          <img src="/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg" alt="PDF Sharing Workflow" class="img-fluid" style="width: 100%;">
+        </div>
+      </div>
+    </section>
 
     <!-- Features Section -->
     <section id="features" class="py-5">
@@ -192,11 +195,29 @@
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer id="contact" class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p>&copy; 2025 MaiPDF. All rights reserved.</p>
-            <p>Need support? <a href="mailto:joe@pdfhost.online" class="text-white">Contact us</a></p>
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 0;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-3">
+                    <h5><i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span></h5>
+                    <p class="text-muted">Secure PDF Sharing & Protection Solutions</p>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled">
+                        <li><a href="https://sendpdfonline.com/" class="text-muted">Home</a></li>
+                        <li><a href="https://sendpdfonline.com/features/" class="text-muted">Features</a></li>
+                        <li><a href="https://maipdf.com/" class="text-muted">Upload PDF</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-4 mb-3">
+                    <h6>Contact</h6>
+                    <p class="text-muted"><i class="fas fa-envelope me-2"></i>joe@pdfhost.online</p>
+                </div>
+            </div>
+            <hr style="border-color: rgba(255,255,255,0.1);">
+            <p class="text-center text-muted mb-0">&copy; 2025 MaiPDF. All rights reserved.</p>
         </div>
     </footer>
 
