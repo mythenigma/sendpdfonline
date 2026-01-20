@@ -53,6 +53,25 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> Upload PDF</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Breadcrumb Navigation -->
     <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
         <div class="container">
@@ -62,8 +81,14 @@
             </ol>
         </div>
     </nav>
-    
-    <h1>Suivi des Vues PDF et Analyses</h1>
+
+    <div class="container">
+        <!-- Animated SVG Workflow -->
+        <div class="text-center my-4">
+            <img src="/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg" alt="PDF Sharing Workflow Animation" style="max-width: 100%; height: auto;">
+        </div>
+        
+        <h1>Suivi des Vues PDF et Analyses</h1>
     
     <p>Savoir qui consulte vos fichiers PDF et comment ils interagissent avec eux est crucial pour la sécurité des documents et l'intelligence d'entreprise. MaiPDF fournit un suivi et des analyses complètes pour vous donner une visibilité totale sur l'utilisation de vos documents.</p>
 
@@ -87,7 +112,7 @@
     </div>
     
     <h2>Exemple de Protection PDF</h2>
-    <img src="../maipdf-images/pdf_icon_of_no_printing_no_downloading.png" alt="Exemple de PDF protégé" style="max-width: 100%; height: auto; margin: 20px 0;">
+    <img src="/maipdf-images/pdf_icon_of_no_printing_no_downloading.png" alt="Exemple de PDF protégé" style="max-width: 100%; height: auto; margin: 20px 0;">
     
     <h2>Fonctionnalités de Suivi Avancées</h2>
     
@@ -125,5 +150,29 @@
         <li>Contrôle d'accès basé sur les rôles</li>
         <li>Journalisation complète de toutes les activités</li>
     </ul>
+    </div>
+
+    <footer style="background-color: #1a1a2e; color: white; padding: 2rem 0; text-align: center; margin-top: 3rem;">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 text-center text-md-start">
+                    <h4>MaiPDF</h4>
+                    <p>Solutions professionnelles de partage et sécurité PDF</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <p>
+                        <a href="https://maipdf.com/privacy" class="text-white me-3">Politique de confidentialité</a>
+                        <a href="https://maipdf.com/terms" class="text-white me-3">Conditions d'utilisation</a>
+                        <a href="https://maipdf.com/contact" class="text-white">Contactez-nous</a>
+                    </p>
+                </div>
+            </div>
+            <div class="text-center mt-3">
+                <p>&copy; 2025 MaiPDF. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

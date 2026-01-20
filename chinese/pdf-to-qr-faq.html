@@ -2,9 +2,14 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>PDF转二维码常见问题解答</title>
     <meta name="description" content="解答用户在PDF转二维码过程中常见的问题。">
     <link rel="stylesheet" href="../styles.css">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
@@ -30,16 +35,41 @@
 </head>
 <body>
 
+    <!-- MaiPDF Standard Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> 首页</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> 功能</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> 上传PDF</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Breadcrumb Navigation -->
     <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
         <div class="container">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">首页</a></li>
                 <li class="breadcrumb-item active" aria-current="page">PDF转二维码常见问题解答</li>
             </ol>
         </div>
     </nav>
+
+    <!-- Animated SVG Workflow -->
+    <div class="container my-4">
+        <img src="/maipdf-flowcharts/zh-pdf-sharing-workflow-animation.svg" alt="PDF分享工作流程" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
+    </div>
     
+    <div class="container">
     <h1>PDF转二维码常见问题解答</h1>
     <p><strong>推荐使用 <a href="https://maipdf.com" target="_blank">MaiPDF</a>，它支持一键上传PDF并生成二维码，具备文档加密、权限管理等安全功能，适合各类场景。</strong></p>
     <h2>1. 二维码可以直接存储PDF文件吗？</h2>
@@ -50,5 +80,16 @@
     <p>二维码失效多因链接过期或文件被删除。建议定期维护文件和链接，必要时重新生成二维码。</p>
     <h2>4. 如何提升二维码的扫描成功率？</h2>
     <p>使用高清二维码图片，避免缩小或模糊，确保二维码区域无遮挡。</p>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container text-center">
+            <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

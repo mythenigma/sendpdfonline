@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>디자인 작업 보호 | MaiPDF | 창작물 보안</title>
     <meta name="description" content="고급 워터마킹 기능으로 디자인 작업을 보호하세요. 고객 및 고용주와 공유하면서 창작물을 보호하는 방법을 알아보세요.">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <style>
         :root {
@@ -173,6 +174,25 @@
 </head>
 <body>
 
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> Features</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> Upload PDF</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Breadcrumb Navigation -->
     <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
         <div class="container">
@@ -182,6 +202,11 @@
             </ol>
         </div>
     </nav>
+
+    <!-- Animated SVG Workflow -->
+    <div class="container my-4">
+        <img src="/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg" alt="PDF 공유 워크플로우" style="max-width: 100%; height: auto;">
+    </div>
     
     <header>
         <h1>디자인 작업 보호</h1>
@@ -227,8 +252,8 @@
             <ul>
                 <li>민감한 프로젝트에 대한 조회 제한 설정</li>
                 <li>보기 전용 액세스를 위한 다운로드 방지 활성화</li>
-                <li>임시 액세스에 만료 날짜 추가</li>
                 <li>기밀 작업에 비밀번호 보호 구현</li>
+                <li>동적 워터마크로 접근 추적</li>
             </ul>
 
             <h3>3. 브랜드 보호</h3>

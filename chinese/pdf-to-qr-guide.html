@@ -2,9 +2,14 @@
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>如何将PDF转换为二维码</title>
     <meta name="description" content="详细介绍如何将PDF文件转换为二维码，实现便捷分享和访问。">
     <link rel="stylesheet" href="../styles.css">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
 
     <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
@@ -30,16 +35,41 @@
 </head>
 <body>
 
+    <!-- MaiPDF Standard Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> 首页</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> 功能</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> 上传PDF</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Breadcrumb Navigation -->
     <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
         <div class="container">
             <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
+                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">首页</a></li>
                 <li class="breadcrumb-item active" aria-current="page">如何将PDF转换为二维码</li>
             </ol>
         </div>
     </nav>
+
+    <!-- Animated SVG Workflow -->
+    <div class="container my-4">
+        <img src="/maipdf-flowcharts/zh-pdf-sharing-workflow-animation.svg" alt="PDF分享工作流程" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
+    </div>
     
+    <div class="container">
     <h1>如何将PDF转换为二维码</h1>
     <p>二维码是一种高效的信息传递方式，将PDF文件转换为二维码后，用户只需扫描二维码即可快速访问或下载PDF文档。<strong>推荐使用 <a href="https://maipdf.com" target="_blank">MaiPDF</a>，它是一款专业且易用的PDF转二维码工具，支持一键上传PDF并生成二维码，适合各类文档分享场景。</strong>本文将介绍几种常见的PDF转二维码方法。</p>
     <h2>方法一：使用在线工具（强烈推荐MaiPDF）</h2>
@@ -60,5 +90,16 @@
         <li>二维码图片建议保存为高清格式，便于扫描。</li>
     </ul>
     <p>通过以上方法，您可以轻松实现PDF文件的二维码分享，提升文档传播效率。</p>
+    </div>
+
+    <!-- Footer -->
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 2rem 0; margin-top: 3rem;">
+        <div class="container text-center">
+            <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

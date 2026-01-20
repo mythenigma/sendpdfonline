@@ -66,6 +66,25 @@
 </head>
 <body>
 
+    <!-- MaiPDF Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> 홈</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> 기능</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> PDF 업로드</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Breadcrumb Navigation -->
     <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
         <div class="container">
@@ -89,6 +108,12 @@
                 
         <p>로컬 암호화 PDF의 경량 공유</p>
     </header>
+
+    <!-- Animated Workflow SVG -->
+    <div class="container my-4" style="text-align: center;">
+        <img src="/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg" alt="MaiPDF 워크플로 애니메이션" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+    </div>
+
     <section>
         <h2>"오프라인 저장 + 온라인 인증"을 선택하는 이유</h2>
         <ul>
@@ -105,7 +130,7 @@
         </article>
         <article>
             <h3>온라인 인증</h3>
-            <p>열 때 백그라운드 핸드셰이크: 읽기 코드, 남은 사용 횟수, 만료 날짜를 확인합니다. 오프라인 → 실행 거부.</p>
+            <p>열 때 백그라운드 핸드셰이크: 읽기 코드, 남은 사용 횟수를 확인합니다. 오프라인 → 실행 거부.</p>
         </article>
     </section>
     
@@ -122,19 +147,30 @@
 
     
     <div class="container my-4 text-center">
-        <a href="/article/" class="btn btn-primary me-2">
-            <i class="fas fa-arrow-left"></i> Back to Articles
+        <a href="https://sendpdfonline.com/article/" class="btn btn-primary me-2">
+            <i class="fas fa-arrow-left"></i> 기사 목록으로
         </a>
-        <a href="/" class="btn btn-outline-primary me-2">
-            <i class="fas fa-home"></i> Home
+        <a href="https://sendpdfonline.com/" class="btn btn-outline-primary me-2">
+            <i class="fas fa-home"></i> 홈
         </a>
         <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> Try Now
+            <i class="fas fa-rocket"></i> 지금 시도
         </a>
     </div>
 
-    <footer>
-        <p>지금 시도해보세요: 다음 PDF를 오프라인 보호로 안전하게 만드세요.</p>
+    <!-- Modern Footer -->
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 0; margin-top: 3rem;">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://sendpdfonline.com/" style="color: #00d4ff; text-decoration: none; font-weight: 700; font-size: 1.5rem;">
+                    <i class="fas fa-file-pdf me-2"></i>MaiPDF
+                </a>
+            </div>
+            <p class="mb-2">지금 시도해보세요: 다음 PDF를 오프라인 보호로 안전하게 만드세요.</p>
+            <p class="mb-0" style="opacity: 0.7;">&copy; 2025 MaiPDF. All rights reserved.</p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

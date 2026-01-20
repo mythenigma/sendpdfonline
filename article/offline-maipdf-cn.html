@@ -56,6 +56,25 @@
 </head>
 <body>
 
+    <!-- MaiPDF Navigation -->
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+      <div class="container">
+        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
+          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto">
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> 首页</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> 功能</a></li>
+            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> 上传 PDF</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
     <!-- Breadcrumb Navigation -->
     <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
         <div class="container">
@@ -78,7 +97,7 @@
 
     <!-- 流程图展示 -->
     <div style="text-align: center; margin: 30px 0;">
-        <img src="../maipdf-flowcharts/zh-offline-version.svg" alt="MaiPDF离线版本工作流程" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
+        <img src="/maipdf-flowcharts/zh-pdf-sharing-workflow-animation.svg" alt="MaiPDF离线版本工作流程" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
     </div>
 
     <div style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); padding: 25px; border-radius: 15px; margin: 25px 0; border-left: 5px solid #0ea5e9;">
@@ -117,19 +136,19 @@
     <h2>2 | 离线版的 4 个硬核功能</h2>
     <h3>本地存储</h3>
     <p>PDF 被封装进单个 HTML，随便拷进 U 盘 / 私有 NAS。</p>
-    <img src="../offlinepages/upload_section_offline_maipdf.png" alt="上传离线包示例">
+    <img src="/images/upload_section_offline_maipdf.png" alt="上传离线包示例" style="max-width: 100%; border-radius: 8px; margin: 1rem 0;">
 
     <h3>在线验证</h3>
-    <p>打开时后台秒级握手：校验阅读码、剩余次数、到期日。断网→直接拒绝启动。</p>
-    <img src="../offlinepages/security_setting.png" alt="安全设置示例">
+    <p>打开时后台秒级握手：校验阅读码、剩余次数。断网→直接拒绝启动。</p>
+    <img src="/images/security_setting.png" alt="安全设置示例" style="max-width: 100%; border-radius: 8px; margin: 1rem 0;">
 
     <h3>读码 / 编码双通道</h3>
-    <p>读码：仅查看；编码：可替换文件、追加次数。分享文件同时保留“后悔药”。</p>
-    <img src="../offlinepages/result-check-change.png" alt="检查更改示例">
+    <p>读码：仅查看；编码：可替换文件、追加次数。分享文件同时保留"后悔药"。</p>
+    <img src="/images/result-check-change.png" alt="检查更改示例" style="max-width: 100%; border-radius: 8px; margin: 1rem 0;">
 
     <h3>访问轨迹</h3>
     <p>每条验证请求都记录 IP、时间，后台一目了然——谁看过，何时结束，一键导出 CSV。</p>
-    <img src="../offlinepages/success_example_offline_file_change.png" alt="成功示例">
+    <img src="/images/success_example_offline_file_change.png" alt="成功示例" style="max-width: 100%; border-radius: 8px; margin: 1rem 0;">
 
     <h2>3 | 典型使用场景</h2>
     <table>
@@ -167,7 +186,7 @@
 
     <h3>下载离线包</h3>
     <p>获得 Project_X_Spec.html + 同步生成访问/编辑码 & 二维码。</p>
-    <img src="../offlinepages/result_download_zip_file.png" alt="下载离线包示例">
+    <img src="/images/result_download_zip_file.png" alt="下载离线包示例" style="max-width: 100%; border-radius: 8px; margin: 1rem 0;">
 
     <h2>5 | 给安全意识再加一把锁</h2>
     <p>不可打印 / 禁复制：浏览器层面禁用打印菜单、右键与快捷键。</p>
@@ -230,10 +249,10 @@
 
 
     <div class="container my-4 text-center">
-        <a href="/article/" class="btn btn-primary me-2">
+        <a href="https://sendpdfonline.com/article/" class="btn btn-primary me-2">
             <i class="fas fa-arrow-left"></i> 返回文章列表
         </a>
-        <a href="/" class="btn btn-outline-primary me-2">
+        <a href="https://sendpdfonline.com/" class="btn btn-outline-primary me-2">
             <i class="fas fa-home"></i> 首页
         </a>
         <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
@@ -241,5 +260,19 @@
         </a>
     </div>
 
+    <!-- Modern Footer -->
+    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: #fff; padding: 3rem 0; margin-top: 3rem;">
+        <div class="container text-center">
+            <div class="mb-3">
+                <a href="https://sendpdfonline.com/" style="color: #00d4ff; text-decoration: none; font-weight: 700; font-size: 1.5rem;">
+                    <i class="fas fa-file-pdf me-2"></i>MaiPDF
+                </a>
+            </div>
+            <p class="mb-2">下一份不能外泄的 PDF，就用离线版给自己加道智能保险。</p>
+            <p class="mb-0" style="opacity: 0.7;">&copy; 2025 MaiPDF. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
