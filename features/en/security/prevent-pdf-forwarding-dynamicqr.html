@@ -144,7 +144,7 @@
                         <a class="nav-link" href="dynamic-watermark-tracking.html">Dynamic Watermark</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="pdf-tracking-analytics.html">View Tracking</a>
+                        <a class="nav-link" href="pdf-tracking-analytics.html">View Analytics</a>
                     </li>
                 </ul>
             </div>
@@ -161,7 +161,7 @@
                         <i class="fas fa-sync-alt"></i> Updated: January 15, 2026
                     </small>
                 </div>
-        <p class="lead">Stop unauthorized PDF forwarding with dynamic watermarks and access control. Learn more about <a href="/article/pdf-sharing-security" style="color: white; text-decoration: underline;">PDF sharing security</a> and <a href="/features/en/watermark/dynamic-watermark-tracking" style="color: white; text-decoration: underline;">dynamic watermark tracking</a>.</p>
+        <p class="lead">Stop unauthorized PDF forwarding with dynamic watermarks and access control. Learn more about <a href="/article/pdf-sharing-security" style="color: white; text-decoration: underline;">PDF sharing security</a> and <a href="/features/en/watermark/dynamic-watermark-tracking" style="color: white; text-decoration: underline;">dynamic watermark & access stats</a>.</p>
     </div>
 
     <!-- Anti-Forwarding Flow -->
@@ -192,7 +192,7 @@ flowchart TD
     L --> M[💧 See Personal Watermark]
     M --> N{Try to Forward?}
     
-    N -->|Forward Link| O[📊 Track Original Owner]
+    N -->|Forward Link| O[📊 Identify Original Owner]
     N -->|Screenshot| P[💧 Watermark Visible]
     N -->|Print| Q[🚫 Print Disabled]
     
@@ -250,7 +250,7 @@ flowchart TD
 
             <div class="feature-card">
                 <h4><i class="fas fa-watermark icon"></i> Dynamic Watermark</h4>
-                <p>To track document distribution, MaiPDF adds dynamic watermarks to your PDFs. Each time the file is viewed, the watermark embeds viewer information like IP address and browser details, helping trace the source of any unauthorized sharing. Explore the <a href="dynamic-watermark-tracking.html">dynamic watermark feature</a> in detail.</p>
+                <p>To identify document distribution, MaiPDF adds dynamic watermarks to your PDFs. Each time the file is viewed, the watermark embeds viewer information like IP address and browser details, helping trace the source of any unauthorized sharing. Explore the <a href="dynamic-watermark-tracking.html">dynamic watermark feature</a> in detail.</p>
                 <img src="/images/dynamic-qr-watermark.png" alt="Dynamic watermark example" class="security-image">
             </div>
 
@@ -269,7 +269,7 @@ flowchart TD
                 <h3>Related Features</h3>
                 <ul>
                     <li><a href="dynamic-watermark-tracking.html">Dynamic Watermark</a></li>
-                    <li><a href="pdf-tracking-analytics.html">View Tracking</a></li>
+                    <li><a href="pdf-tracking-analytics.html">View Analytics</a></li>
                     <li><a href="preventdownload.html">Prevent Download</a></li>
                     <li><a href="set-pdf-print-restrictions.html">Print Restrictions</a></li>
                     <li><a href="pdf-security-features.html">PDF Security Features</a></li>
