@@ -1,0 +1,181 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 1100" font-family="'Microsoft YaHei', 'Noto Sans SC', Arial, sans-serif">
+  <defs>
+    <linearGradient id="lifecycleGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#7c3aed;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#ec4899;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stageGrad1" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#3b82f6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#2563eb;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stageGrad2" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#10b981;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#059669;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stageGrad3" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#f59e0b;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#d97706;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stageGrad4" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#8b5cf6;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6d28d9;stop-opacity:1" />
+    </linearGradient>
+    <linearGradient id="stageGrad5" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#dc2626;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#991b1b;stop-opacity:1" />
+    </linearGradient>
+    <filter id="shadow">
+      <feDropShadow dx="0" dy="3" stdDeviation="4" flood-opacity="0.3"/>
+    </filter>
+  </defs>
+  
+  <!-- 标题 -->
+  <rect x="0" y="0" width="1200" height="80" fill="url(#lifecycleGrad)"/>
+  <text x="600" y="38" font-size="32" font-weight="bold" text-anchor="middle" fill="white">♻️ 文档生命周期管理</text>
+  <text x="600" y="63" font-size="14" text-anchor="middle" fill="#fae8ff">从创建到归档 • 全流程智能管控</text>
+  
+  <!-- 循环箭头背景 -->
+  <circle cx="600" cy="550" r="380" fill="none" stroke="#e5e7eb" stroke-width="3" stroke-dasharray="10,5"/>
+  
+  <!-- 阶段1：文档创建 -->
+  <g id="stage1">
+    <rect x="480" y="120" width="240" height="140" rx="15" fill="url(#stageGrad1)" filter="url(#shadow)"/>
+    <text x="600" y="155" font-size="20" font-weight="bold" text-anchor="middle" fill="white">📝 阶段1：文档创建</text>
+    <line x1="500" y1="170" x2="700" y2="170" stroke="#60a5fa" stroke-width="1"/>
+    
+    <text x="600" y="195" font-size="13" text-anchor="middle" fill="white">✓ 上传PDF文件</text>
+    <text x="600" y="215" font-size="13" text-anchor="middle" fill="white">✓ 设置文档标题</text>
+    <text x="600" y="235" font-size="13" text-anchor="middle" fill="white">✓ 添加文档描述</text>
+    
+    <circle cx="600" cy="120" r="8" fill="#3b82f6" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- 箭头 -->
+  <path d="M 720 190 L 820 270" stroke="#3b82f6" stroke-width="4" fill="none" marker-end="url(#arrow-blue)"/>
+  <text x="780" y="220" font-size="13" font-weight="bold" fill="#3b82f6">配置</text>
+  
+  <!-- 阶段2：安全配置 -->
+  <g id="stage2">
+    <rect x="860" y="290" width="280" height="160" rx="15" fill="url(#stageGrad2)" filter="url(#shadow)"/>
+    <text x="1000" y="325" font-size="20" font-weight="bold" text-anchor="middle" fill="white">🔐 阶段2：安全配置</text>
+    <line x1="880" y1="340" x2="1120" y2="340" stroke="#6ee7b7" stroke-width="1"/>
+    
+    <text x="1000" y="365" font-size="13" text-anchor="middle" fill="white">✓ 访问权限设置</text>
+    <text x="1000" y="385" font-size="13" text-anchor="middle" fill="white">✓ 密码保护配置</text>
+    <text x="1000" y="405" font-size="13" text-anchor="middle" fill="white">✓ 有效期限制</text>
+    <text x="1000" y="425" font-size="13" text-anchor="middle" fill="white">✓ 水印设置</text>
+    
+    <circle cx="1140" cy="370" r="8" fill="#10b981" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- 箭头 -->
+  <path d="M 1100 450 L 1050 580" stroke="#10b981" stroke-width="4" fill="none" marker-end="url(#arrow-green)"/>
+  <text x="1090" y="520" font-size="13" font-weight="bold" fill="#10b981">分享</text>
+  
+  <!-- 阶段3：文档分享 -->
+  <g id="stage3">
+    <rect x="860" y="630" width="280" height="180" rx="15" fill="url(#stageGrad3)" filter="url(#shadow)"/>
+    <text x="1000" y="665" font-size="20" font-weight="bold" text-anchor="middle" fill="white">📤 阶段3：文档分享</text>
+    <line x1="880" y1="680" x2="1120" y2="680" stroke="#fcd34d" stroke-width="1"/>
+    
+    <text x="1000" y="705" font-size="13" text-anchor="middle" fill="white">✓ 生成分享链接</text>
+    <text x="1000" y="725" font-size="13" text-anchor="middle" fill="white">✓ 创建二维码</text>
+    <text x="1000" y="745" font-size="13" text-anchor="middle" fill="white">✓ 邮件/社交分享</text>
+    <text x="1000" y="765" font-size="13" text-anchor="middle" fill="white">✓ 通知相关人员</text>
+    <text x="1000" y="785" font-size="13" text-anchor="middle" fill="white">✓ 记录分享日志</text>
+    
+    <circle cx="1140" cy="720" r="8" fill="#f59e0b" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- 箭头 -->
+  <path d="M 860 720 L 750 800" stroke="#f59e0b" stroke-width="4" fill="none" marker-end="url(#arrow-orange)"/>
+  <text x="820" y="770" font-size="13" font-weight="bold" fill="#f59e0b">使用</text>
+  
+  <!-- 阶段4：使用监控 -->
+  <g id="stage4">
+    <rect x="420" y="840" width="280" height="180" rx="15" fill="url(#stageGrad4)" filter="url(#shadow)"/>
+    <text x="560" y="875" font-size="20" font-weight="bold" text-anchor="middle" fill="white">📊 阶段4：使用监控</text>
+    <line x1="440" y1="890" x2="680" y2="890" stroke="#c084fc" stroke-width="1"/>
+    
+    <text x="560" y="915" font-size="13" text-anchor="middle" fill="white">✓ 实时访问追踪</text>
+    <text x="560" y="935" font-size="13" text-anchor="middle" fill="white">✓ 阅读行为分析</text>
+    <text x="560" y="955" font-size="13" text-anchor="middle" fill="white">✓ 数据统计报表</text>
+    <text x="560" y="975" font-size="13" text-anchor="middle" fill="white">✓ 异常访问告警</text>
+    <text x="560" y="995" font-size="13" text-anchor="middle" fill="white">✓ 用户反馈收集</text>
+    
+    <circle cx="420" cy="930" r="8" fill="#8b5cf6" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- 箭头 -->
+  <path d="M 420 930 L 290 860" stroke="#8b5cf6" stroke-width="4" fill="none" marker-end="url(#arrow-purple)"/>
+  <text x="340" y="900" font-size="13" font-weight="bold" fill="#8b5cf6">管理</text>
+  
+  <!-- 阶段5：权限管理 -->
+  <g id="stage5">
+    <rect x="60" y="630" width="280" height="180" rx="15" fill="url(#stageGrad5)" filter="url(#shadow)"/>
+    <text x="200" y="665" font-size="20" font-weight="bold" text-anchor="middle" fill="white">🎮 阶段5：权限管理</text>
+    <line x1="80" y1="680" x2="320" y2="680" stroke="#fca5a5" stroke-width="1"/>
+    
+    <text x="200" y="705" font-size="13" text-anchor="middle" fill="white">✓ 更新文档内容</text>
+    <text x="200" y="725" font-size="13" text-anchor="middle" fill="white">✓ 修改安全设置</text>
+    <text x="200" y="745" font-size="13" text-anchor="middle" fill="white">✓ 调整访问权限</text>
+    <text x="200" y="765" font-size="13" text-anchor="middle" fill="white">✓ 撤销分享链接</text>
+    <text x="200" y="785" font-size="13" text-anchor="middle" fill="white">✓ 导出访问报表</text>
+    
+    <circle cx="60" cy="720" r="8" fill="#dc2626" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- 箭头 -->
+  <path d="M 150 630 L 250 470" stroke="#dc2626" stroke-width="4" fill="none" marker-end="url(#arrow-red)"/>
+  <text x="180" y="550" font-size="13" font-weight="bold" fill="#dc2626">更新</text>
+  
+  <!-- 持续循环指示 -->
+  <g id="stage-continue">
+    <rect x="60" y="290" width="280" height="160" rx="15" fill="#e0e7ff" stroke="#6366f1" stroke-width="3" filter="url(#shadow)"/>
+    <text x="200" y="330" font-size="18" font-weight="bold" text-anchor="middle" fill="#4338ca">🔄 持续迭代优化</text>
+    <line x1="80" y1="345" x2="320" y2="345" stroke="#818cf8" stroke-width="1"/>
+    
+    <text x="200" y="370" font-size="12" text-anchor="middle" fill="#475569">根据使用反馈</text>
+    <text x="200" y="390" font-size="12" text-anchor="middle" fill="#475569">持续优化安全策略</text>
+    <text x="200" y="410" font-size="12" text-anchor="middle" fill="#475569">提升用户体验</text>
+    <text x="200" y="430" font-size="12" text-anchor="middle" fill="#475569">完善文档管理</text>
+    
+    <circle cx="60" cy="370" r="8" fill="#6366f1" stroke="white" stroke-width="2"/>
+  </g>
+  
+  <!-- 连接持续迭代 -->
+  <path d="M 250 290 L 400 220" stroke="#6366f1" stroke-width="3" stroke-dasharray="5,3" fill="none" marker-end="url(#arrow-indigo)"/>
+  <path d="M 340 370 L 420 370 L 420 930" stroke="#6366f1" stroke-width="3" stroke-dasharray="5,3" fill="none"/>
+  
+  <!-- 时间轴说明 -->
+  <rect x="150" y="1040" width="900" height="45" rx="10" fill="#f8fafc" stroke="#cbd5e1" stroke-width="2"/>
+  <text x="600" y="1068" font-size="14" text-anchor="middle" fill="#1e3a8a">⏰ 全生命周期管理：从文档创建到持续优化，实现闭环管理和数据驱动决策</text>
+  
+  <!-- 中心说明 -->
+  <circle cx="600" cy="550" r="120" fill="white" stroke="#7c3aed" stroke-width="3" filter="url(#shadow)"/>
+  <text x="600" y="530" font-size="16" font-weight="bold" text-anchor="middle" fill="#7c3aed">智能文档</text>
+  <text x="600" y="553" font-size="16" font-weight="bold" text-anchor="middle" fill="#7c3aed">生命周期</text>
+  <text x="600" y="576" font-size="13" text-anchor="middle" fill="#6b7280">全流程自动化</text>
+  
+  <!-- 箭头标记 -->
+  <defs>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
+    </marker>
+    <marker id="arrow-green" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#10b981" />
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#f59e0b" />
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#8b5cf6" />
+    </marker>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-indigo" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <polygon points="0 0, 10 3, 0 6" fill="#6366f1" />
+    </marker>
+  </defs>
+</svg>
