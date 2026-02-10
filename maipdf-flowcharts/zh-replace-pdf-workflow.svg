@@ -1,0 +1,64 @@
+<svg width="800" height="500" xmlns="http://www.w3.org/2000/svg" font-family="'Microsoft YaHei', sans-serif">
+    <defs>
+        <style>
+            .container { background-color: #f8f9fa; }
+            .box { fill: #fff; stroke: #007bff; stroke-width: 2; rx: 10; ry: 10; transition: transform 0.3s ease, box-shadow 0.3s ease; }
+            .box:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.1); }
+            .text { font-size: 16px; fill: #343a40; text-anchor: middle; }
+            .title { font-size: 20px; font-weight: bold; fill: #0056b3; }
+            .arrow { stroke: #28a745; stroke-width: 2.5; marker-end: url(#arrowhead); }
+            .arrow-dashed { stroke: #dc3545; stroke-width: 2.5; stroke-dasharray: 8 4; marker-end: url(#arrowhead-dashed); }
+            .path-animation { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 2s forwards; }
+            @keyframes draw { to { stroke-dashoffset: 0; } }
+        </style>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#28a745" />
+        </marker>
+        <marker id="arrowhead-dashed" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#dc3545" />
+        </marker>
+    </defs>
+
+    <rect width="100%" height="100%" fill="#f8f9fa"/>
+
+    <text x="400" y="40" class="title">替换PDF文件工作流程对比</text>
+
+    <!-- 传统方法 -->
+    <g id="traditional-method">
+        <text x="200" y="80" font-size="18" text-anchor="middle" fill="#343a40">传统方法</text>
+        <rect x="100" y="100" width="200" height="60" class="box"/>
+        <text x="200" y="135" class="text">1. 准备新版PDF</text>
+
+        <path class="arrow-dashed path-animation" d="M 200 160 V 210" style="animation-delay: 0.5s;"/>
+
+        <rect x="100" y="210" width="200" height="60" class="box"/>
+        <text x="200" y="245" class="text">2. 重新上传并生成新链接</text>
+
+        <path class="arrow-dashed path-animation" d="M 200 270 V 320" style="animation-delay: 1s;"/>
+
+        <rect x="100" y="320" width="200" height="60" class="box"/>
+        <text x="200" y="355" class="text">3. 通知所有收件人更新链接</text>
+        
+        <text x="200" y="420" class="text" fill="#dc3545">繁琐且易出错</text>
+    </g>
+
+    <!-- MaiPDF 方法 -->
+    <g id="maipdf-method">
+        <text x="600" y="80" font-size="18" text-anchor="middle" fill="#343a40">MaiPDF 方法</text>
+        <rect x="500" y="100" width="200" height="60" class="box"/>
+        <text x="600" y="135" class="text">1. 找到原始链接</text>
+
+        <path class="arrow path-animation" d="M 600 160 V 210" style="animation-delay: 1.5s;"/>
+
+        <rect x="500" y="210" width="200" height="60" class="box"/>
+        <text x="600" y="235" class="text">2. 点击“替换文件”并</text>
+        <text x="600" y="255" class="text">上传新PDF</text>
+
+        <path class="arrow path-animation" d="M 600 270 V 320" style="animation-delay: 2s;"/>
+
+        <rect x="500" y="320" width="200" height="60" class="box"/>
+        <text x="600" y="355" class="text">3. 完成！链接保持不变</text>
+        
+        <text x="600" y="420" class="text" fill="#28a745">高效、无缝更新</text>
+    </g>
+</svg>
