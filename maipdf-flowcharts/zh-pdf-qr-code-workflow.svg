@@ -1,0 +1,79 @@
+<svg width="800" height="450" xmlns="http://www.w3.org/2000/svg" font-family="sans-serif">
+    <defs>
+        <style>
+            .box { fill: #E1F5FE; stroke: #0288D1; stroke-width: 2; rx: 8; ry: 8; }
+            .text { font-size: 16px; fill: #333; text-anchor: middle; font-family: 'Microsoft YaHei', sans-serif; }
+            .arrow { stroke: #0288D1; stroke-width: 2.5; marker-end: url(#arrowhead); }
+            .path-animation { stroke-dasharray: 1000; stroke-dashoffset: 1000; animation: draw 2s forwards; }
+            @keyframes draw { to { stroke-dashoffset: 0; } }
+        </style>
+        <marker id="arrowhead" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+            <path d="M 0 0 L 10 5 L 0 10 z" fill="#0288D1" />
+        </marker>
+    </defs>
+
+    <title>PDF转二维码工作流程</title>
+
+    <!-- 步骤 1: 上传PDF -->
+    <g id="step1">
+        <rect x="50" y="50" width="160" height="70" class="box"/>
+        <text x="130" y="80" class="text">第一步</text>
+        <text x="130" y="105" class="text">上传PDF文件</text>
+    </g>
+
+    <!-- 动画箭头 1 -->
+    <path class="arrow path-animation" d="M 210 85 H 310" style="animation-delay: 0.5s;"/>
+
+    <!-- 步骤 2: 生成二维码 -->
+    <g id="step2">
+        <rect x="310" y="50" width="160" height="70" class="box"/>
+        <text x="390" y="80" class="text">第二步</text>
+        <text x="390" y="105" class="text">生成二维码</text>
+    </g>
+
+    <!-- 动画箭头 2 -->
+    <path class="arrow path-animation" d="M 470 85 H 570" style="animation-delay: 1s;"/>
+
+    <!-- 步骤 3: 下载和分享 -->
+    <g id="step3">
+        <rect x="570" y="50" width="160" height="70" class="box"/>
+        <text x="650" y="80" class="text">第三步</text>
+        <text x="650" y="105" class="text">下载和分享</text>
+    </g>
+
+    <!-- 动画箭头 3 (向下) -->
+    <path class="arrow path-animation" d="M 650 120 V 200" style="animation-delay: 1.5s;"/>
+
+    <!-- 步骤 4: 用户扫描 -->
+    <g id="step4">
+        <rect x="570" y="200" width="160" height="70" class="box"/>
+        <text x="650" y="230" class="text">第四步</text>
+        <text x="650" y="255" class="text">用户扫描二维码</text>
+    </g>
+    
+    <!-- 动画箭头 4 -->
+    <path class="arrow path-animation" d="M 570 235 H 470" style="animation-delay: 2s;"/>
+
+    <!-- 步骤 5: 查看PDF -->
+    <g id="step5">
+        <rect x="310" y="200" width="160" height="70" class="box"/>
+        <text x="390" y="230" class="text">第五步</text>
+        <text x="390" y="255" class="text">在线查看PDF</text>
+    </g>
+
+    <!-- 动画箭头 5 -->
+    <path class="arrow path-animation" d="M 310 235 H 210" style="animation-delay: 2.5s;"/>
+
+    <!-- 步骤 6: 数据分析 -->
+    <g id="step6">
+        <rect x="50" y="200" width="160" height="70" class="box"/>
+        <text x="130" y="230" class="text">第六步</text>
+        <text x="130" y="255" class="text">追踪和数据分析</text>
+    </g>
+
+    <!-- 循环箭头 -->
+    <path class="arrow path-animation" d="M 130 300 q 0 50 260 50 q 260 0 260 -50" stroke-dasharray="10 10" fill="none" style="animation-delay: 3s;">
+         <animate attributeName="stroke-dashoffset" from="1000" to="0" dur="2s" begin="3s" fill="freeze" />
+    </path>
+    <text x="390" y="370" class="text" style="font-size: 14px; fill: #555;">根据用户反馈优化内容</text>
+</svg>

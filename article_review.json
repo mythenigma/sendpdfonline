@@ -1,0 +1,2661 @@
+[
+  {
+    "file": "article/confidential-documents-risk.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "rol, expiration dates, view limits, and tracking. Best practices for secure document sha"
+      },
+      {
+        "term": "tracking",
+        "snippet": "secure document distribution, document tracking, PDF watermark, document expiration, co"
+      },
+      {
+        "term": "tracking",
+        "snippet": "n, DRM, watermarks, access control, and tracking. Prevent unauthorized access and data b"
+      },
+      {
+        "term": "tracking",
+        "snippet": "rely with password protection, DRM, and tracking using MaiPDF.\">     <link rel=\"canonica"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "ecurely with Password Protection, DRM & Tracking | MaiPDF</title>     <!-- Bootstrap CSS"
+      },
+      {
+        "term": "tracking",
+        "snippet": "n dates, view limits, and comprehensive tracking. Prevent unauthorized access, data brea"
+      },
+      {
+        "term": "track",
+        "snippet": "aking it impossible to revoke access or track usage. This creates permanent security"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ed, or how they were used. This lack of tracking makes it impossible to detect unauthori"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "s=\"fas fa-chart-bar\"></i> Comprehensive Tracking</h4>                     <p>Track detai"
+      },
+      {
+        "term": "Track",
+        "snippet": "ve Tracking</h4>                     <p>Track detailed analytics on who accessed docu"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "class=\"badge bg-primary\">Step 5</span> Monitor Access and Analytics</h4>"
+      },
+      {
+        "term": "Track",
+        "snippet": "s and Analytics</h4>                 <p>Track document access through MaiPDF's analyt"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "s through MaiPDF's analytics dashboard. Monitor who viewed documents, when they accesse"
+      },
+      {
+        "term": "Monitoring",
+        "snippet": "<h4><i class=\"fas fa-bell\"></i> Monitoring and Alerts</h4>                 <ul>"
+      },
+      {
+        "term": "track",
+        "snippet": "class=\"mt-4\">                 <h4>Can I track who accessed my confidential documents?"
+      },
+      {
+        "term": "monitor",
+        "snippet": "iewed, and geographic location. You can monitor all document access in real-time.</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": ", access control, expiration dates, and tracking. Best practices for preventing unauthor"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/confidential-investor-updates.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "view limits, watermarks, and real-time tracking. Protect sensitive financial data durin"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "ss Denied]          O --> Q[📊 Real-time Tracking]     Q --> R[🔔 Notification Alerts]"
+      },
+      {
+        "term": "track",
+        "snippet": "y who views your investor documents and track every interaction in real-time.</p>"
+      },
+      {
+        "term": "Track",
+        "snippet": "11\" text-anchor=\"middle\" fill=\"#475569\">Track document</text>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "11\" text-anchor=\"middle\" fill=\"#475569\">Monitor investor</text>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li>Timestamp tracking on every view</li>"
+      },
+      {
+        "term": "Track",
+        "snippet": "/h3>                                 <p>Track which investors have viewed your materi"
+      },
+      {
+        "term": "tracking",
+        "snippet": "t levels. Explore <a href=\"/article/pdf-tracking-analytics\">PDF tracking analytics</a>.<"
+      },
+      {
+        "term": "tracking",
+        "snippet": "f=\"/article/pdf-tracking-analytics\">PDF tracking analytics</a>.</p>"
+      },
+      {
+        "term": "Track",
+        "snippet": "inancial models with controlled access. Track which investors are actively reviewing"
+      },
+      {
+        "term": "tracking",
+        "snippet": "e secure links</strong> - Create unique tracking links for each investor"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "-item\">                         <strong>Monitor engagement</strong> - Track views, read"
+      },
+      {
+        "term": "Track",
+        "snippet": "<strong>Monitor engagement</strong> - Track views, reading time, and investor inter"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "stribution</li>                     <li>Monitor <strong>analytics daily</strong> to tra"
+      },
+      {
+        "term": "track",
+        "snippet": "tor <strong>analytics daily</strong> to track investor interest</li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": ">Review <a href=\"/article/user-behavior-tracking\">user behavior tracking</a> for detaile"
+      },
+      {
+        "term": "tracking",
+        "snippet": "e/user-behavior-tracking\">user behavior tracking</a> for detailed insights</li>"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/images/lockpdf.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/controlling-pdf-access.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "ation dates, download restrictions, and tracking. Best practices for PDF access control"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ss control download, PDF access control tracking, PDF access control security, PDF acces"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ion, view limits, expiration dates, and tracking. Best practices for PDF access control."
+      },
+      {
+        "term": "tracking",
+        "snippet": "h password protection, view limits, and tracking.\">     <link rel=\"canonical\" href=\"http"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "with Password Protection, View Limits & Tracking | MaiPDF</title>     <link rel=\"stylesh"
+      },
+      {
+        "term": "Track",
+        "snippet": "id| L[❌ Deny Access]          K --> M[📊 Track Analytics]          style A fill:#dbeaf"
+      },
+      {
+        "term": "track",
+        "snippet": "day's fast-paced digital world, keeping track of your documents can be challenging. W"
+      },
+      {
+        "term": "Track",
+        "snippet": "<li>Dynamic watermarks - Track document origin</li>"
+      },
+      {
+        "term": "track",
+        "snippet": "<li>Financial reports (track who accessed)</li>"
+      },
+      {
+        "term": "track",
+        "snippet": "<li>Research papers (track readership)</li>"
+      },
+      {
+        "term": "track",
+        "snippet": "<li>Settlement agreements (track readings)</li>"
+      },
+      {
+        "term": "monitor",
+        "snippet": "<li>Product catalogs (monitor engagement)</li>"
+      },
+      {
+        "term": "track",
+        "snippet": "<li>Campaign materials (track usage)</li>"
+      },
+      {
+        "term": "monitor",
+        "snippet": "heck your MaiPDF dashboard regularly to monitor document views and access patterns. Thi"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li><a href=\"pdf-tracking-analytics\">Document Analytics Guide</a>"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-security-features.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/ebook-preview.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "rotection, view limits, watermarks, and tracking. Best practices for content creators an"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ebook preview protection, ebook preview tracking, ebook preview analytics, ebook preview"
+      },
+      {
+        "term": "tracking",
+        "snippet": "h password protection, view limits, and tracking. Protect your intellectual property.\">"
+      },
+      {
+        "term": "tracking",
+        "snippet": "h password protection, view limits, and tracking using MaiPDF.\">     <link rel=\"canonica"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "ithout Downloads, Password Protection & Tracking | MaiPDF</title>     <!-- Bootstrap CSS"
+      },
+      {
+        "term": "tracking",
+        "snippet": "rotection, view limits, watermarks, and tracking. Best practices for content creators an"
+      },
+      {
+        "term": "tracking",
+        "snippet": "w limits, watermarks, and comprehensive tracking analytics. Perfect for content creators"
+      },
+      {
+        "term": "Track",
+        "snippet": "G --> J[💧 Add Watermarks]     G --> K[🔔 Track Access]          H --> L[🔗 Generate Pre"
+      },
+      {
+        "term": "Track",
+        "snippet": "load Blocked]     N -->|Share Link| Q[📊 Track Sharing]          O --> R[📋 Collect Ana"
+      },
+      {
+        "term": "Track",
+        "snippet": "alytics</h4>                         <p>Track detailed analytics on who views your pr"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "class=\"badge bg-primary\">Step 5</span> Monitor Analytics</h4>                 <p>Track"
+      },
+      {
+        "term": "Track",
+        "snippet": "nitor Analytics</h4>                 <p>Track viewer engagement through MaiPDF's anal"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "t through MaiPDF's analytics dashboard. Monitor:</p>                 <ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "/li>                     <li>Conversion tracking (if integrated with your sales platform"
+      },
+      {
+        "term": "Track",
+        "snippet": "<ul>                     <li><strong>Track Engagement Metrics:</strong> Monitor wh"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "rong>Track Engagement Metrics:</strong> Monitor which pages get the most views to under"
+      },
+      {
+        "term": "track",
+        "snippet": "d protection for exclusive previews and track engagement to identify interested buyer"
+      },
+      {
+        "term": "track",
+        "snippet": "class=\"mt-4\">                 <h4>Can I track who views my preview?</h4>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/free-pdf-sharing-online-zh.html",
+    "sensitive": [
+      {
+        "term": "追踪",
+        "snippet": "访问统计       地域分析       设备信息       时间追踪     分享方式       链接分享       二维码分享       嵌"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li class=\"mb-3\"><a href=\"/features/zh/tracking/pdf-analytics\" class=\"text-decoration-n"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/zh-workflows.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/index.html",
+    "sensitive": [
+      {
+        "term": "Tracking",
+        "snippet": "</div>         </div>          <!-- Tracking & Analytics -->         <div class=\"row"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "itle\"><i class=\"fas fa-chart-line\"></i> Tracking & Analytics</h2>                 <div c"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<h5 class=\"card-title\">PDF Tracking & Analytics</h5>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<a href=\"pdf-tracking-analytics\" class=\"btn btn-primary\">Read"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/images/maipdf的首页入口.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/internal-company-docs-sharing.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "mits, expiration dates, watermarks, and tracking. Best practices for secure internal doc"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ument access control, internal document tracking, company document management, secure in"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ion, view limits, expiration dates, and tracking. Prevent unauthorized forwarding and pr"
+      },
+      {
+        "term": "tracking",
+        "snippet": "s securely with password protection and tracking using MaiPDF.\">     <link rel=\"canonica"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "Forwarding Risks, Password Protection & Tracking | MaiPDF</title>     <script async src="
+      },
+      {
+        "term": "tracking",
+        "snippet": "on dates, watermarks, and comprehensive tracking. Maintain control over your internal do"
+      },
+      {
+        "term": "monitor",
+        "snippet": "4\">                             <li>You monitor access logs to confirm who has viewed i"
+      },
+      {
+        "term": "Track",
+        "snippet": "-icon\"></i>                         <h4>Track Viewers</h4>                         <p"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "Viewers</h4>                         <p>Monitor viewer IPs and access timestamps</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<a href=\"../features/pdf-tracking-analytics\" class=\"btn btn-outline-prima"
+      },
+      {
+        "term": "Track",
+        "snippet": "<i class=\"fas fa-chart-line\"></i> Track Document Usage"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li><a href=\"../features/pdf-tracking-analytics\"><i class=\"fas fa-chart-line\""
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"><i class=\"fas fa-chart-line\"></i> PDF Tracking & Analytics</a></li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "><a href=\"../features/dynamic-watermark-tracking\"><i class=\"fas fa-tint\"></i> Dynamic Wa"
+      },
+      {
+        "term": "tracking",
+        "snippet": "mits, expiration dates, watermarks, and tracking. Best practices for preventing unauthor"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-images/maipdf_landing_page.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-images/result_of_pdf_link_and_qr_code.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/pdf-link-and-qr-code.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/qrwatermark.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/limit-pdf-access-times-en.html",
+    "sensitive": [
+      {
+        "term": "Tracking",
+        "snippet": "<td><strong>Access Tracking</strong></td>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "features/en/watermark/dynamic-watermark-tracking\" class=\"text-decoration-none\"><i class="
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li class=\"mb-3\"><a href=\"/features/en/tracking/pdf-tracking-analytics\" class=\"text-dec"
+      },
+      {
+        "term": "tracking",
+        "snippet": "b-3\"><a href=\"/features/en/tracking/pdf-tracking-analytics\" class=\"text-decoration-none\""
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/limit-pdf-open-times.html",
+    "sensitive": [
+      {
+        "term": "追踪",
+        "snippet": "<li><strong>追踪访问行为：</strong>每次访问都有详细记录，便于安全审计</li>"
+      },
+      {
+        "term": "监控",
+        "snippet": "<li><strong>实时监控：</strong>管理员可实时查看文档访问情况和剩余次数</li>"
+      },
+      {
+        "term": "追踪",
+        "snippet": "<td><strong>访问记录追踪</strong></td>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/features/zh/tracking/pdf-analytics\" class=\"text-decoration-n"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/maipdf-convert-promo-ar.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-promo-de.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-promo-fr.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-promo-ja.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-promo-ko.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-promo-zh.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-promo.html",
+    "sensitive": [
+      {
+        "term": "Tracking",
+        "snippet": "<tr>                 <td>Session Tracking & Analytics</td>                 <td><i"
+      },
+      {
+        "term": "track",
+        "snippet": "ur images to deter unauthorized use and track document sharing.</li>         <li><str"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "aring.</li>         <li><strong>Session Tracking:</strong> Monitor who views your docume"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "<li><strong>Session Tracking:</strong> Monitor who views your documents and when, with"
+      },
+      {
+        "term": "track",
+        "snippet": "opying your content. Control access and track document usage in real-time.</p>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "mation</li>         <li><strong>Session Tracking:</strong> Monitors every access event w"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "iv class=\"tip-content\">             <h3>Monitor Document Usage</h3>             <p>Take"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<p>Take advantage of session tracking and analytics to understand how your do"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-tool-ar.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-tool-de.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-tool-en.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-pdf-to-image.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-tool-fr.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-tool-ja.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-tool-ko.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/maipdf-convert-tool-zh.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maiconver.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/zh-pdf-to-image.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-ar-new.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-ar.html",
+    "sensitive": [],
+    "images": []
+  },
+  {
+    "file": "article/offline-maipdf-cn.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/zh-pdf-sharing-workflow-animation.svg",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/upload_section_offline_maipdf.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/security_setting.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/result-check-change.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/success_example_offline_file_change.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/result_download_zip_file.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-de.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-en-new.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-en.html",
+    "sensitive": [
+      {
+        "term": "Tracking",
+        "snippet": "hile sharing files.</p>      <h3>Access Tracking</h3>     <p>Each verification request r"
+      },
+      {
+        "term": "track",
+        "snippet": "Want to modify content in real-time and track reading?</p>     <p>Then cooperate with"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-offline-version.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-ja-new.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-ja.html",
+    "sensitive": [],
+    "images": []
+  },
+  {
+    "file": "article/offline-maipdf-ko-new.html",
+    "sensitive": [],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-pdf-sharing-workflow-animation.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/offline-maipdf-ko.html",
+    "sensitive": [],
+    "images": []
+  },
+  {
+    "file": "article/offline-maipdf.html",
+    "sensitive": [],
+    "images": []
+  },
+  {
+    "file": "article/online-pdf-viewer.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "ures</li>                     <li>Usage tracking and analytics</li>                 </ul"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<h4><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "h4><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a></h4>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ics</a></h4>                         <p>Monitor document usage effectively</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-control-lost.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "ol, PDF security, document sharing, PDF tracking, document control\">     <meta name=\"aut"
+      },
+      {
+        "term": "Track",
+        "snippet": "ass=\"feature-list\">                 <li>Track every view and download</li>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-link-sharing-guide-en.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "nk sharing expiration, PDF link sharing tracking, PDF link sharing analytics, PDF link s"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "Free Online with Password Protection & Tracking | MaiPDF</title>          <!-- Bootstra"
+      },
+      {
+        "term": "tracking",
+        "snippet": "g> Password-protected links with access tracking for sensitive financial data</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "as fa-check text-success\"></i> Detailed tracking</td>                             <td><i"
+      },
+      {
+        "term": "tracking",
+        "snippet": "lass=\"fas fa-times text-danger\"></i> No tracking</td>                             <td><i"
+      },
+      {
+        "term": "monitor",
+        "snippet": ">                         <li>Regularly monitor access logs</li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "features/en/watermark/dynamic-watermark-tracking\" class=\"text-decoration-none\"><i class="
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li class=\"mb-2\"><a href=\"/features/en/tracking/pdf-tracking-analytics\" class=\"text-dec"
+      },
+      {
+        "term": "tracking",
+        "snippet": "b-2\"><a href=\"/features/en/tracking/pdf-tracking-analytics\" class=\"text-decoration-none\""
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-link-sharing-guide-zh.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li class=\"mb-2\"><a href=\"/features/zh/tracking/pdf-analytics\" class=\"text-decoration-n"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-qr-code-guide-en.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "tection, expiration dates, view limits, tracking, and offline sharing. Free PDF to QR co"
+      },
+      {
+        "term": "tracking",
+        "snippet": "code with expiration, PDF QR code with tracking, PDF QR code for business, PDF QR code"
+      },
+      {
+        "term": "tracking",
+        "snippet": "sword protection, expiration dates, and tracking. Free PDF to QR code generator.\">     <"
+      },
+      {
+        "term": "tracking",
+        "snippet": "o QR codes with password protection and tracking.\">     <link rel=\"canonical\" href=\"http"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "Free Online with Password Protection & Tracking | MaiPDF</title>          <!-- Bootstra"
+      },
+      {
+        "term": "tracking",
+        "snippet": "tection, expiration dates, view limits, tracking, and offline sharing support. Perfect f"
+      },
+      {
+        "term": "Track",
+        "snippet": "<h4 class=\"mt-2\">Track Analytics</h4>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "s=\"fas fa-check text-success\"></i> Full tracking</td>                             <td><i"
+      },
+      {
+        "term": "tracking",
+        "snippet": "lass=\"fas fa-times text-danger\"></i> No tracking</td>                             <td><i"
+      },
+      {
+        "term": "tracking",
+        "snippet": "fas fa-minus text-warning\"></i> Limited tracking</td>                         </tr>"
+      },
+      {
+        "term": "track",
+        "snippet": "<div class=\"faq-question\">Q: Can I track who scans my QR code?</div>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li><a href=\"/features/en/tracking/pdf-view-analytics\" class=\"text-decorat"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-qr-code-guide-zh.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li><a href=\"/features/zh/tracking/pdf-view-analytics\" class=\"text-decorat"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/zh-qr-code.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/pdf-qr-code-sharing-easy.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-share-expire.html",
+    "sensitive": [
+      {
+        "term": "track",
+        "snippet": "Limit PDF opens, revoke access anytime, track viewers, and protect sensitive document"
+      },
+      {
+        "term": "track",
+        "snippet": "ow many times a document can be opened, track access, and revoke links anytime when s"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "lor);\"></i>                         <h4>Tracking</h4>                         <p>Monitor"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "racking</h4>                         <p>Monitor views and detect suspicious access patt"
+      },
+      {
+        "term": "Track",
+        "snippet": "ol</li>                             <li>Track document access</li>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "front</li>                         <li>Monitor document access and usage</li>"
+      },
+      {
+        "term": "track",
+        "snippet": "s</li>                         <li>Keep track of shared links and revoke access when"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "om\"><i class=\"fas fa-eye\"></i> Document Tracking</a></li>                     </ul>"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/images/lockpdf.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/pdf-sharing-methods.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "nk, share PDF via email, share PDF with tracking, share PDF with expiration, share PDF w"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ely with password protection, QR codes, tracking, and access control. Best practices for"
+      },
+      {
+        "term": "tracking",
+        "snippet": "with password protection, QR codes, and tracking.\">     <meta name=\"twitter:image\" conte"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "ine Securely with Password Protection & Tracking | MaiPDF</title>     <link rel=\"stylesh"
+      },
+      {
+        "term": "tracking",
+        "snippet": "share PDF with QR code, share PDF with tracking, PDF sharing best practices\",         \""
+      },
+      {
+        "term": "track",
+        "snippet": "ng their identity, though you can still track anonymous usage statistics.\""
+      },
+      {
+        "term": "tracking",
+        "snippet": "<small>Detailed tracking and insights</small>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "features like version control, comment tracking, and real-time updates.</li>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "s.</li>                     <li><strong>Tracking and Analytics Needs:</strong> Business"
+      },
+      {
+        "term": "tracking",
+        "snippet": "fa-check text-success me-2\"></i>Access tracking</li>                             </ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "a-check text-success me-2\"></i>Delivery tracking</li>                             </ul>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "<li>                     <strong>Monitor Document Usage Actively</strong>"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "/strong>                     <p>Regular monitoring helps identify suspicious activity earl"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "s.</li>                     <li><strong>Monitor Geographic Access:</strong> Set up aler"
+      },
+      {
+        "term": "monitor",
+        "snippet": "noring Access Logs:</strong> Failing to monitor who accesses your documents leaves you"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-sharing-security.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "trol, watermarks, expiration dates, and tracking. Best practices for secure PDF sharing"
+      },
+      {
+        "term": "tracking",
+        "snippet": "rol, PDF sharing watermark, PDF sharing tracking, PDF sharing expiration, PDF sharing be"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "ization, PDF sharing audit, PDF sharing monitoring, PDF sharing security tips, how to shar"
+      },
+      {
+        "term": "tracking",
+        "snippet": "tion, DRM security, access control, and tracking. Best practices for PDF sharing securit"
+      },
+      {
+        "term": "Monitoring",
+        "snippet": "<h5>Real-time Monitoring</h5>                                 <s"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<small>Live access tracking</small>                             </d"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "> L[Dynamic Watermark]     E --> M[User Tracking]          F --> N[🔢 View Count Limits]"
+      },
+      {
+        "term": "Track",
+        "snippet": "| S[❌ Access Denied]          R --> T[📊 Track Analytics]          style A fill:#dbeaf"
+      },
+      {
+        "term": "tracking",
+        "snippet": "/a> and <a href=\"/article/user-behavior-tracking\">tracking user behavior</a> for compreh"
+      },
+      {
+        "term": "tracking",
+        "snippet": "href=\"/article/user-behavior-tracking\">tracking user behavior</a> for comprehensive doc"
+      },
+      {
+        "term": "tracking",
+        "snippet": "d sharing through <a href=\"/article/pdf-tracking-analytics\">tracking analytics</a></li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "href=\"/article/pdf-tracking-analytics\">tracking analytics</a></li>"
+      },
+      {
+        "term": "Track",
+        "snippet": "lytics</a></li>                     <li>Track document usage with real-time monitorin"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "<li>Track document usage with real-time monitoring</li>                     <li>Maintain d"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ial\" font-size=\"14\" fill=\"#7f1d1d\">• No tracking</text>                         <text x="
+      },
+      {
+        "term": "tracking",
+        "snippet": "nt-size=\"14\" fill=\"#064e3b\">• Real-time tracking</text>                         <text x="
+      },
+      {
+        "term": "tracking",
+        "snippet": "nt-size=\"14\" fill=\"#064e3b\">• Watermark tracking</text>                     </g>"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "es with enterprise-grade protection and monitoring capabilities. Explore our <a href=\"/fea"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<p>Real-time watermark protection and tracking</p>                             <ul cla"
+      },
+      {
+        "term": "tracking",
+        "snippet": "-check text-success me-2\"></i>Timestamp tracking</li>                                 <l"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ion</li>                     <li>Access tracking</li>                 </ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "levels</li>                 <li>Enable tracking features</li>                 <li>Use w"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-to-qr-tutorial.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/pdf-tracking-analytics.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "<meta name=\"description\" content=\"PDF tracking and analytics guide - Master PDF docume"
+      },
+      {
+        "term": "tracking",
+        "snippet": "d analytics guide - Master PDF document tracking with MaiPDF. Learn how to track PDF vie"
+      },
+      {
+        "term": "track",
+        "snippet": "ment tracking with MaiPDF. Learn how to track PDF views, monitor PDF access, analyze"
+      },
+      {
+        "term": "monitor",
+        "snippet": "h MaiPDF. Learn how to track PDF views, monitor PDF access, analyze PDF usage statistic"
+      },
+      {
+        "term": "track",
+        "snippet": "F access, analyze PDF usage statistics, track PDF engagement metrics, and generate co"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ve PDF analytics reports. Real-time PDF tracking, geographic PDF analytics, and user beh"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<meta name=\"keywords\" content=\"PDF tracking, PDF analytics, track PDF views, track"
+      },
+      {
+        "term": "track",
+        "snippet": "\" content=\"PDF tracking, PDF analytics, track PDF views, track PDF access, PDF usage"
+      },
+      {
+        "term": "track",
+        "snippet": "acking, PDF analytics, track PDF views, track PDF access, PDF usage statistics, PDF v"
+      },
+      {
+        "term": "tracking",
+        "snippet": "agement metrics, PDF insights, document tracking, PDF monitoring, PDF access tracking, P"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "s, PDF insights, document tracking, PDF monitoring, PDF access tracking, PDF view tracking"
+      },
+      {
+        "term": "tracking",
+        "snippet": "nt tracking, PDF monitoring, PDF access tracking, PDF view tracking, PDF analytics dashb"
+      },
+      {
+        "term": "tracking",
+        "snippet": "nitoring, PDF access tracking, PDF view tracking, PDF analytics dashboard, PDF tracking"
+      },
+      {
+        "term": "tracking",
+        "snippet": "tracking, PDF analytics dashboard, PDF tracking tool, PDF analytics report, track PDF d"
+      },
+      {
+        "term": "track",
+        "snippet": "DF tracking tool, PDF analytics report, track PDF downloads, PDF geographic analytics"
+      },
+      {
+        "term": "tracking",
+        "snippet": "geographic analytics, PDF user behavior tracking, PDF engagement tracking, PDF performan"
+      },
+      {
+        "term": "tracking",
+        "snippet": "user behavior tracking, PDF engagement tracking, PDF performance analytics, PDF access"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ormance analytics, PDF access logs, PDF tracking software, PDF analytics platform, busin"
+      },
+      {
+        "term": "tracking",
+        "snippet": "e, PDF analytics platform, business PDF tracking, PDF document analytics\">     <meta nam"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">     <meta property=\"og:titl"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<meta property=\"og:title\" content=\"PDF Tracking and Analytics Guide - Track PDF Views &"
+      },
+      {
+        "term": "Track",
+        "snippet": "ent=\"PDF Tracking and Analytics Guide - Track PDF Views & Access | MaiPDF\">     <meta"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ty=\"og:description\" content=\"Master PDF tracking and analytics. Learn how to track PDF v"
+      },
+      {
+        "term": "track",
+        "snippet": "DF tracking and analytics. Learn how to track PDF views, monitor PDF access, analyze"
+      },
+      {
+        "term": "monitor",
+        "snippet": "nalytics. Learn how to track PDF views, monitor PDF access, analyze usage statistics, a"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ensive analytics reports. Real-time PDF tracking with MaiPDF.\">     <meta property=\"og:i"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics.html\">     <meta property=\"og"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<meta name=\"twitter:title\" content=\"PDF Tracking and Analytics Guide - Track PDF Views &"
+      },
+      {
+        "term": "Track",
+        "snippet": "ent=\"PDF Tracking and Analytics Guide - Track PDF Views & Access\">     <meta name=\"tw"
+      },
+      {
+        "term": "track",
+        "snippet": "tter:description\" content=\"Learn how to track PDF views, monitor access, and analyze"
+      },
+      {
+        "term": "monitor",
+        "snippet": "content=\"Learn how to track PDF views, monitor access, and analyze usage statistics. C"
+      },
+      {
+        "term": "tracking",
+        "snippet": "usage statistics. Complete guide to PDF tracking and analytics.\">     <meta name=\"twitte"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "es/maipdf-og-image.png\">     <title>PDF Tracking and Analytics Guide - How to Track PDF"
+      },
+      {
+        "term": "Track",
+        "snippet": "F Tracking and Analytics Guide - How to Track PDF Views, Monitor Access & Analyze Usa"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "alytics Guide - How to Track PDF Views, Monitor Access & Analyze Usage Statistics | Mai"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "e\": \"Article\",         \"headline\": \"PDF Tracking and Analytics Guide - Track PDF Views &"
+      },
+      {
+        "term": "Track",
+        "snippet": "e\": \"PDF Tracking and Analytics Guide - Track PDF Views & Access\",         \"descripti"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ss\",         \"description\": \"Master PDF tracking and analytics with MaiPDF. Learn how to"
+      },
+      {
+        "term": "track",
+        "snippet": "and analytics with MaiPDF. Learn how to track PDF views, monitor PDF access, analyze"
+      },
+      {
+        "term": "monitor",
+        "snippet": "h MaiPDF. Learn how to track PDF views, monitor PDF access, analyze PDF usage statistic"
+      },
+      {
+        "term": "track",
+        "snippet": "F access, analyze PDF usage statistics, track PDF engagement metrics, and generate co"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ve PDF analytics reports. Real-time PDF tracking, geographic analytics, and user behavio"
+      },
+      {
+        "term": "tracking",
+        "snippet": "\"https://sendpdfonline.com/article/pdf-tracking-analytics.html\"         },         \"art"
+      },
+      {
+        "term": "tracking",
+        "snippet": "DF Analytics\",         \"keywords\": \"PDF tracking, PDF analytics, track PDF views, track"
+      },
+      {
+        "term": "track",
+        "snippet": "eywords\": \"PDF tracking, PDF analytics, track PDF views, track PDF access, PDF usage"
+      },
+      {
+        "term": "track",
+        "snippet": "acking, PDF analytics, track PDF views, track PDF access, PDF usage statistics, PDF v"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "ition\": 3,                 \"name\": \"PDF Tracking and Analytics Guide\",                 \""
+      },
+      {
+        "term": "tracking",
+        "snippet": "\"https://sendpdfonline.com/article/pdf-tracking-analytics.html\"             }         ]"
+      },
+      {
+        "term": "tracking",
+        "snippet": "uestion\",                 \"name\": \"What tracking metrics does MaiPDF provide?\","
+      },
+      {
+        "term": "track",
+        "snippet": "ss. Without email verification, you can track anonymous views with device, location,"
+      },
+      {
+        "term": "track",
+        "snippet": "estion\",                 \"name\": \"Can I track which pages readers spend the most time"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "mb-item active\" aria-current=\"page\">PDF Tracking and Analytics Guide</li>             </"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<h1 class=\"display-4 mb-4\">PDF Tracking and Analytics Guide - Track PDF Views,"
+      },
+      {
+        "term": "Track",
+        "snippet": "b-4\">PDF Tracking and Analytics Guide - Track PDF Views, Monitor Access & Analyze Usa"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "and Analytics Guide - Track PDF Views, Monitor Access & Analyze Usage</h1>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<p class=\"lead mb-4\">Master PDF tracking and analytics with MaiPDF. Learn how to"
+      },
+      {
+        "term": "track",
+        "snippet": "and analytics with MaiPDF. Learn how to track PDF views, monitor PDF access, analyze"
+      },
+      {
+        "term": "monitor",
+        "snippet": "h MaiPDF. Learn how to track PDF views, monitor PDF access, analyze PDF usage statistic"
+      },
+      {
+        "term": "track",
+        "snippet": "F access, analyze PDF usage statistics, track PDF engagement metrics, and generate co"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ve PDF analytics reports. Real-time PDF tracking, geographic analytics, and user behavio"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "lowcharts/en-user-journey.svg\" alt=\"PDF Tracking User Journey\" style=\"max-width: 100%; h"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<h5>Real-time Tracking</h5>                                 <s"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "<small>Live document monitoring</small>                             </d"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "class=\"btn btn-light btn-lg me-3\">Start Tracking Free</a>             <a href=\"#analytic"
+      },
+      {
+        "term": "track",
+        "snippet": "ecent studies, businesses that actively track document analytics see a 40% improvemen"
+      },
+      {
+        "term": "Track",
+        "snippet": "<ul>                     <li><strong>Track Document Access and Usage Patterns:</st"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "e.</li>                     <li><strong>Monitor Viewer Engagement:</strong> Measure how"
+      },
+      {
+        "term": "Track",
+        "snippet": "trong>Security and Compliance:</strong> Track all access attempts, identify suspiciou"
+      },
+      {
+        "term": "Track",
+        "snippet": "eness of your document sharing efforts. Track how many recipients actually view your"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "se-grade analytics tools with real-time monitoring and comprehensive insights into your do"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<h4>Real-time View Tracking</h4>                             <p>Mon"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ing</h4>                             <p>Monitor document access with live updates and d"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "heck text-success me-2\"></i>Live access monitoring</li>                                 <l"
+      },
+      {
+        "term": "tracking",
+        "snippet": "heck text-success me-2\"></i>Access time tracking</li>                             </ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "-check text-success me-2\"></i>Page view tracking</li>                                 <l"
+      },
+      {
+        "term": "Track",
+        "snippet": "hts</h4>                             <p>Track document access by location and analyze"
+      },
+      {
+        "term": "tracking",
+        "snippet": "fa-check text-success me-2\"></i>Device tracking</li>                             </ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ument to the MaiPDF platform. Analytics tracking is automatically enabled for all upload"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<strong>Enable Advanced Tracking Features</strong>                     <"
+      },
+      {
+        "term": "tracking",
+        "snippet": ">                     <p>Configure your tracking preferences in the document settings. E"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li>Geographic location tracking</li>                         <li>Device"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<li><strong>Set Clear Tracking Objectives:</strong> Before sharing doc"
+      },
+      {
+        "term": "tracking",
+        "snippet": "u want to learn from analytics. Are you tracking security, engagement, distribution effe"
+      },
+      {
+        "term": "tracking",
+        "snippet": "pliance:</strong> Ensure your analytics tracking complies with privacy regulations (GDPR"
+      },
+      {
+        "term": "Track",
+        "snippet": "<ul>                     <li>Track which clients view your proposals and f"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "proposals</li>                     <li>Monitor access to ensure only authorized partie"
+      },
+      {
+        "term": "Track",
+        "snippet": "<ul>                     <li>Track student engagement with course material"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "st time on</li>                     <li>Monitor access to prevent unauthorized distribu"
+      },
+      {
+        "term": "Track",
+        "snippet": "compliance</li>                     <li>Track all access attempts for security invest"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "class=\"btn btn-light btn-lg me-3\">Start Tracking Free</a>                 <a href=\"#anal"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-user-journey.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/pdf-view-limits-security.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "d with view limits, access control, and tracking. Best practices for PDF view limits sec"
+      },
+      {
+        "term": "tracking",
+        "snippet": "PDF view limit control, PDF view limit tracking, PDF view limit protection, PDF view li"
+      },
+      {
+        "term": "tracking",
+        "snippet": "s. Control PDF access with view limits, tracking, and access control.\">     <meta proper"
+      },
+      {
+        "term": "tracking",
+        "snippet": "itive documents with access control and tracking.\">     <link rel=\"canonical\" href=\"http"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "nsitive Documents with Access Control & Tracking | MaiPDF</title>     <link rel=\"stylesh"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "Control</h3>                         <p>Monitor and track exactly how many times your d"
+      },
+      {
+        "term": "track",
+        "snippet": "<p>Monitor and track exactly how many times your document ha"
+      },
+      {
+        "term": "tracking",
+        "snippet": "rks</li>                     <li>Access tracking</li>                 </ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "li><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a></li>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/qr-code-pdf-scenarios.html",
+    "sensitive": [
+      {
+        "term": "追踪",
+        "snippet": "PDF二维码次数限制, PDF二维码有效期, PDF二维码水印, PDF二维码追踪, PDF二维码营销, PDF二维码教程, MaiPDF二维码\">     <m"
+      },
+      {
+        "term": "tracking",
+        "snippet": "=\"https://sendpdfonline.com/article/pdf-tracking-analytics\">PDF Analytics</a></h5>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<p class=\"card-text small\">Track and analyze PDF engagement</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/replace-pdf-without-changing-link-zh.html",
+    "sensitive": [
+      {
+        "term": "追踪",
+        "snippet": "class=\"text-muted mb-0\">查看历史和分析数据保持完整。可追踪谁访问了新旧版本。</p>"
+      },
+      {
+        "term": "追踪",
+        "snippet": "</li>                             <li>✅ 追踪记录</li>                         </ul>"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/zh-replace-animation.svg",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/zh-replace-link-comparison.svg",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/zh-replace-file.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/replace-pdf-without-changing-link.html",
+    "sensitive": [
+      {
+        "term": "Track",
+        "snippet": "ew history and analytics remain intact. Track who accessed both old and new versions."
+      },
+      {
+        "term": "Tracking",
+        "snippet": "</li>                             <li>✅ Tracking records</li>                         </"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-replace-animation.svg",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-replace-link-comparison.svg",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-flowcharts/en-replace-file.svg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/sales-pitch-decks.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "dates, watermarks, access control, and tracking. Prevent unauthorized forwarding to com"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ection, pitch deck password, pitch deck tracking, pitch deck expiration, pitch deck wate"
+      },
+      {
+        "term": "tracking",
+        "snippet": ", view-only mode, expiration dates, and tracking. Prevent unauthorized forwarding to com"
+      },
+      {
+        "term": "tracking",
+        "snippet": "s securely with password protection and tracking using MaiPDF.\">     <link rel=\"canonica"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "Forwarding Risks, Password Protection & Tracking | MaiPDF</title>     <!-- Bootstrap CSS"
+      },
+      {
+        "term": "tracking",
+        "snippet": "mode, expiration dates, watermarks, and tracking. Prevent unauthorized forwarding to com"
+      },
+      {
+        "term": "tracking",
+        "snippet": "arks, access control, and comprehensive tracking. Prevent unauthorized forwarding to com"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ch slides they focused on. This lack of tracking makes it impossible to detect unauthori"
+      },
+      {
+        "term": "Track",
+        "snippet": "alytics</h4>                         <p>Track detailed analytics on who accessed your"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "class=\"badge bg-primary\">Step 5</span> Monitor Access and Engagement</h4>"
+      },
+      {
+        "term": "Track",
+        "snippet": "and Engagement</h4>                 <p>Track pitch deck access through MaiPDF's anal"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "s through MaiPDF's analytics dashboard. Monitor who viewed your deck, when they accesse"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "<ul>                     <li><strong>Monitor Access Patterns:</strong> Track who vie"
+      },
+      {
+        "term": "Track",
+        "snippet": "trong>Monitor Access Patterns:</strong> Track who views your deck, when they access i"
+      },
+      {
+        "term": "track",
+        "snippet": "<li>Used analytics to track investor engagement and identify most i"
+      },
+      {
+        "term": "tracking",
+        "snippet": "and partners. Enable view-only mode and tracking to prevent unauthorized sharing while m"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ams are using materials correctly while tracking engagement to improve sales effectivene"
+      },
+      {
+        "term": "track",
+        "snippet": "class=\"mt-4\">                 <h4>Can I track who viewed my pitch deck?</h4>"
+      },
+      {
+        "term": "monitor",
+        "snippet": "iewed, and engagement patterns. You can monitor all deck access in real-time.</p>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/secure-pdf-sharing-guide.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "limits, expiration dates, and real-time tracking. Best practices for secure PDF sharing"
+      },
+      {
+        "term": "tracking",
+        "snippet": "hare PDF with watermark, share PDF with tracking, share PDF with access control, share P"
+      },
+      {
+        "term": "tracking",
+        "snippet": "h password protection, DRM, watermarks, tracking, and access control. Best practices for"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ssword protection, DRM, watermarks, and tracking.\">     <meta name=\"twitter:image\" conte"
+      },
+      {
+        "term": "tracking",
+        "snippet": "limits, expiration dates, and real-time tracking. Best practices for secure PDF sharing"
+      },
+      {
+        "term": "track",
+        "snippet": "control. You can revoke access anytime, track all views, add password protection, set"
+      },
+      {
+        "term": "tracking",
+        "snippet": "limits, expiration dates, and real-time tracking. Best practices for secure PDF sharing"
+      },
+      {
+        "term": "Monitoring",
+        "snippet": "<h5>Real-time Monitoring</h5>                                 <s"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<small>Live access tracking</small>                             </d"
+      },
+      {
+        "term": "track",
+        "snippet": "ay to revoke access, update content, or track usage, leaving you vulnerable to unauth"
+      },
+      {
+        "term": "Track",
+        "snippet": "<li><strong>Inability to Track Document Usage:</strong> Without analyt"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "tures with comprehensive protection and monitoring capabilities.</p>              <div cla"
+      },
+      {
+        "term": "tracking",
+        "snippet": "-check text-success me-2\"></i>Timestamp tracking</li>                                 <l"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "<li>                     <strong>Monitor Document Access and Usage Actively</str"
+      },
+      {
+        "term": "Track",
+        "snippet": "<ul>                         <li>Track all access attempts (successful and fai"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "tivity</li>                         <li>Monitor geographic access to detect unauthorize"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "k.</li>                     <li><strong>Monitor Access Regularly:</strong> Check your a"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<li><strong>Enable Comprehensive View Tracking:</strong> Track all access attempts, no"
+      },
+      {
+        "term": "Track",
+        "snippet": "e Comprehensive View Tracking:</strong> Track all access attempts, not just successfu"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ss attempts, not just successful views. Monitor who accessed your PDF, when, from where"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "F.</li>                     <li><strong>Monitor Geographic Access:</strong> Set up aler"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "<li>Real-time monitoring</li>                         </ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": ">                             <li>Basic tracking</li>                         </ul>"
+      },
+      {
+        "term": "monitor",
+        "snippet": "noring Access Logs:</strong> Failing to monitor access logs leaves you blind to securit"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<h4><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "h4><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a></h4>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ics</a></h4>                         <p>Monitor and analyze document usage effectively<"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/secure-pricing-sheets.html",
+    "sensitive": [
+      {
+        "term": "Track",
+        "snippet": "<li><strong>Analytics:</strong> Track views, time spent, and user interaction"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-images/lockpdf.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-images/pdf_icon_of_no_printing_no_downloading.png",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/send-pdf-online.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "es, watermark protection, and real-time tracking. Free PDF sending tool, no registration"
+      },
+      {
+        "term": "tracking",
+        "snippet": ", send PDF with password, send PDF with tracking, send PDF with expiration, send PDF wit"
+      },
+      {
+        "term": "tracking",
+        "snippet": "F online free with password protection, tracking, and access control. Complete guide to"
+      },
+      {
+        "term": "tracking",
+        "snippet": "s online free with password protection, tracking, and access control. Learn secure PDF s"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "PDF Sending with Password Protection & Tracking | MaiPDF</title>     <link rel=\"canonic"
+      },
+      {
+        "term": "tracking",
+        "snippet": "es, watermark protection, and real-time tracking. Free PDF sending tool, no registration"
+      },
+      {
+        "term": "tracking",
+        "snippet": ", send PDF with password, send PDF with tracking, send PDF with expiration\",         \"in"
+      },
+      {
+        "term": "tracking",
+        "snippet": "es, watermark protection, and real-time tracking. Free PDF sending tool with enterprise-"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<h5>Real-time Tracking</h5>                                 <s"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "<small>Live access monitoring</small>                             </d"
+      },
+      {
+        "term": "tracking",
+        "snippet": "driven by the need for better security, tracking capabilities, and user experience.</p>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<li><strong>Real-time Delivery Tracking:</strong> Know exactly when your PDF is"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "trong>Comprehensive Analytics:</strong> Monitor document usage, track viewer engagement"
+      },
+      {
+        "term": "track",
+        "snippet": "ytics:</strong> Monitor document usage, track viewer engagement, and gain insights in"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ng PDFs with comprehensive security and tracking capabilities.</p>              <div cla"
+      },
+      {
+        "term": "tracking",
+        "snippet": "fa-check text-success me-2\"></i>Access tracking</li>                                 <l"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "y.</li>                     <li><strong>Monitor Access Regularly:</strong> Check your a"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li>IP address tracking</li>                         </ul>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "a-chart-line\"></i> Comprehensive Access Tracking & Analytics</h3>                 <p>Mai"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<li><strong>View Tracking:</strong> See exactly when and how many"
+      },
+      {
+        "term": "Track",
+        "snippet": "i><strong>User Identification:</strong> Track who viewed your document (when email ve"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "<li><strong>Geographic Data:</strong> Monitor access locations to identify suspicious"
+      },
+      {
+        "term": "Track",
+        "snippet": "li><strong>Engagement Metrics:</strong> Track time spent viewing, pages viewed, and s"
+      },
+      {
+        "term": "track",
+        "snippet": "<li>Allow downloads but track all access</li>                     <li"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<h4><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "h4><a href=\"pdf-tracking-analytics\">PDF Tracking & Analytics</a></h4>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ics</a></h4>                         <p>Monitor and analyze document usage effectively<"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/sensitive-documents-security.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": ", access control, expiration dates, and tracking. Best practices for sensitive document"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ment access control, sensitive document tracking, sensitive document watermark, sensitiv"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ontrol, expiration dates, and real-time tracking. Best practices for sensitive document"
+      },
+      {
+        "term": "tracking",
+        "snippet": "l</li>                 <li>Insufficient tracking and monitoring</li>             </ul>"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "<li>Insufficient tracking and monitoring</li>             </ul>         </div>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "icon\"></i>                     <h3>View Tracking</h3>                     <p>Monitor who"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ew Tracking</h3>                     <p>Monitor who accesses your documents and when</p"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/share-pdf-online.html",
+    "sensitive": [
+      {
+        "term": "Track",
+        "snippet": "PDF online free with complete control. Track who views your PDFs, prevent unauthoriz"
+      },
+      {
+        "term": "tracking",
+        "snippet": "share PDF with password, share PDF with tracking, share PDF with watermark, share PDF se"
+      },
+      {
+        "term": "tracking",
+        "snippet": "PDFs securely with password protection, tracking, watermark protection, and access contr"
+      },
+      {
+        "term": "tracking",
+        "snippet": "F online free with password protection, tracking, and access control. Secure PDF sharing"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "e PDF Sharing with Password Protection, Tracking & Watermark | MaiPDF</title>     <link"
+      },
+      {
+        "term": "tracking",
+        "snippet": "limits, expiration dates, and real-time tracking. Free PDF sharing tool, no registration"
+      },
+      {
+        "term": "tracking",
+        "snippet": "share PDF with password, share PDF with tracking, share PDF with watermark, secure PDF s"
+      },
+      {
+        "term": "tracking",
+        "snippet": "limits, expiration dates, and real-time tracking. All core features are completely free."
+      },
+      {
+        "term": "tracking",
+        "snippet": "arks, access control, and comprehensive tracking. You can set passwords, view limits, ex"
+      },
+      {
+        "term": "track",
+        "snippet": "estion\",                 \"name\": \"Can I track who views my shared PDF?\","
+      },
+      {
+        "term": "tracking",
+        "snippet": "\"text\": \"Yes, MaiPDF provides real-time tracking showing who accessed your PDF, when the"
+      },
+      {
+        "term": "monitor",
+        "snippet": "u'll receive detailed analytics and can monitor all access attempts live.\""
+      },
+      {
+        "term": "tracking",
+        "snippet": "e PDF sharing with password protection, tracking, watermarks, and access control. Start"
+      },
+      {
+        "term": "tracking",
+        "snippet": "line securely with password protection, tracking, and access control using MaiPDF\","
+      },
+      {
+        "term": "Track",
+        "snippet": ": 4,                 \"name\": \"Share and Track Access\",                 \"text\": \"Distr"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ough email, messaging, or social media. Monitor all access in real-time with detailed a"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "PDF Sharing with Password Protection & Tracking</h1>                                  <"
+      },
+      {
+        "term": "tracking",
+        "snippet": "limits, expiration dates, and real-time tracking. Enterprise-grade PDF sharing with adva"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<h5>Real-time Tracking</h5>"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "<small>Live access monitoring</small>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ts own encrypted link, real-time access tracking, and customizable security settings tha"
+      },
+      {
+        "term": "track",
+        "snippet": "ection, prevent unauthorized downloads, track every single access attempt, and revoke"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "s=\"fas fa-eye text-primary\"></i> Access Tracking & Monitoring</h4>"
+      },
+      {
+        "term": "Monitoring",
+        "snippet": "ye text-primary\"></i> Access Tracking & Monitoring</h4>                             <ul>"
+      },
+      {
+        "term": "Track",
+        "snippet": "ul>                                 <li>Track document access and usage in real-time<"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "li>                                 <li>Monitor who viewed your PDF and when</li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li>Geographic location tracking</li>                             </ul>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<td><strong>Real-time View Tracking</strong></td>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<td><strong>Geographic Tracking</strong></td>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<li>Track client engagement in real-time</li>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<li>Track paper review progress</li>"
+      },
+      {
+        "term": "track",
+        "snippet": "rty. Prevent unauthorized downloads and track which projects generate the most intere"
+      },
+      {
+        "term": "Track",
+        "snippet": "<li>Track which designs attract attention</li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "limits, expiration dates, and real-time tracking. All core features are completely free."
+      },
+      {
+        "term": "tracking",
+        "snippet": "arks, access control, and comprehensive tracking. You can set passwords, view limits, ex"
+      },
+      {
+        "term": "monitoring",
+        "snippet": "<li>Real-time access monitoring and alerts</li>"
+      },
+      {
+        "term": "track",
+        "snippet": "Can I track who views my shared PDF?"
+      },
+      {
+        "term": "tracking",
+        "snippet": "><strong>Yes, MaiPDF provides real-time tracking</strong> showing who accessed your PDF,"
+      },
+      {
+        "term": "monitor",
+        "snippet": "u'll receive detailed analytics and can monitor all access attempts live.</p>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "<p>Tracking features include:</p>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li>Geographic location tracking</li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "e PDF sharing with password protection, tracking, watermarks, and access control. Start"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li>Real-time tracking and analytics</li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/show-pdf-online.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "secure links, password protection, view tracking, and mobile support. Free PDF display t"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ine with password, show PDF online with tracking, show PDF online mobile, show PDF onlin"
+      },
+      {
+        "term": "tracking",
+        "snippet": "re links, password protection, and view tracking. Complete guide to displaying PDF files"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "ng PDF Files Online with Secure Links & Tracking | MaiPDF</title>     <link rel=\"stylesh"
+      },
+      {
+        "term": "tracking",
+        "snippet": "secure links, password protection, view tracking, and mobile support. Free PDF display t"
+      },
+      {
+        "term": "tracking",
+        "snippet": "tion</li>                     <li>Usage tracking and analytics</li>                 </ul"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "e viewing link</li>                 <li>Monitor viewer engagement</li>             </ol"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<h4><a href=\"./pdf-tracking-analytics\">PDF Tracking & Analytics</a>"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "><a href=\"./pdf-tracking-analytics\">PDF Tracking & Analytics</a></h4>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "ics</a></h4>                         <p>Monitor and analyze document usage effectively<"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ttps://article.maipdf.com/pdf-analytics-tracking/\" target=\"_blank\" rel=\"noopener\">PDF An"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"_blank\" rel=\"noopener\">PDF Analytics & Tracking</a></h5>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/time-limited-whitepapers-case-studies.html",
+    "sensitive": [
+      {
+        "term": "Monitor",
+        "snippet": "ntent\">                             <h4>Monitor engagement</h4>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "<li><a href=\"../features/pdf-tracking-analytics\"><i class=\"fas fa-chart-line\""
+      },
+      {
+        "term": "Tracking",
+        "snippet": "\"><i class=\"fas fa-chart-line\"></i> PDF Tracking & Analytics</a></li>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "><a href=\"../features/dynamic-watermark-tracking\"><i class=\"fas fa-tint\"></i> Dynamic Wa"
+      }
+    ],
+    "images": [
+      {
+        "url": "https://sendpdfonline.com/maipdf-images/qr-code-generation.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/maipdf-images/result_of_pdf_link_and_qr_code.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/qrwatermark.png",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/marketing-campaign.jpg",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/content-protection.jpg",
+        "status": null
+      },
+      {
+        "url": "https://sendpdfonline.com/images/digital-marketing.jpg",
+        "status": null
+      }
+    ]
+  },
+  {
+    "file": "article/time-limited-whitepapers.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "limits, whitepaper password, whitepaper tracking, whitepaper analytics, single-use QR co"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ess, expiration dates, view limits, and tracking. Create exclusivity and drive engagemen"
+      },
+      {
+        "term": "tracking",
+        "snippet": "se studies with time-limited access and tracking using MaiPDF.\">     <link rel=\"canonica"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "ss with Expiration Dates, View Limits & Tracking | MaiPDF</title>     <!-- Bootstrap CSS"
+      },
+      {
+        "term": "tracking",
+        "snippet": ", view limits, password protection, and tracking. Best practices for creating exclusivit"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "lass=\"fas fa-eye-slash\"></i> Difficulty Tracking Access</h4>                         <p>"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "alytics</h4>                         <p>Monitor document engagement and user behavior w"
+      },
+      {
+        "term": "Track",
+        "snippet": "behavior with comprehensive analytics. Track who accessed your whitepaper, when they"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "class=\"badge bg-primary\">Step 5</span> Monitor Access and Engagement</h4>"
+      },
+      {
+        "term": "Track",
+        "snippet": "and Engagement</h4>                 <p>Track whitepaper access through MaiPDF's anal"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "s through MaiPDF's analytics dashboard. Monitor:</p>                 <ul>"
+      },
+      {
+        "term": "tracking",
+        "snippet": "/li>                     <li>Conversion tracking (if integrated with your CRM)</li>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<ul>                     <li><strong>Track Engagement Metrics:</strong> Monitor re"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "rong>Track Engagement Metrics:</strong> Monitor reading time, pages viewed, and access"
+      },
+      {
+        "term": "Track",
+        "snippet": "><strong>Measure Campaign ROI:</strong> Track conversion rates from whitepaper access"
+      },
+      {
+        "term": "track",
+        "snippet": "<li>Used analytics to track engagement and identify highly interest"
+      },
+      {
+        "term": "Track",
+        "snippet": "reate exclusivity and drive engagement. Track analytics to identify highly interested"
+      },
+      {
+        "term": "Track",
+        "snippet": "access, then share time-limited links. Track engagement to qualify leads and priorit"
+      },
+      {
+        "term": "track",
+        "snippet": "class=\"mt-4\">                 <h4>Can I track who viewed my whitepaper?</h4>"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/training-materials-distribution.html",
+    "sensitive": [
+      {
+        "term": "tracking",
+        "snippet": "tection, view limits, expiration dates, tracking, and access control. Best practices for"
+      },
+      {
+        "term": "tracking",
+        "snippet": "erial access control, training material tracking, training material password, training m"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ion, view limits, expiration dates, and tracking. Best practices for corporate and educa"
+      },
+      {
+        "term": "tracking",
+        "snippet": "s securely with password protection and tracking using MaiPDF.\">     <link rel=\"canonica"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "with Password Protection, View Limits & Tracking | MaiPDF</title>     <!-- Bootstrap CSS"
+      },
+      {
+        "term": "tracking",
+        "snippet": "tection, view limits, expiration dates, tracking, and access control. Best practices for"
+      },
+      {
+        "term": "tracking",
+        "snippet": "tection, view limits, expiration dates, tracking, and access control. Best practices for"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "class=\"fas fa-eye-slash\"></i> No Access Tracking</h4>                         <p>Traditi"
+      },
+      {
+        "term": "Tracking",
+        "snippet": "s=\"fas fa-chart-bar\"></i> Comprehensive Tracking</h4>                         <p>Track d"
+      },
+      {
+        "term": "Track",
+        "snippet": "racking</h4>                         <p>Track detailed analytics on who accessed trai"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "class=\"badge bg-primary\">Step 5</span> Monitor Access and Engagement</h4>"
+      },
+      {
+        "term": "Track",
+        "snippet": "and Engagement</h4>                 <p>Track training material access through MaiPDF"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "s through MaiPDF's analytics dashboard. Monitor:</p>                 <ul>"
+      },
+      {
+        "term": "Track",
+        "snippet": "<ul>                     <li><strong>Track Completion:</strong> Use analytics to v"
+      },
+      {
+        "term": "Monitor",
+        "snippet": "li><strong>Measure Engagement:</strong> Monitor viewing duration and pages viewed to as"
+      },
+      {
+        "term": "Track",
+        "snippet": "horized employees can access materials. Track completion and engagement to measure tr"
+      },
+      {
+        "term": "tracking",
+        "snippet": "o align with semester timelines. Enable tracking to verify student engagement and identi"
+      },
+      {
+        "term": "tracking",
+        "snippet": "ord protection for exclusive access and tracking to verify completion and measure effect"
+      }
+    ],
+    "images": []
+  },
+  {
+    "file": "article/user-behavior-tracking.html",
+    "sensitive": [],
+    "images": []
+  }
+]

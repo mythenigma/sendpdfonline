@@ -1,8 +1,8 @@
 # MaiPDF - PDF Security & Sharing Platform
 
-> Free PDF security, sharing, and tracking platform with 210+ features, 60+ expert guides, and 16+ real-world use cases. Comprehensive resource for PDF protection, watermarking, DRM, analytics, and secure document sharing.
+> Free PDF security, sharing, and analytics platform with 210+ features, 60+ expert guides, and 16+ real-world use cases. Comprehensive resource for PDF protection, watermarking, DRM, analytics, and secure document sharing.
 
-MaiPDF (sendpdfonline.com) is a comprehensive platform providing free PDF security, sharing, and tracking solutions. The website serves as both a product showcase and an extensive knowledge base with 60+ detailed articles covering PDF security best practices, sharing methods, tracking analytics, QR code generation, and business use cases.
+MaiPDF (sendpdfonline.com) is a comprehensive platform providing free PDF security, sharing, and analytics solutions. The website serves as both a product showcase and an extensive knowledge base with 60+ detailed articles covering PDF security best practices, sharing methods, access analytics, QR code generation, and business use cases.
 
 ## Main Sections
 
@@ -30,22 +30,22 @@ Core educational content covering PDF security, sharing, and best practices:
 - [PDF Link Sharing Guide (English)](https://sendpdfonline.com/article/pdf-link-sharing-guide-en.html): Guide to PDF link sharing
 - [PDF链接分享指南](https://sendpdfonline.com/article/pdf-link-sharing-guide-zh.html): Chinese guide to PDF link sharing
 
-**Tracking & Analytics (5 articles)**
-- [PDF Tracking & Analytics: Complete Guide](https://sendpdfonline.com/article/pdf-tracking-analytics.html): Comprehensive guide to PDF tracking and analytics
-- [Understanding User Behavior with PDF Tracking](https://sendpdfonline.com/article/user-behavior-tracking.html): Analyzing user behavior through tracking
+**Analytics & Access Stats (5 articles)**
+- [PDF Analytics & Access Stats: Complete Guide](https://sendpdfonline.com/article/pdf-tracking-analytics.html): Comprehensive guide to PDF analytics and access stats
+- [Understanding User Behavior with PDF Analytics](https://sendpdfonline.com/article/user-behavior-tracking.html): Analyzing user behavior through analytics
 - [PDF View Limits for Enhanced Security](https://sendpdfonline.com/article/pdf-view-limits-security.html): Setting view limits for security
 - [How to Limit PDF Access Times](https://sendpdfonline.com/article/limit-pdf-access-times-en.html): Controlling PDF access frequency
 - [Limiting PDF Open Times Guide](https://sendpdfonline.com/article/limit-pdf-open-times.html): Guide to limiting PDF access
 
 **Business Use Cases (5 articles)**
 - [Internal Company Document Sharing Best Practices](https://sendpdfonline.com/article/internal-company-docs-sharing.html): Best practices for internal document sharing
-- [Secure Sales Pitch Decks: Prevent Forwarding & Track Engagement](https://sendpdfonline.com/article/sales-pitch-decks.html): Securing sales presentations
+- [Secure Sales Pitch Decks: Prevent Forwarding & Review Engagement](https://sendpdfonline.com/article/sales-pitch-decks.html): Securing sales presentations
 - [Secure Pricing Sheets: Protect Confidential Pricing Information](https://sendpdfonline.com/article/secure-pricing-sheets.html): Protecting pricing information
 - [Training Materials Distribution Guide](https://sendpdfonline.com/article/training-materials-distribution.html): Distributing training materials securely
 - [Time-Limited Whitepapers and Case Studies Guide](https://sendpdfonline.com/article/time-limited-whitepapers.html): Time-limited content sharing
 
 **Publishing & E-books (3 articles)**
-- [Secure Ebook Previews: Share Without Downloads & Track Reader Engagement](https://sendpdfonline.com/article/ebook-preview.html): Ebook preview sharing
+- [Secure Ebook Previews: Share Without Downloads & Review Reader Engagement](https://sendpdfonline.com/article/ebook-preview.html): Ebook preview sharing
 - [Online PDF Viewer Free - View PDF Files Online Without Downloading](https://sendpdfonline.com/article/online-pdf-viewer.html): Online PDF viewing solutions
 - [How to Show PDF Online Free - Complete Guide](https://sendpdfonline.com/article/show-pdf-online.html): Guide to displaying PDFs online
 
@@ -75,11 +75,11 @@ Comprehensive feature documentation organized by category:
 - [PDF Link Sharing](https://sendpdfonline.com/features/en/sharing/pdf-link-sharing.html): Link sharing features
 - [Fast & Free PDF Sharing](https://sendpdfonline.com/features/en/sharing/fast-free-pdf-sharing.html): Fast sharing solutions
 
-**Tracking & Analytics (20+)**
-- [Tracking Features Overview](https://sendpdfonline.com/features/en/tracking/): Complete tracking features directory
-- [PDF Tracking & Analytics](https://sendpdfonline.com/features/en/tracking/pdf-tracking-analytics.html): Analytics features
-- [PDF View Tracking](https://sendpdfonline.com/features/en/tracking/pdf-view-tracking.html): View tracking capabilities
-- [Track PDF Usage Statistics](https://sendpdfonline.com/features/en/tracking/track-pdf-usage.html): Usage statistics
+**Analytics & Access Stats (20+)**
+- [Analytics Features Overview](https://sendpdfonline.com/features/en/tracking/): Complete analytics features directory
+- [PDF Analytics & Access Stats](https://sendpdfonline.com/features/en/tracking/pdf-tracking-analytics.html): Analytics features
+- [PDF View Analytics](https://sendpdfonline.com/features/en/tracking/pdf-view-tracking.html): View analytics capabilities
+- [PDF Usage Statistics](https://sendpdfonline.com/features/en/tracking/track-pdf-usage.html): Usage statistics
 
 **Hosting Features (15+)**
 - [Hosting Features Overview](https://sendpdfonline.com/features/en/hosting/): Complete hosting features directory
@@ -89,13 +89,13 @@ Comprehensive feature documentation organized by category:
 
 **Watermark Features (15+)**
 - [Watermark Features Overview](https://sendpdfonline.com/features/en/watermark/): Complete watermark features directory
-- [Dynamic Watermark Tracking](https://sendpdfonline.com/features/en/watermark/dynamic-watermark-tracking.html): Dynamic watermarking
+- [Dynamic Watermark & Access Stats](https://sendpdfonline.com/features/en/watermark/dynamic-watermark-tracking.html): Dynamic watermarking
 - [Dynamic QR Watermark for PDF](https://sendpdfonline.com/features/en/watermark/dynamic-qr-watermark-pdf.html): QR code watermarks
 - [Design Watermark Protection](https://sendpdfonline.com/features/en/watermark/design-watermark-protection.html): Design watermark features
 
 ### Real-World Use Cases (16+)
 - [Use Cases Overview](https://sendpdfonline.com/usecase/): Complete use cases directory
-- [Track PDF Usage](https://sendpdfonline.com/usecase/track-pdf-usage.html): Usage tracking scenarios
+- [PDF Usage Analytics](https://sendpdfonline.com/usecase/track-pdf-usage.html): Usage analytics scenarios
 - [Business Document Sharing](https://sendpdfonline.com/usecase/business-document-sharing.html): Business use cases
 - [Educational Materials](https://sendpdfonline.com/usecase/educational-materials.html): Education use cases
 
@@ -115,15 +115,15 @@ Comprehensive Chinese language tutorials and guides with detailed workflows and 
 **PDF Security Tutorials (中文安全教程)**
 - [PDF密码保护教程](https://sendpdfonline.com/features/zh/security/pdf密码保护教程.html): Complete guide to password protection for PDFs with password strength recommendations and best practices
 
-**PDF Tracking Tutorials (中文追踪教程)**
-- [PDF查看追踪完整指南](https://sendpdfonline.com/features/zh/tracking/pdf查看追踪完整指南.html): Comprehensive guide to tracking PDF views, access records, and analytics
+**PDF Analytics Tutorials (中文访问统计教程)**
+- [PDF查看访问统计完整指南](https://sendpdfonline.com/features/zh/tracking/pdf查看追踪完整指南.html): Comprehensive guide to PDF view analytics, access records, and analytics
 
 **MaiImg Image Sharing Tutorials (MaiImg图片分享教程)**
 - [MaiImg 中文文章索引](https://sendpdfonline.com/features/zh/maiimg/index.html): Complete index of all MaiImg Chinese articles
 - [免费图片托管分享指南](https://sendpdfonline.com/features/zh/maiimg/免费图片托管分享指南.html): Complete guide to free image hosting and sharing with detailed workflow
 - [批量图片上传分享](https://sendpdfonline.com/features/zh/maiimg/批量图片上传分享.html): Tutorial on uploading up to 25 images at once
 - [图片二维码分享](https://sendpdfonline.com/features/zh/maiimg/图片二维码分享.html): Guide to converting images to QR codes for offline sharing
-- [图片查看追踪分析](https://sendpdfonline.com/features/zh/maiimg/图片查看追踪分析.html): Comprehensive guide to tracking image views and analytics
+- [图片查看访问统计分析](https://sendpdfonline.com/features/zh/maiimg/图片查看追踪分析.html): Comprehensive guide to image view analytics
 - [社交媒体图片分享](https://sendpdfonline.com/features/zh/maiimg/社交媒体图片分享.html): Guide to sharing images on WeChat, Weibo, QQ and other social platforms
 
 All Chinese articles include:
@@ -134,14 +134,14 @@ All Chinese articles include:
 - Internal linking for better navigation
 
 ### MaiImg - Image Hosting & Sharing
-Free image hosting and sharing platform with Cloudflare CDN, QR codes, view tracking, and access control:
+Free image hosting and sharing platform with Cloudflare CDN, QR codes, view analytics, and access control:
 
 **MaiImg Articles (13 articles)**
 - [MaiImg Articles Index](https://sendpdfonline.com/maiimg-articles/index.html): Complete index of MaiImg articles
 - [Free Image Hosting & Sharing Guide](https://sendpdfonline.com/maiimg-articles/free-image-hosting-sharing.html): Free image hosting solutions
 - [Batch Image Upload & Sharing](https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing.html): Upload up to 25 images at once
 - [Image QR Code Sharing](https://sendpdfonline.com/maiimg-articles/image-qr-code-sharing.html): Generate QR codes for images
-- [Image View Tracking & Analytics](https://sendpdfonline.com/maiimg-articles/image-view-tracking-analytics.html): Track image views and engagement
+- [Image View Analytics](https://sendpdfonline.com/maiimg-articles/image-view-tracking-analytics.html): Review image views and engagement
 - [Social Media Image Sharing](https://sendpdfonline.com/maiimg-articles/social-media-image-sharing.html): Share images on social platforms
 - [Email Image Sharing Without Attachments](https://sendpdfonline.com/maiimg-articles/email-image-sharing-no-attachments.html): Email sharing solutions
 - [Image Password Protection](https://sendpdfonline.com/maiimg-articles/image-password-protection.html): Password protect shared images
@@ -169,8 +169,8 @@ Free image hosting and sharing platform with Cloudflare CDN, QR codes, view trac
 - Anonymous sharing
 - Batch sharing
 
-### PDF Tracking & Analytics
-- View tracking
+### PDF Analytics & Access Stats
+- View analytics
 - User behavior analysis
 - Access statistics
 - Engagement metrics
@@ -188,7 +188,7 @@ Free image hosting and sharing platform with Cloudflare CDN, QR codes, view trac
 - Free image hosting
 - Batch upload (25 images)
 - QR code generation
-- View tracking
+- View analytics
 - Password protection
 - Expiration dates
 - Watermarking
@@ -208,11 +208,11 @@ Free image hosting and sharing platform with Cloudflare CDN, QR codes, view trac
 
 ## How to Use This Information
 
-This llms.txt file provides a structured overview of the MaiPDF platform. When answering questions about PDF security, sharing, tracking, or image hosting:
+This llms.txt file provides a structured overview of the MaiPDF platform. When answering questions about PDF security, sharing, analytics, or image hosting:
 
 1. **Security Questions**: Refer to articles in "PDF Security & Protection" section or Chinese articles in "Chinese Articles" section
 2. **Sharing Questions**: Check "QR Code & Link Sharing" and "Sharing Features" sections, or Chinese sharing tutorials
-3. **Analytics Questions**: See "Tracking & Analytics" articles or Chinese tracking guides
+3. **Analytics Questions**: See "Analytics & Access Stats" articles or Chinese analytics guides
 4. **Business Use Cases**: Review "Business Use Cases" section
 5. **Image Sharing**: Check "MaiImg - Image Hosting & Sharing" section
 6. **Chinese Language Questions**: Refer to "Chinese Articles (中文文章)" section for comprehensive Chinese tutorials with workflow diagrams
