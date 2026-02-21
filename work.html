@@ -15,10 +15,69 @@
     .sev-high{color:#f87171;font-weight:bold}
     .sev-medium{color:#facc15;font-weight:bold}
     code{background:#0f172a;padding:2px 6px;border-radius:4px}
+
+    /* Tab System */
+    .tab-nav{display:flex;gap:0;border-bottom:2px solid #1e3a8a;margin-bottom:24px}
+    .tab-btn{padding:12px 28px;background:#111827;color:#94a3b8;border:1px solid #1f2937;border-bottom:none;cursor:pointer;font-size:15px;font-weight:600;border-radius:8px 8px 0 0;transition:all .2s}
+    .tab-btn:hover{background:#1e293b;color:#e2e8f0}
+    .tab-btn.active{background:#1e3a8a;color:#fff;border-color:#1e3a8a}
+    .tab-panel{display:none}
+    .tab-panel.active{display:block}
+
+    /* Improvement Plan Styles */
+    .plan-section{background:#111827;border:1px solid #1f2937;border-radius:12px;padding:24px;margin-bottom:24px}
+    .plan-section h2{color:#60a5fa;font-size:20px;margin:0 0 16px;border-bottom:2px solid #1e3a8a;padding-bottom:8px}
+    .plan-section h3{color:#93c5fd;font-size:16px;margin:16px 0 8px}
+    .plan-table{width:100%;border-collapse:collapse;background:#0f172a;border-radius:8px;overflow:hidden}
+    .plan-table th{background:#1e293b;color:#93c5fd;padding:10px 14px;text-align:left;font-size:13px;text-transform:uppercase;letter-spacing:.5px}
+    .plan-table td{padding:10px 14px;border-bottom:1px solid #1f2937;font-size:14px;line-height:1.5}
+    .plan-table tr:hover{background:#1e293b}
+    .badge{display:inline-block;padding:3px 10px;border-radius:12px;font-size:12px;font-weight:700}
+    .badge-red{background:#7f1d1d;color:#fca5a5}
+    .badge-yellow{background:#713f12;color:#fde68a}
+    .badge-green{background:#14532d;color:#86efac}
+    .badge-blue{background:#1e3a5f;color:#93c5fd}
+    .badge-purple{background:#4c1d95;color:#c4b5fd}
+    .competitor-bar{height:8px;background:#1e3a8a;border-radius:4px;display:inline-block;vertical-align:middle}
+    .stat-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:16px;margin:16px 0}
+    .stat-card{background:#0f172a;border:1px solid #1f2937;border-radius:10px;padding:16px;text-align:center}
+    .stat-card .num{font-size:28px;font-weight:800;color:#60a5fa}
+    .stat-card .label{font-size:13px;color:#94a3b8;margin-top:4px}
+    .timeline{position:relative;padding-left:28px;margin:16px 0}
+    .timeline::before{content:'';position:absolute;left:8px;top:0;bottom:0;width:2px;background:#1e3a8a}
+    .timeline-item{position:relative;margin-bottom:20px}
+    .timeline-item::before{content:'';position:absolute;left:-24px;top:4px;width:12px;height:12px;border-radius:50%;background:#3b82f6;border:2px solid #0b1220}
+    .timeline-item.done::before{background:#22c55e}
+    .timeline-item .t-title{font-weight:700;color:#e2e8f0;font-size:15px}
+    .timeline-item .t-desc{color:#94a3b8;font-size:13px;margin-top:4px}
+    .callout{background:#1e293b;border-left:4px solid #f59e0b;padding:16px 20px;border-radius:0 8px 8px 0;margin:16px 0;font-size:14px;line-height:1.6}
+    .callout-danger{border-left-color:#ef4444}
+    .callout-success{border-left-color:#22c55e}
+    .callout strong{color:#fbbf24}
+    .callout-danger strong{color:#f87171}
+    .callout-success strong{color:#4ade80}
+    ul.checklist{list-style:none;padding:0}
+    ul.checklist li{padding:6px 0;font-size:14px;color:#cbd5e1}
+    ul.checklist li::before{content:'☐ ';color:#64748b}
+    ul.checklist li.done::before{content:'☑ ';color:#22c55e}
+    .strategy-card{background:linear-gradient(135deg,#0f172a,#1e293b);border:1px solid #334155;border-radius:12px;padding:20px;margin:12px 0}
+    .strategy-card h4{color:#fbbf24;margin:0 0 8px;font-size:16px}
+    .strategy-card p{color:#94a3b8;font-size:14px;margin:0;line-height:1.6}
+    .vs-label{display:inline-block;background:#1e3a8a;color:#93c5fd;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;margin:0 4px}
   </style>
 </head>
 <body>
-  <h1>Compliance Work List</h1>
+  <h1>📋 SendPDFOnline 工作面板</h1>
+
+  <!-- Tab Navigation -->
+  <div class="tab-nav">
+    <button class="tab-btn active" onclick="switchTab('compliance')">合规工作列表</button>
+    <button class="tab-btn" onclick="switchTab('plan')">🚀 改善计划</button>
+  </div>
+
+  <!-- Tab 1: Compliance Work List -->
+  <div id="tab-compliance" class="tab-panel active">
+  <h2 style="color:#60a5fa">Compliance Work List</h2>
   <p>Generated: 2026-01-29. Total files flagged: 283</p>
   <table>
     <thead>
