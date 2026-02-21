@@ -374,6 +374,236 @@
 <tr><td><del><code>usecase/pdf-tracking.html</code></del></td><td class='sev-medium'>MEDIUM</td><td>Copy terms: Monitor, monitor, Track, tracking, Tracking</td><td>建议改文案为打开统计/访问统计/审计/访客标识等中性表述。</td></tr>
 <tr><td><del><code>usecase/track-pdf-usage.html</code></del></td><td class='sev-medium'>MEDIUM</td><td>Copy terms: Monitor, Track, track, tracking, Tracking</td><td>建议改文案为打开统计/访问统计/审计/访客标识等中性表述。</td></tr></tbody>
   </table>
+  </div><!-- end tab-compliance -->
+
+  <!-- Tab 2: 改善计划 -->
+  <div id="tab-plan" class="tab-panel">
+
+    <!-- 项目概况 -->
+    <div class="plan-section">
+      <h2>📊 项目现状概况</h2>
+      <p style="color:#94a3b8;margin-bottom:16px">最近审计日期：2026-02-21 ｜ 域名：sendpdfonline.com ｜ 主站：maipdf.com</p>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="num">427</div><div class="label">HTML 页面总数</div></div>
+        <div class="stat-card"><div class="num">386</div><div class="label">Sitemap URL 数</div></div>
+        <div class="stat-card"><div class="num">15</div><div class="label">断链（全为 email-protection）</div></div>
+        <div class="stat-card"><div class="num">237</div><div class="label">缺失图片</div></div>
+        <div class="stat-card"><div class="num">7</div><div class="label">语言版本</div></div>
+        <div class="stat-card"><div class="num" style="color:#f87171">0</div><div class="label">目标关键词排名（"send pdf online"）</div></div>
+      </div>
+    </div>
+
+    <!-- 搜索引擎可见性 -->
+    <div class="plan-section">
+      <h2>🔍 搜索引擎可见性分析</h2>
+
+      <h3>搜索排名现状</h3>
+      <table class="plan-table">
+        <thead><tr><th>搜索引擎</th><th>搜 "sendpdfonline.com"（品牌词）</th><th>搜 "send pdf online"（目标关键词）</th></tr></thead>
+        <tbody>
+          <tr><td>DuckDuckGo</td><td><span class="badge badge-red">不出现</span> 只有 maipdf.com 出现</td><td><span class="badge badge-red">完全不出现</span></td></tr>
+          <tr><td>Brave</td><td><span class="badge badge-green">排名第1</span> 多个子页面被索引</td><td><span class="badge badge-red">完全不出现</span></td></tr>
+          <tr><td>Google / Bing</td><td><span class="badge badge-yellow">无法确认</span>（反爬阻挡）</td><td><span class="badge badge-red">大概率不出现</span></td></tr>
+        </tbody>
+      </table>
+
+      <h3 style="margin-top:20px">"send pdf online" 关键词竞争格局</h3>
+      <table class="plan-table">
+        <thead><tr><th>竞争对手</th><th>搜索引擎覆盖</th><th>竞争强度</th></tr></thead>
+        <tbody>
+          <tr><td><strong>smallpdf.com</strong></td><td>全部引擎 — 稳居第 1-2 位</td><td><span class="competitor-bar" style="width:100%"></span> 极强</td></tr>
+          <tr><td><strong>jumpshare.com</strong></td><td>全部引擎 — 稳居第 2-3 位</td><td><span class="competitor-bar" style="width:90%"></span> 极强</td></tr>
+          <tr><td>tiiny.host</td><td>DuckDuckGo + Brave</td><td><span class="competitor-bar" style="width:70%"></span> 强</td></tr>
+          <tr><td>hipdf.com</td><td>全部引擎</td><td><span class="competitor-bar" style="width:65%"></span> 强</td></tr>
+          <tr><td>pdffiller.com</td><td>DuckDuckGo（自然+付费）+ Brave</td><td><span class="competitor-bar" style="width:60%"></span> 较强</td></tr>
+          <tr><td>flipsnack.com / flippingbook.com</td><td>Brave</td><td><span class="competitor-bar" style="width:45%"></span> 中等</td></tr>
+          <tr><td>pdfdeck.com / pdfhost.io</td><td>DuckDuckGo</td><td><span class="competitor-bar" style="width:35%"></span> 中低</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 核心问题诊断 -->
+    <div class="plan-section">
+      <h2>⚠️ 核心问题诊断</h2>
+
+      <div class="callout callout-danger">
+        <strong>问题 1：品牌稀释 — 双域名策略适得其反</strong><br>
+        • sendpdfonline.com 定位为"SEO hub"，把用户全部引导到 maipdf.com<br>
+        • 搜索引擎搞不清哪个才是正主，链接权重被分散到两个域名<br>
+        • 页脚直接写 <code>"SEO hub for send pdf online keywords"</code> — 这等于告诉 Google 这是个 doorway site（门页），会被惩罚
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>问题 2：内容质量 — 量大但薄</strong><br>
+        • 427 个 HTML 页面，大量模板化/AI 生成内容<br>
+        • 同一篇文章被翻译成 7 种语言（阿/中/日/韩/德/法/西），翻译质量和本地化深度存疑<br>
+        • 推广页面（<code>maipdf-convert-promo-*</code>）搜索价值极低<br>
+        • Google 的 Helpful Content Update 专门打击这类批量生成的低价值内容
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>问题 3：技术问题</strong><br>
+        • <span class="badge badge-red">15 个断链</span>：全部是 <code>/cdn-cgi/l/email-protection</code>（Cloudflare 邮件混淆导致），出现在 15 个关键页面<br>
+        • <span class="badge badge-red">237 个缺失图片</span>：路径引用错误（用了 <code>../images/</code> 相对路径但实际结构不匹配）<br>
+        • <span class="badge badge-yellow">Sitemap 过期</span>：lastmod 大多停在 2025-12-04，已超 2 个月未更新<br>
+        • <span class="badge badge-yellow">中文文件名 URL</span>：如 <code>features/zh/maiimg/社交媒体图片分享</code>，对 SEO 不友好
+      </div>
+
+      <div class="callout">
+        <strong>问题 4：缺少权威信号</strong><br>
+        • 没有外部反向链接策略<br>
+        • 没有 Google Search Console / Analytics 集成迹象<br>
+        • 无 favicon、无 PWA manifest<br>
+        • 没有真实用户评价或社交证据
+      </div>
+    </div>
+
+    <!-- Phase 1 -->
+    <div class="plan-section">
+      <h2>🔥 Phase 1 — 紧急修复（1-2 周）</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:40px">#</th><th>任务</th><th>影响</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td>修复 15 个 Cloudflare <code>email-protection</code> 断链</td><td>消除 404 错误，改善爬虫体验</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>2</td><td>修复 237 个缺失图片路径</td><td>页面视觉完整性 + Core Web Vitals</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>3</td><td>更新 sitemap.xml 的 lastmod 日期</td><td>让搜索引擎重新抓取</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>4</td><td>删除页脚 "SEO hub" 字样</td><td>避免被判定为 doorway site</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>5</td><td>添加 favicon 和基础 PWA manifest</td><td>品牌识别度</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Phase 2 -->
+    <div class="plan-section">
+      <h2>📝 Phase 2 — 内容策略重构（2-4 周）</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:40px">#</th><th>任务</th><th>原因</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td>6</td><td>精简页面到 100-150 个高质量页面</td><td>削减薄内容，集中权重</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>7</td><td>删除或 noindex 所有纯推广页面（<code>promo-*</code>）</td><td>无搜索价值</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>8</td><td>只保留英文 + 中文两个语言版本</td><td>其他语言没有流量支撑，反而稀释权重</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>9</td><td>为核心页面添加真实截图、操作录屏、用户评价</td><td>提升 E-E-A-T 信号</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>10</td><td>重写首页，从"目录页"变为产品落地页</td><td>提高转化率</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Phase 3 -->
+    <div class="plan-section">
+      <h2>🏗️ Phase 3 — SEO 基础建设（4-8 周）</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:40px">#</th><th>任务</th><th>原因</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td>11</td><td>接入 Google Search Console + Bing Webmaster</td><td>监控索引和搜索表现</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>12</td><td>统一品牌策略：决定 sendpdfonline.com <span class="vs-label">VS</span> maipdf.com 谁是主站</td><td>停止权重分散</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>13</td><td>为 5-10 个核心长尾词写深度指南（2000+ 字，有原创图表）</td><td>瞄准 "secure pdf sharing"、"pdf view limit"、"pdf qr code" 等竞争较低的词</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>14</td><td>建立内链结构（Silo Architecture）</td><td>传递页面权重</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>15</td><td>外链策略：在 Product Hunt、Reddit、Hacker News 等平台发布</td><td>获取权威反向链接</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- Phase 4 -->
+    <div class="plan-section">
+      <h2>🎯 Phase 4 — 差异化竞争（8+ 周）</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:40px">#</th><th>任务</th><th>原因</th><th>状态</th></tr></thead>
+        <tbody>
+          <tr><td>16</td><td>放弃与 Smallpdf 正面竞争 "send pdf online" 大词</td><td>DA 差距太大，几乎不可能赢</td><td><span class="badge badge-blue">策略决策</span></td></tr>
+          <tr><td>17</td><td>聚焦安全差异化关键词：<code>pdf access control</code>、<code>pdf tracking analytics</code>、<code>prevent pdf forwarding</code></td><td>竞争低 + 正是 MaiPDF 的强项</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>18</td><td>做比较类内容："MaiPDF vs DocSend"、"MaiPDF vs Smallpdf"</td><td>截取竞品搜索流量</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>19</td><td>考虑把 sendpdfonline.com 301 重定向到 maipdf.com/blog</td><td>集中全部域名权重到一个站</td><td><span class="badge badge-purple">需讨论</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 核心战略建议 -->
+    <div class="plan-section">
+      <h2>💡 核心战略决策</h2>
+
+      <div class="callout callout-danger">
+        <strong>最关键的决策：sendpdfonline.com 是否值得继续作为独立站？</strong>
+      </div>
+
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px">
+        <div class="strategy-card">
+          <h4>方案 A — 保持双站</h4>
+          <p>将 sendpdfonline.com 作为 maipdf.com 的博客/内容营销站。<br><br>
+          <strong style="color:#fbbf24">前提：</strong>大幅精简内容到 100 页以内，每篇文章需有原创深度价值，不能是模板化薄内容。</p>
+        </div>
+        <div class="strategy-card" style="border-color:#22c55e">
+          <h4>⭐ 方案 B — 合并到主站（推荐）</h4>
+          <p>将所有优质内容迁移到 <code>maipdf.com/blog/</code> 子目录，然后 sendpdfonline.com 全站做 301 重定向。<br><br>
+          <strong style="color:#4ade80">优势：</strong>所有 SEO 权重集中到一个域名，消除品牌混乱，Google 更信任单一权威站。</p>
+        </div>
+      </div>
+
+      <div class="callout" style="margin-top:16px;border-left-color:#ef4444">
+        <strong style="color:#f87171">⚠️ 警告：</strong>目前双站策略 — 用"SEO卫星站"引流到主站 — 已经被 Google 算法（Helpful Content Update + Site Reputation Abuse）重点打击，继续维持只会越来越差。
+      </div>
+    </div>
+
+    <!-- 建议优先关键词 -->
+    <div class="plan-section">
+      <h2>🔑 建议优先攻克的长尾关键词</h2>
+      <p style="color:#94a3b8">放弃 "send pdf online" 大词，聚焦以下低竞争高相关词：</p>
+      <table class="plan-table">
+        <thead><tr><th>关键词</th><th>预估竞争度</th><th>与 MaiPDF 相关度</th><th>建议内容类型</th></tr></thead>
+        <tbody>
+          <tr><td><code>secure pdf sharing with password</code></td><td><span class="badge badge-green">低</span></td><td><span class="badge badge-green">极高</span></td><td>深度教程 + 产品演示</td></tr>
+          <tr><td><code>pdf view limit / limit pdf open times</code></td><td><span class="badge badge-green">低</span></td><td><span class="badge badge-green">极高</span></td><td>操作指南 + 用例</td></tr>
+          <tr><td><code>pdf access control</code></td><td><span class="badge badge-yellow">中低</span></td><td><span class="badge badge-green">极高</span></td><td>方案对比 + 教程</td></tr>
+          <tr><td><code>pdf to qr code free</code></td><td><span class="badge badge-yellow">中</span></td><td><span class="badge badge-green">高</span></td><td>工具页 + 步骤指南</td></tr>
+          <tr><td><code>prevent pdf forwarding</code></td><td><span class="badge badge-green">低</span></td><td><span class="badge badge-green">极高</span></td><td>技术解析 + 功能演示</td></tr>
+          <tr><td><code>pdf watermark protection</code></td><td><span class="badge badge-yellow">中低</span></td><td><span class="badge badge-green">高</span></td><td>对比文章</td></tr>
+          <tr><td><code>share pdf without download</code></td><td><span class="badge badge-green">低</span></td><td><span class="badge badge-green">极高</span></td><td>产品落地页</td></tr>
+          <tr><td><code>pdf expiration date / self-destruct pdf</code></td><td><span class="badge badge-green">极低</span></td><td><span class="badge badge-green">极高</span></td><td>功能页面</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- 时间线 -->
+    <div class="plan-section">
+      <h2>📅 执行时间线</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="t-title">第 1-2 周：紧急技术修复</div>
+          <div class="t-desc">修复断链 → 修复图片 → 更新 Sitemap → 删除 "SEO hub" 字样 → 添加 favicon</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-title">第 2-4 周：内容大瘦身</div>
+          <div class="t-desc">审计所有 427 页 → 保留 100-150 最优质页 → noindex/删除其余 → 重写首页</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-title">第 4-6 周：SEO 基建</div>
+          <div class="t-desc">接入 GSC/Bing → 决定双站策略 → 建立 Silo 内链 → 提交更新后 Sitemap</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-title">第 6-8 周：深度内容创作</div>
+          <div class="t-desc">针对 5-10 个长尾词写 2000+ 字深度指南 → 添加原创截图/图表 → 发布比较类文章</div>
+        </div>
+        <div class="timeline-item">
+          <div class="t-title">第 8-12 周：外链获取 + 差异化</div>
+          <div class="t-desc">Product Hunt 发布 → Reddit/HN 推广 → 社区互动 → 持续监控排名变化</div>
+        </div>
+      </div>
+    </div>
+
+    <p style="text-align:center;color:#475569;font-size:13px;margin-top:32px">
+      改善计划 v1.0 ｜ 生成日期：2026-02-21 ｜ 基于项目审计和搜索引擎可见性分析
+    </p>
+
+  </div><!-- end tab-plan -->
+
+  <script>
+  function switchTab(id){
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
+    document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+    document.getElementById('tab-'+id).classList.add('active');
+    event.target.classList.add('active');
+  }
+  </script>
+
 </body>
 </html>
 <script>
