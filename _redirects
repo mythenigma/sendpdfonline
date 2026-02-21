@@ -1,1 +1,10 @@
 /grabify/*    /    410
+
+# Empty 0-byte files — return 410 Gone
+/features/waysmulti    /    410
+/features/waystosend    /    410
+/features/wendang    /    410
+/features/whichone    /    410
+/features/zihui    /    410
+/features/zuopinji    /    410
+/flipbook/turn-simple    /    410
