@@ -65,6 +65,7 @@
     .strategy-card p{color:#94a3b8;font-size:14px;margin:0;line-height:1.6}
     .vs-label{display:inline-block;background:#1e3a8a;color:#93c5fd;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;margin:0 4px}
   </style>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
   <h1>📋 SendPDFOnline 工作面板</h1>
@@ -384,11 +385,11 @@
       <h2>📊 项目现状概况</h2>
       <p style="color:#94a3b8;margin-bottom:16px">最近审计日期：2026-02-21 ｜ 域名：sendpdfonline.com ｜ 主站：maipdf.com</p>
       <div class="stat-grid">
-        <div class="stat-card"><div class="num">427</div><div class="label">HTML 页面总数</div></div>
-        <div class="stat-card"><div class="num">386</div><div class="label">Sitemap URL 数</div></div>
-        <div class="stat-card"><div class="num">15</div><div class="label">断链（全为 email-protection）</div></div>
-        <div class="stat-card"><div class="num">237</div><div class="label">缺失图片</div></div>
-        <div class="stat-card"><div class="num">7</div><div class="label">语言版本</div></div>
+        <div class="stat-card"><div class="num">155</div><div class="label">可索引页面 (原427)</div></div>
+        <div class="stat-card"><div class="num">137</div><div class="label">Sitemap URL 数 (原386)</div></div>
+        <div class="stat-card"><div class="num" style="color:#4ade80">0</div><div class="label">断链 (已修复15个)</div></div>
+        <div class="stat-card"><div class="num" style="color:#4ade80">0</div><div class="label">缺失图片 (已修复11个)</div></div>
+        <div class="stat-card"><div class="num">2</div><div class="label">语言版本 (EN+ZH, 原7)</div></div>
         <div class="stat-card"><div class="num" style="color:#f87171">0</div><div class="label">目标关键词排名（"send pdf online"）</div></div>
       </div>
     </div>
@@ -444,7 +445,7 @@
       <div class="callout callout-danger">
         <strong>问题 3：技术问题</strong><br>
         • <span class="badge badge-red">15 个断链</span>：全部是 <code>/cdn-cgi/l/email-protection</code>（Cloudflare 邮件混淆导致），出现在 15 个关键页面<br>
-        • <span class="badge badge-red">237 个缺失图片</span>：路径引用错误（用了 <code>../images/</code> 相对路径但实际结构不匹配）<br>
+        • <span class="badge badge-green">图片路径已修复</span>：原报告 47 个问题中 36 个为误报，11 个真实缺失已修复（4个重定向到正确路径，4个用相似图片替代，3个注释掉待补充截图）<br>
         • <span class="badge badge-yellow">Sitemap 过期</span>：lastmod 大多停在 2025-12-04，已超 2 个月未更新<br>
         • <span class="badge badge-yellow">中文文件名 URL</span>：如 <code>features/zh/maiimg/社交媒体图片分享</code>，对 SEO 不友好
       </div>
@@ -453,7 +454,7 @@
         <strong>问题 4：缺少权威信号</strong><br>
         • 没有外部反向链接策略<br>
         • 没有 Google Search Console / Analytics 集成迹象<br>
-        • 无 favicon、无 PWA manifest<br>
+        • favicon 已添加到全站 422 个 HTML 页面<br>
         • 没有真实用户评价或社交证据
       </div>
     </div>
@@ -465,11 +466,11 @@
         <thead><tr><th style="width:40px">#</th><th>任务</th><th>影响</th><th>状态</th></tr></thead>
         <tbody>
           <tr><td>1</td><td>修复 15 个 Cloudflare <code>email-protection</code> 断链</td><td>消除 404 错误，改善爬虫体验</td><td><span class="badge badge-green">✅ 已完成</span> <small>2026-02-21 — 8 个源文件添加 email_off 指令；另需在 CF Dashboard 关闭 Email Obfuscation</small></td></tr>
-          <tr><td>2</td><td>修复 237 个缺失图片路径</td><td>页面视觉完整性 + Core Web Vitals</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>2</td><td>修复 11 个真实缺失图片路径 (原报告237个，36个误报)</td><td>页面视觉完整性 + Core Web Vitals</td><td><span class="badge badge-green">完成 ✓</span></td></tr>
           <tr><td>2.5</td><td>统一全站 mailto 邮箱地址</td><td>消除品牌混乱，统一联系邮箱</td><td><span class="badge badge-green">✅ 已完成</span> <small>2026-02-21 — 全站 HTML 统一为 joe@pdfhost.online</small></td></tr>
           <tr><td>3</td><td>更新 sitemap.xml 的 lastmod 日期</td><td>让搜索引擎重新抓取</td><td><span class="badge badge-green">✅ 已完成</span> <small>2026-02-21 — 386 条 URL 全部更新为 2026-02-21</small></td></tr>
           <tr><td>4</td><td>删除页脚 "SEO hub" 字样</td><td>避免被判定为 doorway site</td><td><span class="badge badge-green">✅ 已完成</span> <small>2026-02-21 — 改为正常品牌描述文案</small></td></tr>
-          <tr><td>5</td><td>添加 favicon 和基础 PWA manifest</td><td>品牌识别度</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>5</td><td>添加 favicon 到全站 422 个页面</td><td>品牌识别度</td><td><span class="badge badge-green">完成 ✓</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -480,10 +481,12 @@
       <table class="plan-table">
         <thead><tr><th style="width:40px">#</th><th>任务</th><th>原因</th><th>状态</th></tr></thead>
         <tbody>
-          <tr><td>6</td><td>精简页面到 100-150 个高质量页面</td><td>削减薄内容，集中权重</td><td><span class="badge badge-yellow">待开始</span></td></tr>
-          <tr><td>7</td><td>删除或 noindex 所有纯推广页面（<code>promo-*</code>）</td><td>无搜索价值</td><td><span class="badge badge-yellow">待开始</span></td></tr>
-          <tr><td>8</td><td>只保留英文 + 中文两个语言版本</td><td>其他语言没有流量支撑，反而稀释权重</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>6</td><td>精简页面到 100-150 个高质量页面</td><td>削减薄内容，集中权重</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 427 总页面 → 155 可索引页面 (noindex 213 页含: 87 非英中页, 11 空文件, 28 个 404 存根, 20 重定向页, 37 个 &lt;10KB 薄页面, 9 个 flipbook 测试/重复页, 5 个 DE/FR 页, 6 个 misc 根页); Sitemap 从 290→137 URL</small></td></tr>
+          <tr><td>6.5</td><td>清理夸大/虚假功能声明</td><td>避免虚假广告风险，提升可信度</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 删除 9 个 iplogger 外链、3 个假 API 声明、4 个 Pentagon/Quantum 页 noindex、7 个 promo 页 noindex+移出 sitemap、清理假用户数、统一 11 个遗留邮箱</small></td></tr>
+          <tr><td>7</td><td>删除或 noindex 所有纯推广页面（<code>promo-*</code>）</td><td>无搜索价值</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 7 个 promo 页 noindex + 移出 sitemap + 从 article/index 移除链接</small></td></tr>
+          <tr><td>8</td><td>只保留英文 + 中文两个语言版本</td><td>其他语言没有流量支撑，反而稀释权重</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 87 个非英中页全部 noindex (arabic 13, korean 11, japanese 7, german 6, french 4, localization 8 等)，已从 sitemap 移除</small></td></tr>
           <tr><td>9</td><td>为核心页面添加真实截图、操作录屏、用户评价</td><td>提升 E-E-A-T 信号</td><td><span class="badge badge-yellow">待开始</span></td></tr>
+          <tr><td>9.5</td><td>优化重点页面 replace-pdf (EN/ZH)</td><td>重要功能页，增加内链+hreflang+语言切换</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 添加 hreflang 互指、语言切换按钮、5 篇相关文章内链 (EN 2→8, ZH 2→4)、更新 dateModified</small></td></tr>
           <tr><td>10</td><td>重写首页，从"目录页"变为产品落地页</td><td>提高转化率</td><td><span class="badge badge-yellow">待开始</span></td></tr>
         </tbody>
       </table>

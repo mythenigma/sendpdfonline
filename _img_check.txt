@@ -1,0 +1,13 @@
+exist:36 miss:11
+---
+article/internal-company-docs-sharing.html|../images/pdf-link-and-qr-code.png
+article/offline-maipdf-cn.html|/images/upload_section_offline_maipdf.png
+article/offline-maipdf-cn.html|/images/security_setting.png
+article/offline-maipdf-cn.html|/images/result-check-change.png
+article/offline-maipdf-cn.html|/images/success_example_offline_file_change.png
+article/offline-maipdf-cn.html|/images/result_download_zip_file.png
+article/secure-pricing-sheets.html|../maipdf-images/lockpdf.png
+article/time-limited-whitepapers-case-studies.html|../maipdf-images/qr-code-generation.png
+article/time-limited-whitepapers-case-studies.html|../images/marketing-campaign.jpg
+article/time-limited-whitepapers-case-studies.html|../images/content-protection.jpg
+article/time-limited-whitepapers-case-studies.html|../images/digital-marketing.jpg
