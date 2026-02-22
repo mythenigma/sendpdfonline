@@ -1,603 +1,668 @@
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Anonymous PDF Sharing | MaiPDF | Secure Document Sharing Without Login</title>
-    <meta name="description" content="Share PDFs securely without requiring login. Learn how to protect sensitive documents with anonymous sharing features for finance, legal, and creative professionals.">
-    
-    <!-- Bootstrap 5 CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome CDN -->
-    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" rel="stylesheet">
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #667eea;
-            --secondary-color: #764ba2;
-            --accent-color: #f093fb;
-            --success-color: #4facfe;
-            --warning-color: #feca57;
-            --danger-color: #ff6b6b;
-            --dark-color: #2c3e50;
-            --light-color: #f8f9fc;
-            --gradient-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            --gradient-secondary: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
-            --gradient-success: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);
-            --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
-            --shadow-md: 0 4px 12px rgba(0,0,0,0.15);
-            --shadow-lg: 0 8px 25px rgba(0,0,0,0.2);
-        }
+    <title>Anonymous PDF Sharing — Share Documents Without Login | MaiPDF</title>
+    <meta name="description" content="Share PDFs securely without requiring login or accounts. Anonymous sharing with password protection, view limits, watermarks, and access analytics. Free on MaiPDF.">
+    <meta name="keywords" content="anonymous PDF sharing, share PDF without login, no account PDF sharing, secure anonymous document sharing, private PDF sharing">
+    <meta name="author" content="MaiPDF">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing">
 
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+    <!-- Open Graph -->
+    <meta property="og:title" content="Anonymous PDF Sharing — No Login Required">
+    <meta property="og:description" content="Share PDFs securely without accounts. Add password protection and view limits while keeping both sender and recipient anonymous.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing">
+    <meta property="og:site_name" content="MaiPDF">
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            line-height: 1.7;
-            color: var(--dark-color);
-            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
-            min-height: 100vh;
-        }
+    <!-- Bootstrap 5.3.0 & Font Awesome 6.4.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-        .hero-section {
-            background: var(--gradient-primary);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000"><polygon fill="rgba(255,255,255,0.1)" points="0,1000 1000,0 1000,1000"/></svg>');
-            background-size: cover;
-        }
-
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .hero-title {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
-        }
-
-        .hero-subtitle {
-            font-size: 1.3rem;
-            font-weight: 300;
-            margin-bottom: 2rem;
-            opacity: 0.9;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-
-        .section {
-            padding: 80px 0;
-        }
-
-        .section-title {
-            font-size: 2.5rem;
-            font-weight: 600;
-            text-align: center;
-            margin-bottom: 3rem;
-            color: var(--dark-color);
-            position: relative;
-        }
-
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: var(--gradient-primary);
-            border-radius: 2px;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .feature-card {
-            background: white;
-            padding: 40px 30px;
-            border-radius: 20px;
-            box-shadow: var(--shadow-md);
-            transition: all 0.3s ease;
-            border: 1px solid rgba(102, 126, 234, 0.1);
-            position: relative;
-            overflow: hidden;
-        }
-
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            height: 4px;
-            background: var(--gradient-primary);
-        }
-
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: var(--shadow-lg);
-        }
-
-        .feature-icon {
-            width: 70px;
-            height: 70px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-bottom: 20px;
-            color: white;
-            font-size: 1.8rem;
-        }
-
-        .feature-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 15px;
-            color: var(--dark-color);
-        }
-
-        .feature-list {
-            list-style: none;
-            padding: 0;
-        }
-
-        .feature-list li {
-            padding: 8px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #666;
-        }
-
-        .feature-list li::before {
-            content: '✓';
-            position: absolute;
-            left: 0;
-            color: var(--success-color);
-            font-weight: bold;
-        }
-
-        .highlight-box {
-            background: var(--gradient-success);
-            color: white;
-            padding: 40px;
-            border-radius: 20px;
-            margin: 60px 0;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .highlight-box::before {
-            content: '';
-            position: absolute;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 70%);
-            animation: shimmer 3s ease-in-out infinite;
-        }
-
-        @keyframes shimmer {
-            0%, 100% { transform: rotate(0deg); }
-            50% { transform: rotate(180deg); }
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            background: var(--gradient-secondary);
-            color: white;
-            padding: 15px 30px;
-            text-decoration: none;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            transition: all 0.3s ease;
-            box-shadow: var(--shadow-md);
-            border: none;
-            cursor: pointer;
-        }
-
-        .cta-button:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-lg);
-            color: white;
-            text-decoration: none;
-        }
-
-        .security-benefits {
-            background: white;
-            border-radius: 20px;
-            padding: 40px;
-            margin: 40px 0;
-            box-shadow: var(--shadow-md);
-        }
-
-        .benefit-item {
-            display: flex;
-            align-items: flex-start;
-            gap: 20px;
-            margin-bottom: 30px;
-            padding: 20px;
-            background: var(--light-color);
-            border-radius: 15px;
-            transition: all 0.3s ease;
-        }
-
-        .benefit-item:hover {
-            transform: translateX(10px);
-            box-shadow: var(--shadow-sm);
-        }
-
-        .benefit-icon {
-            width: 50px;
-            height: 50px;
-            background: var(--gradient-primary);
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            flex-shrink: 0;
-        }
-
-        .industry-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 30px;
-            margin: 60px 0;
-        }
-
-        .industry-card {
-            background: white;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: var(--shadow-sm);
-            transition: all 0.3s ease;
-            border-left: 5px solid var(--primary-color);
-        }
-
-        .industry-card:hover {
-            box-shadow: var(--shadow-md);
-            transform: translateY(-5px);
-        }
-
-        .stats-section {
-            background: var(--dark-color);
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 40px;
-            margin-top: 50px;
-        }
-
-        .stat-item {
-            padding: 30px;
-            border-radius: 15px;
-            background: rgba(255,255,255,0.1);
-            backdrop-filter: blur(10px);
-        }
-
-        .stat-number {
-            font-size: 3rem;
-            font-weight: 700;
-            color: var(--accent-color);
-            margin-bottom: 10px;
-        }
-
-        .responsive-adjustments {
-            @media (max-width: 768px) {
-                .hero-title { font-size: 2.5rem; }
-                .feature-grid { grid-template-columns: 1fr; }
-                .container { padding: 0 15px; }
-            }
-        }
-    </style>
-
-    <!-- Breadcrumb Structured Data -->
+    <!-- Article + FAQ Schema -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@type": "Article",
+        "headline": "Anonymous PDF Sharing — Share Documents Without Login",
+        "description": "How to share PDF documents securely without requiring login, account creation, or personal data collection from recipients.",
+        "author": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "datePublished": "2025-01-15",
+        "dateModified": "2025-06-01",
+        "mainEntityOfPage": "https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Question",
+                "name": "Can I share PDFs without requiring recipients to create an account?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. MaiPDF allows completely anonymous sharing. Upload your PDF, configure security settings, and share the link. Recipients open the PDF directly in their browser without any login, account creation, or personal information required."
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Features",
-                "item": "https://sendpdfonline.com/features/"
+                "@type": "Question",
+                "name": "Is anonymous PDF sharing still secure?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Anonymous sharing does not mean unsecured sharing. You can still add password protection, set view count limits, disable downloads, add watermarks, and track access analytics — all without requiring recipients to log in."
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Anonymous PDF Sharing",
-                "item": "https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing.html"
+                "@type": "Question",
+                "name": "Can I track who views my anonymously shared PDF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. MaiPDF provides access analytics including view count, device type, approximate location, and timestamps for every access — even for anonymously shared documents. For identified tracking, you can optionally require email verification."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Does anonymous sharing work on mobile devices?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Anonymously shared PDFs open directly in any mobile browser. Recipients simply tap the link or scan the QR code — no app download needed. Works on iPhone, Android, and all modern smartphones."
+                }
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root {
+            --blue-900: #1e3a8a;
+            --blue-600: #2563eb;
+            --blue-500: #3b82f6;
+            --blue-50: #eff6ff;
+            --gray-900: #111827;
+            --gray-600: #4b5563;
+            --gray-100: #f3f4f6;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--gray-900);
+            line-height: 1.7;
+        }
+
+        /* Hero */
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+            color: #fff;
+            padding: 80px 0 100px;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: #fff;
+            clip-path: polygon(0 100%, 100% 100%, 100% 0);
+        }
+        .hero h1 { font-weight: 800; font-size: 2.4rem; }
+        .hero .lead { font-size: 1.15rem; opacity: .92; max-width: 700px; }
+        .hero-stat {
+            background: rgba(255,255,255,.12);
+            backdrop-filter: blur(10px);
+            border-radius: 12px;
+            padding: 20px;
+            text-align: center;
+            border: 1px solid rgba(255,255,255,.15);
+        }
+        .hero-stat i { font-size: 1.6rem; margin-bottom: 8px; }
+        .hero-stat h5 { font-size: .95rem; margin-bottom: 4px; }
+        .hero-stat small { opacity: .8; font-size: .82rem; }
+
+        /* Section */
+        .section-title { font-weight: 700; font-size: 1.75rem; margin-bottom: .6rem; color: var(--gray-900); }
+        .section-subtitle { color: var(--gray-600); font-size: 1.05rem; margin-bottom: 2rem; }
+
+        /* Cards */
+        .feature-card {
+            background: #fff;
+            border-radius: 12px;
+            padding: 28px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+            border: 1px solid #e5e7eb;
+            transition: transform .25s, box-shadow .25s;
+            height: 100%;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,.1);
+        }
+        .icon-circle {
+            width: 52px; height: 52px;
+            border-radius: 12px;
+            display: flex; align-items: center; justify-content: center;
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+        }
+        .feature-card h4 { font-size: 1.1rem; font-weight: 700; margin-bottom: 8px; }
+        .feature-card p { color: var(--gray-600); font-size: .93rem; margin: 0; }
+        .feature-card ul { color: var(--gray-600); font-size: .93rem; padding-left: 18px; margin: 0; }
+        .feature-card ul li { margin-bottom: 4px; }
+
+        /* Steps */
+        .step-card { text-align: center; padding: 32px 20px; }
+        .step-num {
+            width: 48px; height: 48px;
+            background: var(--blue-600);
+            color: #fff;
+            border-radius: 50%;
+            display: flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.2rem;
+            margin: 0 auto 16px;
+        }
+        .step-connector {
+            display: flex; align-items: center; justify-content: center;
+            color: var(--blue-500); font-size: 1.5rem;
+        }
+
+        /* Mermaid */
+        .mermaid-wrapper {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px;
+            box-shadow: 0 2px 12px rgba(0,0,0,.06);
+            border: 1px solid #e5e7eb;
+            margin: 2rem 0;
+        }
+
+        /* FAQ */
+        .faq-item {
+            background: #fff;
+            border-radius: 12px;
+            padding: 24px 28px;
+            margin-bottom: 16px;
+            box-shadow: 0 2px 8px rgba(0,0,0,.04);
+            border: 1px solid #e5e7eb;
+        }
+        .faq-item h4 { font-size: 1.05rem; font-weight: 700; color: var(--gray-900); margin-bottom: 10px; }
+        .faq-item p { color: var(--gray-600); font-size: .93rem; margin: 0; }
+
+        /* CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #fff; border-radius: 16px; padding: 48px; text-align: center;
+        }
+        .cta-section h2 { font-weight: 800; }
+        .btn-cta {
+            background: #fff; color: var(--blue-600);
+            font-weight: 700; padding: 14px 36px;
+            border-radius: 12px; font-size: 1.05rem;
+            border: none; transition: transform .2s, box-shadow .2s;
+        }
+        .btn-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 8px 24px rgba(0,0,0,.2);
+            color: var(--blue-900);
+        }
+
+        /* Related */
+        .related-card {
+            display: block; background: #fff; border-radius: 12px;
+            padding: 20px; border: 1px solid #e5e7eb;
+            text-decoration: none; color: var(--gray-900);
+            transition: transform .2s, box-shadow .2s; height: 100%;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,.08);
+            color: var(--blue-600);
+        }
+        .related-card h6 { font-weight: 700; margin-bottom: 4px; }
+        .related-card small { color: var(--gray-600); }
+
+        /* Footer */
+        .site-footer {
+            background: var(--gray-900); color: #d1d5db;
+            padding: 40px 0 24px; font-size: .88rem;
+        }
+        .site-footer h6 { color: #fff; font-weight: 700; font-size: .95rem; margin-bottom: 12px; }
+        .site-footer a { color: #93c5fd; text-decoration: none; }
+        .site-footer a:hover { color: #fff; }
+    </style>
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <!-- Hero -->
+    <section class="hero">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="../../../features/">Features</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Anonymous PDF Sharing</li>
-            </ol>
-        </div>
-    </nav>
-    
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container">
-            <div class="hero-content">
-                <h1 class="hero-title">
-                    <i class="fas fa-user-secret"></i>
-                    Anonymous PDF Sharing
-                </h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
-                </div>
-                
-                <p class="hero-subtitle">
-                    Secure document sharing without login requirements - protecting privacy while ensuring easy access
-                </p>
-                <a href="#features" class="cta-button">
-                    <i class="fas fa-rocket"></i>
-                    Explore Features
+            <nav aria-label="breadcrumb" class="mb-3">
+                <ol class="breadcrumb mb-0" style="font-size:.85rem;">
+                    <li class="breadcrumb-item"><a href="/" style="color:#93c5fd;">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/features/" style="color:#93c5fd;">Features</a></li>
+                    <li class="breadcrumb-item active text-white" aria-current="page">Anonymous PDF Sharing</li>
+                </ol>
+            </nav>
+
+            <h1 class="mb-3">Anonymous PDF Sharing <br class="d-none d-md-block">— No Login Required</h1>
+            <p class="lead mb-4">Share PDFs securely without requiring recipients to create accounts or provide personal information. Full security controls — passwords, view limits, watermarks, and analytics — with complete anonymity.</p>
+
+            <div class="d-flex flex-wrap gap-3 mb-5">
+                <a href="https://maipdf.com" class="btn btn-light btn-lg fw-bold px-4" target="_blank" rel="noopener">
+                    <i class="fas fa-user-secret me-2"></i>Share Anonymously Free
+                </a>
+                <a href="#how-it-works" class="btn btn-outline-light btn-lg px-4">
+                    <i class="fas fa-play-circle me-2"></i>See How It Works
                 </a>
             </div>
-        </div>
-    </section>
 
-    <!-- Main Content -->
-    <section class="section" id="features">
-        <div class="container">
-            <h2 class="section-title">Anonymous Sharing Capabilities</h2>
-            
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-door-open"></i>
+            <div class="row g-3" style="max-width:680px;">
+                <div class="col-4">
+                    <div class="hero-stat">
+                        <i class="fas fa-user-slash"></i>
+                        <h5>No Login</h5>
+                        <small>Zero accounts needed</small>
                     </div>
-                    <h3 class="feature-title">No Login Required</h3>
-                    <ul class="feature-list">
-                        <li>Instant access for recipients</li>
-                        <li>No account creation needed</li>
-                        <li>Simple link sharing</li>
-                        <li>Browser-based viewing</li>
-                        <li>Mobile-friendly access</li>
-                    </ul>
                 </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
+                <div class="col-4">
+                    <div class="hero-stat">
                         <i class="fas fa-shield-alt"></i>
+                        <h5>Still Secure</h5>
+                        <small>Full access controls</small>
                     </div>
-                    <h3 class="feature-title">Security Controls</h3>
-                    <ul class="feature-list">
-                        <li>View limits configuration</li>
-                        <li>Download prevention options</li>
-                        <li>Automatic expiration dates</li>
-                        <li>IP address tracking</li>
-                        <li>Access analytics</li>
-                    </ul>
                 </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-eye-slash"></i>
+                <div class="col-4">
+                    <div class="hero-stat">
+                        <i class="fas fa-mobile-alt"></i>
+                        <h5>Any Device</h5>
+                        <small>Browser-based viewing</small>
                     </div>
-                    <h3 class="feature-title">Privacy Protection</h3>
-                    <ul class="feature-list">
-                        <li>Anonymous recipient access</li>
-                        <li>No personal data collection</li>
-                        <li>Encrypted file transmission</li>
-                        <li>Secure server infrastructure</li>
-                        <li>GDPR compliant sharing</li>
-                    </ul>
-                </div>
-
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-cog"></i>
-                    </div>
-                    <h3 class="feature-title">Flexible Options</h3>
-                    <ul class="feature-list">
-                        <li>Custom sharing permissions</li>
-                        <li>Password protection available</li>
-                        <li>Watermark overlay options</li>
-                        <li>View-only restrictions</li>
-                        <li>Time-based access control</li>
-                    </ul>
                 </div>
             </div>
+        </div>
+    </section>
 
-            <div class="highlight-box">
-                <h3 style="font-size: 2rem; margin-bottom: 1rem;">
-                    <i class="fas fa-star"></i>
-                    Perfect for Sensitive Documents
-                </h3>
-                <p style="font-size: 1.2rem; margin-bottom: 2rem;">
-                    Share confidential files without compromising recipient convenience or document security
-                </p>
-                <a href="https://www.maipdf.com" class="cta-button">
-                    <i class="fas fa-upload"></i>
-                    Start Anonymous Sharing
+    <!-- Anonymous Sharing Workflow -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Anonymous Sharing Workflow</h2>
+            <p class="section-subtitle text-center">How anonymous PDF sharing works with full security</p>
+
+            <div class="mermaid-wrapper">
+                <div class="mermaid">
+flowchart LR
+    A[📄 Upload PDF] --> B[⚙️ Security Settings]
+
+    B --> C[🔒 Password]
+    B --> D[👁️ View Limits]
+    B --> E[🚫 No Download]
+    B --> F[💧 Watermark]
+
+    C --> G[🔗 Anonymous Link]
+    D --> G
+    E --> G
+    F --> G
+
+    G --> H[📤 Share Link/QR]
+
+    H --> I[👤 Recipient Clicks]
+    I --> J{Password?}
+
+    J -->|Required| K[🔑 Enter Password]
+    J -->|Not Set| L[📖 View Directly]
+
+    K --> L
+
+    L --> M[📊 Access Logged]
+    M --> N[No Identity Collected]
+
+    style A fill:#dbeafe,stroke:#3b82f6
+    style G fill:#d1fae5,stroke:#10b981
+    style L fill:#d1fae5,stroke:#10b981
+    style N fill:#fef3c7,stroke:#f59e0b
+    style M fill:#e0e7ff,stroke:#6366f1
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 4 Core Capabilities -->
+    <section class="py-5" style="background:var(--gray-100);">
+        <div class="container">
+            <h2 class="section-title text-center">Anonymous Sharing Capabilities</h2>
+            <p class="section-subtitle text-center">Privacy-first sharing with full security controls</p>
+
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#dbeafe;color:#2563eb;">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <h4>No Login Required</h4>
+                        <ul>
+                            <li>Instant access for recipients</li>
+                            <li>No account creation needed</li>
+                            <li>Simple link or QR sharing</li>
+                            <li>Browser-based viewing</li>
+                            <li>Mobile-friendly access</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#d1fae5;color:#059669;">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h4>Security Controls</h4>
+                        <ul>
+                            <li>View count limits</li>
+                            <li>Download prevention</li>
+                            <li>Automatic expiration</li>
+                            <li>Password protection</li>
+                            <li>Access analytics</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#fef3c7;color:#d97706;">
+                            <i class="fas fa-eye-slash"></i>
+                        </div>
+                        <h4>Privacy Protection</h4>
+                        <ul>
+                            <li>Anonymous recipient access</li>
+                            <li>No personal data collection</li>
+                            <li>Encrypted transmission</li>
+                            <li>Secure infrastructure</li>
+                            <li>Privacy-compliant sharing</li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#e0e7ff;color:#4f46e5;">
+                            <i class="fas fa-sliders-h"></i>
+                        </div>
+                        <h4>Flexible Options</h4>
+                        <ul>
+                            <li>Custom sharing permissions</li>
+                            <li>Optional password protection</li>
+                            <li>Watermark overlay</li>
+                            <li>View-only restrictions</li>
+                            <li>Time-based access control</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section id="how-it-works" class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">How Anonymous Sharing Works</h2>
+            <p class="section-subtitle text-center">Three steps — no accounts needed on either side</p>
+
+            <div class="row g-4 align-items-stretch justify-content-center">
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card step-card">
+                        <div class="step-num">1</div>
+                        <h4>Upload Your PDF</h4>
+                        <p>Visit MaiPDF and upload your document. No registration or account creation required — just drag and drop.</p>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-lg-flex align-items-center">
+                    <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card step-card">
+                        <div class="step-num">2</div>
+                        <h4>Set Security Options</h4>
+                        <p>Configure password, view limits, download restrictions, and watermarks. All controls are optional — use what you need.</p>
+                    </div>
+                </div>
+                <div class="col-auto d-none d-lg-flex align-items-center">
+                    <div class="step-connector"><i class="fas fa-arrow-right"></i></div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <div class="feature-card step-card">
+                        <div class="step-num">3</div>
+                        <h4>Share the Link</h4>
+                        <p>Copy the anonymous link or QR code and send it to recipients. They open it directly in their browser — no login needed.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Security Benefits -->
+    <section class="py-5" style="background:var(--gray-100);">
+        <div class="container">
+            <h2 class="section-title text-center">Security Benefits of Anonymous Sharing</h2>
+            <p class="section-subtitle text-center">Privacy and protection are not mutually exclusive</p>
+
+            <div class="row g-4">
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#dbeafe;color:#2563eb;">
+                            <i class="fas fa-user-shield"></i>
+                        </div>
+                        <h4>Enhanced Privacy</h4>
+                        <p>Recipients access documents without revealing personal information or creating accounts, maintaining complete anonymity throughout the viewing process.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#fef3c7;color:#d97706;">
+                            <i class="fas fa-clock"></i>
+                        </div>
+                        <h4>Time-Limited Access</h4>
+                        <p>Set automatic expiration dates to ensure documents are only accessible for the intended duration. Links stop working after the set period or view count.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#e0e7ff;color:#4f46e5;">
+                            <i class="fas fa-chart-bar"></i>
+                        </div>
+                        <h4>Anonymous Access Analytics</h4>
+                        <p>Monitor document views, device types, and access patterns without collecting personal information. Gain engagement insights while respecting viewer privacy.</p>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#d1fae5;color:#059669;">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h4>Download Prevention</h4>
+                        <p>Control whether recipients can download files. Maintain document security by forcing browser-only viewing while still allowing anonymous access.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Industry Applications -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Industry Applications</h2>
+            <p class="section-subtitle text-center">Who benefits most from anonymous PDF sharing</p>
+
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#fef3c7;color:#d97706;">
+                            <i class="fas fa-balance-scale"></i>
+                        </div>
+                        <h4>Legal Professionals</h4>
+                        <p>Share sensitive legal documents with clients and counterparties while maintaining confidentiality. No account barriers for external parties reviewing contracts or filings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#dbeafe;color:#2563eb;">
+                            <i class="fas fa-chart-line"></i>
+                        </div>
+                        <h4>Financial Services</h4>
+                        <p>Distribute financial reports and analysis to stakeholders without requiring account creation. Ideal for sharing investor updates and compliance documents.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#fce7f3;color:#db2777;">
+                            <i class="fas fa-palette"></i>
+                        </div>
+                        <h4>Creative Agencies</h4>
+                        <p>Share design proposals and creative work with clients while protecting IP through watermarks. No friction for clients reviewing proofs and mockups.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#d1fae5;color:#059669;">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h4>Healthcare</h4>
+                        <p>Securely share medical documents and reports while complying with patient privacy regulations. Recipients view documents without creating accounts.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#e0e7ff;color:#7c3aed;">
+                            <i class="fas fa-graduation-cap"></i>
+                        </div>
+                        <h4>Education</h4>
+                        <p>Distribute course materials and resources to students instantly. No account barriers for accessing reading assignments, syllabi, or study guides.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="icon-circle" style="background:#ccfbf1;color:#0d9488;">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Corporate</h4>
+                        <p>Share internal documents with external partners, vendors, and contractors without requiring them to join your platform or create corporate accounts.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5" style="background:var(--gray-100);">
+        <div class="container">
+            <h2 class="section-title text-center">Frequently Asked Questions</h2>
+            <p class="section-subtitle text-center">Common questions about anonymous PDF sharing</p>
+
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="faq-item">
+                        <h4><i class="fas fa-user-slash me-2" style="color:var(--blue-600);"></i>Can I share PDFs without requiring recipients to create an account?</h4>
+                        <p>Yes. Upload your PDF, configure security settings, and share the link. Recipients open it directly in their browser without login, registration, or personal information required.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-shield-alt me-2" style="color:var(--blue-600);"></i>Is anonymous sharing still secure?</h4>
+                        <p>Yes. Anonymous sharing does not mean unsecured. You can add password protection, set view count limits, disable downloads, add watermarks, and track access analytics — all without requiring accounts.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-chart-bar me-2" style="color:var(--blue-600);"></i>Can I track views on anonymously shared PDFs?</h4>
+                        <p>Yes. MaiPDF provides analytics including view count, device type, approximate location, and timestamps — even for anonymously shared documents. For identified access, optionally require email verification.</p>
+                    </div>
+                    <div class="faq-item">
+                        <h4><i class="fas fa-mobile-alt me-2" style="color:var(--blue-600);"></i>Does anonymous sharing work on mobile?</h4>
+                        <p>Yes. Anonymously shared PDFs open directly in any mobile browser. Recipients tap the link or scan the QR code — no app download needed. Works on iPhone, Android, and all modern devices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Related Guides -->
+    <section class="py-5">
+        <div class="container">
+            <h2 class="section-title text-center">Related Guides</h2>
+            <div class="row g-3 justify-content-center">
+                <div class="col-md-4">
+                    <a href="/features/en/sharing/share-pdf-files-online" class="related-card">
+                        <h6><i class="fas fa-share-alt me-2" style="color:var(--blue-600);"></i>Share PDF Files Online</h6>
+                        <small>All PDF sharing methods and features</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/features/en/security/pdf-security-features" class="related-card">
+                        <h6><i class="fas fa-lock me-2" style="color:var(--blue-600);"></i>PDF Security Features</h6>
+                        <small>Complete security overview</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/features/en/security/pdf-expiry-and-self-destruct" class="related-card">
+                        <h6><i class="fas fa-hourglass-half me-2" style="color:var(--blue-600);"></i>PDF Expiry & View Limits</h6>
+                        <small>Time-based and count-based access control</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/features/en/sharing/convert-pdf-to-qr-code" class="related-card">
+                        <h6><i class="fas fa-qrcode me-2" style="color:var(--blue-600);"></i>PDF to QR Code</h6>
+                        <small>Generate QR codes for anonymous sharing</small>
+                    </a>
+                </div>
+                <div class="col-md-4">
+                    <a href="/article/pdf-access-control-guide" class="related-card">
+                        <h6><i class="fas fa-user-shield me-2" style="color:var(--blue-600);"></i>PDF Access Control Guide</h6>
+                        <small>Comprehensive access control strategies</small>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section">
+                <h2 class="mb-3">Start Sharing PDFs Anonymously</h2>
+                <p class="mb-4 opacity-75" style="max-width:600px;margin:0 auto;">Upload your PDF and share it instantly — no login required for you or your recipients. Full security controls included, completely free.</p>
+                <a href="https://maipdf.com" class="btn btn-cta" target="_blank" rel="noopener">
+                    <i class="fas fa-user-secret me-2"></i>Share Anonymously Free
                 </a>
             </div>
-
-            <div class="security-benefits">
-                <h3 style="font-size: 2rem; margin-bottom: 2rem; text-align: center;">Security Benefits</h3>
-                
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-lock"></i>
-                    </div>
-                    <div>
-                        <h4>Enhanced Privacy</h4>
-                        <p>Recipients can access documents without revealing personal information or creating accounts, maintaining complete anonymity.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-clock"></i>
-                    </div>
-                    <div>
-                        <h4>Time-Limited Access</h4>
-                        <p>Set automatic expiration dates to ensure documents are only accessible for the intended duration.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-eye"></i>
-                    </div>
-                    <div>
-                        <h4>View Tracking</h4>
-                        <p>Monitor document access without compromising recipient privacy, gaining insights into engagement patterns.</p>
-                    </div>
-                </div>
-
-                <div class="benefit-item">
-                    <div class="benefit-icon">
-                        <i class="fas fa-ban"></i>
-                    </div>
-                    <div>
-                        <h4>Download Prevention</h4>
-                        <p>Control whether recipients can download files, maintaining document security while allowing viewing access.</p>
-                    </div>
-                </div>
-            </div>
-
-            <h3 class="section-title">Industry Applications</h3>
-            <div class="industry-grid">
-                <div class="industry-card">
-                    <h4><i class="fas fa-briefcase"></i> Legal Professionals</h4>
-                    <p>Share sensitive legal documents with clients and colleagues while maintaining confidentiality and professional standards.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h4><i class="fas fa-chart-line"></i> Financial Services</h4>
-                    <p>Distribute financial reports and analysis to stakeholders without requiring account creation or personal data collection.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h4><i class="fas fa-palette"></i> Creative Agencies</h4>
-                    <p>Share design proposals and creative work with clients while protecting intellectual property and maintaining control.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h4><i class="fas fa-user-md"></i> Healthcare</h4>
-                    <p>Securely share medical documents and reports while complying with privacy regulations and patient confidentiality.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h4><i class="fas fa-graduation-cap"></i> Education</h4>
-                    <p>Distribute educational materials and resources to students without requiring account creation or personal information.</p>
-                </div>
-
-                <div class="industry-card">
-                    <h4><i class="fas fa-building"></i> Corporate</h4>
-                    <p>Share internal documents and reports with external partners while maintaining security and access control.</p>
-                </div>
-            </div>
         </div>
     </section>
 
-    <!-- Stats Section -->
-    <section class="stats-section">
+    <!-- Footer -->
+    <footer class="site-footer">
         <div class="container">
-            <h2 style="font-size: 2.5rem; margin-bottom: 1rem;">Trusted by Professionals Worldwide</h2>
-            <p style="font-size: 1.3rem; opacity: 0.8;">Anonymous sharing that doesn't compromise on security or convenience</p>
-            
-            <div class="stats-grid">
-                <div class="stat-item">
-                    <div class="stat-number">250K+</div>
-                    <div>Documents Shared Anonymously</div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <h6>MaiPDF</h6>
+                    <p class="mb-0">Anonymous PDF sharing with full security controls. No accounts needed — for senders or recipients. Free to use.</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">99.9%</div>
-                    <div>Uptime Reliability</div>
+                <div class="col-md-4">
+                    <h6>Quick Links</h6>
+                    <ul class="list-unstyled mb-0">
+                        <li><a href="/">Home</a></li>
+                        <li><a href="/features/">All Features</a></li>
+                        <li><a href="/article/">Articles & Guides</a></li>
+                        <li><a href="https://maipdf.com" target="_blank" rel="noopener">MaiPDF.com</a></li>
+                    </ul>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">50+</div>
-                    <div>Countries Served</div>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">24/7</div>
-                    <div>Security Monitoring</div>
+                <div class="col-md-4">
+                    <h6>Contact</h6>
+                    <!--email_off-->
+                    <p class="mb-1"><i class="fas fa-envelope me-2"></i>joe@pdfhost.online</p>
+                    <!--/email_off-->
+                    <p class="mb-0"><i class="fas fa-globe me-2"></i><a href="https://maipdf.com" target="_blank" rel="noopener">maipdf.com</a></p>
                 </div>
             </div>
+            <hr style="border-color:#374151;margin:24px 0 16px;">
+            <p class="text-center mb-0" style="font-size:.82rem;">&copy; 2025 MaiPDF. All rights reserved.</p>
         </div>
-    </section>
+    </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Smooth scrolling -->
-    <script>
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
-    </script>
+    <!-- Bootstrap JS + Mermaid -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
 </body>
 </html>

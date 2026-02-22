@@ -74,6 +74,7 @@
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('compliance')">合规工作列表</button>
     <button class="tab-btn" onclick="switchTab('plan')">🚀 改善计划</button>
+    <button class="tab-btn" onclick="switchTab('refine')">📝 页面精修</button>
   </div>
 
   <!-- Tab 1: Compliance Work List -->
@@ -599,12 +600,336 @@
 
   </div><!-- end tab-plan -->
 
+  <!-- Tab 3: Page Refinement Tracker -->
+  <div id="tab-refine" class="tab-panel">
+
+    <h1 style="text-align:center">📝 页面精修进度</h1>
+    <p style="text-align:center;color:#94a3b8;margin-bottom:8px">设计风格统一为主页风格 (深蓝渐变 Hero + 白色卡片 + Bootstrap 5.3 + Font Awesome 6.4)<br>每页需要：✅ 现代设计 ✅ SVG/Mermaid 流程图 ✅ 真实截图 ✅ 结构化数据 ✅ 内链
+    </p>
+
+    <!-- 统计 -->
+    <div class="stats-row" style="margin-bottom:24px">
+      <div class="stat-card"><div class="num" id="refine-total">0</div><div class="label">需精修总数</div></div>
+      <div class="stat-card"><div class="num" id="refine-done" style="color:#4ade80">0</div><div class="label">已完成</div></div>
+      <div class="stat-card"><div class="num" id="refine-en">0</div><div class="label">英文页</div></div>
+      <div class="stat-card"><div class="num" id="refine-zh">0</div><div class="label">中文页</div></div>
+    </div>
+
+    <!-- ========== 根目录 ========== -->
+    <div class="plan-section">
+      <h2>🏠 根目录</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>语言</th><th>大小</th><th>图</th><th>SVG</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><code>index.html</code></td><td>EN</td><td>26.7K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">已完成 — Phase 2 重写为产品落地页</span></td></tr>
+          <tr><td>2</td><td><code>convert-pdf-features.html</code></td><td>EN</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待检查</span></td></tr>
+          <tr><td>3</td><td><code>flowcharts.html</code></td><td>EN</td><td>—</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待检查</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== article/ ========== -->
+    <div class="plan-section">
+      <h2>📄 article/ — 文章目录 (核心内容)</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>语言</th><th>大小</th><th>图</th><th>SVG</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>4</td><td><code>article/index.html</code></td><td>EN</td><td>28.8K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>5</td><td><code>article/share-pdf-online.html</code></td><td>EN</td><td>66.4K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>6</td><td><code>article/send-pdf-online.html</code></td><td>EN</td><td>47.5K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图片</span></td></tr>
+          <tr><td>7</td><td><code>article/limit-pdf-access-times-en.html</code></td><td>EN</td><td>43.5K</td><td>—</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 有 Mermaid 但无截图</span></td></tr>
+          <tr><td>8</td><td><code>article/pdf-link-sharing-guide-en.html</code></td><td>EN</td><td>41.0K</td><td>—</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 有 Mermaid 但无截图</span></td></tr>
+          <tr><td>9</td><td><code>article/internal-company-docs-sharing.html</code></td><td>EN</td><td>40.9K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>10</td><td><code>article/pdf-access-control-guide.html</code></td><td>EN</td><td>40.5K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">Phase 4 新建 ✓</span></td></tr>
+          <tr><td>11</td><td><code>article/ebook-preview.html</code></td><td>EN</td><td>37.6K</td><td>—</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 大文件但无截图</span></td></tr>
+          <tr><td>12</td><td><code>article/secure-pdf-sharing-guide.html</code></td><td>EN</td><td>37.5K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>13</td><td><code>article/pdf-sharing-methods.html</code></td><td>EN</td><td>35.6K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图无图表</span></td></tr>
+          <tr><td>14</td><td><code>article/maipdf-vs-docsend.html</code></td><td>EN</td><td>35.1K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-green">Phase 4 新建 ✓</span></td></tr>
+          <tr><td>15</td><td><code>article/sales-pitch-decks.html</code></td><td>EN</td><td>34.7K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图无图表</span></td></tr>
+          <tr><td>16</td><td><code>article/pdf-watermark-guide.html</code></td><td>EN</td><td>34.1K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">Phase 3 新建 ✓</span></td></tr>
+          <tr><td>17</td><td><code>article/track-pdf-analytics-guide.html</code></td><td>EN</td><td>34.0K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">Phase 3 新建 ✓</span></td></tr>
+          <tr><td>18</td><td><code>article/prevent-pdf-forwarding-guide.html</code></td><td>EN</td><td>33.8K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">Phase 3 新建 ✓</span></td></tr>
+          <tr><td>19</td><td><code>article/time-limited-whitepapers-case-studies.html</code></td><td>EN</td><td>33.6K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>20</td><td><code>article/pdf-qr-code-guide-en.html</code></td><td>EN</td><td>32.8K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图无图表</span></td></tr>
+          <tr><td>21</td><td><code>article/maipdf-vs-smallpdf.html</code></td><td>EN</td><td>32.5K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-green">Phase 4 新建 ✓</span></td></tr>
+          <tr><td>22</td><td><code>article/confidential-documents-risk.html</code></td><td>EN</td><td>32.2K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图无图表</span></td></tr>
+          <tr><td>23</td><td><code>article/controlling-pdf-access.html</code></td><td>EN</td><td>31.6K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 有 Mermaid</span></td></tr>
+          <tr><td>24</td><td><code>article/time-limited-whitepapers.html</code></td><td>EN</td><td>31.3K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图无图表</span></td></tr>
+          <tr><td>25</td><td><code>article/training-materials-distribution.html</code></td><td>EN</td><td>31.0K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图无图表</span></td></tr>
+          <tr><td>26</td><td><code>article/pdf-sharing-security.html</code></td><td>EN</td><td>26.9K</td><td>—</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 有 Mermaid 但无截图</span></td></tr>
+          <tr><td>27</td><td><code>article/pdf-share-expire.html</code></td><td>EN</td><td>21.0K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>28</td><td><code>article/confidential-investor-updates.html</code></td><td>EN</td><td>20.5K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>29</td><td><code>article/online-pdf-viewer.html</code></td><td>EN</td><td>19.6K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图无图表</span></td></tr>
+          <tr><td>30</td><td><code>article/show-pdf-online.html</code></td><td>EN</td><td>13.8K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄内容+无图</span></td></tr>
+          <tr><td>31</td><td><code>article/pdf-view-limits-security.html</code></td><td>EN</td><td>13.3K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄内容+无图</span></td></tr>
+          <tr><td>32</td><td><code>article/sensitive-documents-security.html</code></td><td>EN</td><td>11.4K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄内容+无图</span></td></tr>
+          <tr><td>33</td><td><code>article/pdf-control-lost.html</code></td><td>EN</td><td>9.3K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄内容+无图</span></td></tr>
+          <tr><td>34</td><td><code>article/how-to-track-a-pdf-file.html</code></td><td>EN</td><td>8.1K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄+无schema+无图</span></td></tr>
+          <tr><td>35</td><td><code>article/maipdf-convert-tool-en.html</code></td><td>EN</td><td>8.1K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄内容</span></td></tr>
+          <tr><td>36</td><td><code>article/secure-pricing-sheets.html</code></td><td>EN</td><td>6.1K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 极薄内容</span></td></tr>
+          <!-- ZH 文章 -->
+          <tr style="background:#1a1a2e"><td colspan="8" style="color:#93c5fd;font-weight:700">▼ 中文文章</td></tr>
+          <tr><td>37</td><td><code>article/limit-pdf-open-times.html</code></td><td>ZH</td><td>47.4K</td><td>—</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>38</td><td><code>article/free-pdf-sharing-online-zh.html</code></td><td>ZH</td><td>46.0K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>39</td><td><code>article/pdf-link-sharing-guide-zh.html</code></td><td>ZH</td><td>33.3K</td><td>—</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>40</td><td><code>article/pdf-to-qr-tutorial.html</code></td><td>ZH</td><td>29.4K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>41</td><td><code>article/replace-pdf-without-changing-link.html</code></td><td>ZH</td><td>28.7K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>42</td><td><code>article/replace-pdf-without-changing-link-zh.html</code></td><td>ZH</td><td>27.7K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>43</td><td><code>article/qr-code-pdf-scenarios.html</code></td><td>ZH</td><td>25.3K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>44</td><td><code>article/pdf-qr-code-guide-zh.html</code></td><td>ZH</td><td>24.3K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>45</td><td><code>article/pdf-qr-code-sharing-easy.html</code></td><td>ZH</td><td>20.0K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>46</td><td><code>article/offline-maipdf-cn.html</code></td><td>ZH</td><td>13.3K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>47</td><td><code>article/offline-maipdf.html</code></td><td>ZH</td><td>9.9K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄+无图</span></td></tr>
+          <tr><td>48</td><td><code>article/maipdf-convert-tool-zh.html</code></td><td>ZH</td><td>7.9K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr><td>49</td><td><code>article/how-to-track-a-pdf-file-zh.html</code></td><td>ZH</td><td>7.6K</td><td>✅</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄+无schema</span></td></tr>
+          <!-- 非 EN/ZH 文章 (仍然 indexable 但建议 noindex) -->
+          <tr style="background:#1a1a2e"><td colspan="8" style="color:#fca5a5;font-weight:700">▼ 其他语言文章 (建议 noindex)</td></tr>
+          <tr><td>50</td><td><code>article/offline-maipdf-ar-new.html</code></td><td>AR</td><td>9.6K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-purple">建议 noindex</span></td></tr>
+          <tr><td>51</td><td><code>article/offline-maipdf-en.html</code></td><td>EN</td><td>11.8K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 与 offline-maipdf-en-new 重复?</span></td></tr>
+          <tr><td>52</td><td><code>article/offline-maipdf-en-new.html</code></td><td>EN</td><td>8.3K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 与 offline-maipdf-en 重复?</span></td></tr>
+          <tr><td>53</td><td><code>article/offline-maipdf-ja-new.html</code></td><td>JA</td><td>9.2K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-purple">建议 noindex</span></td></tr>
+          <tr><td>54</td><td><code>article/offline-maipdf-ko-new.html</code></td><td>KO</td><td>8.6K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-purple">建议 noindex</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== features/en/ ========== -->
+    <div class="plan-section">
+      <h2>⚙️ features/en/ — 英文功能页</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>图</th><th>SVG</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>55</td><td><code>features/index.html</code></td><td>33.9K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-green">已精修 ✓ — 统一主页风格+卡片式目录</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ comparison/</td></tr>
+          <tr><td>56</td><td><code>features/en/comparison/locklizard-vs-maipdf-comparison.html</code></td><td>28.6K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ design/</td></tr>
+          <tr><td>57</td><td><code>features/en/design/design-file-organization.html</code></td><td>15.6K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>58</td><td><code>features/en/design/designer-portfolio-pdf.html</code></td><td>12.6K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>59</td><td><code>features/en/design/design-work-sharing.html</code></td><td>12.0K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>60</td><td><code>features/en/design/share-design-portfolio.html</code></td><td>10.0K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议纠正或noindex</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ hosting/</td></tr>
+          <tr><td>61</td><td><code>features/en/hosting/free-pdf-hosting-and-sharing.html</code></td><td>33.2K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>62</td><td><code>features/en/hosting/secure-pdf-hosting.html</code></td><td>12.7K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>63</td><td><code>features/en/hosting/maipdf-secure-pdf-hosting.html</code></td><td>11.4K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图，与 #62 重复?</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ security/</td></tr>
+          <tr><td>64</td><td><code>features/en/security/pdf-expiry-and-self-destruct.html</code></td><td>28.5K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修 ✓ — 主页风格+Mermaid+FAQ schema+6用例</span></td></tr>
+          <tr><td>65</td><td><code>features/en/security/anonymous-pdf-sharing.html</code></td><td>21.1K</td><td>—</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修 ✓ — 主页风格+Mermaid+FAQ schema+6行业</span></td></tr>
+          <tr><td>66</td><td><code>features/en/security/convert-pdf-to-secure-links.html</code></td><td>20.4K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>67</td><td><code>features/en/security/pdf-security-features.html</code></td><td>21.7K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修 ✓ — 主页风格+Mermaid+FAQ schema+8功能+6用例</span></td></tr>
+          <tr><td>68</td><td><code>features/en/security/secure-pdf-sharing-advanced-features.html</code></td><td>17.5K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>69</td><td><code>features/en/security/secure-pdf-sharing-methods.html</code></td><td>16.8K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>70</td><td><code>features/en/security/pdf-security-best-practices.html</code></td><td>15.1K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>71</td><td><code>features/en/security/keycodeEN.html</code></td><td>14.1K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-purple">非内容页 — 建议noindex</span></td></tr>
+          <tr><td>72</td><td><code>features/en/security/pdf_prevent_forward.html</code></td><td>14.3K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>73</td><td><code>features/en/security/prevent-pdf-forwarding-dynamicqr.html</code></td><td>13.7K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>74</td><td><code>features/en/security/preventdownload.html</code></td><td>13.0K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>75</td><td><code>features/en/security/time-limits-pdf-files.html</code></td><td>13.0K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>76</td><td><code>features/en/security/advanced-security-configurations.html</code></td><td>11.5K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>77</td><td><code>features/en/security/share-pdf-online-securely.html</code></td><td>11.5K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>78</td><td><code>features/en/security/maipdf_strong_protection.html</code></td><td>11.2K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议移到 zh/ 或 noindex</span></td></tr>
+          <tr><td>79</td><td><code>features/en/security/set-expiration-date-for-pdfs.html</code></td><td>10.4K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄+无图</span></td></tr>
+          <tr><td>80</td><td><code>features/en/security/secure-pdf-access-control.html</code></td><td>10.1K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr><td>81</td><td><code>features/en/security/prevent-document-content-copying.html</code></td><td>13.2K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议移到 zh/ 或 noindex</span></td></tr>
+          <tr><td>82</td><td><code>features/en/security/set-pdf-expiration-date.html</code></td><td>10.0K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议移到 zh/ 或 noindex</span></td></tr>
+          <tr><td>83</td><td><code>features/en/security/set-pdf-print-restrictions.html</code></td><td>11.3K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议移到 zh/ 或 noindex</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ sharing/</td></tr>
+          <tr><td>84</td><td><code>features/en/sharing/share-pdf-files-online.html</code></td><td>45.1K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修 ✓ — 主页风格+Mermaid+FAQ schema+比较表+6用例</span></td></tr>
+          <tr><td>85</td><td><code>features/en/sharing/convert-pdf-to-qr-code.html</code></td><td>29.1K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修 ✓ — 主页风格+Mermaid+FAQ schema+6用例</span></td></tr>
+          <tr><td>86</td><td><code>features/en/sharing/fast-free-pdf-sharing.html</code></td><td>18.9K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>87</td><td><code>features/en/sharing/pdflinks.html</code></td><td>17.1K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>88</td><td><code>features/en/sharing/pdf-link-sharing.html</code></td><td>17.3K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议 noindex</span></td></tr>
+          <tr><td>89</td><td><code>features/en/sharing/tourlway.html</code></td><td>15.7K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>90</td><td><code>features/en/sharing/sharepdf.html</code></td><td>12.6K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议 noindex</span></td></tr>
+          <tr><td>91</td><td><code>features/en/sharing/Share_PDF_Online.html</code></td><td>11.4K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>92</td><td><code>features/en/sharing/shareeasily.html</code></td><td>10.8K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄+无图</span></td></tr>
+          <tr><td>93</td><td><code>features/en/sharing/sharepdfsfilesonline.html</code></td><td>10.5K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>94</td><td><code>features/en/sharing/methodsofsharing.html</code></td><td>10.2K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr><td>95</td><td><code>features/en/sharing/maipdfexamples.html</code></td><td>10.9K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-purple">ZH内容 — 建议 noindex</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ tracking/ &amp; watermark/</td></tr>
+          <tr><td>96</td><td><code>features/en/tracking/client-feedback-management.html</code></td><td>15.8K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>97</td><td><code>features/en/watermark/dynamic-qr-watermark-pdf.html</code></td><td>21.4K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>98</td><td><code>features/en/watermark/design-watermark-protection.html</code></td><td>11.7K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== features/zh/ ========== -->
+    <div class="plan-section">
+      <h2>🇨🇳 features/zh/ — 中文功能页</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>图</th><th>SVG</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>99</td><td><code>features/zh/index.html</code></td><td>18.3K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 目录页</span></td></tr>
+          <tr><td>100</td><td><code>features/zh/mai介绍.html</code></td><td>14.3K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ comparison/</td></tr>
+          <tr><td>101</td><td><code>features/zh/comparison/whichone.html</code></td><td>11.4K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ design/</td></tr>
+          <tr><td>102</td><td><code>features/zh/design/designercn.html</code></td><td>7.1K</td><td>✅</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ hosting/</td></tr>
+          <tr><td>103</td><td><code>features/zh/hosting/maipdf_host_pdf_online_zh.html</code></td><td>11.2K</td><td>✅</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ security/</td></tr>
+          <tr><td>104</td><td><code>features/zh/security/maipdffenceview.html</code></td><td>33.4K</td><td>✅</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>105</td><td><code>features/zh/security/pdf_prevent_forward.html</code></td><td>15.7K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>106</td><td><code>features/zh/security/pdf密码保护教程.html</code></td><td>14.4K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>107</td><td><code>features/zh/security/share-pdf-online-securely.html</code></td><td>13.0K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>108</td><td><code>features/zh/security/encrypt-pdf-prevent-editing-cn.html</code></td><td>11.8K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>109</td><td><code>features/zh/security/sharesecure.html</code></td><td>10.6K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>110</td><td><code>features/zh/security/keycode.html</code></td><td>11.9K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-purple">非内容页 — 建议 noindex</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ sharing/</td></tr>
+          <tr><td>111</td><td><code>features/zh/sharing/pdf安全分享完整指南.html</code></td><td>23.0K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>112</td><td><code>features/zh/sharing/waysmulti.html</code></td><td>22.6K</td><td>✅</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>113</td><td><code>features/zh/sharing/waystosend.html</code></td><td>18.1K</td><td>✅</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>114</td><td><code>features/zh/sharing/pdf水印设置教程.html</code></td><td>17.7K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>115</td><td><code>features/zh/sharing/ShareSecure.html</code></td><td>13.8K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>116</td><td><code>features/zh/sharing/pdf二维码生成教程.html</code></td><td>13.8K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 中文文件名+无schema</span></td></tr>
+          <tr style="background:#1a1a2e"><td colspan="7" style="color:#93c5fd;font-weight:700">▼ maiimg/ tracking/ watermark/</td></tr>
+          <tr><td>117</td><td><code>features/zh/tracking/阅读记录.html</code></td><td>41.8K</td><td>✅</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>118</td><td><code>features/zh/maiimg/免费图片托管分享指南.html</code></td><td>21.0K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>119</td><td><code>features/zh/maiimg/图片二维码分享.html</code></td><td>14.4K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>120</td><td><code>features/zh/maiimg/批量图片上传分享.html</code></td><td>13.3K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>121</td><td><code>features/zh/maiimg/社交媒体图片分享.html</code></td><td>12.5K</td><td>—</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+          <tr><td>122</td><td><code>features/zh/watermark/动态水印maipdf.html</code></td><td>11.6K</td><td>✅</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 中文文件名</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== chinese/ ========== -->
+    <div class="plan-section">
+      <h2>🇨🇳 chinese/ — 中文独立目录</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>图</th><th>SVG</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>123</td><td><code>chinese/convert-pdf-features.html</code></td><td>46.0K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>124</td><td><code>chinese/convert-pdf-to-image.html</code></td><td>24.1K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>125</td><td><code>chinese/pdf-to-qr-guide.html</code></td><td>5.2K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 极薄内容</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== usecase/ ========== -->
+    <div class="plan-section">
+      <h2>💼 usecase/ — 用例页面</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>图</th><th>SVG</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>126</td><td><code>usecase/index.html</code></td><td>17.8K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 目录页</span></td></tr>
+          <tr><td>127</td><td><code>usecase/confidential-investor-updates.html</code></td><td>17.5K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>128</td><td><code>usecase/secure-pdf-sharing.html</code></td><td>16.9K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>129</td><td><code>usecase/document-control-security.html</code></td><td>16.7K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>130</td><td><code>usecase/pdf-branding.html</code></td><td>16.2K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>131</td><td><code>usecase/pdf-sharing-analytics.html</code></td><td>16.1K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>132</td><td><code>usecase/pdf-access-control.html</code></td><td>16.5K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>133</td><td><code>usecase/pdf-password-protection.html</code></td><td>15.3K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>134</td><td><code>usecase/pdf-watermarking.html</code></td><td>15.2K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>135</td><td><code>usecase/pdf-security.html</code></td><td>15.2K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>136</td><td><code>usecase/pdf-encryption.html</code></td><td>15.0K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>137</td><td><code>usecase/pdf-analytics.html</code></td><td>15.0K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>138</td><td><code>usecase/share-pdf-online.html</code></td><td>13.2K</td><td>—</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>139</td><td><code>usecase/free-pdf-hosting.html</code></td><td>12.6K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== maiimg-articles/ ========== -->
+    <div class="plan-section">
+      <h2>🖼️ maiimg-articles/ — 图片分享文章 (MaiImg)</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>图</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>140</td><td><code>maiimg-articles/index.html</code></td><td>8.9K</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 目录页</span></td></tr>
+          <tr><td>141</td><td><code>maiimg-articles/free-image-hosting-sharing.html</code></td><td>34.9K</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>142</td><td><code>maiimg-articles/email-image-sharing-no-attachments.html</code></td><td>21.4K</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>143</td><td><code>maiimg-articles/social-media-image-sharing.html</code></td><td>17.9K</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>144</td><td><code>maiimg-articles/image-sharing-best-practices.html</code></td><td>17.3K</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>145</td><td><code>maiimg-articles/image-compression-optimization.html</code></td><td>14.7K</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 无图无schema</span></td></tr>
+          <tr><td>146</td><td><code>maiimg-articles/image-format-guide.html</code></td><td>12.4K</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 无图无schema</span></td></tr>
+          <tr><td>147</td><td><code>maiimg-articles/image-qr-code-sharing.html</code></td><td>10.2K</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr><td>148</td><td><code>maiimg-articles/image-watermark-protection.html</code></td><td>10.8K</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr><td>149</td><td><code>maiimg-articles/image-password-protection.html</code></td><td>11.3K</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr><td>150</td><td><code>maiimg-articles/image-expiration-access-control.html</code></td><td>11.8K</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+          <tr><td>151</td><td><code>maiimg-articles/batch-image-upload-sharing.html</code></td><td>11.7K</td><td>✅</td><td>—</td><td><span class="badge badge-yellow">待精修 — 薄</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== new-articles-for-blog/ ========== -->
+    <div class="plan-section">
+      <h2>📰 new-articles-for-blog/ — 博客文章</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>图</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>152</td><td><code>new-articles-for-blog/document-watermarking-guide.html</code></td><td>21.4K</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>153</td><td><code>new-articles-for-blog/drm-for-pdf.html</code></td><td>21.0K</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>154</td><td><code>new-articles-for-blog/pdf-security-best-practices.html</code></td><td>21.7K</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+          <tr><td>155</td><td><code>new-articles-for-blog/secure-file-sharing.html</code></td><td>21.2K</td><td>—</td><td>✅</td><td><span class="badge badge-yellow">待精修 — 无图</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== flipbook/ ========== -->
+    <div class="plan-section">
+      <h2>📖 flipbook/ — 翻页书</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>图</th><th>Schema</th><th>精修状态</th></tr></thead>
+        <tbody>
+          <tr><td>156</td><td><code>flipbook/pdf-flipbook-free.html</code></td><td>15.0K</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>157</td><td><code>flipbook/pdf-flipbook-watermark.html</code></td><td>17.1K</td><td>✅</td><td>✅</td><td><span class="badge badge-yellow">待精修</span></td></tr>
+          <tr><td>158</td><td><code>flipbook/turn-flipbook.html</code></td><td>17.4K</td><td>—</td><td>—</td><td><span class="badge badge-yellow">待精修 — 无schema，可能需noindex</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <!-- ========== DE/FR 残留 ========== -->
+    <div class="plan-section">
+      <h2>⚠️ 仍可索引但应 noindex 的页面</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>问题</th><th>建议</th></tr></thead>
+        <tbody>
+          <tr><td>159</td><td><code>features/de/analytics/maipdf_analytics_features_de.html</code></td><td>2.4K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
+          <tr><td>160</td><td><code>features/de/maipdf_homepage_de.html</code></td><td>3.1K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
+          <tr><td>161</td><td><code>features/de/security/maipdf_security_control_de.html</code></td><td>3.6K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
+          <tr><td>162</td><td><code>features/de/sharing/maipdf_sharing_features_de.html</code></td><td>2.4K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
+          <tr><td>163</td><td><code>features/fr/security/partage-securise-pdf-fonctionnalites-avancees.html</code></td><td>2.3K</td><td>极薄+无title+法语</td><td><span class="badge badge-purple">noindex</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <p style="text-align:center;color:#475569;font-size:13px;margin-top:32px">
+      页面精修清单 v1.0 ｜ 生成日期：2026-02-22 ｜ 共 163 个可索引页面 (含重定向存根)
+    </p>
+
+  </div><!-- end tab-refine -->
+
   <script>
   function switchTab(id){
     document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     document.getElementById('tab-'+id).classList.add('active');
     event.target.classList.add('active');
+    if(id==='refine') updateRefineStats();
+  }
+  function updateRefineStats(){
+    const panel=document.getElementById('tab-refine');
+    if(!panel) return;
+    const badges=panel.querySelectorAll('.badge');
+    let total=0,done=0;
+    badges.forEach(b=>{
+      // skip purple (noindex suggestions) and section headers
+      if(b.classList.contains('badge-yellow')||b.classList.contains('badge-green')) total++;
+      if(b.classList.contains('badge-green')) done++;
+    });
+    const el=id=>document.getElementById(id);
+    el('refine-total').textContent=total;
+    el('refine-done').textContent=done;
+    // Count EN/ZH from table cells
+    let en=0,zh=0;
+    panel.querySelectorAll('td').forEach(td=>{
+      const t=td.textContent.trim();
+      if(t==='EN') en++;
+      if(t==='ZH') zh++;
+    });
+    el('refine-en').textContent=en;
+    el('refine-zh').textContent=zh;
   }
   </script>
 
