@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Design Work Sharing: Secure Client Presentations | MaiPDF</title>
+    <meta name="description" content="Share design work with clients securely. Control access, prevent unauthorized downloads, track engagement, and present your designs professionally with MaiPDF.">
+    <meta name="keywords" content="design work sharing, client presentation, secure design sharing, PDF sharing for designers, design collaboration">
+    <meta property="og:title" content="Design Work Sharing: Secure Client Presentations">
+    <meta property="og:description" content="Share design work with clients securely using MaiPDF's access control, view tracking, and download prevention.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sendpdfonline.com/features/en/design/design-work-sharing">
+    <link rel="canonical" href="https://sendpdfonline.com/features/en/design/design-work-sharing">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root {
+            --blue-900: #1e3a8a;
+            --blue-600: #2563eb;
+            --blue-500: #3b82f6;
+            --blue-50: #eff6ff;
+            --gray-900: #111827;
+            --gray-600: #4b5563;
+            --gray-100: #f3f4f6;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            color: var(--gray-900);
+        }
+        .hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%);
+            color: #fff;
+            padding: 4.5rem 0 3.5rem;
+            position: relative;
+        }
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0; left: 0; right: 0;
+            height: 60px;
+            background: linear-gradient(to right bottom, transparent 49%, #fff 50%);
+        }
+        .hero h1 { font-weight: 800; }
+        .hero .lead { opacity: .9; font-size: 1.15rem; }
+        .breadcrumb-bar { background: var(--gray-100); padding: .75rem 0; }
+        .breadcrumb-bar a { color: var(--blue-600); text-decoration: none; }
+        .breadcrumb-bar a:hover { text-decoration: underline; }
+        .section-title { font-weight: 700; margin-bottom: 1rem; }
+        .section-subtitle { color: var(--gray-600); font-size: 1.1rem; margin-bottom: 2.5rem; }
+        .icon-circle {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--blue-50); color: var(--blue-600);
+            display: inline-flex; align-items: center; justify-content: center;
+            font-size: 1.2rem; flex-shrink: 0;
+        }
+        .feature-card {
+            background: #fff; border: 1px solid #e5e7eb; border-radius: 12px;
+            padding: 2rem; height: 100%;
+            transition: transform .2s, box-shadow .2s;
+        }
+        .feature-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,.1);
+        }
+        .step-num {
+            width: 48px; height: 48px; border-radius: 50%;
+            background: var(--blue-600); color: #fff;
+            display: inline-flex; align-items: center; justify-content: center;
+            font-weight: 700; font-size: 1.2rem; flex-shrink: 0;
+        }
+        .mermaid-wrapper {
+            background: #fff; border-radius: 12px; padding: 2rem;
+            box-shadow: 0 2px 8px rgba(0,0,0,.06);
+        }
+        .tip-box {
+            background: var(--blue-50); border-left: 4px solid var(--blue-600);
+            padding: 1.25rem 1.5rem; border-radius: 0 12px 12px 0;
+        }
+        .cta-section {
+            background: linear-gradient(135deg, #1e3a8a, #2563eb);
+            color: #fff; border-radius: 16px; padding: 3.5rem 2rem;
+        }
+        .faq-item {
+            background: #fff; border: 1px solid #e5e7eb;
+            border-radius: 12px; margin-bottom: 1rem; overflow: hidden;
+        }
+        .faq-item summary {
+            padding: 1.25rem 1.5rem; font-weight: 600;
+            cursor: pointer; list-style: none;
+        }
+        .faq-item summary::-webkit-details-marker { display: none; }
+        .faq-item summary::before {
+            content: '+'; display: inline-flex; align-items: center; justify-content: center;
+            width: 28px; height: 28px; border-radius: 50%;
+            background: var(--blue-50); color: var(--blue-600);
+            font-weight: 700; margin-right: .75rem;
+        }
+        .faq-item[open] summary::before { content: '−'; }
+        .faq-answer { padding: 0 1.5rem 1.25rem 3.5rem; color: var(--gray-600); }
+        .related-card {
+            display: block; background: #fff; border: 1px solid #e5e7eb;
+            border-radius: 12px; padding: 1.25rem 1.5rem;
+            text-decoration: none; color: var(--gray-900);
+            transition: transform .2s, box-shadow .2s;
+        }
+        .related-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 16px rgba(0,0,0,.08);
+            color: var(--blue-600);
+        }
+        footer {
+            background: var(--gray-900); color: #9ca3af;
+            padding: 3rem 0 2rem;
+        }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: #fff; }
+    </style>
+
+    <!-- Breadcrumb Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Features", "item": "https://sendpdfonline.com/features/"},
+            {"@type": "ListItem", "position": 3, "name": "Design Work Sharing", "item": "https://sendpdfonline.com/features/en/design/design-work-sharing"}
+        ]
+    }
+    </script>
+    <!-- Article Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Design Work Sharing: Secure Client Presentations with MaiPDF",
+        "description": "Share design work with clients securely using MaiPDF's access control, view tracking, and download prevention.",
+        "author": {"@type": "Organization", "name": "MaiPDF"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "datePublished": "2024-09-15",
+        "dateModified": "2026-02-22",
+        "mainEntityOfPage": "https://sendpdfonline.com/features/en/design/design-work-sharing"
+    }
+    </script>
+    <!-- FAQ Schema -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "How do I share design work with clients securely?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Export your designs as PDF, upload to MaiPDF, set security options (password, view limit, expiration, download prevention), and share the secure link with your client. You can track when they view it in real time."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I prevent clients from downloading my design files?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. MaiPDF allows you to disable downloads for any shared PDF. Clients can view your designs in the browser but cannot save the file locally. You can also add watermarks to deter screenshots."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "How do I set different access levels for design drafts vs finals?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Upload each version as a separate PDF and create different links with different security settings. For drafts, use strict settings like view limits and watermarks. For approved finals, you can relax restrictions or enable downloads."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is MaiPDF free for designers?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. MaiPDF offers a free tier that includes secure link sharing, view tracking, password protection, view limits, and download prevention. No credit card or subscription required."
+                }
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+
+<!-- Breadcrumb -->
+<nav class="breadcrumb-bar" aria-label="breadcrumb">
+    <div class="container">
+        <ol class="breadcrumb mb-0 small">
+            <li class="breadcrumb-item"><a href="/">Home</a></li>
+            <li class="breadcrumb-item"><a href="/features/">Features</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Design Work Sharing</li>
+        </ol>
+    </div>
+</nav>
+
+<!-- Hero -->
+<section class="hero">
+    <div class="container">
+        <div class="row align-items-center">
+            <div class="col-lg-8">
+                <span class="badge bg-white text-dark mb-3 px-3 py-2" style="font-size:.85rem">
+                    <i class="fas fa-share-alt me-1"></i> For Designers
+                </span>
+                <h1 class="display-5 mb-3">Design Work Sharing</h1>
+                <p class="lead mb-3">Share design work with clients professionally — with full control over access, downloads, and engagement tracking. No more email attachments or unsecured cloud links.</p>
+                <div class="d-flex gap-3 flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg px-4"><i class="fas fa-upload me-2"></i>Share Design</a>
+                    <a href="#sharing-workflow" class="btn btn-outline-light btn-lg px-4"><i class="fas fa-sitemap me-2"></i>See Workflow</a>
+                </div>
+            </div>
+            <div class="col-lg-4 text-center mt-4 mt-lg-0">
+                <div style="background:rgba(255,255,255,.1);border-radius:16px;padding:2rem 1.5rem">
+                    <i class="fas fa-handshake fa-3x mb-3" style="opacity:.9"></i>
+                    <h3 class="h5">Design → Secure → Present</h3>
+                    <p class="small mb-0" style="opacity:.8">Professional client presentations made easy</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Key Features -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Sharing Features for Designers</h2>
+        <p class="section-subtitle text-center">Everything you need for professional design presentations</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="icon-circle"><i class="fas fa-link"></i></div>
+                        <h3 class="h5 mb-0">Secure Links</h3>
+                    </div>
+                    <p class="text-muted mb-0">Share designs via password-protected links. Revoke access anytime. No messy email attachments — just one clean, trackable link per project.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="icon-circle"><i class="fas fa-user-lock"></i></div>
+                        <h3 class="h5 mb-0">Access Control</h3>
+                    </div>
+                    <p class="text-muted mb-0">Set different permissions for each client. View-only for proposals, download-enabled for approved finals. Limit total views to prevent over-sharing.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="icon-circle"><i class="fas fa-clock"></i></div>
+                        <h3 class="h5 mb-0">Timed Expiry</h3>
+                    </div>
+                    <p class="text-muted mb-0">Set links to expire after a review period. 7-day expiry for proposals creates urgency. Extend access for ongoing projects as needed.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Sharing Workflow -->
+<section id="sharing-workflow" class="py-5" style="background: var(--gray-100);">
+    <div class="container">
+        <h2 class="section-title text-center">Client Sharing Workflow</h2>
+        <p class="section-subtitle text-center">From design tool to client review</p>
+        <div class="mermaid-wrapper mx-auto" style="max-width: 800px;">
+            <div class="mermaid">
+flowchart TD
+    A[Finalize Design] --> B[Export as PDF]
+    B --> C[Upload to MaiPDF]
+    C --> D[Configure Security]
+    D --> E{Sharing Stage}
+    E -->|Draft| F[View-only + Watermark + 5 views max]
+    E -->|Revised| G[View-only + Password + 14-day expiry]
+    E -->|Final| H[Download enabled + No expiry]
+    F --> I[Share Link with Client]
+    G --> I
+    H --> I
+    I --> J[Track Engagement]
+
+    style A fill:#1e3a8a,color:#fff,stroke:none
+    style C fill:#2563eb,color:#fff,stroke:none
+    style E fill:#3b82f6,color:#fff,stroke:none
+    style F fill:#f59e0b,color:#fff,stroke:none
+    style G fill:#8b5cf6,color:#fff,stroke:none
+    style H fill:#22c55e,color:#fff,stroke:none
+    style J fill:#ef4444,color:#fff,stroke:none
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Best Practices -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Sharing Best Practices</h2>
+        <p class="section-subtitle text-center">Proven strategies for professional client communication</p>
+        <div class="row g-4">
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h3 class="h5 mb-3"><i class="fas fa-presentation me-2" style="color:var(--blue-600)"></i>Client Presentation</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Organize designs in a logical sequence</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Include project context and objectives</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Add your contact info on every page</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Use branded watermarks on drafts</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h3 class="h5 mb-3"><i class="fas fa-shield-alt me-2" style="color:var(--blue-600)"></i>Security Measures</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Enable download prevention for drafts</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Set view limits for sensitive projects</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Use passwords for confidential work</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Track view analytics for follow-up timing</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <h3 class="h5 mb-3"><i class="fas fa-comments me-2" style="color:var(--blue-600)"></i>Client Communication</h3>
+                    <ul class="list-unstyled mb-0">
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Provide clear viewing instructions with the link</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Set expectations for feedback timeline</li>
+                        <li class="mb-2"><i class="fas fa-check text-success me-2"></i>Include revision guidelines in the PDF</li>
+                        <li><i class="fas fa-check text-success me-2"></i>Use view tracking to time your follow-up</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-6">
+                <div class="feature-card">
+                    <div class="tip-box">
+                        <h3 class="h5 mb-2"><i class="fas fa-lightbulb me-2"></i>Pro Tip</h3>
+                        <p class="mb-0">Create different sharing settings for each project stage. Use view-only with watermarks for initial concepts, then relax restrictions for approved revisions. Enable downloads only for final deliverables.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Industry-Specific -->
+<section class="py-5" style="background: var(--gray-100);">
+    <div class="container">
+        <h2 class="section-title text-center">Industry-Specific Sharing</h2>
+        <p class="section-subtitle text-center">Tailored approaches for different design disciplines</p>
+        <div class="row g-4">
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="icon-circle"><i class="fas fa-copyright"></i></div>
+                        <h3 class="h5 mb-0">Brand Design</h3>
+                    </div>
+                    <ul class="list-unstyled mb-0 text-muted small">
+                        <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Share brand guidelines securely</li>
+                        <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Protect logo usage rights with view limits</li>
+                        <li><i class="fas fa-arrow-right me-2"></i>Control access to brand asset packages</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="icon-circle"><i class="fas fa-cube"></i></div>
+                        <h3 class="h5 mb-0">Product Design</h3>
+                    </div>
+                    <ul class="list-unstyled mb-0 text-muted small">
+                        <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Share technical specifications safely</li>
+                        <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Protect manufacturing details with passwords</li>
+                        <li><i class="fas fa-arrow-right me-2"></i>Use expiry for NDA-protected work</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card">
+                    <div class="d-flex align-items-center gap-3 mb-3">
+                        <div class="icon-circle"><i class="fas fa-laptop-code"></i></div>
+                        <h3 class="h5 mb-0">Web & App Design</h3>
+                    </div>
+                    <ul class="list-unstyled mb-0 text-muted small">
+                        <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Share interactive prototype snapshots</li>
+                        <li class="mb-2"><i class="fas fa-arrow-right me-2"></i>Protect design system documentation</li>
+                        <li><i class="fas fa-arrow-right me-2"></i>Track stakeholder review engagement</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- How to Get Started -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="section-title text-center">Start Sharing in 3 Steps</h2>
+        <div class="row g-4 justify-content-center">
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="step-num mx-auto mb-3">1</div>
+                    <h3 class="h5">Export Your Design</h3>
+                    <p class="text-muted mb-0">Export from Figma, Sketch, Adobe CC, or any design tool as a high-quality PDF.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="step-num mx-auto mb-3">2</div>
+                    <h3 class="h5">Set Permissions</h3>
+                    <p class="text-muted mb-0">Upload to MaiPDF and choose your security: password, view limit, expiry, and watermark.</p>
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="feature-card text-center">
+                    <div class="step-num mx-auto mb-3">3</div>
+                    <h3 class="h5">Share & Monitor</h3>
+                    <p class="text-muted mb-0">Send the link to your client. Watch views arrive in real time.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- FAQ -->
+<section class="py-5" style="background: var(--gray-100);">
+    <div class="container">
+        <h2 class="section-title text-center">Frequently Asked Questions</h2>
+        <div class="mx-auto" style="max-width: 800px;">
+            <details class="faq-item">
+                <summary>How do I share design work with clients securely?</summary>
+                <div class="faq-answer">
+                    <p>Export your designs as PDF, upload to MaiPDF, set security options (password, view limit, expiration, download prevention), and share the secure link with your client. You can track when they view it in real time.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Can I prevent clients from downloading my design files?</summary>
+                <div class="faq-answer">
+                    <p>Yes. MaiPDF allows you to disable downloads for any shared PDF. Clients can view your designs in the browser but cannot save the file locally. You can also add watermarks to deter screenshots.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>How do I set different access levels for drafts vs finals?</summary>
+                <div class="faq-answer">
+                    <p>Upload each version as a separate PDF and create different links with different security settings. For drafts, use strict settings like view limits and watermarks. For approved finals, you can relax restrictions or enable downloads.</p>
+                </div>
+            </details>
+            <details class="faq-item">
+                <summary>Is MaiPDF free for designers?</summary>
+                <div class="faq-answer">
+                    <p>Yes. MaiPDF offers a free tier that includes secure link sharing, view tracking, password protection, view limits, and download prevention. No credit card or subscription required.</p>
+                </div>
+            </details>
+        </div>
+    </div>
+</section>
+
+<!-- CTA -->
+<section class="py-5">
+    <div class="container">
+        <div class="cta-section text-center">
+            <h2 class="display-6 fw-bold mb-3">Share Your Design Work Securely</h2>
+            <p class="lead mb-4" style="opacity:.9">Upload your design PDF and get a secure, trackable link — free, no signup required.</p>
+            <div class="d-flex justify-content-center gap-3 flex-wrap">
+                <a href="https://maipdf.com" class="btn btn-light btn-lg px-4"><i class="fas fa-upload me-2"></i>Share Design</a>
+                <a href="/features/en/design/designer-portfolio-pdf" class="btn btn-outline-light btn-lg px-4"><i class="fas fa-briefcase me-2"></i>Portfolio Guide</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Related Guides -->
+<section class="py-5" style="background: var(--gray-100);">
+    <div class="container">
+        <h2 class="section-title text-center">Related Guides</h2>
+        <div class="row g-3">
+            <div class="col-md-4">
+                <a href="/features/en/design/designer-portfolio-pdf" class="related-card">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-circle"><i class="fas fa-briefcase"></i></div>
+                        <div>
+                            <strong>Designer Portfolio PDF</strong>
+                            <div class="small text-muted">Showcase your work securely</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/features/en/design/design-file-organization" class="related-card">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-circle"><i class="fas fa-folder-tree"></i></div>
+                        <div>
+                            <strong>Design File Organization</strong>
+                            <div class="small text-muted">Manage creative assets</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/features/en/sharing/share-pdf-files-online" class="related-card">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-circle"><i class="fas fa-link"></i></div>
+                        <div>
+                            <strong>Share PDF Files Online</strong>
+                            <div class="small text-muted">Secure sharing guide</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/features/en/security/pdf-security-features" class="related-card">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-circle"><i class="fas fa-shield-alt"></i></div>
+                        <div>
+                            <strong>PDF Security Features</strong>
+                            <div class="small text-muted">Full security overview</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/features/en/security/pdf-expiry-and-self-destruct" class="related-card">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-circle"><i class="fas fa-clock"></i></div>
+                        <div>
+                            <strong>PDF Expiry & Self-Destruct</strong>
+                            <div class="small text-muted">Time-limited access</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+            <div class="col-md-4">
+                <a href="/article/controlling-pdf-access" class="related-card">
+                    <div class="d-flex align-items-center gap-3">
+                        <div class="icon-circle"><i class="fas fa-lock"></i></div>
+                        <div>
+                            <strong>Controlling PDF Access</strong>
+                            <div class="small text-muted">Access control deep dive</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer>
+    <div class="container">
+        <div class="row">
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white mb-3"><i class="fas fa-file-pdf me-2"></i>MaiPDF</h5>
+                <p class="small">Secure PDF sharing with view tracking, access control, and link expiration. Protect your documents effortlessly.</p>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white mb-3">Quick Links</h5>
+                <ul class="list-unstyled small">
+                    <li class="mb-2"><a href="/"><i class="fas fa-home me-2"></i>Home</a></li>
+                    <li class="mb-2"><a href="/features/"><i class="fas fa-th-large me-2"></i>Features</a></li>
+                    <li class="mb-2"><a href="https://maipdf.com"><i class="fas fa-external-link-alt me-2"></i>MaiPDF.com</a></li>
+                </ul>
+            </div>
+            <div class="col-md-4 mb-4">
+                <h5 class="text-white mb-3">Contact</h5>
+                <!--email_off-->
+                <p class="small"><i class="fas fa-envelope me-2"></i>joe@pdfhost.online</p>
+                <!--/email_off-->
+                <p class="small"><i class="fas fa-globe me-2"></i>maipdf.com</p>
+            </div>
+        </div>
+        <hr style="border-color: #374151;">
+        <p class="text-center small mb-0">&copy; 2026 MaiPDF. All rights reserved.</p>
+    </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+<script>mermaid.initialize({startOnLoad:true, theme:'neutral'});</script>
+</body>
+</html>
