@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Prevent PDF Download & Print | View-Only PDF Sharing | MaiPDF</title>
+    <meta name="description" content="Block PDF downloads and printing. Share documents as view-only with MaiPDF's secure online viewer. Prevent local copies, screenshots, and unauthorized distribution.">
+    <meta name="keywords" content="prevent PDF download, prevent PDF print, view only PDF, block PDF download, disable PDF print, secure PDF viewer, PDF DRM">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="MaiPDF">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://sendpdfonline.com/features/en/security/preventdownload">
+    <meta property="og:title" content="Prevent PDF Download & Print | MaiPDF">
+    <meta property="og:description" content="Block PDF downloads and printing. Share view-only documents with secure online viewer.">
+    <meta property="og:url" content="https://sendpdfonline.com/features/en/security/preventdownload">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiPDF">
+    <link rel="icon" href="https://maipdf.com/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root{--blue-900:#1e3a8a;--blue-600:#2563eb;--blue-500:#3b82f6;--blue-50:#eff6ff;--gray-900:#111827;--gray-600:#4b5563;--gray-100:#f3f4f6}
+        body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--gray-900)}
+        .hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;padding:4rem 0;position:relative;overflow:hidden}
+        .hero::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:80px;background:#fff;clip-path:polygon(0 60%,100% 0,100% 100%,0 100%)}
+        .step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
+        .card-feature{border:none;border-radius:12px;transition:transform .2s,box-shadow .2s;height:100%}
+        .card-feature:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.1)}
+        .blocked-action{background:#fef2f2;border:1px solid #fecaca;border-radius:12px;padding:1.5rem;text-align:center}
+        .blocked-action .icon-block{width:64px;height:64px;border-radius:50%;background:#dc2626;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:#fff;font-size:1.5rem}
+        .allowed-action{background:#f0fdf4;border:1px solid #bbf7d0;border-radius:12px;padding:1.5rem;text-align:center}
+        .allowed-action .icon-allow{width:64px;height:64px;border-radius:50%;background:#059669;display:flex;align-items:center;justify-content:center;margin:0 auto 1rem;color:#fff;font-size:1.5rem}
+        .cta-section{background:linear-gradient(135deg,var(--blue-900),var(--blue-600));border-radius:16px;color:#fff}
+        footer{background:var(--gray-900);color:#9ca3af}
+        footer a{color:#93c5fd;text-decoration:none}footer a:hover{color:#fff}
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Prevent PDF Download and Print: View-Only PDF Sharing","description":"Block PDF downloads and printing with MaiPDF's secure online viewer.","author":{"@type":"Organization","name":"MaiPDF","url":"https://maipdf.com"},"publisher":{"@type":"Organization","name":"MaiPDF"},"datePublished":"2025-01-15","dateModified":"2026-02-22","mainEntityOfPage":"https://sendpdfonline.com/features/en/security/preventdownload"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"Can MaiPDF completely prevent PDF downloads?","acceptedAnswer":{"@type":"Answer","text":"MaiPDF removes the download button, disables right-click save, and blocks keyboard shortcuts. Combined with print prevention and watermarks, it makes unauthorized saving extremely difficult."}},
+        {"@type":"Question","name":"Can viewers still take screenshots?","acceptedAnswer":{"@type":"Answer","text":"Screenshots are technically possible on any screen, but MaiPDF's dynamic watermarks overlay the viewer's identity on every page, making screenshots traceable. Fence view mode further limits visible content."}},
+        {"@type":"Question","name":"Does view-only mode affect document quality?","acceptedAnswer":{"@type":"Answer","text":"No. The PDF renders at full quality in MaiPDF's secure viewer. The only difference is that download, print, and copy functions are disabled."}},
+        {"@type":"Question","name":"Can I allow downloads for some viewers?","acceptedAnswer":{"@type":"Answer","text":"Yes. You can share different links with different security settings. Create a protected link for general distribution and an unprotected link for trusted collaborators who need to download."}}
+    ]}
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background:var(--blue-900)">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="https://sendpdfonline.com/">MaiPDF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/usecase/">Use Cases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/article/">Articles</a></li>
+                </ul>
+                <a href="https://maipdf.com" class="btn btn-outline-light rounded-pill ms-lg-3" target="_blank" rel="noopener">Protect PDF</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center">
+        <div class="container position-relative" style="z-index:2">
+            <h1 class="display-4 fw-bold mb-3">Prevent PDF Download &amp; Print</h1>
+            <p class="lead col-lg-8 mx-auto mb-4">Share documents as view-only. Block downloads, disable printing, prevent copying. Your PDF stays online — never on the viewer's device.</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg px-4 fw-semibold" target="_blank" rel="noopener"><i class="fas fa-lock me-2"></i>Protect PDF Now</a>
+        </div>
+    </section>
+
+    <main class="container py-5">
+        <!-- Protection Flow -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">How Download Prevention Works</h2>
+            <div class="text-center">
+                <div class="mermaid">
+flowchart LR
+    A[Upload PDF] --> B[Enable Protection]
+    B --> B1[Disable Download]
+    B --> B2[Disable Print]
+    B --> B3[Disable Copy]
+    B --> B4[Add Watermark]
+    
+    B1 --> C[Generate Secure Link]
+    B2 --> C
+    B3 --> C
+    B4 --> C
+    
+    C --> D[Recipient Opens Link]
+    D --> E[Secure Online Viewer]
+    
+    E --> F{Viewer Tries...}
+    F -->|Download| G[BLOCKED]
+    F -->|Print| H[BLOCKED]
+    F -->|Copy Text| I[BLOCKED]
+    F -->|Right-Click Save| J[BLOCKED]
+    F -->|View Online| K[ALLOWED]
+
+    style A fill:#2563eb,stroke:#1e3a8a,color:#fff
+    style G fill:#dc2626,stroke:#b91c1c,color:#fff
+    style H fill:#dc2626,stroke:#b91c1c,color:#fff
+    style I fill:#dc2626,stroke:#b91c1c,color:#fff
+    style J fill:#dc2626,stroke:#b91c1c,color:#fff
+    style K fill:#059669,stroke:#047857,color:#fff
+                </div>
+            </div>
+        </section>
+
+        <!-- Blocked vs Allowed -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">What's Blocked vs Allowed</h2>
+            <div class="row g-4">
+                <div class="col-md-3">
+                    <div class="blocked-action h-100">
+                        <div class="icon-block"><i class="fas fa-download"></i></div>
+                        <h6 class="fw-bold text-danger">Download</h6>
+                        <p class="text-muted small mb-0">Save button removed, Ctrl+S blocked</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blocked-action h-100">
+                        <div class="icon-block"><i class="fas fa-print"></i></div>
+                        <h6 class="fw-bold text-danger">Print</h6>
+                        <p class="text-muted small mb-0">Print dialog disabled, Ctrl+P blocked</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="blocked-action h-100">
+                        <div class="icon-block"><i class="fas fa-copy"></i></div>
+                        <h6 class="fw-bold text-danger">Copy</h6>
+                        <p class="text-muted small mb-0">Text selection and copy disabled</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="allowed-action h-100">
+                        <div class="icon-allow"><i class="fas fa-eye"></i></div>
+                        <h6 class="fw-bold text-success">View Online</h6>
+                        <p class="text-muted small mb-0">Full-quality online reading</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- How To Steps -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">3 Steps to Block Downloads</h2>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="card card-feature shadow-sm p-4 text-center">
+                        <div class="step-num mx-auto mb-3" style="background:var(--blue-600)">1</div>
+                        <h5>Upload PDF</h5>
+                        <p class="text-muted small mb-0">Upload to <a href="https://maipdf.com" target="_blank" rel="noopener">maipdf.com</a>. No account needed.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-feature shadow-sm p-4 text-center">
+                        <div class="step-num mx-auto mb-3" style="background:#dc2626">2</div>
+                        <h5>Disable Download & Print</h5>
+                        <p class="text-muted small mb-0">Toggle download and print prevention in security settings.</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="card card-feature shadow-sm p-4 text-center">
+                        <div class="step-num mx-auto mb-3" style="background:#059669">3</div>
+                        <h5>Share View-Only Link</h5>
+                        <p class="text-muted small mb-0">Share the link. Recipients can only read — never save.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Use Cases -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">Who Needs Download Prevention?</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-feature shadow-sm p-4 text-center">
+                        <i class="fas fa-gavel text-primary fa-2x mb-3"></i>
+                        <h6 class="fw-bold">Legal</h6>
+                        <p class="text-muted small mb-0">Contracts and NDAs — reviewable but not downloadable.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-feature shadow-sm p-4 text-center">
+                        <i class="fas fa-dollar-sign text-primary fa-2x mb-3"></i>
+                        <h6 class="fw-bold">Sales</h6>
+                        <p class="text-muted small mb-0">Pricing sheets — visible to prospects, not competitors.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-feature shadow-sm p-4 text-center">
+                        <i class="fas fa-book text-primary fa-2x mb-3"></i>
+                        <h6 class="fw-bold">Education</h6>
+                        <p class="text-muted small mb-0">Course materials — accessible to students, not pirated.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="card card-feature shadow-sm p-4 text-center">
+                        <i class="fas fa-heartbeat text-primary fa-2x mb-3"></i>
+                        <h6 class="fw-bold">Healthcare</h6>
+                        <p class="text-muted small mb-0">Patient records — view-only for compliance.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">Can MaiPDF completely prevent downloads?</button></h3><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">MaiPDF removes the download button, disables right-click save, and blocks keyboard shortcuts. Combined with print prevention and watermarks, it makes unauthorized saving extremely difficult.</div></div></div>
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">Can viewers still take screenshots?</button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Screenshots are technically possible, but dynamic watermarks overlay the viewer's identity on every page, making them traceable. Fence view mode further limits visible content.</div></div></div>
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">Does view-only affect quality?</button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. The PDF renders at full quality. The only difference is that download, print, and copy functions are disabled.</div></div></div>
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">Can I allow downloads for some viewers?</button></h3><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Create different links with different settings — a protected link for general distribution and an unprotected link for trusted collaborators.</div></div></div>
+            </div>
+        </section>
+
+        <!-- Related -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">Related Guides</h2>
+            <div class="row g-3">
+                <div class="col-md-4"><a href="https://sendpdfonline.com/features/en/security/pdf_prevent_forward" class="text-decoration-none"><div class="card card-feature shadow-sm p-3 text-center"><i class="fas fa-shield-alt text-primary fa-2x mb-2"></i><h6 class="mb-0">Prevent PDF Forwarding</h6></div></a></div>
+                <div class="col-md-4"><a href="https://sendpdfonline.com/features/en/security/prevent-pdf-forwarding-dynamicqr" class="text-decoration-none"><div class="card card-feature shadow-sm p-3 text-center"><i class="fas fa-qrcode text-primary fa-2x mb-2"></i><h6 class="mb-0">Dynamic QR Watermarks</h6></div></a></div>
+                <div class="col-md-4"><a href="https://sendpdfonline.com/features/en/security/time-limits-pdf-files" class="text-decoration-none"><div class="card card-feature shadow-sm p-3 text-center"><i class="fas fa-clock text-primary fa-2x mb-2"></i><h6 class="mb-0">Set View Limits</h6></div></a></div>
+            </div>
+        </section>
+
+        <section class="cta-section p-5 text-center mb-5">
+            <h2 class="fw-bold mb-3">Share PDFs Without Losing Control</h2>
+            <p class="mb-4 opacity-75">View-only sharing. No downloads. No prints. Free.</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg px-5 fw-semibold" target="_blank" rel="noopener"><i class="fas fa-rocket me-2"></i>Protect PDF</a>
+        </section>
+    </main>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4"><h5 class="text-white mb-3">MaiPDF</h5><p class="small">Prevent PDF downloads and printing. Share documents as view-only with secure online viewer.</p></div>
+                <div class="col-md-4"><h5 class="text-white mb-3">Quick Links</h5><ul class="list-unstyled small"><li class="mb-1"><a href="https://sendpdfonline.com/">Home</a></li><li class="mb-1"><a href="https://sendpdfonline.com/features/">Features</a></li><li class="mb-1"><a href="https://sendpdfonline.com/usecase/">Use Cases</a></li><li class="mb-1"><a href="https://sendpdfonline.com/article/">Articles</a></li></ul></div>
+                <div class="col-md-4"><h5 class="text-white mb-3">Contact</h5><!--email_off--><p class="small mb-1"><i class="fas fa-envelope me-2"></i>joe@pdfhost.online</p><!--/email_off--><p class="small"><i class="fas fa-globe me-2"></i><a href="https://maipdf.com">maipdf.com</a></p></div>
+            </div>
+            <hr style="border-color:#374151">
+            <p class="text-center small mb-0">&copy; 2026 MaiPDF. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#2563eb',primaryTextColor:'#fff',lineColor:'#64748b',fontSize:'14px'}});</script>
+</body>
+</html>

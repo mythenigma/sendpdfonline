@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Set View Limits on PDF Files | Control PDF Access Count | MaiPDF</title>
+    <meta name="description" content="Set view limits on shared PDFs — restrict how many times a document can be opened. Combine with expiration dates, email verification, and analytics for complete access control.">
+    <meta name="keywords" content="PDF view limits, limit PDF access, PDF view count, restrict PDF views, PDF expiration, PDF access control, MaiPDF view limits">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="MaiPDF">
+    <meta name="theme-color" content="#2563eb">
+    <link rel="canonical" href="https://sendpdfonline.com/features/en/security/time-limits-pdf-files">
+    <meta property="og:title" content="Set View Limits on PDF Files | MaiPDF">
+    <meta property="og:description" content="Control how many times your PDF can be viewed. Set view count limits, expiration dates, and email verification.">
+    <meta property="og:url" content="https://sendpdfonline.com/features/en/security/time-limits-pdf-files">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiPDF">
+    <link rel="icon" href="https://maipdf.com/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        :root{--blue-900:#1e3a8a;--blue-600:#2563eb;--blue-500:#3b82f6;--blue-50:#eff6ff;--gray-900:#111827;--gray-600:#4b5563;--gray-100:#f3f4f6}
+        body{font-family:system-ui,-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--gray-900)}
+        .hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;padding:4rem 0;position:relative;overflow:hidden}
+        .hero::after{content:'';position:absolute;bottom:-2px;left:0;width:100%;height:80px;background:#fff;clip-path:polygon(0 60%,100% 0,100% 100%,0 100%)}
+        .step-num{width:48px;height:48px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-weight:700;color:#fff;flex-shrink:0}
+        .card-feature{border:none;border-radius:12px;transition:transform .2s,box-shadow .2s;height:100%}
+        .card-feature:hover{transform:translateY(-4px);box-shadow:0 12px 24px rgba(0,0,0,.1)}
+        .scenario-card{border-radius:12px;padding:1.5rem;border:1px solid #e5e7eb;background:#fff}
+        .scenario-card .scenario-badge{display:inline-block;padding:.25rem .75rem;border-radius:20px;font-size:.75rem;font-weight:600}
+        .setting-row{display:flex;align-items:center;gap:1rem;padding:1rem;border-radius:8px;margin-bottom:.5rem}
+        .setting-row:nth-child(odd){background:var(--blue-50)}
+        .setting-row:nth-child(even){background:var(--gray-100)}
+        .setting-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;color:#fff;flex-shrink:0}
+        .cta-section{background:linear-gradient(135deg,var(--blue-900),var(--blue-600));border-radius:16px;color:#fff}
+        footer{background:var(--gray-900);color:#9ca3af}
+        footer a{color:#93c5fd;text-decoration:none}footer a:hover{color:#fff}
+    </style>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Set View Limits on PDF Files: Control PDF Access Count","description":"Control how many times your PDF can be viewed with MaiPDF view limits.","author":{"@type":"Organization","name":"MaiPDF","url":"https://maipdf.com"},"publisher":{"@type":"Organization","name":"MaiPDF"},"datePublished":"2025-01-15","dateModified":"2026-02-22","mainEntityOfPage":"https://sendpdfonline.com/features/en/security/time-limits-pdf-files"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[
+        {"@type":"Question","name":"What are PDF view limits?","acceptedAnswer":{"@type":"Answer","text":"View limits let you set the maximum number of times a shared PDF can be opened. After reaching the limit, the link automatically expires and further access is denied."}},
+        {"@type":"Question","name":"Can I change the view limit after sharing?","acceptedAnswer":{"@type":"Answer","text":"Yes. MaiPDF allows you to increase or decrease the view limit on a live link at any time. You can also reset the counter or set it to unlimited."}},
+        {"@type":"Question","name":"What happens when the limit is reached?","acceptedAnswer":{"@type":"Answer","text":"The link becomes inactive. Anyone clicking it will see an access denied message. This prevents further views from the original recipient or anyone they forwarded the link to."}},
+        {"@type":"Question","name":"Can I combine view limits with other protections?","acceptedAnswer":{"@type":"Answer","text":"Yes. View limits work with all MaiPDF features: passwords, expiration dates, email verification, watermarks, download prevention, and print restrictions. Layering protections provides the strongest security."}},
+        {"@type":"Question","name":"How do view limits prevent forwarding?","acceptedAnswer":{"@type":"Answer","text":"If you set a low view limit (e.g., 3 views), forwarding the link becomes useless because the limit gets consumed quickly. Combined with email verification, only the intended recipient can use those limited views."}}
+    ]}
+    </script>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark" style="background:var(--blue-900)">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="https://sendpdfonline.com/">MaiPDF</a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/">Features</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/usecase/">Use Cases</a></li>
+                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/article/">Articles</a></li>
+                </ul>
+                <a href="https://maipdf.com" class="btn btn-outline-light rounded-pill ms-lg-3" target="_blank" rel="noopener">Set View Limits</a>
+            </div>
+        </div>
+    </nav>
+
+    <section class="hero text-center">
+        <div class="container position-relative" style="z-index:2">
+            <h1 class="display-4 fw-bold mb-3">Set View Limits on PDF Files</h1>
+            <p class="lead col-lg-8 mx-auto mb-4">Control exactly how many times your PDF can be opened. After the limit is reached, the link expires automatically. Combine with expiration dates for complete access control.</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg px-4 fw-semibold" target="_blank" rel="noopener"><i class="fas fa-eye-slash me-2"></i>Set Limits Now</a>
+        </div>
+    </section>
+
+    <main class="container py-5">
+        <!-- How View Limits Work -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">How View Limits Work</h2>
+            <div class="text-center">
+                <div class="mermaid">
+flowchart TD
+    A[Upload PDF] --> B[Set View Limit e.g. 5 views]
+    B --> C[Share Secure Link]
+    
+    C --> D[View 1 - Allowed]
+    D --> E[View 2 - Allowed]
+    E --> F[View 3 - Allowed]
+    F --> G[...]
+    G --> H[View 5 - Last View]
+    H --> I[View 6 - ACCESS DENIED]
+    
+    I --> J{Owner Options}
+    J --> K[Increase Limit]
+    J --> L[Generate New Link]
+    J --> M[Keep Expired]
+    
+    K --> N[Link Active Again]
+
+    style A fill:#2563eb,stroke:#1e3a8a,color:#fff
+    style H fill:#f59e0b,stroke:#d97706,color:#fff
+    style I fill:#dc2626,stroke:#b91c1c,color:#fff
+    style N fill:#059669,stroke:#047857,color:#fff
+                </div>
+            </div>
+        </section>
+
+        <!-- 5 Security Settings -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">5 Access Control Settings</h2>
+            <div class="col-lg-8 mx-auto">
+                <div class="setting-row">
+                    <div class="setting-icon" style="background:var(--blue-600)"><i class="fas fa-eye"></i></div>
+                    <div><strong>View Count</strong><br><span class="text-muted small">Set maximum opens (1, 3, 5, 10, 50, unlimited)</span></div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-icon" style="background:#059669"><i class="fas fa-envelope-open-text"></i></div>
+                    <div><strong>Email Verification</strong><br><span class="text-muted small">Require email verification before viewing</span></div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-icon" style="background:#7c3aed"><i class="fas fa-download"></i></div>
+                    <div><strong>Download Control</strong><br><span class="text-muted small">Allow or block file downloads</span></div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-icon" style="background:#dc2626"><i class="fas fa-tint"></i></div>
+                    <div><strong>Dynamic Watermark</strong><br><span class="text-muted small">Overlay viewer identity on every page</span></div>
+                </div>
+                <div class="setting-row">
+                    <div class="setting-icon" style="background:#ea580c"><i class="fas fa-bell"></i></div>
+                    <div><strong>Access Alerts</strong><br><span class="text-muted small">Get notified when someone views your PDF</span></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Scenarios -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">View Limit Scenarios</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card h-100">
+                        <span class="scenario-badge" style="background:#dbeafe;color:var(--blue-600)">1-3 Views</span>
+                        <h5 class="mt-3 h6 fw-bold">One-Time Review</h5>
+                        <p class="text-muted small mb-0">Contracts, proposals, and quotes shared for a single review. Ensures the recipient reads once and can't forward endlessly.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card h-100">
+                        <span class="scenario-badge" style="background:#fef3c7;color:#d97706">5-10 Views</span>
+                        <h5 class="mt-3 h6 fw-bold">Team Review</h5>
+                        <p class="text-muted small mb-0">Documents shared within a small team. Enough views for everyone, but limits viral sharing beyond the group.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card h-100">
+                        <span class="scenario-badge" style="background:#f0fdf4;color:#059669">50-100 Views</span>
+                        <h5 class="mt-3 h6 fw-bold">Department Distribution</h5>
+                        <p class="text-muted small mb-0">Policies, manuals, or training materials shared across a department with a reasonable access cap.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card h-100">
+                        <span class="scenario-badge" style="background:#fef2f2;color:#dc2626">Time-Based</span>
+                        <h5 class="mt-3 h6 fw-bold">Expiration Date</h5>
+                        <p class="text-muted small mb-0">Combine view limits with expiry dates. Documents become inaccessible after a specific date regardless of remaining views.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">Frequently Asked Questions</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button" data-bs-toggle="collapse" data-bs-target="#faq1">What are PDF view limits?</button></h3><div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">View limits set the maximum times a shared PDF can be opened. After reaching the limit, the link expires and access is denied.</div></div></div>
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq2">Can I change the limit after sharing?</button></h3><div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Increase, decrease, or reset the counter on live links at any time.</div></div></div>
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq3">What happens when the limit is reached?</button></h3><div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The link becomes inactive. Viewers see an access denied message. This blocks the original recipient and anyone they forwarded the link to.</div></div></div>
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq4">Can I combine view limits with other protections?</button></h3><div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes. Combine with passwords, expiration dates, email verification, watermarks, and download prevention for maximum security.</div></div></div>
+                <div class="accordion-item"><h3 class="accordion-header"><button class="accordion-button collapsed" data-bs-toggle="collapse" data-bs-target="#faq5">How do view limits prevent forwarding?</button></h3><div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Low limits (e.g., 3 views) make forwarding useless — the quota gets consumed quickly. Combined with email verification, only the intended recipient can use those views.</div></div></div>
+            </div>
+        </section>
+
+        <!-- Related -->
+        <section class="mb-5">
+            <h2 class="fw-bold text-center mb-4">Related Guides</h2>
+            <div class="row g-3">
+                <div class="col-md-4"><a href="https://sendpdfonline.com/features/en/security/pdf-expiry-and-self-destruct" class="text-decoration-none"><div class="card card-feature shadow-sm p-3 text-center"><i class="fas fa-bomb text-primary fa-2x mb-2"></i><h6 class="mb-0">PDF Expiry & Self-Destruct</h6></div></a></div>
+                <div class="col-md-4"><a href="https://sendpdfonline.com/features/en/security/pdf_prevent_forward" class="text-decoration-none"><div class="card card-feature shadow-sm p-3 text-center"><i class="fas fa-shield-alt text-primary fa-2x mb-2"></i><h6 class="mb-0">Prevent PDF Forwarding</h6></div></a></div>
+                <div class="col-md-4"><a href="https://sendpdfonline.com/features/en/security/preventdownload" class="text-decoration-none"><div class="card card-feature shadow-sm p-3 text-center"><i class="fas fa-download text-primary fa-2x mb-2"></i><h6 class="mb-0">Prevent Downloads</h6></div></a></div>
+            </div>
+        </section>
+
+        <section class="cta-section p-5 text-center mb-5">
+            <h2 class="fw-bold mb-3">Control PDF Access Now</h2>
+            <p class="mb-4 opacity-75">Set view limits in seconds. Free. No registration.</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg px-5 fw-semibold" target="_blank" rel="noopener"><i class="fas fa-rocket me-2"></i>Set View Limits</a>
+        </section>
+    </main>
+
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4"><h5 class="text-white mb-3">MaiPDF</h5><p class="small">Set view limits on PDF files. Control how many times documents are opened with automatic expiration.</p></div>
+                <div class="col-md-4"><h5 class="text-white mb-3">Quick Links</h5><ul class="list-unstyled small"><li class="mb-1"><a href="https://sendpdfonline.com/">Home</a></li><li class="mb-1"><a href="https://sendpdfonline.com/features/">Features</a></li><li class="mb-1"><a href="https://sendpdfonline.com/usecase/">Use Cases</a></li><li class="mb-1"><a href="https://sendpdfonline.com/article/">Articles</a></li></ul></div>
+                <div class="col-md-4"><h5 class="text-white mb-3">Contact</h5><!--email_off--><p class="small mb-1"><i class="fas fa-envelope me-2"></i>joe@pdfhost.online</p><!--/email_off--><p class="small"><i class="fas fa-globe me-2"></i><a href="https://maipdf.com">maipdf.com</a></p></div>
+            </div>
+            <hr style="border-color:#374151">
+            <p class="text-center small mb-0">&copy; 2026 MaiPDF. All rights reserved.</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true,theme:'base',themeVariables:{primaryColor:'#2563eb',primaryTextColor:'#fff',lineColor:'#64748b',fontSize:'14px'}});</script>
+</body>
+</html>
