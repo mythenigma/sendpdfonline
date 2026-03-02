@@ -3,696 +3,374 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Ebook preview security guide - Learn how to share ebook previews securely without allowing downloads. Protect your intellectual property with password protection, view limits, watermarks, and access analytics. Best practices for content creators and publishers to preview ebooks safely.">
-    <meta name="keywords" content="ebook preview, secure ebook preview, ebook preview without download, preview ebook online, ebook preview security, protect ebook preview, ebook preview protection, ebook preview access analytics, ebook preview analytics, ebook preview password, ebook preview view limit, ebook preview watermark, ebook preview DRM, ebook preview control, ebook preview sharing, ebook preview best practices, ebook preview for publishers, ebook preview for authors, secure ebook sharing, MaiPDF ebook preview">
+    <meta name="description" content="Share ebook previews securely with MaiPDF: no downloads, view limits, watermarks, and access analytics. Guide for authors and publishers.">
+    <meta name="keywords" content="ebook preview, secure ebook preview, ebook preview without download, preview ebook online, ebook preview security, ebook preview view limit, ebook preview watermark, MaiPDF ebook preview">
     <meta name="author" content="MaiPDF Team">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
     <meta name="googlebot" content="index, follow">
-    <meta property="og:title" content="Ebook Preview Security Guide - Share Ebook Previews Without Downloads | MaiPDF">
-    <meta property="og:description" content="Learn how to securely share ebook previews with password protection, view limits, and access analytics. Protect your intellectual property.">
-    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf-og-image.png">
-    <meta property="og:url" content="https://sendpdfonline.com/article/ebook-preview.html">
+    <link rel="canonical" href="https://sendpdfonline.com/article/ebook-preview">
+    <meta property="og:title" content="Ebook Preview Security Guide - Share Previews Without Downloads | MaiPDF">
+    <meta property="og:description" content="Share ebook previews securely: view-only, view limits, watermarks, analytics. No downloads. For authors and publishers.">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/securityshowoff.png">
+    <meta property="og:url" content="https://sendpdfonline.com/article/ebook-preview">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="MaiPDF">
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Ebook Preview Security Guide - Share Without Downloads">
-    <meta name="twitter:description" content="Secure ebook preview sharing with password protection, view limits, and access analytics using MaiPDF.">
-    <link rel="canonical" href="https://sendpdfonline.com/article/ebook-preview">
-    <title>Ebook Preview Security Guide - Share Ebook Previews Without Downloads, Password Protection & Access analytics | MaiPDF</title>
-    <!-- Bootstrap CSS -->
+    <meta name="twitter:title" content="Ebook Preview Security Guide | MaiPDF">
+    <meta name="twitter:description" content="Secure ebook preview sharing with view limits, watermarks, and analytics.">
+    <title>Ebook Preview Security Guide | MaiPDF</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2C8C99;
-            --secondary-color: #45a3b1;
-            --accent-color: #ff9800;
-            --text-color: #333;
-            --light-bg: #f5f7f8;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .content-section {
-            background: white;
-            border-radius: 10px;
-            padding: 40px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .feature-card {
-            background: var(--light-bg);
-            padding: 25px;
-            border-radius: 8px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary-color);
-        }
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            margin-top: 20px;
-        }
-        .cta-button:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-        .stat-box {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            text-align: center;
-            margin: 10px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-        }
-    </style>
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Article",
-        "headline": "Ebook Preview Security Guide - Share Ebook Previews Without Downloads",
-        "description": "Comprehensive guide on how to securely share ebook previews with password protection, view limits, watermarks, and access analytics. Best practices for content creators and publishers.",
-        "image": "https://sendpdfonline.com/images/maipdf-og-image.png",
-        "author": {
-            "@type": "Organization",
-            "name": "MaiPDF",
-            "url": "https://sendpdfonline.com"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "MaiPDF",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://sendpdfonline.com/images/logo.png"
-            }
-        },
-        "datePublished": "2025-01-15",
-        "dateModified": "2026-01-15",
-        "dateModified": "2025-12-03",
-        "mainEntityOfPage": {
-            "@type": "WebPage",
-            "@id": "https://sendpdfonline.com/article/ebook-preview.html"
-        }
-    }
-    </script>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Article",
-                "item": "https://sendpdfonline.com/article/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Ebook Preview Security Guide",
-                "item": "https://sendpdfonline.com/article/ebook-preview.html"
-            }
-        ]
-    }
-    </script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .mermaid-wrap { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); margin: 2rem 0; overflow-x: auto; }
+        .mermaid-wrap .mermaid { display: flex; justify-content: center; }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } }
+    </style>
+
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Article","headline":"Ebook Preview Security Guide","description":"Share ebook previews securely with MaiPDF: no downloads, view limits, watermarks, analytics. For authors and publishers.","author":{"@type":"Organization","name":"MaiPDF"},"publisher":{"@type":"Organization","name":"MaiPDF","logo":{"@type":"ImageObject","url":"https://maipdf.com/logo.png"}},"datePublished":"2025-01-15","dateModified":"2026-03-02"}
+    </script>
+    <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sendpdfonline.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://sendpdfonline.com/article/"},{"@type":"ListItem","position":3,"name":"Ebook Preview Security Guide","item":"https://sendpdfonline.com/article/ebook-preview"}]}
+    </script>
 </head>
 <body>
-
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/article/">Article</a></li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/article/">Articles</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Ebook Preview Security Guide</li>
             </ol>
         </div>
     </nav>
-    
-    <!-- Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+
+    <section class="hero">
         <div class="container">
-            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://maipdf.com">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://maipdf.com/features">Features</a>
-                    </li>
-                </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>Ebook Preview Security Guide</h1>
+                    <p class="lead mt-3">Share ebook previews without allowing downloads. Use view limits, watermarks, and access analytics to protect your work and drive sales.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-book-open me-2"></i>Get Started Free
+                        </a>
+                        <a href="/article/share-pdf-online" class="btn btn-outline-light btn-lg">Share PDF Online</a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> View-only &nbsp; <i class="fas fa-check me-1"></i> View limits &nbsp; <i class="fas fa-check me-1"></i> Analytics</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/securityshowoff.png" alt="Secure ebook preview — view-only, no download" class="hero-screenshot" loading="eager">
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <h1><i class="fas fa-book"></i> Ebook Preview Security Guide</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: January 15, 2026
-                    </small>
-                </div>
-                
-            <p class="lead">Learn how to share ebook previews securely without allowing downloads. Protect your intellectual property with password protection, view limits, watermarks, and comprehensive access analytics. Perfect for content creators, authors, and publishers.</p>
-            <a href="https://maipdf.com" class="cta-button">Get Started Free</a>
-        </div>
-    </div>
+    <div class="container py-5">
+        <p class="section-label">Article</p>
+        <h2 class="section-heading mb-4">Why Secure Ebook Previews Matter</h2>
+        <p class="lead mb-4">Previews help sell ebooks, but open links can be downloaded or shared. With MaiPDF you keep view-only mode, set view limits, add watermarks, and see who viewed—so you protect IP and still hook readers.</p>
 
-    <!-- Ebook Preview Strategy Flowchart -->
-    <div class="container my-5">
-        <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+        <!-- Mermaid flowchart (preserved) -->
+        <section class="py-4">
+            <p class="section-label">Strategy</p>
+            <h2 class="section-heading mb-4">Preview Strategy Flowchart</h2>
+            <div class="mermaid-wrap">
+                <div class="mermaid">
 flowchart TD
     A[📖 Your Ebook] --> B{Preview Strategy}
-    
     B --> C[🎯 Define Preview Scope]
     C --> D[Chapter 1-3 Only]
     C --> E[First 20%]
     C --> F[Sample Pages]
-    
     D --> G[🔒 Apply Security]
     E --> G
     F --> G
-    
     G --> H[🚫 Disable Downloads]
     G --> I[👁️ Set View Limits]
     G --> J[💧 Add Watermarks]
     G --> K[🔔 Review Access]
-    
     H --> L[🔗 Generate Preview Link]
     I --> L
     J --> L
     K --> L
-    
     L --> M[📧 Share with Readers]
-    
     M --> N{Reader Action}
     N -->|View Preview| O[✅ Read Online Only]
     N -->|Try Download| P[❌ Download Blocked]
     N -->|Share Link| Q[📊 Review Sharing]
-    
     O --> R[📋 Collect Analytics]
     Q --> R
-    
     R --> S{Purchase Interest?}
     S -->|Yes| T[💰 Conversion Success]
     S -->|No| U[📩 Follow-up Marketing]
-    
     style A fill:#dbeafe,stroke:#3b82f6
     style G fill:#fef3c7,stroke:#f59e0b
     style L fill:#d1fae5,stroke:#10b981
     style O fill:#d1fae5,stroke:#10b981
     style P fill:#fee2e2,stroke:#dc2626
     style T fill:#d1fae5,stroke:#10b981
-        </div>
-        <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-        <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
-
-        <!-- SVG Reader Journey -->
-        <div style="text-align: center; margin: 40px 0;">
-            <svg width="900" height="300" xmlns="http://www.w3.org/2000/svg">
-                <rect width="900" height="300" fill="#f8fafc"/>
-                
-                <text x="450" y="30" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Ebook Preview Reader Journey</text>
-                
-                <!-- Step 1 -->
-                <g>
-                    <rect x="30" y="70" width="180" height="180" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="10"/>
-                    <text x="120" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#1e40af">🔍</text>
-                    <text x="120" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e40af">1. Discovery</text>
-                    <text x="120" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Reader finds your</text>
-                    <text x="120" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">ebook preview link</text>
-                    <text x="120" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">through marketing</text>
-                </g>
-                
-                <!-- Arrow 1 -->
-                <path d="M 215 160 L 245 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowblue)"/>
-                
-                <!-- Step 2 -->
-                <g>
-                    <rect x="250" y="70" width="180" height="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="10"/>
-                    <text x="340" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#92400e">📚</text>
-                    <text x="340" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">2. Preview</text>
-                    <text x="340" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Read first chapters</text>
-                    <text x="340" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">online (no download)</text>
-                    <text x="340" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">with watermark</text>
-                </g>
-                
-                <!-- Arrow 2 -->
-                <path d="M 435 160 L 465 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowblue)"/>
-                
-                <!-- Step 3 -->
-                <g>
-                    <rect x="470" y="70" width="180" height="180" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" rx="10"/>
-                    <text x="560" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#3730a3">❤️</text>
-                    <text x="560" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#3730a3">3. Engagement</text>
-                    <text x="560" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Gets interested</text>
-                    <text x="560" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">in full content</text>
-                    <text x="560" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">wants to buy</text>
-                </g>
-                
-                <!-- Arrow 3 -->
-                <path d="M 655 160 L 685 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arrowblue)"/>
-                
-                <!-- Step 4 -->
-                <g>
-                    <rect x="690" y="70" width="180" height="180" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="10"/>
-                    <text x="780" y="100" font-family="Arial" font-size="40" text-anchor="middle" fill="#065f46">💰</text>
-                    <text x="780" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">4. Conversion</text>
-                    <text x="780" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Purchases full</text>
-                    <text x="780" y="180" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">ebook version</text>
-                    <text x="780" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">becomes customer</text>
-                </g>
-                
-                <defs>
-                    <marker id="arrowblue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
-                        <polygon points="0 0, 10 3, 0 6" fill="#3b82f6" />
-                    </marker>
-                </defs>
-            </svg>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Why Secure Ebook Previews Matter -->
-        <div class="content-section">
-            <h2><i class="fas fa-shield-alt"></i> Why Secure Ebook Previews Matter</h2>
-            <p>For content creators and publishers, offering a preview of your ebook is an essential marketing strategy to attract readers and drive sales. However, traditional preview methods often expose your intellectual property to significant risks. Learn about <a href="/article/pdf-sharing-security">PDF sharing security</a> and <a href="/article/controlling-pdf-access">controlling PDF access</a> for comprehensive protection.</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-exclamation-triangle text-danger"></i> Unauthorized Downloads</h4>
-                        <p>Readers can download the full ebook content, bypassing purchase requirements and causing revenue loss.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-share-alt text-danger"></i> Uncontrolled Sharing</h4>
-                        <p>Preview links can be shared widely without your knowledge, diluting exclusivity and reducing conversion rates.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-copyright text-danger"></i> Intellectual Property Loss</h4>
-                        <p>Once downloaded, you lose control over your content, making it vulnerable to piracy and unauthorized distribution.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-chart-line text-danger"></i> No Analytics</h4>
-                        <p>Traditional methods provide no insights into reader behavior, engagement, or conversion patterns.</p>
-                    </div>
                 </div>
             </div>
+            <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+            <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+        </section>
 
-            <div class="row mt-4">
+        <!-- Reader Journey SVG (preserved) -->
+        <section class="py-4">
+            <p class="section-label">Journey</p>
+            <h2 class="section-heading mb-4">Ebook Preview Reader Journey</h2>
+            <div class="text-center">
+                <svg width="100%" height="auto" viewBox="0 0 900 300" xmlns="http://www.w3.org/2000/svg" style="max-width:900px" class="img-fluid">
+                    <rect width="900" height="300" fill="#f8fafc"/>
+                    <text x="450" y="30" font-family="Arial" font-size="22" font-weight="bold" text-anchor="middle" fill="#1e3a8a">Ebook Preview Reader Journey</text>
+                    <g>
+                        <rect x="30" y="70" width="180" height="180" fill="#dbeafe" stroke="#3b82f6" stroke-width="2" rx="10"/>
+                        <text x="120" y="100" font-family="Arial" font-size="24" text-anchor="middle" fill="#1e40af">1</text>
+                        <text x="120" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#1e40af">Discovery</text>
+                        <text x="120" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Finds preview link</text>
+                        <text x="120" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">through marketing</text>
+                    </g>
+                    <defs><marker id="arr" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto"><polygon points="0 0, 10 3, 0 6" fill="#3b82f6"/></marker></defs>
+                    <path d="M 215 160 L 245 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arr)"/>
+                    <g>
+                        <rect x="250" y="70" width="180" height="180" fill="#fef3c7" stroke="#f59e0b" stroke-width="2" rx="10"/>
+                        <text x="340" y="100" font-family="Arial" font-size="24" text-anchor="middle" fill="#92400e">2</text>
+                        <text x="340" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#92400e">Preview</text>
+                        <text x="340" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Read online</text>
+                        <text x="340" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">no download</text>
+                    </g>
+                    <path d="M 435 160 L 465 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arr)"/>
+                    <g>
+                        <rect x="470" y="70" width="180" height="180" fill="#e0e7ff" stroke="#6366f1" stroke-width="2" rx="10"/>
+                        <text x="560" y="100" font-family="Arial" font-size="24" text-anchor="middle" fill="#3730a3">3</text>
+                        <text x="560" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#3730a3">Engagement</text>
+                        <text x="560" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Interested in</text>
+                        <text x="560" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">full content</text>
+                    </g>
+                    <path d="M 655 160 L 685 160" stroke="#3b82f6" stroke-width="3" marker-end="url(#arr)"/>
+                    <g>
+                        <rect x="690" y="70" width="180" height="180" fill="#d1fae5" stroke="#10b981" stroke-width="2" rx="10"/>
+                        <text x="780" y="100" font-family="Arial" font-size="24" text-anchor="middle" fill="#065f46">4</text>
+                        <text x="780" y="135" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle" fill="#065f46">Conversion</text>
+                        <text x="780" y="165" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">Purchases full</text>
+                        <text x="780" y="195" font-family="Arial" font-size="11" text-anchor="middle" fill="#475569">ebook</text>
+                    </g>
+                </svg>
+            </div>
+        </section>
+
+        <section class="py-5" id="steps">
+            <p class="section-label">How it works</p>
+            <h2 class="section-heading mb-4">Share Secure Previews in 3 Steps</h2>
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="stat-box">
-                        <div class="stat-number">73%</div>
-                        <p>of authors report unauthorized sharing of their ebook previews</p>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">Upload preview PDF</h3>
+                        <p class="text-muted small">First chapter or sample. Up to 50MB.</p>
+                        <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload ebook preview to MaiPDF" class="img-fluid screenshot mt-2" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="stat-box">
-                        <div class="stat-number">45%</div>
-                        <p>increase in conversion rates with secure preview sharing</p>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">Set security</h3>
+                        <p class="text-muted small">View-only, view limits, watermark, optional password.</p>
+                        <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Configure view limits and security" class="img-fluid screenshot mt-2" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="stat-box">
-                        <div class="stat-number">89%</div>
-                        <p>of publishers prefer secure preview platforms</p>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">Share link</h3>
+                        <p class="text-muted small">Send link; review analytics in dashboard.</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Preview link and QR" class="img-fluid screenshot mt-2" loading="lazy">
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Advanced Security Features -->
-        <div class="content-section">
-            <h2><i class="fas fa-lock"></i> Advanced Security Features for Ebook Previews</h2>
-            <p>MaiPDF provides comprehensive security features designed specifically for ebook preview protection:</p>
-
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
+        <section class="py-5" style="background: var(--gray-100);">
+            <p class="section-label">Features</p>
+            <h2 class="section-heading mb-4">What you can control</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <h4><i class="fas fa-eye"></i> View-Only Mode</h4>
-                        <p>Prevent downloads completely. Readers can view your ebook preview online but cannot save, download, or print the content. This ensures your intellectual property remains protected while still allowing potential customers to sample your work.</p>
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-eye"></i></div>
+                        <h3 class="h6 fw-bold">View-only</h3>
+                        <p class="small text-muted mb-0">No download, save, or print.</p>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <h4><i class="fas fa-key"></i> Password Protection</h4>
-                        <p>Add an extra layer of security with password protection. Control who can access your ebook preview by requiring a password. Perfect for exclusive previews for subscribers, newsletter members, or VIP customers.</p>
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-list-ol"></i></div>
+                        <h3 class="h6 fw-bold">View limits</h3>
+                        <p class="small text-muted mb-0">Cap views per user (e.g. 3–5).</p>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <h4><i class="fas fa-shield-alt"></i> Access Control</h4>
-                        <p>Control access with view count limits and time-based restrictions. Set maximum view counts per user to prevent excessive access while encouraging purchase decisions. Perfect for limited promotional previews or exclusive content.</p>
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-tint"></i></div>
+                        <h3 class="h6 fw-bold">Watermark</h3>
+                        <p class="small text-muted mb-0">Deter sharing; identify leaks.</p>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
+                <div class="col-md-6 col-lg-3">
                     <div class="feature-card">
-                        <h4><i class="fas fa-ban"></i> View Limits</h4>
-                        <p>Control how many times a reader can view your preview. Set maximum view counts (e.g., 3 views per user) to prevent excessive access while still allowing multiple viewing sessions. This helps maintain exclusivity and encourages faster purchase decisions.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-water"></i> Dynamic Watermarks</h4>
-                        <p>Add dynamic watermarks to your ebook preview pages showing the viewer's email, IP address, or custom text. This deters unauthorized sharing and helps identify the source if content is leaked. Watermarks are embedded directly in the PDF viewer.</p>
-                    </div>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-chart-bar"></i> Comprehensive Analytics</h4>
-                        <p>Review detailed analytics on who views your preview, how long they spend reading, which pages they view most, and when they access the content. Use these insights to optimize your marketing strategy and improve conversion rates.</p>
+                        <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="h6 fw-bold">Analytics</h3>
+                        <p class="small text-muted mb-0">Who viewed, how long, which pages.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- How to Share Secure Ebook Previews -->
-        <div class="content-section">
-            <h2><i class="fas fa-step-forward"></i> How to Share Secure Ebook Previews: Step-by-Step Guide</h2>
-            
-            <div class="mt-4">
-                <h4><span class="badge bg-primary">Step 1</span> Upload Your Ebook Preview</h4>
-                <p>Visit MaiPDF.com and upload your ebook preview PDF. The platform supports files up to 50MB, making it suitable for most ebook previews. You can upload the first chapter, a sample section, or a specially created preview version of your ebook.</p>
-            </div>
+        <section class="py-5">
+            <p class="section-label">Tips</p>
+            <h2 class="section-heading mb-4">Best practices</h2>
+            <ul class="mb-0">
+                <li>Show first chapter or 10–15% to hook; end on a cliffhanger.</li>
+                <li>Use 3–5 views per user so readers can revisit before buying.</li>
+                <li>Enable watermarks for premium or exclusive previews.</li>
+                <li>Use <a href="/article/limit-pdf-access-times-en">view limits</a> and <a href="/article/secure-pdf-sharing-guide">secure sharing</a> together.</li>
+            </ul>
+        </section>
 
-            <div class="mt-4">
-                <h4><span class="badge bg-primary">Step 2</span> Configure Security Settings</h4>
-                <p>Set up your security preferences:</p>
-                <ul>
-                    <li><strong>Enable View-Only Mode:</strong> Disable downloads to prevent readers from saving your content</li>
-                    <li><strong>Set Password:</strong> Add password protection if you want exclusive access</li>
-                    <li><strong>Set View Limits:</strong> Limit how many times each reader can view the preview (e.g., 3-5 views)</li>
-                    <li><strong>Configure Access Control:</strong> Set maximum view counts to manage preview distribution</li>
-                    <li><strong>Enable Watermarks:</strong> Add dynamic watermarks to deter unauthorized sharing</li>
-                </ul>
-            </div>
-
-            <div class="mt-4">
-                <h4><span class="badge bg-primary">Step 3</span> Generate Secure Preview Link</h4>
-                <p>After configuring your settings, MaiPDF generates a secure, unique preview link. This link can be shared via email, social media, your website, or embedded in marketing campaigns. The link is protected by all the security settings you've configured.</p>
-            </div>
-
-            <div class="mt-4">
-                <h4><span class="badge bg-primary">Step 4</span> Share Your Preview</h4>
-                <p>Share the secure preview link with your target audience. You can include it in:</p>
-                <ul>
-                    <li>Email newsletters to subscribers</li>
-                    <li>Social media posts and advertisements</li>
-                    <li>Your author website or blog</li>
-                    <li>Book launch campaigns</li>
-                    <li>Review requests to book bloggers</li>
-                </ul>
-            </div>
-
-            <div class="mt-4">
-                <h4><span class="badge bg-primary">Step 5</span> Review Analytics</h4>
-                <p>Review viewer engagement through MaiPDF's analytics dashboard. Review:</p>
-                <ul>
-                    <li>Total views and unique viewers</li>
-                    <li>Average reading time</li>
-                    <li>Most viewed pages</li>
-                    <li>Geographic distribution of viewers</li>
-                    <li>Conversion access analytics (if integrated with your sales platform)</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Best Practices -->
-        <div class="content-section">
-            <h2><i class="fas fa-star"></i> Best Practices for Secure Ebook Previews</h2>
-            
-            <div class="mt-4">
-                <h4><i class="fas fa-lightbulb"></i> Preview Content Strategy</h4>
-                <ul>
-                    <li><strong>Show Enough to Hook:</strong> Include the first chapter or 10-15% of your ebook to give readers a genuine taste of your content</li>
-                    <li><strong>End on a Cliffhanger:</strong> Stop at an exciting moment to encourage readers to purchase the full version</li>
-                    <li><strong>Include Table of Contents:</strong> Show what readers will get in the full ebook to build anticipation</li>
-                    <li><strong>Highlight Key Benefits:</strong> Use the preview to showcase your ebook's unique value proposition</li>
-                </ul>
-            </div>
-
-            <div class="mt-4">
-                <h4><i class="fas fa-cog"></i> Security Configuration Tips</h4>
-                <ul>
-                    <li><strong>Balance Security and Accessibility:</strong> Don't make previews too restrictive - aim for 3-5 views per user to allow multiple reading sessions</li>
-                    <li><strong>Use View Limits Strategically:</strong> Set appropriate view counts based on your promotional goals</li>
-                    <li><strong>Enable Watermarks for High-Value Content:</strong> Use dynamic watermarks for premium ebooks or exclusive previews</li>
-                    <li><strong>Password Protection for VIP Previews:</strong> Use passwords for exclusive previews shared with select audiences</li>
-                </ul>
-            </div>
-
-            <div class="mt-4">
-                <h4><i class="fas fa-chart-line"></i> Analytics Optimization</h4>
-                <ul>
-                    <li><strong>Review Engagement Metrics:</strong> Review which pages get the most views to understand reader interests</li>
-                    <li><strong>Measure Reading Time:</strong> Longer reading times often indicate higher interest and better conversion potential</li>
-                    <li><strong>Identify Drop-Off Points:</strong> Analyze where readers stop viewing to improve your preview content</li>
-                    <li><strong>Test Different Preview Lengths:</strong> Experiment with different preview sizes to find the optimal conversion rate</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Use Cases -->
-        <div class="content-section">
-            <h2><i class="fas fa-book-open"></i> Ebook Preview Use Cases</h2>
-            
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-user-edit"></i> Self-Published Authors</h4>
-                        <p>Share secure previews of your latest ebook with potential readers through your author website, social media, or email list. Protect your work while building anticipation and driving pre-orders.</p>
+        <section class="py-5">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-heading mb-4">Quick answers</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Can readers download my preview?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">No. With view-only mode, they can only read in the browser—no save, download, or print.</p></div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-building"></i> Publishing Houses</h4>
-                        <p>Distribute secure previews to book reviewers, bloggers, and media outlets. Control access with view count limits while maintaining professional presentation.</p>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How many times can someone view?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">You set it: 1 to unlimited. Many authors use 3–5 views so readers can re-read before buying.</p></div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-graduation-cap"></i> Educational Publishers</h4>
-                        <p>Share sample chapters of educational ebooks with instructors and institutions. Use password protection for exclusive previews and review engagement to identify interested buyers.</p>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I see who viewed?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">Yes. MaiPDF shows views, duration, pages viewed, and access times in the dashboard.</p></div>
                     </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <div class="feature-card">
-                        <h4><i class="fas fa-briefcase"></i> Business Book Authors</h4>
-                        <p>Provide secure previews of business and professional development ebooks to corporate clients and training departments. Use analytics to identify high-value prospects.</p>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What when view limit is reached?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">They see a message that access is exhausted; they need to buy the full ebook to continue.</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Can I revoke a preview link?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">Yes. Revoke any link from the MaiPDF dashboard; the link stops working immediately.</p></div>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Case Study -->
-        <div class="content-section">
-            <h2><i class="fas fa-trophy"></i> Case Study: Boosting Ebook Sales with Secure Previews</h2>
-            <p>A self-published author specializing in business strategy used MaiPDF to share secure previews of their latest ebook. Here's what they achieved:</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-4">
-                    <div class="stat-box">
-                        <div class="stat-number">156%</div>
-                        <p>increase in conversion rate from preview to purchase</p>
+        <section class="py-5">
+            <p class="section-label">Read more</p>
+            <h2 class="section-heading mb-4">Related</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/sales-pitch-decks">Secure Sales Pitch Deck Sharing</a></h3>
+                            <p class="small text-muted mb-0">Control deck access.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="stat-box">
-                        <div class="stat-number">2,847</div>
-                        <p>secure preview views in the first month</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/limit-pdf-access-times-en">Limit PDF Access Times</a></h3>
+                            <p class="small text-muted mb-0">View count limits.</p>
+                        </div>
                     </div>
                 </div>
-                <div class="col-md-4">
-                    <div class="stat-box">
-                        <div class="stat-number">0</div>
-                        <p>unauthorized downloads or content leaks</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/secure-pdf-sharing-guide">Secure PDF Sharing Guide</a></h3>
+                            <p class="small text-muted mb-0">Password, watermark, tracking.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/share-pdf-online">Share PDF Online</a></h3>
+                            <p class="small text-muted mb-0">Share with control.</p>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="mt-4">
-                <h4>Implementation Strategy:</h4>
-                <ul>
-                    <li>Created a preview containing the first chapter and table of contents</li>
-                    <li>Set view limit to 5 views per user to allow multiple reading sessions</li>
-                    <li>Enabled dynamic watermarks to deter unauthorized sharing</li>
-                    <li>Configured access controls for promotional previews</li>
-                    <li>Used analytics to identify highly engaged readers for targeted follow-up</li>
-                </ul>
-            </div>
-
-            <div class="mt-4">
-                <h4>Results:</h4>
-                <ul>
-                    <li>Increased reader interest and engagement with the preview</li>
-                    <li>Higher conversion rates from preview to purchase (156% increase)</li>
-                    <li>Enhanced control over intellectual property with zero unauthorized downloads</li>
-                    <li>Valuable insights from analytics to optimize future marketing campaigns</li>
-                    <li>Professional presentation that built trust with potential readers</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- FAQ -->
-        <div class="content-section">
-            <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions</h2>
-            
-            <div class="mt-4">
-                <h4>Can readers download my ebook preview?</h4>
-                <p>No, with MaiPDF's view-only mode enabled, readers cannot download, save, or print your ebook preview. The content is only accessible through the secure online viewer.</p>
-            </div>
-
-            <div class="mt-4">
-                <h4>How many times can someone view my preview?</h4>
-                <p>You control this setting. You can set view limits from 1 to unlimited views per user. Most authors find 3-5 views optimal, allowing multiple reading sessions while maintaining exclusivity.</p>
-            </div>
-
-            <div class="mt-4">
-                <h4>Can I review who views my preview?</h4>
-                <p>Yes, MaiPDF provides comprehensive analytics including viewer information (if they log in), viewing duration, pages viewed, geographic location, and access times.</p>
-            </div>
-
-            <div class="mt-4">
-                <h4>What happens when view limits are reached?</h4>
-                <p>When a user reaches their view count limit, they will see a message indicating access has been exhausted and will need to purchase the full ebook to continue reading.</p>
-            </div>
-
-            <div class="mt-4">
-                <h4>Can I revoke access to a preview?</h4>
-                <p>Yes, you can manually revoke access to any preview link at any time through your MaiPDF dashboard, immediately disabling the link.</p>
-            </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="content-section text-center" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">
-            <h2>Start Sharing Secure Ebook Previews Today</h2>
-            <p class="lead">Protect your intellectual property while maximizing reader engagement and conversion rates.</p>
-            <a href="https://maipdf.com" class="cta-button" style="background: white; color: var(--primary-color);">Get Started Free</a>
-        </div>
-    </div>
-
-    <!-- Footer -->
-    
-    <!-- Related Resources -->
-    <div class="container my-5">
-        <div class="alert alert-info border-0 shadow-sm">
-            <h4><i class="fas fa-book-open"></i> More Expert Guides & Tutorials</h4>
-            <p class="mb-3">Explore in-depth articles, tutorials, and best practices on our professional blog:</p>
-            <a href="https://article.maipdf.com" target="_blank" rel="noopener" class="btn btn-info">
-                <i class="fas fa-external-link-alt"></i> Visit MaiPDF Expert Blog
+        <section class="cta-section text-center mb-5">
+            <h2 class="h3 fw-bold mb-3">Start sharing secure ebook previews</h2>
+            <p class="mb-4 opacity-90">Free. No sign-up required.</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                <i class="fas fa-book-open me-2"></i>Get Started Free
             </a>
-        </div>
+        </section>
     </div>
 
-    <!-- Related Articles -->
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h3 class="mb-4"><i class="fas fa-book-open me-2"></i>Related Articles</h3>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <a href="/article/sales-pitch-decks" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Secure Sales Pitch Deck Sharing</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/time-limited-whitepapers" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Time-Limited Whitepapers & Case Studies</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/training-materials-distribution" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Training Materials Distribution Guide</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/limit-pdf-access-times-en" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">How to Limit PDF Access Times</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/share-pdf-online" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Share PDF Online Guide</h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="container my-4 text-center">
-        <a href="/article/" class="btn btn-primary me-2">
-            <i class="fas fa-arrow-left"></i> Back to Articles
-        </a>
-        <a href="/" class="btn btn-outline-primary me-2">
-            <i class="fas fa-home"></i> Home
-        </a>
-        <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> Try Now
-        </a>
-    </div>
-
-    <footer class="footer mt-5 py-4" style="background: var(--primary-color); color: white;">
-        <div class="container text-center">
-            <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+    <footer class="py-4">
+        <div class="container text-center small text-white">
+            <p class="mb-2 opacity-75">&copy; 2026 MaiPDF. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="/" class="me-3">Home</a>
+                <a href="/article/" class="me-3">Articles</a>
+                <a href="https://maipdf.com">MaiPDF.com</a>
+            </p>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
