@@ -26,10 +26,56 @@
     <meta name="twitter:description" content="Share PDF online free with password protection, access analytics, and access control. Secure PDF sharing with MaiPDF.">
     <meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf-og-image.png">
     <title>Share PDF Online Free - Secure PDF Sharing with Password Protection, Access analytics & Watermark | MaiPDF</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="../styles.css" rel="stylesheet">
-    
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+
+        /* Steps */
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+
+        /* Features */
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+
+        /* Articles */
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+
+        /* Section */
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+
+        /* Screenshot */
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+        /* Footer */
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } }
+    </style>
+
     <!-- Structured Data for Article -->
     <script type="application/ld+json">
     {
@@ -192,68 +238,47 @@
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <!-- Breadcrumb -->
+    <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);">
         <div class="container">
-            <ol class="breadcrumb mb-0">
+            <ol class="breadcrumb mb-0 small">
                 <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
                 <li class="breadcrumb-item"><a href="https://sendpdfonline.com/article/">Articles</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Share PDF Online Free</li>
             </ol>
         </div>
     </nav>
-    
+
+    <!-- Hero (index style) -->
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>Share PDF Online Free — Secure Sharing with Control</h1>
+                    <p class="lead mt-3">Share PDFs with password protection, view limits, expiration dates, dynamic watermarks, and real-time access analytics. No registration required.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-paper-plane me-2"></i>Start Sharing Free
+                        </a>
+                        <a href="#features" class="btn btn-outline-light btn-lg">View Features</a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-calendar-alt me-1"></i> Updated Dec 2025 &nbsp; <i class="fas fa-check me-1"></i> No sign-up &nbsp; <i class="fas fa-check me-1"></i> Free to use</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/share_pdf_online-show.png" alt="Share PDF online — generate secure links with MaiPDF" class="hero-screenshot" loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
+
     <div class="container">
         <div class="content-section">
-            <div class="text-center mb-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 60px 0; border-radius: 15px;">
-                <h1 class="display-4 mb-4">Share PDF Online Free - Secure PDF Sharing with Password Protection & Access analytics</h1>
-                
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="bg-white bg-opacity-20 rounded px-3 py-1">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 3, 2025
-                    </small>
-                </div>
-                
-                <p class="lead mb-4">Share PDF online free with MaiPDF. Share PDFs securely with password protection, DRM protection, dynamic watermarks, view limits, expiration dates, and real-time access analytics. Enterprise-grade PDF sharing with advanced security features. Free PDF sharing tool, no registration required.</p>
-                <div class="row justify-content-center mb-4">
-                    <div class="col-md-8">
-                        <div class="row text-center">
-                            <div class="col-md-4 mb-3">
-                                <div class="bg-white bg-opacity-10 rounded p-3">
-                                    <i class="fas fa-shield-alt fa-2x mb-2"></i>
-                                    <h5>Enterprise Security</h5>
-                                    <small>Advanced protection features</small>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="bg-white bg-opacity-10 rounded p-3">
-                                    <i class="fas fa-eye fa-2x mb-2"></i>
-                                    <h5>Real-time Access analytics</h5>
-                                    <small>Live access review</small>
-                                </div>
-                            </div>
-                            <div class="col-md-4 mb-3">
-                                <div class="bg-white bg-opacity-10 rounded p-3">
-                                    <i class="fas fa-bolt fa-2x mb-2"></i>
-                                    <h5>Instant Sharing</h5>
-                                    <small>No registration required</small>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <a href="https://sendpdfonline.com/" class="btn btn-light btn-lg me-3">Start Sharing Free</a>
-                <a href="#features" class="btn btn-outline-light btn-lg">View Features</a>
-            </div>
-
             <div class="feature-section">
                 <!-- Table of Contents -->
-                <div class="card mb-5 border-0 shadow-sm" style="background: #f8f9fa;">
-                    <div class="card-body p-4">
-                        <h3 class="mb-3"><i class="fas fa-list"></i> Table of Contents</h3>
-                        <ul style="column-count: 2; column-gap: 2rem;">
+                <section class="py-4">
+                    <div class="step-card">
+                        <h3 class="h5 fw-bold mb-3"><i class="fas fa-list me-2"></i>Table of Contents</h3>
+                        <ul class="mb-0" style="column-count: 2; column-gap: 2rem;">
                             <li><a href="#features">Enterprise-Grade PDF Sharing Features</a></li>
                             <li><a href="#how-it-works">How It Works: Simple Steps</a></li>
                             <li><a href="#security">Comprehensive Security Features</a></li>
@@ -262,9 +287,10 @@
                             <li><a href="#faq">Frequently Asked Questions</a></li>
                         </ul>
                     </div>
-                </div>
-                
-                <h2 id="features">What Makes MaiPDF the Best Way to Share PDF Files Online?</h2>
+                </section>
+
+                <p class="section-label mt-5">Article</p>
+                <h2 class="section-heading mb-4" id="features">What Makes MaiPDF the Best Way to Share PDF Files Online?</h2>
                 <p class="lead mb-4">When you need to share PDF documents online, security and control are paramount. Whether you're sharing <strong>confidential business proposals</strong>, <strong>sensitive financial reports</strong>, or <strong>proprietary research papers</strong>, MaiPDF gives you complete control over who accesses your documents and what they can do with them.</p>
                 
                 <p>Unlike traditional file-sharing services like Google Drive or Dropbox that simply store files, MaiPDF specializes in <strong>secure PDF sharing with advanced protection features</strong>. Every document you share gets its own encrypted link, real-time access analytics, and customizable security settings that work together to protect your intellectual property.</p>
@@ -272,130 +298,151 @@
                 <div class="alert alert-info mb-4">
                     <i class="fas fa-lightbulb"></i> <strong>Real-World Example:</strong> A venture capital firm uses MaiPDF to share investment decks with potential partners. They set a 7-day expiration, limit views to 3 times per recipient, and add dynamic watermarks showing viewer emails. Result: 100% control over sensitive financial data.
                 </div>
-                
+
                 <div class="row g-4">
                     <div class="col-lg-6">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="bg-primary text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                        <i class="fas fa-rocket fa-lg"></i>
-                                    </div>
-                                    <h4 class="mb-0">Share PDFs in Under 30 Seconds - No Account Needed</h4>
-                                </div>
-                                <p>The fastest way to share PDF online starts here. Simply drag your file into MaiPDF, and you'll receive a secure, encrypted sharing link instantly. No lengthy registration forms, no email verification waiting, no credit card required.</p>
-                                <p class="mb-0"><strong>Perfect for:</strong> Last-minute client presentations, urgent contract reviews, quick document approvals, time-sensitive proposals, emergency file sharing.</p>
-                            </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-rocket"></i></div>
+                            <h3 class="h5 fw-bold">Share PDFs in Under 30 Seconds — No Account Needed</h3>
+                            <p class="text-muted mb-2">The fastest way to share PDF online. Drag your file into MaiPDF and get a secure, encrypted sharing link instantly. No registration, no email verification, no credit card.</p>
+                            <p class="small mb-0"><strong>Perfect for:</strong> Last-minute client presentations, urgent contract reviews, quick document approvals, time-sensitive proposals.</p>
                         </div>
                     </div>
                     <div class="col-lg-6">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body p-4">
-                                <div class="d-flex align-items-center mb-3">
-                                    <div class="bg-success text-white rounded-circle d-flex align-items-center justify-content-center me-3" style="width: 50px; height: 50px;">
-                                        <i class="fas fa-shield-alt fa-lg"></i>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="h5 fw-bold">Bank-Level Security That Actually Works</h3>
+                            <p class="text-muted mb-2">MaiPDF uses <strong>256-bit AES encryption</strong>. Add password protection, prevent downloads, review every access attempt, and revoke links instantly.</p>
+                            <p class="small mb-0"><strong>Use cases:</strong> Legal contracts, HIPAA-sensitive records, financial statements, confidential M&A documents, patent applications.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <section class="py-5">
+                    <p class="section-label">How It Works</p>
+                    <h2 class="section-heading mb-4" id="how-it-works">Simple Steps to Share PDFs Online</h2>
+                    <p class="lead mb-5">MaiPDF makes sharing PDFs online simple while keeping enterprise-grade security. Follow these steps to get started.</p>
+
+                    <div class="row g-4">
+                        <div class="col-12" id="step1">
+                            <div class="step-card">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="step-num">1</div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="h5 fw-bold mb-2">Upload Your PDF to MaiPDF's Secure Platform</h3>
+                                        <p><strong>Getting started takes less than 30 seconds.</strong> Visit <a href="https://sendpdfonline.com">sendpdfonline.com</a> and you'll see the upload interface — no login, no signup, just a drag-and-drop zone.</p>
+                                        <p>MaiPDF accepts any standard PDF up to <strong>5GB</strong>. Upload is over SSL/TLS; your file is scanned, encrypted with AES-256, and stored securely.</p>
+                                        <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="MaiPDF upload interface — drag and drop your PDF" class="img-fluid screenshot mt-3" style="max-width: 520px;" loading="lazy">
                                     </div>
-                                    <h4 class="mb-0">Bank-Level Security That Actually Works</h4>
                                 </div>
-                                <p>Sharing sensitive PDFs online doesn't mean losing control. MaiPDF uses the same <strong>256-bit AES encryption</strong> that banks use to protect financial transactions. Add password protection, prevent unauthorized downloads, review every single access attempt, and revoke links instantly if needed.</p>
-                                <p class="mb-0"><strong>Use cases:</strong> Legal contracts with NDA requirements, medical records requiring HIPAA compliance, financial statements for board meetings, confidential M&A documents, patent applications before filing.</p>
+                            </div>
+                        </div>
+                        <div class="col-12" id="step2">
+                            <div class="step-card">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="step-num">2</div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="h5 fw-bold mb-2">Configure Security Settings (Optional but Recommended)</h3>
+                                        <p>Set your security preferences:</p>
+                                        <ul class="mb-0">
+                                            <li>View limits — control how many times the PDF can be opened</li>
+                                            <li>Password protection</li>
+                                            <li>Expiration dates — auto-revoke access</li>
+                                            <li>Dynamic watermarks — deter unauthorized sharing</li>
+                                            <li>Disable downloads — online-only viewing</li>
+                                        </ul>
+                                        <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="MaiPDF security settings — view limits, expiration, watermarks" class="img-fluid screenshot mt-3" style="max-width: 520px;" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" id="step3">
+                            <div class="step-card">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="step-num">3</div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="h5 fw-bold mb-2">Get Your Sharing Link Instantly</h3>
+                                        <p>MaiPDF generates a unique, encrypted sharing link immediately. You can also get a QR code for mobile access or print.</p>
+                                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="PDF share link and QR code generated by MaiPDF" class="img-fluid screenshot mt-3" style="max-width: 520px;" loading="lazy">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-12" id="step4">
+                            <div class="step-card">
+                                <div class="d-flex align-items-start gap-3">
+                                    <div class="step-num">4</div>
+                                    <div class="flex-grow-1">
+                                        <h3 class="h5 fw-bold mb-2">Share with Your Intended Recipients</h3>
+                                        <p>Send your link or QR via email, messaging, social media, or print. Recipients open the PDF in the browser — no software needed. You get detailed analytics on who viewed and when.</p>
+                                        <p class="mb-0">Need to update the file? <a href="/article/replace-pdf-without-changing-link">Replace the PDF without changing the link</a> so you never have to resend the URL.</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
+                </section>
 
-                <h2 id="how-it-works"><i class="fas fa-cogs"></i> How It Works: Simple Steps to Share PDFs Online</h2>
-                <p class="lead">MaiPDF makes sharing PDFs online incredibly simple while maintaining enterprise-grade security. Follow these steps to get started.</p>
-                
-                <ol style="counter-reset: step-counter; list-style: none; padding-left: 0;">
-                    <li style="counter-increment: step-counter; margin-bottom: 2rem; padding-left: 3rem; position: relative;" id="step1">
-                        <strong style="display: block; margin-bottom: 0.5rem;">Upload Your PDF to MaiPDF's Secure Platform</strong>
-                        <p><strong>Getting started with MaiPDF takes less than 30 seconds.</strong> Visit <a href="https://sendpdfonline.com">sendpdfonline.com</a> and you'll immediately see the upload interface - no login screen, no signup forms, just a simple drag-and-drop zone.</p>
-                        <p>MaiPDF accepts any standard PDF document regardless of size or complexity. Whether it's a <strong>2-page executive summary</strong> or a <strong>500-page technical manual</strong>, our platform handles files up to <strong>5GB</strong> without compression or quality loss. The upload happens over an encrypted connection (SSL/TLS), meaning your document is protected from the moment it leaves your computer.</p>
-                        <p class="mb-0"><strong>What happens during upload:</strong> Your PDF is scanned for malware, encrypted with AES-256, stored on secure servers with redundant backups, and prepared for secure distribution. All of this happens automatically in seconds.</p>
-                        <div class="text-center my-3"><img src="/images/upload section.png" alt="MaiPDF upload interface — drag and drop your PDF" class="img-fluid rounded shadow-sm" style="max-width: 520px; border: 1px solid #e5e7eb;" loading="lazy"></div>
-                        <span style="position: absolute; left: 0; top: 0; background: #2563eb; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">1</span>
-                    </li>
-                    <li style="counter-increment: step-counter; margin-bottom: 2rem; padding-left: 3rem; position: relative;" id="step2">
-                        <strong style="display: block; margin-bottom: 0.5rem;">Configure Security Settings (Optional but Recommended)</strong>
-                        <p>Set up your security preferences to protect your document:</p>
-                        <ul>
-                            <li>Set view limits to control how many times the PDF can be accessed</li>
-                            <li>Add password protection for additional security</li>
-                            <li>Set expiration dates to automatically revoke access</li>
-                            <li>Enable dynamic watermarks to deter unauthorized sharing</li>
-                            <li>Disable downloads to force online-only viewing</li>
-                        </ul>
-                        <div class="text-center my-3"><img src="/images/security setting.png" alt="MaiPDF security settings — view limits, expiration, watermarks" class="img-fluid rounded shadow-sm" style="max-width: 520px; border: 1px solid #e5e7eb;" loading="lazy"></div>
-                        <span style="position: absolute; left: 0; top: 0; background: #2563eb; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">2</span>
-                    </li>
-                    <li style="counter-increment: step-counter; margin-bottom: 2rem; padding-left: 3rem; position: relative;" id="step3">
-                        <strong style="display: block; margin-bottom: 0.5rem;">Get Your Sharing Link Instantly</strong>
-                        <p>Once your PDF is uploaded and security settings are configured, MaiPDF generates a unique, encrypted sharing link immediately. The link is cryptographically secure and cannot be guessed or brute-forced. You can also generate a QR code for easy mobile access or offline distribution.</p>                        <div class="text-center my-3"><img src="/images/result of pdf link and qr code.png" alt="PDF share link and QR code generated by MaiPDF" class="img-fluid rounded shadow-sm" style="max-width: 520px; border: 1px solid #e5e7eb;" loading="lazy"></div>                        <span style="position: absolute; left: 0; top: 0; background: #2563eb; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">3</span>
-                    </li>
-                    <li style="counter-increment: step-counter; margin-bottom: 2rem; padding-left: 3rem; position: relative;" id="step4">
-                        <strong style="display: block; margin-bottom: 0.5rem;">Share with Your Intended Recipients</strong>
-                        <p>Distribute your secure link or QR code through your preferred communication channel - email, messaging apps, social media, or print. Recipients can access the PDF instantly without any software installation. The platform tracks all access attempts, providing you with detailed analytics about who viewed your document and when.</p>
-                        <p>If you need to update the content later, MaiPDF lets you <a href="/article/replace-pdf-without-changing-link">replace the PDF without changing the link</a> — so you never have to redistribute a new URL.</p>
-                        <span style="position: absolute; left: 0; top: 0; background: #2563eb; color: white; width: 2rem; height: 2rem; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-weight: 600;">4</span>
-                    </li>
-                </ol>
-
-                <div class="security-features" style="background: #f8fafc; padding: 2rem; border-radius: 12px; margin: 2rem 0;" id="security">
-                    <h2><i class="fas fa-lock"></i> Comprehensive Security Features</h2>
-                    <p class="lead">MaiPDF provides enterprise-grade security features that protect your documents while maintaining ease of use.</p>
-                    
+                <section class="py-5" style="background: var(--gray-100);" id="security">
+                    <p class="section-label">Security</p>
+                    <h2 class="section-heading mb-4">Comprehensive Security Features</h2>
+                    <p class="lead mb-5">MaiPDF provides enterprise-grade security while keeping sharing simple.</p>
                     <div class="row g-4">
-                        <div class="col-md-6">
-                            <h4><i class="fas fa-eye text-primary"></i> access analytics & Review</h4>
-                            <ul>
-                                <li>Review document access and usage in real-time</li>
-                                <li>Review who viewed your PDF and when</li>
-                                <li>Receive alerts for unusual access patterns</li>
-                                <li>Generate comprehensive access reports</li>
-                                <li>Geographic location access analytics</li>
-                            </ul>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="feature-card">
+                                    <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-eye"></i></div>
+                                    <h3 class="h6 fw-bold">Access Analytics & Review</h3>
+                                    <ul class="small text-muted mb-0">
+                                        <li>Real-time access and usage</li>
+                                        <li>Who viewed and when</li>
+                                        <li>Alerts for unusual patterns</li>
+                                        <li>Geographic analytics</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="feature-card">
+                                    <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-shield-alt"></i></div>
+                                    <h3 class="h6 fw-bold">Content Protection</h3>
+                                    <ul class="small text-muted mb-0">
+                                        <li>Prevent downloads</li>
+                                        <li>Disable printing</li>
+                                        <li>Dynamic watermarks</li>
+                                        <li>Copy protection</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="feature-card">
+                                    <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-key"></i></div>
+                                    <h3 class="h6 fw-bold">Access Control</h3>
+                                    <ul class="small text-muted mb-0">
+                                        <li>Password protection</li>
+                                        <li>Email verification</li>
+                                        <li>View count limits</li>
+                                        <li>Time-based restrictions</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6 col-lg-3">
+                                <div class="feature-card">
+                                    <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;"><i class="fas fa-clock"></i></div>
+                                    <h3 class="h6 fw-bold">Time Management</h3>
+                                    <ul class="small text-muted mb-0">
+                                        <li>Link expiration</li>
+                                        <li>Session limits</li>
+                                        <li>Custom expiration</li>
+                                        <li>Auto revocation</li>
+                                    </ul>
+                                </div>
+                            </div>
                         </div>
-                        <div class="col-md-6">
-                            <h4><i class="fas fa-shield-alt text-success"></i> Content Protection</h4>
-                            <ul>
-                                <li>Prevent unauthorized downloads</li>
-                                <li>Disable printing when needed</li>
-                                <li>Block screenshot attempts</li>
-                                <li>Add dynamic watermarks for extra security</li>
-                                <li>Copy protection for text and images</li>
-                            </ul>
-                        </div>
-                    </div>
-                    
-                    <div class="row g-4 mt-2">
-                        <div class="col-md-6">
-                            <h4><i class="fas fa-key text-warning"></i> Access Control</h4>
-                            <ul>
-                                <li>Password protection with strong encryption</li>
-                                <li>Email verification for user identification</li>
-                                <li>IP address whitelisting</li>
-                                <li>Time-based access restrictions</li>
-                                <li>View count limitations</li>
-                            </ul>
-                        </div>
-                        <div class="col-md-6">
-                            <h4><i class="fas fa-clock text-info"></i> Time Management</h4>
-                            <ul>
-                                <li>Automatic link expiration</li>
-                                <li>Session time limits</li>
-                                <li>Customizable expiration policies</li>
-                                <li>Time-based access windows</li>
-                                <li>Automatic access revocation</li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-                
-                
+                </section>
+
                 <!-- Comparison Section -->
-                <div class="mt-5" id="comparison">
-                    <h2><i class="fas fa-balance-scale"></i> How Does MaiPDF Compare to Other PDF Sharing Solutions?</h2>
+                <div class="py-5" id="comparison">
+                    <p class="section-label">Compare</p>
+                    <h2 class="section-heading mb-4">How Does MaiPDF Compare to Other PDF Sharing Solutions?</h2>
                     <p class="lead">Not all PDF sharing platforms are created equal. Here's how MaiPDF stacks up against popular alternatives:</p>
                     
                     <div class="table-responsive">
@@ -476,44 +523,42 @@
                 </div>
 
 
-                <h2 id="why-choose"><i class="fas fa-star"></i> Why Choose MaiPDF for Online PDF Sharing?</h2>
+                <p class="section-label mt-5">Why MaiPDF</p>
+                <h2 class="section-heading mb-4" id="why-choose">Why Choose MaiPDF for Online PDF Sharing?</h2>
                 <div class="row g-4">
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h4><i class="fas fa-bolt text-warning"></i> Instant Sharing</h4>
-                                <p>No registration required. Upload and share your PDFs in seconds. Get secure links immediately without waiting for account verification or email confirmation.</p>
-                            </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-bolt"></i></div>
+                            <h3 class="h5 fw-bold">Instant Sharing</h3>
+                            <p class="text-muted mb-0">No registration. Upload and share in seconds. Get secure links immediately — no account verification or email confirmation.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h4><i class="fas fa-shield-alt text-success"></i> Enterprise Security</h4>
-                                <p>Bank-level encryption, DRM protection, and comprehensive access controls ensure your documents remain secure throughout the sharing process.</p>
-                            </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-shield-alt"></i></div>
+                            <h3 class="h5 fw-bold">Enterprise Security</h3>
+                            <p class="text-muted mb-0">Bank-level encryption, DRM protection, and access controls keep your documents secure throughout the sharing process.</p>
                         </div>
                     </div>
                     <div class="col-md-4">
-                        <div class="card h-100 border-0 shadow-sm">
-                            <div class="card-body">
-                                <h4><i class="fas fa-dollar-sign text-primary"></i> Completely Free</h4>
-                                <p>All core features are free to use. No credit card required, no hidden fees, no subscription needed. Start sharing PDFs securely today at no cost.</p>
-                            </div>
+                        <div class="feature-card">
+                            <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-dollar-sign"></i></div>
+                            <h3 class="h5 fw-bold">Completely Free</h3>
+                            <p class="text-muted mb-0">All core features are free. No credit card, no hidden fees. Start sharing PDFs securely today at no cost.</p>
                         </div>
                     </div>
                 </div>
                 
                 <!-- Real-World Use Cases -->
-                <div class="mt-5" id="use-cases">
-                    <h2><i class="fas fa-briefcase"></i> Real-World Use Cases for Secure PDF Sharing</h2>
-                    <p class="lead">Discover how professionals across industries use MaiPDF to share PDFs securely and efficiently.</p>
-                    
+                <div class="py-5" id="use-cases">
+                    <p class="section-label">Use Cases</p>
+                    <h2 class="section-heading mb-4">Real-World Use Cases for Secure PDF Sharing</h2>
+                    <p class="lead mb-4">Discover how professionals use MaiPDF to share PDFs securely and efficiently.</p>
                     <div class="row g-4">
                         <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <h4><i class="fas fa-building text-primary"></i> Business Proposals & Contracts</h4>
+                            <div class="feature-card">
+                                <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-building"></i></div>
+                                <h3 class="h5 fw-bold">Business Proposals & Contracts</h3>
                                     <p>In the high-stakes world of <strong>business development and sales</strong>, losing control of your proposal can mean losing the deal - or worse, having competitors learn your pricing strategy. MaiPDF solves this by giving you complete visibility and control.</p>
                                     <p><strong>Real scenario:</strong> A SaaS company shares a custom pricing proposal worth $500K. They set the PDF to expire in 5 days (matching their quote validity), limit views to 3 times (prospect, CFO, CEO), and add a watermark showing the recipient's company name and timestamp. When the prospect tries to forward it to a competitor, the watermark immediately identifies the leak source.</p>
                                     <p><strong>Why it works:</strong> The prospect knows they're being tracked (deterrent effect), you know exactly when they've reviewed it (follow-up timing), and you can revoke access instantly if negotiations fall through.</p>
@@ -524,13 +569,12 @@
                                         <li>Prevent unauthorized copies with watermarks</li>
                                     </ul>
                                     <a href="https://sendpdfonline.com/usecase/business-proposals" class="btn btn-sm btn-outline-primary mt-3">Learn More</a>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <h4><i class="fas fa-graduation-cap text-success"></i> Academic Papers & Research</h4>
+                            <div class="feature-card">
+                                <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-graduation-cap"></i></div>
+                                <h3 class="h5 fw-bold">Academic Papers & Research</h3>
                                     <p>Researchers and academics use MaiPDF to share pre-publication papers, dissertations, and research findings with peer reviewers and colleagues while maintaining copyright protection and preventing premature distribution.</p>
                                     <ul class="mb-0">
                                         <li>Control access to unpublished research</li>
@@ -539,13 +583,12 @@
                                         <li>Prevent unauthorized citation or plagiarism</li>
                                     </ul>
                                     <a href="https://sendpdfonline.com/usecase/academic-research" class="btn btn-sm btn-outline-success mt-3">Learn More</a>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <h4><i class="fas fa-gavel text-warning"></i> Legal Documents</h4>
+                            <div class="feature-card">
+                                <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-gavel"></i></div>
+                                <h3 class="h5 fw-bold">Legal Documents</h3>
                                     <p>Law firms and legal professionals share case files, evidence documents, and client communications with guaranteed confidentiality. Maintain audit trails for compliance and prevent unauthorized access to privileged information.</p>
                                     <ul class="mb-0">
                                         <li>Maintain attorney-client privilege</li>
@@ -554,13 +597,12 @@
                                         <li>Prevent document tampering with DRM</li>
                                     </ul>
                                     <a href="https://sendpdfonline.com/usecase/legal-documents" class="btn btn-sm btn-outline-warning mt-3">Learn More</a>
-                                </div>
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body p-4">
-                                    <h4><i class="fas fa-palette text-danger"></i> Design Portfolios</h4>
+                            <div class="feature-card">
+                                <div class="feature-icon" style="background: #fee2e2; color: #dc2626;"><i class="fas fa-palette"></i></div>
+                                <h3 class="h5 fw-bold">Design Portfolios</h3>
                                     <p>Designers, photographers, and creative professionals showcase their work to potential clients while protecting intellectual property. Prevent unauthorized downloads and review which projects generate the most interest.</p>
                                     <ul class="mb-0">
                                         <li>Showcase work without losing control</li>
@@ -569,15 +611,15 @@
                                         <li>Disable downloads until contracts are signed</li>
                                     </ul>
                                     <a href="https://sendpdfonline.com/article/design-portfolio-pdf" class="btn btn-sm btn-outline-danger mt-3">Learn More</a>
-                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
 
                 <!-- FAQ Section -->
-                <div class="mt-5" id="faq">
-                    <h2><i class="fas fa-question-circle"></i> Frequently Asked Questions About Sharing PDFs Online</h2>
+                <div class="py-5" id="faq">
+                    <p class="section-label">FAQ</p>
+                    <h2 class="section-heading mb-4">Frequently Asked Questions About Sharing PDFs Online</h2>
                     <p class="lead mb-4">Get answers to common questions about secure PDF sharing with MaiPDF.</p>
                     
                     <div class="accordion" id="faqAccordion">
@@ -748,184 +790,134 @@
                     </div>
                 </div>
 
-                <!-- Related Articles -->
-                <div class="mt-5">
-                    <h2><i class="fas fa-newspaper"></i> Related Articles & Resources</h2>
-                    <p class="lead mb-4">Explore more guides about secure PDF sharing and document management.</p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
+                <!-- Related Articles (index article-card style) -->
+                <section class="py-5">
+                    <p class="section-label">Read More</p>
+                    <h2 class="section-heading mb-4">Related Articles &amp; Resources</h2>
+                    <p class="lead mb-4">More guides on secure PDF sharing and document management.</p>
+                    <div class="row g-4">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="article-card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-link-sharing-guide-en">PDF Link Sharing Guide</a></h5>
-                                    <p class="card-text small">Complete guide to sharing PDFs via secure links</p>
+                                    <h3><a href="/article/send-pdf-online">How to Send PDF Online Free</a></h3>
+                                    <p class="small text-muted mb-0">Send PDFs with secure links in seconds.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="article-card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-qr-code-guide-en">PDF QR Code Sharing</a></h5>
-                                    <p class="card-text small">Share PDFs using QR codes for easy mobile access</p>
+                                    <h3><a href="/article/pdf-link-sharing-guide-en">PDF Link Sharing Guide</a></h3>
+                                    <p class="small text-muted mb-0">Complete guide to sharing PDFs via secure links.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="article-card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/controlling-pdf-access">Control PDF Access</a></h5>
-                                    <p class="card-text small">Advanced access control and security features</p>
+                                    <h3><a href="/article/replace-pdf-without-changing-link">Replace PDF Without Changing Link</a></h3>
+                                    <p class="small text-muted mb-0">Update your shared PDF while keeping the same URL.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="article-card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/features/">All Features</a></h5>
-                                    <p class="card-text small">Explore all MaiPDF security and sharing features</p>
+                                    <h3><a href="/features/en/sharing/convert-pdf-to-qr-code">Convert PDF to QR Code</a></h3>
+                                    <p class="small text-muted mb-0">Share PDFs with QR codes for mobile and print.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="article-card">
                                 <div class="card-body">
-                                    <h5 class="card-title"><a href="/article/replace-pdf-without-changing-link">Replace PDF Without Changing Link</a></h5>
-                                    <p class="card-text small">Update your shared PDF while keeping the same link</p>
+                                    <h3><a href="/article/maipdf-vs-docsend">MaiPDF vs DocSend</a></h3>
+                                    <p class="small text-muted mb-0">Full comparison for document sharing.</p>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                
-                <!-- External Resources from article.maipdf.com -->
-                <div class="mt-5 p-4 bg-light rounded">
-                    <h3><i class="fas fa-external-link-alt"></i> More Resources from MaiPDF Blog</h3>
-                    <p class="lead mb-4">Discover more in-depth guides and tutorials on our official blog at <a href="https://article.maipdf.com" target="_blank" rel="noopener">article.maipdf.com</a></p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="card h-100 border-primary">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="article-card">
                                 <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Blog Article</span>
-                                    <h5 class="card-title"><a href="https://article.maipdf.com/blog/en/complete-pdf-security-comprehensive-protection" target="_blank" rel="noopener">PDF Security Best Practices 2025</a></h5>
-                                    <p class="card-text small">Complete guide to protecting your PDFs with the latest security techniques and industry standards.</p>
+                                    <h3><a href="/article/maipdf-vs-smallpdf">MaiPDF vs Smallpdf</a></h3>
+                                    <p class="small text-muted mb-0">Tool positioning and when to use each.</p>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-md-4">
-                            <div class="card h-100 border-primary">
+                        <div class="col-md-6 col-lg-3">
+                            <div class="article-card">
                                 <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Blog Article</span>
-                                    <h5 class="card-title"><a href="https://article.maipdf.com/blog/en/digital-watermarks-pdf-protection-guide" target="_blank" rel="noopener">Ultimate Watermarking Guide</a></h5>
-                                    <p class="card-text small">Learn how dynamic watermarks prevent unauthorized sharing and protect intellectual property.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100 border-primary">
-                                <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Blog Article</span>
-                                    <h5 class="card-title"><a href="https://article.maipdf.com" target="_blank" rel="noopener">PDF Access Insights</a></h5>
-                                    <p class="card-text small">Understand how access insights improve engagement and close more deals.</p>
+                                    <h3><a href="/features/">All Features</a></h3>
+                                    <p class="small text-muted mb-0">Explore MaiPDF security and sharing features.</p>
                                 </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            </div>
-
-            <div class="cta-section">
-                <h3>Ready to Share Your PDFs?</h3>
-                <p>Experience the simplest way to share PDF documents online while maintaining complete control over your content.</p>
-                <a href="https://sendpdfonline.com/" class="btn btn-primary btn-lg">Get Started Now - It's Free!</a>
+                </section>
             </div>
         </div>
     </div>
 
-    <!-- Related Articles -->
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h3 class="mb-4"><i class="fas fa-book-open me-2"></i>Related Articles</h3>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <a href="/article/send-pdf-online" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">How to Send PDF Online Free</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/pdf-link-sharing-guide-en" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">Complete Guide to PDF Link Sharing</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/pdf-sharing-methods" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">Compare PDF Sharing Methods</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/pdf-sharing-security" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">PDF Sharing Security Best Practices</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/features/en/sharing/convert-pdf-to-qr-code" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">Convert Your PDF to a QR Code</h6>
-                            </div>
-                        </a>
-                    </div>                    <div class="col-md-6">
-                        <a href="/article/maipdf-vs-docsend" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">MaiPDF vs DocSend: Full Comparison</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/maipdf-vs-smallpdf" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">MaiPDF vs Smallpdf: Full Comparison</h6>
-                            </div>
-                        </a>
-                    </div>                    <div class="col-md-6">
-                        <a href="/new-articles-for-blog/secure-file-sharing" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border hover-shadow">
-                                <h6 class="mb-1 text-primary">Secure File Sharing Guide</h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="container my-4 text-center">
-        <a href="/article/" class="btn btn-primary me-2">
-            <i class="fas fa-arrow-left"></i> Back to Articles
-        </a>
-        <a href="/" class="btn btn-outline-primary me-2">
-            <i class="fas fa-home"></i> Home
-        </a>
-        <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> Try Now
-        </a>
-    </div>
-
-    <footer class="footer">
+    <!-- CTA (index style) -->
+    <section class="py-5">
         <div class="container">
-            <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">Ready to Share Your PDFs?</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">Upload a PDF, set your security preferences, and share the link — it takes less than a minute.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-paper-plane me-2"></i>Send PDF Now — Free
+                    </a>
+                    <a href="/article/" class="btn btn-outline-light btn-lg"><i class="fas fa-arrow-left me-2"></i>Back to Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer (index style) -->
+    <footer class="text-white py-5 mt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
+                        <li class="mb-2"><a href="/features/">Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">Blog</a></li>
+                        <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+                        <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Popular</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+                        <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+                        <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><!--email_off--><a href="mailto:joe@pdfhost.online">Contact Us</a><!--/email_off--></li>
+                        <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
