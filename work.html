@@ -305,6 +305,25 @@
     <p style="text-align:center;color:#94a3b8;margin-bottom:8px">设计风格统一为主页风格 (深蓝渐变 Hero + 白色卡片 + Bootstrap 5.3 + Font Awesome 6.4)<br>每页需要：✅ 现代设计 ✅ SVG/Mermaid 流程图 ✅ 真实截图 ✅ 结构化数据 ✅ 内链
     </p>
 
+    <!-- 图片使用规范：新文章只用新图库 -->
+    <div class="plan-section" style="border-color:#22c55e;background:linear-gradient(135deg,#0f172a 0%,#14532d 50%,#0f172a 100%)">
+      <h2>🖼️ 图片 / 图表使用规范（新文章必守）</h2>
+      <div class="callout callout-success" style="margin-bottom:0">
+        <strong>新文章、精修时新加的图：只用以下图库，不要再引用其它老文件夹的图片。</strong>
+      </div>
+      <table class="plan-table" style="margin-top:12px">
+        <thead><tr><th>用途</th><th>路径</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>界面截图 / 功能示意</td><td><code>images/maipdf2026/</code></td><td>真实产品截图、上传/控制台/分享结果等。见 <code>images/maipdf2026/README.md</code></td></tr>
+          <tr><td>装饰图 / 营销图</td><td><code>images/maipdf2026/show_off/</code></td><td>非界面图，用于 Hero、功能亮点。见 <code>show_off/README.md</code></td></tr>
+          <tr><td>流程图 (SVG)</td><td><code>maipdf-flowcharts/</code></td><td>QR、离线版、替换 PDF、用户旅程、安全功能等。EN 用 <code>en-*.svg</code>，中文用 <code>zh-*.svg</code>。见 <code>maipdf-flowcharts/README.md</code></td></tr>
+        </tbody>
+      </table>
+      <p style="color:#94a3b8;font-size:13px;margin-top:12px;margin-bottom:0">
+        ⚠️ <strong>不要再用</strong>：<code>maipdf-images/</code> 等其它老文件夹的图片。老文章里已引用的可暂时不改，新内容一律用上表图库。
+      </p>
+    </div>
+
     <!-- 统计 -->
     <div class="stats-row" style="margin-bottom:24px">
       <div class="stat-card"><div class="num" id="refine-total">0</div><div class="label">需精修总数</div></div>
