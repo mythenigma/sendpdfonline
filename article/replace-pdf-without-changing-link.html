@@ -20,137 +20,38 @@
     <meta property="og:url" content="https://sendpdfonline.com/article/replace-pdf-without-changing-link">
     <meta property="og:image" content="https://sendpdfonline.com/maipdf-flowcharts/en-replace-file.svg">
     
-    <!-- CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    
-    <!-- Mermaid JS for diagrams -->
-    <script src="https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.min.js"></script>
-    
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <style>
-        :root {
-            --primary-color: #3b82f6;
-            --success-color: #10b981;
-            --warning-color: #f59e0b;
-            --danger-color: #ef4444;
-        }
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.8;
-            color: #1e293b;
-            background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #3b82f6 0%, #8b5cf6 100%);
-            color: white;
-            padding: 4rem 0;
-            margin-bottom: 2rem;
-        }
-        .content-card {
-            background: white;
-            border-radius: 16px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
-        }
-        .feature-box {
-            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-            border-left: 5px solid var(--primary-color);
-            padding: 1.5rem;
-            border-radius: 0 12px 12px 0;
-            margin: 1.5rem 0;
-        }
-        .step-card {
-            border: 2px solid #e2e8f0;
-            border-radius: 12px;
-            padding: 1.5rem;
-            margin: 1rem 0;
-            transition: all 0.3s ease;
-        }
-        .step-card:hover {
-            border-color: var(--primary-color);
-            transform: translateY(-2px);
-        }
-        .step-number {
-            width: 40px;
-            height: 40px;
-            background: var(--primary-color);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: bold;
-            margin-right: 1rem;
-        }
-        .comparison-table {
-            border-collapse: separate;
-            border-spacing: 0;
-            border-radius: 12px;
-            overflow: hidden;
-        }
-        .comparison-table th {
-            background: var(--primary-color);
-            color: white;
-            padding: 1rem;
-        }
-        .comparison-table td {
-            padding: 1rem;
-            border-bottom: 1px solid #e2e8f0;
-        }
-        .svg-diagram {
-            max-width: 100%;
-            height: auto;
-            border-radius: 12px;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
-            margin: 2rem 0;
-        }
-        .mermaid {
-            background: white;
-            padding: 1.5rem;
-            border-radius: 12px;
-            margin: 1.5rem 0;
-        }
-        .faq-item {
-            border-bottom: 1px solid #e2e8f0;
-            padding: 1rem 0;
-        }
-        .faq-question {
-            font-weight: 600;
-            color: var(--primary-color);
-            cursor: pointer;
-        }
-        .cta-box {
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 2rem;
-            border-radius: 16px;
-            text-align: center;
-        }
-        .badge-custom {
-            background: var(--primary-color);
-            color: white;
-            padding: 0.5rem 1rem;
-            border-radius: 20px;
-            font-size: 0.85rem;
-        }
-        h2 {
-            color: var(--primary-color);
-            margin-top: 2rem;
-            padding-bottom: 0.5rem;
-            border-bottom: 2px solid #e2e8f0;
-        }
-        .icon-box {
-            width: 60px;
-            height: 60px;
-            background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-        }
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } }
     </style>
 
     <!-- Breadcrumb Structured Data -->
@@ -206,10 +107,9 @@
     </script>
 </head>
 <body>
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);">
         <div class="container">
-            <ol class="breadcrumb mb-0">
+            <ol class="breadcrumb mb-0 small">
                 <li class="breadcrumb-item"><a href="/">Home</a></li>
                 <li class="breadcrumb-item"><a href="/article/">Articles</a></li>
                 <li class="breadcrumb-item active" aria-current="page">Replace PDF Without Changing Link</li>
@@ -217,439 +117,279 @@
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container text-center">
-            <span class="badge-custom mb-3">📄 PDF Management</span>
-            <h1 class="display-4 fw-bold mb-3">Replace a PDF Without Changing the Link</h1>
-            <p class="lead mb-4">Update your shared documents seamlessly. Same link, new content.</p>
-            <div class="d-flex justify-content-center gap-3 flex-wrap">
-                <span><i class="fas fa-check-circle"></i> No re-sharing needed</span>
-                <span><i class="fas fa-check-circle"></i> Settings preserved</span>
-                <span><i class="fas fa-check-circle"></i> Instant updates</span>
-            </div>
-            <div class="mt-3">
-                <a href="/article/replace-pdf-without-changing-link-zh" class="btn btn-outline-light btn-sm"><i class="fas fa-language me-1"></i> 中文版</a>
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>Replace a PDF Without Changing the Link</h1>
+                    <p class="lead mt-3">Same URL, new file. You swap the PDF in the background; recipients keep using the original link and see the updated version. No re-sending.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com/pdf/hahachange.php" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-sync-alt me-2"></i>Replacement Portal
+                        </a>
+                        <a href="/article/replace-pdf-without-changing-link-zh" class="btn btn-outline-light btn-lg"><i class="fas fa-language me-2"></i>中文版</a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> Link stays &nbsp; <i class="fas fa-check me-1"></i> Settings follow &nbsp; <i class="fas fa-check me-1"></i> MaiPDF only (not Maiimg)</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/replacefile-without-login.png" alt="Replace PDF — same link, new content" class="hero-screenshot" loading="eager">
+                </div>
             </div>
         </div>
     </section>
 
-    <div class="container">
-        <!-- Introduction -->
-        <div class="content-card">
-            <div class="feature-box">
-                <h3 style="color: #0369a1; margin-bottom: 15px;">💡 The Problem</h3>
-                <p class="mb-0">You've shared a PDF link with clients, then discovered an error that needs fixing. The traditional approach: upload a new file, get a new link, send it again—confusing the client: <em>"Which link should I use?"</em></p>
-            </div>
-            
-            <p class="mt-4"><strong>MaiPDF's solution:</strong> The link stays the same. You swap the file in the background. Recipients continue using the original link, and when they open it, they automatically see the updated version. No re-sending, no confusion.</p>
-            
-            <div class="alert alert-info">
-                <i class="fas fa-info-circle me-2"></i>
-                <strong>Note:</strong> This feature is available in MaiPDF only (Maiimg does not support file replacement).
-            </div>
-        </div>
+    <div class="container py-5">
+        <p class="section-label">Article</p>
+        <h2 class="section-heading mb-4">Why This Matters</h2>
+        <p class="lead mb-4">You shared a link; then you find an error. Normally you’d upload again, get a new link, resend — and the client asks which link to use. <strong>With MaiPDF:</strong> the link stays. You replace the file in the portal. Everyone who opens the same link now sees the new version.</p>
+        <div class="alert alert-info py-2"><i class="fas fa-info-circle me-2"></i>MaiPDF only. Maiimg does not support file replacement.</div>
 
-        <!-- How It Works - SVG Diagram -->
-        <div class="content-card">
-            <h2><i class="fas fa-sync-alt me-2"></i>How It Works</h2>
-            <p>The reading code stays the same. The content and settings are replaced by the new version.</p>
-            
-            <!-- NEW: Animated Comparison Diagram -->
+        <section class="py-5">
+            <p class="section-label">How It Works</p>
+            <h2 class="section-heading mb-4">Same Link, New Content</h2>
+            <p class="lead mb-4">The reading code (and URL) stays. You inject the new PDF and its settings into that code. One diagram, three steps.</p>
             <div class="text-center mb-4">
-                <h4><i class="fas fa-play-circle me-2"></i>Watch the Replacement Process</h4>
-                <img src="../maipdf-flowcharts/en-replace-animation.svg" alt="Animated PDF Replacement Process" class="svg-diagram" style="max-width: 100%; border: 1px solid #e2e8f0; border-radius: 12px;">
-                <p class="text-muted mt-2"><small>🔄 Animation: See how new content gets injected into the old link (auto-loops every 6 seconds)</small></p>
+                <img src="/maipdf-flowcharts/en-replace-animation.svg" alt="Replace PDF — new content into old link" class="img-fluid screenshot" style="max-width: 100%; border-radius: 12px;" loading="lazy">
             </div>
+            <div class="row g-4 mb-4">
+                <div class="col-md-4 text-center">
+                    <img src="/maipdf-flowcharts/en-replace-link-comparison.svg" alt="Before and after — same link" class="img-fluid screenshot" style="max-width: 100%;" loading="lazy">
+                    <p class="small text-muted mt-2">Before &amp; after</p>
+                </div>
+                <div class="col-md-8">
+                    <img src="/maipdf-flowcharts/en-replace-file.svg" alt="Step-by-step replacement flow" class="img-fluid screenshot" style="max-width: 100%;" loading="lazy">
+                    <p class="small text-muted mt-2">Full flow</p>
+                </div>
+            </div>
+        </section>
 
-            <!-- Static Link Comparison Diagram -->
+        <section class="py-5" style="background: var(--gray-100);">
+            <p class="section-label">Why Replace</p>
+            <h2 class="section-heading mb-4">Benefits</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-link"></i></div>
+                        <h3 class="h6 fw-bold">Link unchanged</h3>
+                        <p class="small text-muted mb-0">No resend. QR and bookmarks still work.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-cog"></i></div>
+                        <h3 class="h6 fw-bold">Settings follow</h3>
+                        <p class="small text-muted mb-0">View limits, verification, watermarks come with the new file.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="h6 fw-bold">History kept</h3>
+                        <p class="small text-muted mb-0">Access log and analytics stay on the same reading code.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;"><i class="fas fa-bolt"></i></div>
+                        <h3 class="h6 fw-bold">Instant</h3>
+                        <p class="small text-muted mb-0">Next open = new content. No delay.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">Use Cases</p>
+            <h2 class="section-heading mb-4">When to Use It</h2>
             <div class="text-center mb-4">
-                <h4><i class="fas fa-columns me-2"></i>Before &amp; After Comparison</h4>
-                <img src="../maipdf-flowcharts/en-replace-link-comparison.svg" alt="Same Link Updated Content - Before and After Comparison" class="svg-diagram" style="max-width: 100%; border: 1px solid #e2e8f0;">
-                <p class="text-muted mt-2"><small>Same link stays active: New file content injected into old link</small></p>
+                <img src="/images/maipdf2026/show_off/replace2toshowoff.png" alt="Replace PDF — same link, new content" class="img-fluid screenshot" style="max-width: 560px;" loading="lazy">
             </div>
+            <ul class="mb-0">
+                <li><strong>Fix mistakes</strong> — typo in a contract, wrong price. Replace and done.</li>
+                <li><strong>Update versions</strong> — price list, catalog, training doc. Same link, new file.</li>
+                <li><strong>Change settings</strong> — add email verification, view limit, or watermark via the new file.</li>
+                <li><strong>Retract</strong> — replace with a blank PDF to effectively revoke content.</li>
+            </ul>
+        </section>
 
-            <!-- Step-by-step SVG Diagram -->
-            <div class="text-center mb-4">
-                <h4><i class="fas fa-list-ol me-2"></i>Step-by-Step Process</h4>
-                <img src="../maipdf-flowcharts/en-replace-file.svg" alt="PDF File Replacement Process Flow" class="svg-diagram">
+        <section class="py-5">
+            <p class="section-label">Steps</p>
+            <h2 class="section-heading mb-4">How to Replace</h2>
+            <p class="mb-4">Use the <a href="https://maipdf.com/pdf/hahachange.php" target="_blank" rel="noopener">replacement portal</a>:</p>
+            <div class="row g-4">
+                <div class="col-12">
+                    <div class="step-card">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="step-num">1</div>
+                            <div><h3 class="h5 fw-bold mb-1">Enter old codes</h3><p class="text-muted mb-0">Reading code + control (modify) code of the link you want to update.</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="step-card">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="step-num">2</div>
+                            <div><h3 class="h5 fw-bold mb-1">Enter new codes</h3><p class="text-muted mb-0">Reading code + control code of the new PDF (upload it first if needed).</p></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-12">
+                    <div class="step-card">
+                        <div class="d-flex align-items-start gap-3">
+                            <div class="step-num">3</div>
+                            <div><h3 class="h5 fw-bold mb-1">Click Update File</h3><p class="text-muted mb-0">Old link now serves the new file and settings. QR and bookmarks unchanged.</p></div>
+                        </div>
+                    </div>
+                </div>
             </div>
-
-            <!-- Mermaid Flowchart -->
-            <h4 class="mt-4">File Replacement Flow</h4>
-            <div class="mermaid">
-flowchart LR
-    A[📤 Original PDF Shared] --> B[🔗 Link Already in Use]
-    B --> C[📄 Need to Update Content]
-    C --> D[🔄 Use Replacement Portal]
-    D --> E[📝 Enter Old Codes]
-    E --> F[📝 Enter New Codes]
-    F --> G[✅ Click Update]
-    G --> H[🔗 Same Link, New Content]
-    H --> I[👥 Recipients See Update]
-    
-    style A fill:#e0f2fe
-    style D fill:#fef3c7
-    style G fill:#d1fae5
-    style H fill:#d1fae5
-    style I fill:#d1fae5
-            </div>
-        </div>
-
-        <!-- Why Replace Instead of Resending -->
-        <div class="content-card">
-            <h2><i class="fas fa-question-circle me-2"></i>Why Replace Instead of Resending?</h2>
-            
             <div class="row g-4 mt-3">
                 <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <div class="d-flex align-items-start">
-                            <div class="icon-box me-3">🔗</div>
-                            <div>
-                                <h5>Link Stays the Same</h5>
-                                <p class="text-muted mb-0">No need to resend URLs or QR codes. Recipients continue using the original link.</p>
-                            </div>
-                        </div>
+                    <div class="step-card">
+                        <h3 class="h6 fw-bold text-success mb-2">Replaced</h3>
+                        <p class="small text-muted mb-0">PDF content, view/expiry limits, verification, download/watermark/alert settings.</p>
                     </div>
                 </div>
                 <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <div class="d-flex align-items-start">
-                            <div class="icon-box me-3">⚙️</div>
-                            <div>
-                                <h5>Settings Sync Automatically</h5>
-                                <p class="text-muted mb-0">Access controls (view limits, verification, watermarks) follow the new file. No manual reconfiguration.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <div class="d-flex align-items-start">
-                            <div class="icon-box me-3">📊</div>
-                            <div>
-                                <h5>Access Records Preserved</h5>
-                                <p class="text-muted mb-0">View history and analytics remain intact. Review who accessed both old and new versions.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <div class="d-flex align-items-start">
-                            <div class="icon-box me-3">⏱️</div>
-                            <div>
-                                <h5>Instant Updates</h5>
-                                <p class="text-muted mb-0">Changes take effect immediately. Next time someone opens the link, they see the new content.</p>
-                            </div>
-                        </div>
+                    <div class="step-card">
+                        <h3 class="h6 fw-bold text-primary mb-2">Unchanged</h3>
+                        <p class="small text-muted mb-0">Reading code, share URL, QR code, access history.</p>
                     </div>
                 </div>
             </div>
-        </div>
+        </section>
 
-        <!-- Common Use Cases -->
-        <div class="content-card">
-            <h2><i class="fas fa-lightbulb me-2"></i>Common Use Cases</h2>
-            
-            <!-- Mermaid Mind Map -->
-            <div class="mermaid">
-mindmap
-    root((PDF Replacement<br>Use Cases))
-        Fix Mistakes
-            Typos in contracts
-            Wrong pricing
-            Outdated info
-        Update Versions
-            Price lists
-            Product catalogs
-            Training materials
-        Change Settings
-            Add email verification
-            Adjust view limits
-            Enable watermarks
-        Retract Content
-            Temporary removal
-            Replace with blank PDF
-            Emergency revocation
-            </div>
+        <section class="py-5">
+            <p class="section-label">Tips</p>
+            <h2 class="section-heading mb-4">Quick Tips</h2>
+            <p class="mb-0">Save your control codes (e.g. in a password manager). Test the new PDF in a separate link before replacing. MaiPDF only — Maiimg has no replace feature.</p>
+        </section>
 
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h5>📝 Fix Mistakes After Sharing</h5>
-                    <p>Found a typo or error in a contract? Replace the file without notifying everyone about a new link.</p>
-                    
-                    <h5>💰 Update Pricing or Versions</h5>
-                    <p>Price lists, product catalogs, or versioned documents can be updated seamlessly.</p>
+        <section class="py-5">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-heading mb-4">Quick Answers</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Do recipients get notified?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">No. They just see the new content when they open the link. Tell them yourself if it matters.</p></div>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <h5>⚙️ Change Access Settings</h5>
-                    <p>Need to adjust view limits, add email verification, enable watermarks, or modify download permissions? Replace with a file that has updated settings.</p>
-                    
-                    <h5>🚫 Retract Content</h5>
-                    <p>Need to temporarily remove access? Upload a blank PDF, then replace the original link with it.</p>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I revert to the old file?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">Yes. Use the portal again and swap back (you need the old file’s codes).</p></div>
+                    </div>
                 </div>
-            </div>
-        </div>
-
-        <!-- How to Replace - Steps -->
-        <div class="content-card">
-            <h2><i class="fas fa-tools me-2"></i>How to Replace a PDF (Simple Steps)</h2>
-            
-            <p>Visit the <a href="https://maipdf.com/pdf/hahachange.php" target="_blank" rel="noopener">replacement portal</a>:</p>
-            
-            <div class="step-card">
-                <div class="d-flex align-items-center">
-                    <div class="step-number">1</div>
-                    <div>
-                        <h5 class="mb-1">Enter Old Codes</h5>
-                        <p class="mb-0 text-muted">Input your old reading code + old control code</p>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Lost my control codes?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">Codes are shown once after upload. If lost, you can’t replace that link — save them securely.</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Works for Maiimg?</button>
+                    </h3>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">No. Replace is MaiPDF only.</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Replace limit?</button>
+                    </h3>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">No. Replace as often as you want, as long as you have the codes.</p></div>
                     </div>
                 </div>
             </div>
-            
-            <div class="step-card">
-                <div class="d-flex align-items-center">
-                    <div class="step-number">2</div>
-                    <div>
-                        <h5 class="mb-1">Enter New Codes</h5>
-                        <p class="mb-0 text-muted">Input your new reading code + new control code</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="step-card">
-                <div class="d-flex align-items-center">
-                    <div class="step-number">3</div>
-                    <div>
-                        <h5 class="mb-1">Click Update File</h5>
-                        <p class="mb-0 text-muted">The old reading code stays the same, but content and settings are replaced</p>
-                    </div>
-                </div>
-            </div>
+        </section>
 
-            <!-- What Gets Replaced vs What Stays -->
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="p-3 bg-success bg-opacity-10 rounded">
-                        <h5 class="text-success"><i class="fas fa-exchange-alt me-2"></i>What Gets Replaced</h5>
-                        <ul class="mb-0">
-                            <li>✅ PDF file content</li>
-                            <li>✅ All access settings (view limits, time limits)</li>
-                            <li>✅ Verification requirements</li>
-                            <li>✅ Download permissions</li>
-                            <li>✅ Watermark settings</li>
-                            <li>✅ Alert email configurations</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="p-3 bg-primary bg-opacity-10 rounded">
-                        <h5 class="text-primary"><i class="fas fa-lock me-2"></i>What Stays the Same</h5>
-                        <ul class="mb-0">
-                            <li>✅ Reading code (the shareable link)</li>
-                            <li>✅ QR code (if already generated)</li>
-                            <li>✅ Access history and analytics</li>
-                            <li>✅ Access analytics records</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Example Scenario Comparison -->
-        <div class="content-card">
-            <h2><i class="fas fa-search me-2"></i>Example Scenario</h2>
-            
-            <div class="feature-box mb-4">
-                <strong>Situation:</strong> You shared a contract PDF with a client. After sending, you notice a pricing error that needs immediate correction.
-            </div>
-
-            <!-- Comparison Mermaid -->
-            <div class="mermaid">
-flowchart TB
-    subgraph WITHOUT["❌ Without Replacement"]
-        direction TB
-        W1[Upload new PDF] --> W2[Get new link]
-        W2 --> W3[Reconfigure settings]
-        W3 --> W4[Send new link]
-        W4 --> W5["Client confused 😕"]
-        W5 --> W6["Risk: Wrong version used"]
-    end
-    
-    subgraph WITH["✅ With MaiPDF Replacement"]
-        direction TB
-        M1[Upload corrected PDF] --> M2[Use replacement portal]
-        M2 --> M3[Swap files in seconds]
-        M3 --> M4[Original link updated]
-        M4 --> M5["Client uses same link 😊"]
-        M5 --> M6["Zero confusion!"]
-    end
-    
-    style WITHOUT fill:#fee2e2
-    style WITH fill:#d1fae5
-            </div>
-
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <div class="p-3 border border-danger rounded">
-                        <h5 class="text-danger">❌ Without Replacement</h5>
-                        <ol>
-                            <li>Upload new PDF, get new link</li>
-                            <li>Manually reconfigure all settings</li>
-                            <li>Send new link to client</li>
-                            <li>Client asks: "Which link should I use?"</li>
-                            <li>Risk of client using old version with wrong pricing</li>
-                        </ol>
-                        <p class="text-muted mb-0">⚠️ Time-consuming, error-prone, and confusing</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="p-3 border border-success rounded">
-                        <h5 class="text-success">✅ With MaiPDF Replacement</h5>
-                        <ol>
-                            <li>Upload corrected PDF with same settings</li>
-                            <li>Use replacement portal to swap files</li>
-                            <li>Original link now shows corrected version</li>
-                            <li>Client continues using the same link</li>
-                            <li>Zero confusion, no risk of wrong version</li>
-                        </ol>
-                        <p class="text-success mb-0">✨ Fast, seamless, and error-free</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Tips -->
-        <div class="content-card">
-            <h2><i class="fas fa-lightbulb me-2"></i>Tips for Effective Replacement</h2>
-            
+        <section class="py-5">
+            <p class="section-label">Read More</p>
+            <h2 class="section-heading mb-4">Related</h2>
             <div class="row g-4">
-                <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <h5>📋 Plan Ahead</h5>
-                        <p class="mb-0">If you know you'll need updates, keep your control codes handy. Store them in a secure note or password manager.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <h5>🧪 Test First</h5>
-                        <p class="mb-0">Upload the new PDF separately first. Verify all settings work correctly before replacing the shared link.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <h5>📝 Version Notes</h5>
-                        <p class="mb-0">For important documents, add a version number or date in the PDF itself so recipients know it's been updated.</p>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <div class="step-card h-100">
-                        <h5>🔒 Security</h5>
-                        <p class="mb-0">Control codes are sensitive. Don't share them publicly. Only use them in the replacement portal.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- FAQ -->
-        <div class="content-card">
-            <h2><i class="fas fa-question-circle me-2"></i>Frequently Asked Questions</h2>
-            
-            <div class="faq-item">
-                <p class="faq-question">Q: Will recipients know the file was replaced?</p>
-                <p class="mb-0">A: Not automatically. They'll see the new content when they open the link, but won't get a notification. If it's important, you may want to inform them separately.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Q: Can I revert to the old file?</p>
-                <p class="mb-0">A: Yes, if you still have the old control code. Simply use the replacement portal again to swap back.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Q: What if I lose my control codes?</p>
-                <p class="mb-0">A: Control codes are shown only once after upload. If lost, you cannot replace the file. Always save them securely.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Q: Does this work for Maiimg (image sharing)?</p>
-                <p class="mb-0">A: No. File replacement is a MaiPDF-only feature. Maiimg does not support replacing images while keeping the same link.</p>
-            </div>
-            
-            <div class="faq-item">
-                <p class="faq-question">Q: Is there a limit on how many times I can replace?</p>
-                <p class="mb-0">A: No. You can replace files as many times as needed, as long as you have the correct codes.</p>
-            </div>
-        </div>
-
-        <!-- CTA -->
-        <div class="cta-box mb-5">
-            <h3 class="mb-3">Ready to Try PDF Replacement?</h3>
-            <p class="mb-4">Share your PDFs with confidence. Update anytime without the hassle.</p>
-            <a href="https://maipdf.com/" class="btn btn-light btn-lg" target="_blank" rel="noopener">
-                <i class="fas fa-rocket me-2"></i>Try MaiPDF Now
-            </a>
-        </div>
-
-        <!-- Related Articles -->
-        <div class="content-card">
-            <h3><i class="fas fa-book me-2"></i>Related Articles</h3>
-            <div class="row g-3">
-                <div class="col-md-4">
-                    <a href="/article/offline-maipdf-en" class="text-decoration-none">
-                        <div class="step-card h-100">
-                            <h6>Offline PDF Sharing</h6>
-                            <p class="text-muted small mb-0">Control files without cloud storage</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/share-pdf-online">Share PDF Online</a></h3>
+                            <p class="small text-muted mb-0">Secure sharing with control.</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a href="/article/pdf-control-lost" class="text-decoration-none">
-                        <div class="step-card h-100">
-                            <h6>Lost Control of Your PDFs?</h6>
-                            <p class="text-muted small mb-0">How to maintain document control</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/offline-maipdf-en">Offline PDF Sharing</a></h3>
+                            <p class="small text-muted mb-0">Store locally, control remotely.</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <a href="/article/secure-pdf-sharing-guide" class="text-decoration-none">
-                        <div class="step-card h-100">
-                            <h6>Secure PDF Sharing Guide</h6>
-                            <p class="text-muted small mb-0">Best practices for document security</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/secure-pdf-sharing-guide">Secure PDF Sharing</a></h3>
+                            <p class="small text-muted mb-0">Best practices.</p>
                         </div>
-                    </a>
+                    </div>
                 </div>
             </div>
-        </div>
+        </section>
     </div>
 
-    <!-- Footer -->
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p class="mb-2">© 2026 MaiPDF. All rights reserved.</p>
-            <p class="mb-0 small">
-                <a href="/" class="text-white-50 me-3">Home</a>
-                <a href="/article/" class="text-white-50 me-3">Articles</a>
-                <a href="https://maipdf.com" class="text-white-50">MaiPDF.com</a>
-            </p>
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">Ready to Replace a PDF?</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">Same link, new file. No resend, no confusion.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com/pdf/hahachange.php" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-sync-alt me-2"></i>Replacement Portal
+                    </a>
+                    <a href="/article/" class="btn btn-outline-light btn-lg"><i class="fas fa-arrow-left me-2"></i>Back to Articles</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+                        <li class="mb-2"><a href="/features/">Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">Blog</a></li>
+                        <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><!--email_off--><a href="mailto:joe@pdfhost.online">Contact</a><!--/email_off--></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Initialize Mermaid -->
-    <script>
-        mermaid.initialize({
-            startOnLoad: true,
-            theme: 'default',
-            securityLevel: 'loose',
-            flowchart: {
-                useMaxWidth: true,
-                htmlLabels: true,
-                curve: 'basis'
-            }
-        });
-    </script>
 </body>
 </html>
