@@ -11,7 +11,8 @@ SVG diagrams for MaiPDF / SendPDFOnline pages. Use in articles and feature pages
 |------|--------|
 | **en-qr-code.svg** | PDF to QR Code: Why QR → Step 1 Upload → Step 2 Set options (password, view limits) → Step 3 Generate (link + QR + download PNG/SVG/PDF) → Step 4A Print (cards, flyers, packaging…) / 4B Digital (email, web, social) → Step 5 Users scan & access. Bonus: real-time analytics. |
 | **en-offline-version.svg** | MaiPDF Offline: “Store locally, control remotely”. Why offline → Step 1 Upload & package (PDF → .html) → Step 2 Receive Read + Edit codes → Step 3 Store (USB, NAS, private cloud…) → Step 4 Share file + Read code (email / USB / intranet) → Step 5 Viewer opens file (enter code, validate online) → Step 6 You control remotely (revoke, replace, track). |
-| **en-replace-file.svg** | Replace/update shared PDF: Scenario (shared link, then problem found) → Step 1 Original shared → Problem → Step 2 Upload new file → Step 3 Replace (link unchanged) → Clients get new content. Use for “replace without changing link” explainer. |
+| **en-replace-file.svg** | Replace/update shared PDF: long multi-step flow (Scenario → Problem → Portal → Magic → Result). Prefer **en-replace-simple-flow.svg** for a concise view. |
+| **en-replace-simple-flow.svg** | **Replace in 3 steps:** 1. Share (upload → get link) → 2. Replace (portal, same link) → 3. Done (recipients see new PDF). Minimal, easy to scan. Use for “replace without changing link” articles. |
 | **en-replace-link-comparison.svg** | Replace PDF: “Same link, new content” — OLD LINK (URL unchanged) vs NEW FILE; what gets injected (content + settings). Static comparison diagram. |
 | **en-replace-animation.svg** | Animated replace flow: OLD LINK gets new content/settings from NEW FILE; “What gets transferred: PDF, Settings”. Same idea as `images/maipdf2026/en-replace-animation.svg` (can be used from here or there). |
 | **en-user-journey.svg** | MaiPDF user journey: Document owner (Upload → Configure security → Generate link) ↔ Recipient (receive link → open → view PDF). Full lifecycle. |
@@ -48,7 +49,7 @@ SVG diagrams for MaiPDF / SendPDFOnline pages. Use in articles and feature pages
 
 - **QR code:** en-qr-code, zh-qr-code, zh-pdf-qr-code-workflow  
 - **Offline / local storage:** en-offline-version, zh-offline-version  
-- **Replace PDF (same link):** en-replace-file, en-replace-link-comparison, en-replace-animation, zh-replace-*  
+- **Replace PDF (same link):** en-replace-simple-flow (preferred), en-replace-link-comparison, en-replace-animation; en-replace-file (long version); zh-replace-*  
 - **User journey / lifecycle:** en-user-journey, zh-user-journey  
 - **Full workflow / security options:** en-workflows, en-security-features, zh-workflows, zh-security-features  
 - **PDF to image (anti-copy):** en-pdf-to-image, zh-pdf-to-image  

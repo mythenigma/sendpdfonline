@@ -73,7 +73,7 @@ Screenshots and graphics for SendPDFOnline / MaiPDF articles and pages. Use this
 | File | Purpose |
 |------|--------|
 | **recharge_by_paypal_paypal-credit.png** | Control Center with “Recharge Wallet” modal: balance, amount (USD), “Pay with PayPal”, “Debit or Credit card”, contact for payment issues. Use for “how to recharge” or wallet/pricing. |
-| **remove_ad_or_delete_ads.png** | Action Center with “REMOVE ADS (MONTHS)”, estimated cost, “Apply Ad-Free Period”, and “Delete Reading Code” in Danger Zone. Use for “remove ads” or “delete link” instructions. |
+| **remove_ad_or_delete_ads_login.png** | Action Center with “REMOVE ADS (MONTHS)”, estimated cost, “Apply Ad-Free Period”, and “Delete Reading Code” in Danger Zone. Use for “remove ads” or “delete link” instructions. |
 
 ---
 
@@ -88,7 +88,7 @@ Screenshots and graphics for SendPDFOnline / MaiPDF articles and pages. Use this
 - **Viewer / security:** pdf native view on ui, get_email_verification_before_read  
 - **Settings / alerts:** MaiPDF_settings_expiration_telegram  
 - **Watermark:** dynamic_water_mark_example  
-- **Billing / ads:** recharge_by_paypal_paypal-credit, remove_ad_or_delete_ads  
+- **Billing / ads:** recharge_by_paypal_paypal-credit, remove_ad_or_delete_ads_login  
 
 ---
 
