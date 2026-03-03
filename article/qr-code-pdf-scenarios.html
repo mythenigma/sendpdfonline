@@ -16,38 +16,51 @@
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <style>
-        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --gray-900: #111827; --gray-100: #f3f4f6; }
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
         body { font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Segoe UI", sans-serif; color: var(--gray-900); }
+
+        /* Hero */
         .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
         .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
         .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
         .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
         .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+
+        /* Steps */
         .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
         .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
         .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+
+        /* Features */
         .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
         .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
         .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+
+        /* Articles */
         .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
         .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
         .article-card .card-body { padding: 1.5rem; }
         .article-card h3 { font-size: 1.1rem; }
         .article-card h3 a { color: var(--gray-900); text-decoration: none; }
         .article-card h3 a:hover { color: var(--blue-600); }
+
+        /* CTA */
         .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+
+        /* Section */
         .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
         .section-heading { font-size: 2rem; font-weight: 700; }
+
+        /* Screenshot */
         .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .analytics-section-img { max-width: 480px; width: 100%; height: auto; }
+
+        /* Footer */
         footer { background: var(--gray-900); }
         footer a { color: #9ca3af; text-decoration: none; }
         footer a:hover { color: white; }
-        @media (max-width: 768px) {
-            .hero h1 { font-size: 2rem; }
-            .hero { padding: 3rem 0 2.5rem; }
-            .hero-screenshot { max-width: 100%; margin-top: 2rem; }
-            img.screenshot, .step-card img { width: 100%; max-width: 100% !important; height: auto; display: block; }
-        }
+
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } .analytics-section-img { max-width: 100%; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw; max-width: 100vw; margin-left: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
     </style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PDF 二维码应用场景大全","description":"培训、活动、商品说明、餐厅菜单等场景，用 MaiPDF 生成 PDF 二维码。","author":{"@type":"Organization","name":"MaiPDF"},"publisher":{"@type":"Organization","name":"MaiPDF"},"datePublished":"2025-07-18","dateModified":"2026-03-03","mainEntityOfPage":{"@type":"WebPage","@id":"https://sendpdfonline.com/article/qr-code-pdf-scenarios"}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://sendpdfonline.com/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://sendpdfonline.com/article/"},{"@type":"ListItem","position":3,"name":"PDF 二维码应用场景大全","item":"https://sendpdfonline.com/article/qr-code-pdf-scenarios"}]}</script>
