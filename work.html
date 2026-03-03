@@ -699,7 +699,7 @@
       </div>
       <div class="callout callout-success">
         <strong>统一修复规则（已执行）</strong><br>
-        将所有命中页面改为：<code>.step-card img { width: 100%; max-width: 100%; margin: 0 auto; height: auto; display: block; box-sizing: border-box; border-radius: 8px; }</code>
+        将所有命中页面改为双侧贴边：<code>.step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; }</code>
       </div>
       <p style="color:#94a3b8;margin:0">修复日期：2026-03-03 ｜ 命中文件：18 ｜ 状态：<span class="badge badge-green">全部已改</span></p>
       <p style="color:#94a3b8;margin-top:10px">漏检原因（已纠正）：上一轮只扫描了 <code>article/</code> 与 <code>chinese/</code>，未覆盖根目录，导致 <code>index.html</code> 被漏掉。</p>
