@@ -70,7 +70,7 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/free-pdf-sharing-online-zh</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -100,7 +100,7 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/maipdf-convert-tool-zh</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -112,7 +112,7 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/offline-maipdf-cn</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -154,7 +154,7 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/offline-maipdf</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -178,7 +178,7 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/pdf-link-sharing-guide-zh</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -190,13 +190,13 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/pdf-qr-code-guide-zh</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/pdf-qr-code-sharing-easy</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -220,7 +220,13 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/pdf-to-qr-tutorial</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.7</priority>
+    </url>
+    <url>
+        <loc>https://sendpdfonline.com/article/how-to-track-a-pdf-file-zh</loc>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -232,7 +238,7 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/qr-code-pdf-scenarios</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -244,7 +250,7 @@
     </url>
     <url>
         <loc>https://sendpdfonline.com/article/secure-pdf-sharing-guide</loc>
-        <lastmod>2025-12-04</lastmod>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.7</priority>
     </url>
@@ -831,8 +837,8 @@
         <priority>0.9</priority>
     </url>
     <url>
-        <loc>https://sendpdfonline.com/article</loc>
-        <lastmod>2026-02-21</lastmod>
+        <loc>https://sendpdfonline.com/article/</loc>
+        <lastmod>2026-03-03</lastmod>
         <changefreq>weekly</changefreq>
         <priority>0.8</priority>
     </url>
