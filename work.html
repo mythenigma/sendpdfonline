@@ -74,6 +74,7 @@
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('plan')">🚀 改善计划</button>
     <button class="tab-btn" onclick="switchTab('refine')">📝 页面精修</button>
+    <button class="tab-btn" onclick="switchTab('mobile-img')">📱 图片移动端修复</button>
   </div>
 
   <!-- Tab 1: 改善计划 -->
@@ -686,6 +687,69 @@
     </p>
 
   </div><!-- end tab-refine -->
+
+  <!-- Tab 3: 移动端图片修复记录 -->
+  <div id="tab-mobile-img" class="tab-panel">
+    <div class="plan-section">
+      <h2>📱 问题记录：移动端图片左贴边且未有效放大</h2>
+      <div class="callout callout-danger">
+        <strong>问题模式</strong><br>
+        在部分页面移动端媒体查询中，步骤图使用了 <code>width: 100vw</code> + <code>margin-left: calc(50% - 50vw)</code>。<br>
+        这会导致图片从左侧贴边“出血”，但由于容器/最大宽度约束，右侧视觉上没有对称放大。
+      </div>
+      <div class="callout callout-success">
+        <strong>统一修复规则（已执行）</strong><br>
+        将所有命中页面改为：<code>.step-card img { width: 100%; max-width: 100%; margin: 0 auto; height: auto; display: block; box-sizing: border-box; border-radius: 8px; }</code>
+      </div>
+      <p style="color:#94a3b8;margin:0">修复日期：2026-03-03 ｜ 命中文件：18 ｜ 状态：<span class="badge badge-green">全部已改</span></p>
+      <p style="color:#94a3b8;margin-top:10px">漏检原因（已纠正）：上一轮只扫描了 <code>article/</code> 与 <code>chinese/</code>，未覆盖根目录，导致 <code>index.html</code> 被漏掉。</p>
+    </div>
+
+    <div class="plan-section">
+      <h2>🗂️ 已修复文件（可点击打开）</h2>
+      <table class="plan-table">
+        <thead>
+          <tr>
+            <th style="width:40px">#</th>
+            <th>本地文件</th>
+            <th>线上页面</th>
+            <th>状态</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td><a href="index.html" style="color:#93c5fd"><code>index.html</code></a></td><td><a href="https://sendpdfonline.com/" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>2</td><td><a href="article/controlling-pdf-access.html" style="color:#93c5fd"><code>article/controlling-pdf-access.html</code></a></td><td><a href="https://sendpdfonline.com/article/controlling-pdf-access" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>3</td><td><a href="article/how-to-track-a-pdf-file-zh.html" style="color:#93c5fd"><code>article/how-to-track-a-pdf-file-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/how-to-track-a-pdf-file-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>4</td><td><a href="article/ebook-preview.html" style="color:#93c5fd"><code>article/ebook-preview.html</code></a></td><td><a href="https://sendpdfonline.com/article/ebook-preview" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>5</td><td><a href="article/free-pdf-sharing-online-zh.html" style="color:#93c5fd"><code>article/free-pdf-sharing-online-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/free-pdf-sharing-online-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>6</td><td><a href="article/offline-maipdf-cn.html" style="color:#93c5fd"><code>article/offline-maipdf-cn.html</code></a></td><td><a href="https://sendpdfonline.com/article/offline-maipdf-cn" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>7</td><td><a href="article/offline-maipdf.html" style="color:#93c5fd"><code>article/offline-maipdf.html</code></a></td><td><a href="https://sendpdfonline.com/article/offline-maipdf" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>8</td><td><a href="article/pdf-qr-code-sharing-easy.html" style="color:#93c5fd"><code>article/pdf-qr-code-sharing-easy.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-qr-code-sharing-easy" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>9</td><td><a href="article/pdf-link-sharing-guide-zh.html" style="color:#93c5fd"><code>article/pdf-link-sharing-guide-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-link-sharing-guide-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>10</td><td><a href="article/pdf-sharing-security.html" style="color:#93c5fd"><code>article/pdf-sharing-security.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-sharing-security" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>11</td><td><a href="article/pdf-to-qr-tutorial.html" style="color:#93c5fd"><code>article/pdf-to-qr-tutorial.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-to-qr-tutorial" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>12</td><td><a href="article/training-materials-distribution.html" style="color:#93c5fd"><code>article/training-materials-distribution.html</code></a></td><td><a href="https://sendpdfonline.com/article/training-materials-distribution" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>13</td><td><a href="article/time-limited-whitepapers.html" style="color:#93c5fd"><code>article/time-limited-whitepapers.html</code></a></td><td><a href="https://sendpdfonline.com/article/time-limited-whitepapers" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>14</td><td><a href="article/replace-pdf-without-changing-link-zh.html" style="color:#93c5fd"><code>article/replace-pdf-without-changing-link-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/replace-pdf-without-changing-link-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>15</td><td><a href="article/qr-code-pdf-scenarios.html" style="color:#93c5fd"><code>article/qr-code-pdf-scenarios.html</code></a></td><td><a href="https://sendpdfonline.com/article/qr-code-pdf-scenarios" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>16</td><td><a href="article/send-pdf-online.html" style="color:#93c5fd"><code>article/send-pdf-online.html</code></a></td><td><a href="https://sendpdfonline.com/article/send-pdf-online" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>17</td><td><a href="article/share-pdf-online.html" style="color:#93c5fd"><code>article/share-pdf-online.html</code></a></td><td><a href="https://sendpdfonline.com/article/share-pdf-online" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+          <tr><td>18</td><td><a href="article/replace-pdf-without-changing-link.html" style="color:#93c5fd"><code>article/replace-pdf-without-changing-link.html</code></a></td><td><a href="https://sendpdfonline.com/article/replace-pdf-without-changing-link" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">已修复</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="plan-section">
+      <h2>🧭 全仓扫描剩余命中（未纳入本轮）</h2>
+      <table class="plan-table">
+        <thead><tr><th style="width:40px">#</th><th>文件</th><th>说明</th><th>建议</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><a href="flipbook/original-fixed.html" style="color:#93c5fd"><code>flipbook/original-fixed.html</code></a></td><td>翻页书全屏容器，<code>100vw/100vh</code> 为预期布局</td><td><span class="badge badge-blue">暂不改</span></td></tr>
+          <tr><td>2</td><td><a href="flipbook/testturn.html" style="color:#93c5fd"><code>flipbook/testturn.html</code></a></td><td>测试页，<code>#flipbook { width:100vw; height:100vh; }</code></td><td><span class="badge badge-blue">暂不改</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div><!-- end tab-mobile-img -->
 
   <script>
   function switchTab(id){
