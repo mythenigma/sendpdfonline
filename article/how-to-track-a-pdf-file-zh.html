@@ -3,120 +3,215 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>如何追踪PDF文件：了解谁打开了您的文档</title>
-    <meta name="description" content="学习如何追踪PDF文件，查看谁在何时何地打开了它。通过PDF追踪服务，保护您的文档并获取深入洞察。">
-    <link rel="stylesheet" href="../styles.css">
+    <meta name="description" content="如何追踪 PDF 文件：用阅读码与访问记录查看谁在何时打开了文档。三步上手，带截图说明。">
+    <meta name="keywords" content="追踪PDF, PDF打开记录, 谁打开了PDF, PDF访问记录">
+    <meta name="author" content="MaiPDF 团队">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://sendpdfonline.com/article/how-to-track-a-pdf-file-zh">
+    <meta property="og:title" content="如何追踪 PDF 文件 | MaiPDF">
+    <meta property="og:description" content="查看谁打开了你的 PDF、何时打开、打开几次。用访问记录与阅读码即可，无需注册。">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png">
+    <title>如何追踪 PDF 文件 | MaiPDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --gray-900: #111827; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Segoe UI", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card img { width: 100%; max-width: 100%; height: auto; display: block; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"如何追踪 PDF 文件","description":"用阅读码与访问记录查看谁在何时打开了 PDF。","author":{"@type":"Organization","name":"MaiPDF"},"publisher":{"@type":"Organization","name":"MaiPDF"},"datePublished":"2025-01-15","dateModified":"2026-03-03","mainEntityOfPage":{"@type":"WebPage","@id":"https://sendpdfonline.com/article/how-to-track-a-pdf-file-zh"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://sendpdfonline.com/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://sendpdfonline.com/article/"},{"@type":"ListItem","position":3,"name":"如何追踪 PDF 文件","item":"https://sendpdfonline.com/article/how-to-track-a-pdf-file-zh"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"能看到谁打开了我的 PDF 吗？","acceptedAnswer":{"@type":"Answer","text":"可以。在访问记录页面输入阅读码与修改码即可查看打开记录。"}},{"@type":"Question","name":"更新文件后需要重新发链接吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。可以不换链接替换 PDF，追踪数据会延续。"}},{"@type":"Question","name":"追踪是内置的还是需要额外工具？","acceptedAnswer":{"@type":"Answer","text":"内置。分享链接后，打开访问记录页面、输入码即可查看打开历史。"}}]}</script>
 </head>
 <body>
-    <header>
-        <h1>在线发送PDF</h1>
-        <nav>
-            <a href="../index.html">首页</a>
-            <a href="../usecase/index.html">使用案例</a>
-            <a href="../features/index.html">功能特性</a>
-            <a href="index.html">博客</a>
-        </nav>
-    </header>
-    <main>
-        <article>
-            <h2>如何追踪PDF文件：了解谁打开了您的文档</h2>
-            <p>发布于：2026年2月10日</p>
-
-            <p>在今天的数字时代，电子化分享文档已成为一种普遍做法。无论是商业提案、机密报告还是创意作品集，您通常需要知道您的文档是否以及何时被查看。这就是PDF追踪发挥作用的地方。通过追踪您的PDF文件，您可以获得关于谁在与您的内容互动的宝贵见解，并确保您的信息传达给正确的受众。</p>
-
-            <h3>为什么要追踪PDF文件？</h3>
-            <p>追踪PDF文件有几个好处：</p>
-            <ul>
-                <li><strong>互动洞察：</strong> 确切了解谁打开了您的文档、他们何时打开以及从哪个位置打开。这可以帮助您衡量兴趣并进行有效跟进。</li>
-                <li><strong>增强安全性：</strong> 对于敏感文档，追踪增加了一层安全保障。您可以监控未经授权的访问，并在怀疑发生泄露时立即采取行动。</li>
-                <li><strong>改进工作流程：</strong> 销售团队可以优先处理那些通过查看提案表现出兴趣的潜在客户。营销人员可以衡量其内容的有效性。</li>
-                <li><strong>明确责任：</strong> 在协作环境中，追踪可确保团队成员已审阅必要的文档，从而提高责任感。</li>
-            </ul>
-
-            <h3>PDF追踪是如何工作的？</h3>
-            <p>PDF追踪服务通过在您的文档中嵌入一个微小的、不可见的追踪像素来工作。当您以链接形式发送PDF时，一旦收件人打开文件，此像素就会被激活。然后，该服务会记录打开事件，以及观看者的IP地址（提供位置数据）、访问时间和所用设备等详细信息。</p>
-            
-            <div style="text-align: center; margin: 20px 0;">
-                <img src="../maipdf-flowcharts/zh-how-to-track-a-pdf-file.svg" alt="PDF追踪工作流程图" style="max-width: 100%; height: auto;">
-            </div>
-
-            <p>像Send PDF Online这样的服务提供全面的追踪功能，允许您上传PDF并通过安全链接进行分享。然后，您可以访问一个仪表板，其中包含您分享的每个文档的详细分析。</p>
-
-            <h3>如何使用Send PDF Online追踪PDF文件：</h3>
-            <ol>
-                <li><strong>上传您的PDF：</strong> 注册一个服务并上传您想要追踪的PDF文档。</li>
-                <li><strong>生成安全链接：</strong> 该服务将为您的文档创建一个唯一的、可追踪的链接。</li>
-                <li><strong>分享链接：</strong> 不要将PDF作为附件发送到电子邮件中，而是与您的收件人分享此链接。</li>
-                <li><strong>监控分析：</strong> 登录到您的仪表板，查看关于谁查看了您的文件、查看了多少次以及查看了多长时间的实时数据。</li>
+    <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);">
+        <div class="container">
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/article/">文章</a></li>
+                <li class="breadcrumb-item active" aria-current="page">如何追踪 PDF 文件</li>
             </ol>
+        </div>
+    </nav>
 
-            <h3>选择合适的PDF追踪服务</h3>
-            <p>在选择PDF追踪服务时，请考虑以下功能：</p>
-            <ul>
-                <li><strong>实时通知：</strong> 当您的文档被打开时，立即收到提醒。</li>
-                <li><strong>详细分析：</strong> 访问有关观看者位置、设备和查看时长的数据。</li>
-                <li><strong>安全选项：</strong> 寻找如密码保护、访问控制和禁用下载等功能。</li>
-                <li><strong>易用性：</strong> 服务应该用户友好，让您能够快速上传和分享文档。</li>
-            </ul>
-
-            <div style="background: #e8f4f8; border-left: 4px solid #2C8C99; padding: 15px 20px; margin: 20px 0; border-radius: 4px;">
-                <strong>💡 提示：</strong> 已经在追踪共享的PDF，但需要更新内容？您可以<a href="/article/replace-pdf-without-changing-link-zh">替换PDF文件而不更改链接</a>——追踪数据保持不变，收件人始终看到最新版本。
-            </div>
-
-            <h3>结论</h3>
-            <p>追踪您的PDF文件不再是一个复杂的技术挑战。借助正确的工具，您可以轻松监控您的文档，增强安全性，并更好地了解您的受众。无论是用于商业还是个人用途，PDF追踪都使您能够掌控您分享的信息。</p>
-
-        </article>
-    </main>
-
-    <!-- Related Articles -->
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h3 class="mb-4"><i class="fas fa-book-open me-2"></i>相关文章</h3>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <a href="/article/limit-pdf-open-times" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">如何限制PDF访问次数</h6>
-                            </div>
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>如何追踪 PDF 文件</h1>
+                    <p class="lead mt-3">查看谁打开了你的 PDF、何时打开、打开几次。用内置访问记录即可，无需额外工具或注册。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-chart-line me-2"></i>开始追踪
                         </a>
+                        <a href="/article/controlling-pdf-access" class="btn btn-outline-light btn-lg">控制访问</a>
                     </div>
-                    <div class="col-md-6">
-                        <a href="/article/replace-pdf-without-changing-link-zh" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">不换链接更新PDF文件</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/free-pdf-sharing-online-zh" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">免费在线分享PDF</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/pdf-qr-code-guide-zh" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">PDF转二维码指南</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/pdf-link-sharing-guide-zh" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">PDF链接分享指南</h6>
-                            </div>
-                        </a>
-                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/show_off_page.png" alt="PDF 追踪概览" class="hero-screenshot" loading="eager">
                 </div>
             </div>
         </div>
+    </section>
+
+    <div class="container py-5">
+        <p class="section-label">正文</p>
+        <h2 class="section-heading mb-4">为什么要追踪 PDF 打开情况？</h2>
+        <p class="lead mb-4">知道链接何时被打开、被打开几次，有助于跟进提案、确认投资人是否看到更新、发现异常转发。MaiPDF 将访问记录与你的阅读码、修改码绑定，随时可查历史。</p>
+
+        <section class="py-5" id="steps">
+            <p class="section-label">步骤</p>
+            <h2 class="section-heading mb-4">三步完成追踪</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">分享 PDF</h3>
+                        <p class="text-muted small">上传后获取链接，保存阅读码（若使用修改码也请保存）。</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="获取链接与码" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">打开访问记录</h3>
+                        <p class="text-muted small">从官网或链接结果页进入「访问记录」页面。</p>
+                        <img src="/images/maipdf2026/page_redirect_to_accessRecord.png" alt="打开访问记录" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">查询历史</h3>
+                        <p class="text-muted small">粘贴阅读码（及修改码），查看谁在何时打开。</p>
+                        <img src="/images/maipdf2026/how_to_fill_access_record_for_check.png" alt="填写码查询记录" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5" style="background: var(--gray-100);">
+            <p class="section-label">提示</p>
+            <h2 class="section-heading mb-4">用好追踪的几点建议</h2>
+            <ul class="mb-0">
+                <li>妥善保管阅读码与修改码，查询访问记录时需要用。</li>
+                <li>可配合<a href="/article/pdf-view-limits-security">查看次数限制</a>与<a href="/article/pdf-share-expire">到期与撤销</a>，避免链接长期有效。</li>
+                <li><a href="/article/replace-pdf-without-changing-link-zh">不换链接替换 PDF</a> 后，同一组码的追踪会延续。</li>
+            </ul>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">常见问题</p>
+            <h2 class="section-heading mb-4">快速解答</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">能看到谁打开了我的 PDF 吗？</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">可以。在访问记录页面输入阅读码与修改码即可查看打开记录。</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">更新文件后需要重新发链接吗？</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">不需要。可以不换链接替换 PDF，追踪数据会延续。</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">追踪是内置的还是需要额外工具？</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">内置。分享链接后，打开访问记录页面、输入码即可查看打开历史。</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">延伸阅读</p>
+            <h2 class="section-heading mb-4">相关文章</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/controlling-pdf-access">控制 PDF 访问</a></h3>
+                            <p class="small text-muted mb-0">谁可以看、怎么看。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/replace-pdf-without-changing-link-zh">不换链接替换 PDF</a></h3>
+                            <p class="small text-muted mb-0">同一链接，更新文件。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/pdf-share-expire">到期与撤销 PDF 链接</a></h3>
+                            <p class="small text-muted mb-0">设置到期与撤销。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/secure-pdf-sharing-guide">安全分享 PDF 指南</a></h3>
+                            <p class="small text-muted mb-0">完整控制与追踪。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section text-center mb-5">
+            <h2 class="h3 fw-bold mb-3">准备好追踪你的 PDF 了吗？</h2>
+            <p class="mb-4 opacity-90">免费使用，无需注册。</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                <i class="fas fa-chart-line me-2"></i>开始追踪
+            </a>
+        </section>
     </div>
 
-    <footer>
-        <p>&copy; 2026 Send PDF Online. 版权所有。</p>
+    <footer class="py-4">
+        <div class="container text-center small text-white">
+            <p class="mb-2 opacity-75">&copy; 2026 MaiPDF. 保留所有权利。</p>
+            <p class="mb-0">
+                <a href="/" class="me-3">首页</a>
+                <a href="/article/" class="me-3">文章</a>
+                <a href="https://maipdf.com">MaiPDF.com</a>
+            </p>
+        </div>
     </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

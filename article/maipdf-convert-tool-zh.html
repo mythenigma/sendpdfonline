@@ -1,102 +1,190 @@
 <!DOCTYPE html>
 <html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>MaiPDF 在线 PDF 转图片工具：安全、便捷、可控的图片化方案</title>
-  <meta name="description" content="MaiPDF 在线 PDF 转图片工具，支持多种图片化输出格式，保护文档安全，防止复制和二次编辑，适合网页嵌入、资料分发等多场景。">
-  <meta name="keywords" content="PDF转图片, PDF图片化, PDF防复制, PDF防编辑, PDF图片型文档, PDF图片压缩, PDF安全分享">
-  <meta name="author" content="MaiPDF Team">
-  <meta name="robots" content="index, follow">
-  <link rel="canonical" href="https://sendpdfonline.com/article/maipdf-convert-tool-zh">
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css">
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Article",
-                "item": "https://sendpdfonline.com/article/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "MaiPDF 在线 PDF 转图片工具：安全、便捷、可控的图片化方案",
-                "item": "https://sendpdfonline.com/article/maipdf-convert-tool-zh.html"
-            }
-        ]
-    }
-    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="MaiPDF 在线 PDF 转图片工具，支持多种图片化输出格式，保护文档安全，防止复制和二次编辑，适合网页嵌入、资料分发等多场景。">
+    <meta name="keywords" content="PDF转图片, PDF图片化, PDF防复制, PDF防编辑, PDF图片型文档, PDF图片压缩, PDF安全分享">
+    <meta name="author" content="MaiPDF 团队">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://sendpdfonline.com/article/maipdf-convert-tool-zh">
+    <meta property="og:title" content="MaiPDF 在线 PDF 转图片工具 | MaiPDF">
+    <meta property="og:description" content="安全、便捷、可控的 PDF 图片化方案，支持多种输出格式，全程浏览器内完成。">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png">
+    <title>MaiPDF 在线 PDF 转图片工具：安全、便捷、可控的图片化方案 | MaiPDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Microsoft YaHei", "Segoe UI", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .flowchart-wrap, .mermaid-wrap { max-width: 100%; overflow-x: auto; }
+        .mermaid-wrap { background: white; padding: 1.5rem; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.06); margin: 1.5rem 0; }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 3rem 0 2.5rem; }
+            .hero-screenshot { max-width: 100%; margin-top: 2rem; }
+            img.screenshot, .step-card img { width: 100%; max-width: 100% !important; height: auto; display: block; }
+            .flowchart-wrap img, .mermaid-wrap { max-width: 100% !important; }
+        }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"MaiPDF 在线 PDF 转图片工具","description":"安全、便捷、可控的 PDF 图片化方案。","author":{"@type":"Organization","name":"MaiPDF"},"publisher":{"@type":"Organization","name":"MaiPDF"},"datePublished":"2025-01-15","dateModified":"2026-03-03","mainEntityOfPage":{"@type":"WebPage","@id":"https://sendpdfonline.com/article/maipdf-convert-tool-zh"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://sendpdfonline.com/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://sendpdfonline.com/article/"},{"@type":"ListItem","position":3,"name":"MaiPDF 在线 PDF 转图片工具","item":"https://sendpdfonline.com/article/maipdf-convert-tool-zh"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"会改变排版吗？","acceptedAnswer":{"@type":"Answer","text":"不会。图片化后版式、字体与原文一致，只是内容变为不可直接编辑的图片层。"}},{"@type":"Question","name":"可以只允许打印吗？","acceptedAnswer":{"@type":"Answer","text":"可以。选择「Imaginized PDF with Print」即可只开放打印，禁止复制与编辑。"}},{"@type":"Question","name":"需要安装软件吗？","acceptedAnswer":{"@type":"Answer","text":"不需要。全程在浏览器中完成，上传、选择格式、下载即可。"}}]}</script>
 </head>
 <body>
-
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/article/">Article</a></li>
-                <li class="breadcrumb-item active" aria-current="page">MaiPDF 在线 PDF 转图片工具：安全、便捷、可控的图片化方案</li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/article/">文章</a></li>
+                <li class="breadcrumb-item active" aria-current="page">MaiPDF 在线 PDF 转图片工具</li>
             </ol>
         </div>
     </nav>
-    
-  <article class="promo-article">
-    <header>
-      <h1>MaiPDF 在线 PDF 转图片工具：安全、便捷、可控的图片化方案</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>MaiPDF 在线 PDF 转图片工具</h1>
+                    <p class="lead mt-3">安全、便捷、可控的图片化方案。上传 PDF 即可转为「只看、不易改」的图片型文档，支持多种输出格式，全程浏览器内完成，无需安装软件。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-image me-2"></i>立即使用
+                        </a>
+                        <a href="/article/secure-pdf-sharing-guide" class="btn btn-outline-light btn-lg">安全分享指南</a>
+                    </div>
                 </div>
-                
-      <img src="/images/../maiconver.png" alt="MaiPDF PDF转图片工具界面" style="max-width: 100%; height: auto; margin: 24px 0; border-radius: 12px; box-shadow: 0 4px 16px rgba(0,0,0,0.08);">
-    </header>
-
-    <!-- PDF转图片流程图 -->
-    <div style="text-align: center; margin: 30px 0;">
-        <img src="/maipdf-flowcharts/zh-pdf-to-image.svg" alt="PDF转图片完整流程" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-    </div>
-
-    <section>
-      <p>这个页面是 <strong>MaiPDF</strong> 的在线「PDF → 图片化」转换工具。你可以上传任意 PDF，选择不同的输出格式，将文件变成"只看、不易改"的图片型文档。全部操作在浏览器内完成，无需安装软件。</p>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/show_off_page.png" alt="MaiPDF 工具概览" class="hero-screenshot" loading="eager">
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Mermaid 格式对比图 -->
-    <div class="mermaid" style="background: white; padding: 25px; border-radius: 15px; margin: 30px 0; box-shadow: 0 4px 12px rgba(0,0,0,0.08);">
+    <div class="container py-5">
+        <p class="section-label">正文</p>
+        <h2 class="section-heading mb-4">为什么用 PDF 转图片？</h2>
+        <p class="lead mb-4">将 PDF 转为图片型文档后，可保留原排版与字体，同时防止复制、编辑与二次发布。适合报告嵌入网页、给客户/学生发资料、发布模板或漫画等——既保留观感，又更好控制传播风险。</p>
+
+        <section class="py-5" id="steps">
+            <p class="section-label">流程</p>
+            <h2 class="section-heading mb-4">三步完成转换</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">上传 PDF</h3>
+                        <p class="text-muted small">在浏览器中打开工具页，上传本地 PDF。</p>
+                        <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="上传 PDF" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">选择输出格式</h3>
+                        <p class="text-muted small">选择 ZIP 图片包或图片型 PDF 等格式，可选压缩。</p>
+                        <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="设置与选项" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">下载或分享</h3>
+                        <p class="text-muted small">生成后直接下载或继续用 MaiPDF 分享链接。</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="结果与分享" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">流程图</p>
+            <h2 class="section-heading mb-4">PDF 转图片完整流程</h2>
+            <div class="flowchart-wrap">
+                <img src="/maipdf-flowcharts/zh-pdf-to-image.svg" alt="PDF 转图片流程" class="img-fluid" loading="lazy">
+            </div>
+        </section>
+
+        <section class="py-5" style="background: var(--gray-100);">
+            <p class="section-label">输出选项</p>
+            <h2 class="section-heading mb-4">四种输出格式</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #d1fae5; color: #059669;"><i class="fas fa-file-archive"></i></div>
+                        <h3 class="h6 fw-bold">Images in ZIP</h3>
+                        <p class="small text-muted mb-0">每页转成独立图片并打包成 ZIP，适合上传到网站或备份。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;"><i class="fas fa-file-pdf"></i></div>
+                        <h3 class="h6 fw-bold">Imaginized PDF</h3>
+                        <p class="small text-muted mb-0">整份封装成图片型 PDF，版式不变，无法直接编辑。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-print"></i></div>
+                        <h3 class="h6 fw-bold">Imaginized + Print</h3>
+                        <p class="small text-muted mb-0">图片型 PDF，仅保留打印权限，禁止复制与修改。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fee2e2; color: #dc2626;"><i class="fas fa-lock"></i></div>
+                        <h3 class="h6 fw-bold">All Restrictions</h3>
+                        <p class="small text-muted mb-0">复制、打印、编辑全面禁止的超级受限 PDF。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">格式选择示意</p>
+            <h2 class="section-heading mb-4">输出格式对比</h2>
+            <div class="mermaid-wrap">
+                <div class="mermaid">
 graph TD
     A[上传PDF] --> B{选择输出格式}
     B --> C[Images in ZIP]
     B --> D[Imaginized PDF]
     B --> E[Imaginized PDF with Print]
     B --> F[PDF in All Restrictions]
-    
     C --> C1[📦 每页独立图片<br/>打包成ZIP]
     D --> D1[📄 图片型PDF<br/>无法编辑]
     E --> E1[🖨️ 图片型PDF<br/>仅可打印]
     F --> F1[🔒 超级受限PDF<br/>全面禁止操作]
-    
     C1 --> G[下载/分享]
     D1 --> G
     E1 --> G
     F1 --> G
-    
     style A fill:#dbeafe,stroke:#3b82f6
     style B fill:#fef3c7,stroke:#f59e0b
     style C fill:#d1fae5,stroke:#10b981
@@ -104,72 +192,114 @@ graph TD
     style E fill:#fce7f3,stroke:#ec4899
     style F fill:#fee2e2,stroke:#dc2626
     style G fill:#d1fae5,stroke:#10b981
-    </div>
-    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
-    <script>mermaid.initialize({startOnLoad:true, theme:'default'});</script>
+                </div>
+            </div>
+            <p class="small text-muted">可选「Compression」开关：勾选后对生成图片做压缩，文件更小；不开启则保留最佳清晰度。</p>
+        </section>
 
-    <section>
-      <h2>四种输出选项</h2>
-      <ul>
-        <li><strong>Images in ZIP：</strong>每页转成独立图片并打包成 ZIP，适合下载或上传到网站。</li>
-        <li><strong>Imaginized PDF：</strong>整份文件封装成“图片型 PDF”，版式不变但无法直接编辑。</li>
-        <li><strong>Imaginized PDF with Print：</strong>同上，但仅保留打印权限，禁止复制、修改。</li>
-        <li><strong>PDF in All Restrictions：</strong>生成一份所有操作（复制、打印、编辑）都被禁用的超级受限 PDF。</li>
-      </ul>
-    </section>
-    <section>
-      <h2>可选「Compression」开关</h2>
-      <p>勾选后会对生成的图片做压缩，文件更小；不开启则保留最佳清晰度。</p>
-    </section>
-    <section>
-      <h2>使用流程</h2>
-      <ol>
-        <li>上传 PDF</li>
-        <li>选择输出格式</li>
-        <li>下载或分享，全部在浏览器里完成</li>
-      </ol>
-    </section>
-    <section>
-      <h2>适用场景</h2>
-      <ul>
-        <li>将报告嵌入网页或 PPT，不希望别人随意复制文字</li>
-        <li>给客户/学生发资料，只允许查看或打印</li>
-        <li>发布模板、漫画等视觉内容，既保留原排版又防止二次编辑</li>
-      </ul>
-    </section>
-    <section>
-      <h2>安全意义</h2>
-      <p>官方说明强调，图片化后可“保留原排版与字体细节，同时降低被篡改风险”。如果还想再上一层保险，页面底部也推荐使用 MaiPDF 的离线版本。</p>
-    </section>
-    <section>
-      <h2>一句话总结</h2>
-      <p>这个页面就是把 PDF “变成图片再打包”的轻量工具，让你在保持观感的同时，更好地控制文件被复制、编辑或非法再发布的风险。</p>
-    </section>
-  </article>
+        <section class="py-5">
+            <p class="section-label">提示</p>
+            <h2 class="section-heading mb-4">适用场景</h2>
+            <ul class="mb-0">
+                <li>将报告嵌入网页或 PPT，不希望别人随意复制文字。</li>
+                <li>给客户/学生发资料，只允许查看或打印。</li>
+                <li>发布模板、漫画等视觉内容，既保留原排版又防止二次编辑。</li>
+                <li>需要再上一层保险时，可配合 MaiPDF 离线版或安全链接使用。</li>
+            </ul>
+        </section>
 
-    <!-- Related Resources -->
-    <div class="container my-5">
-        <div class="alert alert-info border-0 shadow-sm">
-            <h4><i class="fas fa-book-open"></i> More Expert Guides & Tutorials</h4>
-            <p class="mb-3">Explore in-depth articles, tutorials, and best practices on our professional blog:</p>
-            <a href="https://article.maipdf.com" target="_blank" rel="noopener" class="btn btn-info">
-                <i class="fas fa-external-link-alt"></i> Visit MaiPDF Expert Blog
+        <section class="py-5">
+            <p class="section-label">常见问题</p>
+            <h2 class="section-heading mb-4">快速解答</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">会改变排版吗？</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">不会。图片化后版式、字体与原文一致，只是内容变为不可直接编辑的图片层。</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">可以只允许打印吗？</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">可以。选择「Imaginized PDF with Print」即可只开放打印，禁止复制与编辑。</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">需要安装软件吗？</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">不需要。全程在浏览器中完成，上传、选择格式、下载即可。</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">延伸阅读</p>
+            <h2 class="section-heading mb-4">相关文章</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/secure-pdf-sharing-guide">安全分享 PDF 指南</a></h3>
+                            <p class="small text-muted mb-0">控制与追踪。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/offline-maipdf-cn">离线 PDF 分享</a></h3>
+                            <p class="small text-muted mb-0">本地加密与离线包。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/pdf-qr-code-guide-zh">PDF 生成二维码教程</a></h3>
+                            <p class="small text-muted mb-0">链接与二维码分享。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/show-pdf-online">在线展示 PDF</a></h3>
+                            <p class="small text-muted mb-0">链接与 QR 分享。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section text-center mb-5">
+            <h2 class="h3 fw-bold mb-3">准备好把 PDF 转成图片了吗？</h2>
+            <p class="mb-4 opacity-90">免费使用，无需注册。</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                <i class="fas fa-image me-2"></i>立即使用
             </a>
+        </section>
+    </div>
+
+    <footer class="py-4">
+        <div class="container text-center small text-white">
+            <p class="mb-2 opacity-75">&copy; 2026 MaiPDF. 保留所有权利。</p>
+            <p class="mb-0">
+                <a href="/" class="me-3">首页</a>
+                <a href="/article/" class="me-3">文章</a>
+                <a href="https://maipdf.com">MaiPDF.com</a>
+            </p>
         </div>
-    </div>
+    </footer>
 
-
-    <div class="container my-4 text-center">
-        <a href="/article/" class="btn btn-primary me-2">
-            <i class="fas fa-arrow-left"></i> 返回文章列表
-        </a>
-        <a href="/" class="btn btn-outline-primary me-2">
-            <i class="fas fa-home"></i> 首页
-        </a>
-        <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> 立即使用
-        </a>
-    </div>
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({ startOnLoad: true, theme: 'default' });</script>
 </body>
 </html>
