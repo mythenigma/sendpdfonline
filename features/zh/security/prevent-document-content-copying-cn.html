@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>防止文档内容被复制：PDF 安全实操 | MaiPDF</title>
+  <meta name="description" content="如何减少 PDF 被复制、转发和二次传播风险：从权限控制、动态水印、访问验证到记录审计的一套实操方案。">
+  <meta name="robots" content="index, follow, max-image-preview:large">
+  <meta name="author" content="MaiPDF Team">
+  <link rel="canonical" href="https://sendpdfonline.com/features/zh/security/prevent-document-content-copying-cn">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+  <style>
+    :root { --blue-900:#1e3a8a; --blue-600:#2563eb; --gray-900:#111827; --gray-100:#f3f4f6; }
+    body { font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif; color:var(--gray-900); }
+    .hero{background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#2563eb 100%);color:#fff;padding:5rem 0 4rem;position:relative;overflow:hidden}
+    .hero::after{content:'';position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to bottom right,transparent 49.5%,#fff 50%)}
+    .hero h1{font-size:2.6rem;font-weight:800;line-height:1.2}.hero .lead{font-size:1.15rem;opacity:.92;max-width:620px}
+    .hero-screenshot{border-radius:12px;box-shadow:0 20px 60px rgba(0,0,0,.4);max-width:500px;width:100%}
+    .section-label{color:var(--blue-600);font-weight:600;font-size:.875rem;text-transform:uppercase;letter-spacing:.05em}.section-heading{font-size:2rem;font-weight:700}
+    .step-num{width:48px;height:48px;border-radius:50%;background:var(--blue-600);color:#fff;display:flex;align-items:center;justify-content:center;font-weight:700;font-size:1.25rem;margin:0 auto 1rem}
+    .step-card,.feature-card{background:#fff;border-radius:12px;padding:2rem;box-shadow:0 2px 12px rgba(0,0,0,.06);height:100%}
+    .feature-card{border:1px solid #e5e7eb;transition:transform .2s,box-shadow .2s}.feature-card:hover{transform:translateY(-4px);box-shadow:0 8px 24px rgba(0,0,0,.1)}
+    .article-card{background:#fff;border:1px solid #e5e7eb;border-radius:12px;overflow:hidden;height:100%;transition:transform .2s}.article-card:hover{transform:translateY(-3px);box-shadow:0 6px 20px rgba(0,0,0,.08)}
+    .article-card .card-body{padding:1.5rem}.article-card h3{font-size:1.1rem}.article-card h3 a{color:#111827;text-decoration:none}.article-card h3 a:hover{color:#2563eb}
+    .screenshot{border-radius:8px;border:1px solid #e5e7eb;box-shadow:0 2px 8px rgba(0,0,0,.08)}
+    .cta-section{background:linear-gradient(135deg,#1e3a8a,#2563eb);color:#fff;border-radius:16px;padding:3rem 2rem}
+    footer{background:#111827} footer a{color:#9ca3af;text-decoration:none} footer a:hover{color:#fff}
+    @media (max-width:768px){.hero h1{font-size:2rem}.hero .lead{font-size:1.05rem}.hero{padding:3rem 0 2.5rem}.hero-screenshot{max-width:100%;margin-top:1.5rem}.section-heading{font-size:1.5rem}.step-card,.feature-card{padding:1.25rem}img.screenshot{width:100%;max-width:100%;height:auto}}
+  </style>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+  <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);"><div class="container"><ol class="breadcrumb mb-0 small"><li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item"><a href="/features/">Features</a></li><li class="breadcrumb-item"><a href="/features/zh/security/">Security</a></li><li class="breadcrumb-item active" aria-current="page">防止文档内容被复制</li></ol></div></nav>
+  <section class="hero"><div class="container"><div class="row align-items-center"><div class="col-lg-6 mb-4 mb-lg-0"><h1>防止文档内容被复制</h1><p class="lead mt-3">单靠“发 PDF”很难防复制。你需要组合策略：访问验证、阅读限制、动态水印和访问记录。</p><div class="d-flex gap-3 mt-4 flex-wrap"><a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">立即设置</a><a href="/article/pdf-sharing-methods" class="btn btn-outline-light btn-lg">查看分享方法</a></div></div><div class="col-lg-6 text-center"><img src="/images/maipdf2026/show_off/securityshowoff.png" alt="PDF 安全分享与防复制能力示意图" class="hero-screenshot" loading="eager"></div></div></div></section>
+  <section class="py-5" style="background: var(--gray-100);"><div class="container"><p class="section-label">How It Works</p><h2 class="section-heading mb-4">三步建立防复制策略</h2><div class="row g-4"><div class="col-md-4"><div class="step-card text-center"><div class="step-num">1</div><h3 class="h5 fw-bold">设置访问门槛</h3><p class="text-muted">开启邮箱验证或密码，先控制谁能打开。</p><img src="/images/maipdf2026/get_email_verification_before_read.jpg" alt="打开 PDF 前邮箱验证" class="img-fluid screenshot" loading="lazy"></div></div><div class="col-md-4"><div class="step-card text-center"><div class="step-num">2</div><h3 class="h5 fw-bold">限制阅读行为</h3><p class="text-muted">设置次数和有效期，减少无限传播。</p><img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="PDF 次数和有效期配置" class="img-fluid screenshot" loading="lazy"></div></div><div class="col-md-4"><div class="step-card text-center"><div class="step-num">3</div><h3 class="h5 fw-bold">启用可追踪水印</h3><p class="text-muted">叠加动态水印，提高泄露成本。</p><img src="/images/maipdf2026/dynamic_water_mark_example.jpg" alt="PDF 动态水印效果" class="img-fluid screenshot" loading="lazy"></div></div></div></div></section>
+  <section class="py-5"><div class="container"><p class="section-label">Security Layers</p><h2 class="section-heading mb-4">推荐组合</h2><div class="row g-4"><div class="col-md-6"><div class="feature-card"><h3 class="h5 fw-bold">基础版</h3><ul class="mb-0"><li>开启阅读次数限制</li><li>设置 7 天有效期</li><li>开启访问记录</li></ul></div></div><div class="col-md-6"><div class="feature-card"><h3 class="h5 fw-bold">敏感文件版</h3><ul class="mb-0"><li>邮箱验证 + 动态水印</li><li>关闭下载并限制打印</li><li>异常访问及时撤销</li></ul></div></div></div></div></section>
+  <section class="py-5" style="background: var(--gray-100);"><div class="container"><p class="section-label">Related</p><h2 class="section-heading mb-4">延伸阅读</h2><div class="row g-4"><div class="col-md-6 col-lg-4"><div class="article-card"><div class="card-body"><h3><a href="/features/zh/security/set-pdf-print-restrictions-cn">设置 PDF 打印限制</a></h3><p class="small text-muted mb-0">防复制策略中的关键一层。</p></div></div></div><div class="col-md-6 col-lg-4"><div class="article-card"><div class="card-body"><h3><a href="/features/zh/security/set-pdf-expiration-date-cn">设置 PDF 查看次数与有效期</a></h3><p class="small text-muted mb-0">控制访问生命周期。</p></div></div></div><div class="col-md-6 col-lg-4"><div class="article-card"><div class="card-body"><h3><a href="/article/secure-pdf-sharing-guide">安全分享 PDF 指南</a></h3><p class="small text-muted mb-0">完整控制策略。</p></div></div></div></div></div></section>
+  <section class="py-5"><div class="container"><div class="cta-section text-center"><h2 class="mb-3">先从一份敏感文档开始</h2><p class="lead mb-4">用“验证 + 限制 + 水印 + 记录”四件套，快速建立标准。</p><a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">打开 MaiPDF</a></div></div></section>
+  <footer class="py-5"><div class="container"><div class="row"><div class="col-md-4"><h5 class="text-white">MaiPDF</h5><p class="text-secondary">Secure PDF sharing with access control and viewer records.</p></div><div class="col-md-4"><h5 class="text-white">Quick Links</h5><ul class="list-unstyled"><li><a href="/">Home</a></li><li><a href="/features/">Features</a></li><li><a href="/article/">Articles</a></li></ul></div><div class="col-md-4"><h5 class="text-white">Contact</h5><ul class="list-unstyled"><li><a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li></ul></div></div><hr class="border-secondary mt-4"><p class="text-center text-secondary mb-0">&copy; 2026 MaiPDF. All rights reserved.</p></div></footer>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
