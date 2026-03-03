@@ -1,37 +1,220 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="How to track a PDF file. See who opened your file, when, and how often using Read Code and Access Records.">
-  <meta name="keywords" content="track pdf file, pdf tracking, pdf access records, who opened pdf">
-  <meta name="author" content="MaiPDF Team">
-  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
-  <link rel="canonical" href="https://sendpdfonline.com/article/how-to-track-a-pdf-file">
-  <meta property="og:title" content="How to Track a PDF File | MaiPDF">
-  <meta property="og:description" content="Simple guide to track PDF opens and review access records.">
-  <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png">
-  <title>How to Track a PDF File | MaiPDF</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-  <link rel="icon" type="image/x-icon" href="/favicon.ico">
-  <style>
-    :root{--blue-600:#2563eb;--gray-900:#111827;--gray-100:#f3f4f6;} body{font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:var(--gray-900);} .hero{background:linear-gradient(135deg,#0f172a,#1e3a8a 55%,#2563eb);color:#fff;padding:5rem 0 4rem;} .hero h1{font-size:2.5rem;font-weight:800;} .hero-img{max-width:480px;width:100%;border-radius:12px;box-shadow:0 18px 52px rgba(0,0,0,.35);} .section-label{color:var(--blue-600);font-weight:700;font-size:.85rem;letter-spacing:.05em;text-transform:uppercase;} .section-heading{font-size:2rem;font-weight:700;} .cardx{background:#fff;border:1px solid #e5e7eb;border-radius:12px;padding:1.25rem;height:100%;} .screenshot{width:100%;height:auto;border:1px solid #e5e7eb;border-radius:10px;box-shadow:0 2px 8px rgba(0,0,0,.08);} footer{background:#111827;color:#9ca3af;} @media (max-width:768px){.hero{padding:3rem 0 2.5rem}.hero h1{font-size:2rem}.section-heading{font-size:1.5rem}}
-  </style>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Track a PDF File","author":{"@type":"Organization","name":"MaiPDF Team"},"datePublished":"2025-01-15","dateModified":"2026-03-03","mainEntityOfPage":{"@type":"WebPage","@id":"https://sendpdfonline.com/article/how-to-track-a-pdf-file"}}</script>
-  <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I see who opened my PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use Access Records with your Read Code and Modification Code to review opens."}},{"@type":"Question","name":"Do I need a new link after updating the file?","acceptedAnswer":{"@type":"Answer","text":"No. You can replace the PDF without changing the link."}}]}</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="How to track a PDF file: see who opened it, when, and how often using Read Code and Access Records. Step-by-step with screenshots.">
+    <meta name="keywords" content="track pdf file, pdf tracking, pdf access records, who opened pdf">
+    <meta name="author" content="MaiPDF Team">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://sendpdfonline.com/article/how-to-track-a-pdf-file">
+    <meta property="og:title" content="How to Track a PDF File | MaiPDF">
+    <meta property="og:description" content="Simple guide to track PDF opens and review access records. No sign-up required.">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png">
+    <title>How to Track a PDF File | MaiPDF</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card img { width: 100%; max-width: 100%; height: auto; display: block; } }
+    </style>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"How to Track a PDF File","description":"Track who opened your PDF, when, and how often using MaiPDF access records.","author":{"@type":"Organization","name":"MaiPDF"},"publisher":{"@type":"Organization","name":"MaiPDF"},"datePublished":"2025-01-15","dateModified":"2026-03-03","mainEntityOfPage":{"@type":"WebPage","@id":"https://sendpdfonline.com/article/how-to-track-a-pdf-file"}}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://sendpdfonline.com/"},{"@type":"ListItem","position":2,"name":"Articles","item":"https://sendpdfonline.com/article/"},{"@type":"ListItem","position":3,"name":"How to Track a PDF File","item":"https://sendpdfonline.com/article/how-to-track-a-pdf-file"}]}</script>
+    <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"Can I see who opened my PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. Use Access Records with your Read Code and Modification Code to review opens."}},{"@type":"Question","name":"Do I need a new link after updating the file?","acceptedAnswer":{"@type":"Answer","text":"No. You can replace the PDF without changing the link."}},{"@type":"Question","name":"Is tracking built in or do I need extra tools?","acceptedAnswer":{"@type":"Answer","text":"Tracking is built in. After you share a link, open the Access Records page and enter your codes to see open history."}}]}</script>
 </head>
 <body>
-  <nav aria-label="breadcrumb" class="py-2" style="background:#f3f4f6"><div class="container"><ol class="breadcrumb mb-0 small"><li class="breadcrumb-item"><a href="/">Home</a></li><li class="breadcrumb-item"><a href="/article/">Articles</a></li><li class="breadcrumb-item active" aria-current="page">How to Track a PDF File</li></ol></div></nav>
-  <section class="hero"><div class="container"><div class="row align-items-center g-4"><div class="col-lg-6"><h1>How to Track a PDF File</h1><p class="lead mt-3">Track who opened your PDF, when it was opened, and how often using built-in access records.</p><a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">Start Tracking</a></div><div class="col-lg-6 text-center"><img src="/images/maipdf2026/show_off/show_off_page.png" alt="PDF tracking overview" class="hero-img" loading="eager"></div></div></div></section>
+    <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);">
+        <div class="container">
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/article/">Articles</a></li>
+                <li class="breadcrumb-item active" aria-current="page">How to Track a PDF File</li>
+            </ol>
+        </div>
+    </nav>
 
-  <section class="py-5"><div class="container"><p class="section-label">Steps</p><h2 class="section-heading mb-4">Track in 3 Steps</h2><div class="row g-3"><div class="col-md-4"><div class="cardx"><strong>1. Share PDF</strong><p class="mb-0 text-muted">Generate link and keep Read Code.</p></div></div><div class="col-md-4"><div class="cardx"><strong>2. Open Access Records</strong><p class="mb-0 text-muted">Go to Access Records page.</p></div></div><div class="col-md-4"><div class="cardx"><strong>3. Query History</strong><p class="mb-0 text-muted">Paste codes and review opens.</p></div></div></div></div></section>
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>How to Track a PDF File</h1>
+                    <p class="lead mt-3">See who opened your PDF, when, and how often. Use built-in access records—no extra tools or sign-up.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-chart-line me-2"></i>Start Tracking
+                        </a>
+                        <a href="/article/controlling-pdf-access" class="btn btn-outline-light btn-lg">Control Access</a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/show_off_page.png" alt="PDF tracking overview" class="hero-screenshot" loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
 
-  <section class="py-5" style="background:var(--gray-100)"><div class="container"><p class="section-label">Screenshots</p><h2 class="section-heading mb-4">Where to Find the Right Codes</h2><div class="row g-4"><div class="col-lg-6"><img class="screenshot" src="/images/maipdf2026/page_redirect_to_accessRecord.png" alt="Open access records from main page"></div><div class="col-lg-6"><img class="screenshot" src="/images/maipdf2026/how_to_fill_access_record_for_check.png" alt="Fill read and modification codes to query records"></div></div></div></section>
+    <div class="container py-5">
+        <p class="section-label">Article</p>
+        <h2 class="section-heading mb-4">Why Track PDF Opens?</h2>
+        <p class="lead mb-4">Knowing when and how often a link was opened helps you follow up on proposals, confirm that investors saw updates, and spot unexpected sharing. MaiPDF keeps access records tied to your Read Code and Modification Code so you can query history anytime.</p>
 
-  <section class="py-5"><div class="container"><p class="section-label">Related</p><h2 class="section-heading mb-4">Continue Reading</h2><div class="row g-3"><div class="col-md-4"><a href="/article/track-pdf-analytics-guide" class="text-decoration-none"><div class="cardx">Track PDF Analytics Guide</div></a></div><div class="col-md-4"><a href="/article/controlling-pdf-access" class="text-decoration-none"><div class="cardx">Controlling PDF Access</div></a></div><div class="col-md-4"><a href="/article/replace-pdf-without-changing-link" class="text-decoration-none"><div class="cardx">Replace PDF Without Changing Link</div></a></div></div></div></section>
+        <section class="py-5" id="steps">
+            <p class="section-label">Steps</p>
+            <h2 class="section-heading mb-4">Track in 3 Steps</h2>
+            <div class="row g-4">
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">Share PDF</h3>
+                        <p class="text-muted small">Upload, get the link, and save your Read Code (and Modification Code if you use it).</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Get link and codes" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">Open Access Records</h3>
+                        <p class="text-muted small">Go to the Access Records page from the main site or your link result.</p>
+                        <img src="/images/maipdf2026/page_redirect_to_accessRecord.png" alt="Open access records" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-12 col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">Query history</h3>
+                        <p class="text-muted small">Paste Read Code (and Modification Code). Review who opened and when.</p>
+                        <img src="/images/maipdf2026/how_to_fill_access_record_for_check.png" alt="Fill codes to query records" class="img-fluid screenshot mt-2" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </section>
 
-  <footer class="py-4"><div class="container text-center"><p class="mb-0">&copy; 2026 MaiPDF. All rights reserved.</p></div></footer>
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+        <section class="py-5" style="background: var(--gray-100);">
+            <p class="section-label">Tips</p>
+            <h2 class="section-heading mb-4">Getting the most from tracking</h2>
+            <ul class="mb-0">
+                <li>Keep your Read Code and Modification Code safe; you need them to view access records.</li>
+                <li>Combine tracking with <a href="/article/pdf-view-limits-security">view limits</a> and <a href="/article/pdf-share-expire">expiry</a> so links don’t live forever.</li>
+                <li>Use the same link when you <a href="/article/replace-pdf-without-changing-link">replace the PDF</a>—tracking continues on the same codes.</li>
+            </ul>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">FAQ</p>
+            <h2 class="section-heading mb-4">Quick answers</h2>
+            <div class="accordion" id="faqAccordion">
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Can I see who opened my PDF?</button>
+                    </h3>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">Yes. Use Access Records with your Read Code and Modification Code to review opens.</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Do I need a new link after updating the file?</button>
+                    </h3>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">No. You can replace the PDF without changing the link.</p></div>
+                    </div>
+                </div>
+                <div class="accordion-item border-0 shadow-sm mb-3">
+                    <h3 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Is tracking built in or do I need extra tools?</button>
+                    </h3>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body"><p class="mb-0">Tracking is built in. After you share a link, open the Access Records page and enter your codes to see open history.</p></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="py-5">
+            <p class="section-label">Read more</p>
+            <h2 class="section-heading mb-4">Related</h2>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/controlling-pdf-access">Controlling PDF Access</a></h3>
+                            <p class="small text-muted mb-0">Who can view and how.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/replace-pdf-without-changing-link">Replace PDF Without Changing Link</a></h3>
+                            <p class="small text-muted mb-0">Same URL, new file.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/pdf-share-expire">Revoke PDF Access & Set Expiry</a></h3>
+                            <p class="small text-muted mb-0">Expiry and revoke.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <h3><a href="/article/secure-pdf-sharing-guide">Secure PDF Sharing Guide</a></h3>
+                            <p class="small text-muted mb-0">Full control and tracking.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="cta-section text-center mb-5">
+            <h2 class="h3 fw-bold mb-3">Ready to track your PDFs?</h2>
+            <p class="mb-4 opacity-90">Free. No sign-up required.</p>
+            <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                <i class="fas fa-chart-line me-2"></i>Start Tracking
+            </a>
+        </section>
+    </div>
+
+    <footer class="py-4">
+        <div class="container text-center small text-white">
+            <p class="mb-2 opacity-75">&copy; 2026 MaiPDF. All rights reserved.</p>
+            <p class="mb-0">
+                <a href="/" class="me-3">Home</a>
+                <a href="/article/" class="me-3">Articles</a>
+                <a href="https://maipdf.com">MaiPDF.com</a>
+            </p>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
