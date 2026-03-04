@@ -3,198 +3,504 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="description" content="Learn how to set a fixed expiration date for your PDF files and discover solutions for secure PDF sharing.">
-  <meta name="keywords" content="PDF expiration, PDF management, PDF security, PDF solutions, document expiration">
-  <title>How to Set an Expiration Date for PDFs</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+  <meta name="description" content="Set expiration dates for PDF links and query access records securely with MaiPDF. Control view windows, revoke links, and monitor opens.">
+  <meta name="keywords" content="set PDF expiration date, PDF access expiry, PDF link expiration, secure PDF sharing, PDF access records">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+  <link rel="canonical" href="https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs">
+  <meta property="og:title" content="Set Expiration Date for PDFs | MaiPDF">
+  <meta property="og:description" content="Control PDF access windows with expiration dates and verify open records from one dashboard.">
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs">
+  <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/MaiPDF_settings_expiration_telegram.png">
+  <title>Set Expiration Date for PDFs - Access Window Control | MaiPDF</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
     "@type": "Article",
-    "headline": "How to Set an Expiration Date for PDFs",
-    "description": "Learn how to set a fixed expiration date for your PDF files and discover solutions for secure PDF sharing.",
+    "headline": "Set Expiration Date for PDFs",
+    "description": "Set expiration dates for PDF links and query access records securely with MaiPDF.",
     "author": {
-      "@type": "Person",
-      "name": "Joe Huang"
+      "@type": "Organization",
+      "name": "MaiPDF"
     },
     "publisher": {
       "@type": "Organization",
       "name": "MaiPDF"
     },
     "datePublished": "2025-03-28",
-    "dateModified": "2025-12-03",
-    "mainEntityOfPage": "https://maipdf.com/home/set-expiration-date-for-pdfs.html",
-    "image": "https://maipdf.com/pictures/offline/sett.png",
-    "url": "https://maipdf.com/home/set-expiration-date-for-pdfs.html",
-    "keywords": "PDF expiration, PDF management, PDF security, document expiration, set expiration date for PDFs"
+    "dateModified": "2026-03-04",
+    "mainEntityOfPage": "https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs",
+    "image": "https://sendpdfonline.com/images/maipdf2026/MaiPDF_settings_expiration_telegram.png",
+    "url": "https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs"
   }
-</script>
+  </script>
 
-  
-  
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "Can I set both expiration date and view limit together?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. You can combine expiration date and view-count limits. The link expires when either condition is met."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "Can I change expiration settings after sharing?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Yes. MaiPDF lets you update expiry policy anytime from your control panel, even after distribution."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "What do I need to query open records?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Use your reading passcode and modification code in the query panel to retrieve remaining clicks and open logs."
+        }
+      }
+    ]
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Home",
+        "item": "https://sendpdfonline.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "Features",
+        "item": "https://sendpdfonline.com/features/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 3,
+        "name": "Set Expiration Date for PDFs",
+        "item": "https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs"
+      }
+    ]
+  }
+  </script>
+
   <style>
+    :root {
+      --blue-900: #1e3a8a;
+      --blue-600: #2563eb;
+      --blue-500: #3b82f6;
+      --blue-50: #eff6ff;
+      --gray-900: #0f172a;
+      --gray-600: #475569;
+      --gray-100: #f1f5f9;
+      --line: #e2e8f0;
+    }
+
     body {
-      background-color: #f8f9fa;
-      font-family: 'Arial', sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+      color: var(--gray-900);
+      background:
+        radial-gradient(circle at 0% 0%, #dbeafe 0%, transparent 36%),
+        radial-gradient(circle at 100% 100%, #dbeafe 0%, transparent 32%),
+        #f8fafc;
     }
-    .container {
-      background-color: white;
-      padding: 3rem;
-      border-radius: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+
+    .hero {
+      background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
+      color: #fff;
+      padding: 4.6rem 0 3.8rem;
+      position: relative;
+      overflow: hidden;
     }
-    h1, h2 {
-      color: #343a40;
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      height: 72px;
+      background: linear-gradient(to bottom right, transparent 49.5%, #f8fafc 50%);
     }
-    .card {
-      margin-bottom: 1.5rem;
+
+    .hero h1 {
+      font-size: 2.4rem;
+      font-weight: 800;
+      line-height: 1.2;
+      margin-bottom: 0.8rem;
     }
-    .btn-primary {
-      background-color: #28a745;
-      border-color: #28a745;
+
+    .hero .lead {
+      opacity: 0.93;
+      max-width: 620px;
     }
-    .btn-primary:hover {
-      background-color: #218838;
-      border-color: #1e7e34;
+
+    .hero-shot {
+      border-radius: 14px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      box-shadow: 0 22px 50px rgba(0, 0, 0, 0.35);
+      width: 100%;
+      max-width: 460px;
     }
-    .table-responsive {
-      margin-top: 2rem;
+
+    .section-label {
+      color: var(--blue-600);
+      font-size: 0.86rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      font-weight: 700;
+      margin-bottom: 0.4rem;
     }
-    .alert {
-      border-radius: 1rem;
-      padding: 1.5rem;
-      font-size: 1.1rem;
+
+    .section-heading {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
     }
+
+    .panel {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+      padding: 1.4rem;
+      height: 100%;
+    }
+
+    .query-panel {
+      background: linear-gradient(180deg, #ffffff 0%, #f8fbff 100%);
+    }
+
     .input-group-text {
-      background-color: #e9ecef;
-      border-right: 0;
+      background: #f8fafc;
+      border-color: #cbd5e1;
+    }
+
+    .form-control {
+      border-color: #cbd5e1;
+    }
+
+    .form-control:focus {
+      border-color: var(--blue-500);
+      box-shadow: 0 0 0 0.2rem rgba(59, 130, 246, 0.18);
+    }
+
+    .btn-query {
+      background: linear-gradient(135deg, var(--blue-600), var(--blue-900));
+      border: none;
+      color: #fff;
+      padding: 0.82rem 1rem;
+      font-weight: 700;
+      border-radius: 10px;
+      box-shadow: 0 10px 22px rgba(37, 99, 235, 0.28);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .btn-query:hover {
+      color: #fff;
+      transform: translateY(-2px);
+      box-shadow: 0 14px 28px rgba(37, 99, 235, 0.36);
+    }
+
+    .timer-box {
+      background: #eff6ff;
+      border: 1px solid #bfdbfe;
+      border-radius: 10px;
+      padding: 0.85rem 1rem;
+      color: #1e40af;
+    }
+
+    .result-head {
+      background: linear-gradient(135deg, #1e40af, #2563eb);
+      color: #fff;
+      border-radius: 12px;
+      padding: 1rem 1.1rem;
+      margin-bottom: 0.8rem;
+    }
+
+    .table-wrap {
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      overflow: hidden;
+      background: #fff;
+    }
+
+    .table thead th {
+      background: #f8fafc;
+      color: #334155;
+      font-weight: 700;
+      border-bottom-width: 1px;
+    }
+
+    .step-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 12px;
+      padding: 1.4rem;
+      box-shadow: 0 2px 12px rgba(0, 0, 0, 0.06);
+      height: 100%;
+    }
+
+    .step-num {
+      width: 46px;
+      height: 46px;
+      border-radius: 50%;
+      background: var(--blue-600);
+      color: #fff;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 700;
+      margin: 0 auto 0.8rem;
+    }
+
+    .step-card img {
+      border-radius: 8px;
+      border: 1px solid #e5e7eb;
+      margin-top: 0.85rem;
+      width: 100%;
+      height: auto;
+    }
+
+    .tip-list {
+      margin: 0;
+      padding-left: 1.1rem;
+      color: var(--gray-600);
+    }
+
+    .tip-list li {
+      margin-bottom: 0.5rem;
+    }
+
+    .cta-box {
+      background: linear-gradient(135deg, #1e3a8a, #2563eb);
+      color: #fff;
+      border-radius: 14px;
+      padding: 2rem 1.5rem;
+      text-align: center;
+    }
+
+    footer {
+      background: var(--gray-900);
+    }
+
+    footer a {
+      color: #93c5fd;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      color: #fff;
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        padding: 3rem 0 2.5rem;
+      }
+
+      .hero h1 {
+        font-size: 1.85rem;
+      }
+
+      .hero-shot {
+        margin-top: 1.2rem;
+      }
+
+      .step-card {
+        overflow: visible;
+      }
+
+      .step-card img {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin-left: calc(50% - 50vw);
+        margin-right: calc(50% - 50vw);
+        border-radius: 0 !important;
+        display: block;
+        box-sizing: border-box;
+      }
     }
   </style>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Features",
-                "item": "https://sendpdfonline.com/features/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "How to Set an Expiration Date for PDFs",
-                "item": "https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs.html"
-            }
-        ]
-    }
-    </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="/">Home</a></li>
-                <li class="breadcrumb-item"><a href="../../../features/">Features</a></li>
-                <li class="breadcrumb-item active" aria-current="page">How to Set an Expiration Date for PDFs</li>
-            </ol>
-        </div>
-    </nav>
-    
-  <div class="container py-5">
-    <h1 class="text-center"><i class="fas fa-file-pdf"></i> How to Set an Expiration Date for PDFs</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: March 28, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
-                </div>
-                
+  <nav aria-label="breadcrumb" class="py-2" style="background: var(--gray-100);">
+    <div class="container">
+      <ol class="breadcrumb mb-0 small">
+        <li class="breadcrumb-item"><a href="/">Home</a></li>
+        <li class="breadcrumb-item"><a href="/features/">Features</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Set Expiration Date for PDFs</li>
+      </ol>
+    </div>
+  </nav>
 
-    <!-- Introduction Section -->
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><i class="fas fa-info-circle"></i> Introduction</h5>
-        <p class="card-text">In today's digital world, PDFs are widely used for sharing important documents. However, you may want to ensure that the document is only accessible for a limited time. This guide will show you how to set an expiration date for your PDF files, ensuring they become inaccessible after a specified time.</p>
+  <section class="hero">
+    <div class="container">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-6">
+          <h1>Set Expiration Date for PDFs</h1>
+          <p class="lead">Define access windows for shared PDFs, then verify open records using your passcode and modification code. Built for teams that need control after sharing.</p>
+          <p class="mb-3 small text-white-50">
+            <i class="fas fa-calendar-alt"></i> Published: March 28, 2025 |
+            <i class="fas fa-sync-alt"></i> Updated: March 04, 2026
+          </p>
+          <div class="d-flex gap-3 flex-wrap">
+            <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+              <i class="fas fa-hourglass-end me-2"></i>Configure Expiry Free
+            </a>
+            <a href="#query" class="btn btn-outline-light btn-lg">Check Access Logs</a>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="PDF expiration and security settings panel" class="hero-shot" loading="eager">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <main class="container py-5" id="query">
+    <div class="row g-4 mb-4">
+      <div class="col-lg-7">
+        <div class="panel query-panel">
+          <p class="section-label">Access Query</p>
+          <h2 class="section-heading">Check Remaining Views and Open Records</h2>
+          <p class="text-muted">Enter your passcode and modification code to retrieve current remaining clicks and detailed open logs.</p>
+
+          <div class="mb-3">
+            <label for="webinput" class="form-label fw-semibold"><i class="fas fa-key me-2 text-primary"></i>PDF Passcode</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-lock"></i></span>
+              <input type="text" class="form-control" id="webinput" placeholder="Enter PDF passcode">
+            </div>
+          </div>
+
+          <div class="mb-3">
+            <label for="modificationCode" class="form-label fw-semibold"><i class="fas fa-pen-to-square me-2 text-primary"></i>Modification Code</label>
+            <div class="input-group">
+              <span class="input-group-text"><i class="fas fa-user-shield"></i></span>
+              <input type="text" class="form-control" id="modificationCode" placeholder="Enter modification code">
+            </div>
+          </div>
+
+          <button type="button" class="btn btn-query w-100" id="queryButton" onclick="makeCodeweb()">
+            <i class="fas fa-search me-2"></i>Run Query
+          </button>
+
+          <div id="timer" class="timer-box mt-3" style="display:none;">
+            <i class="fas fa-hourglass-half me-2"></i>Please wait <span id="countdown">60</span> seconds before you can query again.
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="panel">
+          <p class="section-label">Best Practice</p>
+          <h2 class="h4 fw-bold mb-3">Use Expiry with Extra Controls</h2>
+          <ul class="tip-list">
+            <li>Set both expiration date and max view count for sensitive files.</li>
+            <li>Use verification options when sharing outside your organization.</li>
+            <li>Review open records before extending expiry windows.</li>
+            <li>Revoke links immediately when distribution scope changes.</li>
+          </ul>
+          <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Generated secure link and QR code after PDF settings" class="img-fluid mt-3" style="border-radius:10px; border:1px solid #e2e8f0;" loading="lazy">
+        </div>
       </div>
     </div>
 
-    <!-- Input for Passcode and Modification Code -->
-    <div class="card">
-      <div class="card-body">
-        <h5 class="card-title"><i class="fas fa-lock"></i> Set Your Expiration Details</h5>
-        <div class="mb-3">
-          <label for="webinput" class="form-label"><i class="fas fa-key"></i> Enter PDF Passcode</label>
-          <input type="text" class="form-control" id="webinput" placeholder="Enter PDF passcode">
-        </div>
-        <div class="mb-3">
-          <label for="modificationCode" class="form-label"><i class="fas fa-lock-open"></i> Enter Modification Code</label>
-          <input type="text" class="form-control" id="modificationCode" placeholder="Enter modification code">
-        </div>
-        <button type="button" class="btn btn-primary w-100" id="queryButton" onclick="makeCodeweb()">
-          <i class="fas fa-search"></i> Query
-        </button>
-      </div>
-    </div>
-
-    <!-- Countdown Timer -->
-    <div id="timer" class="text-center mt-3" style="display:none;">
-      <p><i class="fas fa-hourglass-half"></i> Please wait <span id="countdown">60</span> seconds before you can query again.</p>
-    </div>
-
-    <!-- Results Table -->
-    <div class="mt-4">
-      <h2 class="text-center" id="headingpdf"><i class="fas fa-file-alt"></i> Query Results</h2>
-      <div class="table-responsive">
-        <table class="table table-bordered table-striped">
+    <section class="panel mb-4">
+      <div class="result-head" id="headingpdf"><i class="fas fa-table me-2"></i>Query Results</div>
+      <div class="table-wrap table-responsive">
+        <table class="table table-bordered table-striped mb-0">
           <thead>
             <tr>
-              <th></th> <!-- Empty column -->
+              <th style="width: 55px;"></th>
               <th>Open Time</th>
               <th>Device</th>
               <th>IP Address</th>
             </tr>
           </thead>
           <tbody id="tablebody">
-            <!-- Dynamic content will be inserted here -->
+            <tr>
+              <td colspan="4" class="text-center text-muted py-4">Run a query to load records.</td>
+            </tr>
           </tbody>
         </table>
       </div>
-    </div>
 
-    <!-- No results message -->
-    <div class="alert alert-info text-center mt-4" id="noResultMessage" style="display:none;">
-      <i class="fas fa-exclamation-circle"></i> No records found, please try again later.
-    </div>
-
-    <!-- Footer with Recommendation -->
-    <div class="card mt-5">
-      <div class="card-body text-center">
-        <h5 class="card-title"><i class="fas fa-thumbs-up"></i> Recommendation</h5>
-        <p>For managing PDF expiration dates, we recommend <strong>MaiPDF</strong>—a comprehensive solution for both online and offline PDF document management. MaiPDF allows you to set expiration dates for PDFs and convert PDFs to HTML files for offline usage. Ensure your PDFs are secure and accessible only for the time you choose.</p>
-        <a href="https://maipdf.com" class="btn btn-primary w-100">
-          <i class="fas fa-cloud-upload-alt"></i> Explore MaiPDF Solutions
-        </a>
+      <div class="alert alert-info text-center mt-3 mb-0" id="noResultMessage" style="display:none;">
+        <i class="fas fa-circle-info me-2"></i>No records found, please try again later.
       </div>
+    </section>
+
+    <section class="mb-4">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-heading">Set PDF Expiration in 3 Steps</h2>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <div class="step-num">1</div>
+            <h3 class="h5 fw-bold">Upload PDF</h3>
+            <p class="text-muted small mb-0">Upload the PDF and open security settings.</p>
+            <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload PDF in MaiPDF" loading="lazy">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <div class="step-num">2</div>
+            <h3 class="h5 fw-bold">Set Expiration</h3>
+            <p class="text-muted small mb-0">Configure expiry date, view limit, and extra controls.</p>
+            <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Set expiry date and view limit for PDF" loading="lazy">
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <div class="step-num">3</div>
+            <h3 class="h5 fw-bold">Share and Audit</h3>
+            <p class="text-muted small mb-0">Distribute link or QR code and monitor logs.</p>
+            <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Share generated PDF link and QR code" loading="lazy">
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="cta-box">
+      <h2 class="h3 fw-bold mb-2">Need Stronger Control?</h2>
+      <p class="mb-4 opacity-90">Combine expiry with password, watermark, and email verification for layered protection.</p>
+      <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+        <i class="fas fa-shield-alt me-2"></i>Open MaiPDF Dashboard
+      </a>
+    </section>
+  </main>
+
+  <footer class="py-4">
+    <div class="container text-center small text-white">
+      <p class="mb-2 opacity-75">&copy; 2026 MaiPDF. All rights reserved.</p>
+      <p class="mb-0">
+        <a href="/" class="me-3">Home</a>
+        <a href="/features/" class="me-3">Features</a>
+        <a href="/article/">Articles</a>
+      </p>
     </div>
-  </div>
+  </footer>
 
   <script>
-    let isSearching = false; // To prevent multiple searches within 60 seconds
+    let isSearching = false;
 
     async function makeCodeweb() {
       const web = document.getElementById("webinput");
@@ -205,22 +511,20 @@
         return;
       }
 
-      // Prevent multiple searches
       if (isSearching) {
         alert('Please wait for 60 seconds before querying again.');
         return;
       }
 
       const data = new FormData();
-      data.append('passcode', web.value.trim());  // Send passcode
-      data.append('modificationCode', modificationCode.value.trim());  // Send modification code
+      data.append('passcode', web.value.trim());
+      data.append('modificationCode', modificationCode.value.trim());
 
       try {
-        isSearching = true;  // Disable further searches
-        document.getElementById("queryButton").disabled = true;  // Disable the button
-        document.getElementById("timer").style.display = 'block';  // Show the countdown
+        isSearching = true;
+        document.getElementById("queryButton").disabled = true;
+        document.getElementById("timer").style.display = 'block';
 
-        // Start countdown
         let countdown = 60;
         const countdownInterval = setInterval(() => {
           document.getElementById("countdown").textContent = countdown;
@@ -228,8 +532,8 @@
           if (countdown < 0) {
             clearInterval(countdownInterval);
             isSearching = false;
-            document.getElementById("queryButton").disabled = false;  // Enable button after countdown
-            document.getElementById("timer").style.display = 'none';  // Hide the countdown
+            document.getElementById("queryButton").disabled = false;
+            document.getElementById("timer").style.display = 'none';
           }
         }, 1000);
 
@@ -247,8 +551,8 @@
         }
 
         if (trimmedResult === 'mythenigmaclick') {
-          document.getElementById("headingpdf").innerHTML = 'No click records yet';
-          document.getElementById("tablebody").innerHTML = '';
+          document.getElementById("headingpdf").innerHTML = '<i class="fas fa-table me-2"></i>No click records yet';
+          document.getElementById("tablebody").innerHTML = '<tr><td colspan="4" class="text-center text-muted py-4">No open records yet.</td></tr>';
           document.getElementById("noResultMessage").style.display = 'block';
           return;
         }
@@ -258,7 +562,7 @@
         const openTime = myArray[1];
         const tableContent = myArray[2];
 
-        document.getElementById("headingpdf").innerHTML = `Remaining Clicks: ${remainingClicks}<br>Open Time: ${openTime}`;
+        document.getElementById("headingpdf").innerHTML = `<i class="fas fa-table me-2"></i>Remaining Clicks: ${remainingClicks} | Open Time: ${openTime}`;
         document.getElementById("tablebody").innerHTML = tableContent;
         document.getElementById("noResultMessage").style.display = 'none';
 
@@ -269,5 +573,6 @@
     }
   </script>
 
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
