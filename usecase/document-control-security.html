@@ -137,6 +137,15 @@
             border-radius: 0 8px 8px 0;
         }
 
+        .usecase-image {
+            width: 100%;
+            max-width: 980px;
+            display: block;
+            margin: 1rem auto 0;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+        }
+
         @media (max-width: 768px) {
             .container {
                 padding: 1rem;
@@ -152,6 +161,16 @@
 
             .feature-grid {
                 grid-template-columns: 1fr;
+            }
+
+            .mobile-fullbleed {
+                width: 100vw !important;
+                max-width: 100vw !important;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                height: auto;
+                display: block;
+                border-radius: 0 !important;
             }
         }
     </style>
@@ -204,7 +223,7 @@
                 <div class="mb-3">
                     <small class="text-muted">
                         <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
+                        <i class="fas fa-sync-alt"></i> Updated: March 04, 2026
                     </small>
                 </div>
                 
@@ -237,6 +256,7 @@
                 <li>Real-time tracking to monitor document access</li>
                 <li>Encryption to safeguard sensitive information</li>
             </ul>
+            <img src="/images/maipdf2026/麦瓜PDF/用户管理界面对链接的管理.png" alt="MaiPDF control panel for document permissions, replacement, analytics, and deletion" class="usecase-image mobile-fullbleed" loading="lazy">
         </section>
         <section class="content-section">
             <h2>MaiPDF's Security Solutions</h2>
