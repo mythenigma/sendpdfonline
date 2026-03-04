@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -157,6 +157,18 @@
             margin-right: 10px;
             color: var(--primary-color);
         }
+    
+        @media (max-width: 768px) {
+            .mobile-fullbleed {
+                width: 100vw !important;
+                max-width: 100vw !important;
+                margin-left: calc(50% - 50vw);
+                margin-right: calc(50% - 50vw);
+                height: auto;
+                display: block;
+                border-radius: 0 !important;
+            }
+        }
     </style>
 
     <!-- Breadcrumb Structured Data -->
@@ -278,7 +290,7 @@
             </ol>
                 </div>
                 <div class="col-md-6">
-                    <img src="https://sendpdfonline.com/images/lockpdf.png" alt="Secure Sharing Process" class="img-fluid rounded">
+                    <img src="https://sendpdfonline.com/images/lockpdf.png" alt="Secure Sharing Process" class="img-fluid mobile-fullbleed rounded">
                 </div>
             </div>
         </div>
