@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Profile & Control Panel — Manage Your PDFs | MaiPDF</title>
+    <meta name="description" content="Manage all your shared PDFs from one dashboard. MaiPDF's user control panel lets you replace files, update settings, track views, and revoke access — all without changing the original link.">
+    <meta name="keywords" content="MaiPDF user profile, PDF control panel, manage shared PDFs, PDF dashboard, update PDF link, revoke PDF access, PDF account management">
+    <meta name="author" content="MaiPDF">
+    <meta name="robots" content="index, follow">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="canonical" href="https://sendpdfonline.com/features/en/account/user-profile-management">
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="User Profile & Control Panel — Manage Your PDFs | MaiPDF">
+    <meta property="og:description" content="One dashboard for all your shared PDFs. Replace files, update access rules, track who opened what, and revoke access any time.">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sendpdfonline.com/features/en/account/user-profile-management">
+    <meta property="og:site_name" content="MaiPDF">
+
+    <!-- Bootstrap 5.3.0 & Font Awesome 6.4.0 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "User Profile & Control Panel — Manage Your PDFs with MaiPDF",
+        "description": "A complete guide to the MaiPDF user control panel: manage links, replace files, view access history, and update security settings for all your shared PDFs.",
+        "author": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "datePublished": "2026-03-10",
+        "dateModified": "2026-03-10",
+        "mainEntityOfPage": "https://sendpdfonline.com/features/en/account/user-profile-management"
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "Do I need an account to use MaiPDF?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "No. You can upload and share PDFs without creating an account. However, registering gives you a persistent control panel where you can manage all your links, replace files, and review access history at any time."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "What can I do in the MaiPDF user control panel?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "The control panel lets you view all your active PDF links, replace the file behind any link without changing the URL, update security settings (view limits, expiration, download permissions), check who opened your documents, and revoke access instantly."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Can I replace a PDF without sending a new link to recipients?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. From the control panel you can swap the file behind any existing link. Recipients continue using the same URL, but they will see the updated document immediately."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is the MaiPDF user account free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Creating a MaiPDF account is free. Registered users get the full control panel, access history, and file management features at no cost."
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+
+        /* Hero */
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.5rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.15rem; opacity: 0.9; max-width: 560px; }
+
+        /* Section */
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+
+        /* Feature card */
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.75rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 52px; height: 52px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.3rem; margin-bottom: 1rem; }
+
+        /* Screenshot */
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+
+        /* Step */
+        .step-num { width: 40px; height: 40px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.1rem; flex-shrink: 0; }
+
+        /* CTA */
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+
+        /* FAQ */
+        .faq-item { border-bottom: 1px solid #e5e7eb; padding: 1.25rem 0; }
+        .faq-item:last-child { border-bottom: none; }
+        .faq-question { font-weight: 600; margin-bottom: 0.5rem; }
+
+        /* Footer */
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+
+        @media (max-width: 768px) { .hero h1 { font-size: 1.9rem; } .hero { padding: 3rem 0 2.5rem; } }
+    </style>
+</head>
+<body>
+
+    <!-- Hero -->
+    <section class="hero">
+        <div class="container">
+            <nav class="mb-4 small">
+                <a href="/" class="text-white text-decoration-none fw-semibold"><i class="fas fa-file-pdf me-1"></i> MaiPDF</a>
+                <span class="text-white-50 mx-2">/</span>
+                <a href="/features/" class="text-white-50 text-decoration-none">Features</a>
+                <span class="text-white-50 mx-2">/</span>
+                <span class="text-white-50">User Profile & Control Panel</span>
+            </nav>
+            <h1>User Profile &amp; Control Panel</h1>
+            <p class="lead mt-3">One dashboard for every PDF you've shared. Replace files, update security settings, check who opened your documents, and revoke access — all without touching the original link.</p>
+            <div class="d-flex gap-3 mt-4 flex-wrap">
+                <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                    <i class="fas fa-user me-2"></i>Open My Dashboard
+                </a>
+                <a href="/article/replace-pdf-without-changing-link" class="btn btn-outline-light btn-lg">
+                    <i class="fas fa-book me-2"></i>Replace PDF Guide
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Create an Account -->
+    <section class="py-5 mt-3">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Why Register</p>
+                <h2 class="section-heading">What You Gain with a Free Account</h2>
+                <p class="text-muted mt-2" style="max-width: 600px; margin: 0 auto;">MaiPDF works without sign-up. But a free account unlocks persistent management of every link you've ever created.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-list-alt"></i></div>
+                        <h3 class="h5 fw-bold">All Links in One Place</h3>
+                        <p class="text-muted mb-0">View every PDF link you've created — with status, view count, and security settings — from a single dashboard.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-sync-alt"></i></div>
+                        <h3 class="h5 fw-bold">Replace Files Anytime</h3>
+                        <p class="text-muted mb-0">Swap the document behind any existing link. Recipients keep the same URL; they see the updated file immediately.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#fef3c7;color:#d97706;"><i class="fas fa-sliders-h"></i></div>
+                        <h3 class="h5 fw-bold">Edit Security Settings</h3>
+                        <p class="text-muted mb-0">Increase view limits, extend expiration dates, or tighten access restrictions for any shared link — even after it's been sent.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fas fa-history"></i></div>
+                        <h3 class="h5 fw-bold">Full Access History</h3>
+                        <p class="text-muted mb-0">See who opened each document, when, and from where. Timestamps, locations, and device types — all in one log.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#fce7f3;color:#db2777;"><i class="fas fa-ban"></i></div>
+                        <h3 class="h5 fw-bold">Revoke Access Instantly</h3>
+                        <p class="text-muted mb-0">Disable any link immediately from the dashboard. Useful when a document is no longer relevant or was shared with the wrong person.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-ad"></i></div>
+                        <h3 class="h5 fw-bold">Remove Ads from Viewer</h3>
+                        <p class="text-muted mb-0">Registered users can remove the branding banner from the PDF viewer, giving recipients a cleaner reading experience.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Panel Screenshot -->
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">Dashboard</p>
+                    <h2 class="section-heading">Everything in the Control Panel</h2>
+                    <p class="text-muted">After logging in, your control panel shows every document link you've created. For each one you can: check the current view count, open the access record, replace the file, or delete the link entirely.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Sort and filter links by date or status</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> One-click file replacement</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Inline settings editor — no new upload needed</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Download or copy the link and QR code again</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/user_control_panel_alotof_functions.png"
+                         alt="MaiPDF user control panel showing reading codes and management options"
+                         class="img-fluid screenshot" loading="lazy">
+                    <p class="small text-muted mt-2">Control panel: view, edit, and manage all your PDF links.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Replace File Screenshot -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center flex-lg-row-reverse">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">File Management</p>
+                    <h2 class="section-heading">Replace a File Without Changing the Link</h2>
+                    <p class="text-muted">Need to update a document you've already shared? Select the link in the control panel and import the new version. The URL and QR code stay the same — recipients see the new file automatically.</p>
+                    <a href="/article/replace-pdf-without-changing-link" class="btn btn-outline-primary mt-3">
+                        Read the Full Replace Guide →
+                    </a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/swap_file_easy_in_user_control_panel.png"
+                         alt="Replace PDF from the control panel — select link, import new file"
+                         class="img-fluid screenshot" loading="lazy">
+                    <p class="small text-muted mt-2">Select a link and swap the underlying file in seconds.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Get Started -->
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Getting Started</p>
+                <h2 class="section-heading">How to Access Your Control Panel</h2>
+            </div>
+            <div class="row g-4 justify-content-center">
+                <div class="col-md-4">
+                    <div class="d-flex gap-3">
+                        <div class="step-num">1</div>
+                        <div>
+                            <h3 class="h6 fw-bold">Sign Up or Log In</h3>
+                            <p class="text-muted small mb-0">Go to <a href="https://maipdf.com" target="_blank" rel="noopener">maipdf.com</a> and click the login button in the header. Create a free account with your email address.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex gap-3">
+                        <div class="step-num">2</div>
+                        <div>
+                            <h3 class="h6 fw-bold">Upload Your PDF</h3>
+                            <p class="text-muted small mb-0">Upload any PDF as usual. Because you're logged in, the link is saved to your control panel automatically.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="d-flex gap-3">
+                        <div class="step-num">3</div>
+                        <div>
+                            <h3 class="h6 fw-bold">Manage from the Dashboard</h3>
+                            <p class="text-muted small mb-0">Open the control panel any time to view access history, replace files, change settings, or delete links.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="text-center mt-5">
+                <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png"
+                     alt="MaiPDF header showing login and upload options"
+                     class="img-fluid screenshot" style="max-width: 640px;" loading="lazy">
+                <p class="small text-muted mt-2">Log in or upload directly from the MaiPDF homepage.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Control Panel Details -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">Access Records</p>
+                    <h2 class="section-heading">See Who Opened Every Document</h2>
+                    <p class="text-muted">The control panel links directly to the access record for each share link. See every open event: timestamp, approximate location, and device type. Use this data to confirm a proposal was read or to investigate unexpected access.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Per-link access log</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Open count and timestamps</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Viewer location and device info</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Email addresses if verification was required</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/how_to_control_panel.png"
+                         alt="MaiPDF control panel showing PDF links and access records"
+                         class="img-fluid screenshot" loading="lazy">
+                    <p class="small text-muted mt-2">Access record linked directly from the control panel.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-heading">Common Questions</h2>
+            </div>
+            <div style="max-width: 720px; margin: 0 auto;">
+                <div class="faq-item">
+                    <div class="faq-question">Do I need an account to use MaiPDF?</div>
+                    <p class="text-muted mb-0">No. You can upload and share PDFs without creating an account. However, registering gives you a persistent control panel where you can manage all your links, replace files, and review access history at any time.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What can I do in the MaiPDF user control panel?</div>
+                    <p class="text-muted mb-0">The control panel lets you view all your active PDF links, replace the file behind any link without changing the URL, update security settings (view limits, expiration, download permissions), check who opened your documents, and revoke access instantly.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Can I replace a PDF without sending a new link to recipients?</div>
+                    <p class="text-muted mb-0">Yes. From the control panel you can swap the file behind any existing link. Recipients continue using the same URL, but they will see the updated document immediately.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">Is the MaiPDF user account free?</div>
+                    <p class="text-muted mb-0">Yes. Creating a MaiPDF account is free. Registered users get the full control panel, access history, and file management features at no cost.</p>
+                </div>
+                <div class="faq-item">
+                    <div class="faq-question">What happens to links I created before I registered?</div>
+                    <p class="text-muted mb-0">Links created without an account are not automatically attached to a profile. Going forward, any PDF you upload while logged in will appear in your control panel. You can still manage older links using their individual reading codes.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">Take Control of Every PDF You Share</h2>
+                <p class="mb-4 opacity-90" style="max-width: 520px; margin: 0 auto;">Create a free account and get a dashboard that lets you manage, update, and track every document you've shared — no technical setup required.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-user-plus me-2"></i>Create Free Account
+                    </a>
+                    <a href="/features/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>All Features
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+                        <li class="mb-2"><a href="/features/">Features</a></li>
+                        <li class="mb-2"><a href="/features/en/account/user-profile-management">My Dashboard</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">Blog</a></li>
+                        <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+                        <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF Guide</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Popular</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
+                        <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+                        <li class="mb-2"><a href="/features/en/watermark/dynamic-qr-watermark-pdf">Dynamic Watermarks</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><!--email_off--><a href="mailto:joe@pdfhost.online">Contact Us</a><!--/email_off--></li>
+                        <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
