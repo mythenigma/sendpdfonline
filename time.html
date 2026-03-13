@@ -1,0 +1,694 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>World Time Converter | Local & Timezone Tool</title>
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root {
+            --bg: #0b1220;
+            --surface: rgba(30, 41, 59, 0.72);
+            --surface-strong: rgba(30, 41, 59, 0.92);
+            --border: rgba(148, 163, 184, 0.18);
+            --border-strong: rgba(148, 163, 184, 0.28);
+            --text: #f1f5f9;
+            --muted: rgba(148, 163, 184, 0.92);
+            --accent: #38bdf8;
+            --accent-dim: #0ea5e9;
+            --success: #34d399;
+            --shadow: 0 18px 40px rgba(0, 0, 0, 0.42);
+            --shadow-soft: 0 10px 22px rgba(0, 0, 0, 0.28);
+            --font-mono: "SF Mono", "Fira Code", "Consolas", monospace;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background:
+                radial-gradient(900px 420px at 15% -10%, rgba(56, 189, 248, 0.22), transparent 60%),
+                radial-gradient(820px 460px at 105% 0%, rgba(14, 165, 233, 0.16), transparent 60%),
+                radial-gradient(760px 520px at 40% 110%, rgba(52, 211, 153, 0.10), transparent 60%),
+                linear-gradient(180deg, #070b14 0%, var(--bg) 52%, #070b14 100%);
+            color: var(--text);
+            min-height: 100vh;
+            padding: 1.5rem 1rem 2.25rem;
+        }
+        .container { max-width: 1180px; margin: 0 auto; }
+        .topbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 1.25rem;
+        }
+        .brand {
+            display: flex;
+            align-items: baseline;
+            gap: 0.75rem;
+            min-width: 0;
+        }
+        .brand h1 {
+            font-size: 1.05rem;
+            font-weight: 650;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: rgba(241, 245, 249, 0.86);
+        }
+        .brand small {
+            font-size: 0.78rem;
+            color: rgba(148, 163, 184, 0.85);
+            white-space: nowrap;
+            font-family: var(--font-mono);
+        }
+        .pill {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.35rem 0.65rem;
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            background: rgba(15, 23, 42, 0.55);
+            backdrop-filter: blur(10px);
+            color: rgba(241, 245, 249, 0.78);
+            font-size: 0.78rem;
+            font-family: var(--font-mono);
+        }
+        .hero {
+            background: linear-gradient(135deg, rgba(30,41,59,0.72) 0%, rgba(15,23,42,0.45) 100%);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 1.5rem;
+            backdrop-filter: blur(12px);
+            box-shadow: var(--shadow);
+        }
+        .hero-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        .hero-meta { min-width: 240px; }
+        .hero-tools {
+            flex: 1;
+            min-width: 260px;
+            background: rgba(15, 23, 42, 0.35);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+        }
+        .hero-tools .section-label { margin-bottom: 0.5rem; }
+        .tools { margin-bottom: 0; }
+        .local-time {
+            font-family: var(--font-mono);
+            font-size: 2.65rem;
+            font-weight: 350;
+            letter-spacing: 0.02em;
+            color: var(--text);
+        }
+        .local-date {
+            margin-top: 0.6rem;
+            font-size: 0.9rem;
+            color: rgba(241, 245, 249, 0.85);
+            font-family: var(--font-mono);
+        }
+        .timezone-badge {
+            display: inline-block;
+            margin-top: 0.5rem;
+            padding: 0.25rem 0.75rem;
+            background: rgba(56, 189, 248, 0.12);
+            color: rgba(186, 230, 253, 0.98);
+            font-size: 0.8rem;
+            font-weight: 500;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            border: 1px solid rgba(56, 189, 248, 0.22);
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(160px, 1fr));
+            gap: 0.75rem;
+            margin-bottom: 1.5rem;
+        }
+        .continents-wrap { display: grid; grid-template-columns: 1fr; gap: 1rem; }
+        .continents-wrap .continent { margin-bottom: 0; }
+        .continent {
+            background: rgba(30, 41, 59, 0.40);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1rem;
+            margin-bottom: 1rem;
+            backdrop-filter: blur(10px);
+            box-shadow: var(--shadow-soft);
+        }
+        .continent:last-of-type { margin-bottom: 1.5rem; }
+        .continent-head {
+            display: flex;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 1rem;
+            margin-bottom: 0.75rem;
+        }
+        .continent-title {
+            font-size: 0.8rem;
+            color: var(--muted);
+            text-transform: uppercase;
+            letter-spacing: 0.12em;
+        }
+        .continent-sub {
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.8);
+            font-family: var(--font-mono);
+        }
+        .clock-card {
+            background: linear-gradient(180deg, rgba(30, 41, 59, 0.75) 0%, rgba(15, 23, 42, 0.55) 100%);
+            border: 1px solid var(--border);
+            border-radius: 8px;
+            padding: 1rem;
+            transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
+        }
+        .clock-card:hover {
+            transform: translateY(-1px);
+            border-color: rgba(56, 189, 248, 0.42);
+            box-shadow: 0 14px 28px rgba(0,0,0,0.35);
+        }
+        .clock-card .label {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+            font-size: 0.78rem;
+            color: var(--muted);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.25rem;
+        }
+        .clock-card .label .city {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.45rem;
+            min-width: 0;
+        }
+        .flag-img {
+            width: 16px;
+            height: 16px;
+            border-radius: 3px;
+            display: inline-block;
+            vertical-align: -2px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.25);
+        }
+        .code {
+            font-family: var(--font-mono);
+            font-size: 0.72rem;
+            color: rgba(148, 163, 184, 0.85);
+            white-space: nowrap;
+        }
+        .clock-card .time {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            font-weight: 500;
+        }
+        .clock-card .tz { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }
+        .clock-card .offset {
+            font-size: 0.7rem;
+            color: rgba(148, 163, 184, 0.85);
+            margin-top: 0.1rem;
+            font-family: var(--font-mono);
+        }
+        .section-label {
+            font-size: 0.75rem;
+            color: rgba(148, 163, 184, 0.9);
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            margin-bottom: 0.75rem;
+        }
+        .tools {
+            background: var(--surface);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 1.5rem;
+            margin-bottom: 1rem;
+        }
+        .tool-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 1rem;
+            flex-wrap: wrap;
+        }
+        .tool-row:last-child { margin-bottom: 0; }
+        .tool-row label { font-size: 0.85rem; color: var(--muted); min-width: 80px; }
+        input[type="number"], input[type="time"], input[type="date"], input[type="datetime-local"] {
+            background: rgba(2, 6, 23, 0.45);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.5rem 0.75rem;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.9rem;
+            width: 100px;
+        }
+        input[type="datetime-local"] { width: 180px; min-width: 160px; }
+        input:focus {
+            outline: none;
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 0 0 4px rgba(56, 189, 248, 0.14);
+        }
+        .result {
+            font-family: var(--font-mono);
+            font-size: 1.1rem;
+            color: var(--accent);
+            font-weight: 500;
+        }
+        .result.muted { color: var(--muted); }
+        .result-prefix { color: var(--muted); margin-right: 0.25rem; }
+        .set-base {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid var(--border);
+        }
+        .set-base label { font-size: 0.85rem; color: var(--muted); }
+        .btn-reset {
+            background: transparent;
+            border: 1px solid var(--border);
+            color: rgba(226, 232, 240, 0.75);
+            padding: 0.35rem 0.75rem;
+            border-radius: 6px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: transform 120ms ease, border-color 120ms ease, background 120ms ease, color 120ms ease;
+        }
+        .btn-reset:hover {
+            border-color: rgba(56, 189, 248, 0.55);
+            color: rgba(186, 230, 253, 0.98);
+            background: rgba(56, 189, 248, 0.10);
+            transform: translateY(-1px);
+        }
+        .tools-title { margin-bottom: 0.75rem; }
+        .tools-plain { background: transparent; border: 0; padding: 0; }
+        .tip { font-size: 0.75rem; color: rgba(148, 163, 184, 0.85); margin-top: 0.5rem; }
+        .future-label { margin-top: 1.25rem; margin-bottom: 0.5rem; }
+        .future-muted { font-size: 0.8rem; color: rgba(148,163,184,0.8); }
+        .future-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+            gap: 0.5rem;
+        }
+        .future-item {
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            color: rgba(226,232,240,0.9);
+        }
+        .future-item span.label {
+            color: rgba(148,163,184,0.9);
+            margin-right: 0.35rem;
+        }
+        .toast {
+            position: fixed;
+            right: 1rem;
+            bottom: 1rem;
+            background: rgba(15,23,42,0.92);
+            border-radius: 999px;
+            padding: 0.45rem 0.85rem;
+            font-size: 0.8rem;
+            color: rgba(226,232,240,0.95);
+            border: 1px solid rgba(56,189,248,0.4);
+            box-shadow: var(--shadow-soft);
+            opacity: 0;
+            transform: translateY(6px);
+            pointer-events: none;
+            transition: opacity 140ms ease, transform 140ms ease;
+            z-index: 40;
+        }
+        .toast.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+        @media (max-width: 480px) {
+            .local-time { font-size: 2rem; }
+            .grid { grid-template-columns: 1fr 1fr; }
+            .continent { padding: 0.85rem; }
+            .hero { padding: 1.25rem; }
+        }
+        @media (min-width: 900px) {
+            .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+        }
+        @media (min-width: 1200px) {
+            .continents-wrap { grid-template-columns: 1fr 1fr; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="topbar">
+            <div class="brand">
+                <h1>World Time</h1>
+                <small id="metaDate">—</small>
+            </div>
+            <div class="pill" id="metaTz">TZ: —</div>
+        </div>
+
+        <div class="hero">
+            <div class="hero-top">
+                <div class="hero-meta">
+                    <div class="local-time" id="localTime">--:--:--</div>
+                    <div class="local-date" id="localDate">—</div>
+                    <div class="timezone-badge" id="tzBadge">Detecting...</div>
+            </div>
+                <div class="hero-tools">
+                    <p class="section-label tools-title">Time Calculator</p>
+                    <div class="tools tools-plain">
+                        <div class="set-base">
+                            <label>Base time:</label>
+                            <input type="datetime-local" id="baseInput" title="Leave empty for live time">
+                            <button class="btn-reset" id="btnReset">Use live</button>
+                        </div>
+                        <div class="tool-row">
+                            <label>+ Hours</label>
+                            <input type="number" id="hoursInput" min="0" max="999" value="0" placeholder="0">
+                            <span class="result" id="hoursResult"><span class="result-prefix">→</span> —</span>
+                        </div>
+                        <div class="tool-row">
+                            <label>+ Days</label>
+                            <input type="number" id="daysInput" min="0" max="999" value="0" placeholder="0">
+                            <span class="result" id="daysResult"><span class="result-prefix">→</span> —</span>
+                        </div>
+                    </div>
+                    <p class="tip">Tip: set a base time; otherwise live time is used.</p>
+                </div>
+            </div>
+        </div>
+
+        <p class="section-label">World Clocks (by region)</p>
+
+        <div class="continents-wrap">
+            <section class="continent" aria-label="Americas clocks">
+                <div class="continent-head">
+                    <div class="continent-title">Americas</div>
+                    <div class="continent-sub"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> East / West</div>
+                </div>
+                <div class="grid" style="margin-bottom: 0;">
+                <div class="clock-card" data-zone="ny">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> New York</span><span class="code">ET</span></div>
+                    <div class="time" id="ny"></div>
+                    <div class="tz">America/New_York</div>
+                    <div class="offset" data-offset-for="ny"></div>
+                </div>
+                <div class="clock-card" data-zone="la">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> Los Angeles</span><span class="code">PT</span></div>
+                    <div class="time" id="la"></div>
+                    <div class="tz">America/Los_Angeles</div>
+                    <div class="offset" data-offset-for="la"></div>
+                </div>
+                </div>
+            </section>
+
+            <section class="continent" aria-label="Middle East clocks">
+                <div class="continent-head">
+                    <div class="continent-title">Middle East</div>
+                    <div class="continent-sub">
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="UAE flag"> Dubai ·
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f7.svg" alt="Iran flag"> Tehran
+                    </div>
+                </div>
+                <div class="grid" style="margin-bottom: 0;">
+                <div class="clock-card" data-zone="dubai">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="UAE flag"> Dubai</span><span class="code">GST</span></div>
+                    <div class="time" id="dubai"></div>
+                    <div class="tz">Asia/Dubai</div>
+                    <div class="offset" data-offset-for="dubai"></div>
+                </div>
+                <div class="clock-card" data-zone="tehran">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f7.svg" alt="Iran flag"> Tehran</span><span class="code">IRST</span></div>
+                    <div class="time" id="tehran"></div>
+                    <div class="tz">Asia/Tehran</div>
+                    <div class="offset" data-offset-for="tehran"></div>
+                </div>
+                </div>
+            </section>
+
+            <section class="continent" aria-label="Europe clocks">
+                <div class="continent-head">
+                    <div class="continent-title">Europe</div>
+                    <div class="continent-sub">
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt="UK flag"> ·
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ea.svg" alt="Germany flag"> ·
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="France flag">
+                    </div>
+                </div>
+                <div class="grid" style="margin-bottom: 0;">
+                <div class="clock-card" data-zone="london">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt="UK flag"> London</span><span class="code">UK</span></div>
+                    <div class="time" id="london"></div>
+                    <div class="tz">Europe/London</div>
+                    <div class="offset" data-offset-for="london"></div>
+                </div>
+                <div class="clock-card" data-zone="berlin">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ea.svg" alt="Germany flag"> Berlin</span><span class="code">CET</span></div>
+                    <div class="time" id="berlin"></div>
+                    <div class="tz">Europe/Berlin</div>
+                    <div class="offset" data-offset-for="berlin"></div>
+                </div>
+                <div class="clock-card" data-zone="paris">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="France flag"> Paris</span><span class="code">CET</span></div>
+                    <div class="time" id="paris"></div>
+                    <div class="tz">Europe/Paris</div>
+                    <div class="offset" data-offset-for="paris"></div>
+                </div>
+                </div>
+            </section>
+
+            <section class="continent" aria-label="Asia Pacific clocks">
+                <div class="continent-head">
+                    <div class="continent-title">Asia-Pacific</div>
+                    <div class="continent-sub">
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f3.svg" alt="India flag"> ·
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg" alt="Japan flag"> ·
+                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1fa.svg" alt="Australia flag">
+                    </div>
+                </div>
+                <div class="grid" style="margin-bottom: 0;">
+                <div class="clock-card" data-zone="mumbai">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f3.svg" alt="India flag"> Mumbai</span><span class="code">IST</span></div>
+                    <div class="time" id="mumbai"></div>
+                    <div class="tz">Asia/Kolkata</div>
+                    <div class="offset" data-offset-for="mumbai"></div>
+                </div>
+                <div class="clock-card" data-zone="tokyo">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg" alt="Japan flag"> Tokyo</span><span class="code">JST</span></div>
+                    <div class="time" id="tokyo"></div>
+                    <div class="tz">Asia/Tokyo</div>
+                    <div class="offset" data-offset-for="tokyo"></div>
+                </div>
+                <div class="clock-card" data-zone="sydney">
+                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1fa.svg" alt="Australia flag"> Sydney</span><span class="code">AET</span></div>
+                    <div class="time" id="sydney"></div>
+                    <div class="tz">Australia/Sydney</div>
+                    <div class="offset" data-offset-for="sydney"></div>
+                </div>
+                </div>
+            </section>
+        </div>
+
+        <p class="section-label future-label">Future time (calculator result)</p>
+        <div id="futureContainer">
+            <p class="future-muted">Set + Hours or + Days to see this moment in every region above.</p>
+        </div>
+    </div>
+
+    <div class="toast" id="toast">Copied</div>
+
+    <script>
+        const zones = {
+            ny: 'America/New_York',
+            la: 'America/Los_Angeles',
+            dubai: 'Asia/Dubai',
+            tehran: 'Asia/Tehran',
+            london: 'Europe/London',
+            berlin: 'Europe/Berlin',
+            paris: 'Europe/Paris',
+            mumbai: 'Asia/Kolkata',
+            tokyo: 'Asia/Tokyo',
+            sydney: 'Australia/Sydney'
+        };
+        const zoneLabels = {
+            ny: 'New York',
+            la: 'Los Angeles',
+            dubai: 'Dubai',
+            tehran: 'Tehran',
+            london: 'London',
+            berlin: 'Berlin',
+            paris: 'Paris',
+            mumbai: 'Mumbai',
+            tokyo: 'Tokyo',
+            sydney: 'Sydney'
+        };
+        const fmt = (d, tz) => new Intl.DateTimeFormat('en-GB', {
+            timeZone: tz || undefined,
+            hour: '2-digit', minute: '2-digit', second: '2-digit',
+            hour12: false
+        }).format(d);
+        const fmtDate = (d) => new Intl.DateTimeFormat('en-GB', {
+            weekday: 'long',
+            year: 'numeric',
+            month: 'short',
+            day: '2-digit'
+        }).format(d);
+
+        let baseDate = null; // null = use live time
+
+        function getNow() {
+            return baseDate ? new Date(baseDate.getTime()) : new Date();
+        }
+
+        function tick() {
+            const now = getNow();
+            document.getElementById('localTime').textContent = fmt(now);
+            document.getElementById('localDate').textContent = fmtDate(now);
+            const metaDate = document.getElementById('metaDate');
+            if (metaDate) metaDate.textContent = fmtDate(now);
+            Object.keys(zones).forEach(k => {
+                const el = document.getElementById(k);
+                if (el) el.textContent = fmt(now, zones[k]);
+            });
+            if (!baseDate) {
+                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                const offset = -now.getTimezoneOffset() / 60;
+                const sign = offset >= 0 ? '+' : '';
+                document.getElementById('tzBadge').textContent = `${tz} (UTC${sign}${offset})`;
+                const metaTz = document.getElementById('metaTz');
+                if (metaTz) metaTz.textContent = `TZ: ${tz} (UTC${sign}${offset})`;
+            } else {
+                document.getElementById('tzBadge').textContent = 'Manual base time';
+                const metaTz = document.getElementById('metaTz');
+                if (metaTz) metaTz.textContent = 'TZ: manual base';
+            }
+            updateCalculations();
+        }
+
+        function updateCalculations() {
+            const now = getNow();
+            const h = parseInt(document.getElementById('hoursInput').value, 10) || 0;
+            const d = parseInt(document.getElementById('daysInput').value, 10) || 0;
+            const afterHours = new Date(now.getTime() + h * 3600000);
+            const afterDays = new Date(now.getTime() + d * 86400000);
+            const hoursEl = document.getElementById('hoursResult');
+            const daysEl = document.getElementById('daysResult');
+            hoursEl.innerHTML = h ? '<span class="result-prefix">→</span> ' + fmt(afterHours) : '<span class="result-prefix">→</span> —';
+            daysEl.innerHTML = d ? '<span class="result-prefix">→</span> ' + fmtDate(afterDays) : '<span class="result-prefix">→</span> —';
+
+            // future mapping across zones
+            const futureContainer = document.getElementById('futureContainer');
+            const target = h ? afterHours : d ? afterDays : null;
+            if (!target) {
+                futureContainer.innerHTML = '<p class="future-muted">Set + Hours or + Days to see this moment in every region above.</p>';
+                return;
+            }
+            let html = '<div class="future-grid">';
+            Object.keys(zones).forEach(key => {
+                const label = zoneLabels[key] || key;
+                const t = fmt(target, zones[key]);
+                html += `<div class="future-item"><span class="label">${label}</span>${t}</div>`;
+            });
+            html += '</div>';
+            futureContainer.innerHTML = html;
+        }
+
+        function updateOffsets() {
+            const now = getNow();
+            const localOffset = -now.getTimezoneOffset() / 60;
+            Object.keys(zones).forEach(key => {
+                const tz = zones[key];
+                const dtLocal = now;
+                const dtTarget = new Date(now.toLocaleString('en-US', { timeZone: tz }));
+                const diffHours = (dtTarget - dtLocal) / 3600000;
+                const rounded = Math.round(diffHours * 2) / 2;
+                const sign = rounded > 0 ? '+' : rounded < 0 ? '' : '';
+                const text = rounded === 0 ? 'same as local' : `${sign}${rounded}h vs local`;
+                const el = document.querySelector(`[data-offset-for="${key}"]`);
+                if (el) el.textContent = text;
+            });
+        }
+
+        function showToast(message) {
+            const toast = document.getElementById('toast');
+            if (!toast) return;
+            toast.textContent = message || 'Copied';
+            toast.classList.add('show');
+            clearTimeout(showToast._t);
+            showToast._t = setTimeout(() => toast.classList.remove('show'), 1600);
+        }
+
+        document.getElementById('baseInput').addEventListener('change', e => {
+            const v = e.target.value;
+            baseDate = v ? new Date(v) : null;
+            try {
+                if (v) {
+                    localStorage.setItem('timeTool.base', v);
+                } else {
+                    localStorage.removeItem('timeTool.base');
+                }
+            } catch (e) {}
+            tick();
+        });
+        document.getElementById('btnReset').addEventListener('click', () => {
+            document.getElementById('baseInput').value = '';
+            baseDate = null;
+            try { localStorage.removeItem('timeTool.base'); } catch (e) {}
+            tick();
+        });
+        document.getElementById('hoursInput').addEventListener('input', e => {
+            try { localStorage.setItem('timeTool.hours', e.target.value || '0'); } catch (e) {}
+            updateCalculations();
+        });
+        document.getElementById('daysInput').addEventListener('input', e => {
+            try { localStorage.setItem('timeTool.days', e.target.value || '0'); } catch (e) {}
+            updateCalculations();
+        });
+
+        // click-to-copy on world clocks
+        document.querySelectorAll('.clock-card[data-zone]').forEach(card => {
+            card.addEventListener('click', () => {
+                const key = card.getAttribute('data-zone');
+                const tz = zones[key];
+                const label = zoneLabels[key] || key;
+                const now = getNow();
+                const dt = new Date(now.toLocaleString('en-US', { timeZone: tz }));
+                const iso = dt.toISOString().replace('T', ' ').substring(0, 19);
+                const text = `${label} — ${iso} (${tz})`;
+                if (navigator.clipboard && navigator.clipboard.writeText) {
+                    navigator.clipboard.writeText(text).then(() => {
+                        showToast('Copied: ' + label);
+                    }).catch(() => showToast('Copied'));
+                } else {
+                    showToast(text);
+                }
+            });
+        });
+
+        // restore saved state
+        try {
+            const savedBase = localStorage.getItem('timeTool.base');
+            const savedHours = localStorage.getItem('timeTool.hours');
+            const savedDays = localStorage.getItem('timeTool.days');
+            if (savedBase) {
+                const baseInput = document.getElementById('baseInput');
+                baseInput.value = savedBase;
+                baseDate = new Date(savedBase);
+            }
+            if (savedHours !== null) document.getElementById('hoursInput').value = savedHours;
+            if (savedDays !== null) document.getElementById('daysInput').value = savedDays;
+        } catch (e) {}
+
+        tick();
+        updateOffsets();
+        setInterval(() => {
+            tick();
+            updateOffsets();
+        }, 1000);
+    </script>
+</body>
+</html>
