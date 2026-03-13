@@ -89,7 +89,12 @@
             gap: 1rem;
             flex-wrap: wrap;
         }
-        .hero-meta { min-width: 240px; }
+        .hero-meta {
+            min-width: 260px;
+            display: flex;
+            flex-direction: column;
+            gap: 0.4rem;
+        }
         .hero-tools {
             flex: 1;
             min-width: 260px;
@@ -108,10 +113,42 @@
             color: var(--text);
         }
         .local-date {
-            margin-top: 0.6rem;
+            margin-top: 0.2rem;
             font-size: 0.9rem;
             color: rgba(241, 245, 249, 0.85);
             font-family: var(--font-mono);
+        }
+        .local-row {
+            display: flex;
+            align-items: center;
+            gap: 0.6rem;
+            flex-wrap: wrap;
+        }
+        .local-flag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.35rem;
+        }
+        .local-flag img {
+            width: 18px;
+            height: 18px;
+            border-radius: 4px;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.35);
+        }
+        .local-flag select {
+            background: rgba(15,23,42,0.7);
+            border-radius: 999px;
+            border: 1px solid var(--border);
+            color: rgba(226,232,240,0.9);
+            font-size: 0.75rem;
+            padding: 0.15rem 0.55rem;
+            font-family: var(--font-mono);
+            cursor: pointer;
+        }
+        .local-flag select:focus {
+            outline: none;
+            border-color: rgba(56,189,248,0.6);
+            box-shadow: 0 0 0 3px rgba(56,189,248,0.25);
         }
         .timezone-badge {
             display: inline-block;
@@ -356,7 +393,37 @@
                 <div class="hero-meta">
                     <div class="local-time" id="localTime">--:--:--</div>
                     <div class="local-date" id="localDate">—</div>
-                    <div class="timezone-badge" id="tzBadge">Detecting...</div>
+                    <div class="local-row">
+                        <div class="local-flag">
+                            <img id="localFlagImg" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f310.svg" alt="Local flag">
+                            <select id="localFlagSelect">
+                                <option value="auto">Auto</option>
+                                <option value="CN">China</option>
+                                <option value="US">USA</option>
+                                <option value="CA">Canada</option>
+                                <option value="GB">UK</option>
+                                <option value="DE">Germany</option>
+                                <option value="FR">France</option>
+                                <option value="ES">Spain</option>
+                                <option value="IT">Italy</option>
+                                <option value="RU">Russia</option>
+                                <option value="AE">UAE</option>
+                                <option value="SA">Saudi Arabia</option>
+                                <option value="IR">Iran</option>
+                                <option value="IN">India</option>
+                                <option value="JP">Japan</option>
+                                <option value="KR">Korea</option>
+                                <option value="SG">Singapore</option>
+                                <option value="HK">Hong Kong</option>
+                                <option value="AU">Australia</option>
+                                <option value="NZ">New Zealand</option>
+                                <option value="ZA">South Africa</option>
+                                <option value="BR">Brazil</option>
+                                <option value="MX">Mexico</option>
+                            </select>
+                        </div>
+                        <div class="timezone-badge" id="tzBadge">Detecting...</div>
+                    </div>
             </div>
                 <div class="hero-tools">
                     <p class="section-label tools-title">Time Calculator</p>
@@ -377,7 +444,11 @@
                             <span class="result" id="daysResult"><span class="result-prefix">→</span> —</span>
                         </div>
                     </div>
-                    <p class="tip">Tip: set a base time; otherwise live time is used.</p>
+                    <p class="tip">
+                        Tip: <strong>Base time</strong> is your starting point. Leave it empty to use the current time,
+                        or set a specific date &amp; time and all “+ Hours / + Days” results (and the future times below)
+                        will be calculated from that moment instead.
+                    </p>
                 </div>
             </div>
         </div>
@@ -390,7 +461,7 @@
                     <div class="continent-title">Americas</div>
                     <div class="continent-sub"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> East / West</div>
                 </div>
-                <div class="grid" style="margin-bottom: 0;">
+                <div class="grid" id="grid-americas" style="margin-bottom: 0;">
                 <div class="clock-card" data-zone="ny">
                     <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> New York</span><span class="code">ET</span></div>
                     <div class="time" id="ny"></div>
@@ -414,7 +485,7 @@
                         <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f7.svg" alt="Iran flag"> Tehran
                     </div>
                 </div>
-                <div class="grid" style="margin-bottom: 0;">
+                <div class="grid" id="grid-middleeast" style="margin-bottom: 0;">
                 <div class="clock-card" data-zone="dubai">
                     <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="UAE flag"> Dubai</span><span class="code">GST</span></div>
                     <div class="time" id="dubai"></div>
@@ -439,7 +510,7 @@
                         <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="France flag">
                     </div>
                 </div>
-                <div class="grid" style="margin-bottom: 0;">
+                <div class="grid" id="grid-europe" style="margin-bottom: 0;">
                 <div class="clock-card" data-zone="london">
                     <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt="UK flag"> London</span><span class="code">UK</span></div>
                     <div class="time" id="london"></div>
@@ -470,7 +541,7 @@
                         <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1fa.svg" alt="Australia flag">
                     </div>
                 </div>
-                <div class="grid" style="margin-bottom: 0;">
+                <div class="grid" id="grid-asia" style="margin-bottom: 0;">
                 <div class="clock-card" data-zone="mumbai">
                     <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f3.svg" alt="India flag"> Mumbai</span><span class="code">IST</span></div>
                     <div class="time" id="mumbai"></div>
@@ -492,6 +563,20 @@
                 </div>
             </section>
         </div>
+
+        <p class="section-label">My Cities</p>
+        <section class="continent" aria-label="My custom cities" id="myCitiesSection">
+            <div class="continent-head">
+                <div class="continent-title">My Cities</div>
+                <div class="continent-sub">Add cities you care about (they appear under regions above)</div>
+            </div>
+            <div class="tool-row" style="margin-bottom: 0.75rem;">
+                <label style="min-width:auto;font-size:0.8rem;">Add city</label>
+                <select id="myCitySelect"></select>
+                <button class="btn-reset" id="addMyCityBtn" type="button">Add</button>
+            </div>
+            <div id="myCitiesChips" style="margin-top:0.5rem;font-size:0.8rem;color:rgba(148,163,184,0.9);"></div>
+        </section>
 
         <p class="section-label future-label">Future time (calculator result)</p>
         <div id="futureContainer">
@@ -526,6 +611,76 @@
             tokyo: 'Tokyo',
             sydney: 'Sydney'
         };
+        const countryFlags = {
+            CN: { label: 'China', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg' },
+            US: { label: 'USA', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg' },
+            CA: { label: 'Canada', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1e6.svg' },
+            GB: { label: 'UK', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg' },
+            DE: { label: 'Germany', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ea.svg' },
+            FR: { label: 'France', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg' },
+            ES: { label: 'Spain', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ea-1f1f8.svg' },
+            IT: { label: 'Italy', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f9.svg' },
+            RU: { label: 'Russia', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f7-1f1fa.svg' },
+            AE: { label: 'UAE', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg' },
+            SA: { label: 'Saudi Arabia', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f8-1f1e6.svg' },
+            IR: { label: 'Iran', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f7.svg' },
+            IN: { label: 'India', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f3.svg' },
+            JP: { label: 'Japan', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg' },
+            KR: { label: 'Korea', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f0-1f1f7.svg' },
+            HK: { label: 'Hong Kong', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ed-1f1f0.svg' },
+            SG: { label: 'Singapore', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f8-1f1ec.svg' },
+            AU: { label: 'Australia', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1fa.svg' },
+            NZ: { label: 'New Zealand', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f3-1f1ff.svg' },
+            ZA: { label: 'South Africa', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ff-1f1e6.svg' },
+            BR: { label: 'Brazil', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e7-1f1f7.svg' },
+            MX: { label: 'Mexico', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f2-1f1fd.svg' },
+            CH: { label: 'Switzerland', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1ed.svg' }
+        };
+
+        const cityCatalog = {
+            shanghai:  { label: 'Shanghai',      tz: 'Asia/Shanghai',       country: 'CN', code: 'CN',  region: 'asia' },
+            beijing:   { label: 'Beijing',       tz: 'Asia/Shanghai',       country: 'CN', code: 'CN',  region: 'asia' },
+            hongkong:  { label: 'Hong Kong',     tz: 'Asia/Hong_Kong',      country: 'HK', code: 'HK',  region: 'asia' },
+            singapore: { label: 'Singapore',     tz: 'Asia/Singapore',      country: 'SG', code: 'SG',  region: 'asia' },
+            tokyo:     { label: 'Tokyo',         tz: 'Asia/Tokyo',          country: 'JP', code: 'JST', region: 'asia' },
+            seoul:     { label: 'Seoul',         tz: 'Asia/Seoul',          country: 'KR', code: 'KST', region: 'asia' },
+            bangkok:   { label: 'Bangkok',       tz: 'Asia/Bangkok',        country: 'TH', code: 'TH',  region: 'asia' },
+            riyadh:    { label: 'Riyadh',        tz: 'Asia/Riyadh',         country: 'SA', code: 'SA',  region: 'middleeast' },
+            dubai:     { label: 'Dubai',         tz: 'Asia/Dubai',          country: 'AE', code: 'GST', region: 'middleeast' },
+            london:    { label: 'London',        tz: 'Europe/London',       country: 'GB', code: 'UK',  region: 'europe' },
+            berlin:    { label: 'Berlin',        tz: 'Europe/Berlin',       country: 'DE', code: 'CET', region: 'europe' },
+            paris:     { label: 'Paris',         tz: 'Europe/Paris',        country: 'FR', code: 'CET', region: 'europe' },
+            madrid:    { label: 'Madrid',        tz: 'Europe/Madrid',       country: 'ES', code: 'CET', region: 'europe' },
+            milan:     { label: 'Milan',         tz: 'Europe/Rome',         country: 'IT', code: 'CET', region: 'europe' },
+            zurich:    { label: 'Zurich',        tz: 'Europe/Zurich',       country: 'CH', code: 'CET', region: 'europe' },
+            newyork:   { label: 'New York',      tz: 'America/New_York',    country: 'US', code: 'ET',  region: 'americas' },
+            chicago:   { label: 'Chicago',       tz: 'America/Chicago',     country: 'US', code: 'CT',  region: 'americas' },
+            sf:        { label: 'San Francisco', tz: 'America/Los_Angeles', country: 'US', code: 'PT',  region: 'americas' },
+            toronto:   { label: 'Toronto',       tz: 'America/Toronto',     country: 'CA', code: 'ET',  region: 'americas' },
+            vancouver: { label: 'Vancouver',     tz: 'America/Vancouver',   country: 'CA', code: 'PT',  region: 'americas' },
+            saoPaulo:  { label: 'S\u00e3o Paulo', tz: 'America/Sao_Paulo',  country: 'BR', code: 'BRT', region: 'americas' },
+            mexico:    { label: 'Mexico City',   tz: 'America/Mexico_City', country: 'MX', code: 'MX',  region: 'americas' },
+            johannes:  { label: 'Johannesburg',  tz: 'Africa/Johannesburg', country: 'ZA', code: 'ZA',  region: 'africa' },
+            sydney:    { label: 'Sydney',        tz: 'Australia/Sydney',    country: 'AU', code: 'AET', region: 'asia' },
+            auckland:  { label: 'Auckland',      tz: 'Pacific/Auckland',    country: 'NZ', code: 'NZ',  region: 'asia' }
+        };
+
+        let myCities = [];
+
+        function allZoneEntries() {
+            const list = [];
+            Object.keys(zones).forEach(k => {
+                list.push({ key: k, tz: zones[k], label: zoneLabels[k] || k });
+            });
+            myCities.forEach(id => {
+                const cfg = cityCatalog[id];
+                if (!cfg) return;
+                const dynKey = 'my_' + id;
+                list.push({ key: dynKey, tz: cfg.tz, label: cfg.label });
+            });
+            return list;
+        }
+
         const fmt = (d, tz) => new Intl.DateTimeFormat('en-GB', {
             timeZone: tz || undefined,
             hour: '2-digit', minute: '2-digit', second: '2-digit',
@@ -544,15 +699,46 @@
             return baseDate ? new Date(baseDate.getTime()) : new Date();
         }
 
+        function guessCountryFromTz(tz) {
+            if (!tz) return 'CN';
+            if (tz.startsWith('Asia/Shanghai')) return 'CN';
+            if (tz.startsWith('America/')) return 'US';
+            if (tz.startsWith('Europe/London')) return 'GB';
+            if (tz.startsWith('Europe/Berlin')) return 'DE';
+            if (tz.startsWith('Europe/Paris')) return 'FR';
+            if (tz.startsWith('Asia/Dubai')) return 'AE';
+            if (tz.startsWith('Asia/Tehran')) return 'IR';
+            if (tz.startsWith('Asia/Kolkata')) return 'IN';
+            if (tz.startsWith('Asia/Tokyo')) return 'JP';
+            if (tz.startsWith('Australia/')) return 'AU';
+            return 'CN';
+        }
+
+        function updateLocalFlag(tzString) {
+            const img = document.getElementById('localFlagImg');
+            const select = document.getElementById('localFlagSelect');
+            if (!img || !select) return;
+            let mode = select.value;
+            let code;
+            if (mode === 'auto') {
+                code = guessCountryFromTz(tzString);
+            } else {
+                code = mode;
+            }
+            const cfg = countryFlags[code] || countryFlags.CN;
+            img.src = cfg.url;
+            img.alt = cfg.label + ' flag';
+        }
+
         function tick() {
             const now = getNow();
             document.getElementById('localTime').textContent = fmt(now);
             document.getElementById('localDate').textContent = fmtDate(now);
             const metaDate = document.getElementById('metaDate');
             if (metaDate) metaDate.textContent = fmtDate(now);
-            Object.keys(zones).forEach(k => {
-                const el = document.getElementById(k);
-                if (el) el.textContent = fmt(now, zones[k]);
+            allZoneEntries().forEach(entry => {
+                const el = document.getElementById(entry.key);
+                if (el) el.textContent = fmt(now, entry.tz);
             });
             if (!baseDate) {
                 const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
@@ -561,6 +747,7 @@
                 document.getElementById('tzBadge').textContent = `${tz} (UTC${sign}${offset})`;
                 const metaTz = document.getElementById('metaTz');
                 if (metaTz) metaTz.textContent = `TZ: ${tz} (UTC${sign}${offset})`;
+                updateLocalFlag(tz);
             } else {
                 document.getElementById('tzBadge').textContent = 'Manual base time';
                 const metaTz = document.getElementById('metaTz');
@@ -588,10 +775,9 @@
                 return;
             }
             let html = '<div class="future-grid">';
-            Object.keys(zones).forEach(key => {
-                const label = zoneLabels[key] || key;
-                const t = fmt(target, zones[key]);
-                html += `<div class="future-item"><span class="label">${label}</span>${t}</div>`;
+            allZoneEntries().forEach(entry => {
+                const t = fmt(target, entry.tz);
+                html += `<div class="future-item"><span class="label">${entry.label}</span>${t}</div>`;
             });
             html += '</div>';
             futureContainer.innerHTML = html;
@@ -599,16 +785,14 @@
 
         function updateOffsets() {
             const now = getNow();
-            const localOffset = -now.getTimezoneOffset() / 60;
-            Object.keys(zones).forEach(key => {
-                const tz = zones[key];
+            allZoneEntries().forEach(entry => {
                 const dtLocal = now;
-                const dtTarget = new Date(now.toLocaleString('en-US', { timeZone: tz }));
+                const dtTarget = new Date(now.toLocaleString('en-US', { timeZone: entry.tz }));
                 const diffHours = (dtTarget - dtLocal) / 3600000;
                 const rounded = Math.round(diffHours * 2) / 2;
                 const sign = rounded > 0 ? '+' : rounded < 0 ? '' : '';
                 const text = rounded === 0 ? 'same as local' : `${sign}${rounded}h vs local`;
-                const el = document.querySelector(`[data-offset-for="${key}"]`);
+                const el = document.querySelector(`[data-offset-for="${entry.key}"]`);
                 if (el) el.textContent = text;
             });
         }
@@ -649,31 +833,48 @@
             updateCalculations();
         });
 
-        // click-to-copy on world clocks
-        document.querySelectorAll('.clock-card[data-zone]').forEach(card => {
-            card.addEventListener('click', () => {
-                const key = card.getAttribute('data-zone');
-                const tz = zones[key];
-                const label = zoneLabels[key] || key;
-                const now = getNow();
-                const dt = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-                const iso = dt.toISOString().replace('T', ' ').substring(0, 19);
-                const text = `${label} — ${iso} (${tz})`;
-                if (navigator.clipboard && navigator.clipboard.writeText) {
-                    navigator.clipboard.writeText(text).then(() => {
-                        showToast('Copied: ' + label);
-                    }).catch(() => showToast('Copied'));
-                } else {
-                    showToast(text);
-                }
+        const localFlagSelect = document.getElementById('localFlagSelect');
+        if (localFlagSelect) {
+            localFlagSelect.addEventListener('change', e => {
+                const value = e.target.value;
+                try { localStorage.setItem('timeTool.localCountry', value); } catch (err) {}
+                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+                updateLocalFlag(tz);
             });
-        });
+        }
+
+        function bindCopyHandlers() {
+            document.querySelectorAll('.clock-card[data-zone]').forEach(card => {
+                if (card._hasCopyHandler) return;
+                card._hasCopyHandler = true;
+                card.addEventListener('click', () => {
+                    const key = card.getAttribute('data-zone');
+                    const all = allZoneEntries();
+                    const entry = all.find(e => e.key === key);
+                    const tz = entry ? entry.tz : zones[key];
+                    const label = entry ? entry.label : (zoneLabels[key] || key);
+                    const now = getNow();
+                    const dt = new Date(now.toLocaleString('en-US', { timeZone: tz }));
+                    const iso = dt.toISOString().replace('T', ' ').substring(0, 19);
+                    const text = `${label} — ${iso} (${tz})`;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(text).then(() => {
+                            showToast('Copied: ' + label);
+                        }).catch(() => showToast('Copied'));
+                    } else {
+                        showToast(text);
+                    }
+                });
+            });
+        }
 
         // restore saved state
         try {
             const savedBase = localStorage.getItem('timeTool.base');
             const savedHours = localStorage.getItem('timeTool.hours');
             const savedDays = localStorage.getItem('timeTool.days');
+            const savedCountry = localStorage.getItem('timeTool.localCountry');
+            const savedMy = localStorage.getItem('timeTool.myCities');
             if (savedBase) {
                 const baseInput = document.getElementById('baseInput');
                 baseInput.value = savedBase;
@@ -681,8 +882,68 @@
             }
             if (savedHours !== null) document.getElementById('hoursInput').value = savedHours;
             if (savedDays !== null) document.getElementById('daysInput').value = savedDays;
+            if (savedCountry && localFlagSelect) {
+                localFlagSelect.value = savedCountry;
+            }
+            if (savedMy) {
+                const parsed = JSON.parse(savedMy);
+                if (Array.isArray(parsed)) {
+                    myCities = parsed.filter(id => cityCatalog[id]);
+                }
+            }
         } catch (e) {}
 
+        // render My Cities section
+        const myCitySelect = document.getElementById('myCitySelect');
+        if (myCitySelect) {
+            Object.keys(cityCatalog).forEach(id => {
+                const opt = document.createElement('option');
+                opt.value = id;
+                opt.textContent = cityCatalog[id].label;
+                myCitySelect.appendChild(opt);
+            });
+        }
+        const addMyCityBtn = document.getElementById('addMyCityBtn');
+        function renderMyCities() {
+            const grid = document.getElementById('myCitiesGrid');
+            if (!grid) return;
+            grid.innerHTML = '';
+            myCities.forEach(id => {
+                const cfg = cityCatalog[id];
+                if (!cfg) return;
+                const key = 'my_' + id;
+                const flagCfg = countryFlags[cfg.country] || countryFlags.CN;
+                const card = document.createElement('div');
+                card.className = 'clock-card';
+                card.setAttribute('data-zone', key);
+                card.innerHTML = `
+                    <div class="label"><span class="city"><img class="flag-img" src="${flagCfg.url}" alt="${cfg.country} flag"> ${cfg.label}</span><span class="code">${cfg.code || ''}</span></div>
+                    <div class="time" id="${key}"></div>
+                    <div class="tz">${cfg.tz}</div>
+                    <div class="offset" data-offset-for="${key}"></div>
+                `;
+                grid.appendChild(card);
+            });
+            bindCopyHandlers();
+        }
+        if (addMyCityBtn && myCitySelect) {
+            addMyCityBtn.addEventListener('click', () => {
+                const id = myCitySelect.value;
+                if (!id || !cityCatalog[id]) return;
+                if (!myCities.includes(id)) {
+                    myCities.push(id);
+                    try { localStorage.setItem('timeTool.myCities', JSON.stringify(myCities)); } catch (e) {}
+                    renderMyCities();
+                    updateOffsets();
+                    tick();
+                }
+            });
+        }
+        if (myCities.length) {
+            renderMyCities();
+        }
+
+        bindCopyHandlers();
         tick();
         updateOffsets();
         setInterval(() => {
