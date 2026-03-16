@@ -66,7 +66,22 @@
             min-height: 100vh;
             padding: 1.5rem 1rem 2.25rem;
         }
-        .container { max-width: 1180px; margin: 0 auto; }
+        .container { max-width: 1180px; margin: 0 auto; overflow-x: hidden; }
+        #myCitySelect {
+            background: rgba(2, 6, 23, 0.45);
+            border: 1px solid var(--border);
+            color: var(--text);
+            padding: 0.35rem 0.55rem;
+            border-radius: 6px;
+            font-family: var(--font-mono);
+            font-size: 0.8rem;
+            max-width: 200px;
+        }
+        #myCitySelect:focus {
+            outline: none;
+            border-color: rgba(56, 189, 248, 0.55);
+            box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.14);
+        }
         .topbar {
             display: flex;
             align-items: center;
@@ -237,12 +252,97 @@
             border-radius: 8px;
             padding: 1rem;
             transition: transform 120ms ease, border-color 120ms ease, box-shadow 120ms ease;
-        }
-        .clock-card:hover {
+        }        .clock-card:hover {
             transform: translateY(-1px);
             border-color: rgba(56, 189, 248, 0.42);
             box-shadow: 0 14px 28px rgba(0,0,0,0.35);
         }
+        .clock-card.dragging {
+            opacity: 0.45;
+            transform: scale(0.96);
+            border-color: var(--accent);
+            box-shadow: 0 0 16px rgba(56,189,248,0.18);
+        }        .clock-card .drag-handle {
+            cursor: grab;
+            color: rgba(148,163,184,0.45);
+            font-size: 0.85rem;
+            margin-right: 0.3rem;
+            user-select: none;
+            transition: color 120ms ease;
+            touch-action: none;
+            -webkit-touch-callout: none;
+        }
+        .clock-card:hover .drag-handle { color: rgba(148,163,184,0.8); }
+        .clock-card.touch-dragging {
+            position: fixed;
+            z-index: 1000;
+            pointer-events: none;
+            opacity: 0.85;
+            transform: scale(0.92) rotate(1.5deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-color: var(--accent);
+            width: var(--drag-width, 180px);
+            transition: none;
+        }
+        .clock-card.touch-placeholder {
+            opacity: 0.25;
+            border-style: dashed;
+            border-color: var(--accent);
+        }
+        .clock-card .remove-btn {
+            background: none;
+            border: none;
+            color: rgba(248,113,113,0.6);
+            cursor: pointer;
+            font-size: 0.8rem;
+            padding: 0 0.2rem;
+            line-height: 1;
+            transition: color 120ms ease;
+        }
+        .clock-card .remove-btn:hover { color: rgba(248,113,113,1); }
+        .continent.drag-over {
+            border-color: rgba(56,189,248,0.5);
+            background: rgba(56,189,248,0.06);
+        }
+        .continent.dragging-continent {
+            opacity: 0.45;
+            transform: scale(0.98);
+        }        .continent .continent-drag {
+            cursor: grab;
+            color: rgba(148,163,184,0.4);
+            font-size: 0.9rem;
+            user-select: none;
+            transition: color 120ms ease;
+            touch-action: none;
+            -webkit-touch-callout: none;
+        }
+        .continent:hover .continent-drag { color: rgba(148,163,184,0.8); }
+        .continent.touch-dragging {
+            position: fixed;
+            z-index: 999;
+            pointer-events: none;
+            opacity: 0.8;
+            transform: scale(0.95) rotate(0.5deg);
+            box-shadow: 0 20px 50px rgba(0,0,0,0.5);
+            border-color: var(--accent);
+            width: var(--drag-width, 500px);
+            transition: none;
+        }
+        .continent.touch-placeholder {
+            opacity: 0.2;
+            border-style: dashed;
+            border-color: var(--accent);
+            min-height: 60px;
+        }
+        .drop-indicator {
+            height: 3px;
+            background: var(--accent);
+            border-radius: 2px;
+            margin: 0.25rem 0;
+            opacity: 0;
+            transition: opacity 100ms ease;
+        }
+        .drop-indicator.active { opacity: 1; }
         .clock-card .label {
             display: flex;
             align-items: center;
@@ -396,12 +496,67 @@
         .toast.show {
             opacity: 1;
             transform: translateY(0);
+        }        @media (max-width: 480px) {
+            body { padding: 1rem 0.5rem 1.5rem; }
+            .topbar {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .brand { flex-wrap: wrap; gap: 0.4rem; }
+            .brand h1 { font-size: 0.95rem; }
+            .brand small { font-size: 0.7rem; }
+            .pill { font-size: 0.7rem; padding: 0.25rem 0.5rem; }
+            .hero { padding: 1rem; }
+            .hero-top { flex-direction: column; gap: 1rem; }
+            .hero-meta { min-width: 0; width: 100%; }
+            .hero-tools { min-width: 0; width: 100%; padding: 0.75rem; }
+            .local-time { font-size: 1.85rem; }
+            .local-date { font-size: 0.78rem; }
+            .local-row { flex-direction: column; align-items: flex-start; gap: 0.4rem; }
+            .local-flag select { font-size: 0.7rem; max-width: 140px; }
+            .timezone-badge { font-size: 0.7rem; padding: 0.2rem 0.5rem; word-break: break-all; }
+            .set-base {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.5rem;
+            }
+            .set-base label { font-size: 0.8rem; }
+            input[type="datetime-local"] { width: 100%; min-width: 0; max-width: 100%; }
+            .tool-row {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.4rem;
+            }
+            .tool-row label { min-width: 0; font-size: 0.8rem; }
+            input[type="number"] { width: 80px; }
+            .result { font-size: 0.95rem; }
+            .grid { grid-template-columns: 1fr; gap: 0.5rem; }
+            .continent { padding: 0.75rem; }
+            .continent-head {
+                flex-direction: column;
+                align-items: flex-start;
+                gap: 0.3rem;
+            }
+            .continent-title { font-size: 0.75rem; }
+            .continent-sub { font-size: 0.68rem; }
+            .clock-card { padding: 0.75rem; }
+            .clock-card .label { font-size: 0.72rem; }
+            .clock-card .time { font-size: 1rem; }
+            .section-label { font-size: 0.7rem; }
+            .tip { font-size: 0.68rem; }
+            .future-grid { grid-template-columns: 1fr 1fr; }
+            .future-item { font-size: 0.72rem; }
+            #myCitiesSection .tool-row { flex-direction: row; flex-wrap: wrap; align-items: center; }
+            #myCitiesSection .tool-row select { flex: 1; min-width: 0; max-width: 160px; font-size: 0.75rem; }
         }
-        @media (max-width: 480px) {
-            .local-time { font-size: 2rem; }
+        @media (min-width: 481px) and (max-width: 767px) {
+            .hero-top { flex-direction: column; }
+            .hero-meta { min-width: 0; width: 100%; }
+            .hero-tools { min-width: 0; width: 100%; }
             .grid { grid-template-columns: 1fr 1fr; }
-            .continent { padding: 0.85rem; }
-            .hero { padding: 1.25rem; }
+            .set-base { flex-wrap: wrap; }
+            input[type="datetime-local"] { width: 100%; min-width: 0; }
         }
         @media (min-width: 900px) {
             .grid { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
@@ -484,129 +639,22 @@
                     </p>
                 </div>
             </div>
+        </div>        <p class="section-label">World Clocks (by region) <span style="font-size:0.65rem;color:rgba(148,163,184,0.6);font-weight:400;text-transform:none;letter-spacing:0;">— drag ⠿ to reorder</span></p>
+
+        <div class="continents-wrap" id="continentsWrap">
+            <!-- Rendered dynamically by renderAll() -->
         </div>
 
-        <p class="section-label">World Clocks (by region)</p>
-
-        <div class="continents-wrap">
-            <section class="continent" aria-label="Americas clocks">
-                <div class="continent-head">
-                    <div class="continent-title">Americas</div>
-                    <div class="continent-sub"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> East / West</div>
-                </div>
-                <div class="grid" id="grid-americas" style="margin-bottom: 0;">
-                <div class="clock-card" data-zone="ny">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> New York</span><span class="code">ET</span></div>
-                    <div class="time" id="ny"></div>
-                    <div class="tz">America/New_York</div>
-                    <div class="offset" data-offset-for="ny"></div>
-                </div>
-                <div class="clock-card" data-zone="la">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> Los Angeles</span><span class="code">PT</span></div>
-                    <div class="time" id="la"></div>
-                    <div class="tz">America/Los_Angeles</div>
-                    <div class="offset" data-offset-for="la"></div>
-                </div>
-                </div>
-            </section>
-
-            <section class="continent" aria-label="Middle East clocks">
-                <div class="continent-head">
-                    <div class="continent-title">Middle East</div>
-                    <div class="continent-sub">
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="UAE flag"> Dubai ·
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f7.svg" alt="Iran flag"> Tehran
-                    </div>
-                </div>
-                <div class="grid" id="grid-middleeast" style="margin-bottom: 0;">
-                <div class="clock-card" data-zone="dubai">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="UAE flag"> Dubai</span><span class="code">GST</span></div>
-                    <div class="time" id="dubai"></div>
-                    <div class="tz">Asia/Dubai</div>
-                    <div class="offset" data-offset-for="dubai"></div>
-                </div>
-                <div class="clock-card" data-zone="tehran">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f7.svg" alt="Iran flag"> Tehran</span><span class="code">IRST</span></div>
-                    <div class="time" id="tehran"></div>
-                    <div class="tz">Asia/Tehran</div>
-                    <div class="offset" data-offset-for="tehran"></div>
-                </div>
-                </div>
-            </section>
-
-            <section class="continent" aria-label="Europe clocks">
-                <div class="continent-head">
-                    <div class="continent-title">Europe</div>
-                    <div class="continent-sub">
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt="UK flag"> ·
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ea.svg" alt="Germany flag"> ·
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="France flag">
-                    </div>
-                </div>
-                <div class="grid" id="grid-europe" style="margin-bottom: 0;">
-                <div class="clock-card" data-zone="london">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt="UK flag"> London</span><span class="code">UK</span></div>
-                    <div class="time" id="london"></div>
-                    <div class="tz">Europe/London</div>
-                    <div class="offset" data-offset-for="london"></div>
-                </div>
-                <div class="clock-card" data-zone="berlin">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ea.svg" alt="Germany flag"> Berlin</span><span class="code">CET</span></div>
-                    <div class="time" id="berlin"></div>
-                    <div class="tz">Europe/Berlin</div>
-                    <div class="offset" data-offset-for="berlin"></div>
-                </div>
-                <div class="clock-card" data-zone="paris">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="France flag"> Paris</span><span class="code">CET</span></div>
-                    <div class="time" id="paris"></div>
-                    <div class="tz">Europe/Paris</div>
-                    <div class="offset" data-offset-for="paris"></div>
-                </div>
-                </div>
-            </section>
-
-            <section class="continent" aria-label="Asia Pacific clocks">
-                <div class="continent-head">
-                    <div class="continent-title">Asia-Pacific</div>
-                    <div class="continent-sub">
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f3.svg" alt="India flag"> ·
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg" alt="Japan flag"> ·
-                        <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1fa.svg" alt="Australia flag">
-                    </div>
-                </div>
-                <div class="grid" id="grid-asia" style="margin-bottom: 0;">
-                <div class="clock-card" data-zone="mumbai">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f3.svg" alt="India flag"> Mumbai</span><span class="code">IST</span></div>
-                    <div class="time" id="mumbai"></div>
-                    <div class="tz">Asia/Kolkata</div>
-                    <div class="offset" data-offset-for="mumbai"></div>
-                </div>
-                <div class="clock-card" data-zone="tokyo">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg" alt="Japan flag"> Tokyo</span><span class="code">JST</span></div>
-                    <div class="time" id="tokyo"></div>
-                    <div class="tz">Asia/Tokyo</div>
-                    <div class="offset" data-offset-for="tokyo"></div>
-                </div>
-                <div class="clock-card" data-zone="sydney">
-                    <div class="label"><span class="city"><img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1fa.svg" alt="Australia flag"> Sydney</span><span class="code">AET</span></div>
-                    <div class="time" id="sydney"></div>
-                    <div class="tz">Australia/Sydney</div>
-                    <div class="offset" data-offset-for="sydney"></div>
-                </div>
-                </div>
-            </section>
-        </div>
-
-        <p class="section-label">My Cities</p>
-        <section class="continent" aria-label="My custom cities" id="myCitiesSection">
+        <p class="section-label">Add City</p>
+        <section class="continent" aria-label="Add custom cities" id="myCitiesSection">
             <div class="continent-head">
-                <div class="continent-title">My Cities</div>
-                <div class="continent-sub">Add cities you care about (they appear under regions above)</div>
-            </div>
-            <div class="tool-row" style="margin-bottom: 0.75rem;">
-                <label style="min-width:auto;font-size:0.8rem;">Add city</label>
+                <div class="continent-title">Add City</div>
+                <div class="continent-sub">Added cities appear in their matching region above</div>
+            </div>            <div class="tool-row" style="margin-bottom: 0.75rem;">
+                <label style="min-width:auto;font-size:0.8rem;">City</label>
                 <select id="myCitySelect"></select>
                 <button class="btn-reset" id="addMyCityBtn" type="button">Add</button>
+                <button class="btn-reset" id="resetOrderBtn" type="button" title="Reset all regions and cities to default order">Reset order</button>
             </div>
             <div id="myCitiesChips" style="margin-top:0.5rem;font-size:0.8rem;color:rgba(148,163,184,0.9);"></div>
         </section>
@@ -617,33 +665,60 @@
         </div>
     </div>
 
-    <div class="toast" id="toast">Copied</div>
+    <div class="toast" id="toast">Copied</div>    <script>
+        /* ─── Data model ─────────────────────────────────────────── */
 
-    <script>
-        const zones = {
-            ny: 'America/New_York',
-            la: 'America/Los_Angeles',
-            dubai: 'Asia/Dubai',
-            tehran: 'Asia/Tehran',
-            london: 'Europe/London',
-            berlin: 'Europe/Berlin',
-            paris: 'Europe/Paris',
-            mumbai: 'Asia/Kolkata',
-            tokyo: 'Asia/Tokyo',
-            sydney: 'Australia/Sydney'
-        };
-        const zoneLabels = {
-            ny: 'New York',
-            la: 'Los Angeles',
-            dubai: 'Dubai',
-            tehran: 'Tehran',
-            london: 'London',
-            berlin: 'Berlin',
-            paris: 'Paris',
-            mumbai: 'Mumbai',
-            tokyo: 'Tokyo',
-            sydney: 'Sydney'
-        };
+        // Default regions with their built-in city cards
+        const defaultRegions = [
+            {
+                id: 'americas',
+                title: 'Americas',
+                sub: '<img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg" alt="US flag"> East / West',
+                cities: [
+                    { key: 'ny',  label: 'New York',    tz: 'America/New_York',    country: 'US', code: 'ET',  builtIn: true },
+                    { key: 'la',  label: 'Los Angeles',  tz: 'America/Los_Angeles', country: 'US', code: 'PT',  builtIn: true }
+                ]
+            },
+            {
+                id: 'middleeast',
+                title: 'Middle East',
+                sub: '<img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1ea.svg" alt="UAE flag"> Dubai · <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f7.svg" alt="Iran flag"> Tehran',
+                cities: [
+                    { key: 'dubai',   label: 'Dubai',  tz: 'Asia/Dubai',   country: 'AE', code: 'GST',  builtIn: true },
+                    { key: 'tehran',  label: 'Tehran', tz: 'Asia/Tehran',  country: 'IR', code: 'IRST', builtIn: true }
+                ]
+            },
+            {
+                id: 'europe',
+                title: 'Europe',
+                sub: '<img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ec-1f1e7.svg" alt="UK flag"> · <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e9-1f1ea.svg" alt="Germany flag"> · <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1eb-1f1f7.svg" alt="France flag">',
+                cities: [
+                    { key: 'london', label: 'London', tz: 'Europe/London', country: 'GB', code: 'UK',  builtIn: true },
+                    { key: 'berlin', label: 'Berlin', tz: 'Europe/Berlin', country: 'DE', code: 'CET', builtIn: true },
+                    { key: 'paris',  label: 'Paris',  tz: 'Europe/Paris',  country: 'FR', code: 'CET', builtIn: true }
+                ]
+            },
+            {
+                id: 'asia',
+                title: 'Asia-Pacific',
+                sub: '<img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ee-1f1f3.svg" alt="India flag"> · <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ef-1f1f5.svg" alt="Japan flag"> · <img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e6-1f1fa.svg" alt="Australia flag">',
+                cities: [
+                    { key: 'mumbai', label: 'Mumbai', tz: 'Asia/Kolkata',     country: 'IN', code: 'IST', builtIn: true },
+                    { key: 'tokyo',  label: 'Tokyo',  tz: 'Asia/Tokyo',       country: 'JP', code: 'JST', builtIn: true },
+                    { key: 'sydney', label: 'Sydney', tz: 'Australia/Sydney', country: 'AU', code: 'AET', builtIn: true }
+                ]
+            },
+            {
+                id: 'africa',
+                title: 'Africa',
+                sub: '<img class="flag-img" src="https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ff-1f1e6.svg" alt="South Africa flag">',
+                cities: []
+            }
+        ];
+
+        // This is the live state — mutable array of region objects
+        let regions = JSON.parse(JSON.stringify(defaultRegions));
+
         const countryFlags = {
             CN: { label: 'China', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1f3.svg' },
             US: { label: 'USA', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1fa-1f1f8.svg' },
@@ -667,7 +742,8 @@
             ZA: { label: 'South Africa', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1ff-1f1e6.svg' },
             BR: { label: 'Brazil', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e7-1f1f7.svg' },
             MX: { label: 'Mexico', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f2-1f1fd.svg' },
-            CH: { label: 'Switzerland', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1ed.svg' }
+            CH: { label: 'Switzerland', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1e8-1f1ed.svg' },
+            TH: { label: 'Thailand', url: 'https://cdnjs.cloudflare.com/ajax/libs/twemoji/14.0.2/svg/1f1f9-1f1ed.svg' }
         };
 
         const cityCatalog = {
@@ -675,18 +751,12 @@
             beijing:   { label: 'Beijing',       tz: 'Asia/Shanghai',       country: 'CN', code: 'CN',  region: 'asia' },
             hongkong:  { label: 'Hong Kong',     tz: 'Asia/Hong_Kong',      country: 'HK', code: 'HK',  region: 'asia' },
             singapore: { label: 'Singapore',     tz: 'Asia/Singapore',      country: 'SG', code: 'SG',  region: 'asia' },
-            tokyo:     { label: 'Tokyo',         tz: 'Asia/Tokyo',          country: 'JP', code: 'JST', region: 'asia' },
             seoul:     { label: 'Seoul',         tz: 'Asia/Seoul',          country: 'KR', code: 'KST', region: 'asia' },
             bangkok:   { label: 'Bangkok',       tz: 'Asia/Bangkok',        country: 'TH', code: 'TH',  region: 'asia' },
             riyadh:    { label: 'Riyadh',        tz: 'Asia/Riyadh',         country: 'SA', code: 'SA',  region: 'middleeast' },
-            dubai:     { label: 'Dubai',         tz: 'Asia/Dubai',          country: 'AE', code: 'GST', region: 'middleeast' },
-            london:    { label: 'London',        tz: 'Europe/London',       country: 'GB', code: 'UK',  region: 'europe' },
-            berlin:    { label: 'Berlin',        tz: 'Europe/Berlin',       country: 'DE', code: 'CET', region: 'europe' },
-            paris:     { label: 'Paris',         tz: 'Europe/Paris',        country: 'FR', code: 'CET', region: 'europe' },
             madrid:    { label: 'Madrid',        tz: 'Europe/Madrid',       country: 'ES', code: 'CET', region: 'europe' },
             milan:     { label: 'Milan',         tz: 'Europe/Rome',         country: 'IT', code: 'CET', region: 'europe' },
             zurich:    { label: 'Zurich',        tz: 'Europe/Zurich',       country: 'CH', code: 'CET', region: 'europe' },
-            newyork:   { label: 'New York',      tz: 'America/New_York',    country: 'US', code: 'ET',  region: 'americas' },
             chicago:   { label: 'Chicago',       tz: 'America/Chicago',     country: 'US', code: 'CT',  region: 'americas' },
             sf:        { label: 'San Francisco', tz: 'America/Los_Angeles', country: 'US', code: 'PT',  region: 'americas' },
             toronto:   { label: 'Toronto',       tz: 'America/Toronto',     country: 'CA', code: 'ET',  region: 'americas' },
@@ -694,56 +764,56 @@
             saoPaulo:  { label: 'S\u00e3o Paulo', tz: 'America/Sao_Paulo',  country: 'BR', code: 'BRT', region: 'americas' },
             mexico:    { label: 'Mexico City',   tz: 'America/Mexico_City', country: 'MX', code: 'MX',  region: 'americas' },
             johannes:  { label: 'Johannesburg',  tz: 'Africa/Johannesburg', country: 'ZA', code: 'ZA',  region: 'africa' },
-            sydney:    { label: 'Sydney',        tz: 'Australia/Sydney',    country: 'AU', code: 'AET', region: 'asia' },
             auckland:  { label: 'Auckland',      tz: 'Pacific/Auckland',    country: 'NZ', code: 'NZ',  region: 'asia' }
         };
 
-        let myCities = [];
+        let myCities = []; // user-added city IDs from cityCatalog
 
-        function allZoneEntries() {
-            const list = [];
-            Object.keys(zones).forEach(k => {
-                list.push({ key: k, tz: zones[k], label: zoneLabels[k] || k });
-            });
-            myCities.forEach(id => {
-                const cfg = cityCatalog[id];
-                if (!cfg) return;
-                const dynKey = 'my_' + id;
-                list.push({ key: dynKey, tz: cfg.tz, label: cfg.label });
-            });
-            return list;
-        }
+        /* ─── Utility formatters ─────────────────────────────────── */
 
         const fmt = (d, tz) => new Intl.DateTimeFormat('en-GB', {
             timeZone: tz || undefined,
             hour: '2-digit', minute: '2-digit', second: '2-digit',
             hour12: false
         }).format(d);
+
         const fmtDate = (d) => new Intl.DateTimeFormat('en-GB', {
-            weekday: 'long',
-            year: 'numeric',
-            month: 'short',
-            day: '2-digit'
+            weekday: 'long', year: 'numeric', month: 'short', day: '2-digit'
         }).format(d);
 
-        let baseDate = null; // null = use live time
-
+        let baseDate = null;
         function getNow() {
             return baseDate ? new Date(baseDate.getTime()) : new Date();
         }
 
+        /* ─── Country / TZ helpers ───────────────────────────────── */
+
+        const countryToTz = {
+            CN: 'Asia/Shanghai', US: 'America/New_York', CA: 'America/Toronto',
+            GB: 'Europe/London', DE: 'Europe/Berlin', FR: 'Europe/Paris',
+            ES: 'Europe/Madrid', IT: 'Europe/Rome', RU: 'Europe/Moscow',
+            AE: 'Asia/Dubai', SA: 'Asia/Riyadh', IR: 'Asia/Tehran',
+            IN: 'Asia/Kolkata', JP: 'Asia/Tokyo', KR: 'Asia/Seoul',
+            SG: 'Asia/Singapore', HK: 'Asia/Hong_Kong', AU: 'Australia/Sydney',
+            NZ: 'Pacific/Auckland', ZA: 'Africa/Johannesburg',
+            BR: 'America/Sao_Paulo', MX: 'America/Mexico_City'
+        };
+
+        function getSelectedTz() {
+            const select = document.getElementById('localFlagSelect');
+            if (!select) return null;
+            const code = select.value;
+            return code === 'auto' ? null : (countryToTz[code] || null);
+        }
+
         function guessCountryFromTz(tz) {
             if (!tz) return 'CN';
-            if (tz.startsWith('Asia/Shanghai')) return 'CN';
-            if (tz.startsWith('America/')) return 'US';
-            if (tz.startsWith('Europe/London')) return 'GB';
-            if (tz.startsWith('Europe/Berlin')) return 'DE';
-            if (tz.startsWith('Europe/Paris')) return 'FR';
-            if (tz.startsWith('Asia/Dubai')) return 'AE';
-            if (tz.startsWith('Asia/Tehran')) return 'IR';
-            if (tz.startsWith('Asia/Kolkata')) return 'IN';
-            if (tz.startsWith('Asia/Tokyo')) return 'JP';
-            if (tz.startsWith('Australia/')) return 'AU';
+            const map = { 'Asia/Shanghai':'CN','America/':'US','Europe/London':'GB','Europe/Berlin':'DE',
+                'Europe/Paris':'FR','Asia/Dubai':'AE','Asia/Tehran':'IR','Asia/Kolkata':'IN',
+                'Asia/Tokyo':'JP','Australia/':'AU' };
+            for (const [prefix, cc] of Object.entries(map)) {
+                if (tz.startsWith(prefix)) return cc;
+            }
             return 'CN';
         }
 
@@ -751,36 +821,630 @@
             const img = document.getElementById('localFlagImg');
             const select = document.getElementById('localFlagSelect');
             if (!img || !select) return;
-            let mode = select.value;
-            let code;
-            if (mode === 'auto') {
-                code = guessCountryFromTz(tzString);
-            } else {
-                code = mode;
-            }
+            const code = select.value === 'auto' ? guessCountryFromTz(tzString) : select.value;
             const cfg = countryFlags[code] || countryFlags.CN;
             img.src = cfg.url;
             img.alt = cfg.label + ' flag';
         }
 
+        /* ─── allZoneEntries — gathers all city entries from regions ─ */
+
+        function allZoneEntries() {
+            const list = [];
+            regions.forEach(region => {
+                region.cities.forEach(city => {
+                    list.push({ key: city.key, tz: city.tz, label: city.label });
+                });
+            });
+            return list;
+        }
+
+        /* ─── Persistence helpers ────────────────────────────────── */
+
+        function saveState() {
+            try {
+                // Save region order + city order within each region
+                const state = regions.map(r => ({
+                    id: r.id,
+                    cityKeys: r.cities.map(c => c.key)
+                }));
+                localStorage.setItem('timeTool.regionState', JSON.stringify(state));
+                localStorage.setItem('timeTool.myCities', JSON.stringify(myCities));
+            } catch (e) {}
+        }
+
+        function loadState() {
+            try {
+                // Load myCities first so we can rebuild custom city entries
+                const savedMy = localStorage.getItem('timeTool.myCities');
+                if (savedMy) {
+                    const parsed = JSON.parse(savedMy);
+                    if (Array.isArray(parsed)) myCities = parsed.filter(id => cityCatalog[id]);
+                }
+
+                // Inject user-added cities into default regions before applying saved order
+                myCities.forEach(id => {
+                    const cat = cityCatalog[id];
+                    if (!cat) return;
+                    const regionObj = regions.find(r => r.id === cat.region);
+                    if (!regionObj) return;
+                    const userKey = 'my_' + id;
+                    if (regionObj.cities.some(c => c.key === userKey)) return;
+                    regionObj.cities.push({
+                        key: userKey,
+                        label: cat.label,
+                        tz: cat.tz,
+                        country: cat.country,
+                        code: cat.code,
+                        builtIn: false
+                    });
+                });
+
+                // Now apply saved region/city ordering
+                const savedState = localStorage.getItem('timeTool.regionState');
+                if (savedState) {
+                    const state = JSON.parse(savedState);
+                    if (Array.isArray(state) && state.length > 0) {
+                        // Build a lookup of current region objects
+                        const regionMap = {};
+                        regions.forEach(r => { regionMap[r.id] = r; });
+
+                        const reordered = [];
+                        state.forEach(saved => {
+                            const region = regionMap[saved.id];
+                            if (!region) return;
+                            // Reorder cities within this region
+                            if (saved.cityKeys && Array.isArray(saved.cityKeys)) {
+                                const cityMap = {};
+                                region.cities.forEach(c => { cityMap[c.key] = c; });
+                                const reorderedCities = [];
+                                saved.cityKeys.forEach(k => {
+                                    if (cityMap[k]) { reorderedCities.push(cityMap[k]); delete cityMap[k]; }
+                                });
+                                // Append any new cities not in saved order
+                                Object.values(cityMap).forEach(c => reorderedCities.push(c));
+                                region.cities = reorderedCities;
+                            }
+                            reordered.push(region);
+                            delete regionMap[saved.id];
+                        });
+                        // Append any new regions not in saved order
+                        Object.values(regionMap).forEach(r => reordered.push(r));
+                        regions = reordered;
+                    }
+                }
+            } catch (e) {}
+        }
+
+        /* ─── Dynamic rendering ──────────────────────────────────── */        function renderAll() {
+            const wrap = document.getElementById('continentsWrap');
+            if (!wrap) return;
+            wrap.innerHTML = '';
+
+            regions.forEach((region, regionIdx) => {
+                // Hide empty regions (no cities at all)
+                if (region.cities.length === 0) return;
+
+                const section = document.createElement('section');
+                section.className = 'continent';
+                section.setAttribute('data-region', region.id);
+                section.setAttribute('aria-label', region.title + ' clocks');
+
+                // Header with continent drag handle
+                const head = document.createElement('div');
+                head.className = 'continent-head';
+                head.innerHTML = `
+                    <div style="display:flex;align-items:baseline;gap:0.5rem;">
+                        <span class="continent-drag" title="Drag to reorder region">⠿</span>
+                        <div class="continent-title">${region.title}</div>
+                    </div>
+                    <div class="continent-sub">${region.sub}</div>
+                `;
+                section.appendChild(head);
+
+                // Grid of city cards
+                const grid = document.createElement('div');
+                grid.className = 'grid';
+                grid.style.marginBottom = '0';
+                grid.setAttribute('data-region-grid', region.id);
+
+                region.cities.forEach((city, cityIdx) => {
+                    const flagCfg = countryFlags[city.country] || countryFlags.CN;
+                    const card = document.createElement('div');
+                    card.className = 'clock-card';
+                    card.setAttribute('data-zone', city.key);
+                    card.setAttribute('data-city-idx', cityIdx);
+                    card.setAttribute('data-region-id', region.id);
+
+                    const removeHtml = !city.builtIn
+                        ? `<button class="remove-btn" data-remove-key="${city.key}" data-remove-region="${region.id}" title="Remove city">×</button>`
+                        : '';
+
+                    card.innerHTML = `
+                        <div class="label">
+                            <span class="city">
+                                <span class="drag-handle" title="Drag to reorder">⠿</span>
+                                <img class="flag-img" src="${flagCfg.url}" alt="${city.country} flag"> ${city.label}
+                            </span>
+                            <span style="display:inline-flex;align-items:center;gap:0.3rem;">
+                                <span class="code">${city.code || ''}</span>
+                                ${removeHtml}
+                            </span>
+                        </div>
+                        <div class="time" id="${city.key}"></div>
+                        <div class="tz">${city.tz}</div>
+                        <div class="offset" data-offset-for="${city.key}"></div>
+                    `;
+                    grid.appendChild(card);
+                });
+
+                section.appendChild(grid);
+                wrap.appendChild(section);
+            });
+
+            // Bind everything
+            bindCopyHandlers();
+            bindCardDragHandlers();
+            bindContinentDragHandlers();
+            bindRemoveButtons();
+            bindTouchDrag();
+            tick();
+            updateOffsets();
+        }
+
+        /* ─── Remove buttons for user-added cities ───────────────── */
+
+        function bindRemoveButtons() {
+            document.querySelectorAll('.remove-btn[data-remove-key]').forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    e.stopPropagation(); // Don't trigger card copy
+                    const key = btn.getAttribute('data-remove-key');
+                    const regionId = btn.getAttribute('data-remove-region');
+                    // Remove from regions data
+                    const region = regions.find(r => r.id === regionId);
+                    if (region) {
+                        region.cities = region.cities.filter(c => c.key !== key);
+                    }
+                    // Remove from myCities
+                    const catalogId = key.startsWith('my_') ? key.slice(3) : key;
+                    myCities = myCities.filter(id => id !== catalogId);
+                    saveState();
+                    renderAll();
+                    renderMyCitiesChips();
+                });
+            });
+        }
+
+        /* ─── Card-level drag & drop (within / across grids) ─────── */        let draggedCard = null;
+        let draggedCardRegion = null;
+
+        // Global mouseup — remove draggable from all cards/continents (set up once)
+        document.addEventListener('mouseup', () => {
+            document.querySelectorAll('.clock-card[draggable="true"]').forEach(c => c.removeAttribute('draggable'));
+            document.querySelectorAll('.continent[draggable="true"]').forEach(c => c.removeAttribute('draggable'));
+        });
+
+        function bindCardDragHandlers() {
+            // Enable draggable only when mousedown on handle
+            document.querySelectorAll('.clock-card .drag-handle').forEach(handle => {
+                handle.addEventListener('mousedown', () => {
+                    const card = handle.closest('.clock-card');
+                    if (card) card.setAttribute('draggable', 'true');
+                });
+            });
+
+            document.querySelectorAll('.clock-card').forEach(card => {
+                card.addEventListener('dragstart', (e) => {
+                    draggedCard = card;
+                    draggedCardRegion = card.getAttribute('data-region-id');
+                    card.classList.add('dragging');
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/plain', 'card:' + card.getAttribute('data-zone'));
+                    e.stopPropagation();
+                });
+
+                card.addEventListener('dragend', () => {
+                    card.classList.remove('dragging');
+                    card.removeAttribute('draggable');
+                    draggedCard = null;
+                    draggedCardRegion = null;
+                    clearAllDropIndicators();
+                });
+
+                card.addEventListener('dragover', (e) => {
+                    if (!draggedCard) return;
+                    e.preventDefault();
+                    e.stopPropagation();
+                    e.dataTransfer.dropEffect = 'move';
+
+                    // Visual indicator — highlight which side the card will be placed
+                    clearAllDropIndicators();
+                    const rect = card.getBoundingClientRect();
+                    const midX = rect.left + rect.width / 2;
+                    if (e.clientX < midX) {
+                        card.style.borderLeft = '3px solid var(--accent)';
+                    } else {
+                        card.style.borderRight = '3px solid var(--accent)';
+                    }
+                });
+
+                card.addEventListener('dragleave', () => {
+                    card.style.borderLeft = '';
+                    card.style.borderRight = '';
+                });
+
+                card.addEventListener('drop', (e) => {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    if (!draggedCard || draggedCard === card) { clearAllDropIndicators(); return; }
+
+                    const fromRegionId = draggedCard.getAttribute('data-region-id');
+                    const toRegionId = card.getAttribute('data-region-id');
+                    const draggedKey = draggedCard.getAttribute('data-zone');
+                    const targetKey = card.getAttribute('data-zone');
+
+                    const fromRegion = regions.find(r => r.id === fromRegionId);
+                    const toRegion = regions.find(r => r.id === toRegionId);
+                    if (!fromRegion || !toRegion) { clearAllDropIndicators(); return; }
+
+                    // Remove city from source
+                    const cityIdx = fromRegion.cities.findIndex(c => c.key === draggedKey);
+                    if (cityIdx === -1) { clearAllDropIndicators(); return; }
+                    const [movedCity] = fromRegion.cities.splice(cityIdx, 1);
+
+                    // Insert at target position
+                    const targetIdx = toRegion.cities.findIndex(c => c.key === targetKey);
+                    const rect = card.getBoundingClientRect();
+                    const midX = rect.left + rect.width / 2;
+                    const insertIdx = e.clientX < midX ? targetIdx : targetIdx + 1;
+                    toRegion.cities.splice(insertIdx, 0, movedCity);
+
+                    clearAllDropIndicators();
+                    saveState();
+                    renderAll();
+                });
+            });
+
+            // Also allow dropping on empty grid areas
+            document.querySelectorAll('[data-region-grid]').forEach(grid => {
+                grid.addEventListener('dragover', (e) => {
+                    if (!draggedCard) return;
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                });
+                grid.addEventListener('drop', (e) => {
+                    if (!draggedCard) return;
+                    e.preventDefault();
+                    const regionId = grid.getAttribute('data-region-grid');
+                    const fromRegionId = draggedCard.getAttribute('data-region-id');
+                    const draggedKey = draggedCard.getAttribute('data-zone');
+
+                    const fromRegion = regions.find(r => r.id === fromRegionId);
+                    const toRegion = regions.find(r => r.id === regionId);
+                    if (!fromRegion || !toRegion) return;
+
+                    const cityIdx = fromRegion.cities.findIndex(c => c.key === draggedKey);
+                    if (cityIdx === -1) return;
+                    const [movedCity] = fromRegion.cities.splice(cityIdx, 1);
+                    toRegion.cities.push(movedCity);
+
+                    saveState();
+                    renderAll();
+                });
+            });
+        }
+
+        function clearAllDropIndicators() {
+            document.querySelectorAll('.clock-card').forEach(c => {
+                c.style.borderLeft = '';
+                c.style.borderRight = '';
+            });
+            document.querySelectorAll('.continent').forEach(c => {
+                c.classList.remove('drag-over');
+            });
+        }
+
+        /* ─── Continent-level drag & drop ────────────────────────── */
+
+        let draggedContinent = null;        function bindContinentDragHandlers() {
+            // Enable draggable only when mousedown on continent-drag handle
+            document.querySelectorAll('.continent .continent-drag').forEach(handle => {
+                handle.addEventListener('mousedown', () => {
+                    const section = handle.closest('.continent');
+                    if (section) section.setAttribute('draggable', 'true');
+                });
+            });
+
+            document.querySelectorAll('.continent[data-region]').forEach(section => {
+                section.addEventListener('dragstart', (e) => {
+                    if (draggedCard) return; // card drag takes precedence
+                    draggedContinent = section;
+                    section.classList.add('dragging-continent');
+                    e.dataTransfer.effectAllowed = 'move';
+                    e.dataTransfer.setData('text/plain', 'continent:' + section.getAttribute('data-region'));
+                });                section.addEventListener('dragend', () => {
+                    section.classList.remove('dragging-continent');
+                    section.removeAttribute('draggable');
+                    draggedContinent = null;
+                    clearAllDropIndicators();
+                });
+
+                section.addEventListener('dragover', (e) => {
+                    if (!draggedContinent || draggedContinent === section) return;
+                    if (draggedCard) return; // card drag takes precedence
+                    e.preventDefault();
+                    e.dataTransfer.dropEffect = 'move';
+                    section.classList.add('drag-over');
+                });
+
+                section.addEventListener('dragleave', (e) => {
+                    // Only remove if actually leaving this element
+                    if (!section.contains(e.relatedTarget)) {
+                        section.classList.remove('drag-over');
+                    }
+                });
+
+                section.addEventListener('drop', (e) => {
+                    if (!draggedContinent || draggedContinent === section) {
+                        clearAllDropIndicators();
+                        return;
+                    }
+                    if (draggedCard) return; // card drop handled elsewhere
+                    e.preventDefault();
+
+                    const fromId = draggedContinent.getAttribute('data-region');
+                    const toId = section.getAttribute('data-region');
+
+                    const fromIdx = regions.findIndex(r => r.id === fromId);
+                    const toIdx = regions.findIndex(r => r.id === toId);
+                    if (fromIdx === -1 || toIdx === -1) { clearAllDropIndicators(); return; }
+
+                    // Swap positions
+                    const [moved] = regions.splice(fromIdx, 1);
+                    regions.splice(toIdx, 0, moved);
+
+                    clearAllDropIndicators();                    saveState();
+                    renderAll();
+                });
+            });
+        }
+
+        /* ─── Touch-based drag & drop (mobile) ───────────────────── */
+
+        let touchState = null; // { type:'card'|'continent', el, clone, startX, startY, regionId, key }
+
+        function bindTouchDrag() {
+            // Card handles
+            document.querySelectorAll('.clock-card .drag-handle').forEach(handle => {
+                handle.addEventListener('touchstart', onTouchStart, { passive: false });
+            });
+            // Continent handles
+            document.querySelectorAll('.continent .continent-drag').forEach(handle => {
+                handle.addEventListener('touchstart', onTouchStart, { passive: false });
+            });
+        }
+
+        function onTouchStart(e) {
+            e.preventDefault();
+            const touch = e.touches[0];
+            const handle = e.currentTarget;
+            const card = handle.closest('.clock-card');
+            const continent = handle.closest('.continent[data-region]');
+
+            if (card && handle.classList.contains('drag-handle')) {
+                const rect = card.getBoundingClientRect();
+                const clone = card.cloneNode(true);
+                clone.classList.add('touch-dragging');
+                clone.style.setProperty('--drag-width', rect.width + 'px');
+                clone.style.left = rect.left + 'px';
+                clone.style.top = rect.top + 'px';
+                document.body.appendChild(clone);
+                card.classList.add('touch-placeholder');
+
+                touchState = {
+                    type: 'card',
+                    el: card,
+                    clone: clone,
+                    startX: touch.clientX - rect.left,
+                    startY: touch.clientY - rect.top,
+                    regionId: card.getAttribute('data-region-id'),
+                    key: card.getAttribute('data-zone')
+                };            } else if (continent && handle.classList.contains('continent-drag')) {
+                const rect = continent.getBoundingClientRect();
+                // Create a lightweight ghost for continent drag (just the title)
+                const clone = document.createElement('section');
+                clone.className = 'continent touch-dragging';
+                clone.style.setProperty('--drag-width', Math.min(rect.width, 320) + 'px');
+                clone.style.left = rect.left + 'px';
+                clone.style.top = rect.top + 'px';
+                const regionTitle = continent.querySelector('.continent-title');
+                clone.innerHTML = `<div class="continent-head" style="margin-bottom:0;"><div class="continent-title">${regionTitle ? regionTitle.textContent : ''}</div><div class="continent-sub" style="font-size:0.7rem;">Moving region…</div></div>`;
+                document.body.appendChild(clone);
+                continent.classList.add('touch-placeholder');
+
+                touchState = {
+                    type: 'continent',
+                    el: continent,
+                    clone: clone,
+                    startX: touch.clientX - rect.left,
+                    startY: touch.clientY - rect.top,
+                    regionId: continent.getAttribute('data-region'),
+                    key: null
+                };
+            }
+
+            if (touchState) {
+                document.addEventListener('touchmove', onTouchMove, { passive: false });
+                document.addEventListener('touchend', onTouchEnd);
+                document.addEventListener('touchcancel', onTouchEnd);
+            }
+        }
+
+        function onTouchMove(e) {
+            if (!touchState) return;
+            e.preventDefault();
+            const touch = e.touches[0];
+            touchState.clone.style.left = (touch.clientX - touchState.startX) + 'px';
+            touchState.clone.style.top = (touch.clientY - touchState.startY) + 'px';
+
+            // Highlight drop target
+            clearAllDropIndicators();
+            const underEl = document.elementFromPoint(touch.clientX, touch.clientY);
+            if (!underEl) return;
+
+            if (touchState.type === 'card') {
+                const targetCard = underEl.closest('.clock-card:not(.touch-dragging):not(.touch-placeholder)');
+                if (targetCard) {
+                    const rect = targetCard.getBoundingClientRect();
+                    const midX = touch.clientX - rect.left;
+                    if (midX < rect.width / 2) {
+                        targetCard.style.borderLeft = '3px solid var(--accent)';
+                    } else {
+                        targetCard.style.borderRight = '3px solid var(--accent)';
+                    }
+                }
+            } else if (touchState.type === 'continent') {
+                const targetContinent = underEl.closest('.continent[data-region]:not(.touch-dragging):not(.touch-placeholder)');
+                if (targetContinent) {
+                    targetContinent.classList.add('drag-over');
+                }
+            }
+        }
+
+        function onTouchEnd(e) {
+            if (!touchState) return;
+
+            document.removeEventListener('touchmove', onTouchMove);
+            document.removeEventListener('touchend', onTouchEnd);
+            document.removeEventListener('touchcancel', onTouchEnd);
+
+            const touch = e.changedTouches ? e.changedTouches[0] : null;
+
+            // Clean up clone
+            if (touchState.clone && touchState.clone.parentNode) {
+                touchState.clone.parentNode.removeChild(touchState.clone);
+            }
+            touchState.el.classList.remove('touch-placeholder');
+
+            if (touch) {
+                const underEl = document.elementFromPoint(touch.clientX, touch.clientY);
+
+                if (touchState.type === 'card' && underEl) {
+                    const targetCard = underEl.closest('.clock-card:not(.touch-placeholder)');
+                    const targetGrid = underEl.closest('[data-region-grid]');
+
+                    if (targetCard && targetCard !== touchState.el) {
+                        const fromRegionId = touchState.regionId;
+                        const toRegionId = targetCard.getAttribute('data-region-id');
+                        const draggedKey = touchState.key;
+                        const targetKey = targetCard.getAttribute('data-zone');
+
+                        const fromRegion = regions.find(r => r.id === fromRegionId);
+                        const toRegion = regions.find(r => r.id === toRegionId);
+
+                        if (fromRegion && toRegion) {
+                            const cityIdx = fromRegion.cities.findIndex(c => c.key === draggedKey);
+                            if (cityIdx !== -1) {
+                                const [movedCity] = fromRegion.cities.splice(cityIdx, 1);
+                                const targetIdx = toRegion.cities.findIndex(c => c.key === targetKey);
+                                const rect = targetCard.getBoundingClientRect();
+                                const insertIdx = (touch.clientX - rect.left) < rect.width / 2 ? targetIdx : targetIdx + 1;
+                                toRegion.cities.splice(insertIdx, 0, movedCity);
+                                saveState();
+                            }
+                        }
+                    } else if (targetGrid && !targetCard) {
+                        const regionId = targetGrid.getAttribute('data-region-grid');
+                        const fromRegion = regions.find(r => r.id === touchState.regionId);
+                        const toRegion = regions.find(r => r.id === regionId);
+                        if (fromRegion && toRegion) {
+                            const cityIdx = fromRegion.cities.findIndex(c => c.key === touchState.key);
+                            if (cityIdx !== -1) {
+                                const [movedCity] = fromRegion.cities.splice(cityIdx, 1);
+                                toRegion.cities.push(movedCity);
+                                saveState();
+                            }
+                        }
+                    }
+                } else if (touchState.type === 'continent' && underEl) {
+                    const targetContinent = underEl.closest('.continent[data-region]:not(.touch-placeholder)');
+                    if (targetContinent && targetContinent !== touchState.el) {
+                        const fromId = touchState.regionId;
+                        const toId = targetContinent.getAttribute('data-region');
+                        const fromIdx = regions.findIndex(r => r.id === fromId);
+                        const toIdx = regions.findIndex(r => r.id === toId);
+                        if (fromIdx !== -1 && toIdx !== -1) {
+                            const [moved] = regions.splice(fromIdx, 1);
+                            regions.splice(toIdx, 0, moved);
+                            saveState();
+                        }
+                    }
+                }
+            }
+
+            clearAllDropIndicators();
+            touchState = null;
+            renderAll();
+        }
+
+        /* ─── Copy handler ───────────────────────────────────────── */
+
+        function bindCopyHandlers() {
+            document.querySelectorAll('.clock-card[data-zone]').forEach(card => {
+                if (card._hasCopyHandler) return;
+                card._hasCopyHandler = true;
+                card.addEventListener('click', (e) => {
+                    // Don't copy if clicking drag handle or remove button
+                    if (e.target.closest('.drag-handle') || e.target.closest('.remove-btn')) return;
+                    const key = card.getAttribute('data-zone');
+                    const all = allZoneEntries();
+                    const entry = all.find(en => en.key === key);
+                    if (!entry) return;
+                    const now = getNow();
+                    const dt = new Date(now.toLocaleString('en-US', { timeZone: entry.tz }));
+                    const iso = dt.toISOString().replace('T', ' ').substring(0, 19);
+                    const text = `${entry.label} — ${iso} (${entry.tz})`;
+                    if (navigator.clipboard && navigator.clipboard.writeText) {
+                        navigator.clipboard.writeText(text).then(() => showToast('Copied: ' + entry.label)).catch(() => showToast('Copied'));
+                    } else {
+                        showToast(text);
+                    }
+                });
+            });
+        }
+
+        /* ─── Tick / time update ─────────────────────────────────── */
+
         function tick() {
             const now = getNow();
-            document.getElementById('localTime').textContent = fmt(now);
-            document.getElementById('localDate').textContent = fmtDate(now);
+            const selectedTz = getSelectedTz();
+            document.getElementById('localTime').textContent = fmt(now, selectedTz);
+
+            const fmtDateTz = (d, tz) => new Intl.DateTimeFormat('en-GB', {
+                timeZone: tz || undefined,
+                weekday: 'long', year: 'numeric', month: 'short', day: '2-digit'
+            }).format(d);
+
+            document.getElementById('localDate').textContent = fmtDateTz(now, selectedTz);
             const metaDate = document.getElementById('metaDate');
-            if (metaDate) metaDate.textContent = fmtDate(now);
+            if (metaDate) metaDate.textContent = fmtDateTz(now, selectedTz);
+
             allZoneEntries().forEach(entry => {
                 const el = document.getElementById(entry.key);
                 if (el) el.textContent = fmt(now, entry.tz);
             });
+
             if (!baseDate) {
-                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                const offset = -now.getTimezoneOffset() / 60;
-                const sign = offset >= 0 ? '+' : '';
-                document.getElementById('tzBadge').textContent = `${tz} (UTC${sign}${offset})`;
+                const displayTz = selectedTz || Intl.DateTimeFormat().resolvedOptions().timeZone;
+                const localStr = now.toLocaleString('en-US', { timeZone: displayTz });
+                const tzDate = new Date(localStr);
+                const offset = (tzDate - now) / 3600000 + now.getTimezoneOffset() / 60;
+                const roundedOff = Math.round(offset * 2) / 2;
+                const sign = roundedOff >= 0 ? '+' : '';
+                document.getElementById('tzBadge').textContent = `${displayTz} (UTC${sign}${roundedOff})`;
                 const metaTz = document.getElementById('metaTz');
-                if (metaTz) metaTz.textContent = `TZ: ${tz} (UTC${sign}${offset})`;
-                updateLocalFlag(tz);
+                if (metaTz) metaTz.textContent = `TZ: ${displayTz} (UTC${sign}${roundedOff})`;
+                updateLocalFlag(displayTz);
             } else {
                 document.getElementById('tzBadge').textContent = 'Manual base time';
                 const metaTz = document.getElementById('metaTz');
@@ -800,7 +1464,6 @@
             hoursEl.innerHTML = h ? '<span class="result-prefix">→</span> ' + fmt(afterHours) : '<span class="result-prefix">→</span> —';
             daysEl.innerHTML = d ? '<span class="result-prefix">→</span> ' + fmtDate(afterDays) : '<span class="result-prefix">→</span> —';
 
-            // future mapping across zones
             const futureContainer = document.getElementById('futureContainer');
             const target = h ? afterHours : d ? afterDays : null;
             if (!target) {
@@ -819,9 +1482,8 @@
         function updateOffsets() {
             const now = getNow();
             allZoneEntries().forEach(entry => {
-                const dtLocal = now;
                 const dtTarget = new Date(now.toLocaleString('en-US', { timeZone: entry.tz }));
-                const diffHours = (dtTarget - dtLocal) / 3600000;
+                const diffHours = (dtTarget - now) / 3600000;
                 const rounded = Math.round(diffHours * 2) / 2;
                 const sign = rounded > 0 ? '+' : rounded < 0 ? '' : '';
                 const text = rounded === 0 ? 'same as local' : `${sign}${rounded}h vs local`;
@@ -839,28 +1501,59 @@
             showToast._t = setTimeout(() => toast.classList.remove('show'), 1600);
         }
 
+        /* ─── My Cities chips ────────────────────────────────────── */
+
+        function renderMyCitiesChips() {
+            const chips = document.getElementById('myCitiesChips');
+            if (!chips) return;
+            if (myCities.length === 0) {
+                chips.textContent = 'No custom cities added yet.';
+                return;
+            }
+            chips.innerHTML = myCities.map(id => {
+                const cfg = cityCatalog[id];
+                return cfg ? `<span style="display:inline-flex;align-items:center;gap:0.3rem;margin-right:0.6rem;margin-bottom:0.3rem;padding:0.2rem 0.55rem;background:rgba(56,189,248,0.10);border:1px solid rgba(56,189,248,0.25);border-radius:999px;font-family:var(--font-mono);font-size:0.75rem;color:rgba(226,232,240,0.9);">${cfg.label} <button onclick="removeMyCity('${id}')" style="background:none;border:none;color:rgba(248,113,113,0.85);cursor:pointer;font-size:0.85rem;padding:0 0.15rem;line-height:1;" title="Remove">×</button></span>` : '';
+            }).join('');
+        }
+
+        function removeMyCity(id) {
+            const userKey = 'my_' + id;
+            // Remove from regions data
+            regions.forEach(r => {
+                r.cities = r.cities.filter(c => c.key !== userKey);
+            });
+            myCities = myCities.filter(c => c !== id);
+            saveState();
+            renderAll();
+            renderMyCitiesChips();
+        }
+        // Expose to onclick handlers
+        window.removeMyCity = removeMyCity;
+
+        /* ─── Event bindings ─────────────────────────────────────── */
+
         document.getElementById('baseInput').addEventListener('change', e => {
             const v = e.target.value;
             baseDate = v ? new Date(v) : null;
             try {
-                if (v) {
-                    localStorage.setItem('timeTool.base', v);
-                } else {
-                    localStorage.removeItem('timeTool.base');
-                }
+                if (v) localStorage.setItem('timeTool.base', v);
+                else localStorage.removeItem('timeTool.base');
             } catch (e) {}
             tick();
         });
+
         document.getElementById('btnReset').addEventListener('click', () => {
             document.getElementById('baseInput').value = '';
             baseDate = null;
             try { localStorage.removeItem('timeTool.base'); } catch (e) {}
             tick();
         });
+
         document.getElementById('hoursInput').addEventListener('input', e => {
             try { localStorage.setItem('timeTool.hours', e.target.value || '0'); } catch (e) {}
             updateCalculations();
         });
+
         document.getElementById('daysInput').addEventListener('input', e => {
             try { localStorage.setItem('timeTool.days', e.target.value || '0'); } catch (e) {}
             updateCalculations();
@@ -869,64 +1562,33 @@
         const localFlagSelect = document.getElementById('localFlagSelect');
         if (localFlagSelect) {
             localFlagSelect.addEventListener('change', e => {
-                const value = e.target.value;
-                try { localStorage.setItem('timeTool.localCountry', value); } catch (err) {}
-                const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
-                updateLocalFlag(tz);
+                try { localStorage.setItem('timeTool.localCountry', e.target.value); } catch (err) {}
+                tick();
+                updateOffsets();
             });
         }
 
-        function bindCopyHandlers() {
-            document.querySelectorAll('.clock-card[data-zone]').forEach(card => {
-                if (card._hasCopyHandler) return;
-                card._hasCopyHandler = true;
-                card.addEventListener('click', () => {
-                    const key = card.getAttribute('data-zone');
-                    const all = allZoneEntries();
-                    const entry = all.find(e => e.key === key);
-                    const tz = entry ? entry.tz : zones[key];
-                    const label = entry ? entry.label : (zoneLabels[key] || key);
-                    const now = getNow();
-                    const dt = new Date(now.toLocaleString('en-US', { timeZone: tz }));
-                    const iso = dt.toISOString().replace('T', ' ').substring(0, 19);
-                    const text = `${label} — ${iso} (${tz})`;
-                    if (navigator.clipboard && navigator.clipboard.writeText) {
-                        navigator.clipboard.writeText(text).then(() => {
-                            showToast('Copied: ' + label);
-                        }).catch(() => showToast('Copied'));
-                    } else {
-                        showToast(text);
-                    }
-                });
-            });
-        }
+        /* ─── Initialize ─────────────────────────────────────────── */
 
-        // restore saved state
+        // Restore saved state
         try {
             const savedBase = localStorage.getItem('timeTool.base');
             const savedHours = localStorage.getItem('timeTool.hours');
             const savedDays = localStorage.getItem('timeTool.days');
             const savedCountry = localStorage.getItem('timeTool.localCountry');
-            const savedMy = localStorage.getItem('timeTool.myCities');
             if (savedBase) {
-                const baseInput = document.getElementById('baseInput');
-                baseInput.value = savedBase;
+                document.getElementById('baseInput').value = savedBase;
                 baseDate = new Date(savedBase);
             }
             if (savedHours !== null) document.getElementById('hoursInput').value = savedHours;
             if (savedDays !== null) document.getElementById('daysInput').value = savedDays;
-            if (savedCountry && localFlagSelect) {
-                localFlagSelect.value = savedCountry;
-            }
-            if (savedMy) {
-                const parsed = JSON.parse(savedMy);
-                if (Array.isArray(parsed)) {
-                    myCities = parsed.filter(id => cityCatalog[id]);
-                }
-            }
+            if (savedCountry && localFlagSelect) localFlagSelect.value = savedCountry;
         } catch (e) {}
 
-        // render My Cities section
+        // Load persisted regions/cities order & myCities
+        loadState();
+
+        // Populate the "Add City" select (only cities not already added)
         const myCitySelect = document.getElementById('myCitySelect');
         if (myCitySelect) {
             Object.keys(cityCatalog).forEach(id => {
@@ -936,49 +1598,59 @@
                 myCitySelect.appendChild(opt);
             });
         }
+
         const addMyCityBtn = document.getElementById('addMyCityBtn');
-        function renderMyCities() {
-            const grid = document.getElementById('myCitiesGrid');
-            if (!grid) return;
-            grid.innerHTML = '';
-            myCities.forEach(id => {
-                const cfg = cityCatalog[id];
-                if (!cfg) return;
-                const key = 'my_' + id;
-                const flagCfg = countryFlags[cfg.country] || countryFlags.CN;
-                const card = document.createElement('div');
-                card.className = 'clock-card';
-                card.setAttribute('data-zone', key);
-                card.innerHTML = `
-                    <div class="label"><span class="city"><img class="flag-img" src="${flagCfg.url}" alt="${cfg.country} flag"> ${cfg.label}</span><span class="code">${cfg.code || ''}</span></div>
-                    <div class="time" id="${key}"></div>
-                    <div class="tz">${cfg.tz}</div>
-                    <div class="offset" data-offset-for="${key}"></div>
-                `;
-                grid.appendChild(card);
-            });
-            bindCopyHandlers();
-        }
         if (addMyCityBtn && myCitySelect) {
             addMyCityBtn.addEventListener('click', () => {
                 const id = myCitySelect.value;
                 if (!id || !cityCatalog[id]) return;
-                if (!myCities.includes(id)) {
-                    myCities.push(id);
-                    try { localStorage.setItem('timeTool.myCities', JSON.stringify(myCities)); } catch (e) {}
-                    renderMyCities();
-                    updateOffsets();
-                    tick();
+                if (myCities.includes(id)) {
+                    showToast(cityCatalog[id].label + ' already added');
+                    return;
                 }
+                myCities.push(id);
+                // Insert into matching region
+                const cat = cityCatalog[id];
+                const region = regions.find(r => r.id === cat.region);
+                if (region) {
+                    const flagCfg = countryFlags[cat.country] || countryFlags.CN;
+                    region.cities.push({
+                        key: 'my_' + id,
+                        label: cat.label,
+                        tz: cat.tz,
+                        country: cat.country,
+                        code: cat.code,
+                        builtIn: false
+                    });
+                }
+                saveState();
+                renderAll();
+                renderMyCitiesChips();                showToast('Added ' + cat.label + ' to ' + (region ? region.title : 'region'));
             });
         }
-        if (myCities.length) {
-            renderMyCities();
+
+        // Reset order button
+        const resetOrderBtn = document.getElementById('resetOrderBtn');
+        if (resetOrderBtn) {
+            resetOrderBtn.addEventListener('click', () => {
+                myCities = [];
+                regions = JSON.parse(JSON.stringify(defaultRegions));
+                try {
+                    localStorage.removeItem('timeTool.regionState');
+                    localStorage.removeItem('timeTool.myCities');
+                } catch (e) {}
+                saveState();
+                renderAll();
+                renderMyCitiesChips();
+                showToast('Reset to default layout');
+            });
         }
 
-        bindCopyHandlers();
-        tick();
-        updateOffsets();
+        // Initial render
+        renderAll();
+        renderMyCitiesChips();
+
+        // Live clock tick
         setInterval(() => {
             tick();
             updateOffsets();
