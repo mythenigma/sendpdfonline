@@ -378,12 +378,33 @@
             font-size: 1.1rem;
             font-weight: 500;
         }
-        .clock-card .tz { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }
-        .clock-card .offset {
+        .clock-card .tz { font-size: 0.7rem; color: var(--muted); margin-top: 0.2rem; }        .clock-card .offset {
             font-size: 0.7rem;
-            color: rgba(148, 163, 184, 0.85);
             margin-top: 0.1rem;
             font-family: var(--font-mono);
+        }
+        .clock-card .offset.offset-positive { color: var(--success); }
+        .clock-card .offset.offset-negative { color: rgba(248, 113, 113, 0.9); }
+        .clock-card .offset.offset-zero { color: var(--muted); }
+        .clock-card .date-diff-badge {
+            display: inline-block;
+            margin-top: 0.3rem;
+            padding: 0.15rem 0.5rem;
+            font-size: 0.62rem;
+            font-family: var(--font-mono);
+            font-weight: 600;
+            border-radius: 999px;
+            letter-spacing: 0.02em;
+        }
+        .clock-card .date-diff-badge.date-next {
+            background: rgba(52, 211, 153, 0.12);
+            color: rgba(52, 211, 153, 0.95);
+            border: 1px solid rgba(52, 211, 153, 0.25);
+        }
+        .clock-card .date-diff-badge.date-prev {
+            background: rgba(248, 113, 113, 0.10);
+            color: rgba(248, 113, 113, 0.95);
+            border: 1px solid rgba(248, 113, 113, 0.25);
         }
         .section-label {
             font-size: 0.75rem;
@@ -457,6 +478,28 @@
             background: rgba(56, 189, 248, 0.10);
             transform: translateY(-1px);
         }
+        .btn-apply {
+            background: rgba(52, 211, 153, 0.12);
+            border: 1px solid rgba(52, 211, 153, 0.3);
+            color: var(--success);
+            padding: 0.3rem 0.6rem;
+            border-radius: 6px;
+            font-size: 0.72rem;
+            font-family: var(--font-mono);
+            cursor: pointer;
+            transition: transform 120ms ease, border-color 120ms ease, background 120ms ease;
+            white-space: nowrap;
+        }
+        .btn-apply:hover {
+            border-color: rgba(52, 211, 153, 0.6);
+            background: rgba(52, 211, 153, 0.2);
+            transform: translateY(-1px);
+        }
+        .btn-apply:disabled {
+            opacity: 0.35;
+            cursor: default;
+            transform: none;
+        }
         .tools-title { margin-bottom: 0.75rem; }
         .tools-plain { background: transparent; border: 0; padding: 0; }
         .tip { font-size: 0.75rem; color: rgba(148, 163, 184, 0.85); margin-top: 0.5rem; }
@@ -522,10 +565,8 @@
                 gap: 0.5rem;
             }
             .set-base label { font-size: 0.8rem; }
-            input[type="datetime-local"] { width: 100%; min-width: 0; max-width: 100%; }
-            .tool-row {
-                flex-direction: column;
-                align-items: flex-start;
+            input[type="datetime-local"] { width: 100%; min-width: 0; max-width: 100%; }            .tool-row {
+                flex-wrap: wrap;
                 gap: 0.4rem;
             }
             .tool-row label { min-width: 0; font-size: 0.8rem; }
@@ -546,9 +587,9 @@
             .section-label { font-size: 0.7rem; }
             .tip { font-size: 0.68rem; }
             .future-grid { grid-template-columns: 1fr 1fr; }
-            .future-item { font-size: 0.72rem; }
-            #myCitiesSection .tool-row { flex-direction: row; flex-wrap: wrap; align-items: center; }
+            .future-item { font-size: 0.72rem; }            #myCitiesSection .tool-row { flex-direction: row; flex-wrap: wrap; align-items: center; }
             #myCitiesSection .tool-row select { flex: 1; min-width: 0; max-width: 160px; font-size: 0.75rem; }
+            .btn-apply { font-size: 0.65rem; padding: 0.25rem 0.45rem; }
         }
         @media (min-width: 481px) and (max-width: 767px) {
             .hero-top { flex-direction: column; }
@@ -617,19 +658,20 @@
                     <p class="section-label tools-title">Time Calculator</p>
                     <div class="tools tools-plain">
                         <div class="set-base">
-                            <label>Base time:</label>
-                            <input type="datetime-local" id="baseInput" title="Leave empty for live time">
-                            <button class="btn-reset" id="btnReset">Use live</button>
-                        </div>
-                        <div class="tool-row">
+                            <label>Base time:</label>                            <input type="datetime-local" id="baseInput" title="Leave empty for live time">
+                            <button class="btn-reset" id="btnReset">Fill now</button>
+                            <button class="btn-reset" id="btnClearBase" style="font-size:0.72rem;padding:0.25rem 0.5rem;color:rgba(248,113,113,0.75);">✕ Live</button>
+                        </div>                        <div class="tool-row">
                             <label>+ Hours</label>
                             <input type="number" id="hoursInput" min="0" max="999" value="0" placeholder="0">
                             <span class="result" id="hoursResult"><span class="result-prefix">→</span> —</span>
+                            <button class="btn-apply" id="applyHoursBtn" disabled title="Apply this future time as the new base time">Apply ↵</button>
                         </div>
                         <div class="tool-row">
                             <label>+ Days</label>
                             <input type="number" id="daysInput" min="0" max="999" value="0" placeholder="0">
                             <span class="result" id="daysResult"><span class="result-prefix">→</span> —</span>
+                            <button class="btn-apply" id="applyDaysBtn" disabled title="Apply this future time as the new base time">Apply ↵</button>
                         </div>
                     </div>
                     <p class="tip">
@@ -779,11 +821,62 @@
 
         const fmtDate = (d) => new Intl.DateTimeFormat('en-GB', {
             weekday: 'long', year: 'numeric', month: 'short', day: '2-digit'
-        }).format(d);
-
-        let baseDate = null;
+        }).format(d);        let baseDate = null;
         function getNow() {
             return baseDate ? new Date(baseDate.getTime()) : new Date();
+        }
+
+        /* Convert a wall-clock datetime-local string (e.g. "2026-03-16T15:29")
+           interpreted in the selected timezone into a UTC Date object.
+           If no timezone is selected (Auto), treat as system-local. */
+        function wallClockToDate(dtLocalStr) {
+            if (!dtLocalStr) return null;
+            const tz = getSelectedTz();
+            if (!tz) return new Date(dtLocalStr); // system-local interpretation
+
+            // Parse wall-clock parts
+            const [datePart, timePart] = dtLocalStr.split('T');
+            if (!datePart || !timePart) return new Date(dtLocalStr);
+            const [y, m, d] = datePart.split('-').map(Number);
+            const [hh, mm] = timePart.split(':').map(Number);
+
+            // Strategy: create a Date, then compute what offset the selected TZ has
+            // at that moment, and adjust accordingly.
+            // Start with a rough UTC guess
+            const guess = new Date(Date.UTC(y, m - 1, d, hh, mm));
+            // What wall-clock does `guess` show in the target TZ?
+            const parts = new Intl.DateTimeFormat('en-US', {
+                timeZone: tz, year: 'numeric', month: 'numeric', day: 'numeric',
+                hour: 'numeric', minute: 'numeric', second: 'numeric', hour12: false
+            }).formatToParts(guess);
+            const get = (type) => parseInt(parts.find(p => p.type === type)?.value || '0', 10);
+            const wallH = get('hour') === 24 ? 0 : get('hour');
+            const wallM = get('minute');
+            const wallDate = new Date(Date.UTC(get('year'), get('month') - 1, get('day'), wallH, wallM));
+            // Offset = wall - UTC (in ms)
+            const offsetMs = wallDate.getTime() - guess.getTime();
+            // The real UTC instant for the desired wall-clock = desired wall - offset
+            return new Date(Date.UTC(y, m - 1, d, hh, mm) - offsetMs);
+        }
+
+        /* Return a datetime-local formatted string for "now" in the selected timezone */
+        function nowAsLocalString() {
+            const now = new Date();
+            const tz = getSelectedTz();
+            const pad = (n) => String(n).padStart(2, '0');
+            if (!tz) {
+                // System-local
+                return now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate())
+                    + 'T' + pad(now.getHours()) + ':' + pad(now.getMinutes());
+            }
+            // Format in selected timezone
+            const parts = new Intl.DateTimeFormat('en-US', {
+                timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit',
+                hour: '2-digit', minute: '2-digit', hour12: false
+            }).formatToParts(now);
+            const get = (type) => parts.find(p => p.type === type)?.value || '00';
+            const h = get('hour') === '24' ? '00' : get('hour');
+            return get('year') + '-' + get('month') + '-' + get('day') + 'T' + h + ':' + get('minute');
         }
 
         /* ─── Country / TZ helpers ───────────────────────────────── */
@@ -804,16 +897,38 @@
             if (!select) return null;
             const code = select.value;
             return code === 'auto' ? null : (countryToTz[code] || null);
-        }
-
-        function guessCountryFromTz(tz) {
+        }        function guessCountryFromTz(tz) {
             if (!tz) return 'CN';
-            const map = { 'Asia/Shanghai':'CN','America/':'US','Europe/London':'GB','Europe/Berlin':'DE',
-                'Europe/Paris':'FR','Asia/Dubai':'AE','Asia/Tehran':'IR','Asia/Kolkata':'IN',
-                'Asia/Tokyo':'JP','Australia/':'AU' };
-            for (const [prefix, cc] of Object.entries(map)) {
-                if (tz.startsWith(prefix)) return cc;
-            }
+            // Exact matches first
+            const exact = {
+                'Asia/Shanghai': 'CN', 'Asia/Chongqing': 'CN', 'Asia/Harbin': 'CN', 'Asia/Urumqi': 'CN',
+                'Asia/Hong_Kong': 'HK', 'Asia/Singapore': 'SG',
+                'Asia/Tokyo': 'JP', 'Asia/Seoul': 'KR',
+                'Asia/Kolkata': 'IN', 'Asia/Calcutta': 'IN',
+                'Asia/Dubai': 'AE', 'Asia/Riyadh': 'SA', 'Asia/Tehran': 'IR',
+                'Asia/Bangkok': 'TH',
+                'Europe/London': 'GB', 'Europe/Berlin': 'DE', 'Europe/Paris': 'FR',
+                'Europe/Madrid': 'ES', 'Europe/Rome': 'IT', 'Europe/Zurich': 'CH',
+                'Europe/Moscow': 'RU',
+                'America/New_York': 'US', 'America/Chicago': 'US', 'America/Denver': 'US',
+                'America/Los_Angeles': 'US', 'America/Phoenix': 'US', 'America/Anchorage': 'US',
+                'Pacific/Honolulu': 'US',
+                'America/Toronto': 'CA', 'America/Vancouver': 'CA', 'America/Edmonton': 'CA',
+                'America/Winnipeg': 'CA', 'America/Halifax': 'CA',
+                'America/Sao_Paulo': 'BR', 'America/Mexico_City': 'MX',
+                'Australia/Sydney': 'AU', 'Australia/Melbourne': 'AU', 'Australia/Perth': 'AU',
+                'Australia/Brisbane': 'AU', 'Australia/Adelaide': 'AU',
+                'Pacific/Auckland': 'NZ',
+                'Africa/Johannesburg': 'ZA'
+            };
+            if (exact[tz]) return exact[tz];
+            // Prefix fallback
+            if (tz.startsWith('Asia/')) return 'CN';
+            if (tz.startsWith('Europe/')) return 'DE';
+            if (tz.startsWith('Australia/')) return 'AU';
+            if (tz.startsWith('Pacific/')) return 'NZ';
+            if (tz.startsWith('Africa/')) return 'ZA';
+            if (tz.startsWith('America/')) return 'US';
             return 'CN';
         }
 
@@ -958,9 +1073,7 @@
 
                     const removeHtml = !city.builtIn
                         ? `<button class="remove-btn" data-remove-key="${city.key}" data-remove-region="${region.id}" title="Remove city">×</button>`
-                        : '';
-
-                    card.innerHTML = `
+                        : '';                    card.innerHTML = `
                         <div class="label">
                             <span class="city">
                                 <span class="drag-handle" title="Drag to reorder">⠿</span>
@@ -974,6 +1087,7 @@
                         <div class="time" id="${city.key}"></div>
                         <div class="tz">${city.tz}</div>
                         <div class="offset" data-offset-for="${city.key}"></div>
+                        <div class="date-diff" data-datediff-for="${city.key}"></div>
                     `;
                     grid.appendChild(card);
                 });
@@ -1451,9 +1565,7 @@
                 if (metaTz) metaTz.textContent = 'TZ: manual base';
             }
             updateCalculations();
-        }
-
-        function updateCalculations() {
+        }        function updateCalculations() {
             const now = getNow();
             const h = parseInt(document.getElementById('hoursInput').value, 10) || 0;
             const d = parseInt(document.getElementById('daysInput').value, 10) || 0;
@@ -1463,6 +1575,12 @@
             const daysEl = document.getElementById('daysResult');
             hoursEl.innerHTML = h ? '<span class="result-prefix">→</span> ' + fmt(afterHours) : '<span class="result-prefix">→</span> —';
             daysEl.innerHTML = d ? '<span class="result-prefix">→</span> ' + fmtDate(afterDays) : '<span class="result-prefix">→</span> —';
+
+            // Enable/disable Apply buttons
+            const applyHoursBtn = document.getElementById('applyHoursBtn');
+            const applyDaysBtn = document.getElementById('applyDaysBtn');
+            if (applyHoursBtn) applyHoursBtn.disabled = !h;
+            if (applyDaysBtn) applyDaysBtn.disabled = !d;
 
             const futureContainer = document.getElementById('futureContainer');
             const target = h ? afterHours : d ? afterDays : null;
@@ -1477,18 +1595,61 @@
             });
             html += '</div>';
             futureContainer.innerHTML = html;
-        }
-
-        function updateOffsets() {
+        }function updateOffsets() {
             const now = getNow();
-            allZoneEntries().forEach(entry => {
+            const selectedTz = getSelectedTz();
+            const localTz = selectedTz || Intl.DateTimeFormat().resolvedOptions().timeZone;
+
+            // Get the local/selected date as YYYY-MM-DD for comparison
+            const localDateStr = new Intl.DateTimeFormat('en-CA', {
+                timeZone: localTz, year: 'numeric', month: '2-digit', day: '2-digit'
+            }).format(now); // returns YYYY-MM-DD in en-CA locale            allZoneEntries().forEach(entry => {
                 const dtTarget = new Date(now.toLocaleString('en-US', { timeZone: entry.tz }));
                 const diffHours = (dtTarget - now) / 3600000;
                 const rounded = Math.round(diffHours * 2) / 2;
                 const sign = rounded > 0 ? '+' : rounded < 0 ? '' : '';
                 const text = rounded === 0 ? 'same as local' : `${sign}${rounded}h vs local`;
                 const el = document.querySelector(`[data-offset-for="${entry.key}"]`);
-                if (el) el.textContent = text;
+                if (el) {
+                    el.textContent = text;
+                    el.className = 'offset ' + (rounded > 0 ? 'offset-positive' : rounded < 0 ? 'offset-negative' : 'offset-zero');
+                }
+
+                // Date difference badge
+                const diffEl = document.querySelector(`[data-datediff-for="${entry.key}"]`);
+                if (diffEl) {
+                    const cityDateStr = new Intl.DateTimeFormat('en-CA', {
+                        timeZone: entry.tz, year: 'numeric', month: '2-digit', day: '2-digit'
+                    }).format(now);
+
+                    if (cityDateStr === localDateStr) {
+                        diffEl.innerHTML = '';
+                    } else {
+                        const localParts = localDateStr.split('-').map(Number);
+                        const cityParts = cityDateStr.split('-').map(Number);
+                        const localD = new Date(localParts[0], localParts[1] - 1, localParts[2]);
+                        const cityD = new Date(cityParts[0], cityParts[1] - 1, cityParts[2]);
+                        const dayDiff = Math.round((cityD - localD) / 86400000);
+                        let badgeText = '';
+                        let badgeClass = '';
+                        if (dayDiff === 1) {
+                            badgeText = '+1 day (tomorrow)';
+                            badgeClass = 'date-next';
+                        } else if (dayDiff === -1) {
+                            badgeText = '−1 day (yesterday)';
+                            badgeClass = 'date-prev';
+                        } else if (dayDiff > 1) {
+                            badgeText = `+${dayDiff} days`;
+                            badgeClass = 'date-next';
+                        } else if (dayDiff < -1) {
+                            badgeText = `${dayDiff} days`;
+                            badgeClass = 'date-prev';
+                        }
+                        diffEl.innerHTML = badgeText
+                            ? `<span class="date-diff-badge ${badgeClass}">${badgeText}</span>`
+                            : '';
+                    }
+                }
             });
         }
 
@@ -1530,19 +1691,25 @@
         // Expose to onclick handlers
         window.removeMyCity = removeMyCity;
 
-        /* ─── Event bindings ─────────────────────────────────────── */
-
-        document.getElementById('baseInput').addEventListener('change', e => {
+        /* ─── Event bindings ─────────────────────────────────────── */        document.getElementById('baseInput').addEventListener('change', e => {
             const v = e.target.value;
-            baseDate = v ? new Date(v) : null;
+            baseDate = v ? wallClockToDate(v) : null;
             try {
                 if (v) localStorage.setItem('timeTool.base', v);
                 else localStorage.removeItem('timeTool.base');
             } catch (e) {}
             tick();
+        });document.getElementById('btnReset').addEventListener('click', () => {
+            // Fill the input with current time in the selected timezone
+            const isoLocal = nowAsLocalString();
+            const baseInput = document.getElementById('baseInput');
+            baseInput.value = isoLocal;
+            baseDate = wallClockToDate(isoLocal);
+            try { localStorage.setItem('timeTool.base', isoLocal); } catch (e) {}
+            tick();
         });
 
-        document.getElementById('btnReset').addEventListener('click', () => {
+        document.getElementById('btnClearBase').addEventListener('click', () => {
             document.getElementById('baseInput').value = '';
             baseDate = null;
             try { localStorage.removeItem('timeTool.base'); } catch (e) {}
@@ -1552,37 +1719,86 @@
         document.getElementById('hoursInput').addEventListener('input', e => {
             try { localStorage.setItem('timeTool.hours', e.target.value || '0'); } catch (e) {}
             updateCalculations();
-        });
-
-        document.getElementById('daysInput').addEventListener('input', e => {
+        });        document.getElementById('daysInput').addEventListener('input', e => {
             try { localStorage.setItem('timeTool.days', e.target.value || '0'); } catch (e) {}
             updateCalculations();
         });
 
-        const localFlagSelect = document.getElementById('localFlagSelect');
+        /* ─── Apply buttons: set calculated future time as new base ── */        function applyTimeAsBase(futureDate) {
+            // Format the future Date as a wall-clock string in the selected timezone
+            const tz = getSelectedTz();
+            const pad = (n) => String(n).padStart(2, '0');
+            let isoLocal;
+            if (!tz) {
+                isoLocal = futureDate.getFullYear() + '-' + pad(futureDate.getMonth() + 1) + '-' + pad(futureDate.getDate())
+                    + 'T' + pad(futureDate.getHours()) + ':' + pad(futureDate.getMinutes());
+            } else {
+                const parts = new Intl.DateTimeFormat('en-US', {
+                    timeZone: tz, year: 'numeric', month: '2-digit', day: '2-digit',
+                    hour: '2-digit', minute: '2-digit', hour12: false
+                }).formatToParts(futureDate);
+                const get = (type) => parts.find(p => p.type === type)?.value || '00';
+                const h = get('hour') === '24' ? '00' : get('hour');
+                isoLocal = get('year') + '-' + get('month') + '-' + get('day') + 'T' + h + ':' + get('minute');
+            }
+            const baseInput = document.getElementById('baseInput');
+            baseInput.value = isoLocal;
+            baseDate = wallClockToDate(isoLocal);
+            // Reset hours/days back to 0 so user can add more from the new base
+            document.getElementById('hoursInput').value = '0';
+            document.getElementById('daysInput').value = '0';
+            try {
+                localStorage.setItem('timeTool.base', isoLocal);
+                localStorage.setItem('timeTool.hours', '0');
+                localStorage.setItem('timeTool.days', '0');
+            } catch (e) {}
+            tick();
+            updateOffsets();
+            showToast('Applied as new base time');
+        }
+
+        document.getElementById('applyHoursBtn').addEventListener('click', () => {
+            const h = parseInt(document.getElementById('hoursInput').value, 10) || 0;
+            if (!h) return;
+            const now = getNow();
+            const futureDate = new Date(now.getTime() + h * 3600000);
+            applyTimeAsBase(futureDate);
+        });
+
+        document.getElementById('applyDaysBtn').addEventListener('click', () => {
+            const d = parseInt(document.getElementById('daysInput').value, 10) || 0;
+            if (!d) return;
+            const now = getNow();
+            const futureDate = new Date(now.getTime() + d * 86400000);
+            applyTimeAsBase(futureDate);
+        });        const localFlagSelect = document.getElementById('localFlagSelect');
         if (localFlagSelect) {
             localFlagSelect.addEventListener('change', e => {
                 try { localStorage.setItem('timeTool.localCountry', e.target.value); } catch (err) {}
+                // Re-interpret base input in the new timezone context
+                const v = document.getElementById('baseInput').value;
+                if (v) {
+                    baseDate = wallClockToDate(v);
+                }
                 tick();
                 updateOffsets();
             });
         }
 
-        /* ─── Initialize ─────────────────────────────────────────── */
-
-        // Restore saved state
+        /* ─── Initialize ─────────────────────────────────────────── */        // Restore saved state
         try {
             const savedBase = localStorage.getItem('timeTool.base');
             const savedHours = localStorage.getItem('timeTool.hours');
             const savedDays = localStorage.getItem('timeTool.days');
             const savedCountry = localStorage.getItem('timeTool.localCountry');
+            // Restore country first so wallClockToDate uses the right timezone
+            if (savedCountry && localFlagSelect) localFlagSelect.value = savedCountry;
             if (savedBase) {
                 document.getElementById('baseInput').value = savedBase;
-                baseDate = new Date(savedBase);
+                baseDate = wallClockToDate(savedBase);
             }
             if (savedHours !== null) document.getElementById('hoursInput').value = savedHours;
             if (savedDays !== null) document.getElementById('daysInput').value = savedDays;
-            if (savedCountry && localFlagSelect) localFlagSelect.value = savedCountry;
         } catch (e) {}
 
         // Load persisted regions/cities order & myCities
