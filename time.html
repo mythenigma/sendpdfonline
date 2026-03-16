@@ -1603,7 +1603,9 @@
             // Get the local/selected date as YYYY-MM-DD for comparison
             const localDateStr = new Intl.DateTimeFormat('en-CA', {
                 timeZone: localTz, year: 'numeric', month: '2-digit', day: '2-digit'
-            }).format(now); // returns YYYY-MM-DD in en-CA locale            allZoneEntries().forEach(entry => {
+            }).format(now); // returns YYYY-MM-DD in en-CA locale
+
+            allZoneEntries().forEach(entry => {
                 const dtTarget = new Date(now.toLocaleString('en-US', { timeZone: entry.tz }));
                 const diffHours = (dtTarget - now) / 3600000;
                 const rounded = Math.round(diffHours * 2) / 2;
