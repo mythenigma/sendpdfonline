@@ -64,6 +64,19 @@
     .strategy-card h4{color:#fbbf24;margin:0 0 8px;font-size:16px}
     .strategy-card p{color:#94a3b8;font-size:14px;margin:0;line-height:1.6}
     .vs-label{display:inline-block;background:#1e3a8a;color:#93c5fd;padding:2px 8px;border-radius:4px;font-size:12px;font-weight:700;margin:0 4px}
+    .table-wrap{overflow:auto}
+    .score-table{min-width:1320px}
+    .score-table th,.score-table td{font-size:13px}
+    .score-cell{white-space:nowrap;text-align:center;color:#94a3b8;font-weight:700}
+    .score-placeholder{display:inline-block;padding:3px 10px;border-radius:999px;background:#1e3a5f;color:#93c5fd;font-size:12px;font-weight:700}
+    .advice-cell{min-width:340px;color:#cbd5e1}
+    .meta-note{color:#64748b;font-size:12px}
+    .audit-badge{display:inline-block;padding:3px 10px;border-radius:999px;font-size:12px;font-weight:700;white-space:nowrap}
+    .audit-good{background:#14532d;color:#86efac}
+    .audit-warn{background:#713f12;color:#fde68a}
+    .audit-info{background:#1e3a5f;color:#93c5fd}
+    .audit-bad{background:#7f1d1d;color:#fca5a5}
+    .audit-off{background:#374151;color:#cbd5e1}
   </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
@@ -72,9 +85,9 @@
 
   <!-- Tab Navigation -->
   <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('plan')">🚀 改善计划</button>
-    <button class="tab-btn" onclick="switchTab('refine')">📝 页面精修</button>
-    <button class="tab-btn" onclick="switchTab('mobile-img')">📱 图片移动端修复</button>
+    <button class="tab-btn active" onclick="switchTab('plan', this)">🚀 改善计划</button>
+    <button class="tab-btn" onclick="switchTab('refine', this)">📝 页面精修</button>
+    <button class="tab-btn" onclick="switchTab('scoring', this)">🧮 评分系统</button>
   </div>
 
   <!-- Tab 1: 改善计划 -->
@@ -188,6 +201,97 @@
           <tr><td>9</td><td>为核心页面添加真实截图、操作录屏、用户评价</td><td>提升 E-E-A-T 信号</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 首页添加 5 张真实截图 (landing page, upload, security, QR result, analytics)；share-pdf-online + secure-pdf-sharing-guide 各添加 3 张截图；修复 convert-pdf-to-qr-code 4 个损坏图片路径</small></td></tr>
           <tr><td>9.5</td><td>优化重点页面 replace-pdf (EN/ZH)</td><td>重要功能页，增加内链+hreflang+语言切换</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 添加 hreflang 互指、语言切换按钮、5 篇相关文章内链 (EN 2→8, ZH 2→4)、更新 dateModified</small></td></tr>
           <tr><td>10</td><td>重写首页，从"目录页"变为产品落地页</td><td>提高转化率</td><td><span class="badge badge-green">完成 ✓</span> <small>2026-02-21 — 从 584 行目录页 (119 内链, 55 死链) 重写为产品落地页：Hero+截图、3步骤操作流程、6功能卡片、分析截图、6精选文章、4用例卡片、MaiImg 区、CTA — 21 个内链全部有效，0 死链/noindex 链接</small></td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="plan-section">
+      <h2>🚫 不值得继续改善 — 建议直接 404</h2>
+
+      <div class="callout callout-danger">
+        <strong>判断标准</strong><br>
+        下面这批页面不建议继续投入“精修”成本：要么是纯推广/错位内容，要么是极薄残留页、非内容页、重复页或已放弃语言策略下的旧页面。<br>
+        <strong>执行原则：</strong>没有明确替代页就直接 404；只有在确实存在一一对应替代页时才考虑 301。
+      </div>
+
+      <div class="callout callout-success">
+        <strong>已执行到位</strong><br>
+        德语目录 <code>german/*.html</code> 与旧德语功能页 <code>features/de/*.html</code> 已按淘汰策略删除，不再继续改善。
+      </div>
+
+      <table class="plan-table">
+        <thead><tr><th>类别</th><th>建议直接 404 的页面 / 模式</th><th>原因</th><th>处理建议</th></tr></thead>
+        <tbody>
+          <tr>
+            <td><span class="badge badge-red">纯推广页</span></td>
+            <td><code>article/maipdf-convert-promo-*.html</code><br><code>article/secure-pricing-sheets.html</code></td>
+            <td>搜索价值低、转化意图弱、门页气质重，继续保留只会拖累整体质量判断。</td>
+            <td>不再改善，直接 404。</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-red">非核心语言旧工具页</span></td>
+            <td><code>article/maipdf-convert-tool-ar.html</code><br><code>article/maipdf-convert-tool-de.html</code><br><code>article/maipdf-convert-tool-fr.html</code><br><code>article/maipdf-convert-tool-ja.html</code><br><code>article/maipdf-convert-tool-ko.html</code></td>
+            <td>当前策略已收缩到核心语言，这批旧工具页既不深也不值得继续本地化。</td>
+            <td>不再精修，直接 404。</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-red">非核心语言离线页</span></td>
+            <td><code>article/offline-maipdf-ar-new.html</code><br><code>article/offline-maipdf-ja-new.html</code><br><code>article/offline-maipdf-ko-new.html</code></td>
+            <td>与当前内容策略不一致，且没有继续扩语言线的必要。</td>
+            <td>不再改善，直接 404。</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-red">错目录 / 错语言页</span></td>
+            <td><code>features/en/design/share-design-portfolio.html</code><br><code>features/en/security/maipdf_strong_protection.html</code><br><code>features/en/sharing/pdf-link-sharing.html</code><br><code>features/en/sharing/sharepdf.html</code><br><code>features/en/sharing/maipdfexamples.html</code></td>
+            <td>英文路径挂中文内容，本质是错位页；修正文案不如直接清掉错资产，避免继续制造重复和语言混乱。</td>
+            <td>若已有对应中文页保留原页，错位页直接 404。</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-red">非内容页</span></td>
+            <td><code>features/en/security/keycodeEN.html</code><br><code>features/zh/security/keycode.html</code></td>
+            <td>不承载明确搜索意图，也不是值得沉淀的内容资产。</td>
+            <td>不再改善，直接 404。</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-red">极薄 DE/FR 残留页</span></td>
+            <td><code>features/de/analytics/maipdf_analytics_features_de.html</code><br><code>features/de/maipdf_homepage_de.html</code><br><code>features/de/security/maipdf_security_control_de.html</code><br><code>features/de/sharing/maipdf_sharing_features_de.html</code><br><code>features/fr/security/partage-securise-pdf-fonctionnalites-avancees.html</code></td>
+            <td>极薄、无 title、且不在当前主线语言范围内，继续保留没有任何收益。</td>
+            <td>从 noindex 升级为直接 404。</td>
+          </tr>
+          <tr>
+            <td><span class="badge badge-red">重复页二选一</span></td>
+            <td><code>article/offline-maipdf-en.html</code> / <code>article/offline-maipdf-en-new.html</code></td>
+            <td>同主题重复保留会分散权重，也会让后续评分和维护越来越乱。</td>
+            <td>只保留更完整、已有内链的一版，另一版直接 404。</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="plan-section">
+      <h2>🗑️ 非中英页面删除记录</h2>
+      <p style="color:#94a3b8;margin-top:0">以下页面已于 <strong>2026-03-20</strong> 删除，保留最后一次修改日期，方便后续追溯。</p>
+      <table class="plan-table">
+        <thead><tr><th>#</th><th>文件</th><th>语言</th><th>最后修改</th><th>删除日期</th><th>说明</th></tr></thead>
+        <tbody>
+          <tr><td>1</td><td><code>article/maipdf-convert-promo-de.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语 promo 页，直接删除</td></tr>
+          <tr><td>2</td><td><code>article/maipdf-convert-tool-de.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语旧工具页，直接删除</td></tr>
+          <tr><td>3</td><td><code>article/offline-maipdf-de.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语离线页，直接删除</td></tr>
+          <tr><td>4</td><td><code>features/de/analytics/maipdf_analytics_features_de.html</code></td><td>DE</td><td>2026-02-22</td><td>2026-03-20</td><td>极薄残留页，直接删除</td></tr>
+          <tr><td>5</td><td><code>features/de/hosting/maipdf_host_pdf_online_de.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>旧德语 hosting 页，直接删除</td></tr>
+          <tr><td>6</td><td><code>features/de/hosting/maipdf-bootstrap-rich-features-de.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>旧德语 hosting 页，直接删除</td></tr>
+          <tr><td>7</td><td><code>features/de/hosting/pdf-online-hosting-and-sharing-de.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>旧德语 hosting 页，直接删除</td></tr>
+          <tr><td>8</td><td><code>features/de/maipdf_homepage_de.html</code></td><td>DE</td><td>2026-02-22</td><td>2026-03-20</td><td>极薄首页残留，直接删除</td></tr>
+          <tr><td>9</td><td><code>features/de/security/maipdf_security_control_de.html</code></td><td>DE</td><td>2026-02-22</td><td>2026-03-20</td><td>极薄安全页，直接删除</td></tr>
+          <tr><td>10</td><td><code>features/de/security/sicheres-pdf-teilen-erweiterte-funktionen.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>旧德语安全页，直接删除</td></tr>
+          <tr><td>11</td><td><code>features/de/sharing/maipdf_sharing_features_de.html</code></td><td>DE</td><td>2026-02-22</td><td>2026-03-20</td><td>极薄分享页，直接删除</td></tr>
+          <tr><td>12</td><td><code>features/usecase/usecase/german/passwortschutz.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>旧重定向存根，直接删除</td></tr>
+          <tr><td>13</td><td><code>german/index.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语目录页，直接删除</td></tr>
+          <tr><td>14</td><td><code>german/passwortschutz.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语内容页，直接删除</td></tr>
+          <tr><td>15</td><td><code>german/pdf-analytik.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语内容页，直接删除</td></tr>
+          <tr><td>16</td><td><code>german/email-verifizierung.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语内容页，直接删除</td></tr>
+          <tr><td>17</td><td><code>german/dynamische-wasserzeichen.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语内容页，直接删除</td></tr>
+          <tr><td>18</td><td><code>german/sicheres-pdf-teilen.html</code></td><td>DE</td><td>2026-02-21</td><td>2026-03-20</td><td>德语内容页，直接删除</td></tr>
         </tbody>
       </table>
     </div>
@@ -667,17 +771,13 @@
       </table>
     </div>
 
-    <!-- ========== DE/FR 残留 ========== -->
+    <!-- ========== FR 残留 ========== -->
     <div class="plan-section">
       <h2>⚠️ 仍可索引但应 noindex 的页面</h2>
       <table class="plan-table">
         <thead><tr><th style="width:30px">#</th><th>文件</th><th>大小</th><th>问题</th><th>建议</th></tr></thead>
         <tbody>
-          <tr><td>159</td><td><a href="https://sendpdfonline.com/features/de/analytics/maipdf_analytics_features_de" target="_blank" style="color:#93c5fd"><code>features/de/analytics/maipdf_analytics_features_de.html</code></a></td><td>2.4K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
-          <tr><td>160</td><td><a href="https://sendpdfonline.com/features/de/maipdf_homepage_de" target="_blank" style="color:#93c5fd"><code>features/de/maipdf_homepage_de.html</code></a></td><td>3.1K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
-          <tr><td>161</td><td><a href="https://sendpdfonline.com/features/de/security/maipdf_security_control_de" target="_blank" style="color:#93c5fd"><code>features/de/security/maipdf_security_control_de.html</code></a></td><td>3.6K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
-          <tr><td>162</td><td><a href="https://sendpdfonline.com/features/de/sharing/maipdf_sharing_features_de" target="_blank" style="color:#93c5fd"><code>features/de/sharing/maipdf_sharing_features_de.html</code></a></td><td>2.4K</td><td>极薄+无title+德语</td><td><span class="badge badge-purple">noindex</span></td></tr>
-          <tr><td>163</td><td><a href="https://sendpdfonline.com/features/fr/security/partage-securise-pdf-fonctionnalites-avancees" target="_blank" style="color:#93c5fd"><code>features/fr/security/partage-securise-pdf-fonctionnalites-avancees.html</code></a></td><td>2.3K</td><td>极薄+无title+法语</td><td><span class="badge badge-purple">noindex</span></td></tr>
+          <tr><td>159</td><td><a href="https://sendpdfonline.com/features/fr/security/partage-securise-pdf-fonctionnalites-avancees" target="_blank" style="color:#93c5fd"><code>features/fr/security/partage-securise-pdf-fonctionnalites-avancees.html</code></a></td><td>2.3K</td><td>极薄+无title+法语</td><td><span class="badge badge-purple">noindex</span></td></tr>
         </tbody>
       </table>
     </div>
@@ -688,83 +788,268 @@
 
   </div><!-- end tab-refine -->
 
-  <!-- Tab 3: 移动端图片修复记录 -->
-  <div id="tab-mobile-img" class="tab-panel">
+  <!-- Tab 3: 评分系统 -->
+  <div id="tab-scoring" class="tab-panel">
     <div class="plan-section">
-      <h2>📱 问题记录：移动端图片左贴边且未有效放大</h2>
-      <div class="callout callout-danger">
-        <strong>问题模式</strong><br>
-        在部分页面移动端媒体查询中，步骤图使用了 <code>width: 100vw</code> + <code>margin-left: calc(50% - 50vw)</code>。<br>
-        这会导致图片从左侧贴边“出血”，但由于容器/最大宽度约束，右侧视觉上没有对称放大。
+      <h2>🧮 文章评分系统</h2>
+      <div class="callout">
+        <strong>使用方式</strong><br>
+        逐页查看内容页，按 5 个维度记录判断：<code>内容丰富性</code>、<code>易懂程度</code>、<code>AI 痕迹</code>、<code>模板相似度</code>、<code>批量生成感</code>。<br>
+        其中前两项分数越高越好；后三项分数越高，说明问题越重、越需要改写。
       </div>
       <div class="callout callout-success">
-        <strong>统一修复规则（已执行）</strong><br>
-        将所有命中页面改为双侧贴边：<code>.step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; }</code>
+        <strong>当前收录范围</strong><br>
+        评分清单会从“页面精修”tab 自动抽取当前内容页，默认排除目录页 <code>index.html</code>。<br>
+        已下线 / noindex 候选仍保留在清单里，方便统一复核去留与改写策略。
       </div>
-      <p style="color:#94a3b8;margin:0">修复日期：2026-03-03 ｜ 命中文件：25 ｜ 状态：<span class="badge badge-green">全部再修复</span></p>
-      <p style="color:#94a3b8;margin-top:10px">漏检原因（已纠正）：上一轮只扫描了 <code>article/</code> 与 <code>chinese/</code>，未覆盖根目录，导致 <code>index.html</code> 被漏掉。</p>
+      <div class="callout">
+        <strong>模板 / 图片标记规则</strong><br>
+        我已额外补了两列：<code>模板状态</code> 与 <code>图片状态</code>，并且这次优先采用<strong>实际 HTML 文件扫描结果</strong>，不只看备注。<br>
+        绿色表示已经明显切到最新模板或最新图库；黄色表示老模板/有图但未统一；蓝色表示目前信息不足、还需人工复核；灰色表示页面已下线或不适用。
+      </div>
+      <div class="callout">
+        <strong>评分说明</strong><br>
+        现在已补上<strong>首轮初评</strong>，统一使用 <code>1-5 分</code>。<br>
+        <code>内容丰富性</code>、<code>易懂程度</code>：分数越高越好。<br>
+        <code>AI 痕迹</code>、<code>模板相似度</code>、<code>批量生成感</code>：分数越高问题越重。
+      </div>
+      <div class="stat-grid">
+        <div class="stat-card"><div class="num" id="scoring-total">0</div><div class="label">待审内容页</div></div>
+        <div class="stat-card"><div class="num" id="scoring-sections-count">0</div><div class="label">内容分组</div></div>
+        <div class="stat-card"><div class="num" id="scoring-pending">0</div><div class="label">待评分</div></div>
+      </div>
     </div>
 
     <div class="plan-section">
-      <h2>🗂️ 再修复文件（可点击打开）</h2>
-      <table class="plan-table">
-        <thead>
-          <tr>
-            <th style="width:40px">#</th>
-            <th>本地文件</th>
-            <th>线上页面</th>
-            <th>状态</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td><a href="index.html" style="color:#93c5fd"><code>index.html</code></a></td><td><a href="https://sendpdfonline.com/" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>2</td><td><a href="article/controlling-pdf-access.html" style="color:#93c5fd"><code>article/controlling-pdf-access.html</code></a></td><td><a href="https://sendpdfonline.com/article/controlling-pdf-access" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>3</td><td><a href="article/how-to-track-a-pdf-file-zh.html" style="color:#93c5fd"><code>article/how-to-track-a-pdf-file-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/how-to-track-a-pdf-file-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>4</td><td><a href="article/ebook-preview.html" style="color:#93c5fd"><code>article/ebook-preview.html</code></a></td><td><a href="https://sendpdfonline.com/article/ebook-preview" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>5</td><td><a href="article/free-pdf-sharing-online-zh.html" style="color:#93c5fd"><code>article/free-pdf-sharing-online-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/free-pdf-sharing-online-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>6</td><td><a href="article/offline-maipdf-cn.html" style="color:#93c5fd"><code>article/offline-maipdf-cn.html</code></a></td><td><a href="https://sendpdfonline.com/article/offline-maipdf-cn" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>7</td><td><a href="article/offline-maipdf.html" style="color:#93c5fd"><code>article/offline-maipdf.html</code></a></td><td><a href="https://sendpdfonline.com/article/offline-maipdf" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>8</td><td><a href="article/pdf-qr-code-sharing-easy.html" style="color:#93c5fd"><code>article/pdf-qr-code-sharing-easy.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-qr-code-sharing-easy" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>9</td><td><a href="article/pdf-link-sharing-guide-zh.html" style="color:#93c5fd"><code>article/pdf-link-sharing-guide-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-link-sharing-guide-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>10</td><td><a href="article/pdf-sharing-security.html" style="color:#93c5fd"><code>article/pdf-sharing-security.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-sharing-security" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>11</td><td><a href="article/pdf-to-qr-tutorial.html" style="color:#93c5fd"><code>article/pdf-to-qr-tutorial.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-to-qr-tutorial" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>12</td><td><a href="article/training-materials-distribution.html" style="color:#93c5fd"><code>article/training-materials-distribution.html</code></a></td><td><a href="https://sendpdfonline.com/article/training-materials-distribution" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>13</td><td><a href="article/time-limited-whitepapers.html" style="color:#93c5fd"><code>article/time-limited-whitepapers.html</code></a></td><td><a href="https://sendpdfonline.com/article/time-limited-whitepapers" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>14</td><td><a href="article/replace-pdf-without-changing-link-zh.html" style="color:#93c5fd"><code>article/replace-pdf-without-changing-link-zh.html</code></a></td><td><a href="https://sendpdfonline.com/article/replace-pdf-without-changing-link-zh" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>15</td><td><a href="article/qr-code-pdf-scenarios.html" style="color:#93c5fd"><code>article/qr-code-pdf-scenarios.html</code></a></td><td><a href="https://sendpdfonline.com/article/qr-code-pdf-scenarios" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>16</td><td><a href="article/send-pdf-online.html" style="color:#93c5fd"><code>article/send-pdf-online.html</code></a></td><td><a href="https://sendpdfonline.com/article/send-pdf-online" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>17</td><td><a href="article/share-pdf-online.html" style="color:#93c5fd"><code>article/share-pdf-online.html</code></a></td><td><a href="https://sendpdfonline.com/article/share-pdf-online" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>18</td><td><a href="article/replace-pdf-without-changing-link.html" style="color:#93c5fd"><code>article/replace-pdf-without-changing-link.html</code></a></td><td><a href="https://sendpdfonline.com/article/replace-pdf-without-changing-link" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>19</td><td><a href="article/confidential-investor-updates.html" style="color:#93c5fd"><code>article/confidential-investor-updates.html</code></a></td><td><a href="https://sendpdfonline.com/article/confidential-investor-updates" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>20</td><td><a href="article/how-to-track-a-pdf-file.html" style="color:#93c5fd"><code>article/how-to-track-a-pdf-file.html</code></a></td><td><a href="https://sendpdfonline.com/article/how-to-track-a-pdf-file" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>21</td><td><a href="article/pdf-share-expire.html" style="color:#93c5fd"><code>article/pdf-share-expire.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-share-expire" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>22</td><td><a href="article/pdf-sharing-methods.html" style="color:#93c5fd"><code>article/pdf-sharing-methods.html</code></a></td><td><a href="https://sendpdfonline.com/article/pdf-sharing-methods" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>23</td><td><a href="article/secure-pdf-sharing-guide.html" style="color:#93c5fd"><code>article/secure-pdf-sharing-guide.html</code></a></td><td><a href="https://sendpdfonline.com/article/secure-pdf-sharing-guide" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>24</td><td><a href="article/show-pdf-online.html" style="color:#93c5fd"><code>article/show-pdf-online.html</code></a></td><td><a href="https://sendpdfonline.com/article/show-pdf-online" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-          <tr><td>25</td><td><a href="features/en/security/pdf-expiry-and-self-destruct.html" style="color:#93c5fd"><code>features/en/security/pdf-expiry-and-self-destruct.html</code></a></td><td><a href="https://sendpdfonline.com/features/en/security/pdf-expiry-and-self-destruct" target="_blank" style="color:#93c5fd">打开线上页</a></td><td><span class="badge badge-green">再修复</span></td></tr>
-        </tbody>
-      </table>
+      <h2>📝 评分清单与修改意见</h2>
+      <p style="color:#94a3b8;margin-top:0">以下清单按“页面精修”里的现有分组自动生成，先统一列出，再逐页补分和重写意见。</p>
+      <div id="scoring-sections"></div>
     </div>
-
-    <div class="plan-section">
-      <h2>🧭 全仓扫描剩余命中（未纳入本轮）</h2>
-      <table class="plan-table">
-        <thead><tr><th style="width:40px">#</th><th>文件</th><th>说明</th><th>建议</th></tr></thead>
-        <tbody>
-          <tr><td>1</td><td><a href="flipbook/original-fixed.html" style="color:#93c5fd"><code>flipbook/original-fixed.html</code></a></td><td>翻页书全屏容器，<code>100vw/100vh</code> 为预期布局</td><td><span class="badge badge-blue">暂不改</span></td></tr>
-          <tr><td>2</td><td><a href="flipbook/testturn.html" style="color:#93c5fd"><code>flipbook/testturn.html</code></a></td><td>测试页，<code>#flipbook { width:100vw; height:100vh; }</code></td><td><span class="badge badge-blue">暂不改</span></td></tr>
-        </tbody>
-      </table>
-    </div>
-  </div><!-- end tab-mobile-img -->
+  </div><!-- end tab-scoring -->
 
   <script>
-  function switchTab(id){
+  const WORK_PANEL_STORAGE_KEY = 'sendpdfonline.workPanelState.v1';
+  const pageAudit = {
+    "article/confidential-documents-risk.html": "ON",
+    "article/confidential-investor-updates.html": "LL",
+    "article/controlling-pdf-access.html": "LL",
+    "article/ebook-preview.html": "LL",
+    "article/free-pdf-sharing-online-zh.html": "LL",
+    "article/how-to-track-a-pdf-file.html": "LL",
+    "article/how-to-track-a-pdf-file-zh.html": "LL",
+    "article/internal-company-docs-sharing.html": "OO",
+    "article/limit-pdf-access-times-en.html": "LL",
+    "article/limit-pdf-open-times-cn.html": "LL",
+    "article/maipdf-convert-tool-en.html": "OL",
+    "article/maipdf-convert-tool-zh.html": "LL",
+    "article/maipdf-vs-docsend.html": "LN",
+    "article/maipdf-vs-smallpdf.html": "LN",
+    "article/offline-maipdf.html": "LL",
+    "article/offline-maipdf-ar-new.html": "OL",
+    "article/offline-maipdf-cn.html": "LL",
+    "article/offline-maipdf-en.html": "OL",
+    "article/offline-maipdf-en-new.html": "OL",
+    "article/offline-maipdf-ja-new.html": "OL",
+    "article/offline-maipdf-ko-new.html": "OL",
+    "article/online-pdf-viewer.html": "LL",
+    "article/pdf-access-control-guide.html": "LO",
+    "article/pdf-control-lost.html": "LL",
+    "article/pdf-link-sharing-guide-en.html": "LN",
+    "article/pdf-link-sharing-guide-zh.html": "LL",
+    "article/pdf-qr-code-guide-en.html": "LN",
+    "article/pdf-qr-code-guide-zh.html": "LL",
+    "article/pdf-qr-code-sharing-easy.html": "LL",
+    "article/pdf-share-expire.html": "LL",
+    "article/pdf-sharing-methods.html": "LL",
+    "article/pdf-sharing-security.html": "LL",
+    "article/pdf-to-qr-tutorial.html": "LL",
+    "article/pdf-view-limits-security.html": "LL",
+    "article/pdf-watermark-guide.html": "LO",
+    "article/prevent-pdf-forwarding-guide.html": "LO",
+    "article/qr-code-pdf-scenarios.html": "LL",
+    "article/replace-pdf-without-changing-link.html": "LL",
+    "article/replace-pdf-without-changing-link-zh.html": "LL",
+    "article/sales-pitch-decks.html": "ON",
+    "article/secure-pdf-sharing-guide.html": "LL",
+    "article/secure-pricing-sheets.html": "ON",
+    "article/send-pdf-online.html": "LL",
+    "article/sensitive-documents-security.html": "LL",
+    "article/share-pdf-online.html": "LL",
+    "article/show-pdf-online.html": "LL",
+    "article/time-limited-whitepapers.html": "LL",
+    "article/time-limited-whitepapers-case-studies.html": "OO",
+    "article/track-pdf-analytics-guide.html": "LO",
+    "article/training-materials-distribution.html": "LL",
+    "chinese/convert-pdf-features.html": "LL",
+    "chinese/convert-pdf-to-image.html": "OM",
+    "chinese/pdf-to-qr-guide.html": "OL",
+    "convert-pdf-features.html": "LO",
+    "features/en/comparison/locklizard-vs-maipdf-comparison.html": "LN",
+    "features/en/design/designer-portfolio-pdf.html": "LN",
+    "features/en/design/design-file-organization.html": "LN",
+    "features/en/design/design-work-sharing.html": "LN",
+    "features/en/design/share-design-portfolio.html": "OO",
+    "features/en/hosting/free-pdf-hosting-and-sharing.html": "LO",
+    "features/en/hosting/maipdf-secure-pdf-hosting.html": "LN",
+    "features/en/hosting/secure-pdf-hosting.html": "LN",
+    "features/en/security/advanced-security-configurations.html": "LN",
+    "features/en/security/anonymous-pdf-sharing.html": "LN",
+    "features/en/security/convert-pdf-to-secure-links.html": "LO",
+    "features/en/security/keycodeEN.html": "ON",
+    "features/en/security/maipdf_strong_protection.html": "OL",
+    "features/en/security/pdf_prevent_forward.html": "LN",
+    "features/en/security/pdf-expiry-and-self-destruct.html": "LO",
+    "features/en/security/pdf-security-best-practices.html": "LN",
+    "features/en/security/pdf-security-features.html": "LO",
+    "features/en/security/preventdownload.html": "LN",
+    "features/en/security/prevent-pdf-forwarding-dynamicqr.html": "LN",
+    "features/en/security/secure-pdf-access-control.html": "OO",
+    "features/en/security/secure-pdf-sharing-advanced-features.html": "LO",
+    "features/en/security/secure-pdf-sharing-methods.html": "LN",
+    "features/en/security/set-expiration-date-for-pdfs.html": "LL",
+    "features/en/security/share-pdf-online-securely.html": "OL",
+    "features/en/security/time-limits-pdf-files.html": "LN",
+    "features/en/sharing/convert-pdf-to-qr-code.html": "LL",
+    "features/en/sharing/fast-free-pdf-sharing.html": "OO",
+    "features/en/sharing/maipdfexamples.html": "ON",
+    "features/en/sharing/methodsofsharing.html": "OO",
+    "features/en/sharing/pdflinks.html": "OO",
+    "features/en/sharing/pdf-link-sharing.html": "LO",
+    "features/en/sharing/Share_PDF_Online.html": "OL",
+    "features/en/sharing/shareeasily.html": "ON",
+    "features/en/sharing/sharepdf.html": "OO",
+    "features/en/sharing/share-pdf-files-online.html": "LO",
+    "features/en/sharing/sharepdfsfilesonline.html": "OL",
+    "features/en/sharing/tourlway.html": "OO",
+    "features/en/tracking/client-feedback-management.html": "ON",
+    "features/en/watermark/design-watermark-protection.html": "ON",
+    "features/en/watermark/dynamic-qr-watermark-pdf.html": "LO",
+    "features/fr/security/partage-securise-pdf-fonctionnalites-avancees.html": "ON",
+    "features/zh/comparison/whichone.html": "ON",
+    "features/zh/design/designercn.html": "OO",
+    "features/zh/hosting/maipdf_host_pdf_online_zh.html": "OO",
+    "features/zh/maiimg/免费图片托管分享指南.html": "LN",
+    "features/zh/maiimg/批量图片上传分享.html": "LN",
+    "features/zh/maiimg/社交媒体图片分享.html": "LN",
+    "features/zh/maiimg/图片二维码分享.html": "LN",
+    "features/zh/mai介绍.html": "ON",
+    "features/zh/security/encrypt-pdf-prevent-editing-cn.html": "OO",
+    "features/zh/security/keycode.html": "ON",
+    "features/zh/security/maipdffenceview.html": "LO",
+    "features/zh/security/pdf_prevent_forward.html": "OL",
+    "features/zh/security/pdf密码保护教程.html": "LN",
+    "features/zh/security/prevent-document-content-copying-cn.html": "LL",
+    "features/zh/security/set-pdf-expiration-date-cn.html": "LL",
+    "features/zh/security/set-pdf-print-restrictions-cn.html": "LL",
+    "features/zh/security/share-pdf-online-securely.html": "OL",
+    "features/zh/security/sharesecure.html": "OL",
+    "features/zh/sharing/pdf安全分享完整指南.html": "LN",
+    "features/zh/sharing/pdf二维码生成教程.html": "LN",
+    "features/zh/sharing/pdf水印设置教程.html": "LN",
+    "features/zh/sharing/ShareSecure.html": "OL",
+    "features/zh/sharing/waysmulti.html": "OO",
+    "features/zh/sharing/waystosend.html": "OO",
+    "features/zh/tracking/阅读记录.html": "LO",
+    "features/zh/watermark/动态水印maipdf.html": "OO",
+    "flipbook/pdf-flipbook-free.html": "LL",
+    "flipbook/pdf-flipbook-watermark.html": "LL",
+    "flipbook/turn-flipbook.html": "ON",
+    "flowcharts.html": "OL",
+    "maiimg-articles/batch-image-upload-sharing.html": "OO",
+    "maiimg-articles/email-image-sharing-no-attachments.html": "OO",
+    "maiimg-articles/free-image-hosting-sharing.html": "OO",
+    "maiimg-articles/image-compression-optimization.html": "ON",
+    "maiimg-articles/image-expiration-access-control.html": "OO",
+    "maiimg-articles/image-format-guide.html": "ON",
+    "maiimg-articles/image-password-protection.html": "OO",
+    "maiimg-articles/image-qr-code-sharing.html": "OO",
+    "maiimg-articles/image-sharing-best-practices.html": "ON",
+    "maiimg-articles/image-watermark-protection.html": "OO",
+    "maiimg-articles/social-media-image-sharing.html": "OO",
+    "new-articles-for-blog/document-watermarking-guide.html": "LL",
+    "new-articles-for-blog/drm-for-pdf.html": "LL",
+    "new-articles-for-blog/pdf-security-best-practices.html": "LL",
+    "new-articles-for-blog/secure-file-sharing.html": "LL",
+    "usecase/confidential-investor-updates.html": "OL",
+    "usecase/document-control-security.html": "OL",
+    "usecase/free-pdf-hosting.html": "OL",
+    "usecase/pdf-access-control.html": "OO",
+    "usecase/pdf-analytics.html": "OO",
+    "usecase/pdf-branding.html": "OO",
+    "usecase/pdf-encryption.html": "OO",
+    "usecase/pdf-password-protection.html": "OO",
+    "usecase/pdf-security.html": "OO",
+    "usecase/pdf-sharing-analytics.html": "OO",
+    "usecase/pdf-watermarking.html": "OO",
+    "usecase/secure-pdf-sharing.html": "OO"
+  };
+  function readWorkPanelState(){
+    try {
+      const raw = localStorage.getItem(WORK_PANEL_STORAGE_KEY);
+      if(!raw) return { activeTab: 'plan', scrollByTab: {} };
+      const parsed = JSON.parse(raw);
+      return {
+        activeTab: parsed.activeTab || 'plan',
+        scrollByTab: parsed.scrollByTab && typeof parsed.scrollByTab === 'object' ? parsed.scrollByTab : {}
+      };
+    } catch (e) {
+      return { activeTab: 'plan', scrollByTab: {} };
+    }
+  }
+  function writeWorkPanelState(nextState){
+    try {
+      localStorage.setItem(WORK_PANEL_STORAGE_KEY, JSON.stringify(nextState));
+    } catch (e) {
+      // Ignore storage failures in private mode or restricted environments.
+    }
+  }
+  function getActiveTabId(){
+    const panel=document.querySelector('.tab-panel.active');
+    return panel ? panel.id.replace('tab-','') : 'plan';
+  }
+  function saveCurrentViewState(){
+    const state=readWorkPanelState();
+    const activeTab=getActiveTabId();
+    state.activeTab=activeTab;
+    state.scrollByTab[activeTab]=window.scrollY || window.pageYOffset || 0;
+    writeWorkPanelState(state);
+  }
+  function restoreTabScroll(id){
+    const state=readWorkPanelState();
+    const top=Number(state.scrollByTab[id] || 0);
+    requestAnimationFrame(()=>{
+      requestAnimationFrame(()=>{
+        window.scrollTo(0, top);
+      });
+    });
+  }
+  let scrollSaveTimer=null;
+  function queueViewStateSave(){
+    clearTimeout(scrollSaveTimer);
+    scrollSaveTimer=setTimeout(saveCurrentViewState, 120);
+  }
+  function decodeTemplateAudit(code){
+    if(code==='L') return { label:'最新模板', tone:'good' };
+    return { label:'老模板/未统一', tone:'warn' };
+  }
+  function decodeImageAudit(code){
+    if(code==='L') return { label:'最新图库', tone:'good' };
+    if(code==='M') return { label:'新旧图库混用', tone:'warn' };
+    if(code==='N') return { label:'无图', tone:'warn' };
+    return { label:'老图/未统一', tone:'warn' };
+  }
+  function switchTab(id, btn){
+    saveCurrentViewState();
     document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
     document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
     document.getElementById('tab-'+id).classList.add('active');
-    event.target.classList.add('active');
+    if(btn) btn.classList.add('active');
     if(id==='refine') updateRefineStats();
+    if(id==='scoring') renderScoringSystem();
+    const state=readWorkPanelState();
+    state.activeTab=id;
+    writeWorkPanelState(state);
+    restoreTabScroll(id);
   }
   function updateRefineStats(){
     const panel=document.getElementById('tab-refine');
@@ -789,6 +1074,318 @@
     el('refine-en').textContent=en;
     el('refine-zh').textContent=zh;
   }
+  function escapeHtml(text){
+    return String(text).replace(/[&<>"']/g, ch => ({
+      '&':'&amp;',
+      '<':'&lt;',
+      '>':'&gt;',
+      '"':'&quot;',
+      "'":'&#39;'
+    })[ch]);
+  }
+  function inferLanguage(path,row){
+    const normalized=path.replace(/\\/g,'/');
+    const cellTexts=row ? Array.from(row.cells).map(td=>td.textContent.trim()) : [];
+    if(cellTexts.includes('EN')) return 'EN';
+    if(cellTexts.includes('ZH')) return 'ZH';
+    if(cellTexts.includes('DE')) return 'DE';
+    if(normalized.startsWith('features/de/')) return 'DE';
+    if(normalized.startsWith('features/fr/')) return 'FR';
+    if(normalized.startsWith('chinese/')||normalized.startsWith('features/zh/')) return 'ZH';
+    if(normalized.startsWith('article/')) return /-zh|cn|\/zh\//i.test(normalized) ? 'ZH' : 'EN';
+    if(normalized.startsWith('features/en/')||normalized.startsWith('usecase/')||normalized.startsWith('maiimg-articles/')||normalized.startsWith('new-articles-for-blog/')) return 'EN';
+    if(/\.html$/i.test(normalized)) return 'EN';
+    return '—';
+  }
+  function getCellByHeader(row,headerName){
+    if(!row) return '';
+    const table=row.closest('table');
+    if(!table) return '';
+    const headers=Array.from(table.querySelectorAll('thead th')).map(th=>th.textContent.trim());
+    const idx=headers.findIndex(text=>text===headerName);
+    if(idx===-1 || idx>=row.cells.length) return '';
+    return row.cells[idx].textContent.replace(/\s+/g,' ').trim();
+  }
+  function renderAuditBadge(label,tone){
+    const toneClass=tone==='good' ? 'audit-good' : tone==='warn' ? 'audit-warn' : tone==='bad' ? 'audit-bad' : tone==='off' ? 'audit-off' : 'audit-info';
+    return `<span class="audit-badge ${toneClass}">${escapeHtml(label)}</span>`;
+  }
+  function clampScore(value){
+    return Math.max(1, Math.min(5, Math.round(value)));
+  }
+  function getAreaType(path){
+    const normalized=path.replace(/\\/g,'/');
+    if(/^new-articles-for-blog\//.test(normalized)) return 'newblog';
+    if(/^article\//.test(normalized)) return 'article';
+    if(/^features\/en\//.test(normalized)) return 'features-en';
+    if(/^features\/zh\//.test(normalized)) return 'features-zh';
+    if(/^features\/(?:de|fr)\//.test(normalized)) return 'features-legacy-lang';
+    if(/^chinese\//.test(normalized)) return 'chinese';
+    if(/^usecase\//.test(normalized)) return 'usecase';
+    if(/^maiimg-articles\//.test(normalized)) return 'maiimg';
+    if(/^flipbook\//.test(normalized)) return 'flipbook';
+    return 'root';
+  }
+  function computeScores(path,statusText){
+    const normalized=path.replace(/\\/g,'/');
+    const auditCode=pageAudit[normalized] || 'OO';
+    const templateCode=auditCode.charAt(0) || 'O';
+    const imageCode=auditCode.charAt(1) || 'N';
+    const area=getAreaType(normalized);
+    let scores={ richness:3, clarity:3, ai:3, similarity:3, batch:3 };
+
+    if(area==='newblog') scores={ richness:4, clarity:4, ai:2, similarity:2, batch:2 };
+    if(area==='article') scores={ richness:3, clarity:3, ai:3, similarity:3, batch:3 };
+    if(area==='features-en') scores={ richness:2, clarity:3, ai:4, similarity:4, batch:4 };
+    if(area==='features-zh') scores={ richness:2, clarity:3, ai:4, similarity:4, batch:4 };
+    if(area==='features-legacy-lang') scores={ richness:1, clarity:2, ai:5, similarity:5, batch:5 };
+    if(area==='chinese') scores={ richness:3, clarity:3, ai:3, similarity:4, batch:4 };
+    if(area==='usecase') scores={ richness:2, clarity:3, ai:4, similarity:4, batch:4 };
+    if(area==='maiimg') scores={ richness:2, clarity:3, ai:4, similarity:4, batch:4 };
+    if(area==='flipbook') scores={ richness:2, clarity:2, ai:3, similarity:3, batch:3 };
+    if(area==='root') scores={ richness:2, clarity:3, ai:2, similarity:2, batch:2 };
+
+    if(templateCode==='L'){
+      scores.richness+=1;
+      scores.clarity+=1;
+      scores.ai-=1;
+      scores.similarity-=1.5;
+      scores.batch-=1.5;
+    }
+    if(imageCode==='L'){
+      scores.richness+=1;
+      scores.ai-=0.5;
+      scores.batch-=0.5;
+    }
+    if(imageCode==='M'){
+      scores.richness+=0.5;
+      scores.similarity+=0.5;
+      scores.batch+=1;
+    }
+    if(imageCode==='N'){
+      scores.richness-=1;
+      scores.clarity-=0.5;
+      scores.ai+=0.5;
+      scores.batch+=0.5;
+    }
+
+    if(/已下线|noindex/i.test(statusText)){
+      return { richness:1, clarity:2, ai:4, similarity:5, batch:5 };
+    }
+    if(/已精修|再精修|已完成|完成 ✓|Phase [234] 新建|基础完成/i.test(statusText)){
+      scores.richness+=0.5;
+      scores.clarity+=0.5;
+      scores.ai-=0.5;
+      scores.similarity-=0.5;
+      scores.batch-=0.5;
+    }
+    if(/待精修|待检查|待手动操作|需讨论|需决策/i.test(statusText)){
+      scores.richness-=0.5;
+      scores.clarity-=0.5;
+      scores.ai+=0.5;
+      scores.similarity+=0.5;
+      scores.batch+=0.5;
+    }
+    if(/薄|极薄/.test(statusText)){
+      scores.richness-=1;
+      scores.ai+=0.5;
+      scores.similarity+=0.5;
+      scores.batch+=1;
+    }
+    if(/无图/.test(statusText)){
+      scores.richness-=1;
+      scores.clarity-=0.5;
+      scores.ai+=0.5;
+      scores.batch+=0.5;
+    }
+    if(/中文文件名|ZH内容|建议纠正/.test(statusText)){
+      scores.clarity-=0.5;
+      scores.ai+=0.5;
+      scores.similarity+=1;
+      scores.batch+=1;
+    }
+    if(/主页风格|风格同 index|主页同款样式|模板统一|统一蓝色视觉|统一视觉风格|产品落地页|show_off|界面图/.test(statusText)){
+      scores.richness+=0.5;
+      scores.clarity+=0.5;
+      scores.ai-=0.5;
+      scores.similarity-=0.5;
+      scores.batch-=0.5;
+    }
+    if(/^article\/maipdf-vs-/.test(normalized)){
+      scores.clarity+=0.5;
+      scores.ai-=0.5;
+      scores.similarity-=0.5;
+      scores.batch-=0.5;
+    }
+    if(/^features\/(?:en|zh)\//.test(normalized) && templateCode==='O'){
+      scores.ai+=0.5;
+      scores.similarity+=0.5;
+      scores.batch+=0.5;
+    }
+    if(/^maiimg-articles\//.test(normalized) && imageCode!=='L'){
+      scores.richness-=0.5;
+      scores.similarity+=0.5;
+      scores.batch+=0.5;
+    }
+
+    return {
+      richness: clampScore(scores.richness),
+      clarity: clampScore(scores.clarity),
+      ai: clampScore(scores.ai),
+      similarity: clampScore(scores.similarity),
+      batch: clampScore(scores.batch)
+    };
+  }
+  function renderScoreBadge(score,inverse=false){
+    let tone='info';
+    if(inverse){
+      if(score<=2) tone='good';
+      else if(score===3) tone='info';
+      else if(score===4) tone='warn';
+      else tone='bad';
+    } else {
+      if(score>=4) tone='good';
+      else if(score===3) tone='info';
+      else if(score===2) tone='warn';
+      else tone='bad';
+    }
+    return renderAuditBadge(`${score}/5`, tone);
+  }
+  function inferTemplateState(statusText,path){
+    const normalized=path.replace(/\\/g,'/');
+    const auditCode=pageAudit[normalized];
+    if(auditCode) return decodeTemplateAudit(auditCode.charAt(0));
+    if(/已下线|noindex/i.test(statusText)) return { label:'不适用', tone:'off' };
+    if(/待精修|待检查|建议 noindex|建议纠正|可能需noindex|薄内容|极薄/.test(statusText)) return { label:'老模板/未统一', tone:'warn' };
+    if(/主页风格|风格同 index|主页同款样式|模板统一|统一蓝色视觉|统一视觉风格|产品落地页/.test(statusText)) return { label:'最新模板', tone:'good' };
+    if(/已精修|再精修|已完成|完成 ✓|Phase [234] 新建/.test(statusText)) return { label:'待确认', tone:'info' };
+    return { label:'待确认', tone:'info' };
+  }
+  function inferImageState(row,statusText,path){
+    const normalized=path.replace(/\\/g,'/');
+    const auditCode=pageAudit[normalized];
+    if(auditCode) return decodeImageAudit(auditCode.charAt(1));
+    const imageFlag=getCellByHeader(row,'图');
+    const imageSignals=/show_off|界面图|补图|截图|真实图|真实截图|viewer 实图|主视觉|配置截图|追踪截图|水印真实图|步骤界面图|landing page|upload|security|QR result|analytics|maipdf2026/i;
+    if(/已下线|noindex/i.test(statusText)) return { label:'不适用', tone:'off' };
+    if(/无图/.test(statusText) || imageFlag==='—') return { label:'无图/未统一', tone:'warn' };
+    if(imageSignals.test(statusText)) return { label:'最新图库', tone:'good' };
+    if(imageFlag==='✅' && /待精修|待检查/.test(statusText)) return { label:'有图但待统一', tone:'warn' };
+    if(imageFlag==='✅') return { label:'待确认', tone:'info' };
+    return { label:'待确认', tone:'info' };
+  }
+  function inferAdvice(path,statusText,sectionTitle){
+    const normalized=path.replace(/\\/g,'/');
+    const advice=[];
+    if(/已下线|noindex/i.test(statusText)) advice.push('先确认是否继续保留；若无明确搜索价值，维持 noindex 或直接合并。');
+    if(/无图/.test(statusText)) advice.push('优先补真实截图或原创图表，避免通篇只有文字。');
+    if(/无schema/i.test(statusText)) advice.push('补 Article/FAQ schema，并同步首屏摘要与 FAQ 内容。');
+    if(/薄|极薄/.test(statusText)) advice.push('补真实场景、步骤、错误示例和对比信息，删掉空泛 benefits。');
+    if(/中文文件名/.test(statusText)) advice.push('确认 slug 策略；正文同时减少翻译腔和模板句式。');
+    if(!advice.length && normalized.startsWith('usecase/')) advice.push('强化角色-问题-做法-结果链路，避免只罗列功能点。');
+    if(!advice.length && normalized.startsWith('maiimg-articles/')) advice.push('补图片类真实案例、实图和操作细节，降低泛教程感。');
+    if(!advice.length && /^features\/(?:en|zh)\//.test(normalized)) advice.push('检查同主题页面是否过度同模板，必要时重写开头与信息架构。');
+    if(!advice.length && normalized.startsWith('article/')) advice.push('补首屏结论、真实截图和独特案例，压缩模板段落。');
+    if(!advice.length && normalized.startsWith('chinese/')) advice.push('补更具体的中文场景和步骤表达，减少通用型套话。');
+    if(!advice.length && /guide|tutorial|best-practices|comparison|vs/i.test(normalized)) advice.push('补步骤截图、判断标准和常见误区，让信息更可执行。');
+    if(!advice.length) advice.push('逐页复核结构、证据、语气与重复段落，先删套话再补细节。');
+    if(/比较|comparison|vs/i.test(sectionTitle+normalized)) advice.push('对比页要明确适用场景，避免只做偏营销的结论。');
+    return advice.join(' ');
+  }
+  function renderScoringSystem(){
+    const host=document.getElementById('scoring-sections');
+    if(!host) return;
+    const sections=[];
+    const refineSections=document.querySelectorAll('#tab-refine .plan-section');
+    refineSections.forEach(section=>{
+      const heading=section.querySelector('h2');
+      if(!heading) return;
+      const title=heading.textContent.trim();
+      const rows=[];
+      section.querySelectorAll('tbody tr').forEach(row=>{
+        if(row.querySelector('td[colspan]')) return;
+        const code=row.querySelector('code');
+        if(!code) return;
+        const rawPath=code.textContent.trim();
+        const path=rawPath.replace(/\\/g,'/');
+        if(/(^|\/)index\.html$/i.test(path)) return;
+        const lastCell=row.cells[row.cells.length-1];
+        const statusText=lastCell ? lastCell.textContent.replace(/\s+/g,' ').trim() : '—';
+        const templateState=inferTemplateState(statusText,path);
+        const imageState=inferImageState(row,statusText,path);
+        const scores=computeScores(path,statusText);
+        rows.push({
+          path,
+          language: inferLanguage(path,row),
+          statusText,
+          templateState,
+          imageState,
+          scores,
+          advice: inferAdvice(path,statusText,title)
+        });
+      });
+      if(rows.length) sections.push({ title, rows });
+    });
+
+    let total=0;
+    const html=sections.map(section=>{
+      total+=section.rows.length;
+      const body=section.rows.map((item,index)=>`
+        <tr>
+          <td>${index+1}</td>
+          <td><a href="${escapeHtml(item.path)}" style="color:#93c5fd"><code>${escapeHtml(item.path)}</code></a></td>
+          <td>${escapeHtml(item.language)}</td>
+          <td>${escapeHtml(item.statusText || '—')}</td>
+          <td class="score-cell">${renderAuditBadge(item.templateState.label,item.templateState.tone)}</td>
+          <td class="score-cell">${renderAuditBadge(item.imageState.label,item.imageState.tone)}</td>
+          <td class="score-cell">${renderScoreBadge(item.scores.richness)}</td>
+          <td class="score-cell">${renderScoreBadge(item.scores.clarity)}</td>
+          <td class="score-cell">${renderScoreBadge(item.scores.ai,true)}</td>
+          <td class="score-cell">${renderScoreBadge(item.scores.similarity,true)}</td>
+          <td class="score-cell">${renderScoreBadge(item.scores.batch,true)}</td>
+          <td class="advice-cell">${escapeHtml(item.advice)}</td>
+        </tr>`).join('');
+      return `
+        <div class="plan-section">
+          <h2>${escapeHtml(section.title)}</h2>
+          <p class="meta-note">说明：先按 5 个维度评分，再在“修改意见”基础上细化逐页重写策略。</p>
+          <div class="table-wrap">
+            <table class="plan-table score-table">
+              <thead>
+                <tr>
+                  <th style="width:40px">#</th>
+                  <th>文件</th>
+                  <th style="width:70px">语言</th>
+                  <th style="width:220px">当前状态</th>
+                  <th style="width:110px">模板状态</th>
+                  <th style="width:110px">图片状态</th>
+                  <th style="width:90px">内容丰富性</th>
+                  <th style="width:90px">易懂程度</th>
+                  <th style="width:90px">AI 痕迹</th>
+                  <th style="width:110px">模板相似度</th>
+                  <th style="width:110px">批量生成感</th>
+                  <th>修改意见</th>
+                </tr>
+              </thead>
+              <tbody>${body}</tbody>
+            </table>
+          </div>
+        </div>`;
+    }).join('');
+
+    host.innerHTML=html || '<div class="callout callout-danger"><strong>未生成清单</strong><br>请先确认“页面精修”tab 中仍保留待评内容行。</div>';
+    document.getElementById('scoring-total').textContent=total;
+    document.getElementById('scoring-sections-count').textContent=sections.length;
+    document.getElementById('scoring-pending').textContent=total;
+  }
+  window.addEventListener('scroll', queueViewStateSave, { passive:true });
+  window.addEventListener('beforeunload', saveCurrentViewState);
+  document.addEventListener('DOMContentLoaded', ()=>{
+    const state=readWorkPanelState();
+    const targetId=document.getElementById('tab-'+state.activeTab) ? state.activeTab : 'plan';
+    const targetBtn=document.querySelector(`.tab-btn[onclick*="switchTab('${targetId}'"]`);
+    switchTab(targetId, targetBtn || undefined);
+  });
   </script>
 
 </body>
