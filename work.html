@@ -1,4 +1,4 @@
-﻿<!doctype html>
+<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -804,8 +804,8 @@
       </div>
       <div class="callout">
         <strong>模板 / 图片标记规则</strong><br>
-        我已额外补了两列：<code>模板状态</code> 与 <code>图片状态</code>，并且这次优先采用<strong>实际 HTML 文件扫描结果</strong>，不只看备注。<br>
-        绿色表示已经明显切到最新模板或最新图库；黄色表示老模板/有图但未统一；蓝色表示目前信息不足、还需人工复核；灰色表示页面已下线或不适用。
+        我已额外补了两列：<code>模板状态</code> 与 <code>图片状态</code>。<strong>「最新模板」= 页面 CSS 确认使用与根目录 <code>index.html</code> 同款蓝色视觉</strong>（<code>:root --blue-*</code>、蓝色 hero 渐变、<code>.feature-card / .article-card / .cta-section</code>）。<code>pageAudit</code> 中的 L 已通过自动扫描校验，不符合的已降为 O。<br>
+        绿色表示已对标 index 蓝色模板或最新图库；黄色表示老模板或非 index 风格；蓝色表示信息不足需复核；灰色表示已下线或不适用。
       </div>
       <div class="callout">
         <strong>评分说明</strong><br>
@@ -839,11 +839,11 @@
     "article/how-to-track-a-pdf-file-zh.html": "LL",
     "article/internal-company-docs-sharing.html": "OO",
     "article/limit-pdf-access-times-en.html": "LL",
-    "article/limit-pdf-open-times-cn.html": "LL",
+    "article/limit-pdf-open-times-cn.html": "OL",
     "article/maipdf-convert-tool-en.html": "OL",
     "article/maipdf-convert-tool-zh.html": "LL",
-    "article/maipdf-vs-docsend.html": "LN",
-    "article/maipdf-vs-smallpdf.html": "LN",
+    "article/maipdf-vs-docsend.html": "ON",
+    "article/maipdf-vs-smallpdf.html": "ON",
     "article/offline-maipdf.html": "LL",
     "article/offline-maipdf-ar-new.html": "OL",
     "article/offline-maipdf-cn.html": "LL",
@@ -852,11 +852,11 @@
     "article/offline-maipdf-ja-new.html": "OL",
     "article/offline-maipdf-ko-new.html": "OL",
     "article/online-pdf-viewer.html": "LL",
-    "article/pdf-access-control-guide.html": "LO",
+    "article/pdf-access-control-guide.html": "OO",
     "article/pdf-control-lost.html": "LL",
-    "article/pdf-link-sharing-guide-en.html": "LN",
+    "article/pdf-link-sharing-guide-en.html": "ON",
     "article/pdf-link-sharing-guide-zh.html": "LL",
-    "article/pdf-qr-code-guide-en.html": "LN",
+    "article/pdf-qr-code-guide-en.html": "ON",
     "article/pdf-qr-code-guide-zh.html": "LL",
     "article/pdf-qr-code-sharing-easy.html": "LL",
     "article/pdf-share-expire.html": "LL",
@@ -864,8 +864,8 @@
     "article/pdf-sharing-security.html": "LL",
     "article/pdf-to-qr-tutorial.html": "LL",
     "article/pdf-view-limits-security.html": "LL",
-    "article/pdf-watermark-guide.html": "LO",
-    "article/prevent-pdf-forwarding-guide.html": "LO",
+    "article/pdf-watermark-guide.html": "OO",
+    "article/prevent-pdf-forwarding-guide.html": "OO",
     "article/qr-code-pdf-scenarios.html": "LL",
     "article/replace-pdf-without-changing-link.html": "LL",
     "article/replace-pdf-without-changing-link-zh.html": "LL",
@@ -878,12 +878,12 @@
     "article/show-pdf-online.html": "LL",
     "article/time-limited-whitepapers.html": "LL",
     "article/time-limited-whitepapers-case-studies.html": "OO",
-    "article/track-pdf-analytics-guide.html": "LO",
+    "article/track-pdf-analytics-guide.html": "OO",
     "article/training-materials-distribution.html": "LL",
-    "chinese/convert-pdf-features.html": "LL",
+    "chinese/convert-pdf-features.html": "OL",
     "chinese/convert-pdf-to-image.html": "OM",
     "chinese/pdf-to-qr-guide.html": "OL",
-    "convert-pdf-features.html": "LO",
+    "convert-pdf-features.html": "OO",
     "features/en/comparison/locklizard-vs-maipdf-comparison.html": "LN",
     "features/en/design/designer-portfolio-pdf.html": "LN",
     "features/en/design/design-file-organization.html": "LN",
@@ -914,7 +914,7 @@
     "features/en/sharing/maipdfexamples.html": "ON",
     "features/en/sharing/methodsofsharing.html": "OO",
     "features/en/sharing/pdflinks.html": "OO",
-    "features/en/sharing/pdf-link-sharing.html": "LO",
+    "features/en/sharing/pdf-link-sharing.html": "OO",
     "features/en/sharing/Share_PDF_Online.html": "OL",
     "features/en/sharing/shareeasily.html": "ON",
     "features/en/sharing/sharepdf.html": "OO",
@@ -923,36 +923,36 @@
     "features/en/sharing/tourlway.html": "OO",
     "features/en/tracking/client-feedback-management.html": "ON",
     "features/en/watermark/design-watermark-protection.html": "ON",
-    "features/en/watermark/dynamic-qr-watermark-pdf.html": "LO",
+    "features/en/watermark/dynamic-qr-watermark-pdf.html": "OO",
     "features/fr/security/partage-securise-pdf-fonctionnalites-avancees.html": "ON",
     "features/zh/comparison/whichone.html": "ON",
     "features/zh/design/designercn.html": "OO",
     "features/zh/hosting/maipdf_host_pdf_online_zh.html": "OO",
-    "features/zh/maiimg/免费图片托管分享指南.html": "LN",
-    "features/zh/maiimg/批量图片上传分享.html": "LN",
-    "features/zh/maiimg/社交媒体图片分享.html": "LN",
-    "features/zh/maiimg/图片二维码分享.html": "LN",
+    "features/zh/maiimg/免费图片托管分享指南.html": "ON",
+    "features/zh/maiimg/批量图片上传分享.html": "ON",
+    "features/zh/maiimg/社交媒体图片分享.html": "ON",
+    "features/zh/maiimg/图片二维码分享.html": "ON",
     "features/zh/mai介绍.html": "ON",
     "features/zh/security/encrypt-pdf-prevent-editing-cn.html": "OO",
     "features/zh/security/keycode.html": "ON",
-    "features/zh/security/maipdffenceview.html": "LO",
+    "features/zh/security/maipdffenceview.html": "OO",
     "features/zh/security/pdf_prevent_forward.html": "OL",
-    "features/zh/security/pdf密码保护教程.html": "LN",
+    "features/zh/security/pdf密码保护教程.html": "ON",
     "features/zh/security/prevent-document-content-copying-cn.html": "LL",
     "features/zh/security/set-pdf-expiration-date-cn.html": "LL",
     "features/zh/security/set-pdf-print-restrictions-cn.html": "LL",
     "features/zh/security/share-pdf-online-securely.html": "OL",
     "features/zh/security/sharesecure.html": "OL",
-    "features/zh/sharing/pdf安全分享完整指南.html": "LN",
-    "features/zh/sharing/pdf二维码生成教程.html": "LN",
-    "features/zh/sharing/pdf水印设置教程.html": "LN",
+    "features/zh/sharing/pdf安全分享完整指南.html": "ON",
+    "features/zh/sharing/pdf二维码生成教程.html": "ON",
+    "features/zh/sharing/pdf水印设置教程.html": "ON",
     "features/zh/sharing/ShareSecure.html": "OL",
     "features/zh/sharing/waysmulti.html": "OO",
     "features/zh/sharing/waystosend.html": "OO",
-    "features/zh/tracking/阅读记录.html": "LO",
+    "features/zh/tracking/阅读记录.html": "OO",
     "features/zh/watermark/动态水印maipdf.html": "OO",
-    "flipbook/pdf-flipbook-free.html": "LL",
-    "flipbook/pdf-flipbook-watermark.html": "LL",
+    "flipbook/pdf-flipbook-free.html": "OL",
+    "flipbook/pdf-flipbook-watermark.html": "OL",
     "flipbook/turn-flipbook.html": "ON",
     "flowcharts.html": "OL",
     "maiimg-articles/batch-image-upload-sharing.html": "OO",
@@ -966,10 +966,10 @@
     "maiimg-articles/image-sharing-best-practices.html": "ON",
     "maiimg-articles/image-watermark-protection.html": "OO",
     "maiimg-articles/social-media-image-sharing.html": "OO",
-    "new-articles-for-blog/document-watermarking-guide.html": "LL",
-    "new-articles-for-blog/drm-for-pdf.html": "LL",
-    "new-articles-for-blog/pdf-security-best-practices.html": "LL",
-    "new-articles-for-blog/secure-file-sharing.html": "LL",
+    "new-articles-for-blog/document-watermarking-guide.html": "OL",
+    "new-articles-for-blog/drm-for-pdf.html": "OL",
+    "new-articles-for-blog/pdf-security-best-practices.html": "OL",
+    "new-articles-for-blog/secure-file-sharing.html": "OL",
     "usecase/confidential-investor-updates.html": "OL",
     "usecase/document-control-security.html": "OL",
     "usecase/free-pdf-hosting.html": "OL",
@@ -1027,10 +1027,6 @@
   function queueViewStateSave(){
     clearTimeout(scrollSaveTimer);
     scrollSaveTimer=setTimeout(saveCurrentViewState, 120);
-  }
-  function decodeTemplateAudit(code){
-    if(code==='L') return { label:'最新模板', tone:'good' };
-    return { label:'老模板/未统一', tone:'warn' };
   }
   function decodeImageAudit(code){
     if(code==='L') return { label:'最新图库', tone:'good' };
@@ -1126,6 +1122,11 @@
     if(/^flipbook\//.test(normalized)) return 'flipbook';
     return 'root';
   }
+  /** 备注里是否明确说明与根目录 index.html 同款配色/版式（才显示「最新模板」并享受 L 档加分） */
+  function matchesRootIndexDesign(statusText){
+    const t=(statusText||'').replace(/\s+/g,' ');
+    return /主页风格|风格同\s*index|主页同款|index\s*同款|与\s*index|同\s*index|模板统一|统一蓝色视觉|统一视觉风格|产品落地页|首页同款|和首页|同\s*首页|根目录\s*index|root\s*index|对标\s*index|index\s*样式/i.test(t);
+  }
   function computeScores(path,statusText){
     const normalized=path.replace(/\\/g,'/');
     const auditCode=pageAudit[normalized] || 'OO';
@@ -1204,7 +1205,7 @@
       scores.similarity+=1;
       scores.batch+=1;
     }
-    if(/主页风格|风格同 index|主页同款样式|模板统一|统一蓝色视觉|统一视觉风格|产品落地页|show_off|界面图/.test(statusText)){
+    if(matchesRootIndexDesign(statusText)){
       scores.richness+=0.5;
       scores.clarity+=0.5;
       scores.ai-=0.5;
@@ -1253,11 +1254,11 @@
   }
   function inferTemplateState(statusText,path){
     const normalized=path.replace(/\\/g,'/');
-    const auditCode=pageAudit[normalized];
-    if(auditCode) return decodeTemplateAudit(auditCode.charAt(0));
     if(/已下线|noindex/i.test(statusText)) return { label:'不适用', tone:'off' };
     if(/待精修|待检查|建议 noindex|建议纠正|可能需noindex|薄内容|极薄/.test(statusText)) return { label:'老模板/未统一', tone:'warn' };
-    if(/主页风格|风格同 index|主页同款样式|模板统一|统一蓝色视觉|统一视觉风格|产品落地页/.test(statusText)) return { label:'最新模板', tone:'good' };
+    const auditCode=pageAudit[normalized];
+    if(auditCode && auditCode.charAt(0)==='L') return { label:'最新模板', tone:'good' };
+    if(matchesRootIndexDesign(statusText)) return { label:'最新模板', tone:'good' };
     if(/已精修|再精修|已完成|完成 ✓|Phase [234] 新建/.test(statusText)) return { label:'待确认', tone:'info' };
     return { label:'待确认', tone:'info' };
   }
