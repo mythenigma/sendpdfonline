@@ -3,306 +3,510 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MaiPDF提供安全的PDF分享服务，支持链接和二维码分享，具备访问控制、水印保护和访问统计等高级功能。">
-    <meta name="author" content="MaiPDF团队">
-    <meta name="keywords" content="PDF安全分享, PDF链接, PDF二维码, 禁止下载PDF, 水印保护, MaiPDF">
-    <meta name="robots" content="index, follow">
+    <title>安全分享 PDF — 分享文件同时确保安全 | MaiPDF</title>
+    <meta name="description" content="分享 PDF 不再是放手 — 设置密码、限制次数、添加水印、追踪谁看了，让你的文件始终在掌控中。了解 MaiPDF 安全分享的完整功能。">
+    <meta name="keywords" content="安全分享PDF, PDF密码保护, PDF水印, PDF限制查看, PDF追踪, 安全链接, MaiPDF, 麦瓜PDF, PDF安全">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="MaiPDF Team">
     <link rel="canonical" href="https://sendpdfonline.com/features/zh/sharing/ShareSecure">
-    <title>安全分享PDF - MaiPDF</title>
-    
-    <!-- Bootstrap 5 CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- FontAwesome Icons -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-        .feature-icon {
-            font-size: 3rem;
-            color: #0069d9;
-        }
-        .feature-card {
-            border: 1px solid #e0e0e0;
-            border-radius: 12px;
-            padding: 25px;
-            text-align: center;
-            background: white;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-        }
-        .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 80px 0;
-        }
-        .step-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            text-align: center;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-        }
-        .step-number {
-            width: 50px;
-            height: 50px;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            border-radius: 50%;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 15px;
-        }
-    </style>
+    <meta property="og:title" content="安全分享 PDF — 分享文件同时确保安全">
+    <meta property="og:description" content="分享 PDF 不再是放手 — 设置密码、限制次数、添加水印、追踪谁看了，让你的文件始终在掌控中。">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/分享限制.png">
+    <meta property="og:url" content="https://sendpdfonline.com/features/zh/sharing/ShareSecure">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiPDF">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="安全分享 PDF — 分享文件同时确保安全">
+    <meta name="twitter:description" content="分享 PDF 不再是放手 — 设置密码、限制次数、添加水印、追踪谁看了，让你的文件始终在掌控中。">
+    <meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/分享限制.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "安全分享 PDF — 分享文件同时确保安全",
+        "description": "分享 PDF 不再是放手 — 设置密码、限制次数、添加水印、追踪谁看了，让你的文件始终在掌控中。了解 MaiPDF 安全分享的完整功能。",
+        "image": "https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/分享限制.png",
+        "author": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com", "logo": {"@type": "ImageObject", "url": "https://sendpdfonline.com/images/logo.png"}},
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "mainEntityOfPage": "https://sendpdfonline.com/features/zh/sharing/ShareSecure"
+    }
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "功能", "item": "https://sendpdfonline.com/features/"},
+            {"@type": "ListItem", "position": 3, "name": "安全分享 PDF", "item": "https://sendpdfonline.com/features/zh/sharing/ShareSecure"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "首页",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Question",
+                "name": "MaiPDF 安全分享和直接发邮件附件有什么区别？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "邮件附件一旦发出就完全失控 — 对方可以无限转发、下载、打印，你无法知道谁看了、看了几次。MaiPDF 安全链接让你始终掌控：可以设置密码、限制查看次数、添加水印、设置到期时间，还能实时追踪访问记录，甚至随时撤销链接。"
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "功能",
-                "item": "https://sendpdfonline.com/features/"
+                "@type": "Question",
+                "name": "对方不注册 MaiPDF 账号能查看吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以。接收方不需要注册任何账号，只需点击链接或扫描二维码即可在浏览器中查看。如果你启用了邮箱验证功能，对方只需输入邮箱地址验证身份，无需创建密码或注册账户。"
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "中文",
-                "item": "https://sendpdfonline.com/features/zh/"
+                "@type": "Question",
+                "name": "MaiPDF 的安全分享功能真的安全吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "非常安全。MaiPDF 提供多层安全保护：密码保护防止未授权访问，查看次数限制防止过度传播，动态水印标记每个查看者身份，到期时间确保文件不会永久暴露，禁止下载/打印防止本地副本，邮箱验证确认查看者身份。所有传输采用加密连接。"
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 4,
-                "name": "分享",
-                "item": "https://sendpdfonline.com/features/zh/sharing/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 5,
-                "name": "安全分享PDF",
-                "item": "https://sendpdfonline.com/features/zh/sharing/ShareSecure.html"
+                "@type": "Question",
+                "name": "安全分享功能是免费的吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "是的，MaiPDF 的所有安全分享功能完全免费。密码保护、查看次数限制、动态水印、到期时间、禁止下载/打印、邮箱验证、访问追踪等全部功能均包含在免费版中，没有任何隐藏费用。"
+                }
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        .scenario-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .scenario-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
 
-    <!-- MaiPDF Standard Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
+    <nav class="py-2" style="background: var(--gray-100);" aria-label="breadcrumb">
         <div class="container">
-            <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
-                <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
-            </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> Features</a></li>
-                    <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> Upload PDF</a></li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">首页</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/">功能</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/zh/">中文</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/zh/sharing/">分享</a></li>
-                <li class="breadcrumb-item active" aria-current="page">安全分享PDF</li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/features/">功能</a></li>
+                <li class="breadcrumb-item active">安全分享 PDF</li>
             </ol>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <div class="container text-center">
-            <h1 class="display-4 mb-3"><i class="fas fa-shield-alt me-3"></i>安全分享PDF</h1>
-            <!-- Publication Date -->
-            <div class="mb-3">
-                <small>
-                    <i class="fas fa-calendar-alt"></i> 发布日期: 2025年1月15日 | 
-                    <i class="fas fa-sync-alt"></i> 更新日期: 2025年12月3日
-                </small>
-            </div>
-            <p class="lead mb-4">使用MaiPDF的高级安全功能保护您的PDF文档。控制访问权限，查看访问记录，防止未授权分享。</p>
-            <a href="https://maipdf.com" class="btn btn-light btn-lg me-2">
-                <i class="fas fa-upload me-2"></i>立即上传PDF
-            </a>
-            <a href="#features" class="btn btn-outline-light btn-lg">
-                <i class="fas fa-info-circle me-2"></i>了解更多
-            </a>
-        </div>
-    </section>
-
-    <!-- Animation Workflow Section -->
-    <section class="py-5" style="background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);">
+    <section class="hero">
         <div class="container">
-            <div class="text-center mb-4">
-                <h2>工作流程</h2>
-            </div>
-            <div style="max-width: 800px; margin: 0 auto; background: white; border-radius: 20px; padding: 30px; box-shadow: 0 20px 60px rgba(0,0,0,0.1);">
-                <img src="/maipdf-flowcharts/zh-pdf-sharing-workflow-animation.svg" alt="PDF 分享工作流程" class="img-fluid" style="width: 100%;">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>安全分享 PDF</h1>
+                    <p class="lead mt-3">分享 PDF 不再是"放手"— 设置密码、限制次数、添加水印、追踪谁看了，让你的文件始终在掌控中。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-shield-alt me-2"></i>立即体验
+                        </a>
+                        <a href="/features/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>查看所有功能
+                        </a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 6 分钟阅读 &nbsp; <i class="fas fa-calendar me-1"></i> 2026年3月23日 &nbsp; <i class="fas fa-tag me-1"></i> 安全</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/分享限制.png" alt="安全分享 PDF — 密码保护、水印、次数限制" class="hero-screenshot" loading="eager">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section id="features" class="py-5">
+    <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">核心安全功能</h2>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="fs-5">你花了几个小时做的方案、报价单、合同，通过邮件发出去之后就完全失控了 — 对方可以随意转发、下载、打印，你甚至不知道对方有没有看。MaiPDF 改变了这一切：<strong>分享 PDF 的同时保持完全控制</strong>。密码保护、查看限制、动态水印、访问追踪，一个安全链接搞定所有。</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="steps" class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">操作步骤</p>
+                <h2 class="section-heading">3 步完成安全分享</h2>
+            </div>
             <div class="row g-4">
-                <!-- Feature 1 -->
                 <div class="col-md-4">
-                    <div class="feature-card h-100">
-                        <i class="fas fa-eye feature-icon mb-3"></i>
-                        <h4>查看次数控制</h4>
-                        <p>设置PDF可被查看的最大次数。达到限制后，链接自动失效，防止无限制传播。</p>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">上传 PDF</h3>
+                        <p class="text-muted">打开 MaiPDF，拖拽或点击上传你要分享的 PDF 文件。支持任意大小，无需注册。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/工具页面上传页.png" alt="上传 PDF 文件到 MaiPDF" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
-                <!-- Feature 2 -->
                 <div class="col-md-4">
-                    <div class="feature-card h-100">
-                        <i class="fas fa-envelope-open-text feature-icon mb-3"></i>
-                        <h4>邮箱验证</h4>
-                        <p>要求查看者通过邮箱验证身份，确保只有授权人员可以访问您的文档。</p>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">设置安全参数</h3>
+                        <p class="text-muted">配置密码、动态水印、查看次数限制、到期时间、禁止下载/打印等安全选项。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="设置安全参数 — 密码、水印、次数限制" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
-                <!-- Feature 3 -->
                 <div class="col-md-4">
-                    <div class="feature-card h-100">
-                        <i class="fas fa-download feature-icon mb-3"></i>
-                        <h4>下载控制</h4>
-                        <p>禁止或允许下载PDF文件。保护您的内容不被轻易复制和传播。</p>
-                    </div>
-                </div>
-                <!-- Feature 4 -->
-                <div class="col-md-4">
-                    <div class="feature-card h-100">
-                        <i class="fas fa-tint feature-icon mb-3"></i>
-                        <h4>动态水印</h4>
-                        <p>自动添加包含查看者信息的水印，有效追溯文档泄露来源。</p>
-                    </div>
-                </div>
-                <!-- Feature 5 -->
-                <div class="col-md-4">
-                    <div class="feature-card h-100">
-                        <i class="fas fa-bell feature-icon mb-3"></i>
-                        <h4>访问通知</h4>
-                        <p>每当有人查看您的PDF时，立即收到邮件通知，实时掌握文档访问情况。</p>
-                    </div>
-                </div>
-                <!-- Feature 6 -->
-                <div class="col-md-4">
-                    <div class="feature-card h-100">
-                        <i class="fas fa-qrcode feature-icon mb-3"></i>
-                        <h4>二维码分享</h4>
-                        <p>生成安全的二维码，方便线下场景的文档分享和访问。</p>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">复制安全链接分享</h3>
+                        <p class="text-muted">生成的安全链接包含所有保护措施。复制链接发送给对方，随时查看访问记录。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="获取安全分享链接" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- MaiPDF Settings Section -->
-    <section class="container py-5">
-        <h2 class="text-center mb-4"><i class="fas fa-sliders-h"></i> MaiPDF 设置选项</h2>
-        <div class="row justify-content-center">
-            <div class="col-md-10">
-                <div class="d-flex flex-wrap justify-content-center gap-3">
-                    <span class="badge bg-primary p-3 fs-6"><i class="fas fa-eye me-2"></i>Views (查看次数)</span>
-                    <span class="badge bg-info p-3 fs-6"><i class="fas fa-envelope-open-text me-2"></i>Verify (邮箱验证)</span>
-                    <span class="badge bg-danger p-3 fs-6"><i class="fas fa-download me-2"></i>Download (下载控制)</span>
-                    <span class="badge bg-secondary p-3 fs-6"><i class="fas fa-tint me-2"></i>Watermark (水印)</span>
-                    <span class="badge bg-success p-3 fs-6"><i class="fas fa-bell me-2"></i>Alert (通知提醒)</span>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="py-5 bg-light">
+    <section class="py-5">
         <div class="container">
-            <h2 class="text-center mb-5">使用步骤</h2>
+            <div class="text-center mb-5">
+                <p class="section-label">安全功能</p>
+                <h2 class="section-heading">八重安全保护，全方位掌控</h2>
+            </div>
             <div class="row g-4">
-                <div class="col-md-3">
-                    <div class="step-card h-100">
-                        <div class="step-number">1</div>
-                        <h5>上传PDF</h5>
-                        <p>将您的PDF文件上传到MaiPDF平台，支持各种大小的文件。</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-link"></i></div>
+                        <h3 class="h5 fw-bold">一键生成安全链接</h3>
+                        <p class="text-muted mb-0">上传即生成带保护的分享链接和二维码，无需复杂操作，几秒钟搞定。</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="step-card h-100">
-                        <div class="step-number">2</div>
-                        <h5>配置安全</h5>
-                        <p>设置查看次数、邮箱验证、水印等安全选项。</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-lock"></i></div>
+                        <h3 class="h5 fw-bold">密码保护</h3>
+                        <p class="text-muted mb-0">为链接设置访问密码，只有知道密码的人才能查看文件内容，有效防止未授权访问。</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="step-card h-100">
-                        <div class="step-number">3</div>
-                        <h5>获取链接</h5>
-                        <p>生成安全的分享链接或二维码。</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-eye"></i></div>
+                        <h3 class="h5 fw-bold">次数限制</h3>
+                        <p class="text-muted mb-0">设置最大查看次数，超过限制后链接自动失效。适合限量分发的机密文件。</p>
                     </div>
                 </div>
-                <div class="col-md-3">
-                    <div class="step-card h-100">
-                        <div class="step-number">4</div>
-                        <h5>安全分享</h5>
-                        <p>将链接发送给收件人，全程查看访问记录。</p>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-tint"></i></div>
+                        <h3 class="h5 fw-bold">动态水印</h3>
+                        <p class="text-muted mb-0">自动在文档上叠加查看者信息水印，如果被截图传播，可以追溯到泄露源头。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-calendar-times"></i></div>
+                        <h3 class="h5 fw-bold">到期时间</h3>
+                        <p class="text-muted mb-0">设置链接过期日期，到期后自动失效。确保过期文件不会被继续访问。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="h5 fw-bold">访问记录</h3>
+                        <p class="text-muted mb-0">实时查看谁打开了文件、什么时候看的、用什么设备。发了文件不再石沉大海。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fff7ed; color: #ea580c;"><i class="fas fa-ban"></i></div>
+                        <h3 class="h5 fw-bold">禁止下载/打印</h3>
+                        <p class="text-muted mb-0">阻止接收方下载或打印文件，文件只能在线查看，防止本地副本流出。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3 class="h5 fw-bold">邮箱验证</h3>
+                        <p class="text-muted mb-0">要求查看者先验证邮箱地址才能打开文件。记录每个查看者身份，确保可追溯。</p>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="py-5" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <div class="container text-center">
-            <h2 class="mb-4">立即开始安全分享您的PDF</h2>
-            <p class="lead mb-4">免费使用MaiPDF的全部安全功能，保护您的重要文档。</p>
-            <a href="https://maipdf.com" class="btn btn-light btn-lg">
-                <i class="fas fa-rocket me-2"></i>免费开始使用
-            </a>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">对比</p>
+                <h2 class="section-heading">传统分享 vs MaiPDF 安全分享</h2>
+            </div>
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/分享之后能控制.png" alt="MaiPDF 安全分享 vs 传统分享" class="img-fluid screenshot" loading="lazy">
+                </div>
+                <div class="col-lg-6">
+                    <div class="mb-4">
+                        <h3 class="h5 fw-bold"><i class="fas fa-times-circle text-danger me-2"></i>传统方式的问题</h3>
+                        <p class="text-muted">邮件附件发出后无法撤回，对方可无限转发、下载、打印。网盘分享没有访问追踪，不知道谁看了。一旦文件泄露，无法溯源。</p>
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="h5 fw-bold"><i class="fas fa-check-circle text-success me-2"></i>MaiPDF 的解决方案</h3>
+                        <p class="text-muted">安全链接可随时撤销或修改权限。密码+水印+次数限制三重保护。实时访问追踪，清楚知道谁在什么时候看了文件。</p>
+                    </div>
+                    <div>
+                        <h3 class="h5 fw-bold"><i class="fas fa-star text-warning me-2"></i>而且完全免费</h3>
+                        <p class="text-muted">所有安全功能免费使用，无需订阅，无需注册。竞品类似功能通常需要每月付费。</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
-    <!-- Footer Section -->
-    <footer class="bg-dark text-white py-4">
-        <div class="container text-center">
-            <p class="mb-0">&copy; 2025 MaiPDF. 保留所有权利。</p>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">使用场景</p>
+                <h2 class="section-heading">这些场景特别需要安全分享</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-file-contract"></i></div>
+                        <h3 class="h5 fw-bold">商务合同</h3>
+                        <p class="text-muted mb-0">合同文件涉及商业机密和法律条款。使用密码保护 + 查看限制 + 水印，确保只有授权方可以查看，防止合同条款泄露给竞争对手。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #fce7f3; color: #db2777;"><i class="fas fa-user-tie"></i></div>
+                        <h3 class="h5 fw-bold">求职简历</h3>
+                        <p class="text-muted mb-0">发送简历给猎头或 HR 时，使用到期时间 + 访问追踪。知道对方是否查看了你的简历，过期后自动失效保护个人信息。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #fef3c7; color: #d97706;"><i class="fas fa-flask"></i></div>
+                        <h3 class="h5 fw-bold">学术论文</h3>
+                        <p class="text-muted mb-0">论文投稿前需要同行评审。使用水印 + 禁止下载 + 邮箱验证，防止未发表论文被他人窃取或提前公开。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="scenario-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-palette"></i></div>
+                        <h3 class="h5 fw-bold">设计作品集</h3>
+                        <p class="text-muted mb-0">向客户展示设计方案时，使用动态水印 + 禁止打印。展示创意的同时防止作品被盗用，保护知识产权。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">关于安全分享的常见疑问</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    和直接发邮件附件有什么区别？
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    邮件附件一旦发出就完全失控 — 对方可以无限转发、下载、打印，你无法知道谁看了、看了几次。MaiPDF 安全链接让你始终掌控：可以设置密码、限制查看次数、添加水印、设置到期时间，还能实时追踪访问记录，甚至随时撤销链接。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    对方不注册 MaiPDF 账号能查看吗？
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    可以。接收方不需要注册任何账号，只需点击链接或扫描二维码即可在浏览器中查看。如果你启用了邮箱验证功能，对方只需输入邮箱地址验证身份，无需创建密码或注册账户。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    MaiPDF 的安全分享功能真的安全吗？
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    非常安全。MaiPDF 提供多层安全保护：密码保护防止未授权访问，查看次数限制防止过度传播，动态水印标记每个查看者身份，到期时间确保文件不会永久暴露，禁止下载/打印防止本地副本，邮箱验证确认查看者身份。所有传输采用加密连接。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    安全分享功能是免费的吗？
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    是的，MaiPDF 的所有安全分享功能完全免费。密码保护、查看次数限制、动态水印、到期时间、禁止下载/打印、邮箱验证、访问追踪等全部功能均包含在免费版中，没有任何隐藏费用。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">相关阅读</p>
+                <h2 class="section-heading">更多分享与安全指南</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">分享</span>
+                            <h3><a href="/features/zh/sharing/waystosend">PDF 发送方式大全</a></h3>
+                            <p class="text-muted small mb-0">一文搞懂 8 种 PDF 发送方式的优缺点，找到最适合你的方案。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">二维码</span>
+                            <h3><a href="/features/zh/sharing/pdf二维码生成教程">PDF 二维码生成教程</a></h3>
+                            <p class="text-muted small mb-0">将 PDF 转换为二维码，扫一扫即可查看，适合线下分享场景。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">水印</span>
+                            <h3><a href="/features/zh/sharing/pdf水印设置教程">PDF 水印设置教程</a></h3>
+                            <p class="text-muted small mb-0">为 PDF 添加动态水印，防止截图和未授权传播。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">安全</span>
+                            <h3><a href="/features/zh/sharing/pdf安全分享完整指南">PDF 安全分享完整指南</a></h3>
+                            <p class="text-muted small mb-0">从基础到高级，全面了解 PDF 安全分享的每个细节。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">开始安全分享你的 PDF</h2>
+                <p class="mb-4 opacity-90" style="max-width: 520px; margin: 0 auto;">上传 PDF，设置密码、水印、次数限制，生成安全链接分享。免费、无需注册、所有功能开放。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-shield-alt me-2"></i>立即体验
+                    </a>
+                    <a href="/features/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>查看所有功能
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">安全 PDF 分享指南 — 使用 MaiPDF 上传、保护和分享你的 PDF 文件。</p>
+                    <p class="small mb-0" style="color: #6b7280;">&copy; 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/">所有功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">博客</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
+                        <li class="mb-2"><a href="/features/zh/">中文功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">热门</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/features/zh/sharing/waystosend">发送方式大全</a></li>
+                        <li class="mb-2"><a href="/features/zh/sharing/pdf二维码生成教程">PDF 二维码</a></li>
+                        <li class="mb-2"><a href="/features/zh/sharing/pdftourl">PDF 转链接</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">联系我们</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap 5 JavaScript Bundle -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

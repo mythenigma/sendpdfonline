@@ -3,243 +3,545 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Remotely Control Files Without Cloud: Lightweight Sharing of Locally Encrypted PDFs</title>
-    <meta name="description" content="Learn how to securely share your documents using locally encrypted PDFs and HTML offline packages. Control permissions at any time without uploading to the cloud, ensuring data security.">
-    <meta name="keywords" content="PDF Encryption, Offline Sharing, Data Security, HTML Offline Package, Permissions Management, File Control">
+    <title>Offline PDF Sharing — Encrypt PDFs into Local HTML with Remote Authorization | MaiPDF</title>
+    <meta name="description" content="Package PDFs into encrypted HTML files stored on USB drives or local networks. Each opening requires a 5ms online verification — files stay in your hands while you control access remotely.">
+    <meta name="keywords" content="offline PDF sharing, PDF encryption, local HTML package, remote authorization, secure PDF, offline document sharing, MaiPDF offline, encrypted PDF">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <meta name="author" content="MaiPDF Team">
-    <meta name="robots" content="index, follow">
     <link rel="canonical" href="https://sendpdfonline.com/article/offline-maipdf-en">
-    
-    <!-- CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif; line-height: 1.8; color: #333; background-color: #f8f9fa; }
-        .container { max-width: 1200px; margin: 0 auto; padding: 2rem; }
-        h1, h2, h3 { color: #1a73e8; }
-        h1 { font-size: 2.2rem; font-weight: 700; margin-bottom: 1.5rem; }
-        h2 { font-size: 1.8rem; font-weight: 600; margin: 2rem 0 1rem; }
-        h3 { font-size: 1.4rem; font-weight: 600; margin: 1.5rem 0 1rem; }
-        table { width: 100%; border-collapse: collapse; margin: 1.5rem 0; background: white; border-radius: 8px; overflow: hidden; box-shadow: 0 2px 4px rgba(0,0,0,0.1); }
-        th, td { padding: 1rem; text-align: left; border-bottom: 1px solid #e0e0e0; }
-        th { background: #1a73e8; color: white; }
-        p { margin-bottom: 1rem; }
-    </style>
+    <meta property="og:title" content="Offline PDF Sharing — Encrypt PDFs into Local HTML with Remote Authorization">
+    <meta property="og:description" content="Package PDFs into encrypted HTML files stored on USB drives or local networks. Control access remotely with 5ms online verification.">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/en-offline-version.svg">
+    <meta property="og:url" content="https://sendpdfonline.com/article/offline-maipdf-en">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiPDF">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Offline PDF Sharing — Encrypt PDFs into Local HTML with Remote Authorization">
+    <meta name="twitter:description" content="Package PDFs into encrypted HTML files stored on USB drives or local networks. Control access remotely with 5ms online verification.">
+    <meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/en-offline-version.svg">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Offline PDF Sharing — Encrypt PDFs into Local HTML with Remote Authorization",
+        "description": "Package PDFs into encrypted HTML files stored on USB drives or local networks. Each opening requires a 5ms online verification — files stay in your hands while you control access remotely.",
+        "image": "https://sendpdfonline.com/images/maipdf2026/show_off/en-offline-version.svg",
+        "author": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com", "logo": {"@type": "ImageObject", "url": "https://sendpdfonline.com/images/logo.png"}},
+        "datePublished": "2025-01-15",
+        "dateModified": "2026-03-23",
+        "mainEntityOfPage": "https://sendpdfonline.com/article/offline-maipdf-en"
+    }
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "Articles", "item": "https://sendpdfonline.com/article/"},
+            {"@type": "ListItem", "position": 3, "name": "Offline MaiPDF", "item": "https://sendpdfonline.com/article/offline-maipdf-en"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Question",
+                "name": "What is offline PDF sharing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Offline PDF sharing packages your PDF into an encrypted HTML file that can be stored on a USB drive, NAS, or local network. The file itself never leaves your hands, but each time someone opens it, a 5-millisecond online check verifies whether they still have permission. This gives you cloud-level access control without cloud-level data exposure."
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Article",
-                "item": "https://sendpdfonline.com/article/"
+                "@type": "Question",
+                "name": "Do recipients need internet access to view the file?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Recipients need a brief internet connection only at the moment they open the file — the verification handshake takes about 5 milliseconds. Once authorized, the content renders locally in the browser. If no connection is available at open time, the file will not display, ensuring your access rules are always enforced."
+                }
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Remotely Control Files Without Cloud: Lightweight Sharing of Locally Encrypted PDFs",
-                "item": "https://sendpdfonline.com/article/offline-maipdf-en"
+                "@type": "Question",
+                "name": "Can I revoke access to an offline HTML package after sharing?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes. Because every open triggers an online verification, you can revoke access at any time from your MaiPDF dashboard. Once revoked, the HTML file will refuse to render — even if the recipient still has it on their USB drive. You can also use the Encode to replace the underlying PDF or add more views."
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "Is MaiPDF offline sharing free?",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "Yes, the personal and small-team plan is permanently free. You can generate encrypted offline HTML packages, set view limits, expiration dates, and track access at no cost. For organizations with ultra-high concurrency needs, paid plans are available and billed by verification count — typically less than 1% the cost of traditional DRM solutions."
+                }
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav class="py-2" style="background: var(--gray-100);" aria-label="breadcrumb">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/article/">Article</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Remotely Control Files Without Cloud: Lightweight </li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/article/">Articles</a></li>
+                <li class="breadcrumb-item active">Offline MaiPDF</li>
             </ol>
         </div>
     </nav>
-    
-    <h1>Remotely Control Files Without Cloud: Lightweight Sharing of Locally Encrypted PDFs</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>Offline PDF Sharing</h1>
+                    <p class="lead mt-3">Package PDFs into encrypted HTML files stored on USB drives or local networks. Each opening requires a 5ms online verification — files stay in your hands while you control access remotely.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-download me-2"></i>Try Offline Package
+                        </a>
+                        <a href="#steps" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-lock me-2"></i>See How It Works
+                        </a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 6 min read &nbsp; <i class="fas fa-calendar me-1"></i> March 23, 2026 &nbsp; <i class="fas fa-tag me-1"></i> Security</p>
                 </div>
-
-    <!-- Offline Version Flowchart -->
-    <div style="text-align: center; margin: 30px 0;">
-        <img src="/maipdf-flowcharts/en-offline-version.svg" alt="MaiPDF Offline Version Workflow" style="max-width: 100%; height: auto; border-radius: 15px; box-shadow: 0 10px 30px rgba(0,0,0,0.1);">
-    </div>
-
-    <div style="background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%); padding: 25px; border-radius: 15px; margin: 25px 0; border-left: 5px solid #0ea5e9;">
-        <h3 style="color: #0369a1; margin-bottom: 15px;">💡 Core Advantage</h3>
-        <p style="font-size: 1.1rem; color: #334155; margin: 0;">Package PDFs into local HTML, store on USB/NAS anywhere – each opening requires internet verification (5ms), files in your hands + remote control anytime</p>
-    </div>
-                
-    <p>Key selling point in one sentence: Package PDFs into local HTML, store on USB drives or NAS – each opening requires lightning-fast authorization from the server, ensuring confidentiality and revocability.</p>
-
-    <h2>1 | Why Choose "Offline Storage + Online Authorization" Mode?</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Traditional Approach</th>
-                <th>Pain Points</th>
-                <th>Offline Version Solution</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Full Upload to Cloud Drives</td>
-                <td>Data remains with third parties, high compliance pressure</td>
-                <td>Files remain only in your hands or internal network</td>
-            </tr>
-            <tr>
-                <td>Pure Local Encryption</td>
-                <td>Out of control once sent, cannot be revoked</td>
-                <td>Each opening requires verification, can be locked at any time</td>
-            </tr>
-            <tr>
-                <td>Professional DRM Platform</td>
-                <td>Complex deployment, high costs</td>
-                <td>One-click HTML generation, affordable for individuals</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>2 | 4 Core Features of the Offline Version</h2>
-    <h3>Local Storage</h3>
-    <p>PDFs are encapsulated into a single HTML, easily copied to USB drives / private NAS.</p>
-
-    <h3>Online Verification</h3>
-    <p>Background-level handshake upon opening: verifies reading code, remaining uses, expiration date. Disconnection → direct refusal to launch.</p>
-
-    <h3>Read Code / Encode Dual Channel</h3>
-    <p>Read Code: View only; Encode: Replace files, add uses. Retain a "regret button" while sharing files.</p>
-
-    <h3>access analytics</h3>
-    <p>Each verification request records IP, time, clear at a glance in the background – who has viewed, when it ended, one-click export to CSV.</p>
-
-    <h2>3 | Typical Use Cases</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Industry / Occasion</th>
-                <th>Specific Use</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Hardware Manufacturing Delivery</td>
-                <td>Package blueprints into HTML to accompany equipment on-site; customer's computer has no internet? Bring your own portable Wi-Fi router to emit a one-time hotspot for verification.</td>
-            </tr>
-            <tr>
-                <td>Legal and Auditing</td>
-                <td>Lawyers submit due diligence materials, limit to 5 uses with reading code; after the audit, "terminate authorization" with one click in the background using encoding.</td>
-            </tr>
-            <tr>
-                <td>Exhibition / Training</td>
-                <td>Distribute product white papers via USB drive, automatically cache pages after initial verification, can still browse offline for 24 hours after leaving the exhibition hall.</td>
-            </tr>
-            <tr>
-                <td>University Research</td>
-                <td>Internally exchange draft papers, files remain on the school's server; external collaborators can scan the QR code for temporary verification to view.</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>4 | 3 Steps to Generate Encrypted HTML</h2>
-    <p>Upload PDF → Complete encapsulation within 30 seconds.</p>
-
-    <h3>Set Permissions</h3>
-    <p>Number of views, expiration date, whether to lock IP / region.</p>
-
-    <h3>Download Offline Package</h3>
-    <p>Get Project_X_Spec.html + simultaneously generate access/edit codes & QR code.</p>
-
-    <p>Tips: Write the version number clearly in the file name to facilitate the other party's browser tab display and reduce misreading.</p>
-
-    <h2>5 | Add Another Layer of Security Awareness</h2>
-    <p>Non-Printable / Disable Copying: Browser-level disabling of print menus, right-click, and shortcuts.</p>
-
-    <p>Dynamic Watermark: Automatically overlays date + IP when opened, screenshots can also trace the source.</p>
-
-    <p>HTTPS Verification Channel: Authorization handshake uses an encrypted channel to prevent man-in-the-middle tampering.</p>
-
-    <p>One-Time Reading Mode: Deduct uses upon opening, invalidates when the window is closed, preventing screenshots and background streaming.</p>
-
-    <h2>6 | Cost and Maintenance</h2>
-    <table>
-        <thead>
-            <tr>
-                <th>Item</th>
-                <th>Description</th>
-            </tr>
-        </thead>
-        <tbody>
-            <tr>
-                <td>Cost</td>
-                <td>Personal & small team version is permanently free; ultra-high concurrency can be upgraded to a paid plan (billed by verification count, almost 1% of the cost of traditional DRM).</td>
-            </tr>
-            <tr>
-                <td>Deployment</td>
-                <td>No server or local software required; the browser is the reader.</td>
-            </tr>
-            <tr>
-                <td>Update</td>
-                <td>If there are new features, re-upload the original PDF to get the new version of HTML; the old package is not affected.</td>
-            </tr>
-        </tbody>
-    </table>
-
-    <h2>7 | One-Minute Decision Guide</h2>
-    <p>Must keep the file in your own hands, but want to lock the door at any time?</p>
-    <p>Choose local HTML offline package.</p>
-    <p>Want to modify content in real-time and review reading?</p>
-    <p>Then cooperate with cloud external links for dual-line parallel operation to maximize flexibility.</p>
-
-    <h2>Conclusion · Pick Up Your PDF and Try It Now</h2>
-    <p>Find a confidential document ⇢ Upload ⇢ Generate offline package.</p>
-
-    <p>Paste the QR code into an email or print a sticker.</p>
-
-    <p>Let the other party open and verify on any device – experience the sense of control of "files not on the cloud, permissions closed at any time."</p>
-
-    <p>Use the offline version to add an intelligent insurance to your next PDF that cannot be leaked.</p>
-
-    <!-- Related Resources -->
-    <div class="container my-5">
-        <div class="alert alert-info border-0 shadow-sm">
-            <h4><i class="fas fa-book-open"></i> More Expert Guides & Tutorials</h4>
-            <p class="mb-3">Explore in-depth articles, tutorials, and best practices on our professional blog:</p>
-            <a href="https://article.maipdf.com" target="_blank" rel="noopener" class="btn btn-info">
-                <i class="fas fa-external-link-alt"></i> Visit MaiPDF Expert Blog
-            </a>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/en-offline-version.svg" alt="MaiPDF Offline Version — encrypt PDFs into local HTML with remote authorization" class="hero-screenshot" loading="eager">
+                </div>
+            </div>
         </div>
-    </div>
+    </section>
 
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="fs-5">Uploading confidential PDFs to the cloud means surrendering control. Pure local encryption means no way to revoke access once the file is sent. MaiPDF's <strong>Offline Version</strong> bridges both worlds: your PDF is packaged into a self-contained encrypted HTML file that lives on your USB drive, NAS, or internal server — but every time someone opens it, a lightning-fast 5ms handshake confirms they still have permission. Files in your hands, access rules in the cloud.</p>
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <div class="container my-4 text-center">
-        <a href="/article/" class="btn btn-primary me-2">
-            <i class="fas fa-arrow-left"></i> Back to Articles
-        </a>
-        <a href="/" class="btn btn-outline-primary me-2">
-            <i class="fas fa-home"></i> Home
-        </a>
-        <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> Try Now
-        </a>
-    </div>
+    <section id="steps" class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">How It Works</p>
+                <h2 class="section-heading">Generate an Encrypted Offline HTML in 3 Steps</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">Upload Your PDF</h3>
+                        <p class="text-muted">Drag and drop your PDF. The file is encrypted and encapsulated into a standalone HTML package within 30 seconds.</p>
+                        <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload PDF to generate an offline encrypted HTML package" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">Set Permissions</h3>
+                        <p class="text-muted">Configure view limits, expiration dates, IP locks, region restrictions, watermarks, and no-print/no-copy rules.</p>
+                        <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Set offline package permissions — views, expiry, IP lock" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">Download Offline HTML Package</h3>
+                        <p class="text-muted">Get your encrypted HTML file plus access/edit codes and a QR code. Copy it to a USB drive, NAS, or share directly.</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Download the offline HTML package with QR code and access codes" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Core Features</p>
+                <h2 class="section-heading">Eight Capabilities That Set Offline Mode Apart</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-box"></i></div>
+                        <h3 class="h5 fw-bold">Local HTML Packaging</h3>
+                        <p class="text-muted mb-0">Your PDF is encapsulated into a single HTML file. Copy it to a USB drive, private NAS, or air-gapped machine — no cloud upload required.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-wifi"></i></div>
+                        <h3 class="h5 fw-bold">Online Verification on Open</h3>
+                        <p class="text-muted mb-0">A 5ms background handshake checks the read code, remaining views, and expiration date. No connection at open time means no access.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-key"></i></div>
+                        <h3 class="h5 fw-bold">Read Code / Encode Dual Channel</h3>
+                        <p class="text-muted mb-0">Read Code grants view-only access. Encode lets you replace files, add views, or revoke permissions — a built-in "regret button" for every share.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="h5 fw-bold">Access Analytics</h3>
+                        <p class="text-muted mb-0">Every verification request logs IP address and timestamp. See who viewed, when access ended, and export the full audit trail to CSV.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-print"></i></div>
+                        <h3 class="h5 fw-bold">No-Print / No-Copy</h3>
+                        <p class="text-muted mb-0">Browser-level disabling of print menus, right-click context menus, and keyboard shortcuts prevents unauthorized reproduction.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-tint"></i></div>
+                        <h3 class="h5 fw-bold">Dynamic Watermark</h3>
+                        <p class="text-muted mb-0">Automatically overlays date + IP address when the file is opened. Even screenshots can be traced back to the source.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fff7ed; color: #ea580c;"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="h5 fw-bold">HTTPS Verification</h3>
+                        <p class="text-muted mb-0">The authorization handshake uses an encrypted HTTPS channel, preventing man-in-the-middle attacks from tampering with permissions.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;"><i class="fas fa-eye-slash"></i></div>
+                        <h3 class="h5 fw-bold">One-Time Reading Mode</h3>
+                        <p class="text-muted mb-0">Deducts a view on open and invalidates when the window closes. Prevents screenshots via background streaming and session locking.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Comparison</p>
+                <h2 class="section-heading">Cloud Upload vs. Pure Local vs. MaiPDF Offline</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="table-responsive" style="background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;">
+                        <table class="table table-bordered mb-0">
+                            <thead style="background: var(--blue-900); color: white;">
+                                <tr>
+                                    <th style="width:25%">Criteria</th>
+                                    <th class="text-center" style="width:25%">Cloud Upload</th>
+                                    <th class="text-center" style="width:25%">Pure Local Encryption</th>
+                                    <th class="text-center" style="width:25%">MaiPDF Offline</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>Data Control</strong></td>
+                                    <td class="text-center"><i class="fas fa-exclamation-triangle text-danger"></i> Third-party servers</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Fully local</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Fully local</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Revocability</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Delete from cloud</td>
+                                    <td class="text-center"><i class="fas fa-exclamation-triangle text-danger"></i> None once sent</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Instant remote revoke</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Access Tracking</strong></td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> Limited</td>
+                                    <td class="text-center"><i class="fas fa-exclamation-triangle text-danger"></i> None</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> IP + time log</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Cost</strong></td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> Storage fees</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Free tools</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Free tier available</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Deployment</strong></td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> Account setup</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Simple</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> One-click HTML</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>Compliance</strong></td>
+                                    <td class="text-center"><i class="fas fa-exclamation-triangle text-danger"></i> Data on third-party</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Full control</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> Full control + audit</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Use Cases</p>
+                <h2 class="section-heading">Who Needs Offline PDF Sharing?</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="table-responsive" style="background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;">
+                        <table class="table table-bordered mb-0">
+                            <thead style="background: var(--blue-900); color: white;">
+                                <tr>
+                                    <th style="width:25%">Industry</th>
+                                    <th style="width:75%">Specific Use Case</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong><i class="fas fa-industry me-1"></i> Manufacturing</strong></td>
+                                    <td>Package blueprints into HTML to accompany equipment on-site. No internet on the factory floor? Bring a portable Wi-Fi router for a one-time verification hotspot.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-gavel me-1"></i> Legal &amp; Audit</strong></td>
+                                    <td>Submit due diligence materials with a 5-view limit using the Read Code. After the audit, revoke authorization instantly from the dashboard using the Encode.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-users me-1"></i> Exhibitions</strong></td>
+                                    <td>Distribute product white papers via USB drive. After initial verification, pages cache locally — attendees can browse offline for up to 24 hours after leaving the venue.</td>
+                                </tr>
+                                <tr>
+                                    <td><strong><i class="fas fa-university me-1"></i> University Research</strong></td>
+                                    <td>Internally exchange draft papers that stay on the school's server. External collaborators scan a QR code for temporary verification to view the latest revision.</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-heading">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    What is offline PDF sharing?
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Offline PDF sharing packages your PDF into an encrypted HTML file that can be stored on a USB drive, NAS, or local network. The file itself never leaves your hands, but each time someone opens it, a 5-millisecond online check verifies whether they still have permission. This gives you cloud-level access control without cloud-level data exposure.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    Do recipients need internet access to view the file?
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Recipients need a brief internet connection only at the moment they open the file — the verification handshake takes about 5 milliseconds. Once authorized, the content renders locally in the browser. If no connection is available at open time, the file will not display, ensuring your access rules are always enforced.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    Can I revoke access to an offline HTML package after sharing?
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Yes. Because every open triggers an online verification, you can revoke access at any time from your MaiPDF dashboard. Once revoked, the HTML file will refuse to render — even if the recipient still has it on their USB drive. You can also use the Encode to replace the underlying PDF or add more views.
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    Is MaiPDF offline sharing free?
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    Yes, the personal and small-team plan is permanently free. You can generate encrypted offline HTML packages, set view limits, expiration dates, and track access at no cost. For organizations with ultra-high concurrency needs, paid plans are available and billed by verification count — typically less than 1% the cost of traditional DRM solutions.
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Related Reading</p>
+                <h2 class="section-heading">More Security &amp; Sharing Guides</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Security</span>
+                            <h3><a href="/article/confidential-documents-risk">Confidential Documents Security</a></h3>
+                            <p class="text-muted small mb-0">Share sensitive business documents without data breach risk using layered protection.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Guide</span>
+                            <h3><a href="/article/prevent-pdf-forwarding-guide">Prevent PDF Forwarding</a></h3>
+                            <p class="text-muted small mb-0">Use watermarks and view limits to stop unauthorized document sharing.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Analytics</span>
+                            <h3><a href="/article/track-pdf-analytics-guide">Track PDF Analytics</a></h3>
+                            <p class="text-muted small mb-0">Monitor who views your PDFs with real-time analytics, IP tracking, and audit trails.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">Watermark</span>
+                            <h3><a href="/article/pdf-watermark-guide">PDF Watermark Guide</a></h3>
+                            <p class="text-muted small mb-0">Add dynamic watermarks to trace leaks and deter unauthorized distribution.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">Keep Files in Your Hands, Control Access from the Cloud</h2>
+                <p class="mb-4 opacity-90" style="max-width: 520px; margin: 0 auto;">Upload a confidential PDF. Generate an encrypted offline HTML package. Copy it to a USB drive or NAS — and revoke access anytime from your dashboard.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-download me-2"></i>Generate Offline Package — Free
+                    </a>
+                    <a href="/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-home me-2"></i>Back to Home
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small mb-0" style="color: #6b7280;">&copy; 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
+                        <li class="mb-2"><a href="/features/">Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">Blog</a></li>
+                        <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+                        <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Popular</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+                        <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+                        <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">Contact Us</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

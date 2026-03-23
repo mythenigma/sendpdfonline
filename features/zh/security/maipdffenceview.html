@@ -1,928 +1,483 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
-
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
-    <title>MaiPDF栅格视图: 增强PDF文档保护 | 更安全的文档共享</title>
-    <meta property="og:title" content="MaiPDF栅格视图: 增强PDF文档保护">
-    <meta name="description" content="在数字时代，防止敏感PDF文档被未经授权访问、捕获或复制至关重要。MaiPDF的栅格视图技术提供了创新的保护方案。">
-    <meta property="og:description" content="MaiPDF的栅格视图是一项创新功能，通过在内容上覆盖视觉屏障，保护PDF内容免受未经授权的复制或截图。">
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860"
-     crossorigin="anonymous"></script>
-    <meta property="og:type" content="website">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700;900&display=swap" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary-color: #0066ff;
-            --primary-dark: #0052cc;
-            --secondary-color: #00bcd4;
-            --dark-color: #1a1a2e;
-            --light-color: #f8fafc;
-            --accent-color: #ff4d6d;
-            --gray-light: #f0f5ff;
-            --gray-dark: #4a4a6a;
-            --success-color: #00c853;
-        }
-        
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background-color: var(--light-color);
-            color: #333;
-            line-height: 1.8;
-            overflow-x: hidden;
-        }
-        
-        /* Animated background */
-        .bg-animation {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            z-index: -1;
-            opacity: 0.4;
-            background: 
-                radial-gradient(circle at 10% 20%, rgba(0, 102, 255, 0.05) 0%, rgba(0, 102, 255, 0) 20%),
-                radial-gradient(circle at 90% 50%, rgba(0, 188, 212, 0.05) 0%, rgba(0, 188, 212, 0) 25%),
-                radial-gradient(circle at 50% 80%, rgba(255, 77, 109, 0.05) 0%, rgba(255, 77, 109, 0) 30%);
-        }
-        
-        .navbar {
-            background: rgba(255, 255, 255, 0.95) !important;
-            backdrop-filter: blur(10px);
-            -webkit-backdrop-filter: blur(10px);
-            padding: 1rem 2rem;
-            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.05);
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            transition: all 0.3s ease;
-        }
-        
-        .navbar.scrolled {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            padding: 0.7rem 2rem;
-        }
-        
-        .navbar-brand {
-            color: var(--primary-color) !important;
-            font-weight: 700;
-            font-size: 2rem;
-            position: relative;
-        }
-        
-        .navbar-brand:after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 30%;
-            height: 3px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 2px;
-        }
-        
-        .navbar small {
-            color: var(--gray-dark);
-            font-size: 1rem;
-            font-weight: 400;
-            opacity: 0.8;
-        }
-        
-        .hero-section {
-            position: relative;
-            overflow: hidden;
-            background: linear-gradient(120deg, var(--primary-color), var(--primary-dark));
-            color: white;
-            padding: 8rem 0 6rem;
-            border-radius: 0 0 50% 50% / 10%;
-            margin-bottom: 5rem;
-        }
-        
-        .hero-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-            opacity: 0.3;
-        }
-        
-        .display-4 {
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-            font-size: 3.2rem;
-            line-height: 1.2;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .display-4::after {
-            content: "";
-            position: absolute;
-            bottom: -15px;
-            left: 0;
-            width: 80px;
-            height: 5px;
-            background: var(--accent-color);
-            border-radius: 5px;
-        }
-        
-        .hero-particles {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            overflow: hidden;
-        }
-        
-        .particle {
-            position: absolute;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.2);
-            animation: float 8s infinite ease-in-out;
-        }
-        
-        @keyframes float {
-            0%, 100% { transform: translateY(0) rotate(0deg); }
-            50% { transform: translateY(-20px) rotate(5deg); }
-        }
-        
-        .particle:nth-child(1) {
-            width: 80px;
-            height: 80px;
-            top: 10%;
-            left: 10%;
-            animation-delay: 0s;
-        }
-        
-        .particle:nth-child(2) {
-            width: 120px;
-            height: 120px;
-            top: 20%;
-            right: 15%;
-            animation-delay: 1s;
-        }
-        
-        .particle:nth-child(3) {
-            width: 60px;
-            height: 60px;
-            bottom: 20%;
-            left: 20%;
-            animation-delay: 3s;
-        }
-        
-        .particle:nth-child(4) {
-            width: 100px;
-            height: 100px;
-            bottom: 30%;
-            right: 25%;
-            animation-delay: 2s;
-        }
-        
-        .lead {
-            font-size: 1.3rem;
-            margin-bottom: 2rem;
-            line-height: 1.8;
-            opacity: 0.9;
-        }
-        
-        .hero-image {
-            position: relative;
-            transition: all 0.5s ease;
-            border-radius: 20px;
-            overflow: hidden;
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.3);
-            transform: perspective(1000px) rotateY(-5deg);
-        }
-        
-        .hero-image::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: linear-gradient(to bottom right, rgba(0, 102, 255, 0.2), rgba(0, 188, 212, 0.2));
-            z-index: 1;
-            border-radius: 20px;
-        }
-        
-        .hero-image:hover {
-            transform: perspective(1000px) rotateY(0deg) translateY(-10px);
-            box-shadow: 0 35px 60px rgba(0, 0, 0, 0.4);
-        }
-        
-        .cta-btn {
-            background: var(--accent-color);
-            color: white;
-            border: none;
-            padding: 1rem 2.5rem;
-            font-size: 1.1rem;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 25px rgba(255, 77, 109, 0.4);
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .cta-btn::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
-            transition: all 0.5s ease;
-            z-index: -1;
-        }
-        
-        .cta-btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 15px 35px rgba(255, 77, 109, 0.5);
-            color: white;
-        }
-        
-        .cta-btn:hover::before {
-            left: 100%;
-        }
-        
-        .feature-card {
-            background-color: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .feature-card::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background: linear-gradient(to bottom, var(--primary-color), var(--secondary-color));
-            transition: all 0.4s ease;
-            z-index: -1;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-        }
-        
-        .feature-card:hover::before {
-            width: 100%;
-            opacity: 0.05;
-        }
-        
-        .feature-icon {
-            font-size: 3.5rem;
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            background: var(--gray-light);
-            width: 100px;
-            height: 100px;
-            line-height: 100px;
-            text-align: center;
-            border-radius: 50%;
-            transition: all 0.4s ease;
-        }
-        
-        .feature-card:hover .feature-icon {
-            background: var(--primary-color);
-            color: white;
-            transform: rotateY(360deg);
-            box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
-        }
-        
-        .feature-title {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 1.2rem;
-            color: var(--dark-color);
-        }
-        
-        .feature-description {
-            color: var(--gray-dark);
-            font-size: 1.1rem;
-            line-height: 1.8;
-        }
-        
-        .how-it-works {
-            position: relative;
-            padding: 5rem 0;
-            margin: 5rem 0;
-            background: var(--gray-light);
-            border-radius: 40px;
-            overflow: hidden;
-        }
-        
-        .how-it-works::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%230066FF' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .section-title {
-            font-size: 2.2rem;
-            font-weight: 800;
-            color: var(--primary-color);
-            margin-bottom: 3rem;
-            text-align: center;
-            position: relative;
-            padding-bottom: 20px;
-        }
-        
-        .section-title::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 4px;
-            background: linear-gradient(90deg, var(--primary-color), var(--accent-color));
-            border-radius: 2px;
-        }
-        
-        .steps-container {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 2rem;
-        }
-        
-        .step-number {
-            position: absolute;
-            left: 0;
-            top: 0;
-            background: var(--primary-color);
-            color: white;
-            width: 45px;
-            height: 45px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 1.3rem;
-            box-shadow: 0 5px 15px rgba(0, 102, 255, 0.3);
-        }
-        
-        .step-title {
-            font-size: 1.4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            color: var(--dark-color);
-        }
-        
-        .testimonial-section {
-            padding: 5rem 0;
-            background: linear-gradient(120deg, var(--light-color), var(--gray-light));
-            border-radius: 40px;
-            position: relative;
-            overflow: hidden;
-            margin: 5rem 0;
-        }
-        
-        .testimonial-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 30%, rgba(0, 102, 255, 0.03) 0%, transparent 70%),
-                radial-gradient(circle at 80% 70%, rgba(255, 77, 109, 0.03) 0%, transparent 70%);
-        }
-        
-        .testimonial-card {
-            background-color: white;
-            border-radius: 20px;
-            padding: 3rem;
-            margin-bottom: 2.5rem;
-            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05);
-            transition: all 0.4s ease;
-            height: 100%;
-            position: relative;
-            overflow: hidden;
-            z-index: 1;
-        }
-        
-        .testimonial-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
-        }
-        
-        .quote-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            opacity: 0.2;
-            position: absolute;
-            top: 20px;
-            left: 20px;
-        }
-        
-        .testimonial-text {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            color: var(--gray-dark);
-            margin-bottom: 1.5rem;
-            position: relative;
-            z-index: 1;
-        }
-        
-        .testimonial-author {
-            font-weight: 700;
-            color: var(--primary-color);
-            display: block;
-            margin-top: 1rem;
-        }
-        
-        .testimonial-company {
-            font-size: 0.9rem;
-            color: var(--gray-dark);
-            opacity: 0.8;
-        }
-        
-        .cta-section {
-            background: linear-gradient(120deg, var(--primary-color), var(--primary-dark));
-            padding: 5rem 0;
-            border-radius: 30px;
-            margin: 5rem 0;
-            position: relative;
-            overflow: hidden;
-            color: white;
-        }
-        
-        .cta-section::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.1'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .cta-section .cta-btn {
-            background: white;
-            color: var(--primary-color);
-            box-shadow: 0 10px 25px rgba(255, 255, 255, 0.3);
-        }
-        
-        .cta-section .cta-btn:hover {
-            background: rgba(255, 255, 255, 0.9);
-        }
-        
-        .cta-title {
-            font-size: 2.5rem;
-            font-weight: 800;
-            margin-bottom: 1.5rem;
-        }
-        
-        footer {
-            background-color: var(--dark-color);
-            color: white;
-            padding: 5rem 0 3rem;
-            border-radius: 40px 40px 0 0;
-            margin-top: 5rem;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        footer::before {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.03'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
-        }
-        
-        .footer-heading {
-            font-size: 1.6rem;
-            font-weight: 700;
-            margin-bottom: 1.5rem;
-            color: white;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        
-        .footer-heading::after {
-            content: "";
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background: var(--accent-color);
-            border-radius: 2px;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 1rem;
-        }
-        
-        .footer-links a {
-            color: rgba(255, 255, 255, 0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-            display: block;
-            padding: 5px 0;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            transform: translateX(5px);
-        }
-        
-        .social-icons a {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: 45px;
-            height: 45px;
-            background-color: rgba(255, 255, 255, 0.1);
-            border-radius: 50%;
-            margin-right: 15px;
-            color: white;
-            font-size: 1.2rem;
-            transition: all 0.3s ease;
-        }
-        
-        .social-icons a:hover {
-            background-color: var(--accent-color);
-            transform: translateY(-5px);
-        }
-        
-        .copyright {
-            padding-top: 2rem;
-            margin-top: 3rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            text-align: center;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        
-        /* Animation for section entrance */
-        .fade-in-up {
-            opacity: 0;
-            transform: translateY(50px);
-            transition: all 1s ease;
-        }
-        
-        .fade-in-up.active {
-            opacity: 1;
-            transform: translateY(0);
-        }
-        
-        /* Mobile Responsive */
-        @media (max-width: 991px) {
-            .hero-section {
-                padding: 6rem 0 5rem;
-            }
-            
-            .display-4 {
-                font-size: 2.5rem;
-            }
-            
-            .hero-image {
-                margin-top: 3rem;
-            }
-            
-            .feature-card, .testimonial-card {
-                padding: 2rem;
-            }
-            
-            .feature-icon {
-                width: 80px;
-                height: 80px;
-                line-height: 80px;
-                font-size: 2.5rem;
-            }
-            
-            .section-title {
-                font-size: 1.8rem;
-            }
-            
-            .cta-title {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .hero-section {
-                padding: 5rem 0 4rem;
-                border-radius: 0 0 30% 30% / 5%;
-            }
-            
-            .display-4 {
-                font-size: 2rem;
-            }
-            
-            .lead {
-                font-size: 1.1rem;
-            }
-            
-            .feature-icon {
-                width: 70px;
-                height: 70px;
-                line-height: 70px;
-                font-size: 2rem;
-            }
-            
-            .feature-title {
-                font-size: 1.3rem;
-            }
-            
-            .footer-heading {
-                margin-top: 2rem;
-            }
-            
-            .hero-particles {
-                display: none;
-            }
-            
-            .how-it-works, .testimonial-section, .cta-section {
-                border-radius: 30px;
-                padding: 3rem 0;
-                margin: 3rem 0;
-            }
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FenceView 安全阅读模式 — 防截图、防录屏、防复制 | MaiPDF</title>
+    <meta name="description" content="MaiPDF FenceView 安全阅读模式：防截图、防录屏、防复制的 PDF 安全查看器。让 PDF 在安全围栏内阅读，动态水印追踪泄密者。">
+    <meta name="keywords" content="FenceView, 防截图, 防录屏, 防复制, PDF安全查看器, MaiPDF, PDF安全阅读, 动态水印">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <link rel="canonical" href="https://sendpdfonline.com/features/zh/security/maipdffenceview">
+    <meta property="og:title" content="FenceView 安全阅读模式 — 防截图、防录屏、防复制 | MaiPDF">
+    <meta property="og:description" content="MaiPDF FenceView 安全阅读模式：防截图、防录屏、防复制的 PDF 安全查看器。让 PDF 在安全围栏内阅读，动态水印追踪泄密者。">
+    <meta property="og:type" content="article">
+    <meta property="og:url" content="https://sendpdfonline.com/features/zh/security/maipdffenceview">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/viewercontainer_noprint_nodownlaod.png">
+    <meta property="og:locale" content="zh_CN">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "FenceView 安全阅读模式 — 防截图、防录屏、防复制的 PDF 安全查看器",
+        "description": "MaiPDF FenceView 安全阅读模式：防截图、防录屏、防复制的 PDF 安全查看器。让 PDF 在安全围栏内阅读，动态水印追踪泄密者。",
+        "image": "https://sendpdfonline.com/images/maipdf2026/show_off/viewercontainer_noprint_nodownlaod.png",
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "author": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+        "publisher": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sendpdfonline.com/features/zh/security/maipdffenceview" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/" },
+            { "@type": "ListItem", "position": 2, "name": "功能", "item": "https://sendpdfonline.com/features/zh/" },
+            { "@type": "ListItem", "position": 3, "name": "FenceView 安全阅读模式", "item": "https://sendpdfonline.com/features/zh/security/maipdffenceview" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "FenceView 是什么？",
+                "acceptedAnswer": { "@type": "Answer", "text": "FenceView 是 MaiPDF 的安全阅读模式，通过在 PDF 内容上覆盖动态视觉围栏，防止截图、录屏和复制，同时嵌入动态水印追踪每一位阅读者。" }
+            },
+            {
+                "@type": "Question",
+                "name": "FenceView 能100%防截图吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "没有任何技术能100%阻止物理拍照，但 FenceView 会让截图变得几乎不可用：围栏遮挡 + 动态水印让截图即使流出也能追踪到泄密者，形成强大的威慑效果。" }
+            },
+            {
+                "@type": "Question",
+                "name": "FenceView 会影响阅读体验吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "不会。FenceView 的围栏设计经过优化，阅读者可以正常浏览 PDF 内容，围栏仅在截图或录屏时产生遮挡效果，正常阅读不受影响。" }
+            },
+            {
+                "@type": "Question",
+                "name": "FenceView 收费吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "MaiPDF 提供免费和付费计划。FenceView 基础功能在免费版中即可使用，高级功能如自定义水印样式和批量管理在付费版中提供。" }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
-
 <body>
-    <!-- Background Animation -->
-    <div class="bg-animation"></div>
 
-    <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light">
+    <nav class="bg-white border-bottom py-2">
         <div class="container">
-            <a class="navbar-brand" href="https://maipdf.cn">MaiPDF</a>
-            <small>文档安全的创新解决方案</small>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">首页</a></li>
+                <li class="breadcrumb-item"><a href="/features/zh/" class="text-decoration-none">功能</a></li>
+                <li class="breadcrumb-item active">FenceView 安全阅读模式</li>
+            </ol>
         </div>
     </nav>
 
-    <!-- Hero Section -->
-    <section class="hero-section">
-        <!-- Animated particles -->
-        <div class="hero-particles">
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-            <div class="particle"></div>
-        </div>
-        
+    <section class="hero">
         <div class="container">
             <div class="row align-items-center">
-                <div class="col-lg-6 fade-in-up active">
-                    <h1 class="display-4">MaiPDF栅格视图<br>增强PDF安全保护</h1>
-                    <p class="lead">
-                        栅格视图技术为您的PDF文档添加额外保护层，有效防止未经授权的截图和复制，保障您的文档安全，让您共享内容更有信心。
-                    </p>
-                    <a href="https://maipdf.cn" class="btn cta-btn">立即体验 <i class="fas fa-arrow-right ms-2"></i></a>
-                </div>
-                <div class="col-lg-6 fade-in-up active">
-                    <div class="hero-image">
-                        <img src="/maipdf-images/fen.png" class="img-fluid" alt="栅格视图示例">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>FenceView 安全阅读模式</h1>
+                    <p class="lead mt-3">防截图、防录屏、防复制 — 让 PDF 在安全围栏内阅读，泄密者无处遁形。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-shield-halved me-2"></i>立即体验
+                        </a>
+                        <a href="/features/zh/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>查看所有功能
+                        </a>
                     </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 8 分钟阅读 &nbsp; <i class="fas fa-calendar me-1"></i> 2026年3月23日 &nbsp; <i class="fas fa-tag me-1"></i> 安全</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/viewercontainer_noprint_nodownlaod.png" alt="MaiPDF FenceView 安全阅读模式 — 禁止打印和下载的 PDF 查看器" class="hero-screenshot" loading="eager">
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="container fade-in-up">
-        <div class="row">
-            <div class="col-lg-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-shield-alt"></i>
-                    </div>
-                    <h3 class="feature-title">增强文档安全</h3>
-                    <p class="feature-description">
-                        当使用MaiPDF的栅格视图打开PDF时，内容被垂直线条遮挡，只有当鼠标悬停在栅格上时才会显示内容，为授权用户提供流畅的阅读体验的同时增强文档安全性。
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-camera-retro"></i>
-                    </div>
-                    <h3 class="feature-title">防截图技术</h3>
-                    <p class="feature-description">
-                        这一独特功能通过覆盖栅格防止截图，干扰传统的屏幕捕获方法，大大提高了文档的安全性。即使有人尝试截图，得到的仍然是带栅格的模糊内容，保护您的知识产权。
-                    </p>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="feature-card">
-                    <div class="feature-icon">
-                        <i class="fas fa-industry"></i>
-                    </div>
-                    <h3 class="feature-title">广泛应用场景</h3>
-                    <p class="feature-description">
-                        MaiPDF的栅格视图特别适合保护机密文档、知识产权和敏感数据，广泛应用于法律、金融和医疗保健等行业，为重要文档提供更强保障，满足各行业专业人士的需求。
-                    </p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- How It Works Section -->
-    <section class="how-it-works fade-in-up">
+    <section class="py-5 mt-3">
         <div class="container">
-            <h2 class="section-title">如何使用栅格视图？</h2>
+            <div class="text-center mb-5">
+                <p class="section-label">什么是 FenceView</p>
+                <h2 class="section-heading">为什么需要安全阅读模式？</h2>
+            </div>
             <div class="row align-items-center">
-                <div class="col-lg-6">
-                    <div class="steps-container">
-                        <div class="step-number">1</div>
-                        <h3 class="step-title">上传PDF文档</h3>
-                        <p>将您需要保护的PDF文档上传到MaiPDF平台，系统支持各种大小和类型的PDF文件。</p>
-                    </div>
-                    <div class="steps-container">
-                        <div class="step-number">2</div>
-                        <h3 class="step-title">启用栅格视图</h3>
-                        <p>在文档安全设置中，选择启用"栅格视图"功能，您还可以自定义栅格密度和显示效果。</p>
-                    </div>
-                    <div class="steps-container">
-                        <div class="step-number">3</div>
-                        <h3 class="step-title">生成安全链接</h3>
-                        <p>系统将为您的文档生成一个安全链接，您可以通过电子邮件或消息应用分享给需要查看的人。</p>
-                    </div>
-                    <div class="steps-container">
-                        <div class="step-number">4</div>
-                        <h3 class="step-title">接收者查看体验</h3>
-                        <p>当接收者打开文档时，内容会自动应用栅格保护，但鼠标悬停时可以清晰阅读，确保良好的用户体验。</p>
-                    </div>
-                    <div class="mt-4">
-                        <a href="https://maipdf.cn" class="btn cta-btn">立即体验栅格视图 <i class="fas fa-shield-alt ms-2"></i></a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="img-fluid rounded-3 hero-image">
-                        <img src="/maipdf-images/security.png" alt="文档安全示例" class="img-fluid rounded-3">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Testimonials Section -->
-    <section class="testimonial-section fade-in-up">
-        <div class="container">
-            <h2 class="section-title">用户评价</h2>
-            <div class="row">
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="testimonial-text">"MaiPDF的栅格视图功能彻底解决了我们公司文档泄露的担忧。现在分享敏感财务报告时我们更有信心了，客户也对我们的安全措施印象深刻。"</p>
-                        <div class="text-end">
-                            <span class="testimonial-author">张经理</span>
-                            <span class="testimonial-company">金融顾问, 某资产管理公司</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="testimonial-text">"作为律师，文档安全对我来说至关重要。MaiPDF的栅格视图为我的客户文件提供了额外的保护层，特别是在处理敏感案件时，这个功能非常实用。"</p>
-                        <div class="text-end">
-                            <span class="testimonial-author">李律师</span>
-                            <span class="testimonial-company">高级合伙人, 某律师事务所</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <div class="testimonial-card">
-                        <i class="fas fa-quote-left quote-icon"></i>
-                        <p class="testimonial-text">"我们的研发团队使用MaiPDF栅格视图保护知识产权文档。即使有人截图，内容也无法被清晰捕获，这让我们在与外部合作伙伴共享信息时更安心。"</p>
-                        <div class="text-end">
-                            <span class="testimonial-author">王总监</span>
-                            <span class="testimonial-company">技术主管, 某科技创新企业</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- CTA Section -->
-    <section class="cta-section fade-in-up">
-        <div class="container text-center">
-            <h2 class="cta-title">立即保护您的敏感文档</h2>
-            <p class="lead mb-4">体验MaiPDF的栅格视图技术，为您的PDF文档提供全方位保护，防止未经授权的访问和复制</p>
-            <a href="https://maipdf.cn" class="btn cta-btn">免费试用 <i class="fas fa-shield-alt ms-2"></i></a>
-        </div>
-    </section>
-
-    <!-- Footer Section -->
-    <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-md-4">
-                    <h3 class="footer-heading">MaiPDF</h3>
-                    <p>领先的PDF文档安全与共享平台，为您的敏感文档提供全方位保护</p>
-                    <div class="social-icons mt-4">
-                        <a href="#"><i class="fab fa-weixin"></i></a>
-                        <a href="#"><i class="fab fa-weibo"></i></a>
-                        <a href="#"><i class="fab fa-qq"></i></a>
-                    </div>
-                </div>
-                <div class="col-md-4">
-                    <h3 class="footer-heading">产品功能</h3>
-                    <ul class="footer-links">
-                        <li><a href="https://maipdf.cn/features/likeH5.html"><i class="fas fa-angle-right me-2"></i>像H5链接一样分享</a></li>
-                        <li><a href="https://maipdf.cn/features/动态水印.html"><i class="fas fa-angle-right me-2"></i>动态水印功能</a></li>
-                        <li><a href="https://maipdf.cn/features/jinzhi.html"><i class="fas fa-angle-right me-2"></i>禁止复制功能</a></li>
-                        <li><a href="https://maipdf.cn/features/maipdf-pdf-hosting-full-cn.html"><i class="fas fa-angle-right me-2"></i>PDF云托管服务</a></li>
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="text-muted">传统 PDF 分享方式无法控制接收者的行为：截图、录屏、复制内容、转发文件——任何一个环节都可能导致敏感信息泄露。</p>
+                    <p class="text-muted">MaiPDF 的 <strong>FenceView 安全阅读模式</strong>通过在 PDF 内容上覆盖动态视觉围栏，让截图变得毫无意义。同时嵌入个性化动态水印，即使有人试图截图，水印也会暴露泄密者身份。</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>视觉围栏让截图内容不可读</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>动态水印追踪每一位阅读者</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>正常阅读体验不受影响</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>配合次数限制和到期时间形成完整防线</li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h3 class="footer-heading">联系我们</h3>
-                    <ul class="footer-links">
-                        <li><i class="fas fa-envelope me-2"></i> <a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li>
-                        <li><i class="fas fa-globe me-2"></i> <a href="https://maipdf.cn">maipdf.cn</a></li>
-                        <li><i class="fas fa-headset me-2"></i> <a href="#">在线客服支持</a></li>
-                    </ul>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-security-features.svg" alt="MaiPDF 安全功能流程图" class="img-fluid screenshot" style="max-width: 480px;" loading="lazy">
                 </div>
             </div>
-            <div class="copyright">
-                <p>&copy; 2025 MaiPDF. 保留所有权利。</p>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">操作步骤</p>
+                <h2 class="section-heading">三步开启 FenceView 安全分享</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">上传 PDF</h3>
+                        <p class="text-muted">拖拽或点击上传你的 PDF 文件，文件将安全存储在云端。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/工具页面上传页.png" alt="上传 PDF 到 MaiPDF" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">开启 FenceView + 安全设置</h3>
+                        <p class="text-muted">启用 FenceView 安全阅读模式，并设置水印、次数限制、到期时间等安全策略。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="设置 FenceView 安全选项" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">生成安全链接并分享</h3>
+                        <p class="text-muted">获取安全链接和二维码，通过邮件、微信或其他渠道分享给接收者。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="获取安全分享链接和二维码" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">核心功能</p>
+                <h2 class="section-heading">FenceView 安全防护体系</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-border-all"></i></div>
+                        <h3 class="h5 fw-bold">防截图围栏</h3>
+                        <p class="text-muted mb-0">动态视觉围栏覆盖 PDF 内容，截图后无法获取完整可读信息。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-fingerprint"></i></div>
+                        <h3 class="h5 fw-bold">动态水印追踪</h3>
+                        <p class="text-muted mb-0">每位阅读者看到的水印不同，包含身份信息，泄密可精准追踪。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-ban"></i></div>
+                        <h3 class="h5 fw-bold">禁止打印/复制/下载</h3>
+                        <p class="text-muted mb-0">完全禁用打印、复制文本和下载按钮，接收者只能在线查看。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-eye"></i></div>
+                        <h3 class="h5 fw-bold">阅读次数限制</h3>
+                        <p class="text-muted mb-0">设置最大查看次数，超过限制后链接自动失效。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-hourglass-end"></i></div>
+                        <h3 class="h5 fw-bold">到期时间</h3>
+                        <p class="text-muted mb-0">设置文档到期日期，过期后自动失效，无需手动撤销。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3 class="h5 fw-bold">邮箱验证门槛</h3>
+                        <p class="text-muted mb-0">要求输入邮箱验证码才能查看，精确记录每位阅读者身份。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #e0e7ff; color: #4f46e5;"><i class="fab fa-telegram-plane"></i></div>
+                        <h3 class="h5 fw-bold">Telegram 提醒</h3>
+                        <p class="text-muted mb-0">每次有人查看文档，你都会通过 Telegram 收到即时通知。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fff7ed; color: #ea580c;"><i class="fas fa-clipboard-list"></i></div>
+                        <h3 class="h5 fw-bold">访问审计日志</h3>
+                        <p class="text-muted mb-0">完整记录每次访问的时间、设备、IP 和位置，全面审计。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">对比分析</p>
+                <h2 class="section-heading">普通 PDF 分享 vs FenceView 安全分享</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered bg-white" style="border-radius: 12px; overflow: hidden;">
+                    <thead style="background: var(--blue-600); color: white;">
+                        <tr>
+                            <th class="py-3 px-4">对比项目</th>
+                            <th class="py-3 px-4 text-center">普通 PDF 分享</th>
+                            <th class="py-3 px-4 text-center">FenceView 安全分享</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">可复制文本？</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-danger"></i> 可以</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-success"></i> 禁止</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">可截图？</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-danger"></i> 可以</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-success"></i> 围栏遮挡 + 水印追踪</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">可下载？</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-danger"></i> 可以</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-success"></i> 禁止</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">可追踪阅读者？</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i> 不能</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-success"></i> 水印 + 邮箱 + 日志</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">可撤销访问？</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i> 不能</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-success"></i> 随时撤销</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">控制面板</p>
+                    <h2 class="section-heading">分享之后仍然掌控一切</h2>
+                    <p class="text-muted">通过 MaiPDF 控制面板，你可以随时查看文档访问记录、修改安全设置、撤销访问权限，甚至更新 PDF 内容而不改变链接。</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>实时查看访问记录和阅读者信息</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>一键撤销访问权限</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>修改安全策略不影响已分享链接</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>替换 PDF 文件保持链接不变</li>
+                    </ul>
+                    <a href="https://maipdf.com" class="btn btn-primary mt-2" target="_blank" rel="noopener">立即体验 →</a>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/丰富的用户登录后管理界面.png" alt="MaiPDF 控制面板管理界面" class="img-fluid screenshot" style="max-width: 480px;" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">关于 FenceView 的常见问题</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">FenceView 是什么？</button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">FenceView 是 MaiPDF 的安全阅读模式，通过在 PDF 内容上覆盖动态视觉围栏，防止截图、录屏和复制，同时嵌入动态水印追踪每一位阅读者。即使有人尝试截图，围栏会让截图内容不可读，水印则暴露泄密者身份。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">FenceView 能100%防截图吗？</button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">没有任何技术能100%阻止物理拍照，但 FenceView 会让截图变得几乎不可用：围栏遮挡让截取的内容不完整、不可读，动态水印让截图即使流出也能追踪到泄密者，形成强大的威慑效果。结合次数限制和邮箱验证，可以将泄密风险降到最低。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">FenceView 会影响阅读体验吗？</button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">不会。FenceView 的围栏设计经过精心优化，阅读者可以正常浏览 PDF 的全部内容。围栏仅在截图或录屏操作时才会产生遮挡效果，日常阅读体验流畅自然。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">FenceView 收费吗？</button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">MaiPDF 提供免费和付费计划。FenceView 基础功能在免费版中即可使用，包括防截图围栏和基础水印。高级功能如自定义水印样式、批量管理和优先技术支持在付费版中提供。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">相关文章</p>
+                <h2 class="section-heading">了解更多安全分享技巧</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">安全</span>
+                            <h3><a href="/features/zh/security/pdf_prevent_forward">PDF 防转发指南</a></h3>
+                            <p class="text-muted small">防止 PDF 被未授权转发：组合次数限制、水印和验证，掌控文档去向。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">水印</span>
+                            <h3><a href="/features/zh/watermark/dongtai">动态水印保护教程</a></h3>
+                            <p class="text-muted small">了解如何使用动态水印追踪泄密者，保护文档安全。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">指南</span>
+                            <h3><a href="/features/zh/security/kongzhi">PDF 访问控制指南</a></h3>
+                            <p class="text-muted small">全面掌控谁能查看你的 PDF，设置多重访问门槛。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">立即上传 PDF，体验安全分享</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">开启 FenceView 安全阅读模式，防截图、防复制、防转发，让你的文档安全无忧。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-shield-halved me-2"></i>立即体验
+                    </a>
+                    <a href="/features/zh/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>查看所有功能
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">安全 PDF 分享指南 — 上传、保护并安全分享你的 PDF 文档，由 MaiPDF 提供技术支持。</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/zh/">功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">文章</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
+                        <li class="mb-2"><a href="/features/zh/">功能列表</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">热门功能</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/features/zh/security/maipdffenceview">FenceView</a></li>
+                        <li class="mb-2"><a href="/features/zh/watermark/dongtai">动态水印</a></li>
+                        <li class="mb-2"><a href="/features/zh/security/kongzhi">访问控制</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/">首页</a></li>
+                        <li class="mb-2"><a href="/privacy-policy.html">隐私政策</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">网站地图</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-    
-    <!-- Custom JS -->
-    <script>
-        // Scroll animation for sections
-        document.addEventListener('DOMContentLoaded', function() {
-            // Navbar scroll effect
-            window.addEventListener('scroll', function() {
-                const navbar = document.querySelector('.navbar');
-                if (window.scrollY > 50) {
-                    navbar.classList.add('scrolled');
-                } else {
-                    navbar.classList.remove('scrolled');
-                }
-            });
-            
-            // Fade in animation for sections
-            const fadeElements = document.querySelectorAll('.fade-in-up');
-            
-            const observer = new IntersectionObserver((entries) => {
-                entries.forEach(entry => {
-                    if (entry.isIntersecting) {
-                        entry.target.classList.add('active');
-                    }
-                });
-            }, {
-                threshold: 0.1
-            });
-            
-            fadeElements.forEach(element => {
-                observer.observe(element);
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

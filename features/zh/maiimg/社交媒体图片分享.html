@@ -3,261 +3,539 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="社交媒体图片分享教程 - 使用MaiImg在微信、微博、QQ等社交媒体平台分享图片，支持查看次数限制、快速访问、Cloudflare CDN加速等功能。">
-    <meta name="keywords" content="社交媒体图片分享, 微信分享图片, 微博分享图片, QQ分享图片, 图片社交分享, 社交媒体图片, MaiImg社交分享">
-    <meta name="author" content="MaiImg 团队">
-    <meta name="robots" content="index, follow">
-    <title>社交媒体图片分享教程 - 在微信、微博等平台分享图片 | MaiImg</title>
+    <title>社交媒体图片分享 | MaiImg</title>
+    <meta name="description" content="用 MaiImg 生成图片分享链接，在微信、微博、QQ 粘贴即可预览；CDN 加速，打开更快。含步骤说明、能力对比与常见问题。">
+    <meta name="keywords" content="社交媒体图片分享,微信分享图片,微博图片链接,QQ预览,MaiImg,CDN">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="MaiImg Team">
+    <link rel="canonical" href="https://sendpdfonline.com/features/zh/maiimg/社交媒体图片分享">
+    <meta property="og:title" content="社交媒体图片分享 | MaiImg">
+    <meta property="og:description" content="微信、微博、QQ 粘贴链接即可预览；CDN 加速，打开更快。">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/分享方便.png">
+    <meta property="og:url" content="https://sendpdfonline.com/features/zh/maiimg/社交媒体图片分享">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiImg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="社交媒体图片分享 | MaiImg">
+    <meta name="twitter:description" content="微信、微博、QQ 粘贴链接即可预览；CDN 加速，打开更快。">
+    <meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/分享方便.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding-bottom: 50px;
-        }
-        .hero {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin: 40px auto;
-            max-width: 1200px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .content-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin: 30px auto;
-            max-width: 1200px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-        .social-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-    </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "社交媒体图片分享",
+        "description": "微信、微博、QQ 粘贴链接即可预览；CDN 加速，打开更快。",
+        "image": "https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/分享方便.png",
+        "author": {"@type": "Organization", "name": "MaiImg", "url": "https://maiimg.com"},
+        "publisher": {"@type": "Organization", "name": "MaiImg", "url": "https://maiimg.com", "logo": {"@type": "ImageObject", "url": "https://sendpdfonline.com/images/logo.png"}},
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "mainEntityOfPage": "https://sendpdfonline.com/features/zh/maiimg/社交媒体图片分享"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "功能", "item": "https://sendpdfonline.com/features/"},
+            {"@type": "ListItem", "position": 3, "name": "MaiImg", "item": "https://sendpdfonline.com/features/zh/maiimg/"},
+            {"@type": "ListItem", "position": 4, "name": "社交媒体图片分享", "item": "https://sendpdfonline.com/features/zh/maiimg/社交媒体图片分享"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "在微信里怎么分享 MaiImg 图片链接？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "在 MaiImg 生成分享链接后，直接粘贴到微信聊天、群聊或公众号草稿中即可。对方点击链接在浏览器中打开预览页面，可查看高清图片并支持继续转发二维码或短链。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "为什么说 CDN 加速能更快打开？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "图片通过就近节点分发，减少跨区加载延迟；同时针对常见终端做了适配，移动端弱网环境下首屏打开更稳定。实际速度仍与用户网络环境有关。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "微博和 QQ 里预览有什么注意点？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "多数平台对外链有安全提示或需点击「继续访问」。建议使用官方生成的 HTTPS 链接，避免短链被误判；若做活动投放，可先自测各端展示效果。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "可以配合二维码线下引流吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "可以。生成结果页通常包含二维码，适合海报、易拉宝与门店台卡。用户先在线下扫码，再一键把同一链接分享到社交平台，实现线上线下联动。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "社交平台分享与批量上传如何搭配？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "先用批量上传把一组图放进同一相册链接，再复制该链接到微信、微博等渠道。这样对外只发一条 URL，更新相册内容时也可减少重复发帖成本。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        .flowchart-wrap { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .flowchart-wrap img { max-width: 100%; height: auto; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
-    <div class="hero">
-        <h1><i class="fas fa-share-alt"></i> 社交媒体图片分享教程</h1>
-        <p class="lead">在微信、微博、QQ等社交媒体平台快速分享图片，支持查看限制和快速访问</p>
-        <a href="https://maiimg.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即开始分享</a>
-    </div>
 
-    <div class="content-card">
-        <h2><i class="fas fa-info-circle text-primary"></i> 为什么使用 MaiImg 分享图片？</h2>
-        <p>在社交媒体分享图片时，MaiImg 提供了更好的体验和更多的控制选项：</p>
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-bolt feature-icon text-warning"></i>
-                        <h5>快速加载</h5>
-                        <p>Cloudflare CDN加速，图片加载速度快</p>
+    <nav class="py-2" style="background: var(--gray-100);" aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/features/">功能</a></li>
+                <li class="breadcrumb-item"><a href="/features/zh/maiimg/">MaiImg</a></li>
+                <li class="breadcrumb-item active">社交媒体图片分享</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>社交媒体图片分享</h1>
+                    <p class="lead mt-3">微信、微博、QQ 粘贴链接即可预览；CDN 加速，打开更快。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maiimg.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-share-nodes me-2"></i>立即体验
+                        </a>
+                        <a href="/features/zh/maiimg/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>MaiImg 功能索引
+                        </a>
                     </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 约 6 分钟阅读 &nbsp; <i class="fas fa-calendar me-1"></i> 2026年3月23日 &nbsp; <i class="fas fa-tag me-1"></i> MaiImg</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/分享方便.png" alt="社交媒体图片分享 — 一条链接多平台预览" class="hero-screenshot" loading="eager">
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-eye feature-icon text-success"></i>
-                        <h5>查看限制</h5>
-                        <p>设置查看次数，控制图片传播范围</p>
-                    </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="fs-5">在微信群、微博话题或 QQ 群里发图，最怕压缩糊、顺序乱、对方还要逐张下载。<strong>MaiImg</strong>把图片放在云端预览页，你只需<strong>粘贴一个链接</strong>，配合 CDN 分发，常用机型上打开速度更稳，更适合对外传播与活动投放。</p>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-chart-line feature-icon text-info"></i>
-                        <h5>访问统计</h5>
-                        <p>统计图片查看情况，了解传播效果</p>
+        </div>
+    </section>
+
+    <section id="steps" class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">操作步骤</p>
+                <h2 class="section-heading">三步发到社交平台</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">上传并生成分享页</h3>
+                        <p class="text-muted">在 MaiImg 上传图片或批量添加，完成后得到统一预览页与短链。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="生成图片分享链接与预览页" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">复制链接或二维码</h3>
+                        <p class="text-muted">一键复制 HTTPS 链接，或保存二维码用于海报与私域社群。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/宣传图/二维码很方便.png" alt="图片分享二维码与链接" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">在管理端统一控链</h3>
+                        <p class="text-muted">在用户中心查看每条链接状态，必要时更新内容、下线或改权限。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/用户管理界面对链接的管理.png" alt="用户管理界面中对分享链接的管理" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content-card">
-        <h2><i class="fas fa-share-alt text-primary"></i> 支持的社交媒体平台</h2>
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <div class="card h-100 text-center">
-                    <div class="card-body">
-                        <i class="fab fa-weixin social-icon text-success"></i>
-                        <h5>微信</h5>
-                        <p>在微信朋友圈、微信群、私聊中分享图片链接</p>
-                    </div>
-                </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <p class="section-label">流程参考</p>
+                <h2 class="section-heading">分享链路动画示意</h2>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100 text-center">
-                    <div class="card-body">
-                        <i class="fab fa-weibo social-icon text-danger"></i>
-                        <h5>微博</h5>
-                        <p>在微博发布图片链接，粉丝点击即可查看</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100 text-center">
-                    <div class="card-body">
-                        <i class="fab fa-qq social-icon text-primary"></i>
-                        <h5>QQ</h5>
-                        <p>在QQ空间、QQ群、QQ聊天中分享图片</p>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="flowchart-wrap text-center">
+                        <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-pdf-sharing-workflow-animation.svg" alt="社交渠道图片分享工作流动画示意" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content-card">
-        <h2><i class="fas fa-sitemap text-primary"></i> 社交媒体分享流程</h2>
-        
-        <div class="card mb-3" style="border-left: 5px solid #667eea;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-cloud-upload-alt"></i>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="row align-items-center g-4 flex-lg-row-reverse">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <p class="section-label">可控分享</p>
+                    <h2 class="section-heading h3">需要时可限制访问与期限</h2>
+                    <p class="text-muted mb-0">对外投放时，可结合访问限制降低素材被随意转存的风险。下图展示分享策略与限制相关能力，便于与市场、法务对齐口径。</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/分享限制.png" alt="图片分享访问限制与策略说明" class="img-fluid screenshot" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">核心能力</p>
+                <h2 class="section-heading">社交传播场景的六个优势</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-bolt"></i></div>
+                        <h3 class="h5 fw-bold">CDN 加速打开</h3>
+                        <p class="text-muted mb-0">静态资源就近分发，常见地区首屏加载更顺畅，适合活动高峰。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fab fa-weixin"></i></div>
+                        <h3 class="h5 fw-bold">适配微信生态</h3>
+                        <p class="text-muted mb-0">链接可直接粘贴到聊天与朋友圈文案，减少大图刷屏与压缩损失。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-hashtag"></i></div>
+                        <h3 class="h5 fw-bold">微博话题友好</h3>
+                        <p class="text-muted mb-0">同一预览页可被多次引用，方便话题页与超话长期沉淀流量。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fab fa-qq"></i></div>
+                        <h3 class="h5 fw-bold">QQ 群快速预览</h3>
+                        <p class="text-muted mb-0">学生与游戏社群常用 QQ，一条链接即可让全群统一查看原图页。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-shield-halved"></i></div>
+                        <h3 class="h5 fw-bold">HTTPS 与权限</h3>
+                        <p class="text-muted mb-0">默认加密传输，可按需叠加访问控制，降低外链被滥用的概率。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-chart-simple"></i></div>
+                        <h3 class="h5 fw-bold">便于效果复盘</h3>
+                        <p class="text-muted mb-0">统一链接便于统计访问与转化，对比不同渠道投放素材表现。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">方式对比</p>
+                <h2 class="section-heading">社交链接分享与直接发图</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="table-responsive" style="background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;">
+                        <table class="table table-bordered mb-0">
+                            <thead style="background: var(--blue-900); color: white;">
+                                <tr>
+                                    <th style="width:20%">对比项</th>
+                                    <th class="text-center" style="width:26%">MaiImg 链接分享</th>
+                                    <th class="text-center" style="width:26%">即时通讯直接发图</th>
+                                    <th class="text-center" style="width:28%">社交平台相册上传</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: var(--blue-50);">
+                                    <td><strong><i class="fas fa-star text-warning me-1"></i>画质与一致性</strong></td>
+                                    <td class="text-center">统一预览页，少压缩</td>
+                                    <td class="text-center">易被多次压缩</td>
+                                    <td class="text-center">受平台规则影响</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>打开速度</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> CDN 分发</td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> 视网络而定</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 一般较快</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>跨平台复制</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 一条 URL 多平台</td>
+                                    <td class="text-center"><i class="fas fa-times-circle text-danger"></i> 需重复发送</td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> 各端独立</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>更新素材</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 可换源或控链</td>
+                                    <td class="text-center"><i class="fas fa-times-circle text-danger"></i> 需重发图片</td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> 需编辑帖子</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>数据复盘</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 易统计</td>
+                                    <td class="text-center"><i class="fas fa-times-circle text-danger"></i> 难聚合</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 平台自带</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">社交分享常见疑问</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    在微信里怎么分享 MaiImg 图片链接？
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    在 MaiImg 生成分享链接后，直接粘贴到微信聊天、群聊或公众号草稿中即可。对方点击链接在浏览器中打开预览页面，可查看高清图片并支持继续转发二维码或短链。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    为什么说 CDN 加速能更快打开？
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    图片通过就近节点分发，减少跨区加载延迟；同时针对常见终端做了适配，移动端弱网环境下首屏打开更稳定。实际速度仍与用户网络环境有关。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    微博和 QQ 里预览有什么注意点？
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    多数平台对外链有安全提示或需点击「继续访问」。建议使用官方生成的 HTTPS 链接，避免短链被误判；若做活动投放，可先自测各端展示效果。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    可以配合二维码线下引流吗？
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    可以。生成结果页通常包含二维码，适合海报、易拉宝与门店台卡。用户先在线下扫码，再一键把同一链接分享到社交平台，实现线上线下联动。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    社交平台分享与批量上传如何搭配？
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    先用批量上传把一组图放进同一相册链接，再复制该链接到微信、微博等渠道。这样对外只发一条 URL，更新相册内容时也可减少重复发帖成本。
+                                </div>
+                            </div>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <h4>步骤 1：上传图片</h4>
-                        <p>在 MaiImg 上传您要分享的图片，系统自动生成分享链接。</p>
-                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="card mb-3" style="border-left: 5px solid #f5576c;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-cog"></i>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">相关阅读</p>
+                <h2 class="section-heading">更多 MaiImg 指南</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">批量</span>
+                            <h3><a href="/features/zh/maiimg/批量图片上传分享">批量图片上传与分享</a></h3>
+                            <p class="text-muted small mb-0">一次最多 25 张图，一个链接交付客户与团队。</p>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <h4>步骤 2：设置分享选项</h4>
-                        <p>设置查看次数限制（如100次），防止图片被无限传播。设置有效期，确保时效性内容自动过期。</p>
-                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="card mb-3" style="border-left: 5px solid #00f2fe;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-link"></i>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">二维码</span>
+                            <h3><a href="/features/zh/maiimg/图片二维码分享">图片二维码分享</a></h3>
+                            <p class="text-muted small mb-0">扫码打开预览页，适合海报与门店物料。</p>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <h4>步骤 3：复制分享链接</h4>
-                        <p>复制生成的分享链接，链接会自动适配社交媒体平台，显示图片预览。</p>
-                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="card" style="border-left: 5px solid #fee140;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fab fa-weixin"></i>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">统计</span>
+                            <h3><a href="/features/zh/maiimg/图片查看追踪分析">图片查看追踪分析</a></h3>
+                            <p class="text-muted small mb-0">掌握访问次数与来源，优化投放与跟进节奏。</p>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <h4>步骤 4：在社交媒体分享</h4>
-                        <p>将链接粘贴到微信、微博、QQ等平台，发布后好友点击即可查看图片。链接会自动显示图片预览，吸引点击。</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">入门</span>
+                            <h3><a href="/features/zh/maiimg/免费图片托管分享指南">免费图片托管分享指南</a></h3>
+                            <p class="text-muted small mb-0">从注册到分享的全流程说明与最佳实践。</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content-card">
-        <h2><i class="fas fa-lightbulb text-primary"></i> 分享技巧</h2>
-        <div class="row mt-4">
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5><i class="fas fa-check-circle text-success"></i> 最佳实践</h5>
-                        <ul>
-                            <li>为重要图片设置查看次数限制</li>
-                            <li>使用吸引人的描述文字</li>
-                            <li>选择合适的时间发布</li>
-                            <li>定期查看访问统计</li>
-                            <li>及时回复评论和互动</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5><i class="fas fa-exclamation-triangle text-warning"></i> 注意事项</h5>
-                        <ul>
-                            <li>注意图片版权问题</li>
-                            <li>避免分享敏感内容</li>
-                            <li>设置合理的查看限制</li>
-                            <li>定期检查链接有效性</li>
-                            <li>保护个人隐私信息</li>
-                        </ul>
-                    </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">用一条链接搞定社交传播</h2>
+                <p class="mb-4 opacity-90" style="max-width: 520px; margin: 0 auto;">上传图片，复制 HTTPS 链接，粘贴到微信、微博或 QQ。CDN 加速预览，管理端随时控链。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maiimg.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-share-nodes me-2"></i>立即体验
+                    </a>
+                    <a href="/features/zh/maiimg/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>查看所有功能
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Related Articles -->
-    <div class="content-card">
-        <h2><i class="fas fa-link text-primary"></i> 相关文章</h2>
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5><a href="免费图片托管分享指南.html"><i class="fas fa-images"></i> 免费图片托管分享指南</a></h5>
-                        <p class="text-muted small">完整的图片托管和分享教程</p>
-                    </div>
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-images me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">安全分享指南 — MaiImg 社交媒体图片链接与 CDN 预览。</p>
+                    <p class="small mb-0" style="color: #6b7280;">&copy; 2026 SendPDFOnline.com</p>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5><a href="图片查看追踪分析.html"><i class="fas fa-chart-line"></i> 图片查看追踪分析</a></h5>
-                        <p class="text-muted small">统计图片查看情况</p>
-                    </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/">所有功能</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5><a href="图片二维码分享.html"><i class="fas fa-qrcode"></i> 图片二维码分享</a></h5>
-                        <p class="text-muted small">生成二维码用于离线分享</p>
-                    </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">博客</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
+                        <li class="mb-2"><a href="/features/zh/">中文功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">热门</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/features/zh/maiimg/批量图片上传分享">批量上传</a></li>
+                        <li class="mb-2"><a href="/features/zh/maiimg/图片二维码分享">图片二维码</a></li>
+                        <li class="mb-2"><a href="/features/zh/maiimg/免费图片托管分享指南">托管指南</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">联系我们</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">站点地图</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="content-card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <h2>开始在社交媒体分享图片</h2>
-        <p class="lead">使用 MaiImg 快速分享图片到微信、微博等平台，享受便捷的社交分享体验</p>
-        <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3" target="_blank">立即开始分享</a>
-    </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-

@@ -1,387 +1,465 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="See how your PDFs are used with MaiPDF analytics—track views, downloads, and engagement at a glance.">
-    <meta name="keywords" content="PDF analytics, document tracking, PDF usage, document insights, PDF statistics">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="PDF Analytics | MaiPDF | Advanced Document Tracking">
-    <meta property="og:description" content="See how your PDFs are used with MaiPDF analytics—track views, downloads, and engagement at a glance.">
-    <meta property="og:image" content="/images/analytics.png">
-    <meta property="og:url" content="https://sendpdfonline.com/usecase/pdf-analytics.html">
-    <title>PDF Analytics | MaiPDF | Advanced Document Tracking</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2C8C99;
-            --secondary-color: #45a3b1;
-            --accent-color: #ff9800;
-            --text-color: #333;
-            --light-bg: #f5f7f8;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .feature-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        .feature-icon {
-            font-size: 2.5rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .section-title {
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        .content-section {
-            margin-bottom: 30px;
-        }
-        .content-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .content-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .content-section li {
-            margin-bottom: 10px;
-            padding-left: 30px;
-            position: relative;
-        }
-        .content-section li:before {
-            content: '✓';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            margin-top: 20px;
-        }
-        .cta-button:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-        .footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-        .footer a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        .footer a:hover {
-            opacity: 0.8;
-        }
-        .related-features {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-top: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .related-features h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .related-features ul {
-            list-style: none;
-            padding: 0;
-        }
-        .related-features li {
-            margin-bottom: 10px;
-        }
-        .related-features a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: block;
-            padding: 8px 0;
-        }
-        .related-features a:hover {
-            color: var(--primary-color);
-        }
-        .related-features a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-    
-        @media (max-width: 768px) {
-            .mobile-fullbleed {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                margin-left: calc(50% - 50vw);
-                margin-right: calc(50% - 50vw);
-                height: auto;
-                display: block;
-                border-radius: 0 !important;
-            }
-        }
-    </style>
+    <meta name="description" content="Track every PDF open in real time with MaiPDF. See who viewed, when, how many times, and from what device — all from your analytics dashboard.">
+    <meta name="keywords" content="pdf analytics, track pdf opens, pdf view tracking, pdf read receipt, pdf dashboard, pdf device tracking, telegram pdf alert, pdf access records, pdf open notification, document analytics">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>PDF Analytics Dashboard — Track Who Opened Your PDF in Real Time | MaiPDF</title>
+    <link rel="canonical" href="https://sendpdfonline.com/usecase/pdf-analytics">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Article",
+                "headline": "PDF Analytics Dashboard — Track Who Opened Your PDF in Real Time",
+                "description": "Track every PDF open in real time. See who viewed, when, how many times, and from what device — all from your MaiPDF dashboard.",
+                "datePublished": "2026-03-23",
+                "dateModified": "2026-03-23",
+                "author": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+                "publisher": { "@type": "Organization", "name": "SendPDFOnline.com", "url": "https://sendpdfonline.com" },
+                "mainEntityOfPage": "https://sendpdfonline.com/usecase/pdf-analytics",
+                "image": "https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png"
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Usecase",
-                "item": "https://sendpdfonline.com/usecase/"
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sendpdfonline.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://sendpdfonline.com/usecase/" },
+                    { "@type": "ListItem", "position": 3, "name": "PDF Analytics Dashboard" }
+                ]
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "PDF Analytics",
-                "item": "https://sendpdfonline.com/usecase/pdf-analytics.html"
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "What data does MaiPDF track when someone opens my PDF?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "MaiPDF records the timestamp, viewer IP, browser, operating system, device type, and approximate location for each open event. If email verification is enabled, the viewer's email address is also captured." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I get notified instantly when my PDF is opened?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can enable Telegram push notifications that alert you within seconds of a PDF being opened, including the viewer's details." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I export the access records?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. MaiPDF allows you to export all access records as a CSV file for offline analysis, reporting, or compliance documentation." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Is there a limit to how many views are tracked?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "No. Every single open event is recorded regardless of volume. You can review the full history in your dashboard or export it at any time." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Does tracking work if the viewer uses a VPN?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "The open event is still recorded with a timestamp, browser, and device info. The IP and location will reflect the VPN exit node. For verified identity, enable email verification to know exactly who viewed." }
+                    }
+                ]
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav class="bg-white border-bottom py-2">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/usecase/">Usecase</a></li>
-                <li class="breadcrumb-item active" aria-current="page">PDF Analytics</li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="/usecase/" class="text-decoration-none">Use Cases</a></li>
+                <li class="breadcrumb-item active" aria-current="page">PDF Analytics Dashboard</li>
             </ol>
         </div>
     </nav>
-    
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+
+    <section class="hero">
         <div class="container">
-            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://maipdf.com">Home</a>
-                    </li>
-                </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="badge bg-light text-dark mb-3"><i class="fas fa-chart-bar me-1"></i> Analytics &middot; 6 min read</span>
+                    <h1>PDF Analytics Dashboard</h1>
+                    <p class="lead mt-3">Track every PDF open in real time. See who viewed, when, how many times, and from what device — all from your MaiPDF dashboard.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-chart-line me-2"></i>Start Tracking PDFs
+                        </a>
+                        <a href="/features/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>All Features
+                        </a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> Free to use &nbsp; <i class="fas fa-check me-1"></i> No sign-up required &nbsp; <i class="fas fa-check me-1"></i> Works on any device</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/show_off_page.png" alt="MaiPDF analytics dashboard showing PDF open events" class="hero-screenshot" loading="eager">
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <div class="hero">
+    <section class="py-5 mt-3">
         <div class="container">
-            <h1><i class="fas fa-chart-bar"></i> PDF Analytics</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
-                </div>
-                
-            <p class="lead">See who’s opening your PDFs and how they engage</p>
-            <a href="https://maipdf.com" class="cta-button">Get Started</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- What is PDF Analytics -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-question-circle"></i> What is PDF Analytics?</h2>
-            <p>PDF analytics shows you what happens after you share a file. With MaiPDF, you can see access trends, reading behavior, and engagement details in one clear dashboard.</p>
-        </div>
-
-        <!-- Key Analytics Features -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-chart-line"></i> Key Analytics Features</h2>
-            <div class="row">
+            <div class="text-center mb-5">
+                <p class="section-label">How It Works</p>
+                <h2 class="section-heading">Track a PDF in 3 Steps</h2>
+            </div>
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-eye"></i> View Tracking</h3>
-                        <ul>
-                            <li>Total views across all shares</li>
-                            <li>Unique readers vs. repeat visits</li>
-                            <li>Time spent on each document</li>
-                        </ul>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">Upload Your PDF</h3>
+                        <p class="text-muted">Drag and drop your document. MaiPDF hosts it securely and begins tracking from the first open.</p>
+                        <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload a PDF to MaiPDF for tracking" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-download"></i> Download Analytics</h3>
-                        <ul>
-                            <li>Total download volume</li>
-                            <li>Where downloads came from</li>
-                            <li>Download timing and spikes</li>
-                        </ul>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">Enable Alerts &amp; Options</h3>
+                        <p class="text-muted">Turn on Telegram notifications, set view limits, require email verification, and choose your security preferences.</p>
+                        <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Enable Telegram alerts and set PDF tracking options" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-chart-pie"></i> Advanced Analytics</h3>
-                        <ul>
-                            <li>Reading behavior insights</li>
-                            <li>Location-based trends</li>
-                            <li>Device and browser breakdowns</li>
-                        </ul>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">Share &amp; Monitor</h3>
+                        <p class="text-muted">Send the link or QR code. Every open is logged in your dashboard with timestamps, device info, and viewer identity.</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Share PDF link and monitor opens in real time" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- How to Use PDF Analytics -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-cogs"></i> How to Use PDF Analytics</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ol>
-                        <li>Upload your PDF to MaiPDF</li>
-                        <li>Turn on analytics for the file</li>
-                        <li>Review the reports and key insights</li>
-                    </ol>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Analytics Features</p>
+                <h2 class="section-heading">Everything Your Dashboard Tracks</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-bolt"></i></div>
+                        <h3 class="h5 fw-bold">Real-Time Tracking</h3>
+                        <p class="text-muted mb-0">Every PDF open is logged the instant it happens. No delays, no batching — see activity as it occurs.</p>
+                    </div>
                 </div>
-                <div class="col-md-6">
-                    <img src="/images/analytics.png" alt="PDF Analytics Process" class="img-fluid mobile-fullbleed rounded">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-eye"></i></div>
+                        <h3 class="h5 fw-bold">View Counts</h3>
+                        <p class="text-muted mb-0">See exactly how many times each document has been opened, broken down by unique viewers and total opens.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-clock"></i></div>
+                        <h3 class="h5 fw-bold">Timestamps</h3>
+                        <p class="text-muted mb-0">Every access event includes a precise date and time, so you know exactly when your PDF was viewed.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-laptop"></i></div>
+                        <h3 class="h5 fw-bold">Device Info</h3>
+                        <p class="text-muted mb-0">Identify the browser, operating system, and device type of every viewer — desktop, tablet, or mobile.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fab fa-telegram-plane"></i></div>
+                        <h3 class="h5 fw-bold">Telegram Alerts</h3>
+                        <p class="text-muted mb-0">Get instant push notifications on Telegram the moment someone opens your PDF, including viewer details.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-file-csv"></i></div>
+                        <h3 class="h5 fw-bold">CSV Export</h3>
+                        <p class="text-muted mb-0">Download all access records as a CSV file for offline analysis, compliance reporting, or CRM integration.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fff7ed; color: #ea580c;"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3 class="h5 fw-bold">Email Verify Gate</h3>
+                        <p class="text-muted mb-0">Require viewers to verify their email before accessing the PDF, linking every open to a verified identity.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #f0fdf4; color: #15803d;"><i class="fas fa-tachometer-alt"></i></div>
+                        <h3 class="h5 fw-bold">Dashboard Overview</h3>
+                        <p class="text-muted mb-0">A single page showing all your shared PDFs, total views, recent activity, and quick links to detailed logs.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Related Features -->
-        <div class="related-features">
-            <h3><i class="fas fa-link"></i> Related Features</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="../features/pdf-tracking.html"><i class="fas fa-chart-line"></i> PDF Tracking</a></li>
-                        <li><a href="../features/pdf-security-features.html"><i class="fas fa-shield-alt"></i> PDF Security Features</a></li>
-                        <li><a href="../features/pdf-access-control.html"><i class="fas fa-user-shield"></i> PDF Access Control</a></li>
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">Access Records</p>
+                    <h2 class="section-heading">Detailed Viewer Logs</h2>
+                    <p class="text-muted">Every time someone opens your PDF, a new row appears in your access records. You can filter by date, export to CSV, or check individual viewer details at a glance.</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> IP address and approximate location</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Browser and OS fingerprint</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> Verified email (if gate is enabled)</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> One-click CSV download</li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="../features/pdf-watermarking.html"><i class="fas fa-water"></i> PDF Watermarking</a></li>
-                        <li><a href="../features/pdf-encryption.html"><i class="fas fa-key"></i> PDF Encryption</a></li>
-                        <li><a href="../features/secure-pdf-sharing.html"><i class="fas fa-share-alt"></i> Secure PDF Sharing</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="../features/pdf-password-protection.html"><i class="fas fa-lock"></i> PDF Password Protection</a></li>
-                        <li><a href="../features/pdf-branding.html"><i class="fas fa-trademark"></i> PDF Branding</a></li>
-                        <li><a href="../features/pdf-security.html"><i class="fas fa-shield-alt"></i> PDF Security</a></li>
-                    </ul>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/page_redirect_to_accessRecord.png" alt="MaiPDF access records page showing viewer logs" class="img-fluid screenshot" style="max-width: 480px;" loading="lazy">
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Related Articles -->
-        <div class="related-features">
-            <h3><i class="fas fa-newspaper"></i> Related Articles</h3>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul>
-                        <li><a href="../article/pdf-tracking.html"><i class="fas fa-chart-line"></i> PDF Tracking</a></li>
-                        <li><a href="../article/pdf-control-lost.html"><i class="fas fa-exclamation-triangle"></i> PDF Control Lost</a></li>
-                    </ul>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center mb-4 mb-lg-0 order-lg-2">
+                    <img src="/images/maipdf2026/how_to_fill_access_record_for_check.png" alt="Setting up access record verification in MaiPDF" class="img-fluid screenshot" style="max-width: 480px;" loading="lazy">
                 </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li><a href="../article/secure-pdf-sharing.html"><i class="fas fa-share-alt"></i> Secure PDF Sharing</a></li>
-                        <li><a href="../article/pdf-access-control.html"><i class="fas fa-user-shield"></i> PDF Access Control</a></li>
-                    </ul>
+                <div class="col-lg-6 order-lg-1">
+                    <p class="section-label">Use Cases</p>
+                    <h2 class="section-heading">Who Needs PDF Analytics?</h2>
+                    <div class="row g-3 mt-2">
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded-3 border h-100">
+                                <h3 class="h6 fw-bold"><i class="fas fa-handshake text-primary me-2"></i>Sales Proposals</h3>
+                                <p class="text-muted small mb-0">Know the moment a prospect opens your proposal and follow up at the perfect time.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded-3 border h-100">
+                                <h3 class="h6 fw-bold"><i class="fas fa-gavel text-warning me-2"></i>Legal Documents</h3>
+                                <p class="text-muted small mb-0">Prove that a contract or NDA was opened, with timestamps and device records for compliance.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded-3 border h-100">
+                                <h3 class="h6 fw-bold"><i class="fas fa-users text-success me-2"></i>HR Onboarding</h3>
+                                <p class="text-muted small mb-0">Confirm new hires have reviewed policy documents and handbooks before their start date.</p>
+                            </div>
+                        </div>
+                        <div class="col-sm-6">
+                            <div class="p-3 bg-white rounded-3 border h-100">
+                                <h3 class="h6 fw-bold"><i class="fas fa-chart-pie text-danger me-2"></i>Investor Relations</h3>
+                                <p class="text-muted small mb-0">Track which investors reviewed quarterly reports and follow up with those who haven't.</p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-heading">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">What data does MaiPDF track when someone opens my PDF?</button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">MaiPDF records the timestamp, viewer IP, browser, operating system, device type, and approximate location for each open event. If email verification is enabled, the viewer's email address is also captured.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I get notified instantly when my PDF is opened?</button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Yes. You can enable Telegram push notifications that alert you within seconds of a PDF being opened, including the viewer's details.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I export the access records?</button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Yes. MaiPDF allows you to export all access records as a CSV file for offline analysis, reporting, or compliance documentation.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Is there a limit to how many views are tracked?</button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">No. Every single open event is recorded regardless of volume. You can review the full history in your dashboard or export it at any time.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Does tracking work if the viewer uses a VPN?</button>
+                            </h3>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">The open event is still recorded with a timestamp, browser, and device info. The IP and location will reflect the VPN exit node. For verified identity, enable email verification to know exactly who viewed.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Related</p>
+                <h2 class="section-heading">Explore More Use Cases</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">Security</span>
+                            <h3><a href="/usecase/pdf-encryption">PDF Encryption &amp; DRM</a></h3>
+                            <p class="text-muted small">Encrypt PDFs for view-only access with anti-screenshot protection and dynamic watermarks.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Hosting</span>
+                            <h3><a href="/usecase/free-pdf-hosting">Free PDF Hosting</a></h3>
+                            <p class="text-muted small">Upload a PDF and get a permanent link with security controls and analytics.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Tracking</span>
+                            <h3><a href="/usecase/pdf-tracking">PDF Open Tracking</a></h3>
+                            <p class="text-muted small">Get notified the moment someone opens your PDF with detailed device and location data.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">Control</span>
+                            <h3><a href="/usecase/pdf-expiration-dates">PDF Expiration Dates</a></h3>
+                            <p class="text-muted small">Set auto-expiry on shared PDFs so access is revoked after a specific date or view count.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">Ready to Track Your PDFs?</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">Upload a PDF and start seeing who opens it, when, and from where — it takes less than a minute.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-chart-line me-2"></i>Track PDFs Now — Free
+                    </a>
+                    <a href="https://maipdf.cn" class="btn btn-outline-light btn-lg" target="_blank" rel="noopener">
+                        <i class="fas fa-language me-2"></i>中文版
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-0">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h5>Quick Links</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="https://maipdf.com">Home</a></li>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
+                        <li class="mb-2"><a href="/features/">Features</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Contact</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">Blog</a></li>
+                        <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+                        <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>Follow Us</h5>
-                    <ul class="list-unstyled">
-                        <li><a href="#"><i class="fab fa-twitter"></i> Twitter</a></li>
-                        <li><a href="#"><i class="fab fa-facebook"></i> Facebook</a></li>
-                        <li><a href="#"><i class="fab fa-linkedin"></i> LinkedIn</a></li>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Popular</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+                        <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+                        <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
                     </ul>
                 </div>
-            </div>
-            <hr>
-            <div class="text-center">
-                <p>&copy; 2024 MaiPDF. All rights reserved.</p>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><!--email_off--><a href="mailto:joe@pdfhost.online">Contact Us</a><!--/email_off--></li>
+                        <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
-</html> 
+</html>

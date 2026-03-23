@@ -1,108 +1,425 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>如何将PDF转换为二维码</title>
-    <meta name="description" content="详细介绍如何将PDF文件转换为二维码，实现便捷分享和访问。">
-    <link rel="stylesheet" href="../styles.css">
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <meta name="description" content="上传 PDF，一键生成二维码。收件人手机扫一扫就能阅读 — 适合会议资料、产品手册、培训讲义、传单海报。MaiPDF 在线教程。">
+    <meta name="keywords" content="PDF 转二维码, PDF QR code, PDF 扫码阅读, PDF 分享, 二维码生成, MaiPDF, PDF 二维码教程">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>PDF 转二维码教程 — 将 PDF 转为可扫码阅读的二维码 | MaiPDF</title>
+    <link rel="canonical" href="https://sendpdfonline.com/chinese/pdf-to-qr-guide">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "PDF 转二维码教程 — 将 PDF 转为可扫码阅读的二维码",
+        "description": "上传 PDF，一键生成二维码。收件人手机扫一扫就能阅读 — 适合会议资料、产品手册、培训讲义、传单海报。",
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "author": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+        "publisher": { "@type": "Organization", "name": "SendPDFOnline", "url": "https://sendpdfonline.com" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sendpdfonline.com/chinese/pdf-to-qr-guide" }
+    }
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/" },
+            { "@type": "ListItem", "position": 2, "name": "中文", "item": "https://sendpdfonline.com/chinese/" },
+            { "@type": "ListItem", "position": 3, "name": "PDF 转二维码", "item": "https://sendpdfonline.com/chinese/pdf-to-qr-guide" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Question",
+                "name": "二维码生成免费吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "是的，基础的 PDF 转二维码功能完全免费。上传 PDF 后即可一键生成二维码，无需注册账号。高级功能如访问统计和密码保护可能需要升级方案。" }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "如何将PDF转换为二维码",
-                "item": "https://sendpdfonline.com/chinese/pdf-to-qr-guide.html"
+                "@type": "Question",
+                "name": "可以追踪扫码次数吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "可以。MaiPDF 提供实时访问统计，您可以查看二维码被扫描的次数、时间、设备类型和地理位置等数据。" }
+            },
+            {
+                "@type": "Question",
+                "name": "更新 PDF 后二维码会变吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "不会。MaiPDF 支持替换文件功能 — 您可以更新 PDF 内容而保持同一个二维码不变。已印刷的二维码依然有效，收件人扫码后看到的是最新版本。" }
+            },
+            {
+                "@type": "Question",
+                "name": "扫码需要安装 APP 吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "不需要。收件人用手机自带的相机或任意二维码扫描器扫一扫，就会在浏览器中直接打开 PDF，无需下载任何应用。" }
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
 
-    <!-- MaiPDF Standard Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
-      <div class="container">
-        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
-          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> 首页</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> 功能</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> 上传PDF</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav class="bg-white border-bottom py-2">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">首页</a></li>
-                <li class="breadcrumb-item active" aria-current="page">如何将PDF转换为二维码</li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">首页</a></li>
+                <li class="breadcrumb-item"><a href="/chinese/" class="text-decoration-none">中文</a></li>
+                <li class="breadcrumb-item active">PDF 转二维码</li>
             </ol>
         </div>
     </nav>
 
-    <!-- Animated SVG Workflow -->
-    <div class="container my-4">
-        <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-pdf-sharing-workflow-animation.svg" alt="PDF 安全分享流程图：上传、设置权限、生成链接与二维码" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
-    </div>
-    
-    <div class="container">
-    <h1>如何将PDF转换为二维码</h1>
-    <p>二维码是一种高效的信息传递方式，将PDF文件转换为二维码后，用户只需扫描二维码即可快速访问或下载PDF文档。<strong>推荐使用 <a href="https://maipdf.com" target="_blank">MaiPDF</a>，它是一款专业且易用的PDF转二维码工具，支持一键上传PDF并生成二维码，适合各类文档分享场景。</strong>本文将介绍几种常见的PDF转二维码方法。</p>
-    <h2>方法一：使用在线工具（强烈推荐MaiPDF）</h2>
-    <ol>
-        <li>访问 <a href="https://maipdf.com" target="_blank">MaiPDF官网</a>。</li>
-        <li>上传您的PDF文件。</li>
-        <li>系统自动生成二维码，您可以直接下载二维码图片或分享二维码链接。</li>
-        <li>MaiPDF支持文档加密、访问统计等高级功能，适合对安全性和管理有要求的用户。</li>
-    </ol>
-    <h2>方法二：本地生成二维码</h2>
-    <ol>
-        <li>将PDF文件上传至云存储（如百度网盘、阿里云盘等），获取分享链接。</li>
-        <li>使用二维码生成器（如草料二维码、微信小程序等）将链接生成二维码。</li>
-    </ol>
-    <h2>注意事项</h2>
-    <ul>
-        <li>确保PDF链接的有效性和安全性。</li>
-        <li>二维码图片建议保存为高清格式，便于扫描。</li>
-    </ul>
-    <p>通过以上方法，您可以轻松实现PDF文件的二维码分享，提升文档传播效率。</p>
-    </div>
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>PDF 转二维码教程</h1>
+                    <p class="lead mt-3">上传 PDF，一键生成二维码。收件人手机扫一扫就能阅读 — 适合会议资料、产品手册、培训讲义、传单海报。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-paper-plane me-2"></i>立即体验
+                        </a>
+                        <a href="/chinese/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>了解更多
+                        </a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> 免费使用 &nbsp; <i class="fas fa-check me-1"></i> 无需注册 &nbsp; <i class="fas fa-check me-1"></i> 手机扫码即读</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="MaiPDF 生成 PDF 二维码结果页面" class="hero-screenshot" loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
 
-    <!-- Footer -->
-    <footer style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); color: white; padding: 2rem 0; margin-top: 3rem;">
-        <div class="container text-center">
-            <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+    <section class="py-4">
+        <div class="container">
+            <p class="text-muted small mb-0"><i class="fas fa-clock me-1"></i> 5 分钟阅读 · 2026年3月23日 · 分享</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">为什么选择二维码</p>
+                    <h2 class="section-heading">扫一扫，随时随地阅读 PDF</h2>
+                    <p class="text-muted">将 PDF 转为二维码后，收件人无需下载文件、无需安装 APP，用手机相机扫一扫就能在浏览器中直接阅读。特别适合线下场景 — 会议桌签、产品包装、课堂讲义、传单海报，印上二维码就能让纸质材料连接数字内容。</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 手机扫码直接阅读</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 更新 PDF 二维码不变</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 追踪扫码次数和时间</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i> 可设密码和到期时间</li>
+                    </ul>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/二维码很方便.png" alt="二维码扫码阅读 PDF 很方便" class="img-fluid screenshot" style="max-width: 480px;" loading="lazy">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5 mt-3" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">操作步骤</p>
+                <h2 class="section-heading">三步生成 PDF 二维码</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">上传 PDF</h3>
+                        <p class="text-muted">拖放或点击上传您的 PDF 文件，支持任意大小和页数。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/工具页面上传页.png" alt="上传 PDF 文件" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">设置安全参数</h3>
+                        <p class="text-muted">按需设置密码保护、访问次数限制、到期时间和禁止下载等选项。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="设置 PDF 安全参数" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">获取二维码</h3>
+                        <p class="text-muted">系统自动生成二维码，您可以下载打印或直接分享给他人。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="获取 PDF 二维码" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">工作流程</p>
+                <h2 class="section-heading">PDF 转二维码完整流程</h2>
+            </div>
+            <div class="text-center">
+                <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-pdf-qr-code-workflow.svg" alt="PDF 转二维码工作流程图" class="img-fluid" style="max-width: 720px;" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">核心功能</p>
+                <h2 class="section-heading">PDF 二维码的八大功能</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-qrcode"></i></div>
+                        <h3 class="h5 fw-bold">一键生成二维码</h3>
+                        <p class="text-muted">上传 PDF 后系统自动生成二维码，无需额外操作，即生即用。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-mobile-alt"></i></div>
+                        <h3 class="h5 fw-bold">手机扫码直读</h3>
+                        <p class="text-muted">收件人用手机相机扫一扫，在浏览器中直接阅读 PDF，无需下载。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-key"></i></div>
+                        <h3 class="h5 fw-bold">密码保护</h3>
+                        <p class="text-muted">为二维码设置访问密码，只有知道密码的人才能查看内容。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-hashtag"></i></div>
+                        <h3 class="h5 fw-bold">次数限制</h3>
+                        <p class="text-muted">设定二维码最多可被扫描的次数，超过限制后自动失效。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-calendar-times"></i></div>
+                        <h3 class="h5 fw-bold">到期时间</h3>
+                        <p class="text-muted">设置二维码的有效期，过期后收件人将无法访问文档。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-chart-bar"></i></div>
+                        <h3 class="h5 fw-bold">访问统计</h3>
+                        <p class="text-muted">实时查看二维码被扫描的次数、时间、设备和地理位置等数据。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fff7ed; color: #ea580c;"><i class="fas fa-sync-alt"></i></div>
+                        <h3 class="h5 fw-bold">替换文件</h3>
+                        <p class="text-muted">更新 PDF 内容而保持同一个二维码不变，已印刷的二维码依然有效。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #f0fdf4; color: #15803d;"><i class="fas fa-download-slash fa-ban"></i></div>
+                        <h3 class="h5 fw-bold">禁下载</h3>
+                        <p class="text-muted">禁止收件人下载 PDF 原文件，只能在线查看，保护内容安全。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">应用场景</p>
+                <h2 class="section-heading">PDF 二维码的四大使用场景</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered bg-white" style="border-radius: 12px; overflow: hidden;">
+                    <thead style="background: var(--blue-600); color: white;">
+                        <tr>
+                            <th class="py-3 px-4">场景</th>
+                            <th class="py-3 px-4">具体用法</th>
+                            <th class="py-3 px-4">优势</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold"><i class="fas fa-users text-primary me-2"></i>会议</td>
+                            <td class="py-3 px-4 text-muted">在胸牌、桌签或投影上印二维码，与会者扫码领取会议资料</td>
+                            <td class="py-3 px-4 text-muted">无需 U 盘传文件，环保无纸化</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold"><i class="fas fa-box text-success me-2"></i>包装</td>
+                            <td class="py-3 px-4 text-muted">在产品包装上印二维码，消费者扫码查看电子说明书</td>
+                            <td class="py-3 px-4 text-muted">随时更新说明书内容，二维码不变</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold"><i class="fas fa-chalkboard text-warning me-2"></i>课堂</td>
+                            <td class="py-3 px-4 text-muted">课前展示二维码，学生扫码直接领取讲义和练习</td>
+                            <td class="py-3 px-4 text-muted">省去打印成本，可追踪领取人数</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold"><i class="fas fa-bullhorn text-info me-2"></i>营销</td>
+                            <td class="py-3 px-4 text-muted">传单、海报、名片上印二维码，引导客户查看产品资料</td>
+                            <td class="py-3 px-4 text-muted">线下转线上，追踪营销效果</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">PDF 转二维码常见问题</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">二维码生成免费吗？</button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">是的，基础的 PDF 转二维码功能完全免费。上传 PDF 后即可一键生成二维码，无需注册账号。高级功能如访问统计和密码保护可能需要升级方案，但生成二维码本身不收费。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">可以追踪扫码次数吗？</button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">可以。MaiPDF 提供实时访问统计，您可以查看二维码被扫描的次数、时间、设备类型和地理位置等数据。这对于评估会议资料分发效果或营销活动成效非常有用。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">更新 PDF 后二维码会变吗？</button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">不会。MaiPDF 支持替换文件功能 — 您可以更新 PDF 内容而保持同一个二维码不变。已经印刷在包装、传单或海报上的二维码依然有效，收件人扫码后看到的始终是最新版本。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">扫码需要安装 APP 吗？</button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">不需要。收件人用手机自带的相机或任意二维码扫描器扫一扫，就会在浏览器中直接打开 PDF，无需下载任何应用。iOS 和 Android 手机均支持。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">立即将 PDF 转为二维码</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">上传 PDF，设置安全参数，一键生成二维码 — 打印或分享，随时随地阅读。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-paper-plane me-2"></i>立即体验
+                    </a>
+                    <a href="/chinese/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>了解更多
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">安全分享 PDF 的专业平台 — 上传、保护、分享，尽在 MaiPDF。</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/">功能一览</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">博客</a></li>
+                        <li class="mb-2"><a href="/chinese/">中文专区</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">热门</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/chinese/convert-pdf-to-image">PDF 转图片</a></li>
+                        <li class="mb-2"><a href="/chinese/pdf-to-qr-guide">PDF 转二维码</a></li>
+                        <li class="mb-2"><a href="/chinese/convert-pdf-features">转换功能大全</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">联系我们</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-

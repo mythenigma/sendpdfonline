@@ -1,421 +1,442 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Protecting Confidential Investor Updates | MaiPDF</title>
-    <meta name="description" content="Secure confidential investor updates with MaiPDF's access control and view limit features. Protect sensitive financial information during fundraising.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #1a73e8;
-            --secondary-color: #34a853;
-            --text-color: #333;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .header-description {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .content-section {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        h3 {
-            color: var(--text-color);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.5rem;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .feature-card i {
-            color: var(--primary-color);
-        }
-
-        .maipdf-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .maipdf-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .warning-box {
-            background: #fce8e6;
-            border-left: 4px solid #d93025;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .tip-box {
-            background: #e8f0fe;
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .workflow-container {
-            background: var(--card-bg);
-            padding: 2rem;
-            border-radius: 10px;
-            margin: 2rem 0;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        .workflow-step {
-            text-align: center;
-            padding: 1.5rem;
-        }
-
-        .workflow-step i {
-            color: var(--primary-color);
-            margin-bottom: 1rem;
-        }
-
-        .usecase-image {
-            width: 100%;
-            max-width: 980px;
-            display: block;
-            margin: 1rem auto 0;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            header {
-                padding: 2rem 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mobile-fullbleed {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                margin-left: calc(50% - 50vw);
-                margin-right: calc(50% - 50vw);
-                height: auto;
-                display: block;
-                border-radius: 0 !important;
-            }
-        }
-    </style>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Confidential Investor Updates — Secure PDF Sharing | MaiPDF</title>
+<meta name="description" content="Share fundraising decks, financial reports, and board updates with investors — with view limits, expiration dates, and full audit trails powered by MaiPDF.">
+<meta name="keywords" content="confidential investor updates, secure PDF sharing, fundraising deck, board update, financial report, view limits, expiration date, audit trail, MaiPDF">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://sendpdfonline.com/usecase/confidential-investor-updates">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sendpdfonline.com/usecase/confidential-investor-updates">
+<meta property="og:title" content="Confidential Investor Updates — Secure PDF Sharing | MaiPDF">
+<meta property="og:description" content="Share fundraising decks, financial reports, and board updates with investors — with view limits, expiration dates, and full audit trails.">
+<meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/securityshowoff.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Confidential Investor Updates — Secure PDF Sharing | MaiPDF">
+<meta name="twitter:description" content="Share fundraising decks, financial reports, and board updates with investors — with view limits, expiration dates, and full audit trails.">
+<meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/securityshowoff.png">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
     {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Usecase",
-                "item": "https://sendpdfonline.com/usecase/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Protecting Confidential Investor Updates",
-                "item": "https://sendpdfonline.com/usecase/confidential-investor-updates.html"
-            }
-        ]
+      "@type":"Article",
+      "headline":"Confidential Investor Updates — Secure PDF Sharing",
+      "description":"Share fundraising decks, financial reports, and board updates with investors — with view limits, expiration dates, and full audit trails.",
+      "image":"https://sendpdfonline.com/images/maipdf2026/show_off/securityshowoff.png",
+      "datePublished":"2026-03-01",
+      "dateModified":"2026-03-23",
+      "author":{"@type":"Organization","name":"MaiPDF","url":"https://maipdf.com"},
+      "publisher":{"@type":"Organization","name":"SendPDFOnline","url":"https://sendpdfonline.com"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://sendpdfonline.com/"},
+        {"@type":"ListItem","position":2,"name":"Use Cases","item":"https://sendpdfonline.com/usecase/"},
+        {"@type":"ListItem","position":3,"name":"Confidential Investor Updates","item":"https://sendpdfonline.com/usecase/confidential-investor-updates"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Can I limit how many times an investor can view my PDF?","acceptedAnswer":{"@type":"Answer","text":"Yes. MaiPDF lets you set a maximum view count for every shared link. Once the limit is reached the document becomes inaccessible."}},
+        {"@type":"Question","name":"How do I know which investor opened my document?","acceptedAnswer":{"@type":"Answer","text":"Enable email verification so each viewer must enter a code before access. Combined with dynamic watermarks you get a full audit trail."}},
+        {"@type":"Question","name":"Can I revoke access after sharing?","acceptedAnswer":{"@type":"Answer","text":"Absolutely. You can disable any shared link at any time from the MaiPDF dashboard, instantly cutting off access."}},
+        {"@type":"Question","name":"Is there a way to get notified when an investor opens the deck?","acceptedAnswer":{"@type":"Answer","text":"Yes. Connect Telegram in MaiPDF settings and you will receive a push notification every time the document is opened."}},
+        {"@type":"Question","name":"Can I replace a fundraising deck without changing the link?","acceptedAnswer":{"@type":"Answer","text":"Yes. MaiPDF's replace feature lets you upload a new version of the file while keeping the original URL and QR code intact."}}
+      ]
     }
-    </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  ]
+}
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+:root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+.hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+.hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+.hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+.hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+.step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+.step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+.step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+.feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+.feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+.article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+.article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.article-card .card-body { padding: 1.5rem; }
+.article-card h3 { font-size: 1.1rem; }
+.article-card h3 a { color: var(--gray-900); text-decoration: none; }
+.article-card h3 a:hover { color: var(--blue-600); }
+.cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+.section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.section-heading { font-size: 2rem; font-weight: 700; }
+.screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+footer { background: var(--gray-900); }
+footer a { color: #9ca3af; text-decoration: none; }
+footer a:hover { color: white; }
+@media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+</style>
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0" style="list-style: none; display: flex; gap: 0.5rem;">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item">/</li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/usecase/">Usecase</a></li>
-                <li class="breadcrumb-item">/</li>
-                <li class="breadcrumb-item active" aria-current="page">Protecting Confidential Investor Updates</li>
-            </ol>
-        </div>
+<nav class="bg-white border-bottom py-2">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0 small">
+        <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item"><a href="/usecase/" class="text-decoration-none">Use Cases</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Confidential Investor Updates</li>
+      </ol>
     </nav>
-    
-    <header>
-        <h1><i class="fas fa-shield-alt"></i> Protecting Confidential Investor Updates</h1>
-        <div class="mb-3">
-            <small style="opacity: 0.9;">
-                <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                <i class="fas fa-sync-alt"></i> Updated: March 04, 2026
-            </small>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h1>Confidential Investor Updates</h1>
+        <p class="lead mt-3">Share fundraising decks, financial reports, and board updates with investors — with view limits, expiration dates, and full audit trails.</p>
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener"><i class="fas fa-paper-plane me-2"></i>Share Securely Now</a>
+          <a href="/usecase/" class="btn btn-outline-light btn-lg"><i class="fas fa-th me-2"></i>All Use Cases</a>
         </div>
-        <p class="header-description">Secure sensitive investor communications during fundraising with advanced access control and view limits. Protect critical financial data from unauthorized access.</p>
-    </header>
-
-    <main class="container">
-        <section class="content-section">
-            <h2>Why Investor Updates Need Protection</h2>
-            <p>During fundraising rounds, companies share highly sensitive information with potential investors. These updates often contain:</p>
-            <ul>
-                <li>Financial projections and revenue data</li>
-                <li>Strategic plans and market analysis</li>
-                <li>Product roadmaps and competitive intelligence</li>
-                <li>Team information and organizational structure</li>
-                <li>Valuation discussions and term sheet details</li>
-            </ul>
-            <div class="warning-box">
-                <h3><i class="fas fa-exclamation-triangle"></i> The Risk of Uncontrolled Sharing</h3>
-                <p>Without proper access controls, confidential investor updates can be:</p>
-                <ul>
-                    <li>Forwarded to unauthorized parties or competitors</li>
-                    <li>Shared on public platforms or social media</li>
-                    <li>Accessed multiple times by the same recipient</li>
-                    <li>Downloaded and stored indefinitely</li>
-                </ul>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>How MaiPDF Protects Investor Updates</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3><i class="fas fa-eye-slash"></i> View Limit Control</h3>
-                    <p>Set a maximum number of times each investor can view the document. Once the limit is reached, access is automatically revoked, preventing unlimited viewing.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-user-lock"></i> Access Restrictions</h3>
-                    <p>Control who can access your investor updates. Require email verification or password protection to ensure only authorized recipients can view sensitive information.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-ban"></i> Download Prevention</h3>
-                    <p>Disable downloading and printing to prevent investors from saving copies of confidential documents on their devices.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-water"></i> Dynamic Watermarks</h3>
-                    <p>Add watermarks displaying the viewer's email address or name, deterring unauthorized sharing and making leaks traceable.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-unlink"></i> Revoke Access Anytime</h3>
-                    <p>Manually revoke access whenever the update is no longer relevant. Combined with view limits, you can stop access after investors have reviewed the document.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-chart-line"></i> Access Tracking</h3>
-                    <p>Monitor who viewed your investor updates, when they accessed them, and how many times. Get detailed analytics on document engagement.</p>
-                </div>
-            </div>
-            <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="MaiPDF investor document security settings with view limits and verification options" class="usecase-image mobile-fullbleed" loading="lazy">
-        </section>
-
-        <section class="content-section">
-            <div class="workflow-container">
-                <h3 class="text-center mb-4">Securing Investor Updates - Step by Step</h3>
-                <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 2rem; text-align: center;">
-                    <div class="workflow-step">
-                        <i class="fas fa-cloud-upload-alt fa-3x mb-3" style="color: var(--primary-color);"></i>
-                        <h4>1. Upload Update</h4>
-                        <p>Upload your confidential investor update PDF to MaiPDF platform.</p>
-                    </div>
-                    <div class="workflow-step">
-                        <i class="fas fa-cogs fa-3x mb-3" style="color: var(--secondary-color);"></i>
-                        <h4>2. Configure Security</h4>
-                        <p>Set view limits and access restrictions (password/email verification, downloads, watermarks).</p>
-                    </div>
-                    <div class="workflow-step">
-                        <i class="fas fa-link fa-3x mb-3" style="color: #ff9800;"></i>
-                        <h4>3. Generate Secure Link</h4>
-                        <p>Create a protected link with all security settings applied.</p>
-                    </div>
-                    <div class="workflow-step">
-                        <i class="fas fa-paper-plane fa-3x mb-3" style="color: #9c27b0;"></i>
-                        <h4>4. Share Securely</h4>
-                        <p>Send the secure link to authorized investors via email.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Best Practices for Investor Update Security</h2>
-            <div class="tip-box">
-                <h3><i class="fas fa-lightbulb"></i> Security Recommendations</h3>
-                <ol>
-                    <li><strong>Set View Limits:</strong> Limit each investor to 2-3 views to prevent excessive access while allowing sufficient review time.</li>
-                    <li><strong>Revoke Access When Needed:</strong> After the review window closes or materials change, revoke links and share an updated version.</li>
-                    <li><strong>Enable Watermarks:</strong> Add dynamic watermarks with investor email addresses to deter unauthorized sharing.</li>
-                    <li><strong>Disable Downloads:</strong> Prevent investors from saving copies to their devices.</li>
-                    <li><strong>Monitor Access:</strong> Regularly review access logs to identify any suspicious activity.</li>
-                    <li><strong>Require Email Verification:</strong> Ensure only intended recipients can access the documents.</li>
-                </ol>
-            </div>
-        </section>
-
-        <section class="content-section">
-            <h2>Real-World Scenario</h2>
-            <p><strong>Challenge:</strong> A startup raising Series A funding needs to share confidential financial projections with 15 potential investors. They're concerned about:</p>
-            <ul>
-                <li>Information being forwarded to competitors</li>
-                <li>Investors sharing updates with unauthorized parties</li>
-                <li>Documents being accessed indefinitely</li>
-            </ul>
-            <p><strong>Solution with MaiPDF:</strong></p>
-            <ul>
-                <li>Upload the investor update PDF to MaiPDF</li>
-                <li>Set view limit to 3 views per investor</li>
-                <li>Revoke access after the review window (or keep strict view limits)</li>
-                <li>Disable downloading and printing</li>
-                <li>Add dynamic watermarks with investor email addresses</li>
-                <li>Share secure links via email to each investor</li>
-                <li>Monitor access logs to track who viewed the document</li>
-            </ul>
-            <p><strong>Result:</strong> The startup successfully shared confidential information while maintaining control over access and preventing unauthorized distribution.</p>
-        </section>
-
-        <section class="content-section">
-            <h2>Benefits of Using MaiPDF for Investor Updates</h2>
-            <ul>
-                <li><strong>Enhanced Security:</strong> Protect sensitive financial information from unauthorized access and sharing</li>
-                <li><strong>Compliance:</strong> Maintain control over confidential documents to meet regulatory requirements</li>
-                <li><strong>Professionalism:</strong> Demonstrate commitment to data security to potential investors</li>
-                <li><strong>Peace of Mind:</strong> Know exactly who accessed your documents and when</li>
-                <li><strong>Flexibility:</strong> Adjust access controls as needed throughout the fundraising process</li>
-            </ul>
-        </section>
-    </main>
-
-    <div class="container">
-        <div class="content-section" style="text-align: center;">
-            <h2>Start Protecting Your Investor Updates Today</h2>
-            <p>Don't risk your confidential information. Secure your investor communications with MaiPDF's advanced access control features.</p>
-            <a href="https://maipdf.com" class="maipdf-button" target="_blank" rel="noopener">
-                <i class="fas fa-shield-alt"></i> Secure Your Investor Updates
-            </a>
-        </div>
+        <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 7 min read &nbsp; <i class="fas fa-calendar me-1"></i> March 23, 2026 &nbsp; <i class="fas fa-tag me-1"></i> Use Cases</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="/images/maipdf2026/show_off/securityshowoff.png" alt="MaiPDF security features for confidential investor updates" class="hero-screenshot" loading="eager">
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="container">
-        <div class="content-section">
-            <h2>Related Use Cases</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3><i class="fas fa-file-contract"></i> <a href="https://sendpdfonline.com/article/confidential-documents-risk">Managing Confidential Document Risks</a></h3>
-                    <p>Learn how to protect sensitive business documents from unauthorized access.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-building"></i> <a href="https://sendpdfonline.com/article/internal-company-docs-sharing">Internal Company Document Sharing</a></h3>
-                    <p>Secure internal document sharing within your organization.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-chart-line"></i> <a href="https://sendpdfonline.com/usecase/document-control-security">Document Control & Security</a></h3>
-                    <p>Comprehensive guide to document security and access control.</p>
-                </div>
-            </div>
-        </div>
+<section class="py-5 mt-3">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-heading">Share Investor Documents in 3 Steps</h2>
     </div>
-
-    <footer class="content-section" style="text-align: center; margin-top: 3rem;">
-        <p>&copy; 2025 MaiPDF. All rights reserved.</p>
-        <div style="margin-top: 1rem;">
-            <a href="https://sendpdfonline.com/usecase/" style="margin: 0 1rem; color: var(--primary-color);">Back to Use Cases</a>
-            <a href="https://sendpdfonline.com/" style="margin: 0 1rem; color: var(--primary-color);">Home</a>
-            <a href="https://maipdf.com" style="margin: 0 1rem; color: var(--primary-color);" target="_blank" rel="noopener">Try MaiPDF</a>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="step-num mx-auto mb-3">1</div>
+          <h3 class="h5 fw-bold">Upload Your Deck</h3>
+          <p class="text-muted">Drag and drop your investor deck, financial report, or board package. Files are encrypted on upload.</p>
+          <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload investor deck to MaiPDF" class="img-fluid screenshot" loading="lazy">
         </div>
-    </footer>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="step-num mx-auto mb-3">2</div>
+          <h3 class="h5 fw-bold">Configure Access Controls</h3>
+          <p class="text-muted">Set view limits, expiration, email verification, watermarks, and Telegram alerts for each recipient.</p>
+          <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Set security settings for investor documents" class="img-fluid screenshot" loading="lazy">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="step-num mx-auto mb-3">3</div>
+          <h3 class="h5 fw-bold">Share &amp; Track</h3>
+          <p class="text-muted">Send the secure link to your investors. Monitor opens, locations, and devices in real time.</p>
+          <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Get shareable link and QR code for investor deck" class="img-fluid screenshot" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: var(--gray-100);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Key Features</p>
+      <h2 class="section-heading">Protect Every Investor Communication</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-eye"></i></div>
+          <h3 class="h5 fw-bold">View Limits</h3>
+          <p class="text-muted mb-0">Cap the number of times each investor can open the document. Once reached, access is automatically blocked.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#fef3c7;color:#d97706;"><i class="fas fa-hourglass-end"></i></div>
+          <h3 class="h5 fw-bold">Expiration Dates</h3>
+          <p class="text-muted mb-0">Set a deadline after which the link stops working — ideal for quarterly reports and time-sensitive financials.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#fce7f3;color:#db2777;"><i class="fas fa-envelope-open-text"></i></div>
+          <h3 class="h5 fw-bold">Email Verification</h3>
+          <p class="text-muted mb-0">Require investors to verify their email with a one-time code before they can view the document.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-tint"></i></div>
+          <h3 class="h5 fw-bold">Dynamic Watermark</h3>
+          <p class="text-muted mb-0">Overlay viewer-specific watermarks so you know exactly who leaked a document if it appears elsewhere.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fas fa-ban"></i></div>
+          <h3 class="h5 fw-bold">No-Download Mode</h3>
+          <p class="text-muted mb-0">Disable the download and print buttons so investors can only view — never save — your sensitive files.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-clipboard-list"></i></div>
+          <h3 class="h5 fw-bold">Access Audit Trail</h3>
+          <p class="text-muted mb-0">See a detailed log of every open — timestamp, IP, device, and location — for full compliance visibility.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#e0e7ff;color:#4338ca;"><i class="fab fa-telegram-plane"></i></div>
+          <h3 class="h5 fw-bold">Telegram Alerts</h3>
+          <p class="text-muted mb-0">Get an instant Telegram push notification the moment an investor opens your document.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#fee2e2;color:#dc2626;"><i class="fas fa-times-circle"></i></div>
+          <h3 class="h5 fw-bold">Revoke Access</h3>
+          <p class="text-muted mb-0">Instantly disable any shared link from the dashboard — no need to contact the recipient.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <p class="section-label">Visual Protection</p>
+        <h2 class="section-heading">Watermarks That Deter Leaks</h2>
+        <p class="text-muted">Every page is stamped with the viewer's email, IP address, or a custom label — making unauthorized redistribution traceable back to the source.</p>
+        <ul class="list-unstyled mt-3">
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Viewer email auto-stamped on each page</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>QR-based tracking code embedded</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Custom text and position options</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Works with no-download mode</li>
+        </ul>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="/images/maipdf2026/dynamic_water_mark_example.jpg" alt="Dynamic watermark on investor PDF" class="img-fluid screenshot" style="max-width:480px;" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: var(--gray-100);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Scenario Guide</p>
+      <h2 class="section-heading">Recommended Settings by Document Type</h2>
+    </div>
+    <div class="table-responsive">
+      <table class="table table-bordered align-middle text-center mb-0" style="background:white;border-radius:12px;overflow:hidden;">
+        <thead style="background:var(--blue-900);color:white;">
+          <tr>
+            <th class="text-start">Scenario</th>
+            <th>View Limit</th>
+            <th>Expiration</th>
+            <th>Email Gate</th>
+            <th>Watermark</th>
+            <th>No-Download</th>
+            <th>Telegram Alert</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="text-start fw-semibold">Board Update</td>
+            <td>3 views</td>
+            <td>7 days</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td class="text-start fw-semibold">Fundraising Deck</td>
+            <td>5 views</td>
+            <td>14 days</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td class="text-start fw-semibold">Financial Report</td>
+            <td>10 views</td>
+            <td>30 days</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-times text-danger"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+          <tr>
+            <td class="text-start fw-semibold">Due Diligence Pack</td>
+            <td>2 views</td>
+            <td>5 days</td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+            <td><i class="fas fa-check text-success"></i></td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-heading">Frequently Asked Questions</h2>
+    </div>
+    <div class="accordion" id="faqAccordion" style="max-width:800px;margin:0 auto;">
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Can I limit how many times an investor can view my PDF?</button></h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Yes. MaiPDF lets you set a maximum view count for every shared link. Once the limit is reached the document becomes inaccessible.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How do I know which investor opened my document?</button></h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Enable email verification so each viewer must enter a code before access. Combined with dynamic watermarks you get a full audit trail.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I revoke access after sharing?</button></h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Absolutely. You can disable any shared link at any time from the MaiPDF dashboard, instantly cutting off access.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Is there a way to get notified when an investor opens the deck?</button></h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Yes. Connect Telegram in MaiPDF settings and you will receive a push notification every time the document is opened.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Can I replace a fundraising deck without changing the link?</button></h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Yes. MaiPDF's replace feature lets you upload a new version of the file while keeping the original URL and QR code intact.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: var(--gray-100);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Related Reading</p>
+      <h2 class="section-heading">More Resources for Secure Sharing</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Security</span>
+            <h3><a href="/usecase/secure-pdf-sharing">Secure PDF Sharing</a></h3>
+            <p class="text-muted small">Password protection, view limits, and watermarks for any document you share online.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-dark mb-2">Guide</span>
+            <h3><a href="/article/confidential-documents-risk">Risks of Sharing Confidential Documents</a></h3>
+            <p class="text-muted small">Understand the threats and learn mitigation strategies for sensitive file sharing.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-success mb-2">Tutorial</span>
+            <h3><a href="/article/track-pdf-analytics-guide">Track PDF Analytics</a></h3>
+            <p class="text-muted small">Learn how to monitor views, locations, and devices for every shared PDF link.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-warning text-dark mb-2">Use Case</span>
+            <h3><a href="/usecase/document-control-security">Document Control &amp; Security</a></h3>
+            <p class="text-muted small">Centralized dashboard for managing access, permissions, and audit trails across all shared files.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="cta-section text-center">
+      <h2 class="h3 fw-bold mb-3">Ready to Share Investor Updates Securely?</h2>
+      <p class="mb-4 opacity-90" style="max-width:520px;margin:0 auto;">Upload your deck, set view limits and expiration, then share a confidential link — it takes less than a minute.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener"><i class="fas fa-paper-plane me-2"></i>Start Sharing — Free</a>
+        <a href="/features/" class="btn btn-outline-light btn-lg"><i class="fas fa-th me-2"></i>Explore Features</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-white py-5 mt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+        <p class="small" style="color:#9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+        <p class="small mb-0" style="color:#6b7280;">© 2026 SendPDFOnline.com</p>
+      </div>
+      <div class="col-md-2 mb-4 mb-md-0">
+        <h6 class="fw-bold mb-3">Product</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+          <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
+          <li class="mb-2"><a href="/features/">Features</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-4 mb-md-0">
+        <h6 class="fw-bold mb-3">Resources</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="/article/">Blog</a></li>
+          <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+          <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-4 mb-md-0">
+        <h6 class="fw-bold mb-3">Popular</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+          <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+          <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Support</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="mailto:joe@pdfhost.online">Contact Us</a></li>
+          <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

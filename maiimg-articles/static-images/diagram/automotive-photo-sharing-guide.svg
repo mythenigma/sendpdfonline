@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img" aria-label="Automotive photo sharing pipeline with incentives and UGC">
+  <defs>
+    <style>
+      .box { fill: #fef2f2; stroke: #dc2626; stroke-width: 2; }
+      .accent { fill: #fff7ed; stroke: #f97316; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; fill: #1f2937; }
+      .small { font-size: 18px; }
+      .flow { stroke: #dc2626; stroke-width: 2.5; fill: none; stroke-dasharray: 7 6; animation: dash 4s linear infinite; }
+      .flow-alt { stroke: #f97316; stroke-width: 2.5; fill: none; stroke-dasharray: 6 6; animation: dash 3.6s linear infinite; }
+      .pulse { animation: pulse 2.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      @keyframes dash { to { stroke-dashoffset: -26; } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+    </style>
+    <marker id="arrow-red" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#dc2626" />
+    </marker>
+    <marker id="arrow-orange" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#f97316" />
+    </marker>
+  </defs>
+
+  <rect x="120" y="30" width="660" height="70" rx="12" class="box pulse" />
+  <text x="450" y="65" text-anchor="middle" class="text">Plan shots and vehicle story</text>
+
+  <rect x="120" y="130" width="660" height="70" rx="12" class="box" />
+  <text x="450" y="165" text-anchor="middle" class="text">Capture multi-angle details</text>
+
+  <rect x="120" y="230" width="660" height="70" rx="12" class="box" />
+  <text x="450" y="265" text-anchor="middle" class="text">Edit, color-match, optimize</text>
+
+  <rect x="120" y="330" width="660" height="70" rx="12" class="box" />
+  <text x="450" y="365" text-anchor="middle" class="text">Publish gallery and specs</text>
+
+  <rect x="120" y="450" width="300" height="70" rx="12" class="accent" />
+  <text x="270" y="485" text-anchor="middle" class="text small">Incentives for sharing</text>
+
+  <rect x="480" y="450" width="300" height="70" rx="12" class="accent" />
+  <text x="630" y="485" text-anchor="middle" class="text small">UGC reviews and stories</text>
+
+  <rect x="120" y="540" width="660" height="70" rx="12" class="box pulse" />
+  <text x="450" y="575" text-anchor="middle" class="text">Social reach, leads, test drives</text>
+
+  <line x1="450" y1="100" x2="450" y2="130" class="flow" marker-end="url(#arrow-red)" />
+  <line x1="450" y1="200" x2="450" y2="230" class="flow" marker-end="url(#arrow-red)" />
+  <line x1="450" y1="300" x2="450" y2="330" class="flow" marker-end="url(#arrow-red)" />
+  <line x1="450" y1="400" x2="270" y2="450" class="flow-alt" marker-end="url(#arrow-orange)" />
+  <line x1="450" y1="400" x2="630" y2="450" class="flow-alt" marker-end="url(#arrow-orange)" />
+  <line x1="270" y1="520" x2="450" y2="540" class="flow" marker-end="url(#arrow-red)" />
+  <line x1="630" y1="520" x2="450" y2="540" class="flow" marker-end="url(#arrow-red)" />
+</svg>

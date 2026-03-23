@@ -1,1023 +1,346 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="MaiPDF Convert - 将PDF转换为具有高级保护功能的安全图像格式。了解我们的文档安全解决方案。">
-    <meta name="keywords" content="PDF 转换, 安全PDF, 文档保护, 防止编辑PDF, 基于图像的PDF, MaiPDF">
-    <title>MaiPDF Convert | 使用高级安全功能转换PDF</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    
-    <!-- Bootstrap 5 -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    
-    <!-- Font Awesome -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;700&display=swap" rel="stylesheet">
-    
-    <!-- AOS Animation Library -->
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-    
-    <style>
-        :root {
-            --primary: #1e88e5;
-            --primary-dark: #1565c0;
-            --secondary: #ff6e40;
-            --dark: #2c3e50;
-            --light: #f8f9fa;
-            --grey: #f0f2f5;
-            --success: #4caf50;
-            --info: #00bcd4;
-            --warning: #ffc107;
-            --text-dark: #333;
-            --text-light: #6c757d;
-        }
-        
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            color: var(--text-dark);
-            overflow-x: hidden;
-            background-color: #fff;
-            line-height: 1.8;
-        }
-        
-        h1, h2, h3, h4, h5, h6 {
-            font-family: 'Noto Sans SC', sans-serif;
-            font-weight: 700;
-        }
-        
-        /* Header & Navigation */
-        .header {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            padding: 0;
-            border-bottom-left-radius: 0;
-            border-bottom-right-radius: 0;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .nav-link {
-            color: white !important;
-            font-weight: 500;
-            margin: 0 10px;
-            transition: all 0.3s;
-            padding: 8px 15px;
-            border-radius: 5px;
-        }
-        
-        .nav-link:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
-        
-        .nav-link.active {
-            background-color: rgba(255, 255, 255, 0.2);
-        }
-        
-        /* Hero Section */
-        .hero {
-            padding: 100px 0 120px;
-            text-align: center;
-            position: relative;
-            overflow: hidden;
-            background-image: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            color: white;
-        }
-        
-        .hero::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiB2aWV3Qm94PSIwIDAgMTI4MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0icmdiYSgyNTUsMjU1LDI1NSwwLjEpIj48cGF0aCBkPSJNMTI4MCAwSDAgdjE0MGgxMjgweiIvPjwvZz48L3N2Zz4=');
-            background-size: 100% 100px;
-            background-repeat: no-repeat;
-            z-index: 1;
-            opacity: 0.3;
-        }
-        
-        .hero::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 80px;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSI4MHB4IiB2aWV3Qm94PSIwIDAgMTI4MCAxNDAiIHByZXNlcnZlQXNwZWN0UmF0aW89Im5vbmUiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyI+PGcgZmlsbD0iI2ZmZmZmZiI+PHBhdGggZD0iTTAgMHYxNDBoMTI4MEwwIDB6Ii8+PC9nPjwvc3ZnPg==');
-            background-size: 100% 80px;
-            background-position: bottom;
-            z-index: 1;
-        }
-        
-        .hero-content {
-            position: relative;
-            z-index: 2;
-        }
-        
-        .hero h1 {
-            font-size: 3.5rem;
-            font-weight: 700;
-            margin-bottom: 20px;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.1);
-        }
-        
-        .hero p {
-            font-size: 1.25rem;
-            margin-bottom: 30px;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            opacity: 0.9;
-        }
-        
-        /* Feature Cards */
-        .feature-card {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            height: 100%;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .feature-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .feature-card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 5px;
-            height: 100%;
-            background-color: var(--primary);
-            transition: all 0.3s ease;
-        }
-        
-        .feature-card:hover::before {
-            width: 10px;
-        }
-        
-        .feature-icon {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            color: var(--primary);
-            display: inline-block;
-            background: rgba(30, 136, 229, 0.1);
-            width: 80px;
-            height: 80px;
-            line-height: 80px;
-            text-align: center;
-            border-radius: 50%;
-        }
-        
-        .feature-card h3 {
-            font-size: 1.5rem;
-            margin-bottom: 15px;
-            color: var(--dark);
-        }
-        
-        /* Process Steps */
-        .process-section {
-            background-color: var(--grey);
-            padding: 80px 0;
-            position: relative;
-        }
-        
-        .process-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0xMjgwIDBIMHYxNDBIMTI4MFYweiIvPjwvZz48L3N2Zz4=');
-            background-size: 100% 100px;
-            transform: rotateX(180deg);
-        }
-        
-        .process-section::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmZmZmZmYiPjxwYXRoIGQ9Ik0wIDB2MTQwaDEyODBMMCAweiIvPjwvZz48L3N2Zz4=');
-            background-size: 100% 100px;
-        }
-        
-        .process-step {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            position: relative;
-            z-index: 3;
-        }
-        
-        .step-number {
-            position: absolute;
-            top: -20px;
-            left: -20px;
-            width: 60px;
-            height: 60px;
-            background: var(--primary);
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 24px;
-            font-weight: 700;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .process-step h3 {
-            margin-left: 20px;
-            margin-bottom: 20px;
-            color: var(--primary);
-        }
-        
-        /* Screenshots/Image Section */
-        .screenshot {
-            border-radius: 10px;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-            transition: all 0.3s ease;
-            max-width: 100%;
-            height: auto;
-        }
-        
-        .screenshot:hover {
-            transform: scale(1.02);
-            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
-        }
-        
-        /* Testimonials */
-        .testimonial {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin: 20px 10px;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
-            position: relative;
-        }
-        
-        .testimonial:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .testimonial::before {
-            content: '\201C';
-            font-size: 80px;
-            position: absolute;
-            top: -15px;
-            left: 20px;
-            color: rgba(30, 136, 229, 0.1);
-            font-family: Georgia, serif;
-        }
-        
-        .testimonial-author {
-            display: flex;
-            align-items: center;
-            margin-top: 20px;
-        }
-        
-        .testimonial-avatar {
-            width: 50px;
-            height: 50px;
-            border-radius: 50%;
-            margin-right: 15px;
-        }
-        
-        /* FAQ Section */
-        .faq-section {
-            background-color: var(--light);
-            padding: 80px 0;
-        }
-        
-        .accordion-item {
-            margin-bottom: 15px;
-            border: none;
-            border-radius: 10px;
-            overflow: hidden;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-        }
-        
-        .accordion-button {
-            padding: 20px 25px;
-            font-weight: 500;
-            font-size: 18px;
-            color: var(--dark);
-            background-color: white;
-        }
-        
-        .accordion-button:not(.collapsed) {
-            color: var(--primary);
-            background-color: rgba(30, 136, 229, 0.05);
-        }
-        
-        .accordion-button:focus {
-            box-shadow: none;
-            border-color: rgba(0,0,0,0.1);
-        }
-        
-        .accordion-body {
-            padding: 20px 25px;
-            background-color: white;
-        }
-        
-        /* CTA Section */
-        .cta-section {
-            background: linear-gradient(135deg, var(--primary), var(--primary-dark));
-            padding: 80px 0;
-            text-align: center;
-            color: white;
-            position: relative;
-            overflow: hidden;
-        }
-        
-        .cta-section::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100px;
-            background-image: url('data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDBweCIgdmlld0JveD0iMCAwIDEyODAgMTQwIiBwcmVzZXJ2ZUFzcGVjdFJhdGlvPSJub25lIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjxnIGZpbGw9IiNmOGY5ZmEiPjxwYXRoIGQ9Ik0xMjgwIDBIMHYxNDBIMTI4MFYweiIvPjwvZz48L3N2Zz4=');
-            background-size: 100% 100px;
-            transform: rotateX(180deg);
-        }
-        
-        .cta-button {
-            background: white;
-            color: var(--primary);
-            font-weight: 600;
-            padding: 15px 40px;
-            border-radius: 50px;
-            display: inline-block;
-            text-decoration: none;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-            margin-top: 20px;
-            border: 2px solid transparent;
-        }
-        
-        .cta-button:hover {
-            background: transparent;
-            color: white;
-            border-color: white;
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.15);
-        }
-        
-        /* Footer */
-        .footer {
-            background-color: var(--dark);
-            color: white;
-            padding: 60px 0 30px;
-        }
-        
-        .footer h5 {
-            color: white;
-            margin-bottom: 20px;
-            font-size: 1.2rem;
-        }
-        
-        .footer-links {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .footer-links li {
-            margin-bottom: 10px;
-        }
-        
-        .footer-links a {
-            color: rgba(255,255,255,0.7);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-        
-        .footer-links a:hover {
-            color: white;
-            padding-left: 5px;
-        }
-        
-        .footer-bottom {
-            padding-top: 30px;
-            margin-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            text-align: center;
-        }
-        
-        /* Buttons */
-        .btn-primary {
-            background: var(--primary);
-            border-color: var(--primary);
-            border-radius: 50px;
-            padding: 12px 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-primary:hover {
-            background: var(--primary-dark);
-            border-color: var(--primary-dark);
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        .btn-outline-primary {
-            color: var(--primary);
-            border-color: var(--primary);
-            border-radius: 50px;
-            padding: 12px 30px;
-            font-weight: 500;
-            transition: all 0.3s ease;
-        }
-        
-        .btn-outline-primary:hover {
-            background: var(--primary);
-            color: white;
-            transform: translateY(-3px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
-        }
-        
-        /* Section Titles */
-        .section-title {
-            text-align: center;
-            margin-bottom: 50px;
-            position: relative;
-        }
-        
-        .section-title h2 {
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            position: relative;
-            display: inline-block;
-        }
-        
-        .section-title h2::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 3px;
-            background: var(--primary);
-        }
-        
-        .section-title p {
-            color: var(--text-light);
-            max-width: 800px;
-            margin: 0 auto;
-            font-size: 1.1rem;
-        }
-        
-        /* Benefit List */
-        .benefit-list {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .benefit-list li {
-            padding: 10px 0;
-            position: relative;
-            padding-left: 35px;
-            margin-bottom: 10px;
-        }
-        
-        .benefit-list li::before {
-            content: '\f00c';
-            font-family: 'Font Awesome 6 Free';
-            font-weight: 900;
-            color: var(--success);
-            position: absolute;
-            left: 0;
-            top: 10px;
-        }
-        
-        /* Use Case Cards */
-        .use-case-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
-            border: 1px solid rgba(0,0,0,0.05);
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-        }
-        
-        .use-case-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-        }
-        
-        .use-case-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            color: var(--primary);
-        }
-        
-        /* Responsive */
-        @media (max-width: 991px) {
-            .hero h1 {
-                font-size: 2.5rem;
-            }
-            
-            .hero p {
-                font-size: 1.1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 2rem;
-            }
-        }
-        
-        @media (max-width: 767px) {
-            .hero {
-                padding: 80px 0 100px;
-            }
-            
-            .hero h1 {
-                font-size: 2rem;
-            }
-            
-            .hero p {
-                font-size: 1rem;
-            }
-            
-            .section-title h2 {
-                font-size: 1.8rem;
-            }
-            
-            .process-step {
-                padding: 25px 20px;
-            }
-            
-            .step-number {
-                width: 50px;
-                height: 50px;
-                font-size: 20px;
-                top: -15px;
-                left: -15px;
-            }
-        }
-        
-        .py-6 {
-            padding-top: 5rem;
-            padding-bottom: 5rem;
-        }
-        
-        .py-7 {
-            padding-top: 6rem;
-            padding-bottom: 6rem;
-        }
-    </style>
+    <meta name="description" content="MaiPDF 提供 PDF 转图片、图片型 PDF、仅打印 PDF、全限制 PDF 四种输出格式，覆盖防复制、防编辑、防盗用场景。在线操作，无需安装。">
+    <meta name="keywords" content="PDF 转换, PDF 转图片, 图片型 PDF, 防复制 PDF, 防编辑 PDF, MaiPDF, PDF 保护, PDF 格式转换">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>MaiPDF 转换功能大全 — PDF 转图片、保护、限制一站搞定</title>
+    <link rel="canonical" href="https://sendpdfonline.com/chinese/convert-pdf-features">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 
-    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "MaiPDF 转换功能大全 — 各种 PDF 转换和保护功能",
+        "description": "PDF 转图片、图片型 PDF、全限制 PDF — 四种输出格式覆盖所有防复制、防编辑、防盗用场景。在线操作，无需安装。",
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "author": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+        "publisher": { "@type": "Organization", "name": "SendPDFOnline", "url": "https://sendpdfonline.com" },
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sendpdfonline.com/chinese/convert-pdf-features" }
+    }
+    </script>
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/" },
+            { "@type": "ListItem", "position": 2, "name": "中文", "item": "https://sendpdfonline.com/chinese/" },
+            { "@type": "ListItem", "position": 3, "name": "PDF 转换功能", "item": "https://sendpdfonline.com/chinese/convert-pdf-features" }
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Question",
+                "name": "转换会降低质量吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "不会。MaiPDF 采用高分辨率渲染引擎，转换后的图片保持与原 PDF 一致的清晰度，文字和图形均不会模糊。" }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "使用高级安全功能转换PDF",
-                "item": "https://sendpdfonline.com/chinese/convert-pdf-features.html"
+                "@type": "Question",
+                "name": "能批量转换吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "可以。上传多页 PDF 后，系统会自动将每一页转为独立图片并打包为 ZIP 文件下载，无需逐页操作。" }
+            },
+            {
+                "@type": "Question",
+                "name": "支持哪些格式？",
+                "acceptedAnswer": { "@type": "Answer", "text": "MaiPDF 支持四种输出格式：ZIP 图片包（逐页 PNG/JPG）、图片型 PDF、仅打印 PDF、全限制 PDF，满足不同安全需求。" }
+            },
+            {
+                "@type": "Question",
+                "name": "免费吗？",
+                "acceptedAnswer": { "@type": "Answer", "text": "基础转换功能完全免费，包括 PDF 转图片和图片型 PDF。高级安全选项如访问限制和水印可能需要升级方案。" }
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
 
-    <!-- MaiPDF Standard Navigation -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, #1a1a2e 0%, #16213e 100%); padding: 1rem 0;">
-      <div class="container">
-        <a class="navbar-brand" href="https://sendpdfonline.com/" style="font-weight: 700; font-size: 1.5rem;">
-          <i class="fas fa-file-pdf me-2"></i>Mai<span style="color: #00d4ff;">PDF</span>
-        </a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav ms-auto">
-            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/"><i class="fas fa-home me-1"></i> 首页</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://sendpdfonline.com/features/"><i class="fas fa-star me-1"></i> 功能</a></li>
-            <li class="nav-item"><a class="nav-link" href="https://maipdf.com/"><i class="fas fa-upload me-1"></i> 上传PDF</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav class="bg-white border-bottom py-2">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">首页</a></li>
-                <li class="breadcrumb-item active" aria-current="page">使用高级安全功能转换PDF</li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">首页</a></li>
+                <li class="breadcrumb-item"><a href="/chinese/" class="text-decoration-none">中文</a></li>
+                <li class="breadcrumb-item active">PDF 转换功能</li>
             </ol>
         </div>
     </nav>
 
-    <!-- Animated SVG Workflow -->
-    <div class="container my-4">
-        <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-pdf-sharing-workflow-animation.svg" alt="PDF 安全分享流程图：上传、设置权限、生成链接与二维码" style="width: 100%; max-width: 800px; display: block; margin: 0 auto;">
-    </div>
-    
-    <!-- Hero Section -->
     <section class="hero">
-        <div class="container hero-content">
-            <div data-aos="fade-up">
-                <h1>使用高级安全功能转换PDF</h1>
-                <p>将文档转换为安全的图像格式，在保持完美视觉效果的同时防止未经授权的编辑。</p>
-                <a href="https://maipdf.com/est/maiconvert.html" class="btn btn-light btn-lg rounded-pill px-5 py-3 shadow-sm">
-                    <i class="fas fa-shield-alt me-2"></i> 立即试用MaiPDF Convert
-                </a>
-            </div>
-            <div class="mt-5" data-aos="fade-up" data-aos-delay="200">
-                <img src="/images/maiconver.png" alt="MaiPDF Convert界面" class="img-fluid screenshot" style="max-width: 800px;">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>MaiPDF 转换功能大全</h1>
+                    <p class="lead mt-3">PDF 转图片、图片型 PDF、全限制 PDF — 四种输出格式覆盖所有防复制、防编辑、防盗用场景。在线操作，无需安装。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-paper-plane me-2"></i>立即体验
+                        </a>
+                        <a href="/chinese/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>了解更多
+                        </a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> 免费使用 &nbsp; <i class="fas fa-check me-1"></i> 无需注册 &nbsp; <i class="fas fa-check me-1"></i> 浏览器直接操作</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/choose_online_for_sharing_online.png" alt="MaiPDF 转换工具选择界面" class="hero-screenshot" loading="eager">
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- Features Section -->
-    <section class="py-7 bg-white">
+    <section class="py-4">
         <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>为什么要将PDF转换为图像格式？</h2>
-                <p>MaiPDF Convert在保持内容视觉完整性的同时，为文档安全提供强大的解决方案。</p>
+            <p class="text-muted small mb-0"><i class="fas fa-clock me-1"></i> 8 分钟阅读 · 2026年3月23日 · 工具</p>
+        </div>
+    </section>
+
+    <section class="py-5 mt-3">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">操作步骤</p>
+                <h2 class="section-heading">三步完成 PDF 转换</h2>
             </div>
-            
             <div class="row g-4">
-                <!-- Feature 1 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="100">
-                    <div class="feature-card">
-                        <div class="text-center mb-3">
-                            <div class="feature-icon">
-                                <i class="fas fa-shield-alt"></i>
-                            </div>
-                            <h3>增强安全性</h3>
-                        </div>
-                        <p>将PDF转换为基于图像的格式，在保持完美视觉表现的同时，防止未经授权的编辑、复制或内容提取。</p>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">上传 PDF</h3>
+                        <p class="text-muted">拖放或点击上传您的 PDF 文件，支持任意大小和页数。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/工具页面上传页.png" alt="上传 PDF 文件" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
-                
-                <!-- Feature 2 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="200">
-                    <div class="feature-card">
-                        <div class="text-center mb-3">
-                            <div class="feature-icon">
-                                <i class="fas fa-universal-access"></i>
-                            </div>
-                            <h3>通用兼容性</h3>
-                        </div>
-                        <p>确保您的文档在任何带有PDF查看器的设备上正确显示，无需接收者安装特殊软件或插件。</p>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">选择输出格式</h3>
+                        <p class="text-muted">从 ZIP 图片包、图片型 PDF、仅打印 PDF、全限制 PDF 中选择。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="选择 PDF 输出格式" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
-                
-                <!-- Feature 3 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="300">
-                    <div class="feature-card">
-                        <div class="text-center mb-3">
-                            <div class="feature-icon">
-                                <i class="fas fa-file-image"></i>
-                            </div>
-                            <h3>多种输出选项</h3>
-                        </div>
-                        <p>从各种格式中选择，包括压缩图像包、带打印权限的安全PDF或完全受限文档，提供最大程度的保护。</p>
-                    </div>
-                </div>
-                
-                <!-- Feature 4 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="400">
-                    <div class="feature-card">
-                        <div class="text-center mb-3">
-                            <div class="feature-icon">
-                                <i class="fas fa-lock"></i>
-                            </div>
-                            <h3>内容保护</h3>
-                        </div>
-                        <p>通过防止从转换后的文档中选择、复制或提取文本，保护知识产权和敏感信息。</p>
-                    </div>
-                </div>
-                
-                <!-- Feature 5 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="500">
-                    <div class="feature-card">
-                        <div class="text-center mb-3">
-                            <div class="feature-icon">
-                                <i class="fas fa-compress-arrows-alt"></i>
-                            </div>
-                            <h3>压缩选项</h3>
-                        </div>
-                        <p>使用灵活的压缩设置优化文件大小，同时保持出色的视觉质量，便于通过电子邮件或网络共享。</p>
-                    </div>
-                </div>
-                
-                <!-- Feature 6 -->
-                <div class="col-md-6 col-lg-4" data-aos="fade-up" data-aos-delay="600">
-                    <div class="feature-card">
-                        <div class="text-center mb-3">
-                            <div class="feature-icon">
-                                <i class="fas fa-laptop-house"></i>
-                            </div>
-                            <h3>基于浏览器的处理</h3>
-                        </div>
-                        <p>直接在浏览器中转换文档，无需将数据上传到我们的服务器，确保敏感文件的最大隐私和安全性。</p>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">下载或分享</h3>
+                        <p class="text-muted">转换完成后直接下载文件，或通过链接和二维码分享给他人。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="下载或分享转换结果" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- How It Works Section -->
-    <section class="process-section">
-        <div class="container" style="position: relative; z-index: 4;">
-            <div class="section-title" data-aos="fade-up">
-                <h2>MaiPDF Convert的工作原理</h2>
-                <p>只需几个简单步骤即可将PDF转换为安全格式</p>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">核心功能</p>
+                <h2 class="section-heading">八大转换与保护功能</h2>
             </div>
-            
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-images"></i></div>
+                        <h3 class="h5 fw-bold">ZIP 图片包</h3>
+                        <p class="text-muted">将 PDF 每一页转为高清图片，打包成 ZIP 下载，方便插入文档或网页。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-file-image"></i></div>
+                        <h3 class="h5 fw-bold">图片型 PDF</h3>
+                        <p class="text-muted">将 PDF 文字层转为图片层，保留 PDF 格式但无法选中或复制文字。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-print"></i></div>
+                        <h3 class="h5 fw-bold">仅打印 PDF</h3>
+                        <p class="text-muted">允许打印但禁止编辑和复制，适合需要纸质留存的场景。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-lock"></i></div>
+                        <h3 class="h5 fw-bold">全限制 PDF</h3>
+                        <p class="text-muted">禁止编辑、复制和打印，最高级别的文档保护方案。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-compress-alt"></i></div>
+                        <h3 class="h5 fw-bold">压缩开关</h3>
+                        <p class="text-muted">可选择是否压缩输出文件，在清晰度和文件大小之间自由平衡。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-globe"></i></div>
+                        <h3 class="h5 fw-bold">浏览器操作</h3>
+                        <p class="text-muted">无需下载安装任何软件，打开浏览器即可完成所有转换操作。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fff7ed; color: #ea580c;"><i class="fas fa-clone"></i></div>
+                        <h3 class="h5 fw-bold">版式保真</h3>
+                        <p class="text-muted">转换后完美保留原始排版、字体和颜色，所见即所得。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #f0fdf4; color: #15803d;"><i class="fas fa-shield-alt"></i></div>
+                        <h3 class="h5 fw-bold">防篡改</h3>
+                        <p class="text-muted">图片化后文档内容不可修改，有效防止他人篡改原始信息。</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">转换流程</p>
+                <h2 class="section-heading">PDF 转图片工作流</h2>
+            </div>
+            <div class="text-center">
+                <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-pdf-to-image.svg" alt="PDF 转图片工作流程图" class="img-fluid" style="max-width: 720px;" loading="lazy">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">格式对比</p>
+                <h2 class="section-heading">四种输出格式对比</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered bg-white" style="border-radius: 12px; overflow: hidden;">
+                    <thead style="background: var(--blue-600); color: white;">
+                        <tr>
+                            <th class="py-3 px-4">输出格式</th>
+                            <th class="py-3 px-4 text-center">可编辑？</th>
+                            <th class="py-3 px-4 text-center">可复制？</th>
+                            <th class="py-3 px-4 text-center">可打印？</th>
+                            <th class="py-3 px-4">适用场景</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">ZIP 图片包</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="py-3 px-4 text-muted">网页展示、社交媒体分享、设计稿预览</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">图片型 PDF</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="py-3 px-4 text-muted">客户报价、培训材料、合同预览</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">仅打印 PDF</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-check text-success"></i></td>
+                            <td class="py-3 px-4 text-muted">需要纸质存档、内部通知、表单</td>
+                        </tr>
+                        <tr>
+                            <td class="py-3 px-4 fw-semibold">全限制 PDF</td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-center"><i class="fas fa-times text-danger"></i></td>
+                            <td class="py-3 px-4 text-muted">机密文件、法律文书、知识产权保护</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">关于 PDF 转换的常见问题</h2>
+            </div>
             <div class="row justify-content-center">
-                <div class="col-lg-10">
-                    <!-- Step 1 -->
-                    <div class="process-step" data-aos="fade-up">
-                        <div class="step-number">1</div>
-                        <h3>上传您的PDF</h3>
-                        <p>首先将PDF文档上传到我们的安全平台。整个过程完全在您的浏览器中进行—您的文件永远不会发送到我们的服务器，确保完全的隐私和安全。</p>
-                        <p>MaiPDF Convert接受几乎任何大小和复杂度的PDF。为获得最佳性能，我们建议文件大小在100MB以下，但如果系统内存足够，也可以处理更大的文档。</p>
-                    </div>
-                    
-                    <!-- Step 2 -->
-                    <div class="process-step" data-aos="fade-up" data-aos-delay="100">
-                        <div class="step-number">2</div>
-                        <h3>选择输出格式</h3>
-                        <p>选择最适合您安全需求的转换选项：</p>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <div class="card h-100 border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-file-zipper text-primary me-2"></i>ZIP中的图像</h5>
-                                        <p class="small mb-0">将每一页提取为单独的图像文件，然后压缩成ZIP归档文件，便于分发。</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card h-100 border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-image text-primary me-2"></i>图像化PDF</h5>
-                                        <p class="small mb-0">创建一个每页都是图像的PDF，在保持PDF格式的同时防止文本编辑。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="row mt-3">
-                            <div class="col-md-6">
-                                <div class="card h-100 border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-print text-primary me-2"></i>带打印权限的图像化PDF</h5>
-                                        <p class="small mb-0">类似于图像化PDF，但启用了打印权限，便于授权共享。</p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="card h-100 border-0 shadow-sm">
-                                    <div class="card-body">
-                                        <h5><i class="fas fa-ban text-primary me-2"></i>所有限制的PDF</h5>
-                                        <p class="small mb-0">最高安全级别的PDF，移除了所有权限—无法编辑、打印或复制内容。</p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <!-- Step 3 -->
-                    <div class="process-step" data-aos="fade-up" data-aos-delay="200">
-                        <div class="step-number">3</div>
-                        <h3>可选的图像压缩</h3>
-                        <p>切换图像压缩以减小文件大小，同时保持良好的视觉质量。这在以下情况特别有用：</p>
-                        <ul class="mt-3">
-                            <li>作为电子邮件附件发送有大小限制的文档</li>
-                            <li>上传内容到有文件大小限制的网站</li>
-                            <li>为移动设备优化加载速度</li>
-                            <li>在不牺牲可读性的情况下节省存储空间</li>
-                        </ul>
-                    </div>
-                    
-                    <!-- Step 4 -->
-                    <div class="process-step" data-aos="fade-up" data-aos-delay="300">
-                        <div class="step-number">4</div>
-                        <h3>下载您的安全文档</h3>
-                        <p>处理完成后，立即下载转换后的文档。整个转换过程在您的浏览器中本地进行，确保敏感信息的最大隐私和安全性。</p>
-                        <p>您转换后的文档将保持原始的视觉保真度，同时增加基于图像的内容保护的安全优势。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Benefits & Use Cases Section -->
-    <section class="py-7 bg-white">
-        <div class="container">
-            <div class="row g-5">
-                <!-- Benefits Column -->
-                <div class="col-lg-6" data-aos="fade-right">
-                    <h2 class="mb-4">主要优势</h2>
-                    <ul class="benefit-list">
-                        <li>保护机密信息免受未授权复制或提取</li>
-                        <li>在所有设备和平台上保持准确的文档外观</li>
-                        <li>防止未经授权编辑重要文档</li>
-                        <li>控制接收者是否可以打印您的文档</li>
-                        <li>提高敏感内容的文档共享安全性</li>
-                        <li>适用于包括文本、图像和表格在内的所有类型的PDF内容</li>
-                        <li>无需服务器上传—所有处理都在浏览器中进行</li>
-                        <li>与外部方共享时保持文档的完整性</li>
-                        <li>防止重要业务文档的数据泄漏</li>
-                    </ul>
-                </div>
-                
-                <!-- Use Cases Column -->
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="mb-4">应用场景</h2>
-                    
-                    <!-- Use Case 1 -->
-                    <div class="use-case-card">
-                        <div class="use-case-icon">
-                            <i class="fas fa-briefcase"></i>
-                        </div>
-                        <h4>商业文档</h4>
-                        <p>与客户、合作伙伴或投资者共享时，保护财务报告、合同和战略计划免受未授权的编辑或复制。</p>
-                    </div>
-                    
-                    <!-- Use Case 2 -->
-                    <div class="use-case-card">
-                        <div class="use-case-icon">
-                            <i class="fas fa-graduation-cap"></i>
-                        </div>
-                        <h4>教育材料</h4>
-                        <p>共享学习材料、考试试卷或研究文档，同时防止内容被未经许可地修改、复制或重新分发。</p>
-                    </div>
-                    
-                    <!-- Use Case 3 -->
-                    <div class="use-case-card">
-                        <div class="use-case-icon">
-                            <i class="fas fa-copyright"></i>
-                        </div>
-                        <h4>知识产权</h4>
-                        <p>在与利益相关者共享或在审核过程中，保护创意作品、设计和专有信息免受未授权复制。</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Screenshot Section with Testimonial -->
-    <section class="py-7 bg-light">
-        <div class="container">
-            <div class="row align-items-center g-5">
-                <div class="col-lg-6" data-aos="fade-right">
-                    <img src="/images/maiconver.png" alt="MaiPDF Convert操作中" class="screenshot img-fluid">
-                </div>
-                <div class="col-lg-6" data-aos="fade-left">
-                    <h2 class="mb-4">简化安全文档共享</h2>
-                    <p class="lead mb-4">MaiPDF Convert通过结合易用性和强大的安全功能，彻底改变了敏感文档的共享方式。</p>
-                    
-                    <div class="testimonial">
-                        <p>"MaiPDF Convert已成为我们业务中必不可少的工具。我们现在可以与客户共享敏感的提案和价格文档，而不必担心内容被提取或编辑。基于图像的转换在保持完美视觉质量的同时，增加了我们需要的安全性。"</p>
-                        <div class="testimonial-author">
-                            <div>
-                                <strong>王丽</strong><br>
-                                <span class="text-muted">市场总监</span>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="faq-section">
-        <div class="container">
-            <div class="section-title" data-aos="fade-up">
-                <h2>常见问题</h2>
-                <p>获取有关MaiPDF Convert的常见问题解答</p>
-            </div>
-            
-            <div class="row justify-content-center">
-                <div class="col-lg-10" data-aos="fade-up">
+                <div class="col-lg-8">
                     <div class="accordion" id="faqAccordion">
-                        <!-- FAQ Item 1 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
-                                    MaiPDF Convert是免费使用的吗？
-                                </button>
-                            </h2>
-                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    是的，MaiPDF Convert完全免费使用。没有隐藏费用、订阅成本或需要付费的高级功能。我们让这个强大的PDF安全工具对所有人都可用。
-                                </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">转换会降低质量吗？</button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">不会。MaiPDF 采用高分辨率渲染引擎，转换后的图片保持与原 PDF 一致的清晰度，文字和图形均不会模糊。您还可以通过压缩开关自行调节输出质量。</div>
                             </div>
                         </div>
-                        
-                        <!-- FAQ Item 2 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingTwo">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                                    转换过程中我的PDF内容安全吗？
-                                </button>
-                            </h2>
-                            <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    绝对安全。所有处理直接在您的浏览器中进行——您的文件永远不会上传到我们的服务器。这种客户端处理方法确保了敏感文档的最大隐私和安全性，甚至适用于机密商业信息。
-                                </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">能批量转换吗？</button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">可以。上传多页 PDF 后，系统会自动将每一页转为独立图片并打包为 ZIP 文件下载，无需逐页操作。整个过程只需一次上传即可完成。</div>
                             </div>
                         </div>
-                        
-                        <!-- FAQ Item 3 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingThree">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                                    转换后的PDF会保持原始外观吗？
-                                </button>
-                            </h2>
-                            <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    是的，转换后的PDF保持与原始文档的视觉保真度。所有文本、图像、颜色、格式和布局将与源PDF中的显示完全相同。唯一的区别是内容现在被渲染为图像，使其安全，防止文本提取或编辑。
-                                </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">支持哪些格式？</button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">MaiPDF 支持四种输出格式：ZIP 图片包（逐页 PNG/JPG）、图片型 PDF、仅打印 PDF、全限制 PDF。输入方面支持所有标准 PDF 文件。</div>
                             </div>
                         </div>
-                        
-                        <!-- FAQ Item 4 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFour">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
-                                    不同转换选项之间有什么区别？
-                                </button>
-                            </h2>
-                            <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    <ul>
-                                        <li><strong>ZIP中的图像</strong>：将每页提取为单独的图像文件，然后压缩成ZIP归档文件。当您需要单独的页面图像时理想。</li>
-                                        <li><strong>图像化PDF</strong>：创建一个每页都是图像的PDF，在保持PDF格式的同时防止文本编辑。最适合一般安全共享。</li>
-                                        <li><strong>带打印权限的图像化PDF</strong>：类似于图像化PDF，但启用了打印权限。当您希望接收者查看和打印但不编辑时完美。</li>
-                                        <li><strong>所有限制的PDF</strong>：最高安全级别的PDF，移除了所有权限 - 无法编辑、打印或复制内容。最高级别的文档保护。</li>
-                                    </ul>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 5 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingFive">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
-                                    有文件大小限制吗？
-                                </button>
-                            </h2>
-                            <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    由于处理在您的浏览器中进行，文件大小限制取决于您设备的内存。为获得最佳性能，我们建议文件大小在100MB以下，不过有足够内存的计算机可以处理更大的文件。非常大的文件的转换过程可能会根据您设备的处理能力而需要更长时间。
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- FAQ Item 6 -->
-                        <div class="accordion-item">
-                            <h2 class="accordion-header" id="headingSix">
-                                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
-                                    接收者需要特殊软件来查看转换后的PDF吗？
-                                </button>
-                            </h2>
-                            <div id="collapseSix" class="accordion-collapse collapse" aria-labelledby="headingSix" data-bs-parent="#faqAccordion">
-                                <div class="accordion-body">
-                                    不需要，接收者只需要标准的PDF查看器，如Adobe Acrobat Reader、Mac上的Preview或任何具有PDF查看功能的现代浏览器。转换后的文档可与任何标准PDF阅读器一起使用，同时保持基于图像的内容的安全优势。
-                                </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">免费吗？</button>
+                            </h3>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">基础转换功能完全免费，包括 PDF 转图片和图片型 PDF 输出。高级安全选项如访问次数限制和动态水印可能需要升级方案，但核心转换功能不限次数。</div>
                             </div>
                         </div>
                     </div>
@@ -1026,66 +349,66 @@
         </div>
     </section>
 
-    <!-- CTA Section -->
-    <section class="cta-section">
-        <div class="container" style="position: relative; z-index: 2;">
-            <div data-aos="fade-up">
-                <h2 class="mb-3">准备好保护您的PDF文档了吗？</h2>
-                <p class="lead mb-4">只需几次点击，即可将PDF转换为安全的图像格式。</p>
-                <img src="/images/maiconver.png" alt="MaiPDF Convert工具" class="img-fluid screenshot mb-4" style="max-width: 700px;">
-                <div>
-                    <a href="https://maipdf.com/est/maiconvert.html" class="cta-button">
-                        <i class="fas fa-lock me-2"></i> 立即开始转换
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">立即体验 PDF 转换功能</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">上传 PDF，选择输出格式，一键转换 — 整个过程不到一分钟。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-paper-plane me-2"></i>立即体验
+                    </a>
+                    <a href="/chinese/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>了解更多
                     </a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <footer class="text-white py-5 mt-0">
         <div class="container">
-            <div class="row g-4">
-                <div class="col-md-4">
-                    <h5>MaiPDF</h5>
-                    <p>专业PDF共享和安全解决方案</p>
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">安全分享 PDF 的专业平台 — 上传、保护、分享，尽在 MaiPDF。</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
                 </div>
-                <div class="col-md-4">
-                    <h5>快速链接</h5>
-                    <ul class="footer-links">
-                        <li><a href="https://sendpdfonline.com/">首页</a></li>
-                        <li><a href="https://sendpdfonline.com/features/">功能</a></li>
-                        <li><a href="https://sendpdfonline.com/usecase/">应用场景</a></li>
-                        <li><a href="https://sendpdfonline.com/article/">文章</a></li>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/">功能一览</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h5>联系我们</h5>
-                    <ul class="footer-links">
-                        <li><a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">博客</a></li>
+                        <li class="mb-2"><a href="/chinese/">中文专区</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
                     </ul>
                 </div>
-            </div>
-            
-            <div class="footer-bottom">
-                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">热门</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/chinese/convert-pdf-to-image">PDF 转图片</a></li>
+                        <li class="mb-2"><a href="/chinese/pdf-to-qr-guide">PDF 转二维码</a></li>
+                        <li class="mb-2"><a href="/chinese/convert-pdf-features">转换功能大全</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">联系我们</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">站点地图</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- JavaScript Libraries -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <script>
-        // Initialize AOS animation library
-        document.addEventListener('DOMContentLoaded', function() {
-            AOS.init({
-                duration: 800,
-                easing: 'ease-in-out',
-                once: true
-            });
-        });
-    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-

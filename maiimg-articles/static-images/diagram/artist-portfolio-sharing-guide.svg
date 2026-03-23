@@ -1,0 +1,53 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img" aria-label="Artist portfolio sharing workflow with feedback loop">
+  <defs>
+    <style>
+      .box { fill: #fffbeb; stroke: #f59e0b; stroke-width: 2; }
+      .accent { fill: #fff7ed; stroke: #b45309; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; fill: #1f2937; }
+      .small { font-size: 18px; }
+      .flow { stroke: #f59e0b; stroke-width: 2.5; fill: none; stroke-dasharray: 7 6; animation: dash 4.2s linear infinite; }
+      .loop { stroke: #b45309; stroke-width: 2.5; fill: none; stroke-dasharray: 5 6; animation: dash 3.5s linear infinite; }
+      .pulse { animation: pulse 3s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      @keyframes dash { to { stroke-dashoffset: -26; } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+    </style>
+    <marker id="arrow-amber" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#f59e0b" />
+    </marker>
+    <marker id="arrow-dark" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#b45309" />
+    </marker>
+  </defs>
+
+  <rect x="110" y="40" width="520" height="70" rx="12" class="box pulse" />
+  <text x="370" y="75" text-anchor="middle" class="text">Curate strongest works</text>
+
+  <rect x="110" y="140" width="520" height="70" rx="12" class="box" />
+  <text x="370" y="175" text-anchor="middle" class="text">Organize by type and theme</text>
+
+  <rect x="110" y="240" width="520" height="70" rx="12" class="box" />
+  <text x="370" y="275" text-anchor="middle" class="text">Optimize, color-correct, watermark</text>
+
+  <rect x="110" y="340" width="520" height="70" rx="12" class="box" />
+  <text x="370" y="375" text-anchor="middle" class="text">Publish portfolio gallery</text>
+
+  <rect x="110" y="440" width="520" height="70" rx="12" class="box" />
+  <text x="370" y="475" text-anchor="middle" class="text">Share to platforms and collectors</text>
+
+  <rect x="110" y="540" width="520" height="70" rx="12" class="box pulse" />
+  <text x="370" y="575" text-anchor="middle" class="text">Inquiries, commissions, sales</text>
+
+  <rect x="660" y="240" width="180" height="120" rx="12" class="accent" />
+  <text x="750" y="275" text-anchor="middle" class="text small">Track metrics</text>
+  <text x="750" y="305" text-anchor="middle" class="text small">and feedback</text>
+
+  <line x1="370" y1="110" x2="370" y2="140" class="flow" marker-end="url(#arrow-amber)" />
+  <line x1="370" y1="210" x2="370" y2="240" class="flow" marker-end="url(#arrow-amber)" />
+  <line x1="370" y1="310" x2="370" y2="340" class="flow" marker-end="url(#arrow-amber)" />
+  <line x1="370" y1="410" x2="370" y2="440" class="flow" marker-end="url(#arrow-amber)" />
+  <line x1="370" y1="510" x2="370" y2="540" class="flow" marker-end="url(#arrow-amber)" />
+
+  <line x1="630" y1="400" x2="660" y2="330" class="loop" marker-end="url(#arrow-dark)" />
+  <path d="M840,300 C865,300 865,130 630,130" class="loop" marker-end="url(#arrow-dark)" />
+  <text x="760" y="120" text-anchor="middle" class="text small">Iterate and improve</text>
+</svg>

@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid meet">
+  <style>
+    .box{fill:#fff;stroke:#86efac;stroke-width:2;rx:14}
+    .t1{font:700 22px Inter,Segoe UI,sans-serif;fill:#14532d}
+    .t2{font:400 16px Inter,Segoe UI,sans-serif;fill:#334155}
+    .arr{stroke:#6ee7b7;stroke-width:4;stroke-linecap:round}
+    .dot{fill:#059669}
+    @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(165px)}}
+    .d1{animation:slide 1.9s linear infinite}
+    .d2{animation:slide 1.9s linear infinite .5s}
+    .d3{animation:slide 1.9s linear infinite 1s}
+  </style>
+  <rect width="1200" height="320" fill="#f0fdf4"/>
+  <g transform="translate(30,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">1) Set Limits</text><text class="t2" x="110" y="92" text-anchor="middle">Views per link</text><text class="t2" x="110" y="122" text-anchor="middle">Protect access scope</text></g>
+  <g transform="translate(320,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">2) Set Expiry</text><text class="t2" x="110" y="92" text-anchor="middle">Time-bound access</text><text class="t2" x="110" y="122" text-anchor="middle">Auto expiration</text></g>
+  <g transform="translate(610,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">3) Share</text><text class="t2" x="110" y="92" text-anchor="middle">Link and QR channels</text><text class="t2" x="110" y="122" text-anchor="middle">Consistent distribution</text></g>
+  <g transform="translate(900,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">4) Revoke</text><text class="t2" x="110" y="92" text-anchor="middle">One-click disable</text><text class="t2" x="110" y="122" text-anchor="middle">Fast risk recovery</text></g>
+  <line class="arr" x1="250" y1="255" x2="320" y2="255"/><line class="arr" x1="540" y1="255" x2="610" y2="255"/><line class="arr" x1="830" y1="255" x2="900" y2="255"/>
+  <circle class="dot d1" cx="255" cy="255" r="6"/><circle class="dot d2" cx="545" cy="255" r="6"/><circle class="dot d3" cx="835" cy="255" r="6"/>
+</svg>

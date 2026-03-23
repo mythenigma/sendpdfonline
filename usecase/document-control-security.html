@@ -1,416 +1,413 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document Control & Security | MaiPDF</title>
-    <meta name="description" content="Protect your sensitive documents with MaiPDF's advanced control and security features.">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <style>
-        :root {
-            --primary-color: #1a73e8;
-            --secondary-color: #34a853;
-            --text-color: #333;
-            --bg-color: #f8f9fa;
-            --card-bg: #ffffff;
-        }
-
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-        }
-
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 2rem;
-        }
-
-        header {
-            text-align: center;
-            padding: 3rem 1rem;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            margin-bottom: 2rem;
-        }
-
-        h1 {
-            font-size: 2.5rem;
-            margin-bottom: 1rem;
-        }
-
-        .header-description {
-            font-size: 1.2rem;
-            opacity: 0.9;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        .content-section {
-            background: var(--card-bg);
-            border-radius: 10px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
-
-        h2 {
-            color: var(--primary-color);
-            margin-bottom: 1.5rem;
-            font-size: 2rem;
-        }
-
-        h3 {
-            color: var(--text-color);
-            margin: 1.5rem 0 1rem;
-            font-size: 1.5rem;
-        }
-
-        .feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            margin: 2rem 0;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            padding: 1.5rem;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            transition: transform 0.2s;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-
-        .feature-card h3 {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .feature-card i {
-            color: var(--primary-color);
-        }
-
-        .maipdf-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 1rem 2rem;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-top: 1rem;
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        }
-
-        .maipdf-button:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-        }
-
-        .warning-box {
-            background: #fce8e6;
-            border-left: 4px solid #d93025;
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .tip-box {
-            background: #e8f0fe;
-            border-left: 4px solid var(--primary-color);
-            padding: 1.5rem;
-            margin: 2rem 0;
-            border-radius: 0 8px 8px 0;
-        }
-
-        .usecase-image {
-            width: 100%;
-            max-width: 980px;
-            display: block;
-            margin: 1rem auto 0;
-            border-radius: 10px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
-        }
-
-        @media (max-width: 768px) {
-            .container {
-                padding: 1rem;
-            }
-            
-            header {
-                padding: 2rem 1rem;
-            }
-
-            h1 {
-                font-size: 2rem;
-            }
-
-            .feature-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .mobile-fullbleed {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                margin-left: calc(50% - 50vw);
-                margin-right: calc(50% - 50vw);
-                height: auto;
-                display: block;
-                border-radius: 0 !important;
-            }
-        }
-    </style>
-
-    <!-- Breadcrumb Structured Data -->
-    <script type="application/ld+json">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Document Control &amp; Security — Manage PDF Access | MaiPDF</title>
+<meta name="description" content="Maintain full control over shared documents. Track access, limit views, set expiration, and revoke permissions — all from one dashboard powered by MaiPDF.">
+<meta name="keywords" content="document control, PDF security, access control, view limits, expiration, revoke access, audit trail, MaiPDF, PDF management dashboard">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+<link rel="canonical" href="https://sendpdfonline.com/usecase/document-control-security">
+<link rel="icon" type="image/x-icon" href="/favicon.ico">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://sendpdfonline.com/usecase/document-control-security">
+<meta property="og:title" content="Document Control & Security — Manage PDF Access | MaiPDF">
+<meta property="og:description" content="Maintain full control over shared documents. Track access, limit views, set expiration, and revoke permissions — all from one dashboard.">
+<meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Document Control & Security — Manage PDF Access | MaiPDF">
+<meta name="twitter:description" content="Maintain full control over shared documents. Track access, limit views, set expiration, and revoke permissions — all from one dashboard.">
+<meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png">
+<script type="application/ld+json">
+{
+  "@context":"https://schema.org",
+  "@graph":[
     {
-        "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Usecase",
-                "item": "https://sendpdfonline.com/usecase/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "Document Control & Security",
-                "item": "https://sendpdfonline.com/usecase/document-control-security.html"
-            }
-        ]
+      "@type":"Article",
+      "headline":"Document Control & Security — Manage PDF Access",
+      "description":"Maintain full control over shared documents. Track access, limit views, set expiration, and revoke permissions — all from one dashboard.",
+      "image":"https://sendpdfonline.com/images/maipdf2026/show_off/show_off_page.png",
+      "datePublished":"2026-03-01",
+      "dateModified":"2026-03-23",
+      "author":{"@type":"Organization","name":"MaiPDF","url":"https://maipdf.com"},
+      "publisher":{"@type":"Organization","name":"SendPDFOnline","url":"https://sendpdfonline.com"}
+    },
+    {
+      "@type":"BreadcrumbList",
+      "itemListElement":[
+        {"@type":"ListItem","position":1,"name":"Home","item":"https://sendpdfonline.com/"},
+        {"@type":"ListItem","position":2,"name":"Use Cases","item":"https://sendpdfonline.com/usecase/"},
+        {"@type":"ListItem","position":3,"name":"Document Control & Security","item":"https://sendpdfonline.com/usecase/document-control-security"}
+      ]
+    },
+    {
+      "@type":"FAQPage",
+      "mainEntity":[
+        {"@type":"Question","name":"Can I manage all shared documents from one dashboard?","acceptedAnswer":{"@type":"Answer","text":"Yes. MaiPDF provides a centralized dashboard where you can see every shared file, its settings, access logs, and status — all in one place."}},
+        {"@type":"Question","name":"How do access records work?","acceptedAnswer":{"@type":"Answer","text":"Every time someone opens your shared PDF, MaiPDF logs the timestamp, IP address, device type, browser, and approximate location. If email verification is enabled, the viewer's email is also recorded."}},
+        {"@type":"Question","name":"Can I replace a document without changing the shared link?","acceptedAnswer":{"@type":"Answer","text":"Yes. Upload a new version of the file and MaiPDF will serve it from the same URL. All existing QR codes and bookmarks continue to work."}},
+        {"@type":"Question","name":"What notifications can I receive when a document is opened?","acceptedAnswer":{"@type":"Answer","text":"You can receive push notifications via Telegram or email alerts each time someone accesses a shared document."}},
+        {"@type":"Question","name":"Is there a limit on the number of documents I can manage?","acceptedAnswer":{"@type":"Answer","text":"MaiPDF's free tier supports multiple documents. For higher volumes, premium plans are available with expanded storage and analytics."}}
+      ]
     }
-    </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  ]
+}
+</script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+<style>
+:root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+.hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+.hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+.hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+.hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+.hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+.step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+.step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+.step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+.feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+.feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+.feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+.article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+.article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+.article-card .card-body { padding: 1.5rem; }
+.article-card h3 { font-size: 1.1rem; }
+.article-card h3 a { color: var(--gray-900); text-decoration: none; }
+.article-card h3 a:hover { color: var(--blue-600); }
+.cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+.section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+.section-heading { font-size: 2rem; font-weight: 700; }
+.screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+footer { background: var(--gray-900); }
+footer a { color: #9ca3af; text-decoration: none; }
+footer a:hover { color: white; }
+@media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+</style>
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
-        <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/usecase/">Usecase</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Document Control & Security</li>
-            </ol>
-        </div>
+<nav class="bg-white border-bottom py-2">
+  <div class="container">
+    <nav aria-label="breadcrumb">
+      <ol class="breadcrumb mb-0 small">
+        <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+        <li class="breadcrumb-item"><a href="/usecase/" class="text-decoration-none">Use Cases</a></li>
+        <li class="breadcrumb-item active" aria-current="page">Document Control &amp; Security</li>
+      </ol>
     </nav>
-    
-    <header>
-        <h1>Document Control & Security</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: March 04, 2026
-                    </small>
-                </div>
-                
-        <p>Welcome to MaiPDF, your trusted platform for secure document management. Learn how to protect your sensitive documents with our advanced control and security features.</p>
-    </header>
-    <main>
-        <section class="content-section">
-            <h2>Why Document Control Matters</h2>
-            <p>In today's digital world, controlling access to your documents is essential for protecting sensitive information, maintaining compliance, and preventing unauthorized use.</p>
-        </section>
-        <section class="content-section">
-            <h2>The Risks of Uncontrolled PDF Sharing</h2>
-            <p>Imagine sending a confidential business proposal to a client, only to find it leaked to competitors. This is the reality of uncontrolled PDF sharing. Sensitive information can easily fall into the wrong hands, leading to financial losses and reputational damage.</p>
-            <div class="warning-box">
-                <h3><i class="fas fa-exclamation-triangle"></i> Common Security Risks</h3>
-                <ul>
-                    <li>Unauthorized document forwarding</li>
-                    <li>Uncontrolled access to sensitive information</li>
-                    <li>Document leaks and data breaches</li>
-                    <li>Loss of business confidentiality</li>
-                </ul>
-            </div>
-        </section>
-        <section class="content-section">
-            <h2>MaiPDF's Security Features</h2>
-            <p>MaiPDF offers a comprehensive suite of security tools, including:</p>
-            <ul>
-                <li>Access control to restrict unauthorized viewing</li>
-                <li>Dynamic watermarks to deter misuse</li>
-                <li>Real-time tracking to monitor document access</li>
-                <li>Encryption to safeguard sensitive information</li>
-            </ul>
-            <img src="/images/maipdf2026/麦瓜PDF/用户管理界面对链接的管理.png" alt="MaiPDF control panel for document permissions, replacement, analytics, and deletion" class="usecase-image mobile-fullbleed" loading="lazy">
-        </section>
-        <section class="content-section">
-            <h2>MaiPDF's Security Solutions</h2>
-            <div class="feature-grid">
-                <div class="feature-card">
-                    <h3><i class="fas fa-user-lock"></i> Access Control</h3>
-                    <p>Set specific permissions for who can view, download, or forward your PDFs. Prevent unauthorized access to your sensitive documents.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-history"></i> Document Tracking</h3>
-                    <p>Monitor who opens your PDFs and when. Get detailed analytics about document access and viewer information.</p>
-                </div>
-                <div class="feature-card">
-                    <h3><i class="fas fa-water"></i> Dynamic Watermarks</h3>
-                    <p>Add customizable watermarks that display viewer information, preventing unauthorized sharing and distribution.</p>
-                </div>
-            </div>
-        </section>
-        <section class="content-section">
-            <h2>How to Secure Your Documents with MaiPDF</h2>
-            <ol>
-                <li>Upload your document to MaiPDF.</li>
-                <li>Set access permissions and security options.</li>
-                <li>Enable tracking and watermarking features.</li>
-                <li>Share the document securely with authorized users.</li>
-            </ol>
-        </section>
-        <section class="content-section">
-            <h2>How to Protect Your Documents</h2>
-            <ol>
-                <li>Upload your document to MaiPDF</li>
-                <li>Configure access restrictions</li>
-                <li>Set up tracking and watermarks</li>
-                <li>Share securely with intended recipients</li>
-                <li>Monitor document access and usage</li>
-            </ol>
-            <div class="tip-box">
-                <h3><i class="fas fa-lightbulb"></i> Pro Tip</h3>
-                <p>Always review access logs regularly to ensure your documents are being used as intended.</p>
-            </div>
-        </section>
-        <section class="content-section">
-            <h2>Benefits of Using MaiPDF for Document Security</h2>
-            <ul>
-                <li>Protect sensitive information from unauthorized access.</li>
-                <li>Maintain compliance with data protection regulations.</li>
-                <li>Enhance trust and professionalism in document sharing.</li>
-            </ul>
-        </section>
-    </main>
-    <div class="container">
-        <div class="content-section" style="text-align: center;">
-            <h2>Start Protecting Your Documents Today</h2>
-            <p>Don't risk your business security. Try MaiPDF's advanced document protection features.</p>
-            <a href="https://maipdf.com" class="maipdf-button">Protect Your Documents</a>
+  </div>
+</nav>
+
+<section class="hero">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <h1>Document Control &amp; Security</h1>
+        <p class="lead mt-3">Maintain full control over shared documents. Track access, limit views, set expiration, and revoke permissions — all from one dashboard.</p>
+        <div class="d-flex gap-3 mt-4 flex-wrap">
+          <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener"><i class="fas fa-shield-alt me-2"></i>Get Started Free</a>
+          <a href="/usecase/" class="btn btn-outline-light btn-lg"><i class="fas fa-th me-2"></i>All Use Cases</a>
         </div>
+        <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 8 min read &nbsp; <i class="fas fa-calendar me-1"></i> March 23, 2026 &nbsp; <i class="fas fa-tag me-1"></i> Security</p>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="/images/maipdf2026/show_off/show_off_page.png" alt="MaiPDF document control dashboard" class="hero-screenshot" loading="eager">
+      </div>
     </div>
+  </div>
+</section>
 
-    <div class="related-content">
-        <h2>Related Content</h2>
-        <ul>
-            <li><a href="pdf-access-control.html">PDF Access Control</a></li>
-            <li><a href="pdf-watermarking.html">PDF Watermarking</a></li>
-            <li><a href="track-pdf-usage.html">Track PDF Usage</a></li>
-        </ul>
-    
-                <!-- Related Articles -->
-                <div class="mt-5">
-                    <h2><i class="fas fa-newspaper"></i> Related Articles & Resources</h2>
-                    <p class="lead mb-4">Explore more guides about secure PDF sharing and document management.</p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/share-pdf-online">Share PDF Online Free</a></h5>
-                                    <p class="card-text small">Complete guide to sharing PDFs securely</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/controlling-pdf-access">Control PDF Access</a></h5>
-                                    <p class="card-text small">Advanced access control features</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/article/pdf-tracking-analytics">PDF Analytics</a></h5>
-                                    <p class="card-text small">Track and analyze PDF engagement</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-3">
-                            <div class="card h-100 border-0 shadow-sm">
-                                <div class="card-body">
-                                    <h5 class="card-title"><a href="https://sendpdfonline.com/features/">All Features</a></h5>
-                                    <p class="card-text small">Explore all MaiPDF features</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <!-- External Resources from article.maipdf.com -->
-                <div class="mt-5 p-4 bg-light rounded">
-                    <h3><i class="fas fa-external-link-alt"></i> More Resources from MaiPDF Blog</h3>
-                    <p class="mb-4">Discover more in-depth guides and tutorials on our official blog at <a href="https://article.maipdf.com" target="_blank" rel="noopener">article.maipdf.com</a></p>
-                    
-                    <div class="row g-3">
-                        <div class="col-md-4">
-                            <div class="card h-100 border-primary">
-                                <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Blog Post</span>
-                                    <h5 class="card-title"><a href="https://article.maipdf.com/pdf-security-best-practices/" target="_blank" rel="noopener">PDF Security Best Practices 2025</a></h5>
-                                    <p class="card-text small">Complete guide to protecting your PDFs with latest security techniques.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100 border-primary">
-                                <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Blog Post</span>
-                                    <h5 class="card-title"><a href="https://article.maipdf.com/document-watermarking-guide/" target="_blank" rel="noopener">Watermarking Complete Guide</a></h5>
-                                    <p class="card-text small">Learn how dynamic watermarks protect intellectual property.</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-4">
-                            <div class="card h-100 border-primary">
-                                <div class="card-body">
-                                    <span class="badge bg-primary mb-2">Blog Post</span>
-                                    <h5 class="card-title"><a href="https://article.maipdf.com/pdf-analytics-tracking/" target="_blank" rel="noopener">PDF Analytics & Tracking</a></h5>
-                                    <p class="card-text small">Leverage PDF analytics to improve engagement and close deals.</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
-
-    <footer class="content-section" style="text-align: center;">
-        <p>&copy; 2025 MaiPDF. All rights reserved.</p>
-        <div class="col-md-4">
-            <h4>Contact</h4>
-            <ul class="list-unstyled">
-                <li><a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li>
-                <li><a href="https://maipdf.com/contact">Contact Support</a></li>
-            </ul>
+<section class="py-5 mt-3">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">How It Works</p>
+      <h2 class="section-heading">Set Up Document Control in 3 Steps</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="step-num mx-auto mb-3">1</div>
+          <h3 class="h5 fw-bold">Upload Your Document</h3>
+          <p class="text-muted">Drag and drop any PDF. Your file is encrypted and stored securely on the cloud.</p>
+          <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload document to MaiPDF" class="img-fluid screenshot" loading="lazy">
         </div>
-    </footer>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="step-num mx-auto mb-3">2</div>
+          <h3 class="h5 fw-bold">Configure Controls</h3>
+          <p class="text-muted">Set view limits, expiration, watermarks, email gates, and notification preferences.</p>
+          <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Configure document control settings" class="img-fluid screenshot" loading="lazy">
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="step-card text-center">
+          <div class="step-num mx-auto mb-3">3</div>
+          <h3 class="h5 fw-bold">Share &amp; Manage</h3>
+          <p class="text-muted">Distribute the link, then manage access, view logs, and update files from the dashboard.</p>
+          <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Share document link and QR code" class="img-fluid screenshot" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: var(--gray-100);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Key Features</p>
+      <h2 class="section-heading">Everything You Need to Control Documents</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-tachometer-alt"></i></div>
+          <h3 class="h5 fw-bold">Centralized Dashboard</h3>
+          <p class="text-muted mb-0">View and manage every shared document, its security settings, and access status from a single control panel.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-clipboard-list"></i></div>
+          <h3 class="h5 fw-bold">Access Records</h3>
+          <p class="text-muted mb-0">Every open is logged with timestamp, IP, device, browser, and location — providing a complete audit trail.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#fef3c7;color:#d97706;"><i class="fas fa-eye"></i></div>
+          <h3 class="h5 fw-bold">View Limits</h3>
+          <p class="text-muted mb-0">Cap the number of times each link can be opened. Once the limit is reached, access is automatically blocked.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#fce7f3;color:#db2777;"><i class="fas fa-hourglass-end"></i></div>
+          <h3 class="h5 fw-bold">Expiration Dates</h3>
+          <p class="text-muted mb-0">Set a deadline after which the link automatically deactivates. Perfect for time-sensitive documents.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-sync-alt"></i></div>
+          <h3 class="h5 fw-bold">Replace File, Same Link</h3>
+          <p class="text-muted mb-0">Update the document behind a shared URL without changing the link. All existing QR codes and bookmarks keep working.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fas fa-tint"></i></div>
+          <h3 class="h5 fw-bold">Dynamic Watermarks</h3>
+          <p class="text-muted mb-0">Stamp each page with viewer-specific info so you can trace leaks back to the exact recipient.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#e0e7ff;color:#4338ca;"><i class="fas fa-envelope-open-text"></i></div>
+          <h3 class="h5 fw-bold">Email Gate</h3>
+          <p class="text-muted mb-0">Require viewers to verify their email before access. Only whitelisted recipients can open the document.</p>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="feature-card">
+          <div class="feature-icon" style="background:#fee2e2;color:#dc2626;"><i class="fab fa-telegram-plane"></i></div>
+          <h3 class="h5 fw-bold">Telegram Alerts</h3>
+          <p class="text-muted mb-0">Get instant push notifications via Telegram the moment anyone opens a shared document.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="row align-items-center">
+      <div class="col-lg-6 mb-4 mb-lg-0">
+        <p class="section-label">Control Panel</p>
+        <h2 class="section-heading">Your Command Center for Shared Documents</h2>
+        <p class="text-muted">The MaiPDF dashboard gives you a bird's-eye view of every document you've shared. Change settings, review access logs, replace files, or revoke access — all without leaving the page.</p>
+        <ul class="list-unstyled mt-3">
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>See all documents and their status at a glance</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Edit security settings after sharing</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Review detailed access logs per document</li>
+          <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>Revoke or extend access with one click</li>
+        </ul>
+      </div>
+      <div class="col-lg-6 text-center">
+        <img src="/images/maipdf2026/how_to_control_panel.png" alt="MaiPDF control panel for document management" class="img-fluid screenshot" style="max-width:480px;" loading="lazy">
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: var(--gray-100);">
+  <div class="container">
+    <div class="row align-items-center flex-lg-row-reverse">
+      <div class="col-lg-6 mb-4 mb-lg-0 text-center">
+        <img src="/images/maipdf2026/page_redirect_to_accessRecord.png" alt="MaiPDF access record details" class="img-fluid screenshot" style="max-width:480px;" loading="lazy">
+      </div>
+      <div class="col-lg-6">
+        <p class="section-label">Audit Trail</p>
+        <h2 class="section-heading">Every Open, Fully Documented</h2>
+        <p class="text-muted">MaiPDF captures rich metadata for each document access — giving you the evidence you need for compliance, legal, or internal review.</p>
+        <div class="table-responsive mt-3">
+          <table class="table table-bordered align-middle mb-0" style="background:white;border-radius:12px;overflow:hidden;">
+            <thead style="background:var(--blue-900);color:white;">
+              <tr>
+                <th class="text-start">Data Point</th>
+                <th>Captured?</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td class="text-start">Timestamp</td><td class="text-center"><i class="fas fa-check text-success"></i></td></tr>
+              <tr><td class="text-start">IP Address</td><td class="text-center"><i class="fas fa-check text-success"></i></td></tr>
+              <tr><td class="text-start">Device &amp; Browser</td><td class="text-center"><i class="fas fa-check text-success"></i></td></tr>
+              <tr><td class="text-start">Approximate Location</td><td class="text-center"><i class="fas fa-check text-success"></i></td></tr>
+              <tr><td class="text-start">Viewer Email (with gate)</td><td class="text-center"><i class="fas fa-check text-success"></i></td></tr>
+              <tr><td class="text-start">Open Count per Viewer</td><td class="text-center"><i class="fas fa-check text-success"></i></td></tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">FAQ</p>
+      <h2 class="section-heading">Frequently Asked Questions</h2>
+    </div>
+    <div class="accordion" id="faqAccordion" style="max-width:800px;margin:0 auto;">
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Can I manage all shared documents from one dashboard?</button></h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Yes. MaiPDF provides a centralized dashboard where you can see every shared file, its settings, access logs, and status — all in one place.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How do access records work?</button></h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Every time someone opens your shared PDF, MaiPDF logs the timestamp, IP address, device type, browser, and approximate location. If email verification is enabled, the viewer's email is also recorded.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I replace a document without changing the shared link?</button></h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">Yes. Upload a new version of the file and MaiPDF will serve it from the same URL. All existing QR codes and bookmarks continue to work.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">What notifications can I receive when a document is opened?</button></h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">You can receive push notifications via Telegram or email alerts each time someone accesses a shared document.</div></div>
+      </div>
+      <div class="accordion-item border rounded-3 mb-3">
+        <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">Is there a limit on the number of documents I can manage?</button></h2>
+        <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body text-muted">MaiPDF's free tier supports multiple documents. For higher volumes, premium plans are available with expanded storage and analytics.</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5" style="background: var(--gray-100);">
+  <div class="container">
+    <div class="text-center mb-5">
+      <p class="section-label">Related Reading</p>
+      <h2 class="section-heading">More on Document Security</h2>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-primary mb-2">Security</span>
+            <h3><a href="/usecase/secure-pdf-sharing">Secure PDF Sharing</a></h3>
+            <p class="text-muted small">Password protection, view limits, watermarks, and real-time tracking for every PDF.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-dark mb-2">Use Case</span>
+            <h3><a href="/usecase/confidential-investor-updates">Confidential Investor Updates</a></h3>
+            <p class="text-muted small">Secure sharing with audit trails for fundraising decks and financial reports.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-success mb-2">Guide</span>
+            <h3><a href="/article/track-pdf-analytics-guide">Track PDF Analytics</a></h3>
+            <p class="text-muted small">Learn how to monitor opens, locations, and devices for every shared document link.</p>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-6 col-lg-3">
+        <div class="article-card">
+          <div class="card-body">
+            <span class="badge bg-warning text-dark mb-2">Featured</span>
+            <h3><a href="/article/replace-pdf-without-changing-link">Replace PDF Without Changing the Link</a></h3>
+            <p class="text-muted small">Update shared PDFs while keeping the same URL — old link stays, new content appears.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-5">
+  <div class="container">
+    <div class="cta-section text-center">
+      <h2 class="h3 fw-bold mb-3">Take Control of Your Shared Documents</h2>
+      <p class="mb-4 opacity-90" style="max-width:520px;margin:0 auto;">Upload a PDF, configure your security settings, and share with confidence — manage everything from one dashboard.</p>
+      <div class="d-flex gap-3 justify-content-center flex-wrap">
+        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener"><i class="fas fa-shield-alt me-2"></i>Start for Free</a>
+        <a href="/features/" class="btn btn-outline-light btn-lg"><i class="fas fa-th me-2"></i>Explore Features</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="text-white py-5 mt-0">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-4 mb-4 mb-md-0">
+        <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+        <p class="small" style="color:#9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+        <p class="small mb-0" style="color:#6b7280;">© 2026 SendPDFOnline.com</p>
+      </div>
+      <div class="col-md-2 mb-4 mb-md-0">
+        <h6 class="fw-bold mb-3">Product</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+          <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
+          <li class="mb-2"><a href="/features/">Features</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-4 mb-md-0">
+        <h6 class="fw-bold mb-3">Resources</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="/article/">Blog</a></li>
+          <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+          <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2 mb-4 mb-md-0">
+        <h6 class="fw-bold mb-3">Popular</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+          <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+          <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
+        </ul>
+      </div>
+      <div class="col-md-2">
+        <h6 class="fw-bold mb-3">Support</h6>
+        <ul class="list-unstyled small">
+          <li class="mb-2"><a href="mailto:joe@pdfhost.online">Contact Us</a></li>
+          <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

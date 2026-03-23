@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Event Photo Sharing Runbook</title>
+  <desc id="desc">Operational runbook for collecting and distributing event photos quickly.</desc>
+  <defs>
+    <linearGradient id="g2" x1="0" x2="1">
+      <stop offset="0%" stop-color="#fff7ed"/>
+      <stop offset="100%" stop-color="#ffedd5"/>
+    </linearGradient>
+    <style>
+      .h{font-family:Arial,Helvetica,sans-serif;fill:#9a3412;font-size:30px;font-weight:700}
+      .b{fill:#fff;stroke:#f97316;stroke-width:2}
+      .t{font-family:Arial,Helvetica,sans-serif;fill:#7c2d12;font-size:22px;font-weight:700}
+      .s{font-family:Arial,Helvetica,sans-serif;fill:#7c2d12;font-size:16px}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="url(#g2)"/>
+  <text class="h" x="600" y="58" text-anchor="middle">Event-Day Photo Sharing Runbook</text>
+
+  <rect class="b" x="80" y="105" width="240" height="250" rx="14"/>
+  <text class="t" x="200" y="155" text-anchor="middle">Collect</text>
+  <text class="s" x="110" y="200">- Team upload channel</text>
+  <text class="s" x="110" y="230">- Quick quality filter</text>
+  <text class="s" x="110" y="260">- Remove duplicates</text>
+
+  <rect class="b" x="350" y="105" width="240" height="250" rx="14"/>
+  <text class="t" x="470" y="155" text-anchor="middle">Package</text>
+  <text class="s" x="380" y="200">- Build album groups</text>
+  <text class="s" x="380" y="230">- Add cover + title</text>
+  <text class="s" x="380" y="260">- Set access limits</text>
+
+  <rect class="b" x="620" y="105" width="240" height="250" rx="14"/>
+  <text class="t" x="740" y="155" text-anchor="middle">Distribute</text>
+  <text class="s" x="650" y="200">- Link for online chat</text>
+  <text class="s" x="650" y="230">- QR for on-site screens</text>
+  <text class="s" x="650" y="260">- Announce once hourly</text>
+
+  <rect class="b" x="890" y="105" width="240" height="250" rx="14"/>
+  <text class="t" x="1010" y="155" text-anchor="middle">Measure</text>
+  <text class="s" x="920" y="200">- Track view spikes</text>
+  <text class="s" x="920" y="230">- Patch missed audiences</text>
+  <text class="s" x="920" y="260">- Republish highlights</text>
+
+  <path d="M320,230 L350,230" stroke="#f97316" stroke-width="5" marker-end="url(#m)"/>
+  <path d="M590,230 L620,230" stroke="#f97316" stroke-width="5" marker-end="url(#m)"/>
+  <path d="M860,230 L890,230" stroke="#f97316" stroke-width="5" marker-end="url(#m)"/>
+  <defs><marker id="m" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0,0 10,4 0,8" fill="#f97316"/></marker></defs>
+</svg>

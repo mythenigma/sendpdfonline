@@ -1,0 +1,46 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img" aria-label="Reliable cross-device photo sharing flow">
+  <defs>
+    <style>
+      .box { fill: #f8fafc; stroke: #0b74d6; stroke-width: 2; }
+      .warn { fill: #fff1f2; stroke: #ef4444; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; fill: #1f2937; }
+      .small { font-size: 18px; }
+      .flow { stroke: #0b74d6; stroke-width: 2.5; fill: none; stroke-dasharray: 8 6; animation: dash 4s linear infinite; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      @keyframes dash { to { stroke-dashoffset: -28; } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+    </style>
+    <marker id="arrow-blue" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#0b74d6" />
+    </marker>
+  </defs>
+
+  <rect x="120" y="30" width="660" height="70" rx="12" class="box pulse" />
+  <text x="450" y="65" text-anchor="middle" class="text">Capture moments with friends</text>
+
+  <rect x="90" y="140" width="350" height="70" rx="12" class="warn" />
+  <text x="265" y="175" text-anchor="middle" class="text small">AirDrop fails in crowds</text>
+
+  <rect x="460" y="140" width="350" height="70" rx="12" class="warn" />
+  <text x="635" y="175" text-anchor="middle" class="text small">Mixed devices cannot share</text>
+
+  <rect x="120" y="250" width="660" height="70" rx="12" class="box" />
+  <text x="450" y="285" text-anchor="middle" class="text">Upload to MaiIMG in seconds</text>
+
+  <rect x="120" y="360" width="660" height="70" rx="12" class="box" />
+  <text x="450" y="395" text-anchor="middle" class="text">Share link or QR code</text>
+
+  <rect x="120" y="470" width="660" height="70" rx="12" class="box" />
+  <text x="450" y="505" text-anchor="middle" class="text">Any device opens instantly</text>
+
+  <rect x="120" y="560" width="660" height="70" rx="12" class="box pulse" />
+  <text x="450" y="595" text-anchor="middle" class="text">Full quality downloads for all</text>
+
+  <line x1="450" y1="100" x2="265" y2="140" class="flow" marker-end="url(#arrow-blue)" />
+  <line x1="450" y1="100" x2="635" y2="140" class="flow" marker-end="url(#arrow-blue)" />
+  <line x1="265" y1="210" x2="450" y2="250" class="flow" marker-end="url(#arrow-blue)" />
+  <line x1="635" y1="210" x2="450" y2="250" class="flow" marker-end="url(#arrow-blue)" />
+  <line x1="450" y1="320" x2="450" y2="360" class="flow" marker-end="url(#arrow-blue)" />
+  <line x1="450" y1="430" x2="450" y2="470" class="flow" marker-end="url(#arrow-blue)" />
+  <line x1="450" y1="540" x2="450" y2="560" class="flow" marker-end="url(#arrow-blue)" />
+</svg>

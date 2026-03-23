@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img" aria-label="Free image hosting decision flow">
+  <defs>
+    <style>
+      .box { fill: #eef2ff; stroke: #4f46e5; stroke-width: 2; }
+      .decision { fill: #f5f3ff; stroke: #4f46e5; stroke-width: 2; }
+      .accent { fill: #f8fafc; stroke: #7c3aed; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; fill: #1f2937; }
+      .small { font-size: 18px; }
+      .flow { stroke: #4f46e5; stroke-width: 2.5; fill: none; stroke-dasharray: 7 6; animation: dash 3.8s linear infinite; }
+      .flow-alt { stroke: #7c3aed; stroke-width: 2.5; fill: none; stroke-dasharray: 6 6; animation: dash 3.2s linear infinite; }
+      .pulse { animation: pulse 2.6s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      @keyframes dash { to { stroke-dashoffset: -26; } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+    </style>
+    <marker id="arrow-indigo" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#4f46e5" />
+    </marker>
+    <marker id="arrow-purple" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#7c3aed" />
+    </marker>
+  </defs>
+
+  <rect x="140" y="40" width="620" height="70" rx="12" class="box pulse" />
+  <text x="450" y="75" text-anchor="middle" class="text small">Define needs: storage, privacy, sharing</text>
+
+  <polygon points="450,150 560,210 450,270 340,210" class="decision" />
+  <text x="450" y="205" text-anchor="middle" class="text small">Need QR + analytics?</text>
+
+  <rect x="80" y="320" width="320" height="80" rx="12" class="accent" />
+  <text x="240" y="355" text-anchor="middle" class="text small">Pro host with galleries</text>
+  <text x="240" y="380" text-anchor="middle" class="text small">and tracking</text>
+
+  <rect x="500" y="320" width="320" height="80" rx="12" class="accent" />
+  <text x="660" y="355" text-anchor="middle" class="text small">Simple host for</text>
+  <text x="660" y="380" text-anchor="middle" class="text small">single images</text>
+
+  <rect x="140" y="460" width="620" height="70" rx="12" class="box" />
+  <text x="450" y="495" text-anchor="middle" class="text">Upload images or galleries</text>
+
+  <rect x="140" y="550" width="620" height="70" rx="12" class="box pulse" />
+  <text x="450" y="585" text-anchor="middle" class="text">Share links and track views</text>
+
+  <line x1="450" y1="110" x2="450" y2="150" class="flow" marker-end="url(#arrow-indigo)" />
+  <line x1="395" y1="235" x2="240" y2="320" class="flow-alt" marker-end="url(#arrow-purple)" />
+  <line x1="505" y1="235" x2="660" y2="320" class="flow-alt" marker-end="url(#arrow-purple)" />
+  <line x1="240" y1="400" x2="450" y2="460" class="flow" marker-end="url(#arrow-indigo)" />
+  <line x1="660" y1="400" x2="450" y2="460" class="flow" marker-end="url(#arrow-indigo)" />
+  <line x1="450" y1="530" x2="450" y2="550" class="flow" marker-end="url(#arrow-indigo)" />
+</svg>

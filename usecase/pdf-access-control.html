@@ -1,429 +1,473 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Control access to your PDFs with MaiPDF's advanced access control features.">
-    <meta name="keywords" content="PDF access control, PDF security, document protection, PDF permissions, PDF restrictions">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="PDF Access Control | MaiPDF | Document Security">
-    <meta property="og:description" content="Control who can access your PDFs with MaiPDF's advanced access control features. Set permissions and restrictions for secure document sharing.">
-    <meta property="og:image" content="/maipdf-images/security.png">
-    <meta property="og:url" content="https://sendpdfonline.com/usecase/pdf-access-control.html">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="Control who can view your PDF, how many times, and for how long. Set view limits, require email verification, and revoke access instantly with MaiPDF.">
+    <meta name="keywords" content="PDF access control, limit PDF views, PDF view limit, PDF expiration, PDF password protection, revoke PDF access, email verification PDF">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>PDF Access Control — View Limits, Email Gates &amp; Expiration | MaiPDF</title>
     <link rel="canonical" href="https://sendpdfonline.com/usecase/pdf-access-control">
-    <title>PDF Access Control | MaiPDF | Document Security</title>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2563eb;
-            --secondary-color: #1e40af;
-            --accent-color: #f59e0b;
-            --text-color: #111827;
-            --muted-text: #4b5563;
-            --light-bg: #f3f4f6;
-            --card-bg: #ffffff;
-            --border-color: #e5e7eb;
-        }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-            line-height: 1.6;
-            background: linear-gradient(180deg, #f8fafc 0%, #eef2ff 100%);
-            color: var(--text-color);
-        }
-
-        .hero {
-            background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 55%, #2563eb 100%);
-            color: #fff;
-            padding: 5rem 0 4rem;
-            text-align: center;
-            margin-bottom: 2.2rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.15);
-        }
-
-        .hero .lead {
-            max-width: 760px;
-            margin: 0 auto;
-            opacity: 0.95;
-        }
-
-        .feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.5rem;
-            margin-bottom: 1.25rem;
-            box-shadow: 0 3px 14px rgba(15, 23, 42, 0.06);
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-
-        .feature-card:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 10px 24px rgba(15, 23, 42, 0.1);
-        }
-
-        .section-title {
-            color: var(--secondary-color);
-            margin-bottom: 1rem;
-            font-weight: 800;
-            font-size: 1.55rem;
-        }
-
-        .content-section h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.85rem;
-        }
-
-        .content-section ul,
-        .content-section ol {
-            padding-left: 1.25rem;
-        }
-
-        .content-section li {
-            margin-bottom: 0.45rem;
-        }
-
-        .cta-button {
-            display: inline-block;
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: #fff;
-            padding: 0.85rem 1.45rem;
-            border-radius: 10px;
-            text-decoration: none;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-            margin-top: 1rem;
-            box-shadow: 0 6px 16px rgba(37, 99, 235, 0.25);
-        }
-
-        .cta-button:hover {
-            color: #fff;
-            transform: translateY(-2px);
-            box-shadow: 0 10px 22px rgba(37, 99, 235, 0.35);
-        }
-
-        .footer {
-            background: #0f172a;
-            color: #e5e7eb;
-            padding: 2.25rem 0;
-            margin-top: 2.5rem;
-        }
-
-        .footer a {
-            color: #cbd5e1;
-            text-decoration: none;
-        }
-
-        .footer a:hover {
-            color: #fff;
-        }
-
-        .related-features {
-            background: #fff;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            padding: 1.5rem;
-            margin-top: 1.2rem;
-            box-shadow: 0 2px 10px rgba(15, 23, 42, 0.05);
-        }
-
-        .related-features h3 {
-            color: var(--secondary-color);
-            margin-bottom: 0.85rem;
-        }
-
-        .related-features ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
-
-        .related-features li {
-            margin-bottom: 0.65rem;
-        }
-
-        .related-features a {
-            color: var(--muted-text);
-            text-decoration: none;
-            transition: color 0.2s ease;
-            display: block;
-        }
-
-        .related-features a:hover {
-            color: var(--primary-color);
-        }
-
-        .related-features a i {
-            margin-right: 8px;
-            color: var(--primary-color);
-        }
-
-        @media (max-width: 768px) {
-            .hero {
-                padding: 3rem 0 2.5rem;
-            }
-
-            .hero h1 {
-                font-size: 1.95rem;
-            }
-
-            .mobile-fullbleed {
-                width: 100vw !important;
-                max-width: 100vw !important;
-                margin-left: calc(50% - 50vw);
-                margin-right: calc(50% - 50vw);
-                height: auto;
-                display: block;
-                border-radius: 0 !important;
-            }
-        }
-    </style>
-
-    <!-- Breadcrumb Structured Data -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
-        "@type": "BreadcrumbList",
-        "itemListElement": [
+        "@graph": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Article",
+                "headline": "PDF Access Control",
+                "description": "Decide who can view your PDF, how many times, and for how long. Set view limits, require email verification, and revoke access instantly.",
+                "datePublished": "2026-03-23",
+                "dateModified": "2026-03-23",
+                "author": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+                "publisher": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+                "mainEntityOfPage": "https://sendpdfonline.com/usecase/pdf-access-control",
+                "image": "/images/maipdf2026/show_off/openlimit.png"
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Usecase",
-                "item": "https://sendpdfonline.com/usecase/"
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sendpdfonline.com/" },
+                    { "@type": "ListItem", "position": 2, "name": "Use Cases", "item": "https://sendpdfonline.com/usecase/" },
+                    { "@type": "ListItem", "position": 3, "name": "PDF Access Control" }
+                ]
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "PDF Access Control",
-                "item": "https://sendpdfonline.com/usecase/pdf-access-control.html"
+                "@type": "FAQPage",
+                "mainEntity": [
+                    {
+                        "@type": "Question",
+                        "name": "Can I limit how many times a PDF can be opened?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. MaiPDF lets you set a specific view limit (e.g. 5 opens). Once the limit is reached, the link automatically becomes inaccessible." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I require email verification before someone views my PDF?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can enable an email verification gate so viewers must enter and verify their email address before accessing the document. This also captures their identity in your access records." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I revoke access to a PDF after sharing it?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. You can disable the link at any time from your dashboard. The URL will still exist but viewers will see a message that access has been revoked." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "Can I replace the PDF file without changing the link?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "Yes. MaiPDF allows you to upload a new version of your PDF while keeping the same sharing link. All existing recipients will see the updated file without needing a new URL." }
+                    },
+                    {
+                        "@type": "Question",
+                        "name": "What happens when a PDF expires?",
+                        "acceptedAnswer": { "@type": "Answer", "text": "When the expiration date passes, the link becomes inactive and viewers see a message that the document is no longer available. You can extend or remove the expiration at any time." }
+                    }
+                ]
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav class="bg-white border-bottom py-2">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/usecase/">Usecase</a></li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                <li class="breadcrumb-item"><a href="/usecase/" class="text-decoration-none">Use Cases</a></li>
                 <li class="breadcrumb-item active" aria-current="page">PDF Access Control</li>
             </ol>
         </div>
     </nav>
-    
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+
+    <section class="hero">
         <div class="container">
-            <a class="navbar-brand" href="https://maipdf.com">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="https://maipdf.com">Home</a>
-                    </li>
-                </ul>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <span class="badge bg-white text-dark mb-3"><i class="fas fa-clock me-1"></i> 7 min read &nbsp;|&nbsp; Security</span>
+                    <time datetime="2026-03-23" class="d-block small opacity-75 mb-2">March 23, 2026</time>
+                    <h1>PDF Access Control</h1>
+                    <p class="lead mt-3">Decide who can view your PDF, how many times, and for how long. Set view limits, require email verification, and revoke access instantly.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-shield-alt me-2"></i>Secure Your PDF Now
+                        </a>
+                        <a href="/features/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>All Features
+                        </a>
+                    </div>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/openlimit.png" alt="MaiPDF access control — set view limits on shared PDFs" class="hero-screenshot" loading="eager">
+                </div>
             </div>
         </div>
-    </nav>
+    </section>
 
-    <!-- Hero Section -->
-    <div class="hero">
+    <section class="py-5 mt-3">
         <div class="container">
-            <h1><i class="fas fa-key"></i> PDF Access Control</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: March 04, 2026
-                    </small>
-                </div>
-                
-            <p class="lead">Control who can access your PDFs with advanced security features</p>
-            <a href="https://sendpdfonline.com/" class="btn btn-light btn-lg me-3">Start Controlling Free</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Why Access Control Matters -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-question-circle"></i> Why PDF Access Control Matters</h2>
-            <p>In today's digital world, controlling who can access your PDFs is crucial. Whether it's sensitive business documents, confidential reports, or personal information, proper access control ensures your documents remain secure and only accessible to authorized individuals.</p>
-        </div>
-
-        <!-- Access Control Features -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-shield-alt"></i> MaiPDF's Access Control Features</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ul>
-                        <li>Password protection for document security</li>
-                        <li>Revocable links to stop access anytime</li>
-                        <li>IP address restrictions</li>
-                        <li>View limits (open count limits)</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <ul>
-                        <li>Device-based restrictions</li>
-                        <li>IP / Geo controls (when available)</li>
-                        <li>Download permissions</li>
-                        <li>Printing restrictions</li>
-            </ul>
-                </div>
+            <div class="text-center mb-5">
+                <p class="section-label">How It Works</p>
+                <h2 class="section-heading">Lock Down a PDF in 3 Steps</h2>
             </div>
-        </div>
-
-        <!-- How to Set Up Access Control -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-cogs"></i> How to Set Up Access Control</h2>
-            <div class="row">
-                <div class="col-md-6">
-                    <ol>
-                        <li>Upload your PDF to MaiPDF</li>
-                        <li>Configure access control settings</li>
-                        <li>Set user permissions and restrictions</li>
-                        <li>Share the document with authorized users</li>
-            </ol>
-                </div>
-                <div class="col-md-6">
-                    <img src="https://sendpdfonline.com/images/lockpdf.png" alt="Access Control Process" class="img-fluid mobile-fullbleed rounded">
-                </div>
-            </div>
-        </div>
-
-        <!-- Benefits -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-check-circle"></i> Benefits of PDF Access Control</h2>
-            <div class="row">
+            <div class="row g-4">
                 <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-lock"></i> Security</h3>
-                        <ul>
-                            <li>Protect sensitive information</li>
-                            <li>Prevent unauthorized access</li>
-                            <li>Control document distribution</li>
-                        </ul>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">Upload Your PDF</h3>
+                        <p class="text-muted">Drag and drop or browse to upload. Your document is encrypted and stored securely.</p>
+                        <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload a PDF to MaiPDF for access control" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-users"></i> User Management</h3>
-                        <ul>
-                            <li>Manage user permissions</li>
-                            <li>Review user access</li>
-                            <li>Revoke access when needed</li>
-                        </ul>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">Set Access Rules</h3>
+                        <p class="text-muted">Configure view limits, expiration dates, email verification, passwords, and download restrictions.</p>
+                        <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Configure PDF access control settings" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
                 <div class="col-md-4">
-                    <div class="content-section">
-                        <h3><i class="fas fa-chart-line"></i> Compliance</h3>
-                        <ul>
-                            <li>Meet security requirements</li>
-                            <li>Maintain audit trails</li>
-                            <li>Ensure data privacy</li>
-                        </ul>
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">Share with Confidence</h3>
+                        <p class="text-muted">Distribute the link knowing your document is protected. Revoke or update access anytime.</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Share controlled PDF link and QR code" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Related Features -->
-        <div class="related-features">
-            <h3><i class="fas fa-link"></i> Related Features</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="https://sendpdfonline.com/features/en/security/pdf-security-features"><i class="fas fa-shield-alt"></i> PDF Security Features</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/security/secure-pdf-access-control"><i class="fas fa-user-lock"></i> Secure PDF Access Control</a></li>
-                    </ul>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Access Control Features</p>
+                <h2 class="section-heading">Multiple Layers of Document Protection</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-hashtag"></i></div>
+                        <h3 class="h5 fw-bold">View Count Limits</h3>
+                        <p class="text-muted">Set a maximum number of opens (e.g. 1, 5, or 50). Once the limit is hit, the link automatically becomes inactive.</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="https://sendpdfonline.com/features/en/security/pdf-expiration-access-control"><i class="fas fa-clock"></i> PDF Expiration Access</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/security/pdf-security-best-practices"><i class="fas fa-check-circle"></i> Security Best Practices</a></li>
-                    </ul>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3 class="h5 fw-bold">Email Verification Gate</h3>
+                        <p class="text-muted">Require viewers to verify their email address before accessing the document. Captures identity in your audit log.</p>
+                    </div>
                 </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="https://sendpdfonline.com/features/en/security/prevent-downloading-maipdf"><i class="fas fa-download"></i> Prevent Downloading</a></li>
-                        <li><a href="https://sendpdfonline.com/features/en/security/set-pdf-print-restrictions"><i class="fas fa-print"></i> Print Restrictions</a></li>
-                    </ul>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-calendar-times"></i></div>
+                        <h3 class="h5 fw-bold">Expiration Dates</h3>
+                        <p class="text-muted">Set an auto-expire date. After that date, the link stops working — no manual intervention needed.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-key"></i></div>
+                        <h3 class="h5 fw-bold">Password Protection</h3>
+                        <p class="text-muted">Add a password that recipients must enter before viewing your PDF. Only people with the password can access it.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-ban"></i></div>
+                        <h3 class="h5 fw-bold">Revoke Access</h3>
+                        <p class="text-muted">Disable any shared link instantly from your dashboard. The URL remains but the document becomes inaccessible.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;"><i class="fas fa-sync-alt"></i></div>
+                        <h3 class="h5 fw-bold">Replace File, Same Link</h3>
+                        <p class="text-muted">Upload a new version of your PDF without changing the sharing URL. All recipients automatically see the updated file.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fff7ed; color: #ea580c;"><i class="fas fa-tint"></i></div>
+                        <h3 class="h5 fw-bold">Watermark Protection</h3>
+                        <p class="text-muted">Add dynamic watermarks with the viewer's email or custom text to deter screenshots and unauthorized sharing.</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #f0fdf4; color: #15803d;"><i class="fas fa-clipboard-list"></i></div>
+                        <h3 class="h5 fw-bold">Audit Trail</h3>
+                        <p class="text-muted">Every view is recorded with timestamp, device, and viewer identity — giving you a complete access history.</p>
+                    </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <!-- Related Articles -->
-        <div class="related-features">
-            <h3><i class="fas fa-newspaper"></i> Related Articles</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="https://sendpdfonline.com/article/sensitive-documents-security"><i class="fas fa-file-shield"></i> Sensitive Documents Security</a></li>
-                        <li><a href="https://sendpdfonline.com/article/pdf-control-lost"><i class="fas fa-exclamation-triangle"></i> PDF Control Lost</a></li>
-                    </ul>
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">Email Verification</p>
+                    <h2 class="section-heading">Know Exactly Who Reads Your PDF</h2>
+                    <p class="text-muted">When email verification is enabled, viewers must enter their email and confirm it before the PDF loads. This gives you a verified record of every person who accessed your document.</p>
                 </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="https://sendpdfonline.com/article/confidential-documents-risk"><i class="fas fa-user-shield"></i> Confidential Documents Risk</a></li>
-                        <li><a href="https://sendpdfonline.com/article/limit-pdf-open-times"><i class="fas fa-clock"></i> Limit PDF Open Times</a></li>
-            </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="https://sendpdfonline.com/article/pdf-share-expire"><i class="fas fa-hourglass-end"></i> PDF Share Expire</a></li>
-                        <li><a href="https://sendpdfonline.com/article/controlling-pdf-access"><i class="fas fa-lock"></i> Controlling PDF Access</a></li>
-        </ul>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/email verify.png" alt="Email verification gate for PDF access" class="img-fluid screenshot" style="max-width: 480px;" loading="lazy">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    <footer class="footer">
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Access Layers</p>
+                <h2 class="section-heading">Stack Multiple Layers of Protection</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle bg-white" style="border-radius: 12px; overflow: hidden;">
+                    <thead style="background: var(--blue-600); color: white;">
+                        <tr>
+                            <th style="width: 5%;">#</th>
+                            <th style="width: 22%;">Layer</th>
+                            <th>What It Does</th>
+                            <th style="width: 18%;">When to Use</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-bold text-center">1</td>
+                            <td class="fw-semibold"><i class="fas fa-key text-primary me-2"></i>Password</td>
+                            <td>Requires a password before the PDF loads. Only people who know the password can access it.</td>
+                            <td><span class="badge bg-primary">Confidential docs</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-center">2</td>
+                            <td class="fw-semibold"><i class="fas fa-envelope text-success me-2"></i>Email Verify</td>
+                            <td>Viewers must verify their email address. Captures identity and creates an audit trail.</td>
+                            <td><span class="badge bg-success">Contracts &amp; NDAs</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-center">3</td>
+                            <td class="fw-semibold"><i class="fas fa-hashtag text-warning me-2"></i>View Limit</td>
+                            <td>Automatically disables the link after a set number of opens (e.g. 1, 5, 10).</td>
+                            <td><span class="badge bg-warning text-dark">One-time access</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-center">4</td>
+                            <td class="fw-semibold"><i class="fas fa-calendar-times text-danger me-2"></i>Expiration</td>
+                            <td>Link stops working after a specific date. No manual cleanup needed.</td>
+                            <td><span class="badge bg-danger">Time-sensitive offers</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-center">5</td>
+                            <td class="fw-semibold"><i class="fas fa-tint text-info me-2"></i>Watermark</td>
+                            <td>Overlays viewer-specific text on every page to deter screenshots and redistribution.</td>
+                            <td><span class="badge bg-info">Portfolios &amp; IP</span></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-bold text-center">6</td>
+                            <td class="fw-semibold"><i class="fas fa-download text-secondary me-2"></i>No Download</td>
+                            <td>Disables the download button. Viewers can only read in the online viewer.</td>
+                            <td><span class="badge bg-secondary">Prevent copies</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <p class="text-muted text-center mt-3 small">All layers can be combined on a single document for maximum protection.</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-heading">Frequently Asked Questions</h2>
+            </div>
+            <div class="accordion" id="faqAccordion" style="max-width: 800px; margin: 0 auto;">
+                <div class="accordion-item border rounded-3 mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Can I limit how many times a PDF can be opened?</button>
+                    </h2>
+                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">Yes. MaiPDF lets you set a specific view limit (e.g. 5 opens). Once the limit is reached, the link automatically becomes inaccessible.</div>
+                    </div>
+                </div>
+                <div class="accordion-item border rounded-3 mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I require email verification before someone views my PDF?</button>
+                    </h2>
+                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">Yes. You can enable an email verification gate so viewers must enter and verify their email address before accessing the document. This also captures their identity in your access records.</div>
+                    </div>
+                </div>
+                <div class="accordion-item border rounded-3 mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Can I revoke access to a PDF after sharing it?</button>
+                    </h2>
+                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">Yes. You can disable the link at any time from your dashboard. The URL will still exist but viewers will see a message that access has been revoked.</div>
+                    </div>
+                </div>
+                <div class="accordion-item border rounded-3 mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Can I replace the PDF file without changing the link?</button>
+                    </h2>
+                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">Yes. MaiPDF allows you to upload a new version of your PDF while keeping the same sharing link. All existing recipients will see the updated file without needing a new URL.</div>
+                    </div>
+                </div>
+                <div class="accordion-item border rounded-3 mb-3">
+                    <h2 class="accordion-header">
+                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">What happens when a PDF expires?</button>
+                    </h2>
+                    <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                        <div class="accordion-body text-muted">When the expiration date passes, the link becomes inactive and viewers see a message that the document is no longer available. You can extend or remove the expiration at any time.</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Related</p>
+                <h2 class="section-heading">Explore More Use Cases</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Branding</span>
+                            <h3><a href="/usecase/pdf-branding">PDF Branding &amp; Customization</a></h3>
+                            <p class="text-muted small">Add dynamic watermarks and professional branding to every PDF you share.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Analytics</span>
+                            <h3><a href="/usecase/pdf-sharing-analytics">PDF Sharing Analytics</a></h3>
+                            <p class="text-muted small">Track who opens your PDFs with real-time view counts, timestamps, and Telegram alerts.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">Encryption</span>
+                            <h3><a href="/usecase/pdf-encryption">PDF Encryption</a></h3>
+                            <p class="text-muted small">Encrypt your PDFs with password protection and prevent unauthorized editing or copying.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-info mb-2">Sharing</span>
+                            <h3><a href="/usecase/secure-pdf-sharing">Secure PDF Sharing</a></h3>
+                            <p class="text-muted small">Share confidential documents with passwords, expiration dates, and download restrictions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">Ready to Control Your PDF Access?</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">Upload a PDF, set view limits and expiration, then share with confidence — it takes less than a minute.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-shield-alt me-2"></i>Secure Your PDF — Free
+                    </a>
+                    <a href="/usecase/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-folder-open me-2"></i>All Use Cases
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-0">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h4>MaiPDF</h4>
-                    <p>Professional PDF Sharing and Security Solutions</p>
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small mb-0" style="color: #6b7280;">&copy; 2026 SendPDFOnline.com</p>
                 </div>
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="https://maipdf.com">Home</a></li>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
+                        <li class="mb-2"><a href="/features/">Features</a></li>
                     </ul>
                 </div>
-                <div class="col-md-4">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a></li>
-                        <li><a href="https://maipdf.com/contact">Contact Us</a></li>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">Blog</a></li>
+                        <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+                        <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
                     </ul>
                 </div>
-            </div>
-            <div class="text-center mt-4">
-        <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Popular</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+                        <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+                        <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">Contact Us</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

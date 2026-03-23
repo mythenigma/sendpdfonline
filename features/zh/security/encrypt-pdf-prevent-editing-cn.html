@@ -1,240 +1,528 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="学习如何为PDF加密，防止编辑和修改，确保文件内容的安全性。">
-    <meta name="keywords" content="PDF加密, PDF安全, 防止编辑, PDF保护">
-    <meta name="author" content="MaiPDF Team">
-    <meta name="robots" content="index, follow">
+    <meta name="description" content="将 PDF 转为不可编辑、不可复制、不可打印的安全文档。支持动态水印和阅读次数限制，防止内容被篡改或盗用。MaiPDF 加密指南。">
+    <meta name="keywords" content="PDF加密, PDF防编辑, 禁止复制PDF, 禁止打印PDF, PDF水印, PDF转图片, MaiPDF">
+    <meta name="author" content="MaiPDF">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>PDF 加密防编辑 — 禁止复制、编辑和打印 | MaiPDF</title>
     <link rel="canonical" href="https://sendpdfonline.com/features/zh/security/encrypt-pdf-prevent-editing-cn">
-    
-    <!-- Open Graph / Facebook -->
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
     <meta property="og:type" content="article">
-    <meta property="og:url" content="https://sendpdfonline.com/features/zh/security/encrypt-pdf-prevent-editing-cn.html">
-    <meta property="og:title" content="如何给PDF加密防止编辑 | MaiPDF">
-    <meta property="og:description" content="学习如何为PDF加密，防止编辑和修改，确保文件内容的安全性。">
-    <meta property="og:image" content="https://maipdf.com/pictures/MaiFile/head.png">
-    
-    <!-- Twitter -->
+    <meta property="og:url" content="https://sendpdfonline.com/features/zh/security/encrypt-pdf-prevent-editing-cn">
+    <meta property="og:title" content="PDF 加密防编辑 — 禁止复制、编辑和打印 | MaiPDF">
+    <meta property="og:description" content="将 PDF 转为不可编辑、不可复制、不可打印的安全文档。支持动态水印和阅读次数限制。">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/pdf icon of no printing no downloading.png">
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://sendpdfonline.com/features/zh/security/encrypt-pdf-prevent-editing-cn.html">
-    <meta property="twitter:title" content="如何给PDF加密防止编辑">
-    <meta property="twitter:description" content="学习如何为PDF加密，防止编辑和修改，确保文件内容的安全性。">
-    <meta property="twitter:image" content="https://maipdf.com/pictures/MaiFile/head.png">
-    
-    <title>如何给PDF加密防止编辑</title>
-    
-    <!-- Breadcrumb Structured Data -->
+    <meta property="twitter:title" content="PDF 加密防编辑 | MaiPDF">
+    <meta property="twitter:description" content="将 PDF 转为不可编辑、不可复制、不可打印的安全文档。支持动态水印和阅读次数限制。">
+    <meta property="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/pdf icon of no printing no downloading.png">
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
-            {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Features",
-                "item": "https://sendpdfonline.com/features/"
-            },
-            {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "如何给PDF加密防止编辑",
-                "item": "https://sendpdfonline.com/features/zh/security/encrypt-pdf-prevent-editing-cn.html"
-            }
+            {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "功能", "item": "https://sendpdfonline.com/features/"},
+            {"@type": "ListItem", "position": 3, "name": "PDF 加密防编辑", "item": "https://sendpdfonline.com/features/zh/security/encrypt-pdf-prevent-editing-cn"}
         ]
     }
     </script>
-    
-    <!-- Article Structured Data -->
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "Article",
-        "headline": "如何给PDF加密防止编辑",
-        "description": "学习如何为PDF加密，防止编辑和修改，确保文件内容的安全性。",
-        "author": {
-            "@type": "Organization",
-            "name": "MaiPDF Team"
-        },
-        "publisher": {
-            "@type": "Organization",
-            "name": "MaiPDF",
-            "logo": {
-                "@type": "ImageObject",
-                "url": "https://maipdf.com/pictures/MaiFile/head.png"
-            }
-        },
-        "datePublished": "2025-01-15",
-        "dateModified": "2025-12-03"
+        "headline": "PDF 加密防编辑 — 禁止复制、编辑和打印",
+        "description": "将 PDF 转为不可编辑、不可复制、不可打印的安全文档。支持动态水印和阅读次数限制，防止内容被篡改或盗用。",
+        "image": "https://sendpdfonline.com/images/maipdf2026/show_off/pdf icon of no printing no downloading.png",
+        "author": {"@type": "Organization", "name": "MaiPDF"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "logo": {"@type": "ImageObject", "url": "https://sendpdfonline.com/favicon.ico"}},
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23"
     }
     </script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "PDF 加密后能100%防复制吗？",
+                "acceptedAnswer": {"@type": "Answer", "text": "通过 MaiPDF 云分享方式，PDF 以在线页面形式展示，禁止右键、复制和下载，可有效防止内容被直接复制。配合动态水印，即使截图也能追溯来源。如需更高安全性，可选择 PDF 转图片加密模式，将每页转为图片后加密。"}
+            },
+            {
+                "@type": "Question",
+                "name": "加密会影响阅读体验吗？",
+                "acceptedAnswer": {"@type": "Answer", "text": "不会。MaiPDF 云分享模式下，收件人通过浏览器在线查看 PDF，体验流畅，支持翻页和缩放。PDF 转图片模式也保持清晰的阅读效果，不影响正常使用。"}
+            },
+            {
+                "@type": "Question",
+                "name": "可以给加密 PDF 添加水印吗？",
+                "acceptedAnswer": {"@type": "Answer", "text": "可以。MaiPDF 支持动态水印功能，会自动在文档上叠加查看者的邮箱、IP 地址或自定义文字等信息。水印在每次查看时动态生成，无法被去除。"}
+            }
+        ]
+    }
+    </script>
+
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f9f9f9;
-        }
-        .container {
-            margin-top: 30px;
-        }
-        .section-title {
-            color: #333;
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-        .section-content {
-            font-size: 16px;
-            color: #555;
-        }
-        .btn-primary {
-            background-color: #007bff;
-            border: none;
-            color: white;
-        }
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            font-size: 14px;
-            color: #777;
-        }
-        .row {
-            margin-bottom: 20px;
-        }
-        .col-icon {
-            font-size: 48px;
-            color: #007bff;
-            margin-bottom: 20px;
-        }
-        .img-fluid {
-            max-width: 100%;
-            height: auto;
-        }
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
     </style>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
 <body>
-    <div class="container">
-        <h1 class="text-center">如何给PDF加密防止编辑</h1>
-        <div class="text-center">
-            <img src="https://maipdf.com/pictures/MaiFile/head.png" class="img-fluid" alt="MaiPDF Logo">
-        </div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="section-content">
-                    <p>在工作中，我们经常需要对PDF文件进行保护，防止他人修改或编辑文件内容。通过加密PDF文件，我们可以确保文件的安全性，并限制未经授权的编辑或复制行为。下面将介绍如何为PDF文件设置加密，保护文件不被编辑。</p>
+
+    <section class="hero">
+        <div class="container">
+            <nav aria-label="breadcrumb" class="mb-3">
+                <ol class="breadcrumb mb-0" style="font-size: 0.85rem;">
+                    <li class="breadcrumb-item"><a href="https://sendpdfonline.com/" class="text-white-50">首页</a></li>
+                    <li class="breadcrumb-item"><a href="https://sendpdfonline.com/features/" class="text-white-50">功能</a></li>
+                    <li class="breadcrumb-item text-white active" aria-current="page">PDF 加密防编辑</li>
+                </ol>
+            </nav>
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>PDF 加密防编辑</h1>
+                    <p class="lead mt-3">将 PDF 转为不可编辑、不可复制、不可打印的安全文档。支持动态水印和阅读次数限制，防止内容被篡改或盗用。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-paper-plane me-2"></i>立即体验
+                        </a>
+                        <a href="/features/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>查看所有功能
+                        </a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 6 分钟阅读 &nbsp; <i class="fas fa-calendar me-1"></i> 2026年3月23日 &nbsp; <i class="fas fa-tag me-1"></i> 安全</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/pdf icon of no printing no downloading.png" alt="PDF 加密 — 禁止打印和下载" class="hero-screenshot" loading="eager">
                 </div>
             </div>
-            <div class="col-md-6 text-center">
-                <i class="fas fa-lock col-icon"></i>
-                <h4>PDF加密</h4>
-                <p>为PDF文件设置密码保护，防止他人编辑或修改内容。</p>
-                <img src="https://maipdf.com/pictures/MaiFile/body.png" class="img-fluid" alt="PDF加密">
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">为什么需要加密</p>
+                <h2 class="section-heading">PDF 一旦泄露，后果不堪设想</h2>
+                <p class="text-muted mx-auto" style="max-width: 640px;">普通 PDF 可以被任意复制、编辑和打印。合同条款可能被篡改，机密报告可能被转发，培训材料可能被盗用。MaiPDF 提供多层加密方案，从根源上杜绝这些风险。</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #fee2e2; color: #dc2626;">
+                            <i class="fas fa-copy"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">禁止复制</h3>
+                        <p class="small text-muted mb-0">禁用文字选择和右键菜单，防止内容被复制粘贴到其他文档。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #eff6ff; color: var(--blue-600);">
+                            <i class="fas fa-edit"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">禁止编辑</h3>
+                        <p class="small text-muted mb-0">文档以只读方式呈现，无法修改任何文字、图片或格式。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #fef3c7; color: #d97706;">
+                            <i class="fas fa-print"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">禁止打印</h3>
+                        <p class="small text-muted mb-0">关闭打印功能，防止通过打印方式获取文件纸质副本。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #f0fdf4; color: #16a34a;">
+                            <i class="fas fa-download"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">禁止下载</h3>
+                        <p class="small text-muted mb-0">隐藏下载按钮，文件只能在浏览器中在线查看。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #fce4ec; color: #e91e63;">
+                            <i class="fas fa-tint"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">动态水印</h3>
+                        <p class="small text-muted mb-0">自动叠加查看者身份信息水印，震慑截图和泄密。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #f3e8ff; color: #7c3aed;">
+                            <i class="fas fa-image"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">PDF 转图片加密</h3>
+                        <p class="small text-muted mb-0">将每页 PDF 转为加密图片，从根本上防止文字提取。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #e0f2fe; color: #0284c7;">
+                            <i class="fas fa-eye"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">阅读次数限制</h3>
+                        <p class="small text-muted mb-0">设置文档最大查看次数，达到上限后自动失效。</p>
+                    </div>
+                </div>
+                <div class="col-md-3 col-6">
+                    <div class="feature-card text-center">
+                        <div class="feature-icon mx-auto" style="background: #ecfdf5; color: #059669;">
+                            <i class="fas fa-calendar-times"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">到期时间</h3>
+                        <p class="small text-muted mb-0">设定链接有效期，过期后文档自动无法访问。</p>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section-title">1. 使用PDF阅读器设置密码保护</div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="section-content">
-                    <p>加密PDF的最常见方法是使用PDF阅读器自带的加密功能。在PDF编辑器（如Adobe Acrobat、Foxit PDF等）中，你可以选择为PDF文件设置密码，防止他人编辑或复制文件内容。</p>
-                    <ul>
-                        <li>打开你的PDF文件。</li>
-                        <li>选择“文件”菜单中的“保护”或“设置密码”选项。</li>
-                        <li>设置一个强密码，确保只有知道密码的人才能修改或编辑文件。</li>
-                        <li>保存文件并确保文件加密成功。</li>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">安全架构</p>
+                <h2 class="section-heading">MaiPDF 安全特性一览</h2>
+            </div>
+            <div style="max-width: 800px; margin: 0 auto; background: white; border-radius: 16px; padding: 2rem; box-shadow: 0 4px 20px rgba(0,0,0,0.08);">
+                <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-security-features.svg" alt="MaiPDF 安全特性流程图" class="img-fluid" style="width: 100%;">
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">三步操作</p>
+                <h2 class="section-heading">如何加密您的 PDF</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="step-num">1</div>
+                            <h3 class="h5 mb-0 fw-bold">上传 PDF</h3>
+                        </div>
+                        <p class="text-muted">将需要加密的 PDF 文件上传到 MaiPDF 平台，支持拖拽上传。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/工具页面上传页.png" alt="上传 PDF 到 MaiPDF" class="img-fluid screenshot">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="step-num">2</div>
+                            <h3 class="h5 mb-0 fw-bold">选择加密方式</h3>
+                        </div>
+                        <p class="text-muted">选择云分享加密或 PDF 转图片加密，配置禁止复制、打印、下载等选项和动态水印。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="MaiPDF 加密设置界面" class="img-fluid screenshot">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card">
+                        <div class="d-flex align-items-center gap-3 mb-3">
+                            <div class="step-num">3</div>
+                            <h3 class="h5 mb-0 fw-bold">生成加密文档</h3>
+                        </div>
+                        <p class="text-muted">一键生成加密的安全链接或加密图片文件，通过任何渠道安全分享。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="MaiPDF 生成加密链接" class="img-fluid screenshot">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">方案对比</p>
+                <h2 class="section-heading">三种加密方式，按需选择</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered text-center align-middle">
+                    <thead style="background: var(--blue-50);">
+                        <tr>
+                            <th style="width: 25%;">对比项</th>
+                            <th style="width: 25%;">普通加密</th>
+                            <th style="width: 25%; background: var(--blue-600); color: white;">MaiPDF 云加密</th>
+                            <th style="width: 25%;">PDF 转图片加密</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td class="fw-semibold">禁止复制文字</td>
+                            <td><i class="fas fa-minus text-muted"></i> 可被破解</td>
+                            <td><i class="fas fa-check text-success"></i> 在线查看</td>
+                            <td><i class="fas fa-check text-success"></i> 文字转图片</td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">禁止编辑</td>
+                            <td><i class="fas fa-minus text-muted"></i> 可被破解</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">禁止打印</td>
+                            <td><i class="fas fa-minus text-muted"></i> 可被破解</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">动态水印</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">阅读次数限制</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">到期时间</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">撤销访问</td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-times text-danger"></i></td>
+                        </tr>
+                        <tr>
+                            <td class="fw-semibold">离线查看</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                            <td><i class="fas fa-times text-danger"></i> 需联网</td>
+                            <td><i class="fas fa-check text-success"></i></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <p class="section-label">云加密方案</p>
+                    <h2 class="section-heading">MaiPDF 云加密：最强保护</h2>
+                    <p class="text-muted">通过 MaiPDF 云分享，您的 PDF 不会被直接下载。收件人只能在浏览器中在线查看，所有复制、编辑、打印、下载操作均被禁止。配合动态水印和阅读次数限制，实现多层次安全防护。</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>原始 PDF 文件不离开服务器</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>浏览器端禁用右键和快捷键</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>动态水印显示查看者身份信息</li>
+                        <li class="mb-2"><i class="fas fa-check-circle text-success me-2"></i>随时撤销或修改访问权限</li>
                     </ul>
-                    <p>重要提示：密码设置是由PDF阅读器本身完成的，MaiPDF平台并不会直接设置文件密码。</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/分享限制.png" alt="MaiPDF 云加密保护" class="img-fluid screenshot" style="max-width: 480px;">
                 </div>
             </div>
-            <div class="col-md-6 text-center">
-                <i class="fas fa-key col-icon"></i>
-                <h4>设置密码</h4>
-                <p>通过PDF阅读器为文件设置强密码，确保文件内容安全。</p>
-                <img src="https://maipdf.com/pictures/MaiFile/setting2025.png" class="img-fluid" alt="设置密码">
-            </div>
         </div>
+    </section>
 
-        <div class="section-title">2. 限制编辑权限</div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="section-content">
-                    <p>除了设置文件密码外，你还可以限制文件的编辑权限，确保其他用户无法对文件进行编辑。</p>
-                    <ul>
-                        <li><strong>防止复制内容</strong>：你可以禁用文件内容的复制功能，防止他人复制文件中的文字。</li>
-                        <li><strong>禁止修改文件</strong>：通过设置限制，禁止他人编辑文件中的任何元素。</li>
-                        <li><strong>打印限制</strong>：你可以设置禁止文件的打印功能，确保文件内容不会被纸质化。</li>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 text-center mb-4 mb-lg-0 order-lg-1">
+                    <img src="/images/maipdf2026/dynamic_water_mark_example.jpg" alt="MaiPDF 动态水印示例" class="img-fluid screenshot" style="max-width: 480px;">
+                </div>
+                <div class="col-lg-6 order-lg-0">
+                    <p class="section-label">PDF 转图片</p>
+                    <h2 class="section-heading">PDF 转图片加密：从根源防止复制</h2>
+                    <p class="text-muted">对于需要离线分发的场景，MaiPDF 提供 PDF 转图片加密功能。将每一页 PDF 转换为高清图片，文字内容变成图像，从根本上无法被选取或复制。</p>
+                    <ul class="list-unstyled mt-3">
+                        <li class="mb-2"><i class="fas fa-shield-halved text-primary me-2"></i>文字转为图片，无法被 OCR 轻易识别</li>
+                        <li class="mb-2"><i class="fas fa-shield-halved text-primary me-2"></i>可叠加静态水印</li>
+                        <li class="mb-2"><i class="fas fa-shield-halved text-primary me-2"></i>支持离线查看</li>
+                        <li class="mb-2"><i class="fas fa-shield-halved text-primary me-2"></i>适合培训材料、考试资料等场景</li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-6 text-center">
-                <i class="fas fa-edit col-icon"></i>
-                <h4>编辑权限</h4>
-                <p>限制文件编辑、复制和打印权限，增强文件安全性。</p>
-                <img src="https://maipdf.com/pictures/MaiPDF/showpdf.png" class="img-fluid" alt="编辑权限">
-            </div>
         </div>
+    </section>
 
-        <div class="section-title">3. 为什么PDF密码设置如此重要</div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="section-content">
-                    <p>设置PDF密码可以有效防止未经授权的编辑和修改，尤其是当文件包含敏感信息时。文件的密码保护确保只有授权的用户才能对文件进行编辑或查看内容。这样，你可以确保文件的机密性，并防止文件内容被篡改。</p>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">适用场景</p>
+                <h2 class="section-heading">哪些文件需要加密防编辑？</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #eff6ff; color: var(--blue-600);">
+                            <i class="fas fa-file-contract"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">合同与协议</h3>
+                        <p class="small text-muted mb-0">防止合同条款被篡改，确保法律文件的完整性和真实性。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #f0fdf4; color: #16a34a;">
+                            <i class="fas fa-book"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">培训材料与课件</h3>
+                        <p class="small text-muted mb-0">保护知识产权，防止付费课程内容被免费传播和盗用。</p>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;">
+                            <i class="fas fa-chart-pie"></i>
+                        </div>
+                        <h3 class="h6 fw-bold">商业报告与数据</h3>
+                        <p class="small text-muted mb-0">保护商业机密和财务数据，防止敏感信息被竞争对手获取。</p>
+                    </div>
                 </div>
             </div>
-            <div class="col-md-6 text-center">
-                <i class="fas fa-shield-alt col-icon"></i>
-                <h4>保护机密信息</h4>
-                <p>设置密码可以有效保护文件内容，防止敏感信息泄露。</p>
-                <img src="https://maipdf.com/pictures/MaiFile/jietu%20.png" class="img-fluid" alt="保护机密信息">
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">FAQ</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden" style="box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">PDF 加密后能100%防复制吗？</button>
+                            </h3>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">通过 MaiPDF 云分享方式，PDF 以在线页面形式展示，禁止右键、复制和下载，可有效防止内容被直接复制。配合动态水印，即使截图也能追溯来源。如需更高安全性，可选择 PDF 转图片加密模式，将每页转为图片后加密。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden" style="box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">加密会影响阅读体验吗？</button>
+                            </h3>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">不会。MaiPDF 云分享模式下，收件人通过浏览器在线查看 PDF，体验流畅，支持翻页和缩放。PDF 转图片模式也保持清晰的阅读效果，不影响正常使用。</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden" style="box-shadow: 0 2px 8px rgba(0,0,0,0.06);">
+                            <h3 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">可以给加密 PDF 添加水印吗？</button>
+                            </h3>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">可以。MaiPDF 支持动态水印功能，会自动在文档上叠加查看者的邮箱、IP 地址或自定义文字等信息。水印在每次查看时动态生成，无法被去除。</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
+    </section>
 
-        <div class="section-title">4. 如何通过MaiPDF分享加密PDF文件</div>
-        <div class="row">
-            <div class="col-md-6">
-                <div class="section-content">
-                    <p>通过MaiPDF，你可以方便地上传并分享加密后的PDF文件。尽管文件加密密码是由PDF阅读器设置的，但你可以利用MaiPDF的链接和二维码分享功能，将加密后的文件分享给他人，确保文件在浏览时仍然需要密码验证。</p>
-                    <ul>
-                        <li><strong>上传加密PDF文件</strong>：将加密后的PDF文件上传到MaiPDF平台。</li>
-                        <li><strong>分享链接或二维码</strong>：生成文件的独特链接或二维码，通过邮件或社交媒体分享给收件人。</li>
-                        <li><strong>文件访问控制</strong>：设置文件的访问权限，确保文件不会泄漏给未授权的用户。</li>
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">立即上传 PDF，体验安全分享</h2>
+                <p class="mb-4 opacity-90" style="max-width: 480px; margin: 0 auto;">上传 PDF，选择加密方式，生成安全链接 — 整个过程不到一分钟。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-paper-plane me-2"></i>立即体验
+                    </a>
+                    <a href="/features/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>查看所有功能
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">PDF 加密与安全分享专业指南 — 保护您的文件不被篡改、复制或盗用。</p>
+                    <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/">功能列表</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">博客</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
+                        <li class="mb-2"><a href="/features/zh/security/">安全功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">热门</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/features/zh/security/share-pdf-online-securely.html">安全分享 PDF</a></li>
+                        <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF 转二维码</a></li>
+                        <li class="mb-2"><a href="/features/en/security/pdf-security-features">安全特性</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">联系我们</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">站点地图</a></li>
                     </ul>
                 </div>
             </div>
-            <div class="col-md-6 text-center">
-                <i class="fas fa-share-alt col-icon"></i>
-                <h4>分享加密文件</h4>
-                <p>利用MaiPDF轻松分享加密后的PDF文件。</p>
-                <img src="https://maipdf.com/pictures/MaiFile/result.png" class="img-fluid" alt="分享加密文件">
-            </div>
         </div>
-
-        <div class="section-title">5. 总结</div>
-        <div class="section-content">
-            <p>通过PDF阅读器为文件设置密码，可以有效保护文件内容，防止未授权的编辑和复制。配合MaiPDF平台的链接和二维码功能，文件不仅能安全地分享，还能确保只有授权用户能够查看文件。加密PDF文件是确保文件安全性和保密性的有效手段。</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2025 MaiPDF</p>
-        <div style="margin-top: 1rem;">
-            <a href="https://sendpdfonline.com/" style="margin: 0 1rem; color: #007bff;">首页</a>
-            <a href="https://sendpdfonline.com/features/" style="margin: 0 1rem; color: #007bff;">功能</a>
-            <a href="https://sendpdfonline.com/features/zh/security/" style="margin: 0 1rem; color: #007bff;">安全功能</a>
-            <a href="https://www.maipdf.cn" style="margin: 0 1rem; color: #007bff;" target="_blank" rel="noopener">使用MaiPDF</a>
-        </div>
-        <img src="https://maipdf.com/pictures/MaiFile/cnresult.png" class="img-fluid" alt="MaiPDF Footer" style="max-width: 300px; margin-top: 1rem;">
     </footer>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

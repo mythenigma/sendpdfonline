@@ -1,277 +1,535 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="zh">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta http-equiv="X-UA-Compatible" content="ie=edge">
-  <meta name="keywords" content="MaiPDF, 动态二维码水印, PDF文档保护, 安全PDF, 动态二维码">
-  <meta name="description" content="MaiPDF提供了一种创新的动态二维码水印功能，帮助用户保护PDF文档安全，防止文档泄露和盗版。通过二维码水印，追溯泄露源头。">
-  <meta name="author" content="MaiPDF">
-  <title>MaiPDF 动态二维码水印功能</title>
- <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-  <!-- Bootstrap 5 CSS -->
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-
-  <!-- FontAwesome -->
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
-
-  <!-- Custom CSS -->
-  <style>
-    body {
-      background-color: #f5f7f8;
-      font-family: 'Arial', sans-serif;
-      color: #444;
-    }
-    header {
-      background-color: #ffffff;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-      padding: 40px 0;
-      text-align: center;
-    }
-    .header-icon {
-      font-size: 50px;
-      color: #2C8C99;
-    }
-    .header-text {
-      font-size: 1.4rem;
-      color: #2C8C99;
-    }
-    .container {
-      max-width: 900px;
-      margin-top: 40px;
-      padding: 40px;
-      background-color: #ffffff;
-      border-radius: 15px;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
-    }
-    h1, h2 {
-      color: #2C8C99;
-    }
-    h3 {
-      color: #555;
-      margin-top: 30px;
-    }
-    p, ul, ol {
-      font-size: 1.1rem;
-      line-height: 1.8;
-    }
-    .section-title {
-      color: #2F4F4F;
-      font-weight: bold;
-      font-size: 1.3rem;
-    }
-    .lead {
-      font-size: 1.2rem;
-      color: #6c757d;
-    }
-    .icon {
-      color: #2C8C99;
-    }
-    .img-placeholder {
-      width: 100%;
-      height: 300px;
-      background-color: #e1e1e1;
-      border-radius: 10px;
-      margin-top: 20px;
-      display: block;
-    }
-    footer {
-      background-color: #f1f1f1;
-      padding: 30px 0;
-      text-align: center;
-      margin-top: 40px;
-      color: #777;
-    }
-    .footer-links a {
-      text-decoration: none;
-      color: #2C8C99;
-      margin: 0 15px;
-      font-size: 1.1rem;
-    }
-    .footer-links a:hover {
-      color: #45a3b1;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MaiPDF 动态二维码水印 | 麦瓜PDF</title>
+    <meta name="description" content="MaiPDF 动态二维码水印：每次打开 PDF 显示访客信息与水印二维码，便于追溯泄露来源。含设置步骤、与无水印对比及常见问题。">
+    <meta name="keywords" content="动态水印,二维码水印,PDF水印,防泄露,追溯,MaiPDF,麦瓜PDF">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="MaiPDF Team">
+    <link rel="canonical" href="https://sendpdfonline.com/features/zh/watermark/动态水印maipdf">
+    <meta property="og:title" content="MaiPDF 动态二维码水印 | 麦瓜PDF">
+    <meta property="og:description" content="每次打开显示访客信息与水印二维码，便于追溯泄露来源。">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/安全设置.png">
+    <meta property="og:url" content="https://sendpdfonline.com/features/zh/watermark/动态水印maipdf">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiPDF">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="MaiPDF 动态二维码水印 | 麦瓜PDF">
+    <meta name="twitter:description" content="每次打开显示访客信息与水印二维码，便于追溯泄露来源。">
+    <meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/安全设置.png">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "动态二维码水印保护 PDF",
+        "description": "PDF 动态二维码水印，防泄露追溯（MaiPDF）。每次打开显示访客信息与水印二维码，便于追溯泄露来源。",
+        "image": "https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/安全设置.png",
+        "author": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com"},
+        "publisher": {"@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com", "logo": {"@type": "ImageObject", "url": "https://sendpdfonline.com/images/logo.png"}},
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "mainEntityOfPage": "https://sendpdfonline.com/features/zh/watermark/动态水印maipdf"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "功能", "item": "https://sendpdfonline.com/features/"},
+            {"@type": "ListItem", "position": 3, "name": "中文功能", "item": "https://sendpdfonline.com/features/zh/"},
+            {"@type": "ListItem", "position": 4, "name": "动态二维码水印", "item": "https://sendpdfonline.com/features/zh/watermark/动态水印maipdf"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "什么是 MaiPDF 动态二维码水印？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "在麦瓜 PDF（MaiPDF）中开启动态水印后，每次有人打开在线预览，页面会叠加访客相关信息与可扫描的水印二维码。与固定印刷式水印不同，内容可随访问上下文变化，便于在泄密截图或翻拍中留下线索。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "动态水印如何帮助追溯泄露？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "水印中可包含身份线索或二维码，泄露样本可与某次访问记录对应，缩小排查范围。配合访问日志与设备信息，可进一步定位异常传播路径。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "开启水印会影响阅读体验吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "水印以半透明方式叠加，阅读仍可进行。若文档对版式极度敏感，可与法务或设计同事评估透明度与密度，在安全与可读性之间折中。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "动态水印能替代法律合同与保密协议吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "不能。水印属于技术威慑与取证辅助，合规仍依赖制度、协议与流程。建议在对外发送机密文件时同时保留审批与收件人记录。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "在哪里开启动态二维码水印？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "上传 PDF 后，在安全设置页找到水印与防泄露相关选项，按向导开启动态二维码水印并保存。生成分享链接后，访客打开即可看到对应水印效果。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        .flowchart-wrap { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
+        .flowchart-wrap img { max-width: 100%; height: auto; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
-
 <body>
-  <header class="text-center">
-    <div class="bg-primary text-white py-4">
-      <h1><i class="fas fa-qrcode"></i> MaiPDF 动态二维码水印</h1>
-      <p class="lead">文档安全的智能守护者 — 精准追溯，防泄密利器</p>
-    </div>
-    <div class="bg-light py-3">
-      <div class="container">
-        <nav class="d-flex justify-content-center">
-          <a href="https://maipdf.cn" class="mx-2 text-decoration-none">首页</a>
-          <span class="mx-2">|</span>
-          <a href="https://maipdf.cn/maifile.php" class="mx-2 text-decoration-none">立即体验</a>
-          <span class="mx-2">|</span>
-          <a href="https://maipdf.cn/getresult.html" class="mx-2 text-decoration-none">阅读记录</a>
-        </nav>
-      </div>
-    </div>
-  </header>
 
-  <main class="container my-5">
-    <section class="mb-5">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <h2 class="text-primary mb-4"><i class="fas fa-shield-alt"></i> 智能保护，不只是水印</h2>
-          <p class="fs-5">MaiPDF 动态二维码水印，远超传统水印保护。每个二维码都包含访问者的独特信息，成为文档的"数字指纹"，让文件泄露无处可藏。</p>
-          <p class="fs-5">无论您的 PDF 如何流转，都能追溯到每一位查看者的身份信息、访问时间与设备详情，给予文档最全方位的保护。</p>
+    <nav class="py-2" style="background: var(--gray-100);" aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/features/">功能</a></li>
+                <li class="breadcrumb-item"><a href="/features/zh/">中文功能</a></li>
+                <li class="breadcrumb-item active">动态二维码水印</li>
+            </ol>
         </div>
-        <div class="col-lg-6">
-          <img src="https://maipdf.com/pictures/MaiFile/watermark2025.jpg" alt="动态二维码水印效果图" class="img-fluid rounded shadow-lg">
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>动态二维码水印保护 PDF</h1>
+                    <p class="lead mt-3">每次打开显示访客信息与水印二维码，便于追溯泄露来源。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-shield-halved me-2"></i>前往 MaiPDF
+                        </a>
+                        <a href="/features/zh/security/share-pdf-online-securely" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-book-open me-2"></i>安全分享指南
+                        </a>
+                    </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 约 7 分钟阅读 &nbsp; <i class="fas fa-calendar me-1"></i> 2026年3月23日 &nbsp; <i class="fas fa-tag me-1"></i> 安全 · 水印</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="MaiPDF 安全设置中的动态二维码水印选项" class="hero-screenshot" loading="eager">
+                </div>
+            </div>
         </div>
-      </div>
     </section>
 
-    <section class="mb-5 bg-light p-4 rounded-3">
-      <h3 class="text-center mb-4"><i class="fas fa-cogs"></i> 核心功能一览</h3>
-      <div class="row g-4 justify-content-center">
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body">
-              <h4 class="card-title text-primary"><i class="fas fa-fingerprint"></i> 唯一标识</h4>
-              <p class="card-text">每个查看者获得独特水印，记录IP地址、设备信息、浏览器类型和访问时间</p>
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="fs-5"><strong>PDF 动态二维码水印</strong>面向需要外发合同、报价、方案与内部资料的团队：文件一旦离开邮箱或即时通讯，传统静态水印往往难以指认泄露路径。MaiPDF 在在线预览层叠加<strong>随访问变化的二维码与身份线索</strong>，为事后排查提供技术抓手，与权限、日志策略一起构成纵深防护。</p>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body">
-              <h4 class="card-title text-success"><i class="fas fa-search"></i> 溯源与访问统计</h4>
-              <p class="card-text">文件外泄时，通过二维码水印快速识别泄密源头，精准定位责任人</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body">
-              <h4 class="card-title text-warning"><i class="fas fa-bolt"></i> 零干扰体验</h4>
-              <p class="card-text">水印自动生成，不影响文档内容阅读，同时提供强大威慑和保护效果</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section class="mb-5">
-      <h3 class="text-center mb-4"><i class="fas fa-briefcase"></i> 应用场景</h3>
-      <div class="row g-4">
-        <div class="col-md-6">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-file-contract text-primary"></i> 商业合同与提案</h5>
-              <p class="card-text">保护敏感商业文件，防止合同条款、定价策略或商业机密被未授权传播</p>
+    <section id="steps" class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">操作步骤</p>
+                <h2 class="section-heading">三步启用水印并分享</h2>
             </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-university text-primary"></i> 学术与研究资料</h5>
-              <p class="card-text">保护论文、研究报告和学术成果，防止剽窃和未经授权的传播</p>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">上传 PDF</h3>
+                        <p class="text-muted">在 MaiPDF 工具页上传需要外发的 PDF，等待解析完成后再进入安全设置。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/工具页面上传页.png" alt="上传 PDF 到 MaiPDF" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">开启动态二维码水印</h3>
+                        <p class="text-muted">在安全设置中启用水印相关选项，按需配置访客信息字段与显示策略。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/安全设置.png" alt="MaiPDF 安全设置与动态水印" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">生成链接并外发</h3>
+                        <p class="text-muted">保存后生成分享链接或二维码，对方每次打开预览都会看到对应水印层。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="生成带动态水印的分享链接" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-chart-pie text-primary"></i> 财务报表与分析</h5>
-              <p class="card-text">确保内部财务数据安全，追踪每位查阅者，防止敏感信息外泄</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-md-6">
-          <div class="card h-100 border-0 shadow-sm">
-            <div class="card-body">
-              <h5 class="card-title"><i class="fas fa-drafting-compass text-primary"></i> 设计与创意作品</h5>
-              <p class="card-text">保护设计方案、创意企划和知识产权，防止未经授权的复制和使用</p>
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
 
-    <section class="text-center mb-5 p-5 bg-primary text-white rounded-3">
-      <h3 class="mb-4"><i class="fas fa-rocket"></i> 立即开始保护您的文档</h3>
-      <p class="fs-5 mb-4">只需简单几步，即可为您的PDF文件添加动态二维码水印保护</p>
-      <a href="https://maipdf.cn/maifile.php" class="btn btn-light btn-lg px-5 py-3 shadow-sm">开始使用 <i class="fas fa-arrow-right ms-2"></i></a>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-4">
+                <p class="section-label">安全能力</p>
+                <h2 class="section-heading">水印与整体安全策略的关系</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="flowchart-wrap text-center">
+                        <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-security-features.svg" alt="MaiPDF 安全功能与动态水印在整体策略中的位置" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <section class="mb-5">
-      <h3 class="text-center mb-4"><i class="fas fa-question-circle"></i> 常见问题</h3>
-      <div class="accordion" id="accordionFAQ">
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingOne">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne">
-              动态二维码水印会影响PDF文档的阅读体验吗？
-            </button>
-          </h2>
-          <div id="collapseOne" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
-            <div class="accordion-body">
-              不会。我们的动态二维码水印经过精心设计，不会遮挡文档内容，通常放置在页面角落或边缘位置，确保阅读体验不受影响，同时保持访问统计能力。
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-6 text-center text-lg-start">
+                    <p class="section-label">访问控制</p>
+                    <h2 class="section-heading h3">分享限制与合规提示</h2>
+                    <p class="text-muted mb-0">外发文件时，建议同时设置有效期、次数与身份校验，并与内部保密制度一致。下图概括分享侧常见限制维度，便于与业务方对齐预期。</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/分享限制.png" alt="PDF 分享访问限制与策略说明" class="img-fluid screenshot" loading="lazy">
+                </div>
             </div>
-          </div>
         </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingTwo">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo">
-              如何查看PDF文件的阅读记录和水印信息？
-            </button>
-          </h2>
-          <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-            <div class="accordion-body">
-              在MaiPDF平台上传并分享文件后，您可以随时登录查看文件的访问记录，包括每次访问的详细信息，如IP地址、访问时间、设备类型等。只需访问"阅读记录"页面，选择相应文件即可查看所有访问历史。
-            </div>
-          </div>
-        </div>
-        <div class="accordion-item">
-          <h2 class="accordion-header" id="headingThree">
-            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree">
-              动态水印能被移除或破解吗？
-            </button>
-          </h2>
-          <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
-            <div class="accordion-body">
-              MaiPDF的动态水印设计具有高度安全性，嵌入到文档的查看流程中，并非简单的图片叠加。任何截图或导出操作都会保留水印信息，确保文档安全性。即使通过截图方式尝试规避，水印依然可追溯到最初的泄密源头。
-            </div>
-          </div>
-        </div>
-      </div>
     </section>
-  </main>
 
-  <footer class="bg-dark text-white py-4">
-    <div class="container">
-      <div class="row">
-        <div class="col-md-4">
-          <h5>MaiPDF</h5>
-          <p>专业PDF文档安全与分享解决方案</p>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">核心能力</p>
+                <h2 class="section-heading">动态二维码水印的六项价值</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-qrcode"></i></div>
+                        <h3 class="h5 fw-bold">二维码随访问变化</h3>
+                        <p class="text-muted mb-0">水印中的二维码可与当次会话绑定，截图或翻拍样本更易与记录对照。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-user-lock"></i></div>
+                        <h3 class="h5 fw-bold">访客信息叠加</h3>
+                        <p class="text-muted mb-0">在页面上展示与身份相关的提示字段，提高随意转发的心理成本。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-fingerprint"></i></div>
+                        <h3 class="h5 fw-bold">利于泄密取证</h3>
+                        <p class="text-muted mb-0">出现泄露影像时，可结合后台访问日志缩小责任人或设备范围。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-eye"></i></div>
+                        <h3 class="h5 fw-bold">在线预览层生效</h3>
+                        <p class="text-muted mb-0">水印作用于 MaiPDF 在线阅读体验，无需收件人安装本地阅读器插件。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-sliders"></i></div>
+                        <h3 class="h5 fw-bold">可与权限策略组合</h3>
+                        <p class="text-muted mb-0">与禁止下载、密码、有效期等组合使用，形成多层外发控制。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ccfbf1; color: #0d9488;"><i class="fas fa-building"></i></div>
+                        <h3 class="h5 fw-bold">适合对外商务场景</h3>
+                        <p class="text-muted mb-0">招投标、渠道报价、投资人材料等需要「可追溯外发」的场景尤为常见。</p>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="col-md-4">
-          <h5>快速链接</h5>
-          <ul class="list-unstyled">
-            <li><a href="https://maipdf.cn" class="text-white">首页</a></li>
-            <li><a href="https://maipdf.cn/maifile.php" class="text-white">文件上传</a></li>
-            <li><a href="https://maipdf.cn/getresult.html" class="text-white">阅读记录</a></li>
-          </ul>
-        </div>
-        <div class="col-md-4">
-          <h5>联系我们</h5>
-          <p><i class="fas fa-envelope"></i> joe@pdfhost.online</p>
-        </div>
-      </div>
-      <div class="text-center mt-4">
-        <p>&copy; 2025 MaiPDF. 保护您的每一份文档安全。</p>
-      </div>
-    </div>
-  </footer>
+    </section>
 
-  <!-- Bootstrap Bundle with Popper -->
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">能力对比</p>
+                <h2 class="section-heading">动态二维码水印与无水印外发</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="table-responsive" style="background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;">
+                        <table class="table table-bordered mb-0">
+                            <thead style="background: var(--blue-900); color: white;">
+                                <tr>
+                                    <th style="width:22%">对比项</th>
+                                    <th class="text-center" style="width:39%">开启动态二维码水印（MaiPDF）</th>
+                                    <th class="text-center" style="width:39%">无水印 / 仅静态文件外发</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr style="background: var(--blue-50);">
+                                    <td><strong><i class="fas fa-star text-warning me-1"></i>泄露可追溯性</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 二维码与日志可对照</td>
+                                    <td class="text-center"><i class="fas fa-times-circle text-danger"></i> 难以指认传播路径</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>心理威慑</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 明显提示受控外发</td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> 依赖自觉</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>截图 / 翻拍风险</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 样本中仍含线索</td>
+                                    <td class="text-center"><i class="fas fa-times-circle text-danger"></i> 干净副本易扩散</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>配置成本</strong></td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> 需一次安全设置</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 零配置</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>阅读体验</strong></td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> 半透明叠加</td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 版面无遮挡</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">关于动态水印的疑问</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    什么是 MaiPDF 动态二维码水印？
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    在麦瓜 PDF（MaiPDF）中开启动态水印后，每次有人打开在线预览，页面会叠加访客相关信息与可扫描的水印二维码。与固定印刷式水印不同，内容可随访问上下文变化，便于在泄密截图或翻拍中留下线索。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    动态水印如何帮助追溯泄露？
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    水印中可包含身份线索或二维码，泄露样本可与某次访问记录对应，缩小排查范围。配合访问日志与设备信息，可进一步定位异常传播路径。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    开启水印会影响阅读体验吗？
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    水印以半透明方式叠加，阅读仍可进行。若文档对版式极度敏感，可与法务或设计同事评估透明度与密度，在安全与可读性之间折中。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    动态水印能替代法律合同与保密协议吗？
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    不能。水印属于技术威慑与取证辅助，合规仍依赖制度、协议与流程。建议在对外发送机密文件时同时保留审批与收件人记录。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    在哪里开启动态二维码水印？
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    上传 PDF 后，在安全设置页找到水印与防泄露相关选项，按向导开启动态二维码水印并保存。生成分享链接后，访客打开即可看到对应水印效果。
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">相关阅读</p>
+                <h2 class="section-heading">更多 PDF 安全指南</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">外发</span>
+                            <h3><a href="/features/zh/security/share-pdf-online-securely">在线安全分享 PDF</a></h3>
+                            <p class="text-muted small mb-0">从链接、密码到权限，系统了解 MaiPDF 外发安全能力。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-danger mb-2">防转发</span>
+                            <h3><a href="/features/zh/security/pdf_prevent_forward">防止 PDF 被随意转发</a></h3>
+                            <p class="text-muted small mb-0">降低文件在聊天工具中被二次扩散的风险。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">加密</span>
+                            <h3><a href="/features/zh/security/encrypt-pdf-prevent-editing-cn">加密 PDF 防止篡改</a></h3>
+                            <p class="text-muted small mb-0">保护文档内容不被未授权编辑或拷贝。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">围栏</span>
+                            <h3><a href="/features/zh/security/maipdffenceview">MaiPDF 安全阅读视图</a></h3>
+                            <p class="text-muted small mb-0">限制复制与导出，强化在线阅读边界。</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">在 MaiPDF 开启动态二维码水印</h2>
+                <p class="mb-4 opacity-90" style="max-width: 520px; margin: 0 auto;">上传 PDF，进入安全设置，一键叠加动态水印与访问控制。麦瓜 PDF 为你的外发文件加上可追溯保护层。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-arrow-up-right-from-square me-2"></i>打开 maipdf.com
+                    </a>
+                    <a href="/features/zh/security/share-pdf-online-securely" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-book me-2"></i>安全分享指南
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">安全 PDF 分享指南 — MaiPDF 动态二维码水印与麦瓜 PDF 外发保护。</p>
+                    <p class="small mb-0" style="color: #6b7280;">&copy; 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/">所有功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">博客</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
+                        <li class="mb-2"><a href="/features/zh/">中文功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">安全</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/features/zh/security/share-pdf-online-securely">安全分享</a></li>
+                        <li class="mb-2"><a href="/features/zh/security/pdf_prevent_forward">防转发</a></li>
+                        <li class="mb-2"><a href="/features/zh/watermark/动态水印maipdf">动态水印</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">联系我们</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">站点地图</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

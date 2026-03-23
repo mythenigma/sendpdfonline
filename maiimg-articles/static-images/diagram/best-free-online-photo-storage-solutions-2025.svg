@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="640" viewBox="0 0 900 640" role="img" aria-label="Free online photo storage workflow with backup loop">
+  <defs>
+    <style>
+      .box { fill: #f5f3ff; stroke: #6d28d9; stroke-width: 2; }
+      .accent { fill: #ede9fe; stroke: #6d28d9; stroke-width: 2; }
+      .text { font-family: Arial, sans-serif; font-size: 20px; fill: #1f2937; }
+      .small { font-size: 18px; }
+      .flow { stroke: #6d28d9; stroke-width: 2.5; fill: none; stroke-dasharray: 7 6; animation: dash 3.8s linear infinite; }
+      .loop { stroke: #a855f7; stroke-width: 2.5; fill: none; stroke-dasharray: 5 6; animation: dash 3s linear infinite; }
+      .pulse { animation: pulse 2.8s ease-in-out infinite; transform-origin: center; transform-box: fill-box; }
+      @keyframes dash { to { stroke-dashoffset: -26; } }
+      @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.03); } }
+    </style>
+    <marker id="arrow-violet" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#6d28d9" />
+    </marker>
+    <marker id="arrow-loop" markerWidth="10" markerHeight="10" refX="6" refY="3" orient="auto">
+      <path d="M0,0 L6,3 L0,6" fill="#a855f7" />
+    </marker>
+  </defs>
+
+  <rect x="140" y="40" width="620" height="70" rx="12" class="box pulse" />
+  <text x="450" y="75" text-anchor="middle" class="text">Estimate storage and devices</text>
+
+  <rect x="140" y="140" width="620" height="70" rx="12" class="box" />
+  <text x="450" y="175" text-anchor="middle" class="text">Compare free tiers and privacy</text>
+
+  <rect x="140" y="240" width="620" height="70" rx="12" class="box" />
+  <text x="450" y="275" text-anchor="middle" class="text">Pick a reliable provider</text>
+
+  <rect x="140" y="340" width="620" height="70" rx="12" class="box" />
+  <text x="450" y="375" text-anchor="middle" class="text">Enable auto backup and uploads</text>
+
+  <rect x="140" y="440" width="620" height="70" rx="12" class="box" />
+  <text x="450" y="475" text-anchor="middle" class="text">Organize albums and share safely</text>
+
+  <rect x="140" y="540" width="620" height="70" rx="12" class="accent pulse" />
+  <text x="450" y="575" text-anchor="middle" class="text">Maintain local backup too</text>
+
+  <line x1="450" y1="110" x2="450" y2="140" class="flow" marker-end="url(#arrow-violet)" />
+  <line x1="450" y1="210" x2="450" y2="240" class="flow" marker-end="url(#arrow-violet)" />
+  <line x1="450" y1="310" x2="450" y2="340" class="flow" marker-end="url(#arrow-violet)" />
+  <line x1="450" y1="410" x2="450" y2="440" class="flow" marker-end="url(#arrow-violet)" />
+  <line x1="450" y1="510" x2="450" y2="540" class="flow" marker-end="url(#arrow-violet)" />
+
+  <path d="M770,565 C840,565 840,255 760,255" class="loop" marker-end="url(#arrow-loop)" />
+  <text x="780" y="240" text-anchor="middle" class="text small">Review usage</text>
+</svg>

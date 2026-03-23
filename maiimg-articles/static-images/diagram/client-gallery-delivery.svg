@@ -1,0 +1,44 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+  <title id="title">Client Gallery Delivery Flow</title>
+  <desc id="desc">Delivery pipeline for photographers and studios.</desc>
+  <defs>
+    <linearGradient id="g3" x1="0" x2="1">
+      <stop offset="0%" stop-color="#f5f3ff"/>
+      <stop offset="100%" stop-color="#ede9fe"/>
+    </linearGradient>
+    <style>
+      .box{fill:#fff;stroke:#8b5cf6;stroke-width:2}
+      .t{font-family:Arial,Helvetica,sans-serif;fill:#5b21b6;font-size:22px;font-weight:700}
+      .s{font-family:Arial,Helvetica,sans-serif;fill:#6d28d9;font-size:16px}
+    </style>
+  </defs>
+  <rect width="1200" height="430" fill="url(#g3)"/>
+  <rect class="box" x="70" y="110" width="250" height="250" rx="14"/>
+  <text class="t" x="195" y="160" text-anchor="middle">Curate</text>
+  <text class="s" x="100" y="205">- Build shortlists</text>
+  <text class="s" x="100" y="235">- Group by use-case</text>
+  <text class="s" x="100" y="265">- Create gallery sections</text>
+
+  <rect class="box" x="350" y="110" width="250" height="250" rx="14"/>
+  <text class="t" x="475" y="160" text-anchor="middle">Protect</text>
+  <text class="s" x="380" y="205">- View/session limits</text>
+  <text class="s" x="380" y="235">- Expiry windows</text>
+  <text class="s" x="380" y="265">- Optional watermarking</text>
+
+  <rect class="box" x="630" y="110" width="250" height="250" rx="14"/>
+  <text class="t" x="755" y="160" text-anchor="middle">Deliver</text>
+  <text class="s" x="660" y="205">- Share link + QR code</text>
+  <text class="s" x="660" y="235">- Include usage notes</text>
+  <text class="s" x="660" y="265">- Set review deadline</text>
+
+  <rect class="box" x="910" y="110" width="220" height="250" rx="14"/>
+  <text class="t" x="1020" y="160" text-anchor="middle">Close Loop</text>
+  <text class="s" x="940" y="205">- Capture client picks</text>
+  <text class="s" x="940" y="235">- Push final delivery</text>
+  <text class="s" x="940" y="265">- Track referrals</text>
+
+  <path d="M320,235 L350,235" stroke="#8b5cf6" stroke-width="5" marker-end="url(#a)"/>
+  <path d="M600,235 L630,235" stroke="#8b5cf6" stroke-width="5" marker-end="url(#a)"/>
+  <path d="M880,235 L910,235" stroke="#8b5cf6" stroke-width="5" marker-end="url(#a)"/>
+  <defs><marker id="a" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0,0 10,4 0,8" fill="#8b5cf6"/></marker></defs>
+</svg>

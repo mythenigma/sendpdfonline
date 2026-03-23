@@ -3,295 +3,509 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="图片二维码分享教程 - 使用MaiImg将图片转换成二维码，实现离线分享、打印展示、扫码查看等功能。包括二维码生成、下载、打印和使用技巧。">
-    <meta name="keywords" content="图片二维码, 图片转二维码, 图片二维码生成, 图片二维码分享, 图片二维码打印, 图片二维码教程, MaiImg二维码">
-    <meta name="author" content="MaiImg 团队">
-    <meta name="robots" content="index, follow">
-    <title>图片二维码分享教程 - 生成二维码离线分享图片 | MaiImg</title>
+    <title>图片二维码分享教程 | MaiImg</title>
+    <meta name="description" content="用 MaiImg 为图集生成可打印、可扫码的二维码，把链接带到展会、海报与名片上。附步骤、能力对比与常见问题。">
+    <meta name="keywords" content="图片二维码,图集二维码,二维码分享,MaiImg,扫码看图,展会物料">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta name="author" content="MaiImg Team">
+    <link rel="canonical" href="https://sendpdfonline.com/features/zh/maiimg/图片二维码分享">
+    <meta property="og:title" content="图片二维码分享教程 | MaiImg">
+    <meta property="og:description" content="生成可打印、可扫码的二维码，把图集带到展会、海报和名片上。">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/二维码很方便.png">
+    <meta property="og:url" content="https://sendpdfonline.com/features/zh/maiimg/图片二维码分享">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiImg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="图片二维码分享教程 | MaiImg">
+    <meta name="twitter:description" content="生成可打印、可扫码的二维码，把图集带到展会、海报和名片上。">
+    <meta name="twitter:image" content="https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/二维码很方便.png">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <style>
-        body {
-            font-family: 'Noto Sans SC', sans-serif;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-            padding-bottom: 50px;
-        }
-        .hero {
-            background: white;
-            border-radius: 20px;
-            padding: 60px 40px;
-            margin: 40px auto;
-            max-width: 1200px;
-            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
-            text-align: center;
-        }
-        .content-card {
-            background: white;
-            border-radius: 15px;
-            padding: 40px;
-            margin: 30px auto;
-            max-width: 1200px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
-        .qr-preview {
-            background: #f8f9fa;
-            border: 2px dashed #667eea;
-            border-radius: 12px;
-            padding: 40px;
-            text-align: center;
-            margin: 20px 0;
-        }
-        .qr-placeholder {
-            width: 200px;
-            height: 200px;
-            background: #e9ecef;
-            border: 3px dashed #667eea;
-            border-radius: 8px;
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: #667eea;
-        }
-    </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "图片二维码分享教程",
+        "description": "生成可打印、可扫码的二维码，把图集带到展会、海报和名片上。",
+        "image": "https://sendpdfonline.com/images/maipdf2026/麦瓜PDF/宣传图/二维码很方便.png",
+        "author": {"@type": "Organization", "name": "MaiImg", "url": "https://maiimg.com"},
+        "publisher": {"@type": "Organization", "name": "MaiImg", "url": "https://maiimg.com", "logo": {"@type": "ImageObject", "url": "https://sendpdfonline.com/images/logo.png"}},
+        "datePublished": "2026-03-23",
+        "dateModified": "2026-03-23",
+        "mainEntityOfPage": "https://sendpdfonline.com/features/zh/maiimg/图片二维码分享"
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "首页", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "功能", "item": "https://sendpdfonline.com/features/"},
+            {"@type": "ListItem", "position": 3, "name": "MaiImg", "item": "https://sendpdfonline.com/features/zh/maiimg/"},
+            {"@type": "ListItem", "position": 4, "name": "图片二维码分享教程", "item": "https://sendpdfonline.com/features/zh/maiimg/图片二维码分享"}
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {
+                "@type": "Question",
+                "name": "二维码和纯链接有什么区别？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "纯链接适合在聊天与邮件里粘贴；二维码适合印刷在海报、展架与名片上，让访客抬手扫码即可打开图集。两者指向同一分享页时，可并行使用。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "打印出来的二维码会不会扫不出来？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "请使用清晰、足够大的印刷尺寸，避免拉伸变形，并保留四周留白。若张贴在户外，注意覆膜反光与污损对识别的影响。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "扫码后需要安装应用吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "通常用手机系统相机或常用扫码工具即可在浏览器中打开图集页面，无需单独安装 MaiImg 客户端。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "分享后还能更换图集或停用二维码吗？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "你可以在管理侧查看链接与访问情况，按需要做撤销或策略调整。已印制的二维码若需长期有效，应尽量避免频繁更换落地内容。"
+                }
+            },
+            {
+                "@type": "Question",
+                "name": "哪些场景最适合用图片二维码？",
+                "acceptedAnswer": {
+                    "@type": "Answer",
+                    "text": "展会展位、门店海报、产品包装补充图、活动签到旁的资料页等线下触点，都适合用二维码把一整套图集一次性交给访客。"
+                }
+            }
+        ]
+    }
+    </script>
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Microsoft YaHei", "PingFang SC", sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
-    <div class="hero">
-        <h1><i class="fas fa-qrcode"></i> 图片二维码分享教程</h1>
-        <p class="lead">将图片转换成二维码，实现离线分享、打印展示、扫码查看等多种应用场景</p>
-        <a href="https://maiimg.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即生成二维码</a>
-    </div>
 
-    <div class="content-card">
-        <h2><i class="fas fa-lightbulb text-primary"></i> 图片二维码的应用场景</h2>
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-print fa-3x text-primary mb-3"></i>
-                        <h5>打印物料</h5>
-                        <p>将二维码打印在宣传册、海报、名片上，扫码即可查看图片</p>
+    <nav class="py-2" style="background: var(--gray-100);" aria-label="breadcrumb">
+        <div class="container">
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">首页</a></li>
+                <li class="breadcrumb-item"><a href="/features/">功能</a></li>
+                <li class="breadcrumb-item"><a href="/features/zh/maiimg/">MaiImg</a></li>
+                <li class="breadcrumb-item active">图片二维码分享教程</li>
+            </ol>
+        </div>
+    </nav>
+
+    <section class="hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>图片二维码分享教程</h1>
+                    <p class="lead mt-3">生成可打印、可扫码的二维码，把图集带到展会、海报和名片上。</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maiimg.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-qrcode me-2"></i>打开 MaiImg
+                        </a>
+                        <a href="/features/zh/maiimg/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>MaiImg 功能索引
+                        </a>
                     </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-clock me-1"></i> 5 分钟阅读 &nbsp; <i class="fas fa-calendar me-1"></i> 2026年3月23日 &nbsp; <i class="fas fa-tag me-1"></i> MaiImg</p>
+                </div>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/麦瓜PDF/宣传图/二维码很方便.png" alt="图片二维码分享 — 扫码即可打开图集" class="hero-screenshot" loading="eager">
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-mobile-alt fa-3x text-success mb-3"></i>
-                        <h5>移动分享</h5>
-                        <p>无需输入链接，扫码即可在手机上查看图片</p>
-                    </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <p class="fs-5">当你需要在<strong>线下场景</strong>分发一整套图片时，与其让访客逐张保存聊天里的文件，不如用一条稳定的分享页配合<strong>二维码</strong>：印出来、立起来、放在名片背面，访客扫码即可浏览整组素材。</p>
                 </div>
             </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body text-center">
-                        <i class="fas fa-store fa-3x text-warning mb-3"></i>
-                        <h5>线下展示</h5>
-                        <p>在展会、门店等场景，通过二维码展示产品图片</p>
+        </div>
+    </section>
+
+    <section id="steps" class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">操作步骤</p>
+                <h2 class="section-heading">三步生成图片二维码</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">进入云分享</h3>
+                        <p class="text-muted">在 MaiImg 选择云分享入口，准备上传要对外展示的图片。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/选择云分享.png" alt="选择云分享" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">上传图片</h3>
+                        <p class="text-muted">在工具页完成图片上传与基本校验，为生成分享页做准备。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/工具页面上传页.png" alt="工具页面上传图片" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">获取二维码</h3>
+                        <p class="text-muted">在生成结果页复制链接并保存二维码图片，用于印刷或屏幕展示。</p>
+                        <img src="/images/maipdf2026/麦瓜PDF/生成结果.png" alt="生成链接与二维码" class="img-fluid screenshot" loading="lazy">
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content-card">
-        <h2><i class="fas fa-sitemap text-primary"></i> 图片二维码生成流程</h2>
-        
-        <div class="card mb-3" style="border-left: 5px solid #667eea;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-cloud-upload-alt"></i>
-                        </div>
+    <section class="py-4 py-lg-5 bg-white">
+        <div class="container-fluid px-0">
+            <div class="text-center mb-4 px-3">
+                <p class="section-label">流程示意</p>
+                <h2 class="section-heading">二维码分享路径</h2>
+            </div>
+            <img src="/images/maipdf2026/麦瓜PDF/flowchart/zh-qr-code.svg" alt="二维码分享流程" class="screenshot w-100 d-block" style="max-width:100%;" loading="lazy">
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">能力亮点</p>
+                <h2 class="section-heading">图片二维码能帮你做什么</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fef3c7; color: #d97706;"><i class="fas fa-print"></i></div>
+                        <h3 class="h5 fw-bold">可印刷</h3>
+                        <p class="text-muted mb-0">导出清晰的二维码图档，按物料尺寸排版到海报、传单与展板。</p>
                     </div>
-                    <div class="col-md-10">
-                        <h4>步骤 1：上传图片</h4>
-                        <p>访问 MaiImg 官网，上传您需要生成二维码的图片（支持单张或多张）。</p>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dbeafe; color: #2563eb;"><i class="fas fa-mobile-screen"></i></div>
+                        <h3 class="h5 fw-bold">即扫即开</h3>
+                        <p class="text-muted mb-0">访客用手机扫码即可进入图集页面，减少口头解释与反复发文件。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #dcfce7; color: #16a34a;"><i class="fas fa-images"></i></div>
+                        <h3 class="h5 fw-bold">整组图集</h3>
+                        <p class="text-muted mb-0">一条落地页承载多张图片，适合展示系列作品或产品多角度照片。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-link"></i></div>
+                        <h3 class="h5 fw-bold">链接与码一致</h3>
+                        <p class="text-muted mb-0">线上发链接、线下放二维码，两种入口指向同一分享页。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #e0f2fe; color: #0284c7;"><i class="fas fa-bullseye"></i></div>
+                        <h3 class="h5 fw-bold">触点清晰</h3>
+                        <p class="text-muted mb-0">在展位与门店把「下一步动作」收敛为一次扫码，降低流失。</p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background: #fce7f3; color: #db2777;"><i class="fas fa-shield-halved"></i></div>
+                        <h3 class="h5 fw-bold">可配合管理</h3>
+                        <p class="text-muted mb-0">结合管理侧能力，在需要时调整或撤销对外访问。</p>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="card mb-3" style="border-left: 5px solid #f5576c;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-cog"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <h4>步骤 2：设置安全选项（可选）</h4>
-                        <p>可选设置：密码保护、查看次数限制、有效期等安全功能。这些设置会应用到二维码中。</p>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">对比</p>
+                <h2 class="section-heading">二维码与纯链接怎么选</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-12">
+                    <div class="table-responsive" style="background: white; border-radius: 12px; box-shadow: 0 2px 12px rgba(0,0,0,0.06); overflow: hidden;">
+                        <table class="table table-bordered mb-0">
+                            <thead style="background: var(--blue-900); color: white;">
+                                <tr>
+                                    <th style="width:28%">对比项</th>
+                                    <th class="text-center" style="width:36%">二维码</th>
+                                    <th class="text-center" style="width:36%">纯链接</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><strong>典型场景</strong></td>
+                                    <td class="text-center">展会、海报、名片、包装</td>
+                                    <td class="text-center">聊天、邮件、社群置顶</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>线下可用性</strong></td>
+                                    <td class="text-center"><i class="fas fa-check-circle text-success"></i> 强</td>
+                                    <td class="text-center"><i class="fas fa-minus-circle text-warning"></i> 依赖抄录或拍照</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>复制成本</strong></td>
+                                    <td class="text-center">低（一次印刷多处使用）</td>
+                                    <td class="text-center">低（粘贴即可）</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>物料准备</strong></td>
+                                    <td class="text-center">需排版与印刷或屏幕展示</td>
+                                    <td class="text-center">几乎不需要</td>
+                                </tr>
+                                <tr>
+                                    <td><strong>与图集页关系</strong></td>
+                                    <td class="text-center" colspan="2">二者可指向同一 MaiImg 分享页，按渠道组合使用</td>
+                                </tr>
+                            </tbody>
+                        </table>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="card mb-3" style="border-left: 5px solid #00f2fe;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-qrcode"></i>
-                        </div>
-                    </div>
-                    <div class="col-md-10">
-                        <h4>步骤 3：生成二维码</h4>
-                        <p>系统自动生成图片访问链接，并转换为二维码图片。二维码包含完整的访问链接和安全设置。</p>
-                        <div class="qr-preview mt-3">
-                            <div class="qr-placeholder">
-                                <i class="fas fa-qrcode"></i>
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">常见问题</p>
+                <h2 class="section-heading">关于图片二维码的疑问</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="true">
+                                    二维码和纯链接有什么区别？
+                                </button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    纯链接适合在聊天与邮件里粘贴；二维码适合印刷在海报、展架与名片上，让访客抬手扫码即可打开图集。两者指向同一分享页时，可并行使用。
+                                </div>
                             </div>
-                            <p class="mt-3 text-muted">扫描此二维码即可查看图片</p>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                    打印出来的二维码会不会扫不出来？
+                                </button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    请使用清晰、足够大的印刷尺寸，避免拉伸变形，并保留四周留白。若张贴在户外，注意覆膜反光与污损对识别的影响。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                    扫码后需要安装应用吗？
+                                </button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    通常用手机系统相机或常用扫码工具即可在浏览器中打开图集页面，无需单独安装 MaiImg 客户端。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3 mb-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                    分享后还能更换图集或停用二维码吗？
+                                </button>
+                            </h2>
+                            <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    你可以在管理侧查看链接与访问情况，按需要做撤销或策略调整。已印制的二维码若需长期有效，应尽量避免频繁更换落地内容。
+                                </div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border rounded-3">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq5">
+                                    哪些场景最适合用图片二维码？
+                                </button>
+                            </h2>
+                            <div id="faq5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">
+                                    展会展位、门店海报、产品包装补充图、活动签到旁的资料页等线下触点，都适合用二维码把一整套图集一次性交给访客。
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </section>
 
-        <div class="card mb-3" style="border-left: 5px solid #fee140;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-download"></i>
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">相关阅读</p>
+                <h2 class="section-heading">更多 MaiImg 教程</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">入门</span>
+                            <h3><a href="免费图片托管分享指南.html">免费图片托管与分享指南</a></h3>
+                            <p class="text-muted small mb-0">从入口选择到链接与二维码生成的完整路径说明。</p>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <h4>步骤 4：下载二维码</h4>
-                        <p>下载二维码图片（PNG、SVG格式），可用于打印或电子展示。建议下载高分辨率版本用于打印。</p>
-                    </div>
                 </div>
-            </div>
-        </div>
-
-        <div class="card" style="border-left: 5px solid #330867;">
-            <div class="card-body">
-                <div class="row align-items-center">
-                    <div class="col-md-2 text-center">
-                        <div style="background: linear-gradient(135deg, #30cfd0 0%, #330867 100%); color: white; width: 60px; height: 60px; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; font-size: 1.5rem;">
-                            <i class="fas fa-mobile-alt"></i>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">批量</span>
+                            <h3><a href="批量图片上传分享.html">批量图片上传分享</a></h3>
+                            <p class="text-muted small mb-0">一次上传多图，再统一生成分享页与二维码。</p>
                         </div>
                     </div>
-                    <div class="col-md-10">
-                        <h4>步骤 5：扫码查看</h4>
-                        <p>用户使用手机扫描二维码，即可在浏览器中查看图片。如果设置了密码，需要输入密码后才能查看。</p>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2">数据</span>
+                            <h3><a href="图片查看追踪分析.html">图片查看追踪分析</a></h3>
+                            <p class="text-muted small mb-0">扫码与打开行为如何辅助你评估物料效果。</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-dark mb-2">社交</span>
+                            <h3><a href="社交媒体图片分享.html">社交媒体图片分享</a></h3>
+                            <p class="text-muted small mb-0">线上渠道与线下二维码如何配合传播。</p>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content-card">
-        <h2><i class="fas fa-cog text-primary"></i> 二维码高级设置</h2>
-        <div class="row mt-4">
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5><i class="fas fa-lock text-primary"></i> 密码保护</h5>
-                        <p>为二维码设置密码，扫码后需要输入密码才能查看图片。密码可以通过其他渠道单独告知。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5><i class="fas fa-eye text-success"></i> 查看次数限制</h5>
-                        <p>限制二维码的扫描查看次数，达到限制后自动失效。适合限时活动或限量分享。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5><i class="fas fa-calendar-times text-warning"></i> 有效期设置</h5>
-                        <p>设置二维码的有效期，过期后自动失效。适合临时活动或时效性内容。</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <div class="card">
-                    <div class="card-body">
-                        <h5><i class="fas fa-chart-line text-info"></i> 查看追踪</h5>
-                        <p>统计二维码的扫描情况，了解访问统计。可以查看扫描次数、扫描时间等信息。</p>
-                    </div>
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">生成你的图片二维码</h2>
+                <p class="mb-4 opacity-90" style="max-width: 520px; margin: 0 auto;">上传图集，获取链接与二维码，用于印刷与屏幕展示。点击下方前往 MaiImg。</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maiimg.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-arrow-up-right-from-square me-2"></i>前往 MaiImg
+                    </a>
+                    <a href="/features/zh/maiimg/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>MaiImg 功能索引
+                    </a>
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <div class="content-card">
-        <h2><i class="fas fa-print text-primary"></i> 二维码使用建议</h2>
-        <div class="row mt-4">
-            <div class="col-md-6">
-                <h5><i class="fas fa-check-circle text-success"></i> 最佳实践</h5>
-                <ul>
-                    <li>确保二维码清晰可扫描（建议尺寸≥2cm×2cm）</li>
-                    <li>打印时使用高分辨率，避免模糊</li>
-                    <li>二维码周围留白，避免干扰</li>
-                    <li>测试打印效果后再批量打印</li>
-                    <li>在二维码旁添加说明文字</li>
-                </ul>
-            </div>
-            <div class="col-md-6">
-                <h5><i class="fas fa-exclamation-triangle text-warning"></i> 注意事项</h5>
-                <ul>
-                    <li>避免二维码被遮挡或损坏</li>
-                    <li>确保打印质量足够清晰</li>
-                    <li>考虑光线条件对扫描的影响</li>
-                    <li>定期检查二维码是否仍然有效</li>
-                    <li>为重要图片设置密码保护</li>
-                </ul>
-            </div>
-        </div>
-    </div>
-
-    <!-- Related Articles -->
-    <div class="content-card">
-        <h2><i class="fas fa-link text-primary"></i> 相关文章</h2>
-        <div class="row mt-4">
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5><a href="免费图片托管分享指南.html"><i class="fas fa-images"></i> 免费图片托管分享指南</a></h5>
-                        <p class="text-muted small">完整的图片托管和分享教程</p>
-                    </div>
+    <footer class="text-white py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color: #9ca3af;">安全 PDF 与图片分享指南 — MaiPDF、MaiImg 等产品技巧与场景说明。</p>
+                    <p class="small mb-0" style="color: #6b7280;">&copy; 2026 SendPDFOnline.com</p>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5><a href="批量图片上传分享.html"><i class="fas fa-upload"></i> 批量图片上传分享</a></h5>
-                        <p class="text-muted small">一次上传25张图片</p>
-                    </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">产品</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">发送 PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">分享图片</a></li>
+                        <li class="mb-2"><a href="/features/">所有功能</a></li>
+                    </ul>
                 </div>
-            </div>
-            <div class="col-md-4 mb-3">
-                <div class="card h-100">
-                    <div class="card-body">
-                        <h5><a href="图片查看与访问统计.html"><i class="fas fa-chart-line"></i> 图片查看与访问统计</a></h5>
-                        <p class="text-muted small">统计图片查看情况</p>
-                    </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">资源</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">博客</a></li>
+                        <li class="mb-2"><a href="/usecase/">使用场景</a></li>
+                        <li class="mb-2"><a href="/features/zh/">中文功能</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">MaiImg</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/features/zh/maiimg/">功能索引</a></li>
+                        <li class="mb-2"><a href="免费图片托管分享指南.html">托管指南</a></li>
+                        <li class="mb-2"><a href="批量图片上传分享.html">批量上传</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">支持</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="mailto:joe@pdfhost.online">联系我们</a></li>
+                        <li class="mb-2"><a href="/sitemap.xml">站点地图</a></li>
+                    </ul>
                 </div>
             </div>
         </div>
-    </div>
-
-    <div class="content-card text-center" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white;">
-        <h2>开始生成图片二维码</h2>
-        <p class="lead">使用 MaiImg 将您的图片转换成二维码，实现便捷的离线分享</p>
-        <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3" target="_blank">立即生成</a>
-    </div>
+    </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
-
-
-
