@@ -405,6 +405,103 @@
             color: #0c4a6e;
             margin-bottom: 0;
         }
+
+        .screenshot-box {
+            background: #f8fafc;
+            border-radius: 16px;
+            padding: 16px;
+            margin: 24px 0;
+            border: 2px solid #e2e8f0;
+            text-align: center;
+            transition: box-shadow 0.3s ease;
+        }
+
+        .screenshot-box:hover {
+            box-shadow: 0 8px 30px rgba(0,0,0,0.1);
+        }
+
+        .screenshot-box img {
+            max-width: 100%;
+            height: auto;
+            border-radius: 10px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+        }
+
+        .screenshot-box .caption {
+            color: #64748b;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            font-style: italic;
+        }
+
+        .showoff-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 20px;
+            margin: 28px 0;
+        }
+
+        .showoff-gallery .gallery-item {
+            border-radius: 14px;
+            overflow: hidden;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .showoff-gallery .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 32px rgba(0,0,0,0.15);
+        }
+
+        .showoff-gallery .gallery-item img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        .conclusion-section {
+            background: linear-gradient(135deg, #0f766e 0%, #06b6d4 100%);
+            color: white;
+            border-radius: 22px;
+            padding: 40px;
+            margin: 30px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .conclusion-section::before {
+            content: '';
+            position: absolute;
+            top: -60px;
+            right: -60px;
+            width: 200px;
+            height: 200px;
+            background: rgba(255,255,255,0.08);
+            border-radius: 50%;
+        }
+
+        .conclusion-section h2 {
+            margin-bottom: 18px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .conclusion-section p, .conclusion-section li {
+            color: rgba(255,255,255,0.92);
+            position: relative;
+            z-index: 2;
+        }
+
+        .conclusion-section ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .conclusion-section ul li::before {
+            content: '\2714';
+            margin-right: 10px;
+            color: #fbbf24;
+        }
         
         @media (max-width: 768px) {
             .article-header h1 {
@@ -509,6 +606,11 @@
                     <p>Go to the MaiPDF website and click “Choose File.” Pick the PDF you want to share. Files up to 100MB are supported.</p>
                 </div>
 
+                <div class="screenshot-box" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2);">
+                    <img src="/images/maipdf2026/choose_online_for_sharing_online.png" alt="MaiPDF upload page - choose a file to share online" loading="lazy">
+                    <div class="caption" style="color: rgba(255,255,255,0.75);">Upload your PDF on the MaiPDF homepage</div>
+                </div>
+
                 <div class="step-item">
                     <div class="step-number">2</div>
                     <h4>Upload and Process</h4>
@@ -521,11 +623,31 @@
                     <p>Add protection like passwords, expiration dates, view limits, or download restrictions. You control how people access the file.</p>
                 </div>
 
+                <div class="screenshot-box" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2);">
+                    <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="MaiPDF settings panel - access limits, watermarks, expiration, alerts" loading="lazy">
+                    <div class="caption" style="color: rgba(255,255,255,0.75);">Configure access limits, watermarks, expiration, and alerts</div>
+                </div>
+
                 <div class="step-item">
                     <div class="step-number">4</div>
                     <h4>Copy and Share the Link</h4>
                     <p>Copy your unique link and send it by email, chat apps, social media, or anywhere else you share information.</p>
                 </div>
+
+                <div class="screenshot-box" style="background: rgba(255,255,255,0.12); border-color: rgba(255,255,255,0.2);">
+                    <img src="/images/maipdf2026/Result_of_qr_link.png" alt="MaiPDF result - copy sharing link and QR code" loading="lazy">
+                    <div class="caption" style="color: rgba(255,255,255,0.75);">Copy your sharing link or scan the QR code</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- PDF Preview Screenshot -->
+        <div class="content-card">
+            <h2><i class="fas fa-desktop text-primary me-2"></i>What Your Shared PDF Looks Like</h2>
+            <p>Recipients open the link in any browser. The built-in viewer provides a clean, responsive reading experience with no downloads required.</p>
+            <div class="screenshot-box">
+                <img src="/images/maipdf2026/pdf native view on ui.png" alt="PDF native viewer - how shared PDFs display in browser" loading="lazy">
+                <div class="caption">Clean browser-based PDF viewer with no-download, no-print protection</div>
             </div>
         </div>
 
@@ -568,6 +690,23 @@
                     <i class="fas fa-download feature-icon"></i>
                     <h4>Download Control</h4>
                     <p>Choose view-only or allow downloads when it makes sense.</p>
+                </div>
+            </div>
+
+            <!-- Feature Screenshots Gallery -->
+            <h3 class="mt-4 mb-3"><i class="fas fa-images me-2 text-info"></i>See It in Action</h3>
+            <div class="showoff-gallery">
+                <div class="gallery-item">
+                    <img src="/images/maipdf2026/show_off/securityshowoff.png" alt="Security features - password, watermark, expiration controls" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/maipdf2026/show_off/openlimit.png" alt="Access limit configuration - control how many times a PDF can be opened" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/maipdf2026/show_off/email verify.png" alt="Email verification - only verified recipients can view the PDF" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/maipdf2026/show_off/self-destruct.png" alt="Self-destruct links - documents disappear after reading" loading="lazy">
                 </div>
             </div>
         </div>
@@ -703,6 +842,20 @@
             </div>
         </div>
 
+        <!-- Control Panel Screenshot -->
+        <div class="content-card">
+            <h2><i class="fas fa-sliders-h text-primary me-2"></i>Manage All Your Links in One Place</h2>
+            <p>After sharing, use the Control Panel to update settings, replace files, check access records, or disable links — all without changing the URL.</p>
+            <div class="screenshot-box">
+                <img src="/images/maipdf2026/user_control_panel_alotof_functions.png" alt="MaiPDF user control panel - manage all shared PDF links" loading="lazy">
+                <div class="caption">The MaiPDF Control Panel lets you manage every shared document</div>
+            </div>
+            <div class="screenshot-box">
+                <img src="/images/maipdf2026/page_redirect_to_accessRecord.png" alt="Access records - view who opened your PDF and when" loading="lazy">
+                <div class="caption">View detailed access records for each shared document</div>
+            </div>
+        </div>
+
         <!-- FAQ Section -->
         <div class="faq-container">
             <h2><i class="fas fa-question-circle text-info me-2"></i>Frequently Asked Questions</h2>
@@ -746,6 +899,33 @@
                 <div class="faq-question">Q: Can I customize the sharing link?</div>
                 <div class="faq-answer">A: Links are auto-generated for security, but you can create multiple links for the same PDF with different settings.</div>
             </div>
+        </div>
+
+        <!-- Conclusion -->
+        <div class="conclusion-section">
+            <h2><i class="fas fa-flag-checkered me-2"></i>Conclusion</h2>
+            <p>PDF link sharing replaces bulky attachments with a single URL that's easy to send and easy to control. With MaiPDF you can:</p>
+            <ul>
+                <li>Generate shareable links instantly — no account required</li>
+                <li>Protect documents with passwords, view limits, and expiration dates</li>
+                <li>Track who opens your files and when</li>
+                <li>Replace the underlying PDF without changing the link</li>
+                <li>Disable access at any time with one click</li>
+            </ul>
+            <p style="margin-top: 18px;">Whether you're sharing contracts, reports, portfolios, or teaching materials, link-based sharing gives you the control and visibility that email attachments simply cannot.</p>
+        </div>
+
+        <!-- Share & Social Proof -->
+        <div class="content-card" style="text-align:center; border-left-color: #06b6d4;">
+            <div class="showoff-gallery" style="grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));">
+                <div class="gallery-item">
+                    <img src="/images/maipdf2026/show_off/shareandsend.png" alt="Share PDF via link across platforms" loading="lazy">
+                </div>
+                <div class="gallery-item">
+                    <img src="/images/maipdf2026/show_off/share_pdf_online-show.png" alt="Share PDF online securely" loading="lazy">
+                </div>
+            </div>
+            <p class="mt-2" style="color:#64748b; font-size:0.95rem;">Share your PDFs across any platform — email, messaging apps, social media, or embed on websites.</p>
         </div>
 
         <!-- Call to Action -->
