@@ -1,27 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 360" preserveAspectRatio="xMidYMid meet">
-  <style>
-    .card{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:14}
-    .h{font:700 24px Inter,Segoe UI,sans-serif;fill:#0f172a}
-    .p{font:400 17px Inter,Segoe UI,sans-serif;fill:#334155}
-    .tag{font:700 16px Inter,Segoe UI,sans-serif;fill:#1d4ed8}
-  </style>
-  <rect width="1200" height="360" fill="#f8fafc"/>
-  <g transform="translate(60,45)">
-    <rect class="card" width="500" height="270"/>
-    <text class="h" x="250" y="48" text-anchor="middle">Link-First Channels</text>
-    <text class="p" x="38" y="95">• Team chat / Slack / Discord</text>
-    <text class="p" x="38" y="130">• Email campaigns and newsletters</text>
-    <text class="p" x="38" y="165">• Social posts and DMs</text>
-    <text class="p" x="38" y="200">• Partner portals and docs</text>
-    <text class="tag" x="38" y="240">Best when click-through is the goal</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">Channel distribution matrix for image sharing</title>
+  <desc id="desc">A clean matrix showing link-first and QR-first distribution channels with usage guidance.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f8fafc"/>
+      <stop offset="100%" stop-color="#eef2ff"/>
+    </linearGradient>
+    <style>
+      .title{font:700 34px Inter,Segoe UI,sans-serif;fill:#0f172a}
+      .sub{font:500 16px Inter,Segoe UI,sans-serif;fill:#475569}
+      .card{fill:#ffffff;stroke:#cbd5e1;stroke-width:2}
+      .h{font:700 21px Inter,Segoe UI,sans-serif;fill:#1e293b}
+      .t{font:400 15px Inter,Segoe UI,sans-serif;fill:#334155}
+      .chip{font:700 13px Inter,Segoe UI,sans-serif}
+      .core{fill:#1e293b;stroke:#475569;stroke-width:2}
+      .coreText{font:700 16px Inter,Segoe UI,sans-serif;fill:#e2e8f0}
+      .line{stroke:#94a3b8;stroke-width:2.5;fill:none}
+    </style>
+  </defs>
+
+  <rect width="1200" height="520" fill="url(#bg)"/>
+  <text class="title" x="600" y="58" text-anchor="middle">Channel Distribution Matrix</text>
+  <text class="sub" x="600" y="84" text-anchor="middle">Pick link-first for online flows, QR-first for physical touchpoints</text>
+
+  <rect class="core" x="500" y="210" rx="16" ry="16" width="200" height="90"/>
+  <text class="coreText" x="600" y="245" text-anchor="middle">MaiImg Gallery</text>
+  <text class="coreText" x="600" y="268" text-anchor="middle">Link + QR output</text>
+
+  <path class="line" d="M500 245 L355 160"/>
+  <path class="line" d="M700 245 L845 160"/>
+  <path class="line" d="M500 270 L355 360"/>
+  <path class="line" d="M700 270 L845 360"/>
+
+  <g transform="translate(70,95)">
+    <rect class="card" rx="14" ry="14" width="310" height="130"/>
+    <text class="h" x="24" y="36">Link-First / Work Chat</text>
+    <text class="t" x="24" y="64">• Slack, Teams, Discord channels</text>
+    <text class="t" x="24" y="88">• Internal collaboration loops</text>
+    <text class="chip" x="24" y="112" fill="#2563eb">Best for fast click-through</text>
   </g>
-  <g transform="translate(640,45)">
-    <rect class="card" width="500" height="270"/>
-    <text class="h" x="250" y="48" text-anchor="middle">QR-First Channels</text>
-    <text class="p" x="38" y="95">• Event signage and booths</text>
-    <text class="p" x="38" y="130">• Product inserts and flyers</text>
-    <text class="p" x="38" y="165">• Print cards and brochures</text>
-    <text class="p" x="38" y="200">• Reception desk displays</text>
-    <text class="tag" x="38" y="240">Best when scan-and-open is easier</text>
+
+  <g transform="translate(820,95)">
+    <rect class="card" rx="14" ry="14" width="310" height="130"/>
+    <text class="h" x="24" y="36">QR-First / Physical Space</text>
+    <text class="t" x="24" y="64">• Booth signs and stage screens</text>
+    <text class="t" x="24" y="88">• Flyers, printed collateral</text>
+    <text class="chip" x="24" y="112" fill="#0f766e">Best for scan-and-open</text>
+  </g>
+
+  <g transform="translate(70,295)">
+    <rect class="card" rx="14" ry="14" width="310" height="130"/>
+    <text class="h" x="24" y="36">Link-First / Campaigns</text>
+    <text class="t" x="24" y="64">• Newsletters and lifecycle email</text>
+    <text class="t" x="24" y="88">• Social posts and DMs</text>
+    <text class="chip" x="24" y="112" fill="#2563eb">Best for measurable engagement</text>
+  </g>
+
+  <g transform="translate(820,295)">
+    <rect class="card" rx="14" ry="14" width="310" height="130"/>
+    <text class="h" x="24" y="36">QR-First / Customer Journey</text>
+    <text class="t" x="24" y="64">• In-store counters and packaging</text>
+    <text class="t" x="24" y="88">• On-site check-in desks</text>
+    <text class="chip" x="24" y="112" fill="#0f766e">Best for low-friction access</text>
   </g>
 </svg>

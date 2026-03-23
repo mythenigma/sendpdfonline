@@ -1,47 +1,70 @@
-<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="430" viewBox="0 0 1200 430" role="img" aria-labelledby="title desc">
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="470" viewBox="0 0 1200 470" role="img" aria-labelledby="title desc">
   <title id="title">Event Photo Sharing Runbook</title>
-  <desc id="desc">Operational runbook for collecting and distributing event photos quickly.</desc>
+  <desc id="desc">Structured runbook for collecting, packaging, distributing, and measuring event image engagement.</desc>
   <defs>
-    <linearGradient id="g2" x1="0" x2="1">
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
       <stop offset="0%" stop-color="#fff7ed"/>
       <stop offset="100%" stop-color="#ffedd5"/>
     </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#ea580c"/>
+    </marker>
     <style>
-      .h{font-family:Arial,Helvetica,sans-serif;fill:#9a3412;font-size:30px;font-weight:700}
-      .b{fill:#fff;stroke:#f97316;stroke-width:2}
-      .t{font-family:Arial,Helvetica,sans-serif;fill:#7c2d12;font-size:22px;font-weight:700}
-      .s{font-family:Arial,Helvetica,sans-serif;fill:#7c2d12;font-size:16px}
+      .title{font:700 33px Inter,Segoe UI,sans-serif;fill:#7c2d12}
+      .sub{font:500 16px Inter,Segoe UI,sans-serif;fill:#9a3412}
+      .card{fill:#ffffff;stroke:#fb923c;stroke-width:2}
+      .h{font:700 21px Inter,Segoe UI,sans-serif;fill:#7c2d12}
+      .t{font:400 15px Inter,Segoe UI,sans-serif;fill:#7c2d12}
+      .line{stroke:#ea580c;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .chip{font:700 12px Inter,Segoe UI,sans-serif;fill:#b45309}
     </style>
   </defs>
-  <rect width="1200" height="430" fill="url(#g2)"/>
-  <text class="h" x="600" y="58" text-anchor="middle">Event-Day Photo Sharing Runbook</text>
 
-  <rect class="b" x="80" y="105" width="240" height="250" rx="14"/>
-  <text class="t" x="200" y="155" text-anchor="middle">Collect</text>
-  <text class="s" x="110" y="200">- Team upload channel</text>
-  <text class="s" x="110" y="230">- Quick quality filter</text>
-  <text class="s" x="110" y="260">- Remove duplicates</text>
+  <rect width="1200" height="470" fill="url(#bg)"/>
+  <text class="title" x="600" y="56" text-anchor="middle">Event-Day Photo Sharing Runbook</text>
+  <text class="sub" x="600" y="82" text-anchor="middle">From capture to post-event follow-up in one operational lane</text>
 
-  <rect class="b" x="350" y="105" width="240" height="250" rx="14"/>
-  <text class="t" x="470" y="155" text-anchor="middle">Package</text>
-  <text class="s" x="380" y="200">- Build album groups</text>
-  <text class="s" x="380" y="230">- Add cover + title</text>
-  <text class="s" x="380" y="260">- Set access limits</text>
+  <g transform="translate(55,120)">
+    <rect class="card" rx="14" ry="14" width="250" height="280"/>
+    <text class="h" x="28" y="42">1) Collect</text>
+    <text class="t" x="28" y="82">• Open the team upload channel</text>
+    <text class="t" x="28" y="112">• Drop raw sets by time block</text>
+    <text class="t" x="28" y="142">• Remove duplicates / blur fails</text>
+    <text class="t" x="28" y="172">• Keep only campaign-ready cuts</text>
+    <text class="chip" x="28" y="236">Output: clean input batch</text>
+  </g>
 
-  <rect class="b" x="620" y="105" width="240" height="250" rx="14"/>
-  <text class="t" x="740" y="155" text-anchor="middle">Distribute</text>
-  <text class="s" x="650" y="200">- Link for online chat</text>
-  <text class="s" x="650" y="230">- QR for on-site screens</text>
-  <text class="s" x="650" y="260">- Announce once hourly</text>
+  <g transform="translate(335,120)">
+    <rect class="card" rx="14" ry="14" width="250" height="280"/>
+    <text class="h" x="28" y="42">2) Package</text>
+    <text class="t" x="28" y="82">• Group by session or audience</text>
+    <text class="t" x="28" y="112">• Add a clear gallery title</text>
+    <text class="t" x="28" y="142">• Configure open limits if needed</text>
+    <text class="t" x="28" y="172">• Generate link + QR output</text>
+    <text class="chip" x="28" y="236">Output: delivery-ready gallery</text>
+  </g>
 
-  <rect class="b" x="890" y="105" width="240" height="250" rx="14"/>
-  <text class="t" x="1010" y="155" text-anchor="middle">Measure</text>
-  <text class="s" x="920" y="200">- Track view spikes</text>
-  <text class="s" x="920" y="230">- Patch missed audiences</text>
-  <text class="s" x="920" y="260">- Republish highlights</text>
+  <g transform="translate(615,120)">
+    <rect class="card" rx="14" ry="14" width="250" height="280"/>
+    <text class="h" x="28" y="42">3) Distribute</text>
+    <text class="t" x="28" y="82">• Link for email / social / chat</text>
+    <text class="t" x="28" y="112">• QR for venue screens & cards</text>
+    <text class="t" x="28" y="142">• Post once, then reminder cadence</text>
+    <text class="t" x="28" y="172">• Keep one canonical URL</text>
+    <text class="chip" x="28" y="236">Output: audience access at scale</text>
+  </g>
 
-  <path d="M320,230 L350,230" stroke="#f97316" stroke-width="5" marker-end="url(#m)"/>
-  <path d="M590,230 L620,230" stroke="#f97316" stroke-width="5" marker-end="url(#m)"/>
-  <path d="M860,230 L890,230" stroke="#f97316" stroke-width="5" marker-end="url(#m)"/>
-  <defs><marker id="m" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto"><polygon points="0,0 10,4 0,8" fill="#f97316"/></marker></defs>
+  <g transform="translate(895,120)">
+    <rect class="card" rx="14" ry="14" width="250" height="280"/>
+    <text class="h" x="28" y="42">4) Measure</text>
+    <text class="t" x="28" y="82">• Watch open spikes by channel</text>
+    <text class="t" x="28" y="112">• Patch missed audience segments</text>
+    <text class="t" x="28" y="142">• Revoke stale links after event</text>
+    <text class="t" x="28" y="172">• Publish highlight recap</text>
+    <text class="chip" x="28" y="236">Output: insights for next event</text>
+  </g>
+
+  <path class="line" d="M305 260 L335 260"/>
+  <path class="line" d="M585 260 L615 260"/>
+  <path class="line" d="M865 260 L895 260"/>
 </svg>

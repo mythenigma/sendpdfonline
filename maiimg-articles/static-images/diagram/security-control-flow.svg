@@ -1,20 +1,66 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid meet">
-  <style>
-    .box{fill:#fff;stroke:#86efac;stroke-width:2;rx:14}
-    .t1{font:700 22px Inter,Segoe UI,sans-serif;fill:#14532d}
-    .t2{font:400 16px Inter,Segoe UI,sans-serif;fill:#334155}
-    .arr{stroke:#6ee7b7;stroke-width:4;stroke-linecap:round}
-    .dot{fill:#059669}
-    @keyframes slide{0%{transform:translateX(0)}100%{transform:translateX(165px)}}
-    .d1{animation:slide 1.9s linear infinite}
-    .d2{animation:slide 1.9s linear infinite .5s}
-    .d3{animation:slide 1.9s linear infinite 1s}
-  </style>
-  <rect width="1200" height="320" fill="#f0fdf4"/>
-  <g transform="translate(30,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">1) Set Limits</text><text class="t2" x="110" y="92" text-anchor="middle">Views per link</text><text class="t2" x="110" y="122" text-anchor="middle">Protect access scope</text></g>
-  <g transform="translate(320,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">2) Set Expiry</text><text class="t2" x="110" y="92" text-anchor="middle">Time-bound access</text><text class="t2" x="110" y="122" text-anchor="middle">Auto expiration</text></g>
-  <g transform="translate(610,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">3) Share</text><text class="t2" x="110" y="92" text-anchor="middle">Link and QR channels</text><text class="t2" x="110" y="122" text-anchor="middle">Consistent distribution</text></g>
-  <g transform="translate(900,60)"><rect class="box" width="220" height="170"/><text class="t1" x="110" y="55" text-anchor="middle">4) Revoke</text><text class="t2" x="110" y="92" text-anchor="middle">One-click disable</text><text class="t2" x="110" y="122" text-anchor="middle">Fast risk recovery</text></g>
-  <line class="arr" x1="250" y1="255" x2="320" y2="255"/><line class="arr" x1="540" y1="255" x2="610" y2="255"/><line class="arr" x1="830" y1="255" x2="900" y2="255"/>
-  <circle class="dot d1" cx="255" cy="255" r="6"/><circle class="dot d2" cx="545" cy="255" r="6"/><circle class="dot d3" cx="835" cy="255" r="6"/>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 420" preserveAspectRatio="xMidYMid meet" role="img" aria-labelledby="title desc">
+  <title id="title">Security control flow for image sharing</title>
+  <desc id="desc">Step-by-step flow: set limits, set expiration, distribute links, monitor and revoke access.</desc>
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ecfdf5"/>
+      <stop offset="100%" stop-color="#dcfce7"/>
+    </linearGradient>
+    <marker id="arrow" markerWidth="10" markerHeight="8" refX="9" refY="4" orient="auto">
+      <polygon points="0,0 10,4 0,8" fill="#059669"/>
+    </marker>
+    <style>
+      .title{font:700 32px Inter,Segoe UI,sans-serif;fill:#14532d}
+      .sub{font:500 16px Inter,Segoe UI,sans-serif;fill:#166534}
+      .box{fill:#ffffff;stroke:#86efac;stroke-width:2}
+      .h{font:700 20px Inter,Segoe UI,sans-serif;fill:#14532d}
+      .t{font:400 14px Inter,Segoe UI,sans-serif;fill:#334155}
+      .line{stroke:#10b981;stroke-width:3;fill:none;marker-end:url(#arrow)}
+      .chip{font:700 12px Inter,Segoe UI,sans-serif;fill:#047857}
+    </style>
+  </defs>
+
+  <rect width="1200" height="420" fill="url(#bg)"/>
+  <text class="title" x="600" y="58" text-anchor="middle">Security Control Flow</text>
+  <text class="sub" x="600" y="84" text-anchor="middle">Apply controls before sharing, then monitor and revoke quickly if risk appears</text>
+
+  <g transform="translate(45,120)">
+    <rect class="box" rx="14" ry="14" width="255" height="230"/>
+    <text class="h" x="24" y="40">1) Set Limits</text>
+    <text class="t" x="24" y="74">• Views per link</text>
+    <text class="t" x="24" y="100">• Audience scope planning</text>
+    <text class="t" x="24" y="126">• Right-size access for each batch</text>
+    <text class="chip" x="24" y="192">Control: bounded opens</text>
+  </g>
+
+  <g transform="translate(335,120)">
+    <rect class="box" rx="14" ry="14" width="255" height="230"/>
+    <text class="h" x="24" y="40">2) Set Expiry</text>
+    <text class="t" x="24" y="74">• Time-bound gallery windows</text>
+    <text class="t" x="24" y="100">• Event / campaign end cut-off</text>
+    <text class="t" x="24" y="126">• Auto close for stale links</text>
+    <text class="chip" x="24" y="192">Control: time gate</text>
+  </g>
+
+  <g transform="translate(625,120)">
+    <rect class="box" rx="14" ry="14" width="255" height="230"/>
+    <text class="h" x="24" y="40">3) Share + Observe</text>
+    <text class="t" x="24" y="74">• Distribute via link and QR</text>
+    <text class="t" x="24" y="100">• Watch open trend in dashboard</text>
+    <text class="t" x="24" y="126">• Spot unusual spikes quickly</text>
+    <text class="chip" x="24" y="192">Control: visibility</text>
+  </g>
+
+  <g transform="translate(915,120)">
+    <rect class="box" rx="14" ry="14" width="240" height="230"/>
+    <text class="h" x="24" y="40">4) Revoke</text>
+    <text class="t" x="24" y="74">• One-click disable</text>
+    <text class="t" x="24" y="100">• Stop further access</text>
+    <text class="t" x="24" y="126">• Reissue clean replacement link</text>
+    <text class="chip" x="24" y="192">Control: fast recovery</text>
+  </g>
+
+  <path class="line" d="M300 235 L335 235"/>
+  <path class="line" d="M590 235 L625 235"/>
+  <path class="line" d="M880 235 L915 235"/>
 </svg>

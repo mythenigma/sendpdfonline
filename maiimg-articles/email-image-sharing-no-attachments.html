@@ -3,388 +3,273 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Share images via email without attachments using MaiImg - Generate shareable links, avoid file size limits, ensure fast delivery, and track views. Perfect for professional email communication.">
-    <meta name="keywords" content="email image sharing, share images email, email without attachments, image link email, email image hosting, share images no attachment, email image gallery, MaiImg email">
+    <meta name="description" content="Send image galleries by email without attachments using MaiImg (麦瓜图床): one link for up to 25 images, Cloudflare CDN delivery, optional view limits, and open tracking.">
+    <meta name="keywords" content="email image sharing, share images without attachments, image link email, MaiImg, 麦瓜图床, Cloudflare CDN">
     <meta name="author" content="MaiImg Team">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Email Image Sharing Without Attachments - Share Images via Email Links | MaiImg">
-    <meta property="og:description" content="Share images via email without attachments. Avoid file size limits, ensure fast delivery with Cloudflare CDN, and track views. Professional email communication.">
-    <meta property="og:image" content="https://maiimg.com/images/email-sharing.png">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:title" content="Email Image Sharing Without Attachments | MaiImg">
+    <meta property="og:description" content="Replace heavy attachments with a single MaiImg link. Faster inbox delivery, fewer spam triggers, and view tracking.">
+    <meta property="og:image" content="https://sendpdfonline.com/maiimg-articles/static-images/common/show/sharesmarter.jpg">
+    <meta property="og:url" content="https://sendpdfonline.com/maiimg-articles/email-image-sharing-no-attachments">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiImg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Email Image Sharing Without Attachments | MaiImg">
+    <meta name="twitter:description" content="One MaiImg link instead of bulky attachments — CDN-backed galleries for professional email.">
+    <meta name="twitter:image" content="https://sendpdfonline.com/maiimg-articles/static-images/common/show/sharesmarter.jpg">
     <link rel="canonical" href="https://sendpdfonline.com/maiimg-articles/email-image-sharing-no-attachments">
-    <title>Email Image Sharing Without Attachments - Share Images via Email Links | MaiImg</title>
+    <title>Email Image Sharing Without Attachments (2026) | MaiImg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .feature-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="maiimg-cyber-article.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Email Image Sharing Without Attachments",
+        "description": "How to share image batches through email using MaiImg links instead of MIME attachments, with CDN delivery and optional analytics.",
+        "image": "https://sendpdfonline.com/maiimg-articles/static-images/common/show/sharesmarter.jpg",
+        "author": { "@type": "Organization", "name": "MaiImg", "url": "https://maiimg.com" },
+        "publisher": { "@type": "Organization", "name": "MaiImg", "logo": { "@type": "ImageObject", "url": "https://maiimg.com/images/logo.png" } },
+        "datePublished": "2025-01-15",
+        "dateModified": "2026-03-02",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sendpdfonline.com/maiimg-articles/email-image-sharing-no-attachments" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "MaiImg articles", "item": "https://sendpdfonline.com/maiimg-articles/index"},
+            {"@type": "ListItem", "position": 3, "name": "Email image sharing without attachments"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Why use a link instead of email attachments for images?", "acceptedAnswer": {"@type": "Answer", "text": "Links avoid per-message size caps, reduce attachment-based spam scoring, and let recipients load images from a CDN on demand instead of downloading a large MIME payload with the email."}},
+            {"@type": "Question", "name": "How many images can one MaiImg link include?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 25 images per batch. Create additional links if you need more images in separate galleries."}},
+            {"@type": "Question", "name": "Can I see if someone opened my gallery?", "acceptedAnswer": {"@type": "Answer", "text": "MaiImg provides view tracking from the dashboard so you can time follow-ups after recipients actually open the link."}},
+            {"@type": "Question", "name": "Do recipients need an account?", "acceptedAnswer": {"@type": "Answer", "text": "No. They open the URL in a browser; optional QR codes work for print or slides."}},
+            {"@type": "Question", "name": "What is MaiImg in Chinese?", "acceptedAnswer": {"@type": "Answer", "text": "MaiImg is also referred to as 麦瓜图床 (MaiGuā image hosting)."}}
+        ]
+    }
+    </script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
-<body>
-    <nav class="navbar navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <div class="container">
-            <a class="navbar-brand" href="https://maiimg.com">MaiImg</a>
+<body class="grid-bg">
+    <nav class="navbar navbar-expand-lg nav-cyber sticky-top">
+        <div class="container-fluid px-3 px-xl-4 px-xxl-5" style="max-width:1920px;margin:0 auto">
+            <a class="navbar-brand" href="https://maiimg.com"><i class="fas fa-images me-2" style="color:var(--neon-purple)"></i>MaiImg</a>
+            <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://maiimg.com">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#how">How it works</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
+                </ul>
+            </div>
         </div>
     </nav>
 
-    <div class="hero">
-        <div class="container">
-            <h1><i class="fas fa-envelope"></i> Email Image Sharing Without Attachments</h1>
-            <p class="lead">Share images via email without attachments. Avoid file size limits, ensure fast delivery with Cloudflare CDN, track views, and set view limits. Professional email communication made simple.</p>
-            <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3">Start Sharing</a>
-        </div>
-    </div>
-
-    <div class="container my-5">
-        <div class="feature-card">
-            <h2>Why I Stopped Using Email Attachments</h2>
-            <p>I used to attach images to emails. Then I hit problems - file size limits, emails getting rejected, slow delivery, or images getting blocked by spam filters. MaiImg solved all of this.</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4><i class="fas fa-ban text-danger"></i> No File Size Limits</h4>
-                    <p>Most email providers limit attachments to 25MB. I regularly need to share 50+ high-res images. With MaiImg, I share one link instead of multiple emails.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-shield-alt text-success"></i> No Spam Filter Issues</h4>
-                    <p>Email attachments often trigger spam filters. Links don't. My emails with MaiImg links have 100% delivery rate vs 70% with attachments.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-bolt text-warning"></i> Instant Delivery</h4>
-                    <p>Large attachments slow down email delivery. Links are instant. Recipients get emails immediately, images load from Cloudflare CDN.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-eye text-primary"></i> Know When They View</h4>
-                    <p>With attachments, I never know if clients actually opened them. With MaiImg links, I see exactly when they view my images. Game changer for follow-ups.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <h2>How to Share Images via Email (Without Attachments)</h2>
-            <div class="row mt-4">
-                <div class="col-md-4 text-center mb-4">
-                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <span class="fs-3">1</span>
+    <header class="container-fluid px-2 px-md-3 px-xl-4 px-xxl-5">
+        <div class="cyber-frame cyber-frame--wide">
+            <div class="cyber-frame-inner">
+            <div class="row g-4 g-xl-5 align-items-xl-center hero-landscape-row">
+                <div class="col-lg-6">
+                    <span class="badge-pill-outline"><i class="fas fa-envelope"></i> MaiImg Guide</span>
+                    <p class="breadcrumb-cyber mb-0">Email · One link · No 25MB cap</p>
+                    <p class="small mt-2 mb-0" style="color:var(--neon-cyan);font-weight:600;letter-spacing:0.02em;"><i class="fas fa-calendar-check me-1"></i>Updated March 2, 2026</p>
+                    <p class="small mt-1 mb-0" style="color:var(--text-muted);max-width:36rem;">MaiImg · <strong style="color:#e2e8f0;">麦瓜图床</strong> — same product; this page is in English.</p>
+                    <div class="hero-headline-wrap">
+                        <h1 class="hero-title-line1">MaiImg</h1>
+                        <span class="hero-title-sep d-none d-xxl-inline" aria-hidden="true">/</span>
+                        <h1 class="hero-title-line2">Email Without Attachments</h1>
                     </div>
-                    <h4>Upload Images</h4>
-                    <p>Upload your images to MaiImg (up to 25 at once). Images are stored on Cloudflare's fast CDN network.</p>
-                    <img src="https://maiimg.com/images/upload-interface.png" alt="Upload Images" class="img-fluid rounded mt-3">
-                </div>
-                <div class="col-md-4 text-center mb-4">
-                    <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <span class="fs-3">2</span>
+                    <p class="hero-lead">Upload up to <strong>25 images</strong>, paste <strong>one URL</strong> into your email body, and let Cloudflare CDN handle delivery — <strong>no MIME bloat</strong> in the thread.</p>
+                    <div class="tag-row" id="features">
+                        <span class="tag-chip tag-chip--purple">Smaller inbox footprint</span>
+                        <span class="tag-chip tag-chip--cyan">Link + QR</span>
+                        <span class="tag-chip tag-chip--blue">Open tracking</span>
                     </div>
-                    <h4>Copy Shareable Link</h4>
-                    <p>Get your shareable link. Optionally set view limits or expiration dates for sensitive content.</p>
-                    <img src="https://maiimg.com/images/share-link.png" alt="Shareable Link" class="img-fluid rounded mt-3">
-                </div>
-                <div class="col-md-4 text-center mb-4">
-                    <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <span class="fs-3">3</span>
+                    <div class="mt-4">
+                        <a href="https://maiimg.com" class="btn-cyber">Open MaiImg</a>
                     </div>
-                    <h4>Paste in Email</h4>
-                    <p>Paste the link in your email. Recipients click to view all images instantly. No downloads needed.</p>
-                    <img src="https://maiimg.com/images/email-example.png" alt="Email Example" class="img-fluid rounded mt-3">
                 </div>
+                <div class="col-lg-6">
+                    <div class="cyber-stack">
+                        <div class="cyber-mini-card cyber-mini-card--p">
+                            <span class="cyber-mini-card__num">01</span>
+                            <div>
+                                <h3>Upload once</h3>
+                                <p>Batch up to 25 files. The heavy lifting moves off the mail transfer path.</p>
+                            </div>
+                        </div>
+                        <div class="cyber-mini-card cyber-mini-card--c">
+                            <span class="cyber-mini-card__num">02</span>
+                            <div>
+                                <h3>Copy the gallery link</h3>
+                                <p>Optional QR for decks or printed follow-ups — same gallery.</p>
+                            </div>
+                        </div>
+                        <div class="cyber-mini-card cyber-mini-card--b">
+                            <span class="cyber-mini-card__num">03</span>
+                            <div>
+                                <h3>Paste into email</h3>
+                                <p>Write your message, drop the link, send. Track opens when you need proof of reach.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="brand-footer d-none d-md-flex">
+                        <span class="brand-footer__icon">M</span>
+                        <span>MaiImg — built for teams that live in email</span>
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
+    </header>
 
-        <div class="feature-card">
-            <h2>Email Template Examples</h2>
-            
-            <div class="mt-4">
-                <h4><i class="fas fa-briefcase"></i> Professional Email Template</h4>
-                <div class="bg-light p-4 rounded">
-                    <p><strong>Subject:</strong> Design Options for Your Review</p>
-                    <p>Hi [Client Name],</p>
-                    <p>I've prepared 3 design options for your project. You can view them all here:</p>
-                    <p><a href="#" class="btn btn-primary">View Design Options</a></p>
-                    <p>All images are high-resolution and ready for review. Let me know which direction you prefer.</p>
-                    <p>Best regards,<br>[Your Name]</p>
-                </div>
-            </div>
-
-            <div class="mt-4">
-                <h4><i class="fas fa-camera"></i> Event Photo Sharing Template</h4>
-                <div class="bg-light p-4 rounded">
-                    <p><strong>Subject:</strong> Photos from [Event Name]</p>
-                    <p>Hi everyone,</p>
-                    <p>Thank you for attending [Event Name]! I've uploaded all the photos from the event. You can view and download them here:</p>
-                    <p><a href="#" class="btn btn-primary">View Event Photos</a></p>
-                    <p>Feel free to share with others who attended.</p>
-                    <p>Best,<br>[Your Name]</p>
-                </div>
-            </div>
-
-            <div class="mt-4">
-                <h4><i class="fas fa-box"></i> Product Catalog Template</h4>
-                <div class="bg-light p-4 rounded">
-                    <p><strong>Subject:</strong> New Product Catalog - Spring 2025</p>
-                    <p>Hi [Recipient],</p>
-                    <p>Our new Spring 2025 catalog is ready! View all products and pricing here:</p>
-                    <p><a href="#" class="btn btn-primary">View Product Catalog</a></p>
-                    <p>All images are high-quality and optimized for viewing. Let me know if you have any questions.</p>
-                    <p>Regards,<br>[Your Name]</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <h2>Set View Limits for Email Links</h2>
-            <p>One feature I use constantly is setting view limits on email links. Here's why:</p>
-            
-            <div class="row mt-4">
+    <div class="section-dark">
+        <div class="section-card">
+            <h2><i class="fas fa-bolt"></i> Why I stopped attaching raw images</h2>
+            <p>Most providers cap attachments around 25MB. A single photoshoot blows past that. Even when a message squeaks through, large MIME parts slow sync on mobile and can trip attachment-aware spam heuristics. A MaiImg link keeps the email itself tiny while images load from the edge.</p>
+            <div class="row mt-3">
                 <div class="col-md-6">
-                    <h4><i class="fas fa-lock text-primary"></i> Exclusive Content</h4>
-                    <p>For proposals or exclusive offers, I set view limits (e.g., 5 views per recipient). Once reached, the link expires. Creates urgency and protects sensitive content.</p>
+                    <h4><i class="fas fa-check-circle text-success"></i> Skip the size wall</h4>
+                    <p>One gallery link carries the whole batch; you are not splitting ZIPs across three threads.</p>
                 </div>
                 <div class="col-md-6">
-                    <h4><i class="fas fa-shield-alt text-primary"></i> Security Control</h4>
-                    <p>Prevent links from being forwarded indefinitely. Set a total view limit (e.g., 50 views) so even if forwarded, access is controlled.</p>
+                    <h4><i class="fas fa-check-circle text-success"></i> Cleaner signals</h4>
+                    <p>Plain links generally behave more predictably than huge attachments in strict filters.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4><i class="fas fa-check-circle text-success"></i> Faster “sent” experience</h4>
+                    <p>Your client finishes uploading the email quickly; pixels stream from CDN when readers click.</p>
+                </div>
+                <div class="col-md-6">
+                    <h4><i class="fas fa-check-circle text-success"></i> Proof of engagement</h4>
+                    <p>Dashboard views beat guessing whether anyone unzipped your files.</p>
                 </div>
             </div>
-
-            <div class="alert alert-info mt-4">
-                <h5><i class="fas fa-lightbulb"></i> My Email Strategy</h5>
-                <p>For client proposals, I set view limits to 3 views per link. This ensures only the intended recipient views it, and I can track if they've actually reviewed it. If they view it multiple times, I know they're seriously considering it.</p>
+            <div class="mt-3 text-center">
+                <img src="static-images/common/show/sharesmarter.jpg" alt="MaiImg creative: share smarter with links instead of attachments" class="img-fluid img-cyber" loading="lazy" width="720" height="405">
             </div>
         </div>
 
-        <div class="feature-card">
-            <h2>Why Cloudflare CDN Matters for Email</h2>
-            <p>MaiImg uses Cloudflare's global CDN. Here's why this is crucial for email sharing:</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
-                    <h4>Instant Loading</h4>
-                    <p>Images load in under 0.5 seconds from anywhere in the world. Recipients don't wait, improving engagement.</p>
+        <div class="section-card" id="how">
+            <h2><i class="fas fa-list-ol"></i> How it works (3 steps)</h2>
+            <div class="row mt-3 g-4">
+                <div class="col-md-4 text-center text-md-start">
+                    <div class="d-inline-flex align-items-center justify-content-center mb-2 rounded-3 px-3 py-2" style="background:rgba(168,85,247,0.2);border:1px solid rgba(168,85,247,0.4);"><span class="fw-bold">1</span></div>
+                    <h4>Upload</h4>
+                    <p>Drop up to 25 images on maiimg.com.</p>
+                    <img src="static-images/common/show/upload.jpg" alt="MaiImg upload area" class="img-fluid img-cyber mt-2" loading="lazy" width="640" height="360">
                 </div>
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-globe fa-3x text-primary mb-3"></i>
-                    <h4>Global Access</h4>
-                    <p>Whether your recipient is in New York or Singapore, images load from the nearest server. Consistent speed everywhere.</p>
+                <div class="col-md-4 text-center text-md-start">
+                    <div class="d-inline-flex align-items-center justify-content-center mb-2 rounded-3 px-3 py-2" style="background:rgba(45,212,191,0.15);border:1px solid rgba(45,212,191,0.4);"><span class="fw-bold">2</span></div>
+                    <h4>Copy link (or QR)</h4>
+                    <p>Grab the share URL shown after processing.</p>
+                    <img src="static-images/common/image_result.png" alt="MaiImg share link and QR output" class="img-fluid img-cyber mt-2" loading="lazy" width="640" height="360">
                 </div>
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
-                    <h4>Reliability</h4>
-                    <p>99.99% uptime means your links always work. No broken links, no frustrated recipients.</p>
+                <div class="col-md-4 text-center text-md-start">
+                    <div class="d-inline-flex align-items-center justify-content-center mb-2 rounded-3 px-3 py-2" style="background:rgba(59,130,246,0.15);border:1px solid rgba(59,130,246,0.4);"><span class="fw-bold">3</span></div>
+                    <h4>Paste into email</h4>
+                    <p>Use tracking to see when the thread actually opened the gallery.</p>
+                    <img src="static-images/common/result_tracking.png" alt="MaiImg tracking and management" class="img-fluid img-cyber mt-2" loading="lazy" width="640" height="360">
                 </div>
             </div>
+        </div>
 
-            <div class="mt-4">
-                <h4>Real Performance Comparison</h4>
-                <p>I tested email delivery with attachments vs MaiImg links:</p>
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Metric</th>
-                            <th>Email Attachments</th>
-                            <th>MaiImg Links</th>
-                        </tr>
-                    </thead>
+        <div class="section-card">
+            <h2><i class="fas fa-project-diagram"></i> Where email fits in your channels</h2>
+            <p>Email is one lane in a wider distribution map — same MaiImg asset can be re-used in chat, QR handouts, or social posts.</p>
+            <div class="flowchart-wrap text-center">
+                <img src="static-images/diagram/channel-distribution-matrix.svg" alt="Diagram: channel distribution matrix for image links" class="img-fluid img-cyber" loading="lazy" width="900" height="480">
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2><i class="fas fa-balance-scale"></i> Attachment vs MaiImg link</h2>
+            <div class="table-responsive mt-3">
+                <table class="table table-bordered table-cyber mb-0">
+                    <thead><tr><th>Topic</th><th>Traditional attachment</th><th>MaiImg link</th></tr></thead>
                     <tbody>
-                        <tr>
-                            <td>Delivery Time</td>
-                            <td>2-5 minutes (large files)</td>
-                            <td>Instant</td>
-                        </tr>
-                        <tr>
-                            <td>Spam Filter Rate</td>
-                            <td>30% blocked</td>
-                            <td>0% blocked</td>
-                        </tr>
-                        <tr>
-                            <td>File Size Limit</td>
-                            <td>25MB (most providers)</td>
-                            <td>No limit</td>
-                        </tr>
-                        <tr>
-                            <td>View Tracking</td>
-                            <td>Not possible</td>
-                            <td>Full analytics</td>
-                        </tr>
+                        <tr><td>Size pressure on SMTP</td><td>High</td><td>Low (link only)</td></tr>
+                        <tr><td>Mobile mailbox sync</td><td>Heavy</td><td>Light</td></tr>
+                        <tr><td>Batch of 20+ photos</td><td>Often painful</td><td>One gallery</td></tr>
+                        <tr><td>Know when opened</td><td>No</td><td>Yes (dashboard)</td></tr>
+                        <tr><td>Revoke after send</td><td>Impossible</td><td>Yes</td></tr>
                     </tbody>
                 </table>
             </div>
         </div>
 
-        <div class="feature-card">
-            <h2>Best Practices for Email Image Sharing</h2>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4><i class="fas fa-envelope-open"></i> Email Best Practices</h4>
-                    <ul>
-                        <li>Use clear, descriptive subject lines</li>
-                        <li>Explain what the link contains in email body</li>
-                        <li>Make the link prominent and clickable</li>
-                        <li>Include a call-to-action</li>
-                    </ul>
+        <div class="section-card">
+            <h2><i class="fas fa-image"></i> Share creative reference</h2>
+            <p>Below is a MaiImg marketing still showing link-style sharing (visual may include non-English copy).</p>
+            <img src="static-images/common/show/sharemaiimg.png" alt="MaiImg share link promotional graphic" class="img-fluid img-cyber d-block mx-auto" loading="lazy" width="640" height="360">
+        </div>
+
+        <div class="section-card" id="faq">
+            <h2><i class="fas fa-question-circle"></i> FAQ</h2>
+            <div class="accordion accordion-cyber mt-3" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="true">Why use a link instead of attachments?</button></h2>
+                    <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">You avoid mailbox size limits, reduce how much data rides with the email itself, and gain CDN-backed delivery plus optional analytics.</div></div>
                 </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-image"></i> Image Organization</h4>
-                    <ul>
-                        <li>Upload images in logical order</li>
-                        <li>First image should be most important</li>
-                        <li>Use descriptive file names</li>
-                        <li>Optimize file sizes for fast loading</li>
-                    </ul>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">How many images per link?</button></h2>
+                    <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Up to 25 per batch. Spin up another link if you need separate galleries.</div></div>
                 </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-lock"></i> Security Tips</h4>
-                    <ul>
-                        <li>Set view limits for sensitive content</li>
-                        <li>Use expiration dates for time-sensitive materials</li>
-                        <li>Revoke links if sent to wrong recipient</li>
-                        <li>Track views to identify unauthorized access</li>
-                    </ul>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">Can I track opens?</button></h2>
+                    <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes — use the MaiImg dashboard to see activity and decide when to follow up.</div></div>
                 </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-chart-line"></i> Follow-up Strategy</h4>
-                    <ul>
-                        <li>Check view tracking before following up</li>
-                        <li>Follow up if link viewed multiple times</li>
-                        <li>Revoke old links when sending updates</li>
-                        <li>Use analytics to optimize email content</li>
-                    </ul>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">Do readers install software?</button></h2>
+                    <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">No. They use a normal browser tab; QR is optional for offline handoffs.</div></div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">What does 麦瓜图床 mean?</button></h2>
+                    <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">It is the Chinese name for MaiImg image hosting (“MaiGuā image bed” / image hosting service).</div></div>
                 </div>
             </div>
         </div>
 
-        <div class="feature-card">
-            <h2>Common Use Cases</h2>
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-briefcase"></i> Client Proposals</h4>
-                    <p>Share design proposals, quotes, or project plans via email. Set view limits to ensure only intended recipients access. Track views to know when to follow up.</p>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-camera"></i> Event Photos</h4>
-                    <p>Share event photo galleries with attendees. One email, one link, all photos accessible. Fast loading ensures everyone can browse quickly.</p>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-box"></i> Product Catalogs</h4>
-                    <p>Send product catalogs to customers or vendors. No file size limits, fast loading, and recipients can view on any device.</p>
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-file-image"></i> Document Sharing</h4>
-                    <p>Share scanned documents, receipts, or forms via email. Avoid attachment limits and ensure reliable delivery.</p>
-                </div>
+        <div class="section-card">
+            <h2><i class="fas fa-link"></i> Related guides</h2>
+            <div class="row g-3">
+                <div class="col-md-6"><a href="free-image-hosting-sharing.html" class="related-tile"><h5><i class="fas fa-cloud me-2" style="color:var(--neon-purple)"></i>Free image hosting</h5><p class="text-muted small mb-0">Full product tour</p></a></div>
+                <div class="col-md-6"><a href="social-media-image-sharing.html" class="related-tile"><h5><i class="fas fa-share-alt me-2" style="color:var(--neon-cyan)"></i>Social media sharing</h5><p class="text-muted small mb-0">Links in posts</p></a></div>
+                <div class="col-md-6"><a href="image-sharing-best-practices.html" class="related-tile"><h5><i class="fas fa-star me-2" style="color:var(--neon-blue)"></i>Best practices</h5><p class="text-muted small mb-0">Checklists</p></a></div>
+                <div class="col-md-6"><a href="index.html" class="related-tile"><h5><i class="fas fa-book me-2" style="color:var(--neon-purple)"></i>All articles</h5><p class="text-muted small mb-0">Library</p></a></div>
             </div>
         </div>
 
-        <div class="feature-card">
-            <h2>FAQ</h2>
-            <div class="accordion mt-4" id="faqAccordion">
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">
-                            Will recipients need to download anything?
-                        </button>
-                    </h2>
-                    <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No! Recipients just click the link and view images in their browser. No downloads, no apps, no registration required.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
-                            What if I sent the link to the wrong person?
-                        </button>
-                    </h2>
-                    <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Just revoke the link in your MaiImg dashboard. The link becomes invalid immediately, preventing further access.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
-                            Can I see if someone viewed my images?
-                        </button>
-                    </h2>
-                    <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            Yes! MaiImg tracks views in real-time. You can see when someone opens your link and how many times they've viewed it.
-                        </div>
-                    </div>
-                </div>
-                <div class="accordion-item">
-                    <h2 class="accordion-header">
-                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
-                            Are there file size limits?
-                        </button>
-                    </h2>
-                    <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
-                        <div class="accordion-body">
-                            No file size limits! Upload as many high-resolution images as you need. Cloudflare CDN ensures fast loading regardless of file size.
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Related Articles -->
-        <div class="feature-card">
-            <h2><i class="fas fa-link"></i> Related Articles</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <a href="free-image-hosting-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-images text-primary"></i> Free Image Hosting</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="social-media-image-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-share-alt text-primary"></i> Social Media</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="batch-image-upload-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-upload text-primary"></i> Batch Upload</h6>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature-card text-center" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">
-            <h2>Start Sharing Images via Email Today</h2>
-            <p class="lead">No attachments, no file size limits, fast Cloudflare CDN, and view tracking - everything you need for professional email communication.</p>
-            <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3">Get Started Free</a>
+        <div class="cta-cyber mb-4">
+            <h2 class="text-white mb-2">Ship your next gallery by email</h2>
+            <p class="text-muted mb-4">Create a link on maiimg.com and paste it into your draft.</p>
+            <a href="https://maiimg.com" class="btn-cyber btn-cyber-outline">Try MaiImg</a>
         </div>
     </div>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2025 MaiImg. All rights reserved.</p>
-        </div>
+    <footer class="footer-cyber">
+        <p class="mb-1">&copy; 2026 MaiImg · 麦瓜图床</p>
+        <p class="mb-0 small" style="opacity:0.85">Last updated: March 2, 2026</p>
+        <p class="mb-0 mt-2"><a href="https://maiimg.com">maiimg.com</a></p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="maiimg-image-modal.js"></script>
 </body>
 </html>
-

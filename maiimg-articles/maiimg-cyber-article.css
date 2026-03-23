@@ -361,6 +361,17 @@
         .img-cyber {
             border-radius: 10px;
             border: 1px solid rgba(255,255,255,0.1);
+            width: 100%;
+            max-width: 760px;
+            max-height: 360px;
+            object-fit: contain;
+            cursor: zoom-in;
+            transition: transform 0.18s ease, border-color 0.18s ease, box-shadow 0.18s ease;
+        }
+        .img-cyber:hover {
+            transform: translateY(-2px);
+            border-color: rgba(168, 85, 247, 0.55);
+            box-shadow: 0 8px 28px rgba(59, 130, 246, 0.2);
         }
         .flowchart-wrap {
             background: rgba(0,0,0,0.2);
@@ -368,7 +379,39 @@
             padding: 1rem 1.25rem;
             border: 1px solid rgba(255,255,255,0.08);
         }
-        .flowchart-wrap img { max-width: 100%; height: auto; }
+        .flowchart-wrap img {
+            max-width: 100%;
+            max-height: 420px;
+            width: auto;
+            height: auto;
+        }
+        .zoomable-image { cursor: zoom-in; }
+        #imagePreviewModal .modal-content {
+            background: #0f172a;
+            border: 1px solid rgba(168, 85, 247, 0.5);
+            box-shadow: 0 24px 70px rgba(0,0,0,0.5);
+        }
+        #imagePreviewModal .modal-header {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.25);
+        }
+        #imagePreviewModal .modal-title {
+            color: #e2e8f0;
+            font-size: 0.95rem;
+        }
+        #imagePreviewModal .btn-close {
+            filter: invert(1) grayscale(100%);
+        }
+        #imagePreviewModal .modal-body {
+            text-align: center;
+            padding: 0.8rem;
+        }
+        #imagePreviewModalImage {
+            width: auto;
+            max-width: min(95vw, 1300px);
+            max-height: 80vh;
+            border-radius: 10px;
+            border: 1px solid rgba(148, 163, 184, 0.3);
+        }
         @media (min-width: 1200px) {
             .grid-bg {
                 background-size: 40px 22px;
@@ -452,4 +495,6 @@
             .tag-chip { font-size: 0.72rem; padding: 0.35rem 0.75rem; }
             .cyber-mini-card { flex-direction: column; align-items: stretch; }
             .table-responsive { font-size: 0.8rem; }
+            .img-cyber { max-height: 280px; }
+            .flowchart-wrap img { max-height: 300px; }
         }

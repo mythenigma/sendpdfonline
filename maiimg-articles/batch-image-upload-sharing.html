@@ -1,195 +1,284 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Batch image upload and sharing guide - Upload up to 25 images at once with MaiImg. Generate shareable links and QR codes for multiple images. Perfect for portfolios, galleries, and product catalogs.">
-    <meta name="keywords" content="batch image upload, upload multiple images, image gallery sharing, bulk image upload, share multiple images, image portfolio sharing, batch image sharing, upload 25 images, image collection sharing, MaiImg batch upload">
-    <meta name="author" content="MaiImg Team">
-    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
-    <meta name="googlebot" content="index, follow">
-    <meta property="og:title" content="Batch Image Upload & Sharing - Upload 25 Images at Once | MaiImg">
-    <meta property="og:description" content="Upload up to 25 images simultaneously and share them with one link. Generate QR codes for batch image sharing. Perfect for portfolios and galleries.">
-    <meta property="og:image" content="https://maiimg.com/images/batch-upload-feature.png">
-    <meta property="og:url" content="https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing.html">
-    <meta property="og:type" content="article">
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Batch Image Upload - Share 25 Images with One Link">
-    <meta name="twitter:description" content="Upload multiple images at once and share them instantly with MaiImg.">
-    <link rel="canonical" href="https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing">
-    <title>Batch Image Upload & Sharing - Upload 25 Images at Once with One Link | MaiImg</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-            --text-color: #333;
-            --light-bg: #f8fafc;
-        }
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.7;
-            background-color: var(--light-bg);
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .feature-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Batch image upload with MaiImg: upload up to 25 images at once, generate one gallery link, and track opens from a dashboard.">
+  <meta name="keywords" content="batch image upload, upload 25 images, MaiImg, image sharing, QR code">
+  <meta name="author" content="MaiImg Team">
+  <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+
+  <meta property="og:title" content="Batch Image Upload & Sharing | MaiImg">
+  <meta property="og:description" content="One batch, one link, cleaner image delivery. Includes QR output and optional tracking.">
+  <meta property="og:image" content="https://sendpdfonline.com/maiimg-articles/static-images/common/show/upload.jpg">
+  <meta property="og:url" content="https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing">
+  <meta property="og:type" content="article">
+  <meta property="og:site_name" content="MaiImg">
+
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Batch Image Upload & Sharing | MaiImg">
+  <meta name="twitter:description" content="Upload 25 images in one pass and ship one gallery URL.">
+  <meta name="twitter:image" content="https://sendpdfonline.com/maiimg-articles/static-images/common/show/upload.jpg">
+
+  <link rel="canonical" href="https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing">
+  <title>Batch Image Upload & Sharing (2026) | MaiImg</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+
+  <link rel="stylesheet" href="maiimg-cyber-article.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "headline": "Batch Image Upload & Sharing",
+    "description": "Upload up to 25 images and publish one gallery link. Generate QR output for offline handoffs and track opens from the dashboard.",
+    "image": "https://sendpdfonline.com/maiimg-articles/static-images/common/show/upload.jpg",
+    "author": {"@type": "Organization", "name": "MaiImg", "url": "https://maiimg.com"},
+    "publisher": {"@type": "Organization", "name": "MaiImg", "logo": {"@type": "ImageObject", "url": "https://maiimg.com/images/logo.png"}},
+    "datePublished": "2025-01-15",
+    "dateModified": "2026-03-02",
+    "mainEntityOfPage": {"@type": "WebPage", "@id": "https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing"}
+  }
+  </script>
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "mainEntity": [
+      {"@type": "Question", "name": "How many images can I upload at once?", "acceptedAnswer": {"@type": "Answer", "text": "Up to 25 images per batch."}},
+      {"@type": "Question", "name": "Do I get one link or many links?", "acceptedAnswer": {"@type": "Answer", "text": "You publish one gallery URL for the whole set, plus one QR code."}},
+      {"@type": "Question", "name": "Can I track who opened the gallery?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Use the dashboard to view activity and engagement over time."}},
+      {"@type": "Question", "name": "Can I revoke the link after sharing?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. Disable or remove access from the dashboard when the campaign is done."}},
+      {"@type": "Question", "name": "Is MaiImg the same as 麦瓜图床?", "acceptedAnswer": {"@type": "Answer", "text": "Yes. 麦瓜图床 is the Chinese product name for MaiImg."}}
+    ]
+  }
+  </script>
+
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
-<body>
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <div class="container">
-            <a class="navbar-brand" href="https://maiimg.com">MaiImg</a>
-        </div>
-    </nav>
+<body class="grid-bg">
+  <nav class="navbar navbar-expand-lg nav-cyber sticky-top">
+    <div class="container-fluid px-3 px-xl-4 px-xxl-5" style="max-width:1920px;margin:0 auto">
+      <a class="navbar-brand" href="https://maiimg.com"><i class="fas fa-images me-2" style="color:var(--neon-purple)"></i>MaiImg</a>
+    </div>
+  </nav>
 
-    <div class="hero">
-        <div class="container">
-            <h1><i class="fas fa-images"></i> Batch Image Upload - Share 25 Images with One Link</h1>
-            <p class="lead">Upload up to 25 images at once and share them all with a single link or QR code. No more sending multiple emails or creating separate albums. Perfect for portfolios, galleries, and product catalogs.</p>
-            <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3">Try Batch Upload</a>
+  <header class="container-fluid px-2 px-md-3 px-xl-4 px-xxl-5">
+    <div class="cyber-frame cyber-frame--wide">
+      <div class="cyber-frame-inner">
+        <div class="row g-4 g-xl-5 align-items-xl-center hero-landscape-row">
+          <div class="col-lg-6">
+            <span class="badge-pill-outline"><i class="fas fa-layer-group"></i> MaiImg Guide</span>
+            <p class="breadcrumb-cyber mb-0">Batch upload · One URL · Faster handoff</p>
+            <p class="small mt-2 mb-0" style="color:var(--neon-cyan);font-weight:600;"><i class="fas fa-calendar-check me-1"></i>Updated March 2, 2026</p>
+            <p class="small mt-1 mb-0" style="color:var(--text-muted);max-width:36rem;">MaiImg / <strong style="color:#e2e8f0;">麦瓜图床</strong></p>
+            <div class="hero-headline-wrap">
+              <h1 class="hero-title-line1">Batch Upload</h1>
+              <span class="hero-title-sep d-none d-xxl-inline" aria-hidden="true">/</span>
+              <h1 class="hero-title-line2">25 Images, One Link</h1>
+            </div>
+            <p class="hero-lead">Publish a complete set as one clean gallery flow. Generate QR output for offline sharing, and track opens after you send.</p>
+            <div class="mt-4"><a href="https://maiimg.com" class="btn-cyber">Start now</a></div>
+          </div>
+
+          <div class="col-lg-6">
+            <div class="cyber-stack">
+              <div class="cyber-mini-card cyber-mini-card--p">
+                <span class="cyber-mini-card__num">01</span>
+                <div><h3>Upload batch</h3><p>Drag up to 25 assets in one operation. Keep the order you want to present.</p></div>
+              </div>
+              <div class="cyber-mini-card cyber-mini-card--c">
+                <span class="cyber-mini-card__num">02</span>
+                <div><h3>Generate output</h3><p>MaiImg produces one gallery URL and one QR code for the full set.</p></div>
+              </div>
+              <div class="cyber-mini-card cyber-mini-card--b">
+                <span class="cyber-mini-card__num">03</span>
+                <div><h3>Track + revoke</h3><p>Monitor opens in the dashboard and disable access when your campaign is over.</p></div>
+              </div>
+            </div>
+          </div>
         </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="section-dark">
+
+    <div class="section-card">
+      <h2><i class="fas fa-bullseye"></i> Why batch upload matters</h2>
+      <p class="mb-2">Sending images one-by-one creates friction: long messages, messy recipients, and extra time spent switching tabs.</p>
+      <p class="mb-0">With MaiImg batch upload, you publish one gallery page. Readers open once, then browse everything in a single flow.</p>
+
+      <div class="row mt-3 g-4">
+        <div class="col-md-6">
+          <h4><i class="fas fa-bolt" style="color:var(--neon-purple)"></i> Cleaner sharing</h4>
+          <p>One link replaces multiple files and keeps your set organized.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-qrcode" style="color:var(--neon-cyan)"></i> QR for offline</h4>
+          <p>Print QR codes for meetings, booths, and presentations.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-chart-line" style="color:var(--neon-blue)"></i> Visibility</h4>
+          <p>Track opens and engagement, then decide when to follow up.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-lock" style="color:var(--neon-cyan)"></i> Control</h4>
+          <p>Revoke access instantly from the dashboard.</p>
+        </div>
+      </div>
     </div>
 
-    <div class="container my-5">
-        <div class="feature-card">
-            <h2>Why Batch Upload Changed How I Share Images</h2>
-            <p>I used to send 10 separate emails with one image each. Clients would get confused, images would get lost, and I'd spend hours managing file attachments. Then I discovered MaiImg's batch upload feature.</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4><i class="fas fa-check text-success"></i> One Link, Multiple Images</h4>
-                    <p>Upload 25 images, get one link. Share that link once, and recipients can access all images. Simple.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-check text-success"></i> No More Email Overload</h4>
-                    <p>Instead of sending 20 emails, send one link. Recipients can view all images in a clean gallery interface.</p>
-                </div>
-            </div>
+    <div class="section-card">
+      <h2><i class="fas fa-cogs"></i> Step visuals</h2>
+      <div class="row mt-3 g-4">
+        <div class="col-md-4">
+          <h4>Upload</h4>
+          <img src="static-images/common/show/upload.jpg" alt="Batch upload interface" class="img-fluid img-cyber mt-2" loading="lazy" width="640" height="360">
         </div>
-
-        <div class="feature-card">
-            <h2>How Batch Upload Works</h2>
-            <div class="row mt-4">
-                <div class="col-md-4 text-center mb-4">
-                    <div class="bg-primary text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <i class="fas fa-upload fa-2x"></i>
-                    </div>
-                    <h4>Select Multiple Images</h4>
-                    <p>Choose up to 25 images from your computer. Drag and drop or use the file picker. All common formats supported.</p>
-                    <img src="https://maiimg.com/images/batch-select.png" alt="Select Multiple Images" class="img-fluid rounded mt-3">
-                </div>
-                <div class="col-md-4 text-center mb-4">
-                    <div class="bg-success text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <i class="fas fa-sync fa-2x"></i>
-                    </div>
-                    <h4>Upload All at Once</h4>
-                    <p>All images upload simultaneously. Watch the progress bar as each image processes. Faster than uploading one by one.</p>
-                    <img src="https://maiimg.com/images/upload-progress.png" alt="Upload Progress" class="img-fluid rounded mt-3">
-                </div>
-                <div class="col-md-4 text-center mb-4">
-                    <div class="bg-info text-white rounded-circle d-inline-flex align-items-center justify-content-center mb-3" style="width: 80px; height: 80px;">
-                        <i class="fas fa-share-alt fa-2x"></i>
-                    </div>
-                    <h4>Get One Shareable Link</h4>
-                    <p>Receive one link and one QR code for all images. Share once, access everything. Simple and efficient.</p>
-                    <img src="https://maiimg.com/images/share-link.png" alt="Shareable Link" class="img-fluid rounded mt-3">
-                </div>
-            </div>
+        <div class="col-md-4">
+          <h4>Result</h4>
+          <img src="static-images/common/image_result.png" alt="Batch result and QR" class="img-fluid img-cyber mt-2" loading="lazy" width="640" height="360">
         </div>
-
-        <div class="feature-card">
-            <h2>Perfect Use Cases for Batch Upload</h2>
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-palette"></i> Design Portfolios</h4>
-                    <p>Share 20+ design pieces with clients. They can browse through all your work in one place without downloading anything.</p>
-                    <img src="https://maiimg.com/images/portfolio-example.png" alt="Portfolio Example" class="img-fluid rounded mt-2">
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-camera"></i> Event Photo Galleries</h4>
-                    <p>Upload all event photos and share with attendees. One QR code at the event, everyone gets access to all photos.</p>
-                    <img src="https://maiimg.com/images/event-gallery.png" alt="Event Gallery" class="img-fluid rounded mt-2">
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-box"></i> Product Catalogs</h4>
-                    <p>Share product images with vendors or customers. Upload entire product lines and share with one link.</p>
-                    <img src="https://maiimg.com/images/product-catalog.png" alt="Product Catalog" class="img-fluid rounded mt-2">
-                </div>
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-images"></i> Reference Collections</h4>
-                    <p>Share mood boards, inspiration images, or reference materials with team members or clients.</p>
-                    <img src="https://maiimg.com/images/reference-collection.png" alt="Reference Collection" class="img-fluid rounded mt-2">
-                </div>
-            </div>
+        <div class="col-md-4">
+          <h4>Tracking</h4>
+          <img src="static-images/common/result_tracking.png" alt="Tracking dashboard" class="img-fluid img-cyber mt-2" loading="lazy" width="640" height="360">
         </div>
-
-        <div class="feature-card">
-            <h2>Tips for Best Results</h2>
-            <ul class="list-unstyled">
-                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i><strong>Organize Before Upload:</strong> Name your files logically before uploading. Makes it easier for recipients to understand what they're viewing.</li>
-                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i><strong>Optimize File Sizes:</strong> Compress images before uploading for faster loading. I use 80% quality JPEG for photos.</li>
-                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i><strong>Use Consistent Formats:</strong> Mix of JPG, PNG, and GIF works fine, but consistent formats create a better viewing experience.</li>
-                <li class="mb-3"><i class="fas fa-check-circle text-success me-2"></i><strong>Test the Link:</strong> Always test your shared link before sending to clients. Make sure all images load correctly.</li>
-            </ul>
-        </div>
-
-        <!-- Related Articles -->
-        <div class="feature-card">
-            <h2><i class="fas fa-link"></i> Related Articles</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <a href="free-image-hosting-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-images text-primary"></i> Free Image Hosting</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="image-qr-code-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-qrcode text-primary"></i> QR Code Sharing</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="social-media-image-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-share-alt text-primary"></i> Social Media</h6>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature-card text-center" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">
-            <h2>Ready to Upload Multiple Images?</h2>
-            <p class="lead">Start sharing 25 images with one link today.</p>
-            <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3">Start Batch Upload</a>
-        </div>
+      </div>
     </div>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2025 MaiImg. All rights reserved.</p>
-        </div>
-    </footer>
+    <div class="section-card">
+      <h2><i class="fas fa-project-diagram"></i> Delivery diagram</h2>
+      <p class="mb-3">This diagram shows how hosting, linking, QR output, and dashboard tracking work together on MaiImg.</p>
+      <div class="flowchart-wrap text-center">
+        <img src="static-images/diagram/client-gallery-delivery.svg" alt="Client gallery delivery diagram" class="img-fluid img-cyber" loading="lazy" width="900" height="500">
+      </div>
+    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <div class="section-card">
+      <h2><i class="fas fa-briefcase"></i> Real use cases</h2>
+      <div class="row mt-2 g-4">
+        <div class="col-md-6">
+          <h4><i class="fas fa-palette" style="color:var(--neon-purple)"></i> Designers</h4>
+          <p>Send mockups and iterations as one set. Clients open once and browse the full sequence.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-bullhorn" style="color:var(--neon-cyan)"></i> Marketing & events</h4>
+          <p>Use QR codes on booths or flyers so attendees can access image galleries instantly.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-store" style="color:var(--neon-blue)"></i> E-commerce</h4>
+          <p>Share product lines or seasonal lookbooks without long zip chains and mixed filenames.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-users" style="color:var(--neon-purple)"></i> Teams</h4>
+          <p>Coordinate photo sets and references in one link, then revoke access when the project ends.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><i class="fas fa-lightbulb"></i> Pro tips</h2>
+      <div class="row g-4">
+        <div class="col-md-6">
+          <h4><i class="fas fa-sort-amount-up" style="color:var(--neon-purple)"></i> Arrange the order first</h4>
+          <p>Readers trust the sequence. Use your preferred ordering before publishing.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-compress-arrows-alt" style="color:var(--neon-cyan)"></i> Keep files web-friendly</h4>
+          <p>Smaller images load faster. Optimize for clarity, not for maximum resolution.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-qrcode" style="color:var(--neon-blue)"></i> Test the QR size</h4>
+          <p>Print big enough for common phones. Do a quick scan test before the full print run.</p>
+        </div>
+        <div class="col-md-6">
+          <h4><i class="fas fa-eye" style="color:var(--neon-cyan)"></i> Follow up using opens</h4>
+          <p>Spikes often indicate strong interest. Send your next message after the first batch of opens.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card" id="faq">
+      <h2><i class="fas fa-question-circle"></i> FAQ</h2>
+      <div class="accordion accordion-cyber mt-3" id="faqAccordion">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="true">How many images can I upload?</button>
+          </h2>
+          <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Up to 25 images per batch. If you need more, create another batch and publish another link.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">Do I get one gallery link or multiple?</button>
+          </h2>
+          <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">One gallery URL for the full set, plus a single QR code output so readers can access it offline.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">Can I track opens from the dashboard?</button>
+          </h2>
+          <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Yes. The dashboard shows activity so you can decide when to follow up or update the set.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">Can I revoke access after sharing?</button>
+          </h2>
+          <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">Yes. Revoke from the dashboard and the shared link stops working right away.</div>
+          </div>
+        </div>
+
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">What does 麦瓜图床 mean?</button>
+          </h2>
+          <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+            <div class="accordion-body">It is the Chinese name for MaiImg image hosting. Same platform, different language presentation.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="section-card">
+      <h2><i class="fas fa-link"></i> Related guides</h2>
+      <div class="row g-3">
+        <div class="col-md-6"><a href="free-image-hosting-sharing.html" class="related-tile"><h5><i class="fas fa-cloud me-2" style="color:var(--neon-purple)"></i>Free image hosting</h5><p class="text-muted small mb-0">Full product tour</p></a></div>
+        <div class="col-md-6"><a href="image-qr-code-sharing.html" class="related-tile"><h5><i class="fas fa-qrcode me-2" style="color:var(--neon-cyan)"></i>QR sharing</h5><p class="text-muted small mb-0">Offline handoffs</p></a></div>
+        <div class="col-md-6"><a href="image-sharing-best-practices.html" class="related-tile"><h5><i class="fas fa-star me-2" style="color:var(--neon-blue)"></i>Best practices</h5><p class="text-muted small mb-0">Checklists</p></a></div>
+        <div class="col-md-6"><a href="index.html" class="related-tile"><h5><i class="fas fa-book me-2" style="color:var(--neon-purple)"></i>All articles</h5><p class="text-muted small mb-0">Library</p></a></div>
+      </div>
+    </div>
+
+    <div class="cta-cyber mb-4">
+      <h2 class="text-white mb-2">Ship your next gallery by email</h2>
+      <p class="text-muted mb-4">Create one link on maiimg.com and paste it into your message draft.</p>
+      <a href="https://maiimg.com" class="btn-cyber btn-cyber-outline">Try MaiImg</a>
+    </div>
+  </div>
+
+  <footer class="footer-cyber">
+    <p class="mb-1">&copy; 2026 MaiImg · 麦瓜图床</p>
+    <p class="mb-0 small" style="opacity:0.85">Last updated: March 2, 2026</p>
+    <p class="mb-0 mt-2"><a href="https://maiimg.com">maiimg.com</a></p>
+  </footer>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="maiimg-image-modal.js"></script>
 </body>
 </html>
-

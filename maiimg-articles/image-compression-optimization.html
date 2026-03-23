@@ -3,282 +3,242 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Image compression and optimization guide for MaiImg - Learn how to optimize images for fast loading, reduce file sizes, and improve sharing performance. Best practices for image compression, format selection, and Cloudflare CDN optimization.">
-    <meta name="keywords" content="image compression, optimize images, image optimization, reduce image size, compress images, image file size, fast image loading, image format optimization, MaiImg optimization">
+    <meta name="description" content="Compress and optimize images before uploading to MaiImg (麦瓜图床): JPEG vs PNG vs WebP, target quality, and how smaller sources still benefit from Cloudflare CDN.">
+    <meta name="keywords" content="image compression, optimize images for web, MaiImg upload, 麦瓜图床, image file size">
     <meta name="author" content="MaiImg Team">
-    <meta name="robots" content="index, follow">
-    <meta property="og:title" content="Image Compression & Optimization - Optimize Images for Fast Sharing | MaiImg">
-    <meta property="og:description" content="Learn how to optimize images for fast loading, reduce file sizes, and improve sharing performance with MaiImg and Cloudflare CDN.">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <meta property="og:title" content="Image Compression & Optimization for MaiImg | MaiImg">
+    <meta property="og:description" content="Shrink sources before upload: faster transfers, happier mobile viewers, same CDN delivery.">
+    <meta property="og:image" content="https://sendpdfonline.com/maiimg-articles/static-images/common/show/upload.jpg">
+    <meta property="og:url" content="https://sendpdfonline.com/maiimg-articles/image-compression-optimization">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiImg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Image Compression & Optimization | MaiImg">
+    <meta name="twitter:description" content="Practical compression settings before you push batches to MaiImg.">
+    <meta name="twitter:image" content="https://sendpdfonline.com/maiimg-articles/static-images/common/show/upload.jpg">
     <link rel="canonical" href="https://sendpdfonline.com/maiimg-articles/image-compression-optimization">
-    <title>Image Compression & Optimization - Optimize Images for Fast Sharing | MaiImg</title>
+    <title>Image Compression & Optimization (2026) | MaiImg</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #6366f1;
-            --secondary-color: #8b5cf6;
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-        }
-        .feature-card {
-            background: white;
-            border-radius: 12px;
-            padding: 30px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-    </style>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="maiimg-cyber-article.css">
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Image Compression and Optimization for MaiImg Uploads",
+        "description": "How to compress and choose formats before uploading image batches to MaiImg for faster sharing and CDN delivery.",
+        "image": "https://sendpdfonline.com/maiimg-articles/static-images/common/show/upload.jpg",
+        "author": { "@type": "Organization", "name": "MaiImg", "url": "https://maiimg.com" },
+        "publisher": { "@type": "Organization", "name": "MaiImg", "logo": { "@type": "ImageObject", "url": "https://maiimg.com/images/logo.png" } },
+        "datePublished": "2025-01-15",
+        "dateModified": "2026-03-02",
+        "mainEntityOfPage": { "@type": "WebPage", "@id": "https://sendpdfonline.com/maiimg-articles/image-compression-optimization" }
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {"@type": "ListItem", "position": 1, "name": "Home", "item": "https://sendpdfonline.com/"},
+            {"@type": "ListItem", "position": 2, "name": "MaiImg articles", "item": "https://sendpdfonline.com/maiimg-articles/index"},
+            {"@type": "ListItem", "position": 3, "name": "Image compression and optimization"}
+        ]
+    }
+    </script>
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
+            {"@type": "Question", "name": "Should I compress images before uploading to MaiImg?", "acceptedAnswer": {"@type": "Answer", "text": "Yes when files are very large (high-megapixel RAW or TIFF exports). Smaller sources upload faster on your connection and still benefit from MaiImg’s Cloudflare CDN when readers open the gallery."}},
+            {"@type": "Question", "name": "What JPEG quality should I use?", "acceptedAnswer": {"@type": "Answer", "text": "For general marketing photos, 80–85% JPEG quality is a common sweet spot. Raise quality for hero shots that will be heavily cropped."}},
+            {"@type": "Question", "name": "When should I use PNG instead of JPEG?", "acceptedAnswer": {"@type": "Answer", "text": "Use PNG when you need crisp UI screenshots, line art, or alpha transparency. Expect larger files — only use transparency when necessary."}},
+            {"@type": "Question", "name": "Does MaiImg replace proper compression?", "acceptedAnswer": {"@type": "Answer", "text": "CDN delivery helps latency after upload, but it does not remove the time you spend uploading multi-hundred-megabyte batches. Optimize first, then upload."}},
+            {"@type": "Question", "name": "What is 麦瓜图床?", "acceptedAnswer": {"@type": "Answer", "text": "麦瓜图床 is the Chinese name for MaiImg image hosting."}}
+        ]
+    }
+    </script>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
-<body>
-    <nav class="navbar navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
-        <div class="container">
-            <a class="navbar-brand" href="https://maiimg.com">MaiImg</a>
-        </div>
-    </nav>
-
-    <div class="hero">
-        <div class="container">
-            <h1><i class="fas fa-compress"></i> Image Compression & Optimization</h1>
-            <p class="lead">Learn how to optimize images for fast loading, reduce file sizes, and improve sharing performance. Best practices for image compression, format selection, and leveraging Cloudflare CDN for lightning-fast image delivery.</p>
-            <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3">Start Optimizing</a>
-        </div>
-    </div>
-
-    <div class="container my-5">
-        <div class="feature-card">
-            <h2>Why Image Optimization Matters</h2>
-            <p>I used to upload huge, unoptimized images. They took forever to load, used up bandwidth, and frustrated recipients. After learning proper optimization techniques, everything changed.</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4><i class="fas fa-bolt text-warning"></i> Faster Loading</h4>
-                    <p>Optimized images load 5-10x faster. With Cloudflare CDN, even large images load in under 0.5 seconds when properly optimized. This dramatically improves user experience.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-mobile-alt text-primary"></i> Mobile Friendly</h4>
-                    <p>Smaller file sizes mean faster loading on mobile devices and lower data usage. Critical for users on limited data plans or slow connections.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-chart-line text-success"></i> Better Engagement</h4>
-                    <p>Fast-loading images get more views and better engagement. People don't wait for slow images - they move on. Optimized images keep viewers engaged.</p>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-dollar-sign text-info"></i> Cost Effective</h4>
-                    <p>Smaller files use less bandwidth and storage. Even with Cloudflare CDN, optimized images reduce costs and improve performance.</p>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <h2>Image Compression Best Practices</h2>
-            
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4><i class="fas fa-image text-primary"></i> JPEG for Photos</h4>
-                    <p>Use JPEG format for photographs and images with many colors. Compress to 80-85% quality for web sharing - maintains visual quality while reducing file size significantly.</p>
-                    <ul>
-                        <li>80% quality: Good balance (recommended)</li>
-                        <li>85% quality: Higher quality, slightly larger</li>
-                        <li>70% quality: Smaller files, noticeable quality loss</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h4><i class="fas fa-file-image text-primary"></i> PNG for Graphics</h4>
-                    <p>Use PNG format for graphics, logos, or images with transparency. PNG-8 for simple graphics, PNG-24 for complex images with transparency.</p>
-                    <ul>
-                        <li>PNG-8: Smaller files, limited colors</li>
-                        <li>PNG-24: Higher quality, larger files</li>
-                        <li>Use PNG only when transparency needed</li>
-                    </ul>
-                </div>
-            </div>
-
-            <div class="alert alert-info mt-4">
-                <h5><i class="fas fa-lightbulb"></i> My Compression Workflow</h5>
-                <p>For photos: JPEG at 80% quality. For graphics: PNG-8 if possible, PNG-24 only if transparency needed. For web sharing, I aim for file sizes under 500KB per image. This ensures fast loading while maintaining good quality.</p>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <h2>Image Size Guidelines</h2>
-            <p>Here's what I've learned about optimal image sizes for different uses:</p>
-            
-            <div class="table-responsive mt-4">
-                <table class="table table-bordered">
-                    <thead>
-                        <tr>
-                            <th>Use Case</th>
-                            <th>Recommended Size</th>
-                            <th>File Size Target</th>
-                            <th>Format</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Social Media</td>
-                            <td>1200x1200px</td>
-                            <td>200-500KB</td>
-                            <td>JPEG 80%</td>
-                        </tr>
-                        <tr>
-                            <td>Email Sharing</td>
-                            <td>800x800px</td>
-                            <td>100-300KB</td>
-                            <td>JPEG 80%</td>
-                        </tr>
-                        <tr>
-                            <td>Portfolio</td>
-                            <td>1920x1080px</td>
-                            <td>300-800KB</td>
-                            <td>JPEG 85%</td>
-                        </tr>
-                        <tr>
-                            <td>Product Images</td>
-                            <td>1000x1000px</td>
-                            <td>200-400KB</td>
-                            <td>JPEG 80%</td>
-                        </tr>
-                        <tr>
-                            <td>Graphics/Logos</td>
-                            <td>500x500px</td>
-                            <td>50-200KB</td>
-                            <td>PNG-8</td>
-                        </tr>
-                    </tbody>
-                </table>
-            </div>
-        </div>
-
-        <div class="feature-card">
-            <h2>How Cloudflare CDN Enhances Performance</h2>
-            <p>MaiImg uses Cloudflare's global CDN network. Here's how it helps with optimized images:</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-globe fa-3x text-primary mb-3"></i>
-                    <h4>Global Distribution</h4>
-                    <p>Images are cached on servers worldwide. Recipients load images from the nearest server, reducing latency.</p>
-                </div>
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-bolt fa-3x text-warning mb-3"></i>
-                    <h4>Automatic Optimization</h4>
-                    <p>Cloudflare automatically optimizes image delivery, using modern formats and compression when supported by browsers.</p>
-                </div>
-                <div class="col-md-4 text-center mb-4">
-                    <i class="fas fa-shield-alt fa-3x text-success mb-3"></i>
-                    <h4>Reliable Delivery</h4>
-                    <p>99.99% uptime ensures your images are always accessible, even during traffic spikes or server issues.</p>
-                </div>
-            </div>
-
-            <div class="mt-4">
-                <h4>Real Performance Test</h4>
-                <p>I tested loading speeds with optimized vs unoptimized images:</p>
-                <ul>
-                    <li><strong>Unoptimized (5MB JPEG):</strong> 2.3 seconds load time</li>
-                    <li><strong>Optimized (500KB JPEG 80%):</strong> 0.4 seconds load time</li>
-                    <li><strong>Result:</strong> 5.75x faster loading with optimization</li>
+<body class="grid-bg">
+    <nav class="navbar navbar-expand-lg nav-cyber sticky-top">
+        <div class="container-fluid px-3 px-xl-4 px-xxl-5" style="max-width:1920px;margin:0 auto">
+            <a class="navbar-brand" href="https://maiimg.com"><i class="fas fa-images me-2" style="color:var(--neon-purple)"></i>MaiImg</a>
+            <button class="navbar-toggler border-secondary" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon" style="filter:invert(1)"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="https://maiimg.com">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#formats">Formats</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#faq">FAQ</a></li>
                 </ul>
             </div>
         </div>
+    </nav>
 
-        <div class="feature-card">
-            <h2>Tools for Image Optimization</h2>
-            <div class="row mt-4">
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-desktop text-primary"></i> Desktop Tools</h4>
-                    <ul>
-                        <li><strong>Photoshop:</strong> Save for Web feature, excellent control</li>
-                        <li><strong>GIMP:</strong> Free alternative, good compression options</li>
-                        <li><strong>ImageOptim (Mac):</strong> Automatic optimization</li>
-                        <li><strong>FileOptimizer (Windows):</strong> Batch optimization</li>
-                    </ul>
+    <header class="container-fluid px-2 px-md-3 px-xl-4 px-xxl-5">
+        <div class="cyber-frame cyber-frame--wide">
+            <div class="cyber-frame-inner">
+            <div class="row g-4 g-xl-5 align-items-xl-center hero-landscape-row">
+                <div class="col-lg-6">
+                    <span class="badge-pill-outline"><i class="fas fa-compress"></i> MaiImg Guide</span>
+                    <p class="breadcrumb-cyber mb-0">Smaller files · Faster uploads · Same CDN</p>
+                    <p class="small mt-2 mb-0" style="color:var(--neon-cyan);font-weight:600;letter-spacing:0.02em;"><i class="fas fa-calendar-check me-1"></i>Updated March 2, 2026</p>
+                    <p class="small mt-1 mb-0" style="color:var(--text-muted);max-width:36rem;">English guide · MaiImg / <strong style="color:#e2e8f0;">麦瓜图床</strong></p>
+                    <div class="hero-headline-wrap">
+                        <h1 class="hero-title-line1">MaiImg</h1>
+                        <span class="hero-title-sep d-none d-xxl-inline" aria-hidden="true">/</span>
+                        <h1 class="hero-title-line2">Compress Before Upload</h1>
+                    </div>
+                    <p class="hero-lead"><strong>MaiImg</strong> serves galleries over Cloudflare, but your upload still moves every byte from disk to the browser session. <strong>Pre-compress</strong> large shoots so you are not waiting on Wi-Fi for raw TIFFs.</p>
+                    <div class="tag-row" id="features">
+                        <span class="tag-chip tag-chip--purple">JPEG 80–85%</span>
+                        <span class="tag-chip tag-chip--cyan">PNG for UI</span>
+                        <span class="tag-chip tag-chip--blue">Batch discipline</span>
+                    </div>
+                    <div class="mt-4">
+                        <a href="https://maiimg.com" class="btn-cyber">Upload optimized batches</a>
+                    </div>
                 </div>
-                <div class="col-md-6 mb-4">
-                    <h4><i class="fas fa-globe text-primary"></i> Online Tools</h4>
-                    <ul>
-                        <li><strong>TinyPNG:</strong> Great for PNG and JPEG compression</li>
-                        <li><strong>Squoosh:</strong> Google's image optimization tool</li>
-                        <li><strong>Compressor.io:</strong> Simple online compression</li>
-                        <li><strong>ImageOptimizer:</strong> Batch processing support</li>
-                    </ul>
+                <div class="col-lg-6">
+                    <div class="cyber-stack">
+                        <div class="cyber-mini-card cyber-mini-card--p">
+                            <span class="cyber-mini-card__num">01</span>
+                            <div>
+                                <h3>Resize to intent</h3>
+                                <p>Export near the max width you expect viewers to see — not 8000px wide for an Instagram brief.</p>
+                            </div>
+                        </div>
+                        <div class="cyber-mini-card cyber-mini-card--c">
+                            <span class="cyber-mini-card__num">02</span>
+                            <div>
+                                <h3>Pick codec</h3>
+                                <p>JPEG for photos, PNG/WebP for transparency, AVIF only if your pipeline supports it.</p>
+                            </div>
+                        </div>
+                        <div class="cyber-mini-card cyber-mini-card--b">
+                            <span class="cyber-mini-card__num">03</span>
+                            <div>
+                                <h3>Upload to MaiImg</h3>
+                                <p>Up to 25 files — optimized sources mean faster retries when you iterate.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    </header>
+
+    <div class="section-dark">
+        <div class="section-card">
+            <h2><i class="fas fa-info-circle"></i> Why this matches the FAQ below</h2>
+            <p class="mb-0">The opening summary and structured FAQ both stress the same point: <strong>CDN improves delivery to readers, but you should still slim files before they leave your machine.</strong> If anything conflicts, trust the FAQ answers — they are mirrored in schema.org markup for search.</p>
+        </div>
+
+        <div class="section-card">
+            <h2><i class="fas fa-cloud-upload-alt"></i> What the upload surface rewards</h2>
+            <p>Real screenshot of the drag-and-drop area (interface language may vary).</p>
+            <img src="static-images/common/show/upload.jpg" alt="MaiImg upload interface" class="img-fluid img-cyber d-block mx-auto" loading="lazy" width="720" height="405">
+        </div>
+
+        <div class="section-card" id="formats">
+            <h2><i class="fas fa-file-image"></i> Format cheat sheet</h2>
+            <div class="table-responsive">
+                <table class="table table-bordered table-cyber mb-4">
+                    <thead><tr><th>Format</th><th>Use when</th><th>Watch out</th></tr></thead>
+                    <tbody>
+                        <tr><td>JPEG</td><td>Photos, gradients, noisy textures</td><td>Generational loss if you re-save repeatedly</td></tr>
+                        <tr><td>PNG</td><td>UI shots, logos, alpha channel</td><td>Larger than JPEG for photos</td></tr>
+                        <tr><td>WebP / AVIF</td><td>Modern browsers, controlled audiences</td><td>Keep JPEG/PNG fallbacks for odd clients</td></tr>
+                    </tbody>
+                </table>
+            </div>
+            <h4 class="mt-3">JPEG quality starting points</h4>
+            <ul>
+                <li><strong>80%:</strong> default recommendation for web galleries.</li>
+                <li><strong>85%:</strong> premium campaigns with large displays.</li>
+                <li><strong>70%:</strong> only for thumbnails or aggressive bandwidth caps.</li>
+            </ul>
+        </div>
+
+        <div class="section-card">
+            <h2><i class="fas fa-project-diagram"></i> Online storage vs sharing workflow</h2>
+            <p>Diagram compares “dump everything raw” vs “normalize then publish” — English labels.</p>
+            <div class="flowchart-wrap text-center">
+                <img src="static-images/diagram/best-free-online-photo-storage-solutions-2025.svg" alt="Diagram comparing online photo storage and sharing approaches" class="img-fluid img-cyber" loading="lazy" width="900" height="500">
+            </div>
+        </div>
+
+        <div class="section-card">
+            <h2><i class="fas fa-link"></i> After optimization: your share output</h2>
+            <p>What recipients ultimately open — link + QR generated post-upload.</p>
+            <img src="static-images/common/image_result.png" alt="MaiImg generated share link and QR code" class="img-fluid img-cyber d-block mx-auto" loading="lazy" width="720" height="400">
+        </div>
+
+        <div class="section-card">
+            <h2><i class="fas fa-car"></i> Field teams: high-res discipline</h2>
+            <p>Automotive example diagram — same idea applies to any shoot with hundreds of RAWs.</p>
+            <div class="flowchart-wrap text-center">
+                <img src="static-images/diagram/automotive-photo-sharing-guide.svg" alt="Diagram: automotive photo sharing and optimization guide" class="img-fluid img-cyber" loading="lazy" width="900" height="480">
+            </div>
+        </div>
+
+        <div class="section-card" id="faq">
+            <h2><i class="fas fa-question-circle"></i> FAQ</h2>
+            <div class="accordion accordion-cyber mt-3" id="faqAccordion">
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#f1" aria-expanded="true">Should I compress before MaiImg?</button></h2>
+                    <div id="f1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion"><div class="accordion-body">Yes for oversized sources. It shortens your upload time and mobile readers still get CDN acceleration when they open the gallery.</div></div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f2">What JPEG quality should I use?</button></h2>
+                    <div id="f2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Start around 80–85% for photos. Adjust upward if you see banding in skies or skin.</div></div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f3">PNG or JPEG?</button></h2>
+                    <div id="f3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">PNG when you need transparency or razor UI edges; JPEG for photographic content.</div></div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f4">Does MaiImg compress for me?</button></h2>
+                    <div id="f4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">Expect CDN caching and efficient delivery — not a substitute for uploading reasonable file sizes from the start.</div></div>
+                </div>
+                <div class="accordion-item">
+                    <h2 class="accordion-header"><button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#f5">What is 麦瓜图床?</button></h2>
+                    <div id="f5" class="accordion-collapse collapse" data-bs-parent="#faqAccordion"><div class="accordion-body">The Chinese product name for MaiImg.</div></div>
                 </div>
             </div>
         </div>
 
-        <div class="feature-card">
-            <h2>Optimization Checklist</h2>
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <h4>Before Uploading</h4>
-                    <ul>
-                        <li><i class="fas fa-check text-success"></i> Resize to appropriate dimensions</li>
-                        <li><i class="fas fa-check text-success"></i> Choose correct format (JPEG/PNG)</li>
-                        <li><i class="fas fa-check text-success"></i> Compress to target file size</li>
-                        <li><i class="fas fa-check text-success"></i> Test quality vs file size balance</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <h4>After Uploading</h4>
-                    <ul>
-                        <li><i class="fas fa-check text-success"></i> Test link loading speed</li>
-                        <li><i class="fas fa-check text-success"></i> Check on mobile devices</li>
-                        <li><i class="fas fa-check text-success"></i> Verify image quality</li>
-                        <li><i class="fas fa-check text-success"></i> Monitor view tracking</li>
-                    </ul>
-                </div>
+        <div class="section-card">
+            <h2><i class="fas fa-link"></i> Related</h2>
+            <div class="row g-3">
+                <div class="col-md-6"><a href="image-sharing-best-practices.html" class="related-tile"><h5>Best practices</h5><p class="text-muted small mb-0">Limits &amp; hygiene</p></a></div>
+                <div class="col-md-6"><a href="free-image-hosting-sharing.html" class="related-tile"><h5>Hosting 101</h5><p class="text-muted small mb-0">Full tour</p></a></div>
+                <div class="col-md-6"><a href="batch-image-upload-sharing.html" class="related-tile"><h5>Batch upload</h5><p class="text-muted small mb-0">25 images</p></a></div>
+                <div class="col-md-6"><a href="index.html" class="related-tile"><h5>All articles</h5><p class="text-muted small mb-0">Library</p></a></div>
             </div>
         </div>
 
-        <!-- Related Articles -->
-        <div class="feature-card">
-            <h2><i class="fas fa-link"></i> Related Articles</h2>
-            <div class="row">
-                <div class="col-md-4 mb-3">
-                    <a href="free-image-hosting-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-images text-primary"></i> Free Image Hosting</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="social-media-image-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-share-alt text-primary"></i> Social Media</h6>
-                        </div>
-                    </a>
-                </div>
-                <div class="col-md-4 mb-3">
-                    <a href="batch-image-upload-sharing.html" class="text-decoration-none">
-                        <div class="p-3 border rounded">
-                            <h6><i class="fas fa-upload text-primary"></i> Batch Upload</h6>
-                        </div>
-                    </a>
-                </div>
-            </div>
-        </div>
-
-        <div class="feature-card text-center" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">
-            <h2>Start Optimizing Your Images</h2>
-            <p class="lead">Optimize images for fast loading and better sharing performance with MaiImg and Cloudflare CDN.</p>
-            <a href="https://maiimg.com" class="btn btn-light btn-lg mt-3">Get Started Free</a>
+        <div class="cta-cyber mb-4">
+            <h2 class="text-white mb-2">Optimize, then publish</h2>
+            <p class="text-muted mb-4">Open maiimg.com with a tightened batch.</p>
+            <a href="https://maiimg.com" class="btn-cyber btn-cyber-outline">Start on MaiImg</a>
         </div>
     </div>
 
-    <footer class="bg-dark text-white py-4 mt-5">
-        <div class="container text-center">
-            <p>&copy; 2025 MaiImg. All rights reserved.</p>
-        </div>
+    <footer class="footer-cyber">
+        <p class="mb-1">&copy; 2026 MaiImg · 麦瓜图床</p>
+        <p class="mb-0 small" style="opacity:0.85">Last updated: March 2, 2026</p>
+        <p class="mb-0 mt-2"><a href="https://maiimg.com">maiimg.com</a></p>
     </footer>
-
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="maiimg-image-modal.js"></script>
 </body>
 </html>
-
-
-

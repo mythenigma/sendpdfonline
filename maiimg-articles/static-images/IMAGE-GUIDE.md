@@ -24,7 +24,7 @@
 | `sharemaiimg.png` | **Sharing MaiImg** (link copy / distribution); email & social sections. |
 | `sharesmarter.jpg` | “Share smarter” style creative; **email without attachments**, efficiency narrative. |
 | `sharewithacharacter.png` | Character/mascot + share messaging; **light tone**, social posts. |
-| `limtandexpirtion.png` | **Limits & expiration** UI emphasis; security / best practices. |
+| `limtandexpirtion.png` | **Limits & expiration** UI emphasis; security / best practices. *(Filename retains typo “limt/expirtion” — keep stable for existing links.)* |
 
 ## `cn/` — Chinese UI strings (caption when used in EN)
 
