@@ -3,784 +3,448 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Learn how to share time-limited whitepapers and case studies without giving away your valuable content forever.">
-    <meta name="keywords" content="time-limited PDF, marketing content, whitepapers, case studies, controlled sharing, expiry logic, PDF security">
-    <meta name="author" content="MaiPDF">
-    <meta property="og:title" content="How to Send Time-Limited Whitepapers or Case Studies | MaiPDF">
-    <meta property="og:description" content="Share valuable marketing content without giving it away forever. Learn how to use time-limited PDF sharing for whitepapers and case studies.">
-    <meta property="og:image" content="/maipdf-images/security.png">
-    <meta property="og:url" content="https://maipdf.com/article/time-limited-whitepapers-case-studies.html">
-    <title>How to Send Time-Limited Whitepapers or Case Studies | MaiPDF</title>
+    <meta name="description" content="Share time-limited whitepapers and case studies with expiration dates, view limits, and access analytics. Keep marketing content exclusive and drive conversions with MaiPDF.">
+    <meta name="keywords" content="time-limited whitepaper, case study sharing, PDF expiration, view limit, marketing PDF, lead magnet, gated content, controlled PDF sharing">
+    <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
+    <title>Time-Limited Whitepapers &amp; Case Studies — Share Marketing PDFs Securely | MaiPDF</title>
+    <link rel="canonical" href="https://sendpdfonline.com/article/time-limited-whitepapers-case-studies">
+    <meta property="og:title" content="Time-Limited Whitepapers &amp; Case Studies | MaiPDF">
+    <meta property="og:description" content="Share marketing content without giving it away forever. Set expiration dates and view limits so whitepapers stay exclusive.">
+    <meta property="og:image" content="https://sendpdfonline.com/images/maipdf2026/show_off/self-destruct.png">
+    <meta property="og:url" content="https://sendpdfonline.com/article/time-limited-whitepapers-case-studies">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="MaiPDF">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Time-Limited Whitepapers &amp; Case Studies | MaiPDF">
+    <meta name="twitter:description" content="Share marketing content without giving it away forever. Set expiration dates and view limits.">
+    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- FontAwesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <style>
-        :root {
-            --primary-color: #2C8C99;
-            --secondary-color: #45a3b1;
-            --accent-color: #ff9800;
-            --text-color: #333;
-            --light-bg: #f5f7f8;
-        }
-        body {
-            font-family: Arial, sans-serif;
-            line-height: 1.6;
-            background-color: var(--light-bg);
-            color: var(--text-color);
-        }
-        .hero {
-            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
-            color: white;
-            padding: 80px 0;
-            text-align: center;
-            margin-bottom: 40px;
-        }
-        .feature-card {
-            background: white;
-            border-radius: 10px;
-            padding: 25px;
-            margin-bottom: 30px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-            transition: transform 0.3s ease;
-        }
-        .feature-card:hover {
-            transform: translateY(-5px);
-        }
-        .section-title {
-            color: var(--primary-color);
-            margin-bottom: 30px;
-            position: relative;
-            padding-bottom: 15px;
-        }
-        .section-title:after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 50px;
-            height: 3px;
-            background-color: var(--accent-color);
-        }
-        .content-section {
-            margin-bottom: 30px;
-        }
-        .content-section h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .content-section ul {
-            list-style: none;
-            padding: 0;
-        }
-        .content-section li {
-            margin-bottom: 10px;
-            padding-left: 30px;
-            position: relative;
-        }
-        .content-section li:before {
-            content: '✓';
-            color: var(--primary-color);
-            position: absolute;
-            left: 0;
-        }
-        .cta-button {
-            display: inline-block;
-            background: var(--primary-color);
-            color: white;
-            padding: 15px 30px;
-            border-radius: 5px;
-            text-decoration: none;
-            transition: background 0.3s ease;
-            margin-top: 20px;
-        }
-        .cta-button:hover {
-            background: var(--secondary-color);
-            color: white;
-        }
-        .footer {
-            background: var(--primary-color);
-            color: white;
-            padding: 40px 0;
-            margin-top: 60px;
-        }
-        .footer a {
-            color: white;
-            text-decoration: none;
-            transition: opacity 0.3s ease;
-        }
-        .footer a:hover {
-            opacity: 0.8;
-        }
-        .related-features {
-            background: white;
-            border-radius: 10px;
-            padding: 30px;
-            margin-top: 40px;
-            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
-        }
-        .related-features h3 {
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .related-features ul {
-            list-style: none;
-            padding: 0;
-        }
-        .related-features li {
-            margin-bottom: 10px;
-        }
-        .related-features a {
-            color: var(--text-color);
-            text-decoration: none;
-            transition: color 0.3s ease;
-            display: block;
-            padding: 8px 0;
-        }
-        .related-features a:hover {
-            color: var(--primary-color);
-        }
-        .related-features a i {
-            margin-right: 10px;
-            color: var(--primary-color);
-        }
-        .use-case {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-        }
-        .use-case h4 {
-            color: var(--primary-color);
-            margin-bottom: 15px;
-        }
-        .use-case p {
-            margin-bottom: 10px;
-        }
-        .feature-icon {
-            font-size: 3rem;
-            color: var(--primary-color);
-            margin-bottom: 20px;
-        }
-        .benefit-card {
-            background: #f9f9f9;
-            border-radius: 8px;
-            padding: 20px;
-            margin-bottom: 20px;
-            border-left: 4px solid var(--primary-color);
-        }
-        .benefit-card h4 {
-            color: var(--primary-color);
-            margin-bottom: 10px;
-        }
-        .quote-card {
-            background: #f0f7f8;
-            border-radius: 10px;
-            padding: 25px;
-            margin: 30px 0;
-            border-left: 5px solid var(--accent-color);
-            font-style: italic;
-        }
-        .highlight-box {
-            background-color: #fff8e1;
-            border-radius: 8px;
-            padding: 20px;
-            margin: 20px 0;
-            border-left: 4px solid var(--accent-color);
-        }
-        .step-box {
-            background: white;
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
-            display: flex;
-            align-items: flex-start;
-        }
-        .step-number {
-            background: var(--primary-color);
-            color: white;
-            width: 36px;
-            height: 36px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin-right: 15px;
-            flex-shrink: 0;
-            font-weight: bold;
-        }
-        .step-content {
-            flex: 1;
-        }
-    </style>
 
-    <!-- Breadcrumb Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Article",
+        "headline": "Time-Limited Whitepapers & Case Studies",
+        "description": "Share marketing content without giving it away forever. Set expiration dates and view limits so whitepapers stay exclusive and drive conversions.",
+        "image": "https://sendpdfonline.com/images/maipdf2026/show_off/self-destruct.png",
+        "datePublished": "2025-01-15",
+        "dateModified": "2026-03-23",
+        "author": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+        "publisher": { "@type": "Organization", "name": "MaiPDF", "url": "https://maipdf.com" },
+        "mainEntityOfPage": "https://sendpdfonline.com/article/time-limited-whitepapers-case-studies"
+    }
+    </script>
+
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",
         "@type": "BreadcrumbList",
         "itemListElement": [
+            { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://sendpdfonline.com/" },
+            { "@type": "ListItem", "position": 2, "name": "Articles", "item": "https://sendpdfonline.com/article/" },
+            { "@type": "ListItem", "position": 3, "name": "Time-Limited Whitepapers & Case Studies", "item": "https://sendpdfonline.com/article/time-limited-whitepapers-case-studies" }
+        ]
+    }
+    </script>
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "FAQPage",
+        "mainEntity": [
             {
-                "@type": "ListItem",
-                "position": 1,
-                "name": "Home",
-                "item": "https://sendpdfonline.com/"
+                "@type": "Question",
+                "name": "Why should I time-limit my whitepapers?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Time-limiting whitepapers creates urgency, prevents outdated versions from circulating, and keeps your intellectual property from being shared beyond your intended audience. It also lets you measure genuine interest by seeing who views the content within the available window." }
             },
             {
-                "@type": "ListItem",
-                "position": 2,
-                "name": "Article",
-                "item": "https://sendpdfonline.com/article/"
+                "@type": "Question",
+                "name": "Can I update the whitepaper content after sharing?",
+                "acceptedAnswer": { "@type": "Answer", "text": "Yes. MaiPDF lets you replace the file behind a shared link without changing the URL or QR code. Recipients always see the latest version, so you can fix typos, update data, or swap out an entire document while keeping the same distribution link." }
             },
             {
-                "@type": "ListItem",
-                "position": 3,
-                "name": "How to Send Time",
-                "item": "https://sendpdfonline.com/article/time-limited-whitepapers-case-studies.html"
+                "@type": "Question",
+                "name": "How do I track lead engagement with my whitepaper?",
+                "acceptedAnswer": { "@type": "Answer", "text": "MaiPDF logs every open event with timestamps, approximate location, and device details. You can also enable Telegram alerts to get notified the moment someone views your document, and use email verification to tie each view to a specific lead." }
             }
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+
+    <style>
+        :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --blue-500: #3b82f6; --blue-50: #eff6ff; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+        .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+        .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+        .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
+        .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
+        .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+        .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
+        .step-card { background: white; border-radius: 12px; padding: 2rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+        .step-card img { border-radius: 8px; border: 1px solid #e5e7eb; margin-top: 1rem; }
+        .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 2rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+        .feature-card:hover { transform: translateY(-4px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+        .feature-icon { width: 56px; height: 56px; border-radius: 12px; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin-bottom: 1rem; }
+        .article-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; overflow: hidden; height: 100%; transition: transform 0.2s; }
+        .article-card:hover { transform: translateY(-3px); box-shadow: 0 6px 20px rgba(0,0,0,0.08); }
+        .article-card .card-body { padding: 1.5rem; }
+        .article-card h3 { font-size: 1.1rem; }
+        .article-card h3 a { color: var(--gray-900); text-decoration: none; }
+        .article-card h3 a:hover { color: var(--blue-600); }
+        .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
+        .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+        .section-heading { font-size: 2rem; font-weight: 700; }
+        .screenshot { border-radius: 8px; border: 1px solid #e5e7eb; box-shadow: 0 2px 8px rgba(0,0,0,0.08); }
+        footer { background: var(--gray-900); }
+        footer a { color: #9ca3af; text-decoration: none; }
+        footer a:hover { color: white; }
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+    </style>
 </head>
 <body>
 
-    <!-- Breadcrumb Navigation -->
-    <nav aria-label="breadcrumb" style="background-color: #f8f9fa; padding: 1rem 0;">
+    <nav aria-label="breadcrumb" style="background: var(--gray-100); padding: .75rem 0;">
         <div class="container">
-            <ol class="breadcrumb mb-0">
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/">Home</a></li>
-                <li class="breadcrumb-item"><a href="https://sendpdfonline.com/article/">Article</a></li>
-                <li class="breadcrumb-item active" aria-current="page">How to Send Time</li>
+            <ol class="breadcrumb mb-0 small">
+                <li class="breadcrumb-item"><a href="/">Home</a></li>
+                <li class="breadcrumb-item"><a href="/article/">Articles</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Time-Limited Whitepapers &amp; Case Studies</li>
             </ol>
         </div>
     </nav>
-    
-    <!-- Navigation Bar -->
-    <nav class="navbar navbar-expand-lg navbar-dark" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));">
+
+    <section class="hero">
         <div class="container">
-            <a class="navbar-brand" href="../index">MaiPDF</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="../index">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../features/index">Features</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="index">Articles</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="../usecase/index">Use Cases</a>
-                    </li>
-                </ul>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section -->
-    <div class="hero">
-        <div class="container">
-            <h1><i class="fas fa-hourglass-half"></i> How to Send Time-Limited Whitepapers or Case Studies</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
-                </div>
-                
-            <p class="lead">Share Valuable Content—Without Giving It Away Forever</p>
-            <a href="../features/set-expiration-date-for-pdfs" class="cta-button">Explore PDF Time Limits</a>
-        </div>
-    </div>
-
-    <div class="container">
-        <!-- Introduction -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-file-alt"></i> Protecting Your Marketing Assets</h2>
-            <p>Whitepapers. Case studies. Strategy PDFs. These are some of your most powerful marketing tools—but also some of the hardest to control once they're shared.</p>
-            
-            <p>You send a link, attach a file, or run a gated download campaign. People get the content. But then:</p>
-            
-            <div class="row mt-4">
-                <div class="col-md-6">
-                    <ul>
-                        <li>It's downloaded and stored indefinitely</li>
-                        <li>Forwarded outside your target audience</li>
-                        <li>Uploaded to forums or shared by competitors</li>
-                        <li>Referenced long after the content is out of date</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <img src="/images/enqr.png" alt="Marketing Documents" class="img-fluid rounded">
-                </div>
-            </div>
-            
-            <p class="mt-3">Your valuable insights live on—but often out of your control.</p>
-        </div>
-
-        <!-- Why Time-Limited Access Matters -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-brain"></i> Why Time-Limited Access Matters</h2>
-            <p>For marketers and brand teams, control = credibility.</p>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <div class="content-section">
-                        <h3>You want to:</h3>
-                        <ul>
-                            <li>Limit how long a whitepaper stays live</li>
-                            <li>Prevent old documents from being reused</li>
-                            <li>Test interest without permanent exposure</li>
-                            <li>Create urgency (e.g. "Available for 72 hours only")</li>
-                            <li>Avoid becoming a source for your competitors</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-6">
-                    <img src="/maipdf-images/result_of_pdf_link_and_qr_code.png" alt="Time Management Concept" class="img-fluid rounded">
-                </div>
-            </div>
-            
-            <div class="quote-card">
-                <p>"A simple download link doesn't give you that power. But controlled, time-limited viewing does."</p>
-            </div>
-        </div>
-
-        <!-- The Better Way -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-check-circle"></i> The Better Way: Controlled PDF Viewing with Expiry Logic</h2>
-            
-            <p>Instead of attaching your document or giving unrestricted access, use a platform that lets you:</p>
-            
-            <div class="row">
-                <div class="col-md-7">
-                    <div class="step-box">
-                        <div class="step-number">1</div>
-                        <div class="step-content">
-                            <h4>Generate view-only links or QR codes</h4>
-                            <p>Create restricted access points that don't allow downloads</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step-box">
-                        <div class="step-number">2</div>
-                        <div class="step-content">
-                            <h4>Set precise limits</h4>
-                            <p>E.g., open only 3 times, or view once then expire</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step-box">
-                        <div class="step-number">3</div>
-                        <div class="step-content">
-                            <h4>Disable download and print</h4>
-                            <p>Prevent unauthorized copying and distribution</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step-box">
-                        <div class="step-number">4</div>
-                        <div class="step-content">
-                            <h4>Review engagement</h4>
-                            <p>See who opened it, when, and where</p>
-                        </div>
-                    </div>
-                    
-                    <div class="step-box">
-                        <div class="step-number">5</div>
-                        <div class="step-content">
-                            <h4>Revoke or update access</h4>
-                            <p>Change permissions later—without resending anything</p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <img src="/images/qrwatermark.png" alt="Controlled Access" class="img-fluid rounded mb-4">
-                    
-                    <div class="highlight-box">
-                        <h4><i class="fas fa-lightbulb"></i> Pro Tip</h4>
-                        <p>It's smarter. Cleaner. And way more professional than basic PDF sharing.</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Real-World Example -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-flask"></i> Real-World Example</h2>
-            
-            <div class="row">
-                <div class="col-md-6">
-                    <p>You're launching a limited campaign for your new AI platform. Part of the campaign: a detailed whitepaper explaining your edge.</p>
-                    
-                    <p class="mb-4">You don't want:</p>
-                    <ul>
-                        <li>The content being downloaded and shared indefinitely</li>
-                        <li>Old versions circulating months later</li>
-                        <li>Competitors using your insights against you</li>
-                    </ul>
-                </div>
-                <div class="col-md-6">
-                    <!-- TODO: 需要图片 marketing-campaign.jpg -->
-                    <!-- <img src="/images/marketing-campaign.jpg" alt="Marketing Campaign" class="img-fluid rounded"> -->
-                </div>
-            </div>
-            
-            <div class="highlight-box mt-4">
-                <h4>With a smart sharing tool:</h4>
-                <div class="row">
-                    <div class="col-md-6">
-                        <ol>
-                            <li>You upload the PDF</li>
-                            <li>Set the link to allow 2 opens per user</li>
-                            <li>Disable downloads</li>
-                        </ol>
-                    </div>
-                    <div class="col-md-6">
-                        <ol start="4">
-                            <li>Share via email or a campaign QR code</li>
-                            <li>Remove access a week later, automatically or manually</li>
-                        </ol>
-                    </div>
-                </div>
-            </div>
-            
-            <p class="mt-4">You control the window of visibility, not just the distribution.</p>
-        </div>
-
-        <!-- What Tools Like MaiPDF Offer -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-tools"></i> What Tools Like MaiPDF Offer</h2>
-            
-            <p>Platforms like MaiPDF help marketing teams:</p>
-            
-            <div class="row mt-4">
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-cloud-upload-alt feature-icon"></i>
-                        <h4>Cloud Management</h4>
-                        <p>Upload and manage whitepapers in the cloud</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-eye-slash feature-icon"></i>
-                        <h4>View-Only Access</h4>
-                        <p>Create non-downloadable view-only access</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-stopwatch feature-icon"></i>
-                        <h4>Time & Access Limits</h4>
-                        <p>Limit how many times the PDF can be opened</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-qrcode feature-icon"></i>
-                        <h4>QR Code Generation</h4>
-                        <p>Generate QR codes for print campaigns or booths</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-chart-line feature-icon"></i>
-                        <h4>Access Logging</h4>
-                        <p>Log access events (IP, timestamp)</p>
-                    </div>
-                </div>
-                <div class="col-lg-4 col-md-6 mb-4">
-                    <div class="text-center">
-                        <i class="fas fa-edit feature-icon"></i>
-                        <h4>Edit & Revoke</h4>
-                        <p>Use an edit code to revoke, replace, or extend access</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="quote-card">
-                <p>All without asking the user to register or install anything. That means fast delivery for them—and full control for you.</p>
-            </div>
-        </div>
-
-        <!-- Best Use Cases -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-chart-bar"></i> Best Use Cases</h2>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="use-case">
-                        <h4><i class="fas fa-lock"></i> Gated Content</h4>
-                        <p>Campaign-specific content that expires post-campaign</p>
-                        <ul>
-                            <li>Research reports</li>
-                            <li>Industry analyses</li>
-                            <li>Market forecasts</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="use-case">
-                        <h4><i class="fas fa-briefcase"></i> Sales Materials</h4>
-                        <p>Sales enablement materials for short-term promos</p>
-                        <ul>
-                            <li>Pitch decks</li>
-                            <li>Product comparisons</li>
-                            <li>Pricing guides</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="use-case">
-                        <h4><i class="fas fa-lightbulb"></i> Thought Leadership</h4>
-                        <p>Time-sensitive thought leadership</p>
-                        <ul>
-                            <li>Industry predictions</li>
-                            <li>Trend analyses</li>
-                            <li>Expert interviews</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="row">
-                <div class="col-md-4 mb-4">
-                    <div class="use-case">
-                        <h4><i class="fas fa-users"></i> Competitive Materials</h4>
-                        <p>Competitive case studies you don't want going public</p>
-                        <ul>
-                            <li>Win/loss analyses</li>
-                            <li>Competitor comparisons</li>
-                            <li>Market positioning</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="use-case">
-                        <h4><i class="fas fa-book"></i> Limited Access Content</h4>
-                        <p>Limited access eBooks / datasheets / ROI PDFs</p>
-                        <ul>
-                            <li>Premium content</li>
-                            <li>ROI calculators</li>
-                            <li>Implementation guides</li>
-                        </ul>
-                    </div>
-                </div>
-                <div class="col-md-4 mb-4">
-                    <div class="use-case">
-                        <h4><i class="fas fa-calendar-alt"></i> Event Materials</h4>
-                        <p>Conference and event materials</p>
-                        <ul>
-                            <li>Conference presentations</li>
-                            <li>Speaker materials</li>
-                            <li>Workshop handouts</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Final Thought -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-comment"></i> Final Thought</h2>
-            
-            <div class="row">
-                <div class="col-md-7">
-                    <p class="lead" style="font-weight: bold;">Your content is valuable. You worked hard to create it—don't just give it away without boundaries.</p>
-                    
-                    <p>With time-limited, view-only PDF access, you can:</p>
-                    
-                    <div class="benefit-card">
-                        <h4><i class="fas fa-clock"></i> Create urgency</h4>
-                        <p>Limited-time offers drive action and increase perceived value</p>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <h4><i class="fas fa-shield-alt"></i> Protect your intellectual edge</h4>
-                        <p>Keep your competitive insights from becoming public knowledge</p>
-                    </div>
-                    
-                    <div class="benefit-card">
-                        <h4><i class="fas fa-history"></i> Control the shelf life of your ideas</h4>
-                        <p>Ensure outdated information doesn't continue to circulate</p>
-                    </div>
-                </div>
-                <div class="col-md-5">
-                    <img src="/images/lockpdf.png" alt="Content Protection" class="img-fluid rounded mb-4">
-                    
-                    <div class="quote-card">
-                        <p>"Because not all documents are meant to live forever. Some are just meant to make an impact—then disappear."</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Getting Started -->
-        <div class="feature-card">
-            <h2 class="section-title"><i class="fas fa-rocket"></i> Getting Started</h2>
-            
             <div class="row align-items-center">
-                <div class="col-md-6">
-                    <p>Ready to protect your valuable marketing content with time-limited access?</p>
-                    
-                    <p>MaiPDF offers all the tools you need to create secure, time-limited access for your whitepapers, case studies, and other marketing materials.</p>
-                    
-                    <div class="mt-4">
-                        <a href="../features/set-expiration-date-for-pdfs" class="btn btn-primary me-3">
-                            <i class="fas fa-clock"></i> Set PDF Expiration
+                <div class="col-lg-6 mb-4 mb-lg-0">
+                    <h1>Time-Limited Whitepapers &amp; Case Studies</h1>
+                    <p class="lead mt-3">Share marketing content without giving it away forever. Set expiration dates and view limits so whitepapers stay exclusive and drive conversions.</p>
+                    <div class="d-flex gap-3 mt-4 flex-wrap">
+                        <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                            <i class="fas fa-upload me-2"></i>Upload Whitepaper
                         </a>
-                        <a href="../features/limit-pdf-open-times" class="btn btn-outline-primary">
-                            <i class="fas fa-eye"></i> Limit PDF Opens
+                        <a href="/features/" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-th me-2"></i>See All Features
                         </a>
                     </div>
+                    <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> Free to use &nbsp; <i class="fas fa-check me-1"></i> No sign-up required &nbsp; <i class="fas fa-check me-1"></i> Works on any device</p>
                 </div>
-                <div class="col-md-6">
-                    <img src="/images/peopleshare.png" alt="Digital Marketing" class="img-fluid rounded">
-                </div>
-            </div>
-        </div>
-
-        <!-- Related Features -->
-        <div class="related-features">
-            <h3><i class="fas fa-link"></i> Related Features</h3>
-            <div class="row">
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="../features/set-expiration-date-for-pdfs"><i class="fas fa-clock"></i> Set PDF Expiration Date</a></li>
-                        <li><a href="../features/limit-pdf-open-times"><i class="fas fa-eye"></i> Limit PDF Open Times</a></li>
-                        <li><a href="../features/prevent-pdf-forwarding-dynamicqr"><i class="fas fa-ban"></i> Prevent PDF Forwarding</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="../features/"><i class="fas fa-chart-line"></i> PDF Access Insights</a></li>
-                        <li><a href="/features/en/watermark/design-watermark-protection"><i class="fas fa-tint"></i> Dynamic Watermarks</a></li>
-                        <li><a href="../features/convert-pdf-to-qr-code"><i class="fas fa-qrcode"></i> Convert PDF to QR Code</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <ul>
-                        <li><a href="../article/pdf-control-lost"><i class="fas fa-exclamation-triangle"></i> When PDF Control Is Lost</a></li>
-                        <li><a href="../article/pdf-share-expire"><i class="fas fa-hourglass-end"></i> PDF Share Expire</a></li>
-                        <li><a href="../article/sensitive-documents-security"><i class="fas fa-user-shield"></i> Sensitive Documents Security</a></li>
-                    </ul>
+                <div class="col-lg-6 text-center">
+                    <img src="/images/maipdf2026/show_off/self-destruct.png" alt="Time-limited PDF self-destruct feature — whitepaper expires after set date" class="hero-screenshot" loading="eager">
                 </div>
             </div>
         </div>
-    </div>
+    </section>
 
-    <!-- Footer -->
-    
-    <!-- Related Resources -->
-    <div class="container my-5">
-        <div class="alert alert-info border-0 shadow-sm">
-            <h4><i class="fas fa-book-open"></i> More Expert Guides & Tutorials</h4>
-            <p class="mb-3">Explore in-depth articles, tutorials, and best practices on our professional blog:</p>
-            <a href="https://article.maipdf.com" target="_blank" rel="noopener" class="btn btn-info">
-                <i class="fas fa-external-link-alt"></i> Visit MaiPDF Expert Blog
-            </a>
-        </div>
-    </div>
-
-    <!-- Related Articles -->
-    <div class="container my-5">
-        <div class="row">
-            <div class="col-lg-10 mx-auto">
-                <h3 class="mb-4"><i class="fas fa-book-open me-2"></i>Related Articles</h3>
-                <div class="row g-3">
-                    <div class="col-md-6">
-                        <a href="/article/time-limited-whitepapers" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Time-Limited Whitepapers Guide</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/sales-pitch-decks" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Secure Sales Pitch Deck Sharing</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/ebook-preview" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Ebook Preview Security Guide</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/limit-pdf-access-times-en" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">How to Limit PDF Access Times</h6>
-                            </div>
-                        </a>
-                    </div>
-                    <div class="col-md-6">
-                        <a href="/article/training-materials-distribution" class="text-decoration-none">
-                            <div class="p-3 bg-light rounded-3 h-100 border">
-                                <h6 class="mb-1 text-primary">Training Materials Distribution Guide</h6>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    
-    <div class="container my-4 text-center">
-        <a href="/article/" class="btn btn-primary me-2">
-            <i class="fas fa-arrow-left"></i> Back to Articles
-        </a>
-        <a href="/" class="btn btn-outline-primary me-2">
-            <i class="fas fa-home"></i> Home
-        </a>
-        <a href="https://maipdf.com" class="btn btn-success" target="_blank" rel="noopener">
-            <i class="fas fa-rocket"></i> Try Now
-        </a>
-    </div>
-
-    <footer class="footer">
+    <section class="py-5">
         <div class="container">
             <div class="row">
-                <div class="col-md-4">
-                    <h4>MaiPDF</h4>
-                    <p>Professional PDF Sharing and Security Solutions</p>
-                </div>
-                <div class="col-md-4">
-                    <h4>Quick Links</h4>
-                    <ul class="list-unstyled">
-                        <li><a href="../index">Home</a></li>
-                        <li><a href="../features/index">Features</a></li>
-                        <li><a href="index">Articles</a></li>
-                        <li><a href="../usecase/index">Use Cases</a></li>
-                    </ul>
-                </div>
-                <div class="col-md-4">
-                    <h4>Contact</h4>
-                    <ul class="list-unstyled">
-                        <li><!--email_off--><a href="mailto:joe@pdfhost.online">joe@pdfhost.online</a><!--/email_off--></li>
-                    </ul>
+                <div class="col-lg-8 mx-auto">
+                    <p class="lead">Whitepapers, case studies, and strategy PDFs are among your most powerful marketing tools — but they're also the hardest to control once shared. Recipients download, forward, and repost them indefinitely. With MaiPDF you set an expiration date, cap the number of opens, and track every view so your premium content stays exclusive.</p>
                 </div>
             </div>
-            <div class="text-center mt-4">
-                <p>&copy; 2025 MaiPDF. All rights reserved.</p>
+        </div>
+    </section>
+
+    <section class="py-5 mt-3">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">How It Works</p>
+                <h2 class="section-heading">Share a Whitepaper in 3 Steps</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">1</div>
+                        <h3 class="h5 fw-bold">Upload Your Whitepaper</h3>
+                        <p class="text-muted">Drag and drop your PDF on MaiPDF. Your file is stored securely in the cloud, ready to share.</p>
+                        <img src="/images/maipdf2026/maipdf_header_login_or_upload_file.png" alt="Upload a whitepaper PDF to MaiPDF" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">2</div>
+                        <h3 class="h5 fw-bold">Set Expiration &amp; View Limit</h3>
+                        <p class="text-muted">Choose an expiry date, cap the number of opens, add a password, or require email verification.</p>
+                        <img src="/images/maipdf2026/MaiPDF_settings_expiration_telegram.png" alt="Set expiration date and view limit for whitepaper" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <div class="step-card text-center">
+                        <div class="step-num mx-auto mb-3">3</div>
+                        <h3 class="h5 fw-bold">Share Link to Leads</h3>
+                        <p class="text-muted">Copy the secure link or QR code and send it to prospects via email, ads, or social media.</p>
+                        <img src="/images/maipdf2026/Result_of_qr_link.png" alt="Get a secure PDF share link and QR code" class="img-fluid screenshot" loading="lazy">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Key Features</p>
+                <h2 class="section-heading">Everything You Need to Protect Marketing Content</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-calendar-times"></i></div>
+                        <h3 class="h5 fw-bold">Expiration Dates</h3>
+                        <p class="text-muted mb-2">Set a specific date or countdown so the whitepaper auto-expires and can no longer be viewed.</p>
+                        <a href="/features/en/security/set-expiration-date-for-pdfs" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-eye"></i></div>
+                        <h3 class="h5 fw-bold">View Count Limits</h3>
+                        <p class="text-muted mb-2">Cap the number of times a link can be opened — perfect for limited-access lead magnets.</p>
+                        <a href="/features/en/security/limit-pdf-open-times" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#fef3c7;color:#d97706;"><i class="fas fa-chart-line"></i></div>
+                        <h3 class="h5 fw-bold">Access Analytics</h3>
+                        <p class="text-muted mb-2">See who opened your document, when, from where, and on which device — in real time.</p>
+                        <a href="/features/en/tracking/client-feedback-management" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fas fa-lock"></i></div>
+                        <h3 class="h5 fw-bold">Password Gate</h3>
+                        <p class="text-muted mb-2">Require a password before the whitepaper can be viewed — add an extra layer of exclusivity.</p>
+                        <a href="/features/en/security/pdf-password-protection" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#fce7f3;color:#db2777;"><i class="fas fa-ban"></i></div>
+                        <h3 class="h5 fw-bold">No-Download Mode</h3>
+                        <p class="text-muted mb-2">Disable the download button so recipients can only view — not save or redistribute — your PDF.</p>
+                        <a href="/features/en/security/prevent-document-content-copying" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-sync-alt"></i></div>
+                        <h3 class="h5 fw-bold">Replace File, Same Link</h3>
+                        <p class="text-muted mb-2">Swap the underlying PDF without changing the URL. Update data or fix errors post-launch.</p>
+                        <a href="/article/replace-pdf-without-changing-link" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-envelope-open-text"></i></div>
+                        <h3 class="h5 fw-bold">Email Verification</h3>
+                        <p class="text-muted mb-2">Require a one-time email code before viewing so you know exactly which lead opened the file.</p>
+                        <a href="/features/en/security/email-verification-secure-pdf-access" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fab fa-telegram-plane"></i></div>
+                        <h3 class="h5 fw-bold">Telegram Alerts</h3>
+                        <p class="text-muted mb-2">Get a Telegram notification the moment someone opens your whitepaper — no dashboard refresh needed.</p>
+                        <a href="/features/" class="text-decoration-none small">Learn more →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Scenario Comparison</p>
+                <h2 class="section-heading">Choose the Right Settings for Your Goal</h2>
+            </div>
+            <div class="table-responsive">
+                <table class="table table-bordered align-middle bg-white" style="border-radius:12px;overflow:hidden;">
+                    <thead style="background:var(--blue-50);">
+                        <tr>
+                            <th style="width:25%;">Scenario</th>
+                            <th style="width:25%;">Recommended Settings</th>
+                            <th style="width:25%;">Why It Works</th>
+                            <th style="width:25%;">Best For</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong><i class="fas fa-magnet text-primary me-2"></i>Lead Magnet</strong></td>
+                            <td>7-day expiry, no download</td>
+                            <td>Creates urgency — prospects read quickly and convert before access ends</td>
+                            <td>Marketing campaigns, gated content</td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fas fa-briefcase text-success me-2"></i>Sales Enablement</strong></td>
+                            <td>Password + 3-view limit</td>
+                            <td>Only verified prospects can view, and the deck can't be shared endlessly</td>
+                            <td>Pitch decks, pricing guides</td>
+                        </tr>
+                        <tr>
+                            <td><strong><i class="fas fa-chart-pie text-warning me-2"></i>Investor Update</strong></td>
+                            <td>Email verification + auto-expire</td>
+                            <td>You know exactly which investors opened the report, and it vanishes after the window closes</td>
+                            <td>Quarterly reports, board decks</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">FAQ</p>
+                <h2 class="section-heading">Frequently Asked Questions</h2>
+            </div>
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="accordion" id="faqAccordion">
+                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden" style="box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">Why should I time-limit my whitepapers?</button>
+                            </h2>
+                            <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Time-limiting whitepapers creates urgency, prevents outdated versions from circulating, and keeps your intellectual property from being shared beyond your intended audience. It also lets you measure genuine interest by seeing who views the content within the available window.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden" style="box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">Can I update the whitepaper content after sharing?</button>
+                            </h2>
+                            <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">Yes. MaiPDF lets you replace the file behind a shared link without changing the URL or QR code. Recipients always see the latest version, so you can fix typos, update data, or swap out an entire document while keeping the same distribution link.</div>
+                            </div>
+                        </div>
+                        <div class="accordion-item border-0 mb-3 rounded-3 overflow-hidden" style="box-shadow:0 2px 8px rgba(0,0,0,0.06);">
+                            <h2 class="accordion-header">
+                                <button class="accordion-button collapsed fw-semibold" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">How do I track lead engagement with my whitepaper?</button>
+                            </h2>
+                            <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                                <div class="accordion-body text-muted">MaiPDF logs every open event with timestamps, approximate location, and device details. You can also enable Telegram alerts to get notified the moment someone views your document, and use email verification to tie each view to a specific lead.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">Related Articles</p>
+                <h2 class="section-heading">Continue Reading</h2>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-warning text-dark mb-2"><i class="fas fa-star me-1"></i>Featured</span>
+                            <h3><a href="/article/replace-pdf-without-changing-link">Replace PDF Without Changing the Link</a></h3>
+                            <p class="text-muted small">Update shared PDFs while keeping the same URL. Old link stays, new content appears instantly.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-primary mb-2">Guide</span>
+                            <h3><a href="/article/sales-pitch-decks">Secure Sales Pitch Deck Sharing</a></h3>
+                            <p class="text-muted small">Share pitch decks with view limits and know the moment a prospect opens them.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-success mb-2">Security</span>
+                            <h3><a href="/article/confidential-investor-updates">Securing Confidential Investor Updates</a></h3>
+                            <p class="text-muted small">How financial teams share sensitive reports with view limits and audit trails.</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-3">
+                    <div class="article-card">
+                        <div class="card-body">
+                            <span class="badge bg-info text-dark mb-2">Tutorial</span>
+                            <h3><a href="/article/limit-pdf-access-times-en">How to Limit PDF Access Times</a></h3>
+                            <p class="text-muted small">Step-by-step guide to restricting the number of times a PDF can be opened.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="cta-section text-center">
+                <h2 class="h3 fw-bold mb-3">Ready to Protect Your Whitepapers?</h2>
+                <p class="mb-4 opacity-90" style="max-width:520px;margin:0 auto;">Upload your whitepaper, set an expiration date and view limit, then share the link — it takes less than a minute.</p>
+                <div class="d-flex gap-3 justify-content-center flex-wrap">
+                    <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+                        <i class="fas fa-upload me-2"></i>Upload Whitepaper — Free
+                    </a>
+                    <a href="/features/" class="btn btn-outline-light btn-lg">
+                        <i class="fas fa-th me-2"></i>Explore Features
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="text-white py-5 mt-0">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
+                    <p class="small" style="color:#9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small mb-0" style="color:#6b7280;">© 2026 SendPDFOnline.com</p>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Product</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
+                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
+                        <li class="mb-2"><a href="/features/">Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Resources</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/">Blog</a></li>
+                        <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
+                        <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h6 class="fw-bold mb-3">Popular</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><a href="/article/replace-pdf-without-changing-link">Replace PDF</a></li>
+                        <li class="mb-2"><a href="/features/en/sharing/convert-pdf-to-qr-code">PDF to QR Code</a></li>
+                        <li class="mb-2"><a href="/features/en/security/pdf-security-features">Security Features</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-2">
+                    <h6 class="fw-bold mb-3">Support</h6>
+                    <ul class="list-unstyled small">
+                        <li class="mb-2"><!--email_off--><a href="mailto:joe@pdfhost.online">Contact Us</a><!--/email_off--></li>
+                        <li class="mb-2"><a href="/sitemap.xml">Sitemap</a></li>
+                    </ul>
+                </div>
             </div>
         </div>
     </footer>
 
-    <!-- Bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
