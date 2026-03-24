@@ -309,7 +309,26 @@
             <h2><i class="fas fa-project-diagram"></i> Workflow overview</h2>
             <p class="mb-3">How hosting, sharing, and controls fit together on MaiImg. Diagram is in English for global readers.</p>
             <div class="flowchart-wrap text-center">
-                <img src="static-images/diagram/image-sharing-workflow-diagram.svg" alt="Diagram: upload, generate link and QR, share, track views, optional limits" class="img-fluid img-cyber" loading="eager" width="900" height="500">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 320" preserveAspectRatio="xMidYMid meet" role="img" aria-label="Diagram: upload, generate link and QR, share, track views, optional limits" class="img-fluid img-cyber" style="max-width:900px;width:100%;height:auto;">
+                    <style>
+                        .wf-box{fill:#fff;stroke:#94a3b8;stroke-width:2;rx:14}
+                        .wf-t1{font:700 22px Inter,Segoe UI,sans-serif;fill:#0f172a}
+                        .wf-t2{font:400 16px Inter,Segoe UI,sans-serif;fill:#334155}
+                        .wf-arr{stroke:#93c5fd;stroke-width:4;stroke-linecap:round}
+                        .wf-dot{fill:#2563eb}
+                        @keyframes wf-slide{0%{transform:translateX(0)}100%{transform:translateX(165px)}}
+                        .wf-d1{animation:wf-slide 1.9s linear infinite}
+                        .wf-d2{animation:wf-slide 1.9s linear infinite .5s}
+                        .wf-d3{animation:wf-slide 1.9s linear infinite 1s}
+                    </style>
+                    <rect width="1200" height="320" fill="#f8fafc"/>
+                    <g transform="translate(30,60)"><rect class="wf-box" width="220" height="170"/><text class="wf-t1" x="110" y="55" text-anchor="middle">1) Upload Images</text><text class="wf-t2" x="110" y="92" text-anchor="middle">Up to 25 per link</text><text class="wf-t2" x="110" y="122" text-anchor="middle">Group by scenario</text></g>
+                    <g transform="translate(320,60)"><rect class="wf-box" width="220" height="170"/><text class="wf-t1" x="110" y="55" text-anchor="middle">2) Generate Link</text><text class="wf-t2" x="110" y="92" text-anchor="middle">One share URL</text><text class="wf-t2" x="110" y="122" text-anchor="middle">Ready for chat/email</text></g>
+                    <g transform="translate(610,60)"><rect class="wf-box" width="220" height="170"/><text class="wf-t1" x="110" y="55" text-anchor="middle">3) Create QR</text><text class="wf-t2" x="110" y="92" text-anchor="middle">Offline-friendly</text><text class="wf-t2" x="110" y="122" text-anchor="middle">Posters / events / cards</text></g>
+                    <g transform="translate(900,60)"><rect class="wf-box" width="220" height="170"/><text class="wf-t1" x="110" y="55" text-anchor="middle">4) Control Access</text><text class="wf-t2" x="110" y="92" text-anchor="middle">Set limits &amp; expiry</text><text class="wf-t2" x="110" y="122" text-anchor="middle">Revoke anytime</text></g>
+                    <line class="wf-arr" x1="250" y1="255" x2="320" y2="255"/><line class="wf-arr" x1="540" y1="255" x2="610" y2="255"/><line class="wf-arr" x1="830" y1="255" x2="900" y2="255"/>
+                    <circle class="wf-dot wf-d1" cx="255" cy="255" r="6"/><circle class="wf-dot wf-d2" cx="545" cy="255" r="6"/><circle class="wf-dot wf-d3" cx="835" cy="255" r="6"/>
+                </svg>
             </div>
         </div>
 
