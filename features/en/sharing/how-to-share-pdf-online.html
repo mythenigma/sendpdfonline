@@ -5,9 +5,9 @@
 
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Convert PDF to Link for Sharing - MaiPDF</title>
-  <meta name="keywords" content="share pdf, host online, share pdf online, pdf to link, pdf sharing, online pdf, pdf hosting, qr code pdf">
-  <meta name="description" content="Easily convert your PDF documents into shareable links and QR codes with MaiPDF.  Free, secure, and convenient PDF hosting for seamless sharing.">
+  <title>Share a PDF as a Link (and QR Code) — MaiPDF</title>
+  <meta name="keywords" content="share pdf online, pdf link generator, pdf qr code, share pdf as link, secure pdf sharing, maipdf">
+  <meta name="description" content="Upload a PDF, generate a shareable reading link (and QR code), then control access with view limits, expiration, and Read Alerts via Telegram.">
   <meta name="author" content="MaiPDF">
   <meta name="robots" content="noindex, nofollow">
   <link rel="canonical" href="https://sendpdfonline.com/features/en/sharing/how-to-share-pdf-online">
@@ -18,8 +18,8 @@
   <link href='https://fonts.googleapis.com/css?family=Merriweather:400,300,300italic,400italic,700,700italic' rel='stylesheet' type='text/css'>
 <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9224406325142860" crossorigin="anonymous"></script>
 
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">  
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Breadcrumb Structured Data -->
     <script type="application/ld+json">
     {
@@ -47,93 +47,279 @@
         ]
     }
     </script>
-    <link rel="icon" type="image/x-icon" href="/favicon.ico">
+    <link rel="icon" type="image/x-icon" href="../../../favicon.ico">
+
+    <style>
+      :root { --blue-900: #1e3a8a; --blue-600: #2563eb; --gray-900: #111827; --gray-600: #4b5563; --gray-100: #f3f4f6; }
+      body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; color: var(--gray-900); }
+      .hero { background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #2563eb 100%); color: white; padding: 5rem 0 4rem; position: relative; overflow: hidden; }
+      .hero::after { content: ''; position: absolute; bottom: 0; left: 0; right: 0; height: 80px; background: linear-gradient(to bottom right, transparent 49.5%, white 50%); }
+      .hero h1 { font-size: 2.6rem; font-weight: 800; line-height: 1.2; }
+      .hero .lead { font-size: 1.15rem; opacity: 0.92; max-width: 680px; }
+      .hero-media { border-radius: 14px; box-shadow: 0 20px 60px rgba(0,0,0,0.42); max-width: 560px; width: 100%; height: auto; }
+      .section-label { color: var(--blue-600); font-weight: 600; font-size: 0.875rem; text-transform: uppercase; letter-spacing: 0.05em; }
+      .section-heading { font-size: 2rem; font-weight: 700; }
+      .step-num { width: 46px; height: 46px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 800; font-size: 1.1rem; flex-shrink: 0; }
+      .step-card { background: white; border-radius: 12px; padding: 1.75rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); height: 100%; }
+      .feature-card { background: white; border: 1px solid #e5e7eb; border-radius: 12px; padding: 1.75rem; height: 100%; transition: transform 0.2s, box-shadow 0.2s; }
+      .feature-card:hover { transform: translateY(-3px); box-shadow: 0 8px 24px rgba(0,0,0,0.1); }
+      .feature-icon { width: 52px; height: 52px; border-radius: 12px; display:flex; align-items:center; justify-content:center; font-size: 1.4rem; margin-bottom: 0.9rem; }
+      .screenshot { border-radius: 10px; border: 1px solid #e5e7eb; box-shadow: 0 2px 10px rgba(0,0,0,0.08); }
+      footer { background: var(--gray-900); }
+      footer a { color: #9ca3af; text-decoration: none; }
+      footer a:hover { color: white; }
+      @media (max-width: 768px) { .hero { padding: 3rem 0 2.5rem; } .hero h1 { font-size: 2rem; } .hero-media { max-width: 100%; margin-top: 1.25rem; } }
+    </style>
 </head>
 
 <body id="page-top">
 
-  <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+  <!-- Top nav -->
+  <nav class="navbar navbar-expand-lg navbar-dark" style="background:#0b1220;">
     <div class="container">
-      <a class="navbar-brand js-scroll-trigger" style="color: Blue;" href="https://www.maipdf.com">MaiPDF</a>
+      <a class="navbar-brand fw-semibold" href="../../../"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="../../../features/">Features</a></li>
+          <li class="nav-item"><a class="nav-link" href="../../../article/share-pdf-online">Guide</a></li>
+          <li class="nav-item"><a class="nav-link" href="https://maipdf.com" target="_blank" rel="noopener">Open MaiPDF</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 
-  <section class="page-section" id="contact">
+  <!-- Hero -->
+  <section class="hero">
     <div class="container">
-
-      <div class="row justify-content-center">
-        <div class="col-lg-8 text-center">
-          <h1 class="mt-0">How People Share PDF Files</h1>
-                <!-- Publication Date -->
-                <div class="mb-3">
-                    <small class="text-muted">
-                        <i class="fas fa-calendar-alt"></i> Published: January 15, 2025 | 
-                        <i class="fas fa-sync-alt"></i> Updated: December 03, 2025
-                    </small>
-                </div>
-                
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">
-            <div class="container text-center">
-              <h5 class="mb-4">Means of Sharing</h5>
-            </div>
-            This article introduces MaiPDF, a tool that converts PDF documents into shareable links and QR codes. Generating links to PDF files is incredibly useful.  It allows content to be displayed anytime, anywhere, eliminating the hassle of traditional PDF file sharing. Sending PDFs as email attachments can be cumbersome for both sender and recipient. Sharing via instant messaging often limits effective information dissemination.  Uploading PDFs directly to social media platforms like Facebook isn't always the most efficient approach.  When PDFs are instruction manuals or other important documents, relying on email or IM can be particularly inconvenient.
-            <hr class="divider my-4">
-            <img src="https://maipdf.com/pictures/MaiPDF/enresult.png" class="img-thumbnail" alt="MaiPDF Homepage">
-          </p>
-
-          <hr class="divider my-4">
-          <p class="text-muted mb-5">
-            <div class="container text-center">
-              <h5 class="mb-4">How to Share PDFs as Links</h5>
-            </div>
-            Therefore, a tool capable of quickly converting PDFs into links and displaying the PDF content instantly upon opening is essential. MaiPDF is free to use, offering both guest access and registration options.  There are no restrictions on usage or the number of views.  MaiPDF's advantages over other QR code tools include:
-            <ul>
-              <li>Direct opening via link, displaying the PDF natively (no extra functions).</li>
-              <li>No intrusive applet jumps (users are tired of these).</li>
-              <li>Option to set a limited number of views for PDFs (self-destructing after reading).</li>
-              <li>Various security settings, such as disabling downloads and printing, and setting reading time limits.</li>
-              <li>Reading reminders (email reminders - free).</li>
-              <li>Ability to modify file content even after the link has been shared.</li>
-              <li>Comprehensive document control panel (free for registered users) and quick settings (for guest users).</li>
-            </ul>
-            <hr class="divider my-4">
-            <img src="https://maipdf.com/pictures/MaiPDF/message-sending.png" class="img-thumbnail" alt="MaiPDF Cloud Sharing">
-            <br>
-            It can be used for intellectual property protection, ensuring the security of academic and research information. You can set up a downloadable version for easy distribution or create a secure link to prevent unauthorized sharing.  Even after a PDF link is shared, the author retains remote control, with the ability to change the content or invalidate the link at any time.
-          </p>
-
-          <p class="text-muted mb-5">
-            This tool isn't restricted like paid alternatives.  However, when setting view limits and reading times, avoid leaving these blank, as this will randomly assign 10 views. For unlimited views, set the view count to a high number (e.g., 999999).  The read count can be set up to 10,000 times, and you can query the file's view records, showing when and on which device (phone or computer) the file was opened.
-            <img src="https://maipdf.com/pictures/MaiPDF/pureupload.png" class="img-thumbnail" alt="MaiPDF Uploading">
-          </p>
-
-          <p class="text-muted mb-5">
-            <div class="container text-center">
-              <h5 class="mb-4">Need Help?</h5>
-            </div>
-            The site provides how-to videos for quick guidance. If you need to delete a file, you can replace it, or contact us at joe@pdfhost.online for further assistance.
-            <img src="https://maipdf.com/pictures/MaiPDF/show_file.png" class="img-thumbnail" alt="MaiPDF Cloud Sharing">
-            <img src="https://maipdf.com/pictures/MaiPDF/readnotify.png" class="img-thumbnail" alt="MaiPDF Uploading">
-          </p>
-
+      <div class="row align-items-center">
+        <div class="col-lg-6 mb-4 mb-lg-0">
+          <p class="section-label mb-2 text-white-50">Sharing</p>
+          <h1>Share a PDF as a Link (and QR Code)</h1>
+          <p class="lead mt-3">Upload a PDF, generate a reading link (plus QR code), then control access with view limits, expiration, and optional Read Alerts via Telegram.</p>
+          <div class="d-flex gap-3 mt-4 flex-wrap">
+            <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener"><i class="fas fa-paper-plane me-2"></i>Share a PDF now</a>
+            <a href="#steps" class="btn btn-outline-light btn-lg"><i class="fas fa-list-check me-2"></i>See the steps</a>
+          </div>
+          <p class="mt-3 small opacity-75"><i class="fas fa-calendar-alt me-1"></i> Published: Jan 15, 2025 &nbsp; <i class="fas fa-sync-alt me-1"></i> Updated: Apr 13, 2026</p>
+        </div>
+        <div class="col-lg-6 text-center">
+          <picture>
+            <source type="image/webp" srcset="../../../images/maipdf2026/show_off/pdf-link-and-qr-generator-hero.webp">
+            <img src="../../../images/maipdf2026/show_off/pdf-link-and-qr-generator-hero.png" alt="PDF link and QR generator hero" class="hero-media" loading="eager" width="1440" height="960">
+          </picture>
         </div>
       </div>
     </div>
   </section>
 
-  <footer class="bg-light py-5">
+  <!-- Steps -->
+  <section class="py-5 mt-2" id="steps">
     <div class="container">
-      <div class="small text-center text-muted">Copyright &copy; 2025 - joe@pdfhost.online</div>
+      <div class="text-center mb-5">
+        <p class="section-label">How it works</p>
+        <h2 class="section-heading">Share a PDF in 3 steps</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <div class="step-num mx-auto mb-3">1</div>
+            <h3 class="h5 fw-bold">Upload your PDF</h3>
+            <p class="text-muted mb-0">Drag and drop (or click) to upload. No signup required for quick sharing.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <div class="step-num mx-auto mb-3">2</div>
+            <h3 class="h5 fw-bold">Set controls</h3>
+            <p class="text-muted mb-0">Add view limits, expiration, email verification, watermarks, and more.</p>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="step-card text-center">
+            <div class="step-num mx-auto mb-3">3</div>
+            <h3 class="h5 fw-bold">Share link or QR</h3>
+            <p class="text-muted mb-0">Send via chat/email/social. Track opens and (optionally) get Telegram Read Alerts.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- What you get (link + QR + codes) -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Result</p>
+        <h2 class="section-heading">What you get after generating</h2>
+        <p class="text-muted mb-0">MaiPDF provides the exact pieces you need to share and keep control later.</p>
+      </div>
+      <div class="row g-4 align-items-center">
+        <div class="col-lg-6">
+          <div class="feature-card h-100">
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-link"></i></div>
+            <h3 class="h5 fw-bold">Reading link</h3>
+            <p class="text-muted mb-3">Share this link with recipients. They open and read in the browser.</p>
+            <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-qrcode"></i></div>
+            <h3 class="h5 fw-bold">QR code</h3>
+            <p class="text-muted mb-3">Perfect for posters, booths, printed handouts, and offline distribution.</p>
+            <div class="feature-icon" style="background:#fef3c7;color:#d97706;"><i class="fas fa-key"></i></div>
+            <h3 class="h5 fw-bold">Modification code</h3>
+            <p class="text-muted mb-0">Keep it so you can replace the PDF or adjust settings later without losing the original link.</p>
+          </div>
+        </div>
+        <div class="col-lg-6 text-center">
+          <picture>
+            <source type="image/webp" srcset="../../../images/maipdf2026/show_off/pdf-link-and-qr-generator-hero.webp">
+            <img src="../../../images/maipdf2026/show_off/pdf-link-and-qr-generator-hero.png" alt="After upload: reading link and QR code output" class="img-fluid screenshot" loading="lazy" width="1440" height="960">
+          </picture>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Feature cards -->
+  <section class="py-5" style="background: var(--gray-100);">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">Why it’s better</p>
+        <h2 class="section-heading">More control than attachments</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-link"></i></div>
+            <h3 class="h5 fw-bold">One link for everyone</h3>
+            <p class="text-muted mb-0">No giant email threads. Update settings anytime without resending files.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-eye"></i></div>
+            <h3 class="h5 fw-bold">Access logs & analytics</h3>
+            <p class="text-muted mb-0">See when it was opened, and from what device/browser/location (where available).</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#fef3c7;color:#d97706;"><i class="fas fa-shield-halved"></i></div>
+            <h3 class="h5 fw-bold">Security controls</h3>
+            <p class="text-muted mb-0">View limits, expiration, watermarking, email verification, and restrictions.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fas fa-qrcode"></i></div>
+            <h3 class="h5 fw-bold">QR code sharing</h3>
+            <p class="text-muted mb-0">Perfect for posters, print handouts, events, and offline-to-online flows.</p>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#fce7f3;color:#db2777;"><i class="fas fa-bell"></i></div>
+            <h3 class="h5 fw-bold">Read Alerts via Telegram</h3>
+            <p class="text-muted mb-0">Get notified when someone opens the link (available when access limit is under 10,000).</p>
+            <a class="small text-decoration-none" href="../tracking/PDFreadnotify.html">Learn more →</a>
+          </div>
+        </div>
+        <div class="col-md-6 col-lg-4">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-rotate"></i></div>
+            <h3 class="h5 fw-bold">Replace PDF, keep the link</h3>
+            <p class="text-muted mb-0">Update the file behind a shared URL without changing the link recipients already have.</p>
+            <a class="small text-decoration-none" href="/article/replace-pdf-without-changing-link">Learn more →</a>
+          </div>
+        </div>
+      </div>
+      <div class="row align-items-center g-4 mt-4">
+        <div class="col-lg-6 text-center">
+          <picture>
+            <source type="image/webp" srcset="../../../images/maipdf2026/show_off/pdf-share-link-social-media-hero.webp">
+            <img src="../../../images/maipdf2026/show_off/pdf-share-link-social-media-hero.png" alt="Share a PDF reading link on social media" class="img-fluid screenshot" loading="lazy" width="1440" height="960">
+          </picture>
+        </div>
+        <div class="col-lg-6">
+          <div class="feature-card">
+            <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-bullhorn"></i></div>
+            <h3 class="h5 fw-bold mb-2">Where people share PDF links</h3>
+            <p class="text-muted mb-0">Chat apps, email, internal portals, social posts, and QR codes — a link is flexible, fast, and easy to revoke or update.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="py-5">
+    <div class="container">
+      <div class="text-center mb-5">
+        <p class="section-label">FAQ</p>
+        <h2 class="section-heading">Common questions about sharing</h2>
+      </div>
+      <div class="row g-4">
+        <div class="col-lg-6">
+          <div class="feature-card h-100">
+            <h3 class="h5 fw-bold">Is it free to share a PDF link?</h3>
+            <p class="text-muted mb-0">Yes. You can generate a reading link quickly. Optional advanced controls may depend on the workflow you choose.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="feature-card h-100">
+            <h3 class="h5 fw-bold">Can I replace the PDF but keep the same link?</h3>
+            <p class="text-muted mb-0">Yes. Keep your modification code so you can update the file behind the link later.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="feature-card h-100">
+            <h3 class="h5 fw-bold">Can I know if someone opened it?</h3>
+            <p class="text-muted mb-0">Yes. You can use access logs/analytics, and enable <strong>Read Alerts via Telegram</strong> when available.</p>
+          </div>
+        </div>
+        <div class="col-lg-6">
+          <div class="feature-card h-100">
+            <h3 class="h5 fw-bold">What’s the best way to share: email, chat, or QR?</h3>
+            <p class="text-muted mb-0">Use chat for speed, email for formal delivery, and QR when offline distribution matters. A single link works everywhere.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CTA -->
+  <section class="py-5">
+    <div class="container">
+      <div class="p-4 p-md-5 rounded-4 text-white" style="background: linear-gradient(135deg, #1e3a8a, #2563eb);">
+        <div class="row align-items-center">
+          <div class="col-lg-8">
+            <h2 class="fw-bold mb-2">Ready to share your PDF?</h2>
+            <p class="mb-0 opacity-90">Generate a link + QR code in minutes, then control access and track opens.</p>
+          </div>
+          <div class="col-lg-4 text-lg-end mt-3 mt-lg-0">
+            <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
+              <i class="fas fa-paper-plane me-2"></i>Open MaiPDF
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-5">
+    <div class="container">
+      <div class="d-flex flex-column flex-md-row justify-content-between align-items-start gap-2">
+        <div class="text-white-50 small">© 2026 MaiPDF · SendPDFOnline.com</div>
+        <div class="small">
+          <a href="mailto:joe@pdfhost.online">Support</a>
+          <span class="text-white-50 mx-2">·</span>
+          <a href="../../../article/share-pdf-online">Full sharing guide</a>
+        </div>
+      </div>
     </div>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script> <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
-
-  <script src="https://maipdf.com/js/creative.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>
 

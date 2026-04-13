@@ -88,6 +88,7 @@
     <button class="tab-btn active" onclick="switchTab('plan', this)">🚀 改善计划</button>
     <button class="tab-btn" onclick="switchTab('refine', this)">📝 页面精修</button>
     <button class="tab-btn" onclick="switchTab('scoring', this)">🧮 评分系统</button>
+    <button class="tab-btn" onclick="switchTab('assets', this)">🖼️ 素材与文案</button>
   </div>
 
   <!-- Tab 1: 改善计划 -->
@@ -96,7 +97,7 @@
     <!-- 项目概况 -->
     <div class="plan-section">
       <h2>📊 项目现状概况</h2>
-      <p style="color:#94a3b8;margin-bottom:16px">最近审计日期：2026-02-21 ｜ 域名：sendpdfonline.com ｜ 主站：maipdf.com</p>
+      <p style="color:#94a3b8;margin-bottom:16px">最近审计日期：2026-02-21 ｜ 工作面板内容修订：2026-04-13 ｜ 域名：sendpdfonline.com ｜ 主站：maipdf.com</p>
       <div class="stat-grid">
         <div class="stat-card"><div class="num">161</div><div class="label">可索引页面 (原427)</div></div>
         <div class="stat-card"><div class="num">141</div><div class="label">Sitemap URL 数 (原386)</div></div>
@@ -826,6 +827,60 @@
       <div id="scoring-sections"></div>
     </div>
   </div><!-- end tab-scoring -->
+
+  <!-- Tab 4: 素材与文案 -->
+  <div id="tab-assets" class="tab-panel">
+    <div class="plan-section">
+      <h2>🖼️ 2026 素材（`images/maipdf2026/show_off/`）与 Read Alerts 英文统一</h2>
+      <p class="meta-note">最后更新：2026-04-13（本 tab 为内部 knowledge base，不对外发布）</p>
+
+      <h3>Read Alerts（Telegram）英文术语规范</h3>
+      <table class="plan-table">
+        <thead><tr><th style="width:220px">项</th><th>规范写法（建议）</th><th>避免写法</th></tr></thead>
+        <tbody>
+          <tr><td>功能名</td><td><span class="badge badge-blue">Read Alerts</span></td><td>ReadNotify / Read Notify / read notifications</td></tr>
+          <tr><td>入口按钮</td><td><span class="badge badge-blue">Add Bot</span></td><td>Connect Bot（如要保留需全站一致）</td></tr>
+          <tr><td>核心承诺</td><td>Send a Telegram message when your PDF link is opened</td><td>“Email reminders” / “email alerts”（除非产品确实仍发邮件）</td></tr>
+          <tr><td>启用条件</td><td><strong>access limit &lt; 10,000</strong></td><td>access limit 过大仍可启用</td></tr>
+        </tbody>
+      </table>
+
+      <h3>已定位/已修改：英文页面里 ReadNotify → Read Alerts</h3>
+      <table class="plan-table">
+        <thead><tr><th style="width:360px">文件</th><th>处理</th></tr></thead>
+        <tbody>
+          <tr><td><code>features/en/tracking/PDFreadnotify.html</code></td><td><span class="badge badge-green">已改</span>：title/description/导航/正文统一为 Read Alerts via Telegram + access limit 条件 + Add Bot/chat ID 描述</td></tr>
+          <tr><td><code>features/en/sharing/how-to-share-pdf-online.html</code></td><td><span class="badge badge-green">已改</span>：列表项“Reading reminders”改为 Read Alerts（Telegram）+ 更新图片 alt</td></tr>
+          <tr><td><code>features/en/hosting/upload-share-pdf.html</code></td><td><span class="badge badge-yellow">命中</span>：仅图片路径 <code>/maipdf-images/readnotify.png</code>（暂无文字 ReadNotify）</td></tr>
+          <tr><td><code>features/en/security/PDF DRM.html</code></td><td><span class="badge badge-yellow">命中</span>：仅图片路径 <code>/maipdf-images/readnotify.png</code>（暂无文字 ReadNotify）</td></tr>
+          <tr><td><code>features/en/comparison/docfly.html</code></td><td><span class="badge badge-yellow">命中</span>：仅图片路径 <code>/images/readnotify.png</code>（暂无文字 ReadNotify）</td></tr>
+        </tbody>
+      </table>
+
+      <h3>show_off 素材检查结论（可直接用/避雷/风险）</h3>
+      <div class="callout callout-success">
+        <strong>可直接用（Read Alerts / Telegram hero）</strong><br>
+        • <code>pdf-open-alert-dark-desk-hero.webp</code>（深色桌面，标题“Know instantly...”）<br>
+        • <code>telegram-read-notify-desk-hero.webp</code> / <code>telegram-read-notify-light-desk-v2.webp</code>（浅色桌面，清爽）<br>
+        • <code>telegram-pdf-open-alert-clean.webp</code>（插画风，解释性强）<br>
+        • <code>pdf-read-notify-infographic.webp</code>（信息图，适合“怎么工作/条件限制”）
+      </div>
+
+      <div class="callout callout-danger">
+        <strong>避雷</strong><br>
+        • <code>pdf icon of no printing no downloading.png</code>：图内出现异常文字 “PREBBITY”，不建议上正式页（影响可信度）
+      </div>
+
+      <div class="callout">
+        <strong>命名风险（建议后续统一改名）</strong><br>
+        下列文件名含空格/拼写问题，页面直接引用时容易 404（尤其没做 URL 编码）：<br>
+        • <code>share pdf wordwide.png</code>（疑似应为 worldwide）<br>
+        • <code>email verify.png</code><br>
+        • <code>email verification_only sepcified people can receive.png</code>（sepcified 拼写）<br>
+        • <code>pdf icon of no printing no downloading.png</code>
+      </div>
+    </div>
+  </div><!-- end tab-assets -->
 
   <script>
   const WORK_PANEL_STORAGE_KEY = 'sendpdfonline.workPanelState.v1';
