@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "WebSearch",
+      "WebFetch(domain:maipdf.com)",
+      "WebFetch(domain:article.maipdf.com)",
+      "WebFetch(domain:sendpdfonline.com)"
+    ]
+  }
+}
