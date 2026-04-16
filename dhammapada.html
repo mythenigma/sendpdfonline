@@ -1,0 +1,1293 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Dhammapada 章节学习页</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    :root{
+      --bg:#f3eee3;
+      --panel:#fbf7ef;
+      --panel-soft:#f7f1e6;
+      --line:#d8cebd;
+      --line-strong:#b29d79;
+      --text:#2f2a24;
+      --muted:#7b7265;
+      --muted-2:#5b5348;
+      --blue:#6d7f73;
+      --blue-deep:#6f6048;
+      --green:#6f8a66;
+      --yellow:#af7e1d;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.65;
+    }
+    .page{
+      max-width:1180px;
+      margin:0 auto;
+      padding:24px;
+    }
+    .hero{
+      display:flex;
+      align-items:flex-end;
+      justify-content:space-between;
+      gap:18px;
+      background:linear-gradient(135deg,#faf5ea,#f3ecdf 58%,#ece3d3);
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:24px 26px;
+      box-shadow:0 16px 34px rgba(108,88,58,.08);
+      margin-bottom:20px;
+    }
+    .hero-kicker{
+      color:#7f6d4d;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    h1{
+      margin:0;
+      font-size:28px;
+      line-height:1.15;
+    }
+    .hero-subtitle{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .current-chip{
+      flex:0 0 auto;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid #d3c4a8;
+      background:#efe4cf;
+      color:#5f5037;
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .chapter-shell{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .chapter-nav{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:14px;
+      border-bottom:2px solid var(--line-strong);
+      background:#f6efe2;
+      padding:12px 14px;
+      flex-wrap:wrap;
+    }
+    .chapter-tabs{
+      display:flex;
+      gap:8px;
+      flex-wrap:wrap;
+      align-items:center;
+    }
+    .chapter-picker{
+      display:flex;
+      align-items:center;
+      gap:10px;
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+    }
+    .chapter-picker select{
+      appearance:none;
+      min-width:220px;
+      padding:10px 36px 10px 12px;
+      border-radius:12px;
+      border:1px solid #cdbfa8;
+      background:#fffaf1;
+      color:var(--text);
+      font-size:14px;
+      font-weight:700;
+      outline:none;
+    }
+    .chapter-picker select:focus{
+      border-color:#a58d67;
+      box-shadow:0 0 0 3px rgba(165,141,103,.14);
+    }
+    .chapter-btn{
+      flex:0 0 auto;
+      padding:10px 14px;
+      background:transparent;
+      color:var(--muted);
+      border:1px solid transparent;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:700;
+      border-radius:12px;
+      transition:all .2s ease;
+    }
+    .chapter-btn:hover{
+      background:#efe5d4;
+      color:var(--text);
+    }
+    .chapter-btn.active{
+      background:var(--blue-deep);
+      color:#fff;
+      border-color:var(--blue-deep);
+    }
+    .chapter-more{
+      color:var(--muted);
+      font-size:13px;
+      font-weight:700;
+      padding:0 4px;
+    }
+    .chapter-panel{
+      display:none;
+      padding:26px;
+    }
+    .chapter-panel.active{
+      display:block;
+    }
+    .chapter-panel-immersive{
+      padding:0;
+    }
+    .chapter-placeholder{
+      background:linear-gradient(135deg,#f8f2e7,#f2eadc);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:22px;
+      color:var(--muted-2);
+    }
+    .chapter-placeholder h3{
+      margin:0 0 10px;
+      color:var(--text);
+      font-size:20px;
+    }
+    .status-note{
+      background:#f6f0e5;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:14px 16px;
+      color:var(--muted-2);
+      min-width:220px;
+    }
+    .status-note strong{
+      color:var(--text);
+      display:block;
+      margin-bottom:4px;
+    }
+    .placeholder-tag{
+      display:inline-block;
+      padding:4px 10px;
+      border-radius:999px;
+      background:#e4ecdf;
+      color:#53674f;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:12px;
+    }
+    .tab-shell{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:18px;
+      overflow:hidden;
+    }
+    .chapter-panel-immersive .tab-shell{
+      background:transparent;
+      border:none;
+      border-radius:0;
+      overflow:visible;
+    }
+    .tab-nav{
+      display:flex;
+      gap:0;
+      border-bottom:2px solid var(--line-strong);
+      overflow:auto;
+      scrollbar-width:thin;
+      background:#f6efe2;
+      padding:0 8px;
+    }
+    .chapter-panel-immersive .tab-nav{
+      padding:0 26px;
+      background:transparent;
+    }
+    .tab-btn{
+      flex:0 0 auto;
+      padding:12px 18px;
+      background:transparent;
+      color:var(--muted);
+      border:1px solid transparent;
+      border-bottom:none;
+      cursor:pointer;
+      font-size:14px;
+      font-weight:700;
+      border-radius:10px 10px 0 0;
+      transition:all .2s ease;
+      margin-top:8px;
+    }
+    .tab-btn:hover{
+      background:#efe5d4;
+      color:var(--text);
+    }
+    .tab-btn.active{
+      background:var(--blue-deep);
+      color:#fffdf9;
+      border-color:var(--blue-deep);
+    }
+    .tab-panel{
+      display:none;
+      padding:26px;
+    }
+    .tab-panel.active{
+      display:block;
+    }
+    .chapter-panel-immersive .tab-panel{
+      padding:22px 26px 30px;
+    }
+    .panel-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:16px;
+      margin-bottom:18px;
+      flex-wrap:wrap;
+    }
+    .verse-badge{
+      display:inline-block;
+      padding:5px 10px;
+      border-radius:999px;
+      background:#e8dfcf;
+      color:#6a5a42;
+      font-size:12px;
+      font-weight:700;
+      margin-bottom:8px;
+    }
+    .panel-head h2{
+      margin:0;
+      font-size:24px;
+    }
+    .panel-head p{
+      margin:6px 0 0;
+      color:var(--muted);
+    }
+    .nav-actions{
+      display:flex;
+      gap:10px;
+      align-items:center;
+    }
+    .nav-actions button{
+      background:#efe5d4;
+      color:var(--text);
+      border:1px solid #cfbea2;
+      border-radius:10px;
+      padding:10px 14px;
+      cursor:pointer;
+      font-weight:700;
+      transition:background .2s ease;
+    }
+    .nav-actions button:hover{
+      background:#e2d5bf;
+    }
+    .reading-panel{
+      margin-bottom:22px;
+      border-top:1px solid var(--line);
+      border-bottom:1px solid var(--line);
+    }
+    .reading-section{
+      padding:18px 0;
+    }
+    .reading-section + .reading-section{
+      border-top:1px solid var(--line);
+    }
+    .section-label{
+      display:block;
+      margin:0 0 12px;
+      color:var(--blue);
+      font-size:17px;
+      font-weight:700;
+    }
+    .content-panel{
+      padding-top:4px;
+    }
+    .card-head{
+      display:flex;
+      align-items:flex-start;
+      justify-content:space-between;
+      gap:12px;
+      flex-wrap:wrap;
+      margin-bottom:12px;
+    }
+    .card-head h3{
+      margin:0;
+    }
+    .speech-tools{
+      display:flex;
+      align-items:center;
+      gap:8px;
+      flex-wrap:wrap;
+      justify-content:flex-end;
+    }
+    .speech-tools button,
+    .speech-tools select{
+      border-radius:10px;
+      border:1px solid #cdbfa8;
+      background:#fffaf1;
+      color:var(--text);
+      font-size:13px;
+    }
+    .speech-tools button{
+      padding:8px 12px;
+      cursor:pointer;
+      font-weight:700;
+    }
+    .speech-tools button:hover{
+      background:#efe5d4;
+    }
+    .speech-tools button.is-speaking{
+      background:#7f6d4d;
+      border-color:#7f6d4d;
+      color:#fffdf9;
+    }
+    .speech-tools select{
+      padding:8px 10px;
+      min-width:110px;
+      outline:none;
+    }
+    .speech-tools select:focus{
+      border-color:#a58d67;
+      box-shadow:0 0 0 3px rgba(165,141,103,.14);
+    }
+    .speech-note{
+      margin-top:10px;
+      color:var(--muted);
+      font-size:12px;
+    }
+    .english{
+      font-size:20px;
+      color:var(--text);
+      margin:0;
+    }
+    .translation{
+      font-size:18px;
+      color:var(--muted-2);
+      margin:0;
+    }
+    .gloss{
+      background:transparent;
+      border:none;
+      border-left:3px solid #b39b72;
+      padding:2px 0 2px 14px;
+      margin-top:14px;
+      color:var(--muted-2);
+    }
+    .gloss strong{
+      color:var(--text);
+    }
+    .vocab-list{
+      display:block;
+      margin-top:14px;
+    }
+    .vocab-intro{
+      margin:6px 0 2px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .vocab-item{
+      background:transparent;
+      border:none;
+      border-bottom:1px solid var(--line);
+      border-radius:0;
+      padding:16px 0;
+    }
+    .vocab-item:last-child{border-bottom:none;padding-bottom:0}
+    .vocab-head{
+      display:flex;
+      align-items:center;
+      justify-content:space-between;
+      gap:10px;
+      margin-bottom:2px;
+    }
+    .vocab-item .word{
+      font-size:18px;
+      font-weight:800;
+      color:var(--text);
+    }
+    .vocab-item .pos{
+      color:#7b6a52;
+      font-size:12px;
+      font-weight:700;
+      margin-left:8px;
+      text-transform:uppercase;
+    }
+    .speak-word-btn{
+      flex:0 0 auto;
+      padding:6px 10px;
+      border-radius:10px;
+      border:1px solid #cdbfa8;
+      background:#fffaf1;
+      color:var(--text);
+      font-size:12px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .speak-word-btn:hover{
+      background:#efe5d4;
+    }
+    .speak-word-btn.is-speaking{
+      background:#7f6d4d;
+      border-color:#7f6d4d;
+      color:#fffdf9;
+    }
+    .vocab-item p{
+      margin:8px 0 0;
+      color:var(--muted-2);
+      font-size:14px;
+    }
+    .vocab-copy{
+      margin-top:10px;
+    }
+    .vocab-line{
+      margin:8px 0 0;
+      color:var(--muted-2);
+      font-size:15px;
+      line-height:1.75;
+    }
+    .vocab-line strong{
+      color:var(--text);
+    }
+    .use-line{
+      margin-top:10px;
+      padding-top:0;
+      border-top:none;
+      color:var(--muted-2);
+      font-size:14px;
+    }
+    .use-line strong{
+      color:var(--yellow);
+    }
+    .footer-note{
+      margin-top:22px;
+      color:var(--muted);
+      font-size:13px;
+    }
+    @media (max-width: 820px){
+      .page{padding:16px}
+      .hero{
+        padding:18px;
+        align-items:flex-start;
+        flex-direction:column;
+      }
+      h1{font-size:24px}
+      .chapter-panel,.tab-panel{padding:18px}
+      .chapter-panel-immersive{padding:0}
+      .chapter-panel-immersive .tab-nav{padding:0 18px}
+      .chapter-panel-immersive .tab-panel{padding:18px}
+      .english,.translation{font-size:17px}
+      .chapter-picker{
+        width:100%;
+      }
+      .chapter-picker select{
+        width:100%;
+        min-width:0;
+      }
+      .speech-tools{
+        justify-content:flex-start;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div>
+        <div class="hero-kicker">Dhammapada Reader</div>
+        <h1>法句经学习页</h1>
+        <div class="hero-subtitle">单页阅读 · 章节切换 · 课本式拆解</div>
+      </div>
+      <div class="current-chip" id="current-chapter-chip">Chapter 1 · The Pairs</div>
+    </section>
+
+    <section class="chapter-shell">
+      <div class="chapter-nav" id="chapter-nav"></div>
+      <div id="chapter-content"></div>
+    </section>
+  </div>
+
+  <script>
+    const chapters = [
+      { id: 1, title: "The Pairs", done: true },
+      { id: 2, title: "Heedfulness", done: false },
+      { id: 3, title: "The Mind", done: false },
+      { id: 4, title: "Flowers", done: false },
+      { id: 5, title: "The Fool", done: false },
+      { id: 6, title: "The Wise Man", done: false },
+      { id: 7, title: "The Arahat", done: false },
+      { id: 8, title: "The Thousands", done: false },
+      { id: 9, title: "Evil", done: false },
+      { id: 10, title: "Violence", done: false },
+      { id: 11, title: "Old Age", done: false },
+      { id: 12, title: "The Self", done: false },
+      { id: 13, title: "The World", done: false },
+      { id: 14, title: "The Buddha", done: false },
+      { id: 15, title: "Happiness", done: false },
+      { id: 16, title: "Affection", done: false },
+      { id: 17, title: "Anger", done: false },
+      { id: 18, title: "Impurity", done: false },
+      { id: 19, title: "The Just", done: false },
+      { id: 20, title: "The Path", done: false },
+      { id: 21, title: "Miscellaneous", done: false },
+      { id: 22, title: "The State of Woe", done: false },
+      { id: 23, title: "The Elephant", done: false },
+      { id: 24, title: "Craving", done: false },
+      { id: 25, title: "The Monk", done: false },
+      { id: 26, title: "The Holy Man", done: false }
+    ];
+
+    const verses = [
+      {
+        id: 1,
+        title: "Mind leads everything",
+        english: "Mind precedes all mental states. Mind is their chief; they are all mind-wrought. If with an impure mind a person speaks or acts, suffering follows him like the wheel that follows the foot of the ox.",
+        chinese: "人的念头总是走在最前面，很多行为和状态，都是从心里先起的。要是一个人怀着不干净、不正的心去说话做事，痛苦就会跟着他，像牛车轮子紧跟着牛脚一样，躲不开。",
+        takeaway: "这一句先把全章的基调定下来：不是先怪外界，而是先看自己的心。心歪了，后面的言语和行动也容易歪，结果自然就苦。佛经这里其实是在提醒人，很多后果不是突然掉下来的，而是从一个没被留意的念头慢慢长出来的。",
+        example: "比如一个人本来只是对同事有点嫉妒，后来越想越不平衡，说话开始带刺，做事也故意不配合。最后关系变差、自己也天天憋闷。外面看像是人际问题，根子其实是最初那个不干净的念头。",
+        vocab: [
+          { word: "precede", pos: "verb", meaning: "在前面，先于某事发生。", usage: "一般用来表示时间或顺序上先发生。常见搭配：precede A, be preceded by B。例：A warning usually precedes a big change." },
+          { word: "impure", pos: "adj", meaning: "不纯净的；这里引申为不正、被贪嗔痴污染的。", usage: "字面上可指不干净，抽象上也可指动机不纯。例：an impure intention。"},
+          { word: "mind-wrought", pos: "adj", meaning: "由心造出来的，由内在心念形成的。", usage: "这是偏书面、宗教或哲学语境的词。可以理解成 shaped by the mind。"}
+        ]
+      },
+      {
+        id: 2,
+        title: "A pure mind brings happiness",
+        english: "Mind precedes all mental states. Mind is their chief; they are all mind-wrought. If with a pure mind a person speaks or acts, happiness follows him like his never-departing shadow.",
+        chinese: "同样地，人的心如果是清净、端正的，那他说出来的话、做出来的事，也会带出好的结果。这样的人，快乐会一直跟着他，就像影子一直跟在身边。",
+        takeaway: "第 1 句讲苦，第 2 句讲乐，形成一对对照。不是命运在随便摆布人，而是心在悄悄塑造结果。一个人心里干净、动机正，哪怕事情不一定立刻顺利，内里也更容易生出安稳和明亮。",
+        example: "比如你耐心帮一个新人熟悉工作，没有摆架子，也没有想着占功劳。后来就算那天很累，你心里还是会比较轻松，因为你知道自己做的是善意的事，这种轻松就像影子一样会跟着你。",
+        vocab: [
+          { word: "pure", pos: "adj", meaning: "纯净的、纯正的。这里偏向内心清明、动机正。", usage: "很常见，可用于 pure water，也可用于 pure intention。"},
+          { word: "chief", pos: "adj", meaning: "最主要的，居首位的。", usage: "常见搭配：chief reason, chief concern。表示最重要的那个。"},
+          { word: "shadow", pos: "noun", meaning: "影子。这里用来比喻一直伴随。", usage: "日常里很常见。例：The problem followed him like a shadow."}
+        ]
+      },
+      {
+        id: 3,
+        title: "Holding on keeps hatred alive",
+        english: "\"He abused me, he struck me, he overpowered me, he robbed me.\" Those who harbor such thoughts do not still their hatred.",
+        chinese: "如果一个人心里老是在反复想：他骂我、打我、欺负我、抢我，那这个恨就很难停下来。越是反复咀嚼这些委屈，怨气越会被喂大。",
+        takeaway: "重点不只是别人做了什么，而是你在心里一直抓着不放。外面的伤害是一层，心里反复回放又加了一层。很多时候，恨不是被事件本身维持，而是被我们一次次重播、一次次加油维持下去的。",
+        example: "比如有人在群里当众让你难堪，事情过去了，你回家后还一直想“他怎么能这样对我”。越想越气，越想越睡不着。真正让你整晚难受的，不只是那一句话，还有你不停把它在心里播放。",
+        vocab: [
+          { word: "abuse", pos: "verb", meaning: "辱骂、虐待、滥用。这里是辱骂或恶待。", usage: "口语和新闻里都很常见。例：He was verbally abused online." },
+          { word: "harbor", pos: "verb", meaning: "心里藏着，怀着某种情绪或想法。", usage: "常用于 harbor doubts, harbor resentment, harbor hatred。"},
+          { word: "still", pos: "verb", meaning: "使平静下来，使停止。", usage: "这里不是“仍然”，而是“平息”。例：Nothing could still his anger."}
+        ]
+      },
+      {
+        id: 4,
+        title: "Letting go cools hatred",
+        english: "\"He abused me, he struck me, he overpowered me, he robbed me.\" Those who do not harbor such thoughts still their hatred.",
+        chinese: "同样的遭遇，如果一个人不把这些委屈一直抱在心里，那个恨意就会慢慢平下来。不是说事情没发生，而是不再让它继续烧自己。",
+        takeaway: "这句不是叫人装没事，而是在说：你不继续喂养它，它才有机会冷下来。放下不是替对方开脱，而是先把自己从反复受伤的循环里拉出来。",
+        example: "比如你被朋友误解后，先把事情说清楚，之后不再反复对自己说“他欠我一句道歉”。你没有否认受伤，但你不再拿那件事反复磨自己。慢慢地，心里的火就比一直记着时更容易熄下来。",
+        vocab: [
+          { word: "harbor", pos: "verb", meaning: "把某种情绪长期留在心里。", usage: "很适合讲怨气、怀疑、敌意。例：She still harbors anger toward him." },
+          { word: "overpower", pos: "verb", meaning: "压倒、制服、占上风。", usage: "既能写体力压制，也能写情绪压倒人。例：Fear overpowered him." },
+          { word: "hatred", pos: "noun", meaning: "强烈的恨意。", usage: "语气比 dislike 重很多。常见搭配：racial hatred, hatred toward someone。"}
+        ]
+      },
+      {
+        id: 5,
+        title: "Hatred does not end hatred",
+        english: "Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased. This is a law eternal.",
+        chinese: "这个世界上，用恨去压恨，恨是压不住的。真正能让恨停下来的，不是再恨回去，而是不再用恨回应。这是一直都成立的道理。",
+        takeaway: "这是全书里最有名的一句之一。它不是软弱，而是在讲一种更深的因果规律：同类的火，只会把火越烧越大。你用恨去回击，短期可能像是赢了一口气，但长远看只是把冲突继续延长。",
+        example: "比如两个人吵架，一个人先讽刺一句，另一个人马上加倍回击。表面像是在“争一口气”，结果却是越吵越狠，谁也下不来台。要是其中一个人先停住，不再往上加火，事情才可能开始缓下来。",
+        vocab: [
+          { word: "appease", pos: "verb", meaning: "平息、安抚、使缓和。", usage: "常用于 appease anger, appease public concern。"},
+          { word: "non-hatred", pos: "noun", meaning: "不以恨回恨，可理解为不敌对、慈心、宽解。", usage: "这是宗教哲学里的表达，日常英文更常换成 compassion, goodwill 或 absence of hatred。"},
+          { word: "eternal", pos: "adj", meaning: "永恒的，长期不变的。", usage: "可用于 eternal truth, eternal life。表示不是一时的。"}
+        ]
+      },
+      {
+        id: 6,
+        title: "Remember death, reduce quarrels",
+        english: "There are those who do not realize that one day we all must die. But those who do realize this settle their quarrels.",
+        chinese: "有些人忘了我们终有一天都会死，所以总在小事上纠缠不休。真正想明白人生有限的人，往往会把争吵和执拗慢慢放下来。",
+        takeaway: "这句不是让人悲观，而是提醒人有分寸感。知道生命短，很多争执就没那么值得死抓着了。当人真的意识到“大家都会老、都会死”，很多面子、输赢、口气就没那么大了。",
+        example: "比如兄弟姐妹因为一点财产分配僵了很多年，谁也不肯先低头。可一旦家里有人重病，大家忽然会发现，以前那些较劲其实没有想象中重要。想到人生有限，很多争吵自然会松一点。",
+        vocab: [
+          { word: "realize", pos: "verb", meaning: "意识到，真正明白。", usage: "超常用词。例：I didn't realize how serious it was." },
+          { word: "settle", pos: "verb", meaning: "解决、平息。", usage: "可说 settle a dispute, settle a problem, settle an argument。"},
+          { word: "quarrel", pos: "noun", meaning: "争吵、口角。", usage: "既能作名词也能作动词。例：They had a quarrel over money."}
+        ]
+      },
+      {
+        id: 7,
+        title: "Pleasure chasing makes a person weak",
+        english: "Just as a storm throws down a weak tree, so does Mara overpower the man who lives for the pursuit of pleasures, who is uncontrolled in his senses, immoderate in eating, indolent, and dissipated.",
+        chinese: "暴风很容易吹倒根基不稳的树。同样，一个人如果整天只顾追逐享乐，感官放纵、吃东西没节制、又懒散又散乱，就很容易被内在的诱惑和烦恼打倒。",
+        takeaway: "这句不是单纯骂享受，而是在说一个人如果没有约束力，整个人会越来越松，最后经不起冲击。贪图舒服本身不可怕，可怕的是长期把自己活成一个没有节制、没有定力的人。",
+        example: "比如有人总说“今天放松一下”，结果作息乱、吃喝没节制、工作也拖。平时看不出大问题，可一遇到压力、诱惑或打击，他就特别容易崩，因为内里已经没有支撑力了。",
+        vocab: [
+          { word: "pursuit", pos: "noun", meaning: "追求、追逐。", usage: "常见搭配：the pursuit of happiness, the pursuit of wealth。"},
+          { word: "immoderate", pos: "adj", meaning: "没有节制的，过度的。", usage: "书面语较多，可理解为 excessive。例：immoderate eating or drinking。"},
+          { word: "indolent", pos: "adj", meaning: "懒散的，不愿出力的。", usage: "偏书面，日常更常说 lazy。"},
+          { word: "dissipated", pos: "adj", meaning: "放纵散漫的，心神涣散的。", usage: "可写人生活放荡，也可引申为精神不集中。"}
+        ]
+      },
+      {
+        id: 8,
+        title: "Discipline makes a person steady",
+        english: "Just as a storm cannot prevail against a rocky mountain, so Mara can never overpower the man who lives meditating on the impurities, who is controlled in his senses, moderate in eating, and filled with faith and earnest effort.",
+        chinese: "暴风再大，也吹不倒岩石山。一个人若能安住修行，守住感官，饮食有节，并且有信心、肯下真功夫，烦恼就没那么容易把他掀翻。",
+        takeaway: "第 7 句和第 8 句是一组。前一句是根基松的人，后一句是根基稳的人，对照特别鲜明。这里讲的不是一时的冲劲，而是日常一点点养出来的稳定：有节制、有信心、肯下工夫的人，更不容易被外境拖走。",
+        example: "比如两个人都遇到感情挫折。一个人本来生活就很散，马上借酒、熬夜、乱花钱来麻痹自己；另一个人虽然也难过，但还能保持作息、运动、安静整理自己。后者不是没痛苦，而是更稳，不容易被打垮。",
+        vocab: [
+          { word: "prevail against", pos: "phrase", meaning: "战胜、压过、占上风。", usage: "多用于书面表达。例：Truth will prevail against lies." },
+          { word: "moderate", pos: "adj", meaning: "适度的，有分寸的。", usage: "常见搭配：moderate eating, moderate exercise。"},
+          { word: "earnest", pos: "adj", meaning: "认真的，诚恳而用力的。", usage: "常见搭配：earnest effort, earnest request。"}
+        ]
+      },
+      {
+        id: 9,
+        title: "Not everyone in a robe deserves the robe",
+        english: "Whoever being depraved, devoid of self-control and truthfulness, should don the monk's yellow robe, he surely is not worthy of the robe.",
+        chinese: "如果一个人内里已经败坏，没有自制力，也不诚实，就算穿上僧衣，也配不上这身衣服。外表像修行人，不代表里面真的是。",
+        takeaway: "佛经这里说得很直接：身份和装扮，不等于真实品格。关键不是穿什么，而是活成什么样。外在身份只能给人一个样子，真正让人配得上的，是内里有没有自律、诚实和德行。",
+        example: "比如一个老师嘴上总讲品格教育，但私下却经常撒谎、推责任、欺负弱的人。那他就算挂着“老师”这个身份，也配不上这个身份本来该有的分量。",
+        vocab: [
+          { word: "depraved", pos: "adj", meaning: "堕落的，败坏的，道德上扭曲的。", usage: "偏强烈，常见于书面语。例：a depraved act。"},
+          { word: "devoid of", pos: "phrase", meaning: "缺乏，没有。", usage: "常见搭配：devoid of hope, devoid of meaning。"},
+          { word: "worthy of", pos: "phrase", meaning: "配得上，值得拥有。", usage: "很常见。例：She is worthy of respect."}
+        ]
+      },
+      {
+        id: 10,
+        title: "Character makes one worthy",
+        english: "But whoever is purged of depravity, well-established in virtues and filled with self-control and truthfulness, he indeed is worthy of the yellow robe.",
+        chinese: "反过来，一个人如果真的把内心的不善清掉了，品行站得稳，也有自制力、也诚实，那他才真正配得上僧衣。",
+        takeaway: "第 9 句和第 10 句一起看很清楚：真正的资格来自内在，不来自标签。不是先有头衔才有价值，而是先活出那个样子，那个身份才真正站得住。",
+        example: "比如一个人不爱炫耀自己“很懂修行”，但说话诚实、做事有分寸、遇到诱惑也能守住底线。这样的人，就算外表很普通，也会让人觉得他身上真的有那份分量。",
+        vocab: [
+          { word: "purged of", pos: "phrase", meaning: "清除掉，净除。", usage: "常用于正式语境。例：The system was purged of corruption." },
+          { word: "virtue", pos: "noun", meaning: "德行，美德。", usage: "常见搭配：moral virtue, patience is a virtue。"},
+          { word: "truthfulness", pos: "noun", meaning: "诚实，如实，不说虚妄。", usage: "书面词，接近 honesty。"}
+        ]
+      },
+      {
+        id: 11,
+        title: "Wrong values lead people astray",
+        english: "Those who mistake the unessential to be essential and the essential to be unessential, dwelling in wrong thoughts, never arrive at the essential.",
+        chinese: "把不重要的当成最重要，把真正重要的反而看轻，这样的人因为想法一直走偏，最后永远抓不到真正关键的东西。",
+        takeaway: "很多人不是不努力，而是努力错地方了。方向一偏，越用力，可能离重点越远。这句是在说价值判断错位的问题：把次要的当主要的，人就会被表面东西牵着跑。",
+        example: "比如一个学生把“看起来很忙”当成学习，把做漂亮笔记、买很多资料当成重点，却一直不肯正面刷题和复盘错题。结果看上去投入很多，真正关键的能力却没有起来。",
+        vocab: [
+          { word: "essential", pos: "adj", meaning: "本质的，关键的，必不可少的。", usage: "超常见。例：Sleep is essential for health." },
+          { word: "unessential", pos: "adj", meaning: "不重要的，非关键的。", usage: "书面用法，日常更常说 nonessential 或 unnecessary。"},
+          { word: "dwell in", pos: "phrase", meaning: "停留在，长期处在某种状态里。", usage: "常写 dwell in fear, dwell on the past。这里有长期住在错误念头里的意思。"}
+        ]
+      },
+      {
+        id: 12,
+        title: "Right values lead to the core",
+        english: "Those who know the essential to be essential and the unessential to be unessential, dwelling in right thoughts, do arrive at the essential.",
+        chinese: "知道什么是真正重要的，也知道什么只是次要表面的人，因为心念方向对了，最后就能走到核心。",
+        takeaway: "和第 11 句配起来，就是一句很实用的人生提醒：先分清轻重，再谈努力。真正聪明的人，不只是肯努力，而是知道什么值得花力气，什么只是表面热闹。",
+        example: "比如你在准备考试时，先抓最薄弱也最重要的章节，而不是一直做自己最熟、最有成就感的部分。这样虽然没那么轻松，但你是在往核心走，最后的收获就会更实在。",
+        vocab: [
+          { word: "essential", pos: "adj", meaning: "关键的、本质的。", usage: "除了形容事物，也能形容能力。例：Communication is essential." },
+          { word: "arrive at", pos: "phrase", meaning: "达到，抵达，获得。", usage: "不仅能表示到地点，也能表示到结论。例：arrive at a decision。"},
+          { word: "right thoughts", pos: "phrase", meaning: "正确的念头、正向的思维。", usage: "这里偏佛教语境，日常可理解成 sound thinking 或 correct thinking。"}
+        ]
+      },
+      {
+        id: 13,
+        title: "An untrained mind is easy to leak",
+        english: "Just as rain breaks through an ill-thatched house, so passion penetrates an undeveloped mind.",
+        chinese: "屋顶茅草没盖好，雨一下就漏进去。人的心如果没有训练好，欲望和冲动也会很容易钻进来。",
+        takeaway: "这句比喻特别形象。不是说雨有多坏，而是房子本身没收拾好，所以挡不住。欲望、冲动、诱惑本来就会来，真正的问题是我们的心有没有被训练过、有没有漏洞。",
+        example: "比如一个人平时没有练过情绪管理，也不懂得和欲望拉开距离。只要手机一响、短视频一推、别人一夸一激，他马上就跟着跑。不是外面太强，而是里面太容易漏。",
+        vocab: [
+          { word: "ill-thatched", pos: "adj", meaning: "屋顶盖得不好的，茅草没铺严实的。", usage: "这是偏文学和古典语境的词。抓核心意思即可：poorly roofed。"},
+          { word: "penetrate", pos: "verb", meaning: "穿透，渗入。", usage: "常见搭配：light penetrates, ideas penetrate society。"},
+          { word: "undeveloped", pos: "adj", meaning: "尚未发展好的，未成熟的。", usage: "可说 undeveloped land，也可说 an undeveloped skill。"}
+        ]
+      },
+      {
+        id: 14,
+        title: "A trained mind can hold firm",
+        english: "Just as rain does not break through a well-thatched house, so passion never penetrates a well-developed mind.",
+        chinese: "如果屋顶盖得结实，雨就进不来。人的心如果训练得稳、养得熟，欲望就不容易一下子闯进来把人带走。",
+        takeaway: "第 13 句和第 14 句又是一对。关键不是把世界变干净，而是让自己的心更结实。一个训练过的心，不代表永远没有诱惑，而是诱惑来了也不至于立刻失守。",
+        example: "比如同样面对网络上的炫耀和比较，有的人看完马上焦躁、自卑、乱买东西；有的人也会起波动，但能很快看见自己的情绪，然后收回来。后者就是屋顶盖得更严的人。",
+        vocab: [
+          { word: "well-thatched", pos: "adj", meaning: "盖得很好的，遮挡严实的。", usage: "跟前一句配对理解即可，强调 roof is properly covered。"},
+          { word: "passion", pos: "noun", meaning: "这里不是热情，而是强烈欲望、情欲、冲动。", usage: "这个词要看语境。日常里 passion 常指热爱；宗教语境里常指欲染。"},
+          { word: "well-developed", pos: "adj", meaning: "发展成熟的，训练完善的。", usage: "常见搭配：well-developed skills, well-developed ideas。"}
+        ]
+      },
+      {
+        id: 15,
+        title: "Wrongdoing brings later pain",
+        english: "The evil-doer grieves here and hereafter; he grieves in both the worlds. He laments and is afflicted, recollecting his own impure deeds.",
+        chinese: "作恶的人，不只是将来苦，现在也苦；不只是一个世界苦，而是前后都苦。想到自己做过的脏事，心里就会懊悔、难受、受折磨。",
+        takeaway: "这句讲的是恶行的回响。很多时候惩罚还没从外面来，内心已经先开始难安了。作恶不只是未来受报，很多时候当下就会变成一种隐隐的心虚、懊悔和不安。",
+        example: "比如有人为了利益故意坑了合作伙伴，钱一时拿到了，可后面每次想到那件事，心里都会发紧。见到对方消息会躲，听到相关话题会不自在，这就是恶行已经开始反咬自己。",
+        vocab: [
+          { word: "grieve", pos: "verb", meaning: "悲伤、忧痛。", usage: "常用于失去亲人，也可写深层痛苦。例：She still grieves for her father." },
+          { word: "afflicted", pos: "adj", meaning: "受折磨的，受苦的。", usage: "常见搭配：afflicted with pain, afflicted by doubt。"},
+          { word: "recollect", pos: "verb", meaning: "回想起，忆起。", usage: "比 remember 稍书面。例：I recollect meeting him once."}
+        ]
+      },
+      {
+        id: 16,
+        title: "Doing good brings inner joy",
+        english: "The doer of good rejoices here and hereafter; he rejoices in both the worlds. He rejoices and exults, recollecting his own pure deeds.",
+        chinese: "行善的人，现在欢喜，将来也欢喜；前后都能得安乐。回想起自己做过的好事，心里会踏实，也会生出一种明亮的喜悦。",
+        takeaway: "善的回报不一定只是外在奖赏，很多时候先来的，是心里那种干净和安稳。做了对的事，人心里会比较亮堂，这种踏实感本身就是很真实的福报。",
+        example: "比如你捡到别人的钱包，虽然没人知道是你捡到的，你还是主动联系归还。事情做完以后，你心里会有一种特别稳的轻松感，不需要别人夸，你自己已经知道这件事做对了。",
+        vocab: [
+          { word: "rejoice", pos: "verb", meaning: "欢喜、高兴。", usage: "比 be happy 稍正式。例：We rejoice in your success." },
+          { word: "exult", pos: "verb", meaning: "非常高兴，喜形于色。", usage: "语气比 rejoice 更强，偏书面。"},
+          { word: "deed", pos: "noun", meaning: "行为，所做之事。", usage: "常见搭配：good deed, evil deed。"}
+        ]
+      },
+      {
+        id: 17,
+        title: "Guilt keeps burning",
+        english: "The evil-doer suffers here and hereafter; he suffers in both the worlds. The thought, \"Evil have I done,\" torments him, and he suffers even more when gone to realms of woe.",
+        chinese: "作恶的人，现在受苦，将来也受苦。尤其当他心里一直冒出“坏事是我做的”这个念头时，那种内疚和恐惧会不停折磨他；到了更糟的处境，只会更苦。",
+        takeaway: "这一句比第 15 句更重，从忧伤推进到煎熬。恶行不是做完就结束，它会变成长期追着人的心理力量。人最怕的，往往不是别人记不记得，而是自己心里知道那件事确实是自己做的。",
+        example: "比如一个人曾经恶意造谣伤害别人，事情表面平息了，但他后来每次看到受害者过得不好，或者听到别人谈论诚信时，心里都会像被针扎一下。那种折磨，就是“恶我已作”的回声。",
+        vocab: [
+          { word: "torment", pos: "verb", meaning: "折磨，使痛苦不已。", usage: "很常见。例：Regret tormented him for years." },
+          { word: "realm", pos: "noun", meaning: "领域，界域。这里是存在的境界。", usage: "日常可说 in the realm of science；宗教语境可指不同生命境界。"},
+          { word: "woe", pos: "noun", meaning: "悲惨、苦难、不幸。", usage: "偏文学。常见短语：tales of woe。"}
+        ]
+      },
+      {
+        id: 18,
+        title: "Goodness keeps glowing",
+        english: "The doer of good delights here and hereafter; he delights in both the worlds. The thought, \"Good have I done,\" delights him, and he delights even more when gone to realms of bliss.",
+        chinese: "行善的人，现在喜乐，将来也喜乐。想到“我确实做过好事”，这个念头本身就会让他心里发亮；到了更好的境地，这份喜乐还会更深。",
+        takeaway: "第 17 句讲恶业的追随，第 18 句讲善业的追随。两边都不是空话，而是在讲心会记得自己做过什么。你做过的善，不会只是留在外面，也会慢慢沉到心里，变成一种明净和喜悦。",
+        example: "比如一个人长期照顾家里年老的长辈，过程很辛苦，外面也未必有人懂。但当他回头看时，心里会知道自己没有亏待重要的人，这种满足不是表演出来的，而是真会发光的。",
+        vocab: [
+          { word: "delight", pos: "verb", meaning: "使喜悦，使愉快。", usage: "可作名词也可作动词。例：The news delighted her." },
+          { word: "bliss", pos: "noun", meaning: "极乐，深度快乐。", usage: "比 happiness 更强，也更偏文学或宗教。"},
+          { word: "realm of bliss", pos: "phrase", meaning: "安乐境界、福乐之地。", usage: "这是宗教表达。日常理解可抓住“更好的生命处境”。"}
+        ]
+      },
+      {
+        id: 19,
+        title: "Knowing words is not the same as living them",
+        english: "Much though he recites the sacred texts, but acts not accordingly, that heedless man is like a cowherd who only counts the cows of others - he does not partake of the blessings of the holy life.",
+        chinese: "一个人就算经文背得很多，如果做不到，那也只是嘴上会说而已。这样的人就像替别人放牛、替别人点牛数的人，牛不是自己的，真正的好处也轮不到自己。",
+        takeaway: "这句特别适合提醒“懂很多道理却没活出来”的状态。知道，不等于做到；会讲，不等于有份。一个人可以背很多、讲很多，但如果没有落到行为里，那些道理对他仍然只是别人的牛。",
+        example: "比如有人天天转发自律、成长、修心的内容，也很会点评别人，可自己的脾气、懒散和贪念一点没改。那他就像帮别人点牛数目一样，懂得不少，却没有真正得到那些道理的好处。",
+        vocab: [
+          { word: "recite", pos: "verb", meaning: "背诵，朗诵。", usage: "常用于 recite a poem, recite a text, recite from memory。"},
+          { word: "accordingly", pos: "adv", meaning: "照着那样，相应地。", usage: "常见搭配：act accordingly。意思是按你知道的去做。"},
+          { word: "partake of", pos: "phrase", meaning: "分享，享有，得到其中一份。", usage: "偏正式。例：partake of the benefits。"},
+          { word: "heedless", pos: "adj", meaning: "不留心的，不警觉的，粗心放逸的。", usage: "比 careless 更带“不警醒”的意味。"}
+        ]
+      },
+      {
+        id: 20,
+        title: "Practice matters more than recitation",
+        english: "Little though he recites the sacred texts, but puts the Teaching into practice, forsaking lust, hatred, and delusion, with true wisdom and emancipated mind, clinging to nothing of this or any other world - he indeed partakes of the blessings of a holy life.",
+        chinese: "一个人就算经文读得不多，只要真的照着教法去做，慢慢放下贪、恨和迷惑，活出智慧，心也越来越自由，不再死抓着这个世界或别的什么，他就真的得到了修行生活的好处。",
+        takeaway: "这一句给出了非常明确的落点：重点不是读了多少，而是有没有实践，有没有真的让自己的心变自由。佛经最后还是把焦点落回行动和内在变化上：少说一点没关系，真的做到才算数。",
+        example: "比如一个人不太会讲大道理，也没读很多书，但他真的在练习少贪、少恨、少执着，遇事会反省，慢慢变得更稳更宽。这样的人，可能讲不出太多术语，却已经真实走在路上了。",
+        vocab: [
+          { word: "forsake", pos: "verb", meaning: "舍弃，放下，离开。", usage: "比 leave 更郑重。例：He forsook his old habits." },
+          { word: "delusion", pos: "noun", meaning: "迷妄，错认，不清醒的认知。", usage: "常见于心理或宗教语境。例：He is under the delusion that he cannot fail."},
+          { word: "emancipated", pos: "adj", meaning: "得到解放的，自由了的。", usage: "可用于社会语境，也可用于心灵语境。这里是心从束缚中解脱。"},
+          { word: "cling to", pos: "phrase", meaning: "紧抓不放，执着于。", usage: "日常很常见。例：Don't cling to the past."}
+        ]
+      }
+    ];
+
+    const chapterNav = document.getElementById("chapter-nav");
+    const chapterContent = document.getElementById("chapter-content");
+    const currentChapterChip = document.getElementById("current-chapter-chip");
+    const chapterStorageKey = "dhammapada-active-chapter";
+    const verseStorageKey = "dhammapada-the-pairs-active-tab";
+    const ttsVoiceStorageKey = "dhammapada-tts-voice";
+    const ttsRateStorageKey = "dhammapada-tts-rate";
+    const visibleChapterCount = 6;
+    const supportsSpeech = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+    let availableVoices = [];
+    let activeSpeechKey = null;
+
+    function escapeHtml(text){
+      return String(text).replace(/[&<>"']/g, function(ch){
+        return {
+          "&":"&amp;",
+          "<":"&lt;",
+          ">":"&gt;",
+          "\"":"&quot;",
+          "'":"&#39;"
+        }[ch];
+      });
+    }
+
+    function getStoredRate(){
+      const raw = localStorage.getItem(ttsRateStorageKey);
+      return raw || "1";
+    }
+
+    function getStoredVoice(){
+      return localStorage.getItem(ttsVoiceStorageKey) || "";
+    }
+
+    function pickDefaultVoice(){
+      const stored = getStoredVoice();
+      if(stored && availableVoices.some(function(voice){ return voice.name === stored; })){
+        return stored;
+      }
+      const preferred = availableVoices.find(function(voice){
+        return /^en/i.test(voice.lang) && /google|aria|zira|david|samantha|serena|mark|jenny/i.test(voice.name);
+      }) || availableVoices.find(function(voice){
+        return /^en/i.test(voice.lang);
+      }) || availableVoices[0];
+      return preferred ? preferred.name : "";
+    }
+
+    function populateVoiceSelects(){
+      const selects = document.querySelectorAll(".voice-select");
+      const selectedVoice = pickDefaultVoice();
+      selects.forEach(function(select){
+        const current = selectedVoice;
+        const options = availableVoices.map(function(voice){
+          const selected = voice.name === current ? " selected" : "";
+          return '<option value="' + escapeHtml(voice.name) + '"' + selected + '>' +
+            escapeHtml(voice.name + " · " + voice.lang) +
+          '</option>';
+        }).join("");
+        select.innerHTML = options || '<option value="">默认声音</option>';
+      });
+      if(selectedVoice){
+        try{
+          localStorage.setItem(ttsVoiceStorageKey, selectedVoice);
+        }catch(e){}
+      }
+    }
+
+    function syncRateSelects(){
+      const rate = getStoredRate();
+      document.querySelectorAll(".rate-select").forEach(function(select){
+        select.value = rate;
+      });
+    }
+
+    function bindSpeechControls(){
+      document.querySelectorAll(".voice-select").forEach(function(select){
+        select.addEventListener("change", function(){
+          try{
+            localStorage.setItem(ttsVoiceStorageKey, select.value);
+          }catch(e){}
+          document.querySelectorAll(".voice-select").forEach(function(other){
+            other.value = select.value;
+          });
+        });
+      });
+      document.querySelectorAll(".rate-select").forEach(function(select){
+        select.addEventListener("change", function(){
+          try{
+            localStorage.setItem(ttsRateStorageKey, select.value);
+          }catch(e){}
+          document.querySelectorAll(".rate-select").forEach(function(other){
+            other.value = select.value;
+          });
+        });
+      });
+      populateVoiceSelects();
+      syncRateSelects();
+      updateSpeakButtons();
+    }
+
+    function loadVoices(){
+      if(!supportsSpeech) return;
+      availableVoices = window.speechSynthesis.getVoices().filter(function(voice){
+        return /^en/i.test(voice.lang) || /en/i.test(voice.name);
+      });
+      if(!availableVoices.length){
+        availableVoices = window.speechSynthesis.getVoices();
+      }
+      populateVoiceSelects();
+    }
+
+    function updateSpeakButtons(){
+      document.querySelectorAll(".speak-btn").forEach(function(btn){
+        const isActive = btn.dataset.speechKey === activeSpeechKey;
+        btn.classList.toggle("is-speaking", isActive);
+        btn.textContent = isActive ? "正在朗读" : "朗读英文";
+      });
+      document.querySelectorAll(".speak-word-btn").forEach(function(btn){
+        const isActive = btn.dataset.speechKey === activeSpeechKey;
+        btn.classList.toggle("is-speaking", isActive);
+        btn.textContent = isActive ? "朗读中" : "发音";
+      });
+    }
+
+    function stopSpeaking(){
+      if(!supportsSpeech) return;
+      window.speechSynthesis.cancel();
+      activeSpeechKey = null;
+      updateSpeakButtons();
+    }
+
+    function speakText(text, speechKey){
+      if(!supportsSpeech){
+        window.alert("当前浏览器不支持语音朗读。可以换用最新版 Chrome、Edge 或 Safari 试试。");
+        return;
+      }
+      if(!text) return;
+
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      const selectedVoice = getStoredVoice();
+      const voice = availableVoices.find(function(item){ return item.name === selectedVoice; }) || availableVoices[0];
+      if(voice) utterance.voice = voice;
+      utterance.lang = voice && voice.lang ? voice.lang : "en-US";
+      utterance.rate = Number(getStoredRate() || 1);
+      utterance.pitch = 1;
+
+      utterance.onstart = function(){
+        activeSpeechKey = speechKey;
+        updateSpeakButtons();
+      };
+      utterance.onend = function(){
+        activeSpeechKey = null;
+        updateSpeakButtons();
+      };
+      utterance.onerror = function(){
+        activeSpeechKey = null;
+        updateSpeakButtons();
+      };
+
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function speakVerse(id){
+      const verse = verses.find(function(item){ return item.id === id; });
+      if(!verse) return;
+      speakText(verse.english, "verse-" + id);
+    }
+
+    function speakWord(word, verseId, vocabIndex){
+      speakText(word, "word-" + verseId + "-" + vocabIndex);
+    }
+
+    function splitUsageParts(usage){
+      const raw = String(usage || "").trim();
+      const match = raw.match(/^(.*?)(?:例[:：]\s*)(.+)$/);
+      if(match){
+        return {
+          main: match[1].replace(/[，、；;。\s]+$/,"").trim(),
+          example: match[2].trim()
+        };
+      }
+      return { main: raw, example: "" };
+    }
+
+    function buildFriendlyMeaning(vocab){
+      const meaning = String(vocab.meaning || "").trim().replace(/[。]+$/,"");
+      return "你可以先把 " + vocab.word + " 理解成“" + meaning + "”。";
+    }
+
+    function buildContextHint(vocab){
+      const meaning = String(vocab.meaning || "").trim();
+      if(meaning.indexOf("这里") !== -1){
+        const fromHere = meaning.slice(meaning.indexOf("这里")).replace(/[。]+$/,"");
+        return "放回这一句里，" + fromHere + "。";
+      }
+      if(vocab.pos === "verb"){
+        return "放回这一句里，它更像是在推动一个动作或结果发生，所以记住“谁在前、谁在后”会更容易。";
+      }
+      if(vocab.pos === "adj"){
+        return "放回这一句里，它是在描述一种状态或性质。读的时候可以先抓住它是在“形容什么”。";
+      }
+      if(vocab.pos === "noun"){
+        return "放回这一句里，它更像一个概念名词。先抓核心意思，再看它和前后词怎么搭。";
+      }
+      if(vocab.pos === "phrase"){
+        return "放回这一句里，最好把它整块看，不要拆得太碎。短语通常是一起记，理解会更顺。";
+      }
+      return "放回这一句里，先抓它的大方向意思，不用一开始就把每个细节都抠得很死。";
+    }
+
+    function buildPosTip(vocab){
+      if(vocab.pos === "verb"){
+        return "这是动词。背的时候别只背中文，顺手记一下它后面常接什么，会更实用。";
+      }
+      if(vocab.pos === "adj"){
+        return "这是形容词。你可以顺手观察它是在名词前，还是放在 be 动词后面。";
+      }
+      if(vocab.pos === "noun"){
+        return "这是名词。名词最值得一起记的是常见搭配，而不只是一个中文意思。";
+      }
+      if(vocab.pos === "phrase"){
+        return "这是短语。短语最好整块记，拆开背往往会明白每个词，却抓不住整句感觉。";
+      }
+      return "先把核心意思抓住就够了，后面多看几次，自然会越来越熟。";
+    }
+
+    function renderVerseTabs(){
+      const tabNav = document.getElementById("tab-nav");
+      const tabContent = document.getElementById("tab-content");
+      if(!tabNav || !tabContent) return;
+
+      tabNav.innerHTML = verses.map(function(item, index){
+        return '<button class="tab-btn' + (index === 0 ? ' active' : '') + '" data-target="tab-' + item.id + '">' +
+          'Verse ' + item.id + "</button>";
+      }).join("");
+
+      tabContent.innerHTML = verses.map(function(item, index){
+        const vocabHtml = item.vocab.map(function(v, vocabIndex){
+          const usageParts = splitUsageParts(v.usage);
+          return '<div class="vocab-item">' +
+            '<div class="vocab-head">' +
+              '<div><span class="word">' + escapeHtml(v.word) + '</span><span class="pos">' + escapeHtml(v.pos) + '</span></div>' +
+              '<button type="button" class="speak-word-btn" data-speech-key="word-' + item.id + '-' + vocabIndex + '" data-word="' + escapeHtml(v.word) + '" data-verse="' + item.id + '" data-vocab-index="' + vocabIndex + '">发音</button>' +
+            '</div>' +
+            '<div class="vocab-copy">' +
+              '<p class="vocab-line"><strong>先这样记：</strong>' + escapeHtml(buildFriendlyMeaning(v)) + '</p>' +
+              '<p class="vocab-line"><strong>放回这句里：</strong>' + escapeHtml(buildContextHint(v)) + '</p>' +
+              '<p class="vocab-line"><strong>一般怎么用：</strong>' + escapeHtml(usageParts.main) + '</p>' +
+              (usageParts.example ? '<p class="vocab-line"><strong>你可以这样感受：</strong>' + escapeHtml(usageParts.example) + '</p>' : '') +
+              '<p class="vocab-line"><strong>小提醒：</strong>' + escapeHtml(buildPosTip(v)) + '</p>' +
+            '</div>' +
+          '</div>';
+        }).join("");
+
+        return '<div id="tab-' + item.id + '" class="tab-panel' + (index === 0 ? ' active' : '') + '">' +
+          '<div class="panel-head">' +
+            '<div>' +
+              '<div class="verse-badge">The Pairs · Verse ' + item.id + '</div>' +
+              '<h2>' + escapeHtml(item.title) + '</h2>' +
+              '<p>逐句读英文，然后用白话中文接住意思，再把该记住的生词拆开。</p>' +
+            '</div>' +
+            '<div class="nav-actions">' +
+              '<button type="button" onclick="goVerse(' + Math.max(1, item.id - 1) + ')">上一句</button>' +
+              '<button type="button" onclick="goVerse(' + Math.min(verses.length, item.id + 1) + ')">下一句</button>' +
+            '</div>' +
+          '</div>' +
+          '<div class="reading-panel">' +
+            '<div class="reading-section">' +
+              '<div class="card-head">' +
+                '<span class="section-label">英文原句</span>' +
+                '<div class="speech-tools">' +
+                  '<button type="button" class="speak-btn" data-speech-key="verse-' + item.id + '" data-verse="' + item.id + '" onclick="speakVerse(' + item.id + ')">朗读英文</button>' +
+                  '<button type="button" onclick="stopSpeaking()">停止</button>' +
+                  '<select class="voice-select" aria-label="选择声音"></select>' +
+                  '<select class="rate-select" aria-label="选择语速">' +
+                    '<option value="0.85">慢一点</option>' +
+                    '<option value="1" selected>正常</option>' +
+                    '<option value="1.15">稍快</option>' +
+                    '<option value="1.3">快一点</option>' +
+                  '</select>' +
+                '</div>' +
+              '</div>' +
+              '<p class="english">' + escapeHtml(item.english) + '</p>' +
+              '<div class="speech-note">用浏览器内置语音朗读英文原句。不同浏览器和系统里，可用声音会不一样。</div>' +
+            '</div>' +
+            '<div class="reading-section">' +
+              '<span class="section-label">中文白话</span>' +
+              '<p class="translation">' + escapeHtml(item.chinese) + '</p>' +
+            '</div>' +
+          '</div>' +
+          '<div class="content-panel">' +
+            '<span class="section-label">这句在说什么</span>' +
+            '<div class="gloss"><strong>展开理解：</strong>' + escapeHtml(item.takeaway) + '</div>' +
+            '<div class="gloss"><strong>生活例子：</strong>' + escapeHtml(item.example || "") + '</div>' +
+            '<span class="section-label" style="margin-top:22px">本句生词</span>' +
+            '<p class="vocab-intro">不用一次全背完。先抓住核心意思，再记一个用法和一个感觉，读几遍就会慢慢熟起来。</p>' +
+            '<div class="vocab-list">' + vocabHtml + '</div>' +
+            '<div class="footer-note">注：这里的中文不是逐字硬译，而是偏“读懂意思”的课本式白话解释。</div>' +
+          '</div>' +
+        '</div>';
+      }).join("");
+
+      bindSpeechControls();
+    }
+
+    function getVisibleChapters(activeId){
+      const total = chapters.length;
+      const half = Math.floor(visibleChapterCount / 2);
+      let start = Math.max(1, activeId - half);
+      let end = start + visibleChapterCount - 1;
+
+      if(end > total){
+        end = total;
+        start = Math.max(1, end - visibleChapterCount + 1);
+      }
+
+      return chapters.filter(function(item){
+        return item.id >= start && item.id <= end;
+      });
+    }
+
+    function renderChapterNav(activeId){
+      const visible = getVisibleChapters(activeId);
+      const firstVisible = visible[0] ? visible[0].id : 1;
+      const lastVisible = visible[visible.length - 1] ? visible[visible.length - 1].id : chapters.length;
+      const leadingMore = firstVisible > 1 ? '<span class="chapter-more">...</span>' : '';
+      const trailingMore = lastVisible < chapters.length ? '<span class="chapter-more">...</span>' : '';
+
+      const tabsHtml = visible.map(function(item){
+        return '<button class="chapter-btn' + (item.id === activeId ? ' active' : '') + '" data-chapter="' + item.id + '">' +
+          item.id + '. ' + escapeHtml(item.title) +
+        '</button>';
+      }).join("");
+
+      const selectHtml = chapters.map(function(item){
+        return '<option value="' + item.id + '"' + (item.id === activeId ? ' selected' : '') + '>' +
+          item.id + '. ' + escapeHtml(item.title) +
+        '</option>';
+      }).join("");
+
+      chapterNav.innerHTML =
+        '<div class="chapter-tabs">' + leadingMore + tabsHtml + trailingMore + '</div>' +
+        '<label class="chapter-picker">跳到章节<select id="chapter-select">' + selectHtml + '</select></label>';
+    }
+
+    function renderChapters(){
+      renderChapterNav(1);
+
+      chapterContent.innerHTML = chapters.map(function(item, index){
+        if(item.id === 1){
+          return '<div id="chapter-' + item.id + '" class="chapter-panel chapter-panel-immersive' + (index === 0 ? ' active' : '') + '">' +
+            '<section class="tab-shell">' +
+              '<div class="tab-nav" id="tab-nav"></div>' +
+              '<div id="tab-content"></div>' +
+            '</section>' +
+          '</div>';
+        }
+
+        return '<div id="chapter-' + item.id + '" class="chapter-panel' + (index === 0 ? ' active' : '') + '">' +
+          '<div class="panel-head">' +
+            '<div>' +
+              '<div class="verse-badge">Chapter ' + item.id + '</div>' +
+              '<h2>' + escapeHtml(item.title) + '</h2>' +
+              '<p>这个章节的 tab 已经预留好，后面继续补内容时，还是写进这个同一个 HTML。</p>' +
+            '</div>' +
+            '<div class="status-note"><strong>当前状态</strong>占位已建好，内容待填充。</div>' +
+          '</div>' +
+          '<div class="chapter-placeholder">' +
+            '<div class="placeholder-tag">Ready For Next Chapter</div>' +
+            '<h3>' + escapeHtml(item.title) + '</h3>' +
+            '<p>这个章节暂时先占位，不额外生成新页面。你下次只要说继续哪一章，我就直接把英文、中文白话和生词补进这个 tab 里。</p>' +
+            '<p>预期结构会和 <code>The Pairs</code> 一样：英文原句、中文白话、生词解释、一般怎么用。</p>' +
+          '</div>' +
+        '</div>';
+      }).join("");
+
+      renderVerseTabs();
+    }
+
+    function activateVerse(id){
+      document.querySelectorAll(".tab-btn").forEach(function(btn){
+        btn.classList.toggle("active", btn.dataset.target === "tab-" + id);
+      });
+      document.querySelectorAll(".tab-panel").forEach(function(panel){
+        panel.classList.toggle("active", panel.id === "tab-" + id);
+      });
+      try{
+        localStorage.setItem(verseStorageKey, String(id));
+      }catch(e){}
+      const activeBtn = document.querySelector('.tab-btn[data-target="tab-' + id + '"]');
+      if(activeBtn){
+        activeBtn.scrollIntoView({ behavior: "smooth", inline: "center", block: "nearest" });
+      }
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+
+    function activateChapter(id){
+      stopSpeaking();
+      renderChapterNav(id);
+      document.querySelectorAll(".chapter-btn").forEach(function(btn){
+        btn.classList.toggle("active", Number(btn.dataset.chapter) === id);
+      });
+      document.querySelectorAll(".chapter-panel").forEach(function(panel){
+        panel.classList.toggle("active", panel.id === "chapter-" + id);
+      });
+      try{
+        localStorage.setItem(chapterStorageKey, String(id));
+      }catch(e){}
+      const currentChapter = chapters.find(function(item){ return item.id === id; });
+      if(currentChapterChip && currentChapter){
+        currentChapterChip.textContent = "Chapter " + currentChapter.id + " · " + currentChapter.title;
+      }
+      if(id === 1){
+        const savedVerse = Number(localStorage.getItem(verseStorageKey) || 1);
+        activateVerse(savedVerse >= 1 && savedVerse <= verses.length ? savedVerse : 1);
+      } else {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      }
+    }
+
+    function goVerse(id){
+      activateVerse(id);
+    }
+
+    renderChapters();
+
+    chapterNav.addEventListener("click", function(event){
+      const btn = event.target.closest(".chapter-btn");
+      if(!btn) return;
+      activateChapter(Number(btn.dataset.chapter));
+    });
+
+    chapterNav.addEventListener("change", function(event){
+      if(event.target && event.target.id === "chapter-select"){
+        activateChapter(Number(event.target.value));
+      }
+    });
+
+    document.addEventListener("click", function(event){
+      const btn = event.target.closest(".tab-btn");
+      if(!btn) return;
+      const targetId = Number(btn.dataset.target.replace("tab-", ""));
+      activateVerse(targetId);
+    });
+
+    document.addEventListener("click", function(event){
+      const btn = event.target.closest(".speak-word-btn");
+      if(!btn) return;
+      speakWord(btn.dataset.word, Number(btn.dataset.verse), Number(btn.dataset.vocabIndex));
+    });
+
+    document.addEventListener("keydown", function(event){
+      const activeChapter = document.querySelector(".chapter-panel.active");
+      if(!activeChapter || activeChapter.id !== "chapter-1") return;
+      const active = document.querySelector(".tab-panel.active");
+      if(!active) return;
+      const current = Number(active.id.replace("tab-", ""));
+      if(event.key === "ArrowRight" && current < verses.length) activateVerse(current + 1);
+      if(event.key === "ArrowLeft" && current > 1) activateVerse(current - 1);
+    });
+
+    if(supportsSpeech){
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    window.speakVerse = speakVerse;
+    window.speakWord = speakWord;
+    window.stopSpeaking = stopSpeaking;
+
+    const savedChapter = Number(localStorage.getItem(chapterStorageKey) || 1);
+    activateChapter(savedChapter >= 1 && savedChapter <= chapters.length ? savedChapter : 1);
+  </script>
+</body>
+</html>
