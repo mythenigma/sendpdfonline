@@ -407,6 +407,32 @@
     .gloss strong{
       color:var(--text);
     }
+    .source-notes{
+      margin-top:18px;
+      padding-top:14px;
+      border-top:1px dashed var(--line);
+    }
+    .source-notes-title{
+      display:block;
+      margin-bottom:10px;
+      color:var(--blue);
+      font-size:15px;
+      font-weight:700;
+    }
+    .source-note{
+      margin:12px 0 0;
+      padding-left:14px;
+      border-left:3px solid #cdbb99;
+      color:var(--muted-2);
+      font-size:14px;
+      line-height:1.75;
+    }
+    .source-note strong{
+      color:var(--text);
+    }
+    .source-note em{
+      font-style:italic;
+    }
     .vocab-list{
       display:block;
       margin-top:14px;
@@ -431,12 +457,18 @@
       font-weight:800;
       color:var(--text);
     }
+    .vocab-item .meaning-inline{
+      margin-left:10px;
+      color:var(--muted-2);
+      font-size:16px;
+      font-weight:500;
+    }
     .vocab-item .pos{
       color:#7b6a52;
       font-size:12px;
       font-weight:700;
       margin-left:8px;
-      text-transform:uppercase;
+      text-transform:none;
     }
     .speak-word-btn{
       flex:0 0 auto;
@@ -543,7 +575,7 @@
   <script>
     const chapters = [
       { id: 1, title: "The Pairs", done: true, note: "<strong>The Pairs</strong> 可以理解成“成对出现的对照”。这一章里很多句子都是两两相照着说，比如清净心和染污心、记恨和不记恨、重要和不重要，所以标题用 <strong>pairs</strong> 很贴切。" },
-      { id: 2, title: "Heedfulness", done: false, note: "<strong>Heedfulness</strong> 不是普通的“小心”，而是带着警觉、留意、不放逸的意思。这个标题会抓住整章的修行重心。" },
+      { id: 2, title: "Heedfulness", done: true, note: "<strong>Heedfulness</strong> 不是普通的“小心”，而是带着警觉、留意、不放逸的意思。这个标题会抓住整章的修行重心。" },
       { id: 3, title: "The Mind", done: false, note: "<strong>The Mind</strong> 直接点出主题：这一章会把焦点放在心怎么动、怎么乱、又怎么被训练。" },
       { id: 4, title: "Flowers", done: false, note: "<strong>Flowers</strong> 这个标题听上去轻，但佛经里常借花做比喻，所以这里多半不是单讲花，而是借花说明人心和生命。" },
       { id: 5, title: "The Fool", done: false, note: "<strong>The Fool</strong> 里的 fool 不是随口骂人，更像佛经里说“看不清、执迷、不知轻重的人”。" },
@@ -570,7 +602,7 @@
       { id: 26, title: "The Holy Man", done: false, note: "<strong>The Holy Man</strong> 这个题目会让人想到“圣者”。后面补这一章时，很适合解释它和普通好人的区别。" }
     ];
 
-    const verses = [
+    const chapter1Verses = [
       {
         id: 1,
         title: "Mind leads everything",
@@ -670,6 +702,13 @@
         chinese: "暴风很容易吹倒根基不稳的树。同样，一个人如果整天只顾追逐享乐，感官放纵、吃东西没节制、又懒散又散乱，就很容易被内在的诱惑和烦恼打倒。",
         takeaway: "这句不是单纯骂享受，而是在说一个人如果没有约束力，整个人会越来越松，最后经不起冲击。贪图舒服本身不可怕，可怕的是长期把自己活成一个没有节制、没有定力的人。",
         example: "比如有人总说“今天放松一下”，结果作息乱、吃喝没节制、工作也拖。平时看不出大问题，可一遇到压力、诱惑或打击，他就特别容易崩，因为内里已经没有支撑力了。",
+        notes: [
+          {
+            n: 1,
+            en: "<em>Mara</em>: the Tempter in Buddhism, represented in the scriptures as an evil-minded deity who tries to lead people from the path to liberation. The commentaries explain Mara as the lord of evil forces, as mental defilements and as death.",
+            zh: "“<em>Mara</em>（魔罗）”在佛教里常被译作诱惑者。经典中把它描绘成一个心怀恶意、试图把人引离解脱之道的存在。注释书还把 Mara 解释为恶势力之主、内心染污，以及死亡本身。"
+          }
+        ],
         vocab: [
           { word: "pursuit", pos: "noun", meaning: "追求、追逐。", usage: "常见搭配：the pursuit of happiness, the pursuit of wealth。"},
           { word: "immoderate", pos: "adj", meaning: "没有节制的，过度的。", usage: "书面语较多，可理解为 excessive。例：immoderate eating or drinking。"},
@@ -686,6 +725,13 @@
         chinese: "暴风再大，也吹不倒岩石山。一个人若常常这样观照身体的不净，守住感官，饮食有节，并且有信心、肯下真功夫，烦恼就没那么容易把他掀翻。",
         takeaway: "第 7 句和第 8 句是一组。前一句是根基松的人，后一句是根基稳的人，对照特别鲜明。这里讲的不是一时的冲劲，而是日常一点点养出来的稳定：有节制、有信心、肯下工夫的人，更不容易被外境拖走。",
         example: "比如两个人都遇到感情挫折。一个人本来生活就很散，马上借酒、熬夜、乱花钱来麻痹自己；另一个人虽然也难过，但还能保持作息、运动、安静整理自己。后者不是没痛苦，而是更稳，不容易被打垮。",
+        notes: [
+          {
+            n: 2,
+            en: "<em>The impurities</em> (<em>asubha</em>): subjects of meditation which focus on the inherent repulsiveness of the body, recommended especially as powerful antidotes to lust.",
+            zh: "“<em>The impurities</em>（<em>asubha</em>，不净观）”指一类禅修对象，重点是观照身体本身不净、令人厌离的一面。原注特别说，这种观法尤其被推荐作为对治欲念的有力方法。"
+          }
+        ],
         vocab: [
           { word: "prevail against", pos: "phrase", meaning: "战胜、压过、占上风。", usage: "多用于书面表达。例：Truth will prevail against lies." },
           { word: "moderate", pos: "adj", meaning: "适度的，有分寸的。", usage: "常见搭配：moderate eating, moderate exercise。"},
@@ -876,18 +922,324 @@
       }
     ];
 
+    const chapter2Verses = [
+      {
+        id: 21,
+        title: "Heedfulness is the path to the Deathless",
+        titleZh: "不放逸，是通向不死境的路",
+        literalZh: "不放逸是通向不死境之路；放逸是通向死亡之路。不放逸的人不死，放逸的人如同已经死了。",
+        english: "Heedfulness is the path to the Deathless. Heedlessness is the path to death. The heedful die not. The heedless are as if dead already.",
+        chinese: "不放逸的人，是朝着不死、解脱的方向在走；放逸的人，是朝着沉沦和死亡在走。真正警醒的人，不会把生命活成昏睡；而放逸的人，佛经说得很重，简直像已经死了一样。",
+        takeaway: "这一章一开头就把“heedfulness”抬到非常高的位置。它不是普通的认真一点，而是一种持续醒着、看着自己、不让心随便滑走的状态。佛经为什么说得这么重？因为一个人一旦长期放逸，表面还活着，里面其实已经被习气和欲望推着走了。",
+        example: "比如有人明明知道自己一刷短视频就会停不下来，但每次都说“没关系，就五分钟”。结果一个晚上又过去了，答应自己的事也没做。另一个人也会想刷，但会及时收住，知道自己现在最该做什么。前者就是放逸，后者才有一点不放逸的味道。",
+        notes: [
+          {
+            n: 3,
+            en: "<em>The Deathless</em> (<em>amata</em>): Nibbana, so called because those who attain it are free from the cycle of repeated birth and death.",
+            zh: "“<em>The Deathless</em>（<em>amata</em>，不死境）”指的就是涅槃。原注这样称呼它，是因为达到这一境界的人，已经脱离了反复生死轮回的循环。"
+          }
+        ],
+        vocab: [
+          { word: "heedfulness", pos: "noun", meaning: "警觉、不放逸、时时留心的状态。", usage: "这是书面和宗教语境中的词，日常里可近似理解为 alert care 或 mindful vigilance。"},
+          { word: "Deathless", pos: "noun", meaning: "不死境；这里特指涅槃。", usage: "这个词在普通英文里不常见，放在佛教语境里要整块理解，不是单纯“不会死”。"},
+          { word: "heedless", pos: "adj", meaning: "不留心的、放任的、没有警觉的。", usage: "常用来形容人做事不顾后果。例：a heedless decision。"}
+        ]
+      },
+      {
+        id: 22,
+        title: "The wise delight in heedfulness",
+        titleZh: "真正有智慧的人，会安住在不放逸里",
+        literalZh: "清楚理解了不放逸的殊胜之后，智者就在其中欢喜，并乐于安住于圣者所住之境。",
+        english: "Clearly understanding this excellence of heedfulness, the wise exult therein and enjoy the resort of the Noble Ones.",
+        chinese: "真正看懂不放逸有多珍贵的人，不会觉得它麻烦，反而会在这种警醒里生出欢喜。因为这正是圣者所走的路，也是圣者所安住的地方。",
+        takeaway: "这句很关键，它把“不放逸”从一种苦苦撑着的自我约束，转成一种会越活越喜欢的状态。开始时我们常觉得收心、守心很累，但佛经说，当一个人真的尝到其中的清明，他会越来越愿意住在这种状态里。",
+        example: "比如刚开始练习早起、静坐或规律生活时，你会觉得像在跟自己作对。但等你真的体会到整个人更清醒、更稳、更不被情绪带着跑，就会明白：原来这种自守不是束缚，而是在帮自己变得轻一点。",
+        notes: [
+          {
+            n: 4,
+            en: "<em>The Noble Ones</em> (<em>ariya</em>): those who have reached any of the four stages of supramundane attainment leading irreversibly to Nibbana.",
+            zh: "“<em>The Noble Ones</em>（<em>ariya</em>，圣者）”指的是已经达到四种出世间果位中任一阶段的人；一旦走到这些阶段，就会不可逆地朝向涅槃。"
+          }
+        ],
+        vocab: [
+          { word: "excellence", pos: "noun", meaning: "卓越、可贵之处、殊胜处。", usage: "常见搭配：the excellence of something，表示某事真正宝贵的地方。"},
+          { word: "exult", pos: "verb", meaning: "欢腾、欣喜、喜悦得很明显。", usage: "比 rejoice 更强一点，偏书面。例：They exulted in victory。"},
+          { word: "resort", pos: "noun", meaning: "常去之处、安住之地。", usage: "这里不是度假村的意思，而是“心灵所归、所住的地方”。"}
+        ]
+      },
+      {
+        id: 23,
+        title: "Steady effort reaches Nibbana",
+        titleZh: "持续安住、不断精进的人，才尝得到涅槃",
+        literalZh: "那些有智慧的人，常修禅定，坚定精进，唯有他们体验到涅槃，那无与伦比的解脱自在。",
+        english: "The wise ones, ever meditative and steadfastly persevering, alone experience Nibbana, the incomparable freedom from bondage.",
+        chinese: "真正有智慧的人，不是偶尔认真一下，而是持续在修、持续在稳、持续不退。他们才能真正尝到涅槃，也就是那种无可比拟、从束缚中出来的自由。",
+        takeaway: "这句把方向说得很清楚：光知道还不够，偶尔有感动也不够，关键在于“ever” 和 “steadfastly” 这种长期而稳定的状态。涅槃不是靠一时热情碰到的，而是靠持续不松散的实践慢慢走到的。",
+        example: "比如有人学了很多方法，但三天热、两天冷；另一个人方法也许不花哨，却每天都实实在在练一点。真正改变人的，往往不是那种一时很燃的冲动，而是这种不间断的稳。",
+        vocab: [
+          { word: "meditative", pos: "adj", meaning: "常在观照、沉思、禅修中的。", usage: "可用于 meditative practice, meditative state，也可形容一个人气质沉静。"},
+          { word: "steadfastly", pos: "adv", meaning: "坚定地、持续不移地。", usage: "常用来强调不动摇。例：She steadfastly continued her work。"},
+          { word: "bondage", pos: "noun", meaning: "束缚、捆绑、系缚。", usage: "书面词，常见于 freedom from bondage 这种表达。"}
+        ]
+      },
+      {
+        id: 24,
+        title: "Heedfulness makes a person shine",
+        titleZh: "精进、清醒、自守的人，会越来越有光彩",
+        literalZh: "那位精进、正念、行为清净、具分辨力与自制、正直而不放逸的人，其光辉不断增长。",
+        english: "Ever grows the glory of him who is energetic, mindful and pure in conduct, discerning and self-controlled, righteous and heedful.",
+        chinese: "一个人若肯用功，心里清醒，行为也干净，又有判断力、能管住自己、做人正直、不放逸，他身上的光彩会慢慢长出来，而且会越长越稳。",
+        takeaway: "这句说的“glory”不一定是外在风光，更像一个人身上慢慢显出来的分量、清明和可信赖感。真正让人发亮的，不是表面的厉害，而是精进、清醒、正直和自守这些东西慢慢积出来的气质。",
+        example: "比如同样在一个团队里，有的人很会表现，但做事不稳；另一个人不一定最抢眼，却一直靠谱、克制、清楚、有分寸。时间久了，大家自然会更信任后者，这种慢慢长出来的分量，就是这句说的光彩。",
+        vocab: [
+          { word: "energetic", pos: "adj", meaning: "有干劲的、肯用力的、精力充足的。", usage: "日常很常见。例：an energetic worker。这里不只是活跃，更有精进意味。"},
+          { word: "discerning", pos: "adj", meaning: "有分辨力的、看得出轻重好坏的。", usage: "常用来形容判断细致。例：a discerning reader。"},
+          { word: "righteous", pos: "adj", meaning: "正直的、合于正道的。", usage: "偏书面，也带道德色彩。例：a righteous person。"}
+        ]
+      },
+      {
+        id: 25,
+        title: "Build yourself an island",
+        titleZh: "靠努力和自守，为自己造一座不被淹没的小岛",
+        literalZh: "凭借努力、不放逸、纪律与自我调御，让智者为自己造一座岛屿，使洪水也无法淹没。",
+        english: "By effort and heedfulness, discipline and self-mastery, let the wise one make for himself an island which no flood can overwhelm.",
+        chinese: "靠努力、警醒、守纪律、能管住自己，一个有智慧的人，要为自己慢慢造出一块立足之地。这样就算外面的洪水来了，也不至于一下把自己冲走。",
+        takeaway: "这句比喻很漂亮。佛经没有说“等别人来救你”，而是说你要一点点把自己的岛修出来。这个岛不是外在房子，而是你的定力、分寸、规律、判断力。平时不修，等洪水真来了，就来不及了。",
+        example: "比如一个人平时有规律作息、稳定工作习惯、也会照顾情绪，所以真正遇到裁员、失恋或疾病时，虽然照样难受，但不至于整个塌掉。那种平时积出来的东西，就是他自己的岛。",
+        vocab: [
+          { word: "discipline", pos: "noun", meaning: "纪律、节制、训练出来的自守。", usage: "既可指规矩，也可指自我约束。例：self-discipline matters。"},
+          { word: "self-mastery", pos: "noun", meaning: "自我调御、自我掌握。", usage: "这是比较庄重的说法，可理解成能管住自己的心和行为。"},
+          { word: "overwhelm", pos: "verb", meaning: "淹没、压垮、一下子冲倒。", usage: "常用于 flood overwhelm a place，也常用于 emotions overwhelm someone。"}
+        ]
+      },
+      {
+        id: 26,
+        title: "The wise guard heedfulness like treasure",
+        titleZh: "愚人沉在放逸里，智者把不放逸当宝",
+        literalZh: "愚蠢无知的人沉溺于放逸；而智者则把不放逸守为自己最好的宝藏。",
+        english: "The foolish and ignorant indulge in heedlessness, but the wise one keeps his heedfulness as his best treasure.",
+        chinese: "愚人和无知的人，很容易整个人陷在放逸里；真正有智慧的人，却会把不放逸当成自己最珍贵的宝藏，好好守住。",
+        takeaway: "这句不是在说智者有什么神秘技巧，而是在说他知道什么最值得守。很多人把钱、面子、舒服感当宝，但佛经说，一个人真正该守住的，是那份清醒和不放逸，因为别的东西都会乱，只有这个会决定你怎么活。",
+        example: "比如有人一忙起来就把节奏全丢了，睡眠、情绪、判断都跟着乱；另一个人再忙也会保留一点最基本的清醒感，不让自己彻底散掉。前者把方便当宝，后者把清醒当宝。",
+        vocab: [
+          { word: "indulge in", pos: "phrase", meaning: "沉溺于、任由自己陷进去。", usage: "常见搭配：indulge in pleasure, indulge in fantasy。"},
+          { word: "heedlessness", pos: "noun", meaning: "放逸、不警觉、任凭自己滑走的状态。", usage: "它是 heedfulness 的反面，偏书面和宗教语境。"},
+          { word: "treasure", pos: "noun", meaning: "宝物、最值得珍惜的东西。", usage: "既能指真实宝物，也常作比喻。例：Health is a treasure。"}
+        ]
+      },
+      {
+        id: 27,
+        title: "Do not give yourself to heedlessness",
+        titleZh: "不要把自己交给放逸",
+        literalZh: "不要顺着放逸去。不要沉溺于感官享乐。只有不放逸而又常修观照的人，才能得到大的安乐。",
+        english: "Do not give way to heedlessness. Do not indulge in sensual pleasures. Only the heedful and meditative attain great happiness.",
+        chinese: "不要让自己滑进放逸里，也不要一头栽进感官享乐。真正能得到大安乐的人，是那些心里警醒、又肯常常观照自己的人。",
+        takeaway: "这句是很直接的劝诫，几乎没有拐弯。佛经不是说快乐不好，而是在提醒：如果一个人只会顺着欲望走，那种快乐很快就会反过来拖住他。真正大的安乐，来自清醒和观照，不是来自不断喂养刺激。",
+        example: "比如一个人每次累了就只会靠刷剧、暴吃、购物来补偿自己，短时间当然舒服，但后面常常更空、更乱。另一个人也会休息，但不会让自己整个人掉进去，这样反而能保住更长久的安稳。",
+        vocab: [
+          { word: "give way to", pos: "phrase", meaning: "向……屈服、顺着……倒下去。", usage: "很常见。例：Do not give way to anger。"},
+          { word: "sensual", pos: "adj", meaning: "感官上的、欲乐性的。", usage: "这里不是浪漫，而是和感官享乐有关。常见搭配：sensual pleasure。"},
+          { word: "attain", pos: "verb", meaning: "达到、获得、证得。", usage: "比 get 更正式，常见于 attain peace, attain wisdom。"}
+        ]
+      },
+      {
+        id: 28,
+        title: "Rise above heedlessness and see clearly",
+        titleZh: "把放逸丢开以后，人才看得更高、更清楚",
+        literalZh: "正如站在山顶的人俯视地上的众人，智者也同样以不放逸舍离放逸，登上智慧高塔之后，无忧地看见那忧苦而愚昧的人群。",
+        english: "Just as one upon the summit of a mountain beholds the groundlings, even so when the wise man casts away heedlessness by heedfulness and ascends the high tower of wisdom, this sorrowless sage beholds the sorrowing and foolish multitude.",
+        chinese: "就像站在高山顶上往下看的人，视野会一下打开；一个智者若用不放逸丢开了放逸，登上智慧的高处，也会看清下面那群还在忧愁、糊涂、忙乱里打转的人。",
+        takeaway: "这句不是叫人高高在上地看不起别人，而是在说：当你真的从放逸里退出来，视角会变。以前你和众人一起乱、一起急、一起被带着跑；等你站稳一点，再回头看，就会更明白世人为什么苦，也更不容易再跟着乱。",
+        example: "比如一个人过去天天和别人比较、争快、争赢，后来慢慢收住心，开始规律生活、少被外界牵引。再回头看以前那种忙乱状态，他会第一次真正看清：原来很多苦，不是外面逼的，而是自己一直跟着跑。",
+        vocab: [
+          { word: "summit", pos: "noun", meaning: "山顶、顶峰。", usage: "常见搭配：the summit of a mountain。也可比喻最高处。"},
+          { word: "behold", pos: "verb", meaning: "看见、注视、观看。", usage: "偏文学和庄重，比 see 更书面。"},
+          { word: "multitude", pos: "noun", meaning: "众人、大群人。", usage: "书面词，常指很多很多的人。"}
+        ]
+      },
+      {
+        id: 29,
+        title: "The wise move ahead while others sleep",
+        titleZh: "别人昏睡时，智者已经醒着往前走了",
+        literalZh: "在放逸者之中而能不放逸，在昏睡者之中而能清醒，智者前进如同快马，把羸弱的劣马远远甩在后面。",
+        english: "Heedful among the heedless, wide-awake among the sleepy, the wise man advances like a swift horse leaving behind a weak jade.",
+        chinese: "当别人都还在放逸、昏沉、混混过的时候，智者已经清醒地往前走了。他前进得像一匹快马，很自然就把后面那些软弱迟钝的马甩开了。",
+        takeaway: "这句的重点不是比赛，而是状态差别。明明活在同一个世界里，有的人一直在昏睡，有的人却是醒着的。真正把人拉开距离的，不只是能力，而是有没有一直活在一种清醒、不放逸的状态里。",
+        example: "比如两个人起点差不多，一个人总是拖、总是散、总是明天再说；另一个人不一定天分更高，但持续醒着、持续做。几年后看起来像差了一大截，根子往往不在聪不聪明，而在有没有一直清醒地走。",
+        vocab: [
+          { word: "wide-awake", pos: "adj", meaning: "完全清醒的、警觉的。", usage: "日常也常用。例：I was wide-awake at 3 a.m. 这里还带精神上醒着的意思。"},
+          { word: "swift", pos: "adj", meaning: "迅速的、快的。", usage: "比 fast 更书面一点。例：a swift response。"},
+          { word: "jade", pos: "noun", meaning: "劣马、瘦弱的马。", usage: "这里不是玉石的 jade，而是旧式英语里指又瘦又弱的马。"}
+        ]
+      },
+      {
+        id: 30,
+        title: "Heedfulness is always praised",
+        titleZh: "不放逸总是被称赞，放逸总是被轻看",
+        literalZh: "正是由于不放逸，因陀罗成了诸天之主。不放逸总是受到称赞，而放逸总是受到轻视。",
+        english: "By Heedfulness did Indra become the overlord of the gods. Heedfulness is ever praised, and heedlessness ever despised.",
+        chinese: "因陀罗之所以成了诸天的领主，也被归到不放逸上。佛经这里的意思很明白：不放逸永远值得称赞，而放逸也永远容易把人带低、让人被轻看。",
+        takeaway: "这句用神话里的因陀罗举例，不是为了讲神怪，而是为了强调：无论放到什么层次、什么身份里，不放逸都被看作一种真正让人站得住的品质。相反，放逸不会把人抬高，只会一点点把人拖垮。",
+        example: "比如一个人能力不错，但总是散、总是不稳，别人最后还是不敢真正把重任交给他。另一个人也许不张扬，却始终警醒、可靠、有分寸。久了以后，大家自然更敬重后者，因为不放逸本身就带着分量。",
+        notes: [
+          {
+            n: 5,
+            en: "<em>Indra</em>: the ruler of the gods in ancient Indian mythology.",
+            zh: "“<em>Indra</em>（因陀罗）”是古代印度神话中的诸神之王。"
+          }
+        ],
+        vocab: [
+          { word: "overlord", pos: "noun", meaning: "统领者、上主、最高统治者。", usage: "偏书面，常表示居于上位、统辖他人的角色。"},
+          { word: "praise", pos: "verb", meaning: "称赞、赞誉。", usage: "也可作名词。例：Teachers praised her effort。"},
+          { word: "despise", pos: "verb", meaning: "轻视、鄙视。", usage: "语气比 dislike 重。例：He despised laziness。"}
+        ]
+      },
+      {
+        id: 31,
+        title: "The heedful monk burns through fetters",
+        titleZh: "把放逸当成可怕之事的人，会像火一样烧断束缚",
+        literalZh: "喜爱不放逸、并且把放逸看作可畏之事的比丘，前进时如同火焰一般，烧尽一切大小束缚。",
+        english: "The monk who delights in heedfulness and looks with fear at heedlessness advances like fire, burning all fetters, small and large.",
+        chinese: "一个真正欢喜不放逸、也真正害怕自己掉回放逸里的修行人，往前走时会像火一样，把那些大大小小的束缚一点点烧断。",
+        takeaway: "这句很有力量。佛经不是说你只要温温吞吞地喜欢修行就够了，而是说你要真的知道放逸有多危险。一个同时具备“喜欢清醒”和“警惕放逸”的人，进步会很快，因为他不会老给自己留退路。",
+        example: "比如一个人明明知道某种习惯会拖垮自己，就不再跟它暧昧，也不再总给自己借口。该断就断，该收就收。这样的决心一起来，很多原本缠人的小习气，真的会像被火烧掉一样开始松开。",
+        vocab: [
+          { word: "delight in", pos: "phrase", meaning: "以……为乐，乐于其中。", usage: "常见搭配：delight in learning, delight in quiet work。"},
+          { word: "fetter", pos: "noun", meaning: "束缚、系缚、羁绊。", usage: "书面且带宗教色彩，常用来指心理或修行上的束缚。"},
+          { word: "small and large", pos: "phrase", meaning: "不论大还是小，全部。", usage: "这里强调束缚并不只是一两个大的，也包括平常容易忽略的小牵缠。"}
+        ]
+      },
+      {
+        id: 32,
+        title: "The heedful monk is close to Nibbana",
+        titleZh: "真正守住不放逸的人，已经很靠近涅槃了",
+        literalZh: "喜爱不放逸、并且把放逸看作可畏之事的比丘，不会退堕；他已经接近涅槃。",
+        english: "The monk who delights in heedfulness and looks with fear at heedlessness will not fall. He is close to Nibbana.",
+        chinese: "一个真正欢喜不放逸、也把放逸当成危险来提防的修行人，不会轻易退下去；他已经很接近涅槃了。",
+        takeaway: "第二章收在这里，力量非常集中。前面一路都在讲“不放逸”有多重要，到最后就直接落成一句：守住这个，人就不会轻易退失，而且已经离解脱很近。这其实是在告诉读者，修行路上最值得死死守住的，不是花样，而是清醒。",
+        example: "比如一个人不再把修行当成一时兴起，而是真的开始守自己的心，守自己的生活，守住每天最基本的清醒。这样的人看起来也许并不轰动，但路已经走对，而且越走越近了。",
+        vocab: [
+          { word: "fall", pos: "verb", meaning: "跌落、退堕、滑下去。", usage: "在这里不是身体摔倒，而是修行和状态上的退失。"},
+          { word: "close to", pos: "phrase", meaning: "接近、靠近。", usage: "日常很常用。例：close to success, close to the truth。"},
+          { word: "Nibbana", pos: "noun", meaning: "涅槃，彻底解脱的境界。", usage: "这是佛教核心术语，最好整块记，不要只用普通“快乐”去理解它。"}
+        ]
+      }
+    ];
+
+    const chapterVerseMap = {
+      1: chapter1Verses,
+      2: chapter2Verses
+    };
+
     const chapterNav = document.getElementById("chapter-nav");
     const chapterContent = document.getElementById("chapter-content");
     const currentChapterChip = document.getElementById("current-chapter-chip");
     const currentChapterNote = document.getElementById("current-chapter-note");
     const chapterStorageKey = "dhammapada-active-chapter";
-    const verseStorageKey = "dhammapada-the-pairs-active-tab";
     const ttsVoiceStorageKey = "dhammapada-tts-voice";
     const ttsRateStorageKey = "dhammapada-tts-rate";
     const visibleChapterCount = 6;
     const supportsSpeech = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
     let availableVoices = [];
     let activeSpeechKey = null;
+    let currentChapterId = 1;
+    const vocabGuide = {
+      "precede": { en: "to come or happen before something else", example: "A feeling of doubt often precedes a hard decision." },
+      "impure": { en: "not clean, honest, or morally clear", example: "An impure motive can quietly spoil a good action." },
+      "mind-wrought": { en: "formed, shaped, or produced by the mind", example: "Much of his fear was mind-wrought rather than real." },
+      "pure": { en: "clean, clear, and free from wrong mixture or motive", example: "She spoke with a pure intention to help." },
+      "chief": { en: "the main or most important one", example: "Her chief concern was the child's safety." },
+      "shadow": { en: "a dark shape made when light is blocked; also something that stays close", example: "A quiet worry followed him like a shadow." },
+      "abuse": { en: "to treat someone badly, cruelly, or wrongly", example: "No one should abuse their power over others." },
+      "harbor": { en: "to keep a feeling or thought in the mind for a long time", example: "He still harbors anger about what happened." },
+      "still": { en: "to make something quiet, calm, or at rest", example: "A few kind words can still a fearful mind." },
+      "overpower": { en: "to defeat, control, or become stronger than something", example: "At times, grief can overpower clear thinking." },
+      "hatred": { en: "a very strong feeling of hate", example: "Hatred grows quickly when people keep feeding it." },
+      "appease": { en: "to calm, satisfy, or make something less angry", example: "He tried to appease the crowd with an apology." },
+      "non-hatred": { en: "the absence of hate; a spirit of goodwill", example: "Non-hatred can break a cycle of revenge." },
+      "eternal": { en: "lasting forever or seeming never to end", example: "Children often think summer will be eternal." },
+      "realize": { en: "to become aware of something clearly", example: "She realized too late that she had been unkind." },
+      "settle": { en: "to resolve, calm, or bring to an end", example: "They finally settled the argument peacefully." },
+      "quarrel": { en: "an angry argument or dispute", example: "A small quarrel can grow if nobody lets go." },
+      "pursuit": { en: "the act of trying to get, find, or achieve something", example: "The pursuit of success can easily become exhausting." },
+      "immoderate": { en: "too much; lacking balance or self-control", example: "Immoderate eating often leaves people feeling worse." },
+      "indolent": { en: "lazy and unwilling to make an effort", example: "He became indolent after losing his sense of purpose." },
+      "dissipated": { en: "morally loose, scattered, or wasted in energy", example: "A dissipated lifestyle slowly wore down his health." },
+      "prevail against": { en: "to overcome, defeat, or prove stronger than", example: "Patience can prevail against anger." },
+      "moderate": { en: "kept within a healthy, reasonable limit", example: "Moderate exercise is easier to keep for a long time." },
+      "earnest": { en: "serious, sincere, and full of real effort", example: "Her earnest effort changed the whole mood of the team." },
+      "depraved": { en: "morally corrupt or badly twisted in character", example: "The story describes a depraved ruler with no shame." },
+      "devoid of": { en: "completely lacking something", example: "His apology was devoid of honesty." },
+      "worthy of": { en: "deserving respect, value, or a certain treatment", example: "A truthful person is worthy of trust." },
+      "purged of": { en: "cleansed of something harmful or bad", example: "The report says the system was purged of corruption." },
+      "virtue": { en: "a good moral quality or habit", example: "Patience is a virtue that grows slowly." },
+      "truthfulness": { en: "the quality of being honest and true", example: "Truthfulness matters most when the situation is difficult." },
+      "essential": { en: "absolutely necessary or central", example: "Rest is essential for clear thinking." },
+      "unessential": { en: "not central, necessary, or truly important", example: "Most of what worried him was unessential in the end." },
+      "dwell in": { en: "to remain in or stay mentally inside something", example: "If you dwell in fear too long, it shapes your choices." },
+      "arrive at": { en: "to reach a place, result, or conclusion", example: "After a long talk, they arrived at a wiser decision." },
+      "right thoughts": { en: "sound, wholesome, and well-directed thinking", example: "Right thoughts help a person choose the next step more carefully." },
+      "ill-thatched": { en: "poorly covered or badly roofed", example: "An ill-thatched roof cannot keep out heavy rain." },
+      "penetrate": { en: "to pass into, through, or deeply inside something", example: "A harsh remark can penetrate the heart for years." },
+      "undeveloped": { en: "not yet grown, trained, or fully formed", example: "An undeveloped mind is easily pulled by distraction." },
+      "well-thatched": { en: "well covered and properly protected", example: "A well-thatched house stays dry in a storm." },
+      "passion": { en: "a strong feeling, desire, or craving", example: "Passion can cloud judgment if it is left unchecked." },
+      "well-developed": { en: "fully formed, trained, or strengthened", example: "A well-developed habit of reflection helps in hard times." },
+      "grieve": { en: "to feel deep sorrow, especially after loss", example: "She still grieves for the friend she lost." },
+      "afflicted": { en: "troubled, burdened, or made to suffer", example: "He was afflicted by constant worry." },
+      "recollect": { en: "to remember or call something back to mind", example: "I recollect hearing that story as a child." },
+      "rejoice": { en: "to feel or show great joy", example: "They rejoiced when the long struggle ended." },
+      "exult": { en: "to feel strong joy and express it openly", example: "The team exulted in an unexpected victory." },
+      "deed": { en: "an action, especially one with moral weight", example: "A kind deed often matters more than a clever speech." },
+      "torment": { en: "to cause severe mental or physical suffering", example: "Regret continued to torment him at night." },
+      "realm": { en: "a sphere, field, or world of experience", example: "That question belongs to the realm of ethics." },
+      "woe": { en: "great sorrow, misery, or distress", example: "The novel is full of tales of woe and recovery." },
+      "delight": { en: "to give joy or to take great pleasure in something", example: "Quiet work in the morning still delights her." },
+      "bliss": { en: "deep, complete happiness or joy", example: "For a moment, the garden felt like pure bliss." },
+      "realm of bliss": { en: "a state or place of deep happiness", example: "The poem imagines a realm of bliss beyond ordinary sorrow." },
+      "recite": { en: "to say something aloud from memory or in a formal way", example: "He recited the verse slowly and carefully." },
+      "accordingly": { en: "in a way that matches what has been understood or decided", example: "If you know the truth, act accordingly." },
+      "partake of": { en: "to share in, enjoy, or receive a part of something", example: "All should partake of the benefits of peace." },
+      "heedless": { en: "careless, unwatchful, and lacking wise attention", example: "A heedless word can damage a friendship." },
+      "forsake": { en: "to give up, leave behind, or turn away from", example: "She chose to forsake old habits that harmed her." },
+      "delusion": { en: "a false belief or deeply mistaken way of seeing", example: "It was a delusion to think he needed no one." },
+      "emancipated": { en: "set free from control, bondage, or limitation", example: "He felt emancipated after letting go of resentment." },
+      "cling to": { en: "to hold on tightly and not let go", example: "Many people cling to old pain without noticing it." },
+      "heedfulness": { en: "careful, wakeful attention that keeps the mind from drifting", example: "Heedfulness grows through small daily acts of awareness." },
+      "Deathless": { en: "the unborn, undying state; in Buddhism, Nibbana", example: "The text presents the Deathless as the goal beyond fear." },
+      "excellence": { en: "great worth, quality, or superiority", example: "The excellence of steady effort appears over time." },
+      "resort": { en: "a place one turns to, rests in, or returns to", example: "Silence became her resort when the world felt noisy." },
+      "meditative": { en: "quietly reflective, contemplative, or inclined to meditation", example: "A meditative walk helped him settle down." },
+      "steadfastly": { en: "firmly, faithfully, and without giving up", example: "She steadfastly kept her promise." },
+      "bondage": { en: "a state of being bound, controlled, or trapped", example: "Anger can become a form of inner bondage." },
+      "energetic": { en: "full of active force, effort, or vigor", example: "He made an energetic start to the new routine." },
+      "discerning": { en: "able to judge well and notice fine differences", example: "A discerning reader quickly sees what really matters." },
+      "righteous": { en: "morally right, upright, and just", example: "She tried to remain righteous even under pressure." },
+      "discipline": { en: "self-control trained into regular action", example: "Discipline helps a person stay steady when emotions rise." },
+      "self-mastery": { en: "the ability to govern oneself well", example: "Real self-mastery often shows in small daily choices." },
+      "overwhelm": { en: "to defeat, flood, or overpower completely", example: "Bad news can overwhelm a tired mind." },
+      "indulge in": { en: "to give oneself over too freely to something", example: "He began to indulge in comfort whenever stress appeared." },
+      "heedlessness": { en: "a state of carelessness, drift, and lack of watchfulness", example: "Heedlessness can undo years of good effort." },
+      "treasure": { en: "something of great value that should be protected", example: "Peace of mind is a treasure worth guarding." },
+      "give way to": { en: "to yield to or let oneself be taken over by something", example: "Do not give way to panic when the pressure rises." },
+      "sensual": { en: "related to bodily pleasure or the senses", example: "The poem warns against living only for sensual pleasure." },
+      "attain": { en: "to reach or achieve something through effort", example: "With patience, she attained a new level of calm." },
+      "summit": { en: "the highest point of a mountain or anything similar", example: "From the summit, the whole valley looked different." },
+      "behold": { en: "to see or look at with attention", example: "He stood still to behold the night sky." },
+      "multitude": { en: "a very large number of people", example: "A multitude gathered in the square by sunset." },
+      "wide-awake": { en: "fully awake, alert, and mentally clear", example: "At dawn she was already wide-awake and focused." },
+      "swift": { en: "quick and moving with speed", example: "A swift reply prevented the problem from growing." },
+      "jade": { en: "an old word for a worn-out or inferior horse", example: "The old poem contrasts a swift horse with a weak jade." },
+      "overlord": { en: "a ruler or one who holds power over others", example: "The myth describes him as the overlord of the gods." },
+      "praise": { en: "to speak well of someone or something", example: "Teachers should praise sincere effort, not only success." },
+      "despise": { en: "to look down on with strong dislike or contempt", example: "He came to despise the laziness that once ruled him." },
+      "delight in": { en: "to take joy in or deeply enjoy something", example: "She delights in early hours of quiet study." },
+      "fetter": { en: "a chain, bond, or anything that holds one back", example: "Old fears can become fetters on the mind." },
+      "small and large": { en: "of every size or degree, without exception", example: "He worked patiently through problems small and large." },
+      "fall": { en: "to slip down, fail, or decline from a better state", example: "Without care, good habits can slowly fall away." },
+      "close to": { en: "near in distance, time, or condition", example: "After years of practice, she felt close to real peace." },
+      "Nibbana": { en: "the state of final liberation in Buddhism", example: "The chapter speaks of Nibbana as freedom from bondage." }
+    };
 
     function escapeHtml(text){
       return String(text).replace(/[&<>"']/g, function(ch){
@@ -899,6 +1251,14 @@
           "'":"&#39;"
         }[ch];
       });
+    }
+
+    function getVerseStorageKey(chapterId){
+      return "dhammapada-chapter-" + chapterId + "-active-verse";
+    }
+
+    function getCurrentVerses(){
+      return chapterVerseMap[currentChapterId] || [];
     }
 
     function getStoredRate(){
@@ -1040,7 +1400,7 @@
     }
 
     function speakVerse(id){
-      const verse = verses.find(function(item){ return item.id === id; });
+      const verse = getCurrentVerses().find(function(item){ return item.id === id; });
       if(!verse) return;
       speakText(verse.english, "verse-" + id);
     }
@@ -1061,51 +1421,49 @@
       return { main: raw, example: "" };
     }
 
-    function buildFriendlyMeaning(vocab){
+    function normalizePos(pos){
+      return String(pos || "").trim().toLowerCase();
+    }
+
+    function buildInlineMeaning(vocab){
+      const raw = String(vocab.meaning || "").trim().replace(/[。]+$/,"");
+      if(raw.indexOf("这里") !== -1){
+        return raw.slice(0, raw.indexOf("这里")).replace(/[；;，,、\s]+$/,"").trim();
+      }
+      return raw;
+    }
+
+    function buildEnglishGloss(vocab){
+      const guide = vocabGuide[vocab.word];
+      if(guide && guide.en) return guide.en;
+      return "a useful word in this verse; focus on how it works in the sentence";
+    }
+
+    function buildExampleSentence(vocab){
+      const guide = vocabGuide[vocab.word];
+      if(guide && guide.example) return guide.example;
+      const usageParts = splitUsageParts(vocab.usage);
+      if(usageParts.example) return usageParts.example;
+      return "";
+    }
+
+    function buildChineseSupport(vocab){
       const meaning = String(vocab.meaning || "").trim().replace(/[。]+$/,"");
-      return "你可以先把 " + vocab.word + " 理解成“" + meaning + "”。";
-    }
-
-    function buildContextHint(vocab){
-      const meaning = String(vocab.meaning || "").trim();
+      if(!meaning) return "";
       if(meaning.indexOf("这里") !== -1){
-        const fromHere = meaning.slice(meaning.indexOf("这里")).replace(/[。]+$/,"");
-        return "放回这一句里，" + fromHere + "。";
+        return meaning;
       }
-      if(vocab.pos === "verb"){
-        return "放回这一句里，它更像是在推动一个动作或结果发生，所以记住“谁在前、谁在后”会更容易。";
-      }
-      if(vocab.pos === "adj"){
-        return "放回这一句里，它是在描述一种状态或性质。读的时候可以先抓住它是在“形容什么”。";
-      }
-      if(vocab.pos === "noun"){
-        return "放回这一句里，它更像一个概念名词。先抓核心意思，再看它和前后词怎么搭。";
-      }
-      if(vocab.pos === "phrase"){
-        return "放回这一句里，最好把它整块看，不要拆得太碎。短语通常是一起记，理解会更顺。";
-      }
-      return "放回这一句里，先抓它的大方向意思，不用一开始就把每个细节都抠得很死。";
+      return "这里先把它理解成“" + meaning + "”。";
     }
 
-    function buildPosTip(vocab){
-      if(vocab.pos === "verb"){
-        return "这是动词。背的时候别只背中文，顺手记一下它后面常接什么，会更实用。";
-      }
-      if(vocab.pos === "adj"){
-        return "这是形容词。你可以顺手观察它是在名词前，还是放在 be 动词后面。";
-      }
-      if(vocab.pos === "noun"){
-        return "这是名词。名词最值得一起记的是常见搭配，而不只是一个中文意思。";
-      }
-      if(vocab.pos === "phrase"){
-        return "这是短语。短语最好整块记，拆开背往往会明白每个词，却抓不住整句感觉。";
-      }
-      return "先把核心意思抓住就够了，后面多看几次，自然会越来越熟。";
-    }
-
-    function renderVerseTabs(){
-      const tabNav = document.getElementById("tab-nav");
-      const tabContent = document.getElementById("tab-content");
+    function renderVerseTabs(chapterId){
+      currentChapterId = chapterId;
+      const verses = getCurrentVerses();
+      const chapter = chapters.find(function(item){ return item.id === chapterId; });
+      const chapterTitle = chapter ? chapter.title : "";
+      const chapterPanel = document.getElementById("chapter-" + chapterId);
+      const tabNav = chapterPanel ? chapterPanel.querySelector(".tab-nav") : null;
+      const tabContent = chapterPanel ? chapterPanel.querySelector(".tab-content") : null;
       if(!tabNav || !tabContent) return;
 
       tabNav.innerHTML = verses.map(function(item, index){
@@ -1114,19 +1472,28 @@
       }).join("");
 
       tabContent.innerHTML = verses.map(function(item, index){
+        const notesHtml = (item.notes || []).map(function(note){
+          return '<div class="source-note">' +
+            '<p><strong>' + note.n + '. 原书英文注释：</strong>' + note.en + '</p>' +
+            '<p><strong>' + note.n + '. 中文翻译：</strong>' + note.zh + '</p>' +
+          '</div>';
+        }).join("");
         const vocabHtml = item.vocab.map(function(v, vocabIndex){
-          const usageParts = splitUsageParts(v.usage);
+          const inlineMeaning = buildInlineMeaning(v);
+          const englishGloss = buildEnglishGloss(v);
+          const chineseSupport = buildChineseSupport(v);
+          const exampleSentence = buildExampleSentence(v);
           return '<div class="vocab-item">' +
             '<div class="vocab-head">' +
-              '<div><span class="word">' + escapeHtml(v.word) + '</span><span class="pos">' + escapeHtml(v.pos) + '</span></div>' +
+              '<div><span class="word">' + escapeHtml(v.word) + '</span>' +
+              (inlineMeaning ? '<span class="meaning-inline">' + escapeHtml(inlineMeaning) + '</span>' : '') +
+              '<span class="pos">' + escapeHtml(normalizePos(v.pos)) + '</span></div>' +
               '<button type="button" class="speak-word-btn" data-speech-key="word-' + item.id + '-' + vocabIndex + '" data-word="' + escapeHtml(v.word) + '" data-verse="' + item.id + '" data-vocab-index="' + vocabIndex + '">发音</button>' +
             '</div>' +
             '<div class="vocab-copy">' +
-              '<p class="vocab-line"><strong>先这样记：</strong>' + escapeHtml(buildFriendlyMeaning(v)) + '</p>' +
-              '<p class="vocab-line"><strong>放回这句里：</strong>' + escapeHtml(buildContextHint(v)) + '</p>' +
-              '<p class="vocab-line"><strong>一般怎么用：</strong>' + escapeHtml(usageParts.main) + '</p>' +
-              (usageParts.example ? '<p class="vocab-line"><strong>你可以这样感受：</strong>' + escapeHtml(usageParts.example) + '</p>' : '') +
-              '<p class="vocab-line"><strong>小提醒：</strong>' + escapeHtml(buildPosTip(v)) + '</p>' +
+              '<p class="vocab-line"><strong>English:</strong> ' + escapeHtml(englishGloss) + '.</p>' +
+              (chineseSupport ? '<p class="vocab-line"><strong>中文提醒：</strong>' + escapeHtml(chineseSupport) + '</p>' : '') +
+              (exampleSentence ? '<p class="vocab-line"><strong>Example:</strong> ' + escapeHtml(exampleSentence) + '</p>' : '') +
             '</div>' +
           '</div>';
         }).join("");
@@ -1134,13 +1501,13 @@
         return '<div id="tab-' + item.id + '" class="tab-panel' + (index === 0 ? ' active' : '') + '">' +
           '<div class="panel-head">' +
             '<div>' +
-              '<div class="verse-badge">The Pairs · Verse ' + item.id + '</div>' +
+              '<div class="verse-badge">' + escapeHtml(chapterTitle) + ' · Verse ' + item.id + '</div>' +
               '<h2>' + escapeHtml(item.title) + '</h2>' +
               '<p>' + escapeHtml(item.titleZh || "") + '</p>' +
             '</div>' +
             '<div class="nav-actions">' +
-              '<button type="button" onclick="goVerse(' + Math.max(1, item.id - 1) + ')">上一句</button>' +
-              '<button type="button" onclick="goVerse(' + Math.min(verses.length, item.id + 1) + ')">下一句</button>' +
+              '<button type="button" onclick="goVerse(' + Math.max(verses[0].id, item.id - 1) + ')">上一句</button>' +
+              '<button type="button" onclick="goVerse(' + Math.min(verses[verses.length - 1].id, item.id + 1) + ')">下一句</button>' +
             '</div>' +
           '</div>' +
           '<div class="reading-panel">' +
@@ -1165,6 +1532,7 @@
             '<div class="reading-section">' +
               '<span class="section-label">中文白话</span>' +
               '<p class="translation">' + escapeHtml(item.chinese) + '</p>' +
+              (notesHtml ? '<div class="source-notes"><span class="source-notes-title">原书脚注</span>' + notesHtml + '</div>' : '') +
             '</div>' +
           '</div>' +
           '<div class="content-panel">' +
@@ -1221,15 +1589,15 @@
         '<label class="chapter-picker">跳到章节<select id="chapter-select">' + selectHtml + '</select></label>';
     }
 
-    function renderChapters(){
-      renderChapterNav(1);
+    function renderChapters(activeChapterId){
+      renderChapterNav(activeChapterId);
 
       chapterContent.innerHTML = chapters.map(function(item, index){
-        if(item.id === 1){
+        if(chapterVerseMap[item.id]){
           return '<div id="chapter-' + item.id + '" class="chapter-panel chapter-panel-immersive' + (index === 0 ? ' active' : '') + '">' +
             '<section class="tab-shell">' +
-              '<div class="tab-nav" id="tab-nav"></div>' +
-              '<div id="tab-content"></div>' +
+              '<div class="tab-nav"></div>' +
+              '<div class="tab-content"></div>' +
             '</section>' +
           '</div>';
         }
@@ -1247,15 +1615,18 @@
             '<div class="placeholder-tag">Ready For Next Chapter</div>' +
             '<h3>' + escapeHtml(item.title) + '</h3>' +
             '<p>这个章节暂时先占位，不额外生成新页面。你下次只要说继续哪一章，我就直接把英文、中文白话和生词补进这个 tab 里。</p>' +
-            '<p>预期结构会和 <code>The Pairs</code> 一样：英文原句、中文白话、生词解释、一般怎么用。</p>' +
+            '<p>预期结构会和 <code>The Pairs</code> 一样：英文原句、中文白话、生词解释、英文释义和例句。</p>' +
           '</div>' +
         '</div>';
       }).join("");
 
-      renderVerseTabs();
+      if(chapterVerseMap[activeChapterId]){
+        renderVerseTabs(activeChapterId);
+      }
     }
 
     function activateVerse(id){
+      const verses = getCurrentVerses();
       document.querySelectorAll(".tab-btn").forEach(function(btn){
         btn.classList.toggle("active", btn.dataset.target === "tab-" + id);
       });
@@ -1263,7 +1634,7 @@
         panel.classList.toggle("active", panel.id === "tab-" + id);
       });
       try{
-        localStorage.setItem(verseStorageKey, String(id));
+        localStorage.setItem(getVerseStorageKey(currentChapterId), String(id));
       }catch(e){}
       const activeBtn = document.querySelector('.tab-btn[data-target="tab-' + id + '"]');
       if(activeBtn){
@@ -1274,6 +1645,7 @@
 
     function activateChapter(id){
       stopSpeaking();
+      currentChapterId = id;
       renderChapterNav(id);
       document.querySelectorAll(".chapter-btn").forEach(function(btn){
         btn.classList.toggle("active", Number(btn.dataset.chapter) === id);
@@ -1291,9 +1663,13 @@
       if(currentChapterNote && currentChapter){
         currentChapterNote.innerHTML = currentChapter.note || "";
       }
-      if(id === 1){
-        const savedVerse = Number(localStorage.getItem(verseStorageKey) || 1);
-        activateVerse(savedVerse >= 1 && savedVerse <= verses.length ? savedVerse : 1);
+      if(chapterVerseMap[id]){
+        renderVerseTabs(id);
+        const chapterVerses = getCurrentVerses();
+        const firstVerseId = chapterVerses[0] ? chapterVerses[0].id : 1;
+        const lastVerseId = chapterVerses[chapterVerses.length - 1] ? chapterVerses[chapterVerses.length - 1].id : firstVerseId;
+        const savedVerse = Number(localStorage.getItem(getVerseStorageKey(id)) || firstVerseId);
+        activateVerse(savedVerse >= firstVerseId && savedVerse <= lastVerseId ? savedVerse : firstVerseId);
       } else {
         window.scrollTo({ top: 0, behavior: "smooth" });
       }
@@ -1303,7 +1679,7 @@
       activateVerse(id);
     }
 
-    renderChapters();
+    renderChapters(1);
 
     chapterNav.addEventListener("click", function(event){
       const btn = event.target.closest(".chapter-btn");
@@ -1332,12 +1708,15 @@
 
     document.addEventListener("keydown", function(event){
       const activeChapter = document.querySelector(".chapter-panel.active");
-      if(!activeChapter || activeChapter.id !== "chapter-1") return;
+      if(!activeChapter || !chapterVerseMap[currentChapterId]) return;
       const active = document.querySelector(".tab-panel.active");
       if(!active) return;
+      const verses = getCurrentVerses();
+      const firstVerseId = verses[0] ? verses[0].id : 1;
+      const lastVerseId = verses[verses.length - 1] ? verses[verses.length - 1].id : firstVerseId;
       const current = Number(active.id.replace("tab-", ""));
-      if(event.key === "ArrowRight" && current < verses.length) activateVerse(current + 1);
-      if(event.key === "ArrowLeft" && current > 1) activateVerse(current - 1);
+      if(event.key === "ArrowRight" && current < lastVerseId) activateVerse(current + 1);
+      if(event.key === "ArrowLeft" && current > firstVerseId) activateVerse(current - 1);
     });
 
     if(supportsSpeech){
