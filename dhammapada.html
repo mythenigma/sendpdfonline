@@ -36,7 +36,7 @@
     }
     .hero{
       display:flex;
-      align-items:flex-end;
+      align-items:flex-start;
       justify-content:space-between;
       gap:18px;
       background:linear-gradient(135deg,#faf5ea,#f3ecdf 58%,#ece3d3);
@@ -74,6 +74,23 @@
       font-size:13px;
       font-weight:700;
       white-space:nowrap;
+    }
+    .hero-side{
+      flex:0 0 420px;
+      max-width:420px;
+      display:flex;
+      flex-direction:column;
+      align-items:flex-start;
+      gap:14px;
+      padding-top:6px;
+    }
+    .chapter-note{
+      color:var(--muted-2);
+      font-size:15px;
+      line-height:1.75;
+    }
+    .chapter-note strong{
+      color:var(--text);
     }
     .chapter-shell{
       background:var(--panel);
@@ -394,11 +411,6 @@
       display:block;
       margin-top:14px;
     }
-    .vocab-intro{
-      margin:6px 0 2px;
-      color:var(--muted);
-      font-size:14px;
-    }
     .vocab-item{
       background:transparent;
       border:none;
@@ -484,6 +496,11 @@
         align-items:flex-start;
         flex-direction:column;
       }
+      .hero-side{
+        flex:1 1 auto;
+        max-width:none;
+        width:100%;
+      }
       h1{font-size:24px}
       .chapter-panel,.tab-panel{padding:18px}
       .chapter-panel-immersive{padding:0}
@@ -511,7 +528,10 @@
         <h1>法句经学习页</h1>
         <div class="hero-subtitle">单页阅读 · 章节切换 · 课本式拆解</div>
       </div>
-      <div class="current-chip" id="current-chapter-chip">Chapter 1 · The Pairs</div>
+      <div class="hero-side">
+        <div class="current-chip" id="current-chapter-chip">Chapter 1 · The Pairs</div>
+        <div class="chapter-note" id="current-chapter-note"><strong>The Pairs</strong> 可以理解成“成对出现的对照”。这一章里很多句子都是两两相照着说，比如清净心和染污心、记恨和不记恨、重要和不重要，所以标题用 <strong>pairs</strong> 很贴切。</div>
+      </div>
     </section>
 
     <section class="chapter-shell">
@@ -522,38 +542,40 @@
 
   <script>
     const chapters = [
-      { id: 1, title: "The Pairs", done: true },
-      { id: 2, title: "Heedfulness", done: false },
-      { id: 3, title: "The Mind", done: false },
-      { id: 4, title: "Flowers", done: false },
-      { id: 5, title: "The Fool", done: false },
-      { id: 6, title: "The Wise Man", done: false },
-      { id: 7, title: "The Arahat", done: false },
-      { id: 8, title: "The Thousands", done: false },
-      { id: 9, title: "Evil", done: false },
-      { id: 10, title: "Violence", done: false },
-      { id: 11, title: "Old Age", done: false },
-      { id: 12, title: "The Self", done: false },
-      { id: 13, title: "The World", done: false },
-      { id: 14, title: "The Buddha", done: false },
-      { id: 15, title: "Happiness", done: false },
-      { id: 16, title: "Affection", done: false },
-      { id: 17, title: "Anger", done: false },
-      { id: 18, title: "Impurity", done: false },
-      { id: 19, title: "The Just", done: false },
-      { id: 20, title: "The Path", done: false },
-      { id: 21, title: "Miscellaneous", done: false },
-      { id: 22, title: "The State of Woe", done: false },
-      { id: 23, title: "The Elephant", done: false },
-      { id: 24, title: "Craving", done: false },
-      { id: 25, title: "The Monk", done: false },
-      { id: 26, title: "The Holy Man", done: false }
+      { id: 1, title: "The Pairs", done: true, note: "<strong>The Pairs</strong> 可以理解成“成对出现的对照”。这一章里很多句子都是两两相照着说，比如清净心和染污心、记恨和不记恨、重要和不重要，所以标题用 <strong>pairs</strong> 很贴切。" },
+      { id: 2, title: "Heedfulness", done: false, note: "<strong>Heedfulness</strong> 不是普通的“小心”，而是带着警觉、留意、不放逸的意思。这个标题会抓住整章的修行重心。" },
+      { id: 3, title: "The Mind", done: false, note: "<strong>The Mind</strong> 直接点出主题：这一章会把焦点放在心怎么动、怎么乱、又怎么被训练。" },
+      { id: 4, title: "Flowers", done: false, note: "<strong>Flowers</strong> 这个标题听上去轻，但佛经里常借花做比喻，所以这里多半不是单讲花，而是借花说明人心和生命。" },
+      { id: 5, title: "The Fool", done: false, note: "<strong>The Fool</strong> 里的 fool 不是随口骂人，更像佛经里说“看不清、执迷、不知轻重的人”。" },
+      { id: 6, title: "The Wise Man", done: false, note: "<strong>The Wise Man</strong> 是和前面的 fool 形成对照，重点不只是聪明，而是有判断、有分寸、知道怎么活。" },
+      { id: 7, title: "The Arahat", done: false, note: "这个标题里的 <strong>Arahat</strong> 是佛教专门术语，后面补这一章时，适合顺手把这个词本身也解释清楚。" },
+      { id: 8, title: "The Thousands", done: false, note: "<strong>The Thousands</strong> 这个题目通常会带出数量很多和真正有价值之间的对比，不一定是在夸“多”。" },
+      { id: 9, title: "Evil", done: false, note: "<strong>Evil</strong> 这里会比日常的“坏”更重一些，通常指会带来苦果的不善行为和心念。" },
+      { id: 10, title: "Violence", done: false, note: "<strong>Violence</strong> 不只是动作上的暴力，也常会牵到伤害、敌对和以强压人的心。" },
+      { id: 11, title: "Old Age", done: false, note: "<strong>Old Age</strong> 这个标题会把人带回生命无常、衰老和时间感，不只是生理年龄。" },
+      { id: 12, title: "The Self", done: false, note: "<strong>The Self</strong> 听起来简单，但佛教语境里通常不只是“自己”，而会碰到更深一点的自我观问题。" },
+      { id: 13, title: "The World", done: false, note: "<strong>The World</strong> 在佛经里往往不只是地理世界，也会包括人所执着、追逐和困住自己的整个经验世界。" },
+      { id: 14, title: "The Buddha", done: false, note: "<strong>The Buddha</strong> 这一章名字很直白，重点大多会围绕佛陀的特质、境界或人应如何看待佛。" },
+      { id: 15, title: "Happiness", done: false, note: "<strong>Happiness</strong> 在这里通常不会只讲轻松快乐，而会分辨什么是浅层快乐，什么是更稳的安乐。" },
+      { id: 16, title: "Affection", done: false, note: "<strong>Affection</strong> 带有爱恋、牵挂、黏着的味道，后面很适合顺手解释它和 attachment 的差别。" },
+      { id: 17, title: "Anger", done: false, note: "<strong>Anger</strong> 是很直接的题目，重点大概率会落在怒气如何伤人，也如何先烧到自己。" },
+      { id: 18, title: "Impurity", done: false, note: "<strong>Impurity</strong> 在这本书里常不只是“脏”，而是心里的染污、不净和让人看不清的东西。" },
+      { id: 19, title: "The Just", done: false, note: "<strong>The Just</strong> 里的 just 更接近公正、正直，不是 only 或 just now 那个常见意思。" },
+      { id: 20, title: "The Path", done: false, note: "<strong>The Path</strong> 在佛教语境里通常不只是路，而是修行道路、实践方法和通往解脱的方向。" },
+      { id: 21, title: "Miscellaneous", done: false, note: "<strong>Miscellaneous</strong> 就是“杂项、杂章”，表示这一章可能会收一些不容易归到单一主题的小组内容。" },
+      { id: 22, title: "The State of Woe", done: false, note: "<strong>The State of Woe</strong> 听起来就比较重，woe 带有悲苦、不幸、凄惨的感觉。" },
+      { id: 23, title: "The Elephant", done: false, note: "<strong>The Elephant</strong> 在佛经里常不是动物介绍，而是借大象做比喻，说明力量、忍耐或调伏。" },
+      { id: 24, title: "Craving", done: false, note: "<strong>Craving</strong> 比普通的 want 更强，带有那种很抓、很黏、非要不可的欲求感。" },
+      { id: 25, title: "The Monk", done: false, note: "<strong>The Monk</strong> 是讲修行人的一章，但重点通常不只在身份，而是在行为和内在状态。" },
+      { id: 26, title: "The Holy Man", done: false, note: "<strong>The Holy Man</strong> 这个题目会让人想到“圣者”。后面补这一章时，很适合解释它和普通好人的区别。" }
     ];
 
     const verses = [
       {
         id: 1,
         title: "Mind leads everything",
+        titleZh: "心走在一切前面",
+        literalZh: "心先于一切心理状态；心是主导，它们都是由心所造。若一个人以染污之心说话或行动，痛苦就会跟着他，如同车轮跟着牛脚。",
         english: "Mind precedes all mental states. Mind is their chief; they are all mind-wrought. If with an impure mind a person speaks or acts, suffering follows him like the wheel that follows the foot of the ox.",
         chinese: "人的念头总是走在最前面，很多行为和状态，都是从心里先起的。要是一个人怀着不干净、不正的心去说话做事，痛苦就会跟着他，像牛车轮子紧跟着牛脚一样，躲不开。",
         takeaway: "这一句先把全章的基调定下来：不是先怪外界，而是先看自己的心。心歪了，后面的言语和行动也容易歪，结果自然就苦。佛经这里其实是在提醒人，很多后果不是突然掉下来的，而是从一个没被留意的念头慢慢长出来的。",
@@ -567,6 +589,8 @@
       {
         id: 2,
         title: "A pure mind brings happiness",
+        titleZh: "清净的心会带来快乐",
+        literalZh: "心先于一切心理状态；心是主导，它们都是由心所造。若一个人以清净之心说话或行动，快乐就会跟着他，如同从不离身的影子。",
         english: "Mind precedes all mental states. Mind is their chief; they are all mind-wrought. If with a pure mind a person speaks or acts, happiness follows him like his never-departing shadow.",
         chinese: "同样地，人的心如果是清净、端正的，那他说出来的话、做出来的事，也会带出好的结果。这样的人，快乐会一直跟着他，就像影子一直跟在身边。",
         takeaway: "第 1 句讲苦，第 2 句讲乐，形成一对对照。不是命运在随便摆布人，而是心在悄悄塑造结果。一个人心里干净、动机正，哪怕事情不一定立刻顺利，内里也更容易生出安稳和明亮。",
@@ -580,6 +604,8 @@
       {
         id: 3,
         title: "Holding on keeps hatred alive",
+        titleZh: "抓着不放，会让恨一直活着",
+        literalZh: "“他辱骂我，他打我，他压过我，他抢我。” 怀着这样想法的人，不能平息他们的仇恨。",
         english: "\"He abused me, he struck me, he overpowered me, he robbed me.\" Those who harbor such thoughts do not still their hatred.",
         chinese: "如果一个人心里老是在反复想：他骂我、打我、欺负我、抢我，那这个恨就很难停下来。越是反复咀嚼这些委屈，怨气越会被喂大。",
         takeaway: "重点不只是别人做了什么，而是你在心里一直抓着不放。外面的伤害是一层，心里反复回放又加了一层。很多时候，恨不是被事件本身维持，而是被我们一次次重播、一次次加油维持下去的。",
@@ -593,6 +619,8 @@
       {
         id: 4,
         title: "Letting go cools hatred",
+        titleZh: "放下以后，恨才会慢慢冷下来",
+        literalZh: "“他辱骂我，他打我，他压过我，他抢我。” 不怀着这样想法的人，能够平息他们的仇恨。",
         english: "\"He abused me, he struck me, he overpowered me, he robbed me.\" Those who do not harbor such thoughts still their hatred.",
         chinese: "同样的遭遇，如果一个人不把这些委屈一直抱在心里，那个恨意就会慢慢平下来。不是说事情没发生，而是不再让它继续烧自己。",
         takeaway: "这句不是叫人装没事，而是在说：你不继续喂养它，它才有机会冷下来。放下不是替对方开脱，而是先把自己从反复受伤的循环里拉出来。",
@@ -606,6 +634,8 @@
       {
         id: 5,
         title: "Hatred does not end hatred",
+        titleZh: "恨，不能靠恨来终止",
+        literalZh: "在这世上，仇恨从来不能靠仇恨止息；只有不以恨相对，仇恨才会止息。这是永恒的法则。",
         english: "Hatred is never appeased by hatred in this world. By non-hatred alone is hatred appeased. This is a law eternal.",
         chinese: "这个世界上，用恨去压恨，恨是压不住的。真正能让恨停下来的，不是再恨回去，而是不再用恨回应。这是一直都成立的道理。",
         takeaway: "这是全书里最有名的一句之一。它不是软弱，而是在讲一种更深的因果规律：同类的火，只会把火越烧越大。你用恨去回击，短期可能像是赢了一口气，但长远看只是把冲突继续延长。",
@@ -619,8 +649,10 @@
       {
         id: 6,
         title: "Remember death, reduce quarrels",
+        titleZh: "想到人生有限，争执就会少一点",
+        literalZh: "有些人不知道我们终有一死；而那些知道这一点的人，就会止息争端。",
         english: "There are those who do not realize that one day we all must die. But those who do realize this settle their quarrels.",
-        chinese: "有些人忘了我们终有一天都会死，所以总在小事上纠缠不休。真正想明白人生有限的人，往往会把争吵和执拗慢慢放下来。",
+        chinese: "有些人没有真正想到我们终有一天都会死，所以常常争个不停。真正明白人生有限的人，往往会把争吵和对立慢慢放下来。",
         takeaway: "这句不是让人悲观，而是提醒人有分寸感。知道生命短，很多争执就没那么值得死抓着了。当人真的意识到“大家都会老、都会死”，很多面子、输赢、口气就没那么大了。",
         example: "比如兄弟姐妹因为一点财产分配僵了很多年，谁也不肯先低头。可一旦家里有人重病，大家忽然会发现，以前那些较劲其实没有想象中重要。想到人生有限，很多争吵自然会松一点。",
         vocab: [
@@ -632,6 +664,8 @@
       {
         id: 7,
         title: "Pleasure chasing makes a person weak",
+        titleZh: "一味追逐享乐，会让人变得脆弱",
+        literalZh: "正如暴风吹倒一棵弱树，魔罗也会压倒那种追逐享乐、诸根不摄、饮食无度、懒散放逸的人。",
         english: "Just as a storm throws down a weak tree, so does Mara overpower the man who lives for the pursuit of pleasures, who is uncontrolled in his senses, immoderate in eating, indolent, and dissipated.",
         chinese: "暴风很容易吹倒根基不稳的树。同样，一个人如果整天只顾追逐享乐，感官放纵、吃东西没节制、又懒散又散乱，就很容易被内在的诱惑和烦恼打倒。",
         takeaway: "这句不是单纯骂享受，而是在说一个人如果没有约束力，整个人会越来越松，最后经不起冲击。贪图舒服本身不可怕，可怕的是长期把自己活成一个没有节制、没有定力的人。",
@@ -646,8 +680,10 @@
       {
         id: 8,
         title: "Discipline makes a person steady",
+        titleZh: "有节制的人，才站得稳",
+        literalZh: "正如暴风不能压倒岩山，魔罗也绝不能压倒那种观身不净、诸根调伏、饮食有度，并具信心与精勤的人。",
         english: "Just as a storm cannot prevail against a rocky mountain, so Mara can never overpower the man who lives meditating on the impurities, who is controlled in his senses, moderate in eating, and filled with faith and earnest effort.",
-        chinese: "暴风再大，也吹不倒岩石山。一个人若能安住修行，守住感官，饮食有节，并且有信心、肯下真功夫，烦恼就没那么容易把他掀翻。",
+        chinese: "暴风再大，也吹不倒岩石山。一个人若常常这样观照身体的不净，守住感官，饮食有节，并且有信心、肯下真功夫，烦恼就没那么容易把他掀翻。",
         takeaway: "第 7 句和第 8 句是一组。前一句是根基松的人，后一句是根基稳的人，对照特别鲜明。这里讲的不是一时的冲劲，而是日常一点点养出来的稳定：有节制、有信心、肯下工夫的人，更不容易被外境拖走。",
         example: "比如两个人都遇到感情挫折。一个人本来生活就很散，马上借酒、熬夜、乱花钱来麻痹自己；另一个人虽然也难过，但还能保持作息、运动、安静整理自己。后者不是没痛苦，而是更稳，不容易被打垮。",
         vocab: [
@@ -659,6 +695,8 @@
       {
         id: 9,
         title: "Not everyone in a robe deserves the robe",
+        titleZh: "穿上僧衣，不等于配得上僧衣",
+        literalZh: "若一个人败坏、没有自制与诚实，却披上僧人的黄衣，他确实不配这身衣。",
         english: "Whoever being depraved, devoid of self-control and truthfulness, should don the monk's yellow robe, he surely is not worthy of the robe.",
         chinese: "如果一个人内里已经败坏，没有自制力，也不诚实，就算穿上僧衣，也配不上这身衣服。外表像修行人，不代表里面真的是。",
         takeaway: "佛经这里说得很直接：身份和装扮，不等于真实品格。关键不是穿什么，而是活成什么样。外在身份只能给人一个样子，真正让人配得上的，是内里有没有自律、诚实和德行。",
@@ -672,6 +710,8 @@
       {
         id: 10,
         title: "Character makes one worthy",
+        titleZh: "真正让人配得上的，是品格",
+        literalZh: "但若一个人已除去败坏，稳住德行，并充满自制与诚实，他的确配得上这身黄衣。",
         english: "But whoever is purged of depravity, well-established in virtues and filled with self-control and truthfulness, he indeed is worthy of the yellow robe.",
         chinese: "反过来，一个人如果真的把内心的不善清掉了，品行站得稳，也有自制力、也诚实，那他才真正配得上僧衣。",
         takeaway: "第 9 句和第 10 句一起看很清楚：真正的资格来自内在，不来自标签。不是先有头衔才有价值，而是先活出那个样子，那个身份才真正站得住。",
@@ -685,6 +725,8 @@
       {
         id: 11,
         title: "Wrong values lead people astray",
+        titleZh: "轻重看错了，人就会走偏",
+        literalZh: "把不重要的看成重要，把重要的看成不重要，住在错误想法中的人，永远到不了真正重要的东西。",
         english: "Those who mistake the unessential to be essential and the essential to be unessential, dwelling in wrong thoughts, never arrive at the essential.",
         chinese: "把不重要的当成最重要，把真正重要的反而看轻，这样的人因为想法一直走偏，最后永远抓不到真正关键的东西。",
         takeaway: "很多人不是不努力，而是努力错地方了。方向一偏，越用力，可能离重点越远。这句是在说价值判断错位的问题：把次要的当主要的，人就会被表面东西牵着跑。",
@@ -698,6 +740,8 @@
       {
         id: 12,
         title: "Right values lead to the core",
+        titleZh: "轻重分清了，人才走得到核心",
+        literalZh: "把重要的知道为重要，把不重要的知道为不重要，住在正确想法中的人，就能够到达真正重要的东西。",
         english: "Those who know the essential to be essential and the unessential to be unessential, dwelling in right thoughts, do arrive at the essential.",
         chinese: "知道什么是真正重要的，也知道什么只是次要表面的人，因为心念方向对了，最后就能走到核心。",
         takeaway: "和第 11 句配起来，就是一句很实用的人生提醒：先分清轻重，再谈努力。真正聪明的人，不只是肯努力，而是知道什么值得花力气，什么只是表面热闹。",
@@ -711,6 +755,8 @@
       {
         id: 13,
         title: "An untrained mind is easy to leak",
+        titleZh: "没有训练过的心，很容易漏进欲望",
+        literalZh: "正如雨水会漏进盖得不好的屋子，欲望也会渗入尚未开发的心。",
         english: "Just as rain breaks through an ill-thatched house, so passion penetrates an undeveloped mind.",
         chinese: "屋顶茅草没盖好，雨一下就漏进去。人的心如果没有训练好，欲望和冲动也会很容易钻进来。",
         takeaway: "这句比喻特别形象。不是说雨有多坏，而是房子本身没收拾好，所以挡不住。欲望、冲动、诱惑本来就会来，真正的问题是我们的心有没有被训练过、有没有漏洞。",
@@ -724,6 +770,8 @@
       {
         id: 14,
         title: "A trained mind can hold firm",
+        titleZh: "训练过的心，才守得住",
+        literalZh: "正如雨水不会漏进盖得好的屋子，欲望也不能渗入训练成熟的心。",
         english: "Just as rain does not break through a well-thatched house, so passion never penetrates a well-developed mind.",
         chinese: "如果屋顶盖得结实，雨就进不来。人的心如果训练得稳、养得熟，欲望就不容易一下子闯进来把人带走。",
         takeaway: "第 13 句和第 14 句又是一对。关键不是把世界变干净，而是让自己的心更结实。一个训练过的心，不代表永远没有诱惑，而是诱惑来了也不至于立刻失守。",
@@ -737,8 +785,10 @@
       {
         id: 15,
         title: "Wrongdoing brings later pain",
+        titleZh: "作恶以后，苦会追上来",
+        literalZh: "作恶的人今世忧愁，后世也忧愁；他在两处都忧愁，忆起自己污秽的行为时，就悲叹而受苦。",
         english: "The evil-doer grieves here and hereafter; he grieves in both the worlds. He laments and is afflicted, recollecting his own impure deeds.",
-        chinese: "作恶的人，不只是将来苦，现在也苦；不只是一个世界苦，而是前后都苦。想到自己做过的脏事，心里就会懊悔、难受、受折磨。",
+        chinese: "作恶的人，现在忧苦，将来也忧苦；前后都苦。想到自己做过那些不净、不好的行为，心里就会懊悔、难受、受折磨。",
         takeaway: "这句讲的是恶行的回响。很多时候惩罚还没从外面来，内心已经先开始难安了。作恶不只是未来受报，很多时候当下就会变成一种隐隐的心虚、懊悔和不安。",
         example: "比如有人为了利益故意坑了合作伙伴，钱一时拿到了，可后面每次想到那件事，心里都会发紧。见到对方消息会躲，听到相关话题会不自在，这就是恶行已经开始反咬自己。",
         vocab: [
@@ -750,6 +800,8 @@
       {
         id: 16,
         title: "Doing good brings inner joy",
+        titleZh: "行善，会带来心里的喜悦",
+        literalZh: "行善的人今世欢喜，后世也欢喜；他在两处都欢喜，忆起自己清净的行为时，就欢欣而喜悦。",
         english: "The doer of good rejoices here and hereafter; he rejoices in both the worlds. He rejoices and exults, recollecting his own pure deeds.",
         chinese: "行善的人，现在欢喜，将来也欢喜；前后都能得安乐。回想起自己做过的好事，心里会踏实，也会生出一种明亮的喜悦。",
         takeaway: "善的回报不一定只是外在奖赏，很多时候先来的，是心里那种干净和安稳。做了对的事，人心里会比较亮堂，这种踏实感本身就是很真实的福报。",
@@ -763,8 +815,10 @@
       {
         id: 17,
         title: "Guilt keeps burning",
+        titleZh: "内疚，会一直在心里烧",
+        literalZh: "作恶的人今世受苦，后世也受苦；他在两处都受苦，想到“恶是我做的”，便受折磨，而到了苦处时更受苦。",
         english: "The evil-doer suffers here and hereafter; he suffers in both the worlds. The thought, \"Evil have I done,\" torments him, and he suffers even more when gone to realms of woe.",
-        chinese: "作恶的人，现在受苦，将来也受苦。尤其当他心里一直冒出“坏事是我做的”这个念头时，那种内疚和恐惧会不停折磨他；到了更糟的处境，只会更苦。",
+        chinese: "作恶的人，现在受苦，将来也受苦。尤其当他心里一直冒出“恶是我做的”这个念头时，那种内疚和煎熬会不停折磨他；到了更苦的境地，只会更苦。",
         takeaway: "这一句比第 15 句更重，从忧伤推进到煎熬。恶行不是做完就结束，它会变成长期追着人的心理力量。人最怕的，往往不是别人记不记得，而是自己心里知道那件事确实是自己做的。",
         example: "比如一个人曾经恶意造谣伤害别人，事情表面平息了，但他后来每次看到受害者过得不好，或者听到别人谈论诚信时，心里都会像被针扎一下。那种折磨，就是“恶我已作”的回声。",
         vocab: [
@@ -776,8 +830,10 @@
       {
         id: 18,
         title: "Goodness keeps glowing",
+        titleZh: "善意，会一直在心里发亮",
+        literalZh: "行善的人今世喜乐，后世也喜乐；他在两处都喜乐，想到“善是我做的”，便生欢喜，到了乐处时更喜乐。",
         english: "The doer of good delights here and hereafter; he delights in both the worlds. The thought, \"Good have I done,\" delights him, and he delights even more when gone to realms of bliss.",
-        chinese: "行善的人，现在喜乐，将来也喜乐。想到“我确实做过好事”，这个念头本身就会让他心里发亮；到了更好的境地，这份喜乐还会更深。",
+        chinese: "行善的人，现在喜乐，将来也喜乐。想到“善是我做的”，这个念头本身就会让他心里发亮；到了更安乐的境地，这份喜乐还会更深。",
         takeaway: "第 17 句讲恶业的追随，第 18 句讲善业的追随。两边都不是空话，而是在讲心会记得自己做过什么。你做过的善，不会只是留在外面，也会慢慢沉到心里，变成一种明净和喜悦。",
         example: "比如一个人长期照顾家里年老的长辈，过程很辛苦，外面也未必有人懂。但当他回头看时，心里会知道自己没有亏待重要的人，这种满足不是表演出来的，而是真会发光的。",
         vocab: [
@@ -789,6 +845,8 @@
       {
         id: 19,
         title: "Knowing words is not the same as living them",
+        titleZh: "会说道理，不等于活出了道理",
+        literalZh: "一个人即使诵读很多圣典，若不依其而行，这个放逸的人就像替别人点牛数的牧牛人，得不到圣洁生活的福分。",
         english: "Much though he recites the sacred texts, but acts not accordingly, that heedless man is like a cowherd who only counts the cows of others - he does not partake of the blessings of the holy life.",
         chinese: "一个人就算经文背得很多，如果做不到，那也只是嘴上会说而已。这样的人就像替别人放牛、替别人点牛数的人，牛不是自己的，真正的好处也轮不到自己。",
         takeaway: "这句特别适合提醒“懂很多道理却没活出来”的状态。知道，不等于做到；会讲，不等于有份。一个人可以背很多、讲很多，但如果没有落到行为里，那些道理对他仍然只是别人的牛。",
@@ -803,6 +861,8 @@
       {
         id: 20,
         title: "Practice matters more than recitation",
+        titleZh: "真正重要的，是实践，不只是背诵",
+        literalZh: "一个人即使诵读圣典不多，但若依教奉行，舍离贪、恨、痴，具真实智慧与解脱之心，不执著此世或彼世任何事物，他就真正分享了圣洁生活的福分。",
         english: "Little though he recites the sacred texts, but puts the Teaching into practice, forsaking lust, hatred, and delusion, with true wisdom and emancipated mind, clinging to nothing of this or any other world - he indeed partakes of the blessings of a holy life.",
         chinese: "一个人就算经文读得不多，只要真的照着教法去做，慢慢放下贪、恨和迷惑，活出智慧，心也越来越自由，不再死抓着这个世界或别的什么，他就真的得到了修行生活的好处。",
         takeaway: "这一句给出了非常明确的落点：重点不是读了多少，而是有没有实践，有没有真的让自己的心变自由。佛经最后还是把焦点落回行动和内在变化上：少说一点没关系，真的做到才算数。",
@@ -819,6 +879,7 @@
     const chapterNav = document.getElementById("chapter-nav");
     const chapterContent = document.getElementById("chapter-content");
     const currentChapterChip = document.getElementById("current-chapter-chip");
+    const currentChapterNote = document.getElementById("current-chapter-note");
     const chapterStorageKey = "dhammapada-active-chapter";
     const verseStorageKey = "dhammapada-the-pairs-active-tab";
     const ttsVoiceStorageKey = "dhammapada-tts-voice";
@@ -1075,7 +1136,7 @@
             '<div>' +
               '<div class="verse-badge">The Pairs · Verse ' + item.id + '</div>' +
               '<h2>' + escapeHtml(item.title) + '</h2>' +
-              '<p>逐句读英文，然后用白话中文接住意思，再把该记住的生词拆开。</p>' +
+              '<p>' + escapeHtml(item.titleZh || "") + '</p>' +
             '</div>' +
             '<div class="nav-actions">' +
               '<button type="button" onclick="goVerse(' + Math.max(1, item.id - 1) + ')">上一句</button>' +
@@ -1099,7 +1160,7 @@
                 '</div>' +
               '</div>' +
               '<p class="english">' + escapeHtml(item.english) + '</p>' +
-              '<div class="speech-note">用浏览器内置语音朗读英文原句。不同浏览器和系统里，可用声音会不一样。</div>' +
+              '<div class="speech-note">' + escapeHtml(item.literalZh || "") + '</div>' +
             '</div>' +
             '<div class="reading-section">' +
               '<span class="section-label">中文白话</span>' +
@@ -1111,7 +1172,6 @@
             '<div class="gloss"><strong>展开理解：</strong>' + escapeHtml(item.takeaway) + '</div>' +
             '<div class="gloss"><strong>生活例子：</strong>' + escapeHtml(item.example || "") + '</div>' +
             '<span class="section-label" style="margin-top:22px">本句生词</span>' +
-            '<p class="vocab-intro">不用一次全背完。先抓住核心意思，再记一个用法和一个感觉，读几遍就会慢慢熟起来。</p>' +
             '<div class="vocab-list">' + vocabHtml + '</div>' +
             '<div class="footer-note">注：这里的中文不是逐字硬译，而是偏“读懂意思”的课本式白话解释。</div>' +
           '</div>' +
@@ -1227,6 +1287,9 @@
       const currentChapter = chapters.find(function(item){ return item.id === id; });
       if(currentChapterChip && currentChapter){
         currentChapterChip.textContent = "Chapter " + currentChapter.id + " · " + currentChapter.title;
+      }
+      if(currentChapterNote && currentChapter){
+        currentChapterNote.innerHTML = currentChapter.note || "";
       }
       if(id === 1){
         const savedVerse = Number(localStorage.getItem(verseStorageKey) || 1);
