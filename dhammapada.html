@@ -978,13 +978,13 @@
       { id: 8, title: "The Thousands", done: true, note: "<strong>The Thousands</strong> 这一章一直在做对比：一千句空话，不如一句真能让人安下来的话；赢别人再多，不如赢自己一次。重点不是数量大，而是价值真。" },
       { id: 9, title: "Evil", done: true, note: "<strong>Evil</strong> 这一章很实用，几乎一直在提醒：恶不要等大了才怕，善也不要嫌小。人是一滴一滴把自己装满的，不是忽然变成今天这个样子。" },
       { id: 10, title: "Violence", done: true, note: "<strong>Violence</strong> 这一章会把“不要伤害别人”讲得很细：从杀生、压迫、恶口，到报复心和外表苦行，全都被拉回同一个标准 - 你有没有真的不伤众生。" },
-      { id: 11, title: "Old Age", done: false, note: "<strong>Old Age</strong> 这个标题会把人带回生命无常、衰老和时间感，不只是生理年龄。" },
-      { id: 12, title: "The Self", done: false, note: "<strong>The Self</strong> 听起来简单，但佛教语境里通常不只是“自己”，而会碰到更深一点的自我观问题。" },
-      { id: 13, title: "The World", done: false, note: "<strong>The World</strong> 在佛经里往往不只是地理世界，也会包括人所执着、追逐和困住自己的整个经验世界。" },
-      { id: 14, title: "The Buddha", done: false, note: "<strong>The Buddha</strong> 这一章名字很直白，重点大多会围绕佛陀的特质、境界或人应如何看待佛。" },
-      { id: 15, title: "Happiness", done: false, note: "<strong>Happiness</strong> 在这里通常不会只讲轻松快乐，而会分辨什么是浅层快乐，什么是更稳的安乐。" },
-      { id: 16, title: "Affection", done: false, note: "<strong>Affection</strong> 带有爱恋、牵挂、黏着的味道，后面很适合顺手解释它和 attachment 的差别。" },
-      { id: 17, title: "Anger", done: false, note: "<strong>Anger</strong> 是很直接的题目，重点大概率会落在怒气如何伤人，也如何先烧到自己。" },
+      { id: 11, title: "Old Age", done: true, note: "<strong>Old Age</strong> 这一章不是单讲老人，而是在逼人正视衰败、死亡、虚浮身体和来不及补做的人生。" },
+      { id: 12, title: "The Self", done: true, note: "<strong>The Self</strong> 这一章会把重心拉回自己身上：自己看自己、自己害自己、也只能自己收自己，没有人能代你净化。" },
+      { id: 13, title: "The World", done: true, note: "<strong>The World</strong> 这里的 world 不只是外部世界，更是人所沉迷、误看、执着的这一整个经验场。" },
+      { id: 14, title: "The Buddha", done: true, note: "<strong>The Buddha</strong> 这一章会把佛陀与佛法的核心轮廓拉出来：佛不可追踪、教法的总纲、真正归依，以及为什么遇到佛出世极其难得。" },
+      { id: 15, title: "Happiness", done: true, note: "<strong>Happiness</strong> 这一章不是讲轻松享受，而是在一层层分辨：什么会带来敌意和病苦，什么才是稳、净、能久的安乐。" },
+      { id: 16, title: "Affection", done: true, note: "<strong>Affection</strong> 这一章会把“喜欢、牵挂、舍不得”一层层拆开：从 beloved 到 affection、attachment、lust、craving，越往后越黏，也越会生出怕和苦。" },
+      { id: 17, title: "Anger", done: true, note: "<strong>Anger</strong> 这一章不只是讲发火，而是讲怎样在被刺激时不跟着滚出去：止怒、说真话、不恶口、也不被别人的评价拖走。" },
       { id: 18, title: "Impurity", done: false, note: "<strong>Impurity</strong> 在这本书里常不只是“脏”，而是心里的染污、不净和让人看不清的东西。" },
       { id: 19, title: "The Just", done: false, note: "<strong>The Just</strong> 里的 just 更接近公正、正直，不是 only 或 just now 那个常见意思。" },
       { id: 20, title: "The Path", done: false, note: "<strong>The Path</strong> 在佛教语境里通常不只是路，而是修行道路、实践方法和通往解脱的方向。" },
@@ -3399,6 +3399,1405 @@
       }
     ];
 
+    const chapter11Verses = [
+      {
+        id: 146,
+        title: "Why laugh in a burning world",
+        titleZh: "世间常常在燃烧，为何还在欢笑",
+        literalZh: "这世间常常在燃烧着，为什么还有笑声，为什么还有欢腾？被黑暗遮住了，你们难道不去看那光吗？",
+        english: "When this world is ever ablaze, why this laughter, why this jubilation? Shrouded in darkness, will you not see the light?",
+        chinese: "佛经这句开门就很重：人明明活在无常、烦恼、老死和迷乱里，却常常像完全没看见一样，还在顾着热闹。",
+        takeaway: "它不是不准人笑，而是在追问：你到底有没有看见自己身处什么处境。若连火都没看见，就很难真的醒来。",
+        example: "比如一个人天天忙着刷热闹、追刺激、填空虚，却从不肯停下来看看自己的焦虑、耗损和方向问题，这就很像这句在点的状态。",
+        vocab: [
+          { word: "ablaze", pos: "adj", meaning: "着火的，燃烧着的。这里也可指处在强烈混乱和危险之中。", en: "burning strongly or filled with intense fire or light", example: "By midnight, the old warehouse was ablaze." },
+          { word: "jubilation", pos: "noun", meaning: "欢腾，喜庆的兴奋。", en: "a feeling or display of great joy and celebration", example: "There was loud jubilation after the final goal." },
+          { word: "shrouded", pos: "adj", meaning: "被遮住的，被笼罩的。", en: "covered, hidden, or wrapped so that it cannot be clearly seen", example: "The valley was shrouded in fog at dawn." }
+        ]
+      },
+      {
+        id: 147,
+        title: "This body is a painted image",
+        titleZh: "这身体像彩绘出来的假像",
+        literalZh: "看这身体吧 - 像一幅画出来的图像，是一堆堆起的疮病，虚弱，充满贪求；其中没有任何东西是长久或稳固的。",
+        english: "Behold this body – a painted image, a mass of heaped up sores, infirm, full of hankering – of which nothing is lasting or stable!",
+        chinese: "这句是在拆身体迷思。人平常很容易把身体看得光鲜、可靠、值得迷恋，但佛经把里面那层脆弱、病苦和不稳一下掀开了。",
+        takeaway: "它不是叫人厌世，而是叫人别再对身体起错觉。你若把一个本来会坏的东西看成恒常，后面一定会失望。",
+        example: "比如一个人把青春外形当成绝对资本，等身体一有病、一衰老，整个人就会一下撑不住，因为他一直没看清它本来的性质。",
+        vocab: [
+          { word: "painted image", pos: "phrase", meaning: "彩绘的图像，画出来的假像。", en: "an appearance made to look attractive, like a painted figure", example: "The festival mask was only a painted image." },
+          { word: "infirm", pos: "adj", meaning: "虚弱的，不强健的。", en: "physically weak, frail, or not strong", example: "After the winter illness, he felt infirm for weeks." },
+          { word: "hankering", pos: "noun", meaning: "强烈的想要，牵挂式的欲求。", en: "a persistent strong desire for something", example: "He still had a hankering for the life he had left behind." }
+        ]
+      },
+      {
+        id: 148,
+        title: "The body is a nest of disease",
+        titleZh: "这身体是病的巢穴，终会散坏",
+        literalZh: "这身体已经彻底磨损了，是疾病的巢穴，又脆弱；这团污秽终会散坏，因为死亡就是生命的终点。",
+        english: "Fully worn out is this body, a nest of disease, and fragile. This foul mass breaks up, for death is the end of life.",
+        chinese: "佛经这里说得很直：身体不是稳固的家，而是迟早会坏、会散、会走向死亡的东西。",
+        takeaway: "正因为身体会坏，人更不该把全部意义压在它上面。看清这一点，反而比较知道什么值得先做。",
+        example: "比如一个人总觉得来日方长，可一场病下来才发现，原来很多想做的事、该修的关系、该收的心，根本不能一直拖。",
+        vocab: [
+          { word: "worn out", pos: "adj", meaning: "磨损了的，耗尽了的。", en: "used up, weakened, or no longer strong from time or use", example: "His old shoes were completely worn out." },
+          { word: "fragile", pos: "adj", meaning: "脆弱的，易坏的。", en: "easily broken, damaged, or weakened", example: "Glass looks solid, but it is fragile." },
+          { word: "foul mass", pos: "phrase", meaning: "污秽的一团。", en: "a lump or body regarded as impure or unpleasant", example: "The text describes the corpse as a foul mass." }
+        ]
+      },
+      {
+        id: 149,
+        title: "Bones scattered in autumn",
+        titleZh: "秋天散落的葫芦一样的白骨",
+        literalZh: "这些鸽灰色的骨头，像秋天散落四处的葫芦。看见了这些以后，人怎么还能去追求欢喜？",
+        english: "These dove-colored bones are like gourds that lie scattered about in autumn. Having seen them, how can one seek delight?",
+        chinese: "这句用的是尸骨的画面，直接把人从“身体可爱”的错觉里拉出来。",
+        takeaway: "佛经会故意把结局摆出来给你看。不是为了吓人，而是为了让你别把短暂的表相当成真实归宿。",
+        example: "比如一个人平时总被外貌牵着走，可一想到身体最后不过也会归于白骨，他对很多执着自然会松一点。",
+        vocab: [
+          { word: "gourd", pos: "noun", meaning: "葫芦。", en: "a hard-shelled fruit often used as a container after drying", example: "A dried gourd hung outside the hut." },
+          { word: "scattered", pos: "adj", meaning: "散落的，分散四处的。", en: "spread apart in different places", example: "The papers lay scattered across the floor." },
+          { word: "seek delight", pos: "phrase", meaning: "去寻求欢喜，以此为乐。", en: "to look for pleasure or enjoyment in something", example: "He still sought delight in praise and display." }
+        ]
+      },
+      {
+        id: 150,
+        title: "The body-city hides decay",
+        titleZh: "骨头搭成的城里，住着败坏和死亡",
+        literalZh: "这座城（身体）是用骨头建成的，又抹上肉和血；里面住着败坏和死亡，也住着骄慢和嫉妒。",
+        english: "This city (body) is built of bones, plastered with flesh and blood; within are decay and death, pride and jealousy.",
+        chinese: "身体像一座城，外面有结构，里面却藏着会坏的东西；不只老死，还有各种烦恼也住在其中。",
+        takeaway: "佛经这里把身和心放在一起看。身体会坏，心里又常塞着慢心、比较和嫉妒，所以人更该醒着活。",
+        example: "比如一个人外面看着体面稳固，里面却一直在比较、争高下、怕失去；这样的“城”并不安宁。",
+        vocab: [
+          { word: "plastered", pos: "verb", meaning: "涂抹，抹上一层。", en: "covered over with a layer of something", example: "The wall was plastered with wet clay." },
+          { word: "decay", pos: "noun", meaning: "败坏，腐坏，衰败。", en: "the process of gradual breakdown or rotting", example: "The old timber showed signs of decay." },
+          { word: "jealousy", pos: "noun", meaning: "嫉妒。", en: "resentment or insecurity caused by another person's advantage", example: "Jealousy quietly poisoned the friendship." }
+        ]
+      },
+      {
+        id: 151,
+        title: "Chariots age, Dhamma does not",
+        titleZh: "车会坏，身体会老，善法不老",
+        literalZh: "即使华丽的王车也会磨损；这身体当然也会磨损。但是善者的法不会衰老；善者就是这样把它告诉善者。",
+        english: "Even gorgeous royal chariots wear out, and indeed this body too wears out. But the Dhamma of the Good does not age; thus the Good make it known to the good.",
+        chinese: "外在再华贵都照样会旧、会坏；真正不随着时间一起衰败的，不是车、不是身，而是正法和善的道理。",
+        takeaway: "人若只投资在会老去的东西上，最后一定空。能陪人过时间考验的，往往是正见、德行和修出来的心。",
+        example: "比如职位、面子、身体状态都会变，但一个人若真的养成诚实、节制和清明，这些东西反而越久越显出价值。",
+        vocab: [
+          { word: "gorgeous", pos: "adj", meaning: "华丽的，极好看的。", en: "very beautiful, splendid, or richly decorated", example: "They arrived in a gorgeous carriage." },
+          { word: "wear out", pos: "verb", meaning: "磨损，用旧。", en: "to become damaged or weakened through use or time", example: "Even the strongest cloth will wear out." },
+          { word: "make known", pos: "phrase", meaning: "讲明，传给别人知道。", en: "to tell or reveal something clearly to others", example: "The teacher made the rule known to everyone." }
+        ]
+      },
+      {
+        id: 152,
+        title: "Growing old only in bulk",
+        titleZh: "学得少的人，只是长肉不长智慧",
+        literalZh: "学问少的人，像一头牛那样变老；他增长的只是身体块头，智慧却没有增长。",
+        english: "The man of little learning grows old like a bull. He grows only in bulk, but, his wisdom does not grow.",
+        chinese: "这句很尖：年龄会长，不代表人会长进。若只是在变老，却没有在明白、收心、通透上增长，那只是岁数在堆。",
+        takeaway: "佛经不把年纪本身当资本。真正重要的不是你活了多久，而是你有没有越来越会看事、会做人、会调心。",
+        example: "比如有人年纪越大越固执、越爱争、越听不进劝，这种“老”只是在加重分量，不是在增加智慧。",
+        vocab: [
+          { word: "bulk", pos: "noun", meaning: "体积，块头，大而重的部分。", en: "large size, mass, or physical build", example: "The athlete had impressive bulk but little stamina." },
+          { word: "little learning", pos: "phrase", meaning: "学得不多，见识浅。", en: "limited study or shallow understanding", example: "A little learning can make a person overconfident." },
+          { word: "grow old", pos: "phrase", meaning: "变老，年岁增长。", en: "to become older with time", example: "People all grow old, but not all grow wise." }
+        ]
+      },
+      {
+        id: 153,
+        title: "Wandering through many births",
+        titleZh: "我在轮回里找这造屋者，白白走了很多生",
+        literalZh: "在轮回之中，我经历了一次又一次出生，徒然地漂泊着，一直在寻找这座房子的建造者。重复出生，的确是苦。",
+        english: "Through many a birth in samsara have I wandered in vain, seeking in the builder of this house (of life). Repeated birth is indeed suffering!",
+        chinese: "这句把轮回说成一直在找“是谁把这间房又搭起来”。房子就是这一再成形的生命，而这种反复出生本身就是苦。",
+        takeaway: "只要那个让生命不断重搭的根还在，人就会一直重复老路。佛经这里已经把眼光放到最深的痛点上了。",
+        example: "比如一个人表面换了很多环境、关系、活法，可里面那套贪求和执著没动，最后只是换房子，不是出房子。",
+        vocab: [
+          { word: "samsara", pos: "noun", meaning: "轮回，生死流转。", en: "the cycle of repeated birth, death, and rebirth in Buddhist thought", example: "The text speaks of samsara as a long wandering." },
+          { word: "wander", pos: "verb", meaning: "漂泊，游荡，走来走去。", en: "to move about without reaching a final destination", example: "He wandered for years before finding stable work." },
+          { word: "in vain", pos: "phrase", meaning: "徒然地，白费地。", en: "without success or useful result", example: "They searched in vain for the missing key." }
+        ]
+      },
+      {
+        id: 154,
+        title: "House-builder, you are seen",
+        titleZh: "造屋者啊，你被看见了",
+        literalZh: "造屋者啊，你已经被看见了！你不会再造这间房了。因为你的椽子已经断了，你的栋梁已经碎了。我的心已经到达无为；我已经得到对渴爱的灭尽。",
+        english: "O house-builder, you are seen! You will not build this house again. For your rafters are broken and your ridgepole shattered. My mind has reached the Unconditioned; I have attained the destruction of craving.",
+        chinese: "这一句是整段的翻转点：那个一直把生命和轮回重搭起来的根，被看穿了，也被断掉了，所以这间“房子”不再重建。",
+        takeaway: "真正的解脱，不是换一个更舒服的房子，而是找到那个一直在搭房子的东西，然后让它停下。",
+        example: "比如一个人终于看清自己一切执著、焦躁、不断抓取的根都来自渴爱；一旦那个根松开，人生的运作方式会完全不同。",
+        notes: [
+          {
+            n: 13,
+            en: "According to the commentary, these verses are the Buddha’s “Song of Victory,” his first utterance after his Enlightenment. The house is individualized existence in samsara, the house-builder craving, the rafters the passions and the ridge-pole ignorance.",
+            zh: "按注释书说，这两句是佛陀成道以后最先说出的“胜利之歌”。这里的“房子”指轮回中的个体存在；“造屋者”指渴爱；“椽子”指诸烦恼；“栋梁”指无明。"
+          }
+        ],
+        vocab: [
+          { word: "house-builder", pos: "noun", meaning: "造屋者。这里指把轮回生命不断搭起来的根本力量。", en: "the one who builds a house; here, the force that keeps rebuilding conditioned existence", example: "The verse addresses craving as the house-builder." },
+          { word: "rafter", pos: "noun", meaning: "椽子，屋顶横木。", en: "one of the beams that support a roof", example: "Several rafters had cracked in the storm." },
+          { word: "ridgepole", pos: "noun", meaning: "栋梁，屋脊主梁。", en: "the main beam running along the top of a roof", example: "Once the ridgepole broke, the roof could not stand." },
+          { word: "Unconditioned", pos: "noun", meaning: "无为，不由条件所造作的境界。", en: "the unmade, unconditioned state; in Buddhism, the liberated state beyond conditioned things", example: "The text says his mind had reached the Unconditioned." }
+        ]
+      },
+      {
+        id: 155,
+        title: "Old cranes in an empty pond",
+        titleZh: "少年时不修也不积财，老来像无鱼池中的老鹤",
+        literalZh: "那些在年轻时没有修梵行，或者没有取得财富的人，到了后来，就像没有鱼的池塘里的老鹤一样衰弱困顿。",
+        english: "Those who in youth have not led the holy life, or have failed to acquire wealth, languish like old cranes in the pond without fish.",
+        chinese: "这句不是只叫人发财，而是在说：年轻时该准备的若都不准备，老来会很空。世间层面的积累没有，修行层面的积累也没有，就会两头都弱。",
+        takeaway: "人年轻时最容易浪费时间，总觉得以后还能补。可佛经这里提醒，很多东西一旦错过阶段，后面就会非常被动。",
+        example: "比如一个人年轻时既不学本事，也不养品行，也不收心；等到年纪上来，外在没依靠，里面也没根，就很像这句说的那种枯竭感。",
+        vocab: [
+          { word: "languish", pos: "verb", meaning: "衰弱无力，困顿下去。", en: "to become weak, dull, or miserable through lack of strength or support", example: "Without friends or purpose, he began to languish." },
+          { word: "holy life", pos: "phrase", meaning: "梵行，修行生活。", en: "a disciplined spiritual life aimed at purity and liberation", example: "He chose the holy life while still young." },
+          { word: "acquire wealth", pos: "phrase", meaning: "取得财富，建立生活资财。", en: "to gain material resources or property", example: "She worked steadily to acquire wealth for the family." }
+        ]
+      },
+      {
+        id: 156,
+        title: "Sighing like spent arrows",
+        titleZh: "老来只是叹息，像弓里射出去后废掉的箭",
+        literalZh: "那些在年轻时没有修梵行，或者没有取得财富的人，后来就躺着为过去叹息，像从弓里射出去后已耗尽的旧箭一样。",
+        english: "Those who in youth have not led the holy life, or have failed to acquire wealth, lie sighing over the past, like worn out arrows (shot from) a bow.",
+        chinese: "和上一句一样，这里强调的是后悔。人若该做的时候不做，最后最常剩下的，不是自由，而是叹气。",
+        takeaway: "后悔最磨人的地方就在于：你知道当时本来可以不那样。佛经在这里其实是在催人趁早。",
+        example: "比如有人年纪大了天天想：那时为什么不学、不修、不改坏习惯。可时间过去以后，很多事只能剩叹息。",
+        vocab: [
+          { word: "sigh", pos: "verb", meaning: "叹气。", en: "to let out a long breath from sadness, tiredness, or regret", example: "He sighed when he remembered the wasted years." },
+          { word: "worn out arrows", pos: "phrase", meaning: "磨损废掉的箭。", en: "arrows already spent and no longer useful", example: "The old arrows lay useless beside the wall." },
+          { word: "over the past", pos: "phrase", meaning: "为了过去，为着过去的事。", en: "about what has already happened", example: "She spent too much time grieving over the past." }
+        ]
+      }
+    ];
+
+    const chapter12Verses = [
+      {
+        id: 157,
+        title: "If you value yourself, watch yourself",
+        titleZh: "若把自己看得可贵，就要好好照看自己",
+        literalZh: "如果一个人把自己看得可贵，他就应当勤谨地守望自己。智者应当在夜里的三更之中，至少守住其中一更。",
+        english: "If one holds oneself dear, one should diligently watch oneself. Let the wise man keep vigil during any of the three watches of the night.",
+        chinese: "真正把自己当回事，不是顺着自己，而是愿意照看自己，不让自己乱掉。",
+        takeaway: "佛经这里把“爱自己”讲得很正。不是放纵，而是愿意警醒、愿意守心、愿意替自己负责。",
+        example: "比如你真的珍惜自己，就不会总让情绪、熬夜、散乱和坏习惯把自己拖垮。",
+        vocab: [
+          { word: "diligently", pos: "adv", meaning: "勤谨地，认真不懈地。", en: "with steady care and hard effort", example: "She diligently reviewed her notes every night." },
+          { word: "watch oneself", pos: "phrase", meaning: "照看自己，守望自己。", en: "to observe and guard one's own conduct and mind", example: "In hard times, he had to watch himself carefully." },
+          { word: "keep vigil", pos: "phrase", meaning: "守夜，不睡而保持警醒。", en: "to stay awake and watchful for a period of time", example: "They kept vigil beside the patient until dawn." }
+        ]
+      },
+      {
+        id: 158,
+        title: "Set yourself right first",
+        titleZh: "先把自己安在正处，再去教别人",
+        literalZh: "一个人应当先把自己建立在正确之中；然后才去教导别人。这样，智者就不会被人责难。",
+        english: "One should first establish oneself in what is proper; then only should one instruct others. Thus the wise man will not be reproached.",
+        chinese: "先做人，再开口。先站稳，再带别人。佛经这里很不客气地把顺序排清楚了。",
+        takeaway: "很多问题不是道理不会说，而是自己还没活出来。若人先把自己放正，教别人时自然比较有分量。",
+        example: "比如你一直劝别人规律作息、少发脾气，可自己一塌糊涂，那别人很难真服你。",
+        vocab: [
+          { word: "establish oneself", pos: "phrase", meaning: "使自己站稳，先把自己安立好。", en: "to set oneself firmly in a right condition or practice", example: "She first established herself in honest habits." },
+          { word: "proper", pos: "adj", meaning: "恰当的，正当的，合宜的。", en: "right, fitting, or morally appropriate", example: "He spoke in a proper and respectful way." },
+          { word: "reproach", pos: "verb", meaning: "责难，指责。", en: "to blame someone for doing something wrong", example: "No one could reproach her for hypocrisy." }
+        ]
+      },
+      {
+        id: 159,
+        title: "Do what you teach",
+        titleZh: "教别人做的，自己也要做",
+        literalZh: "人应当去做自己教别人做的事；如果要训练别人，就应当先把自己调伏好。的确，自我调伏是困难的。",
+        english: "One should do what one teaches others to do; if one would train others, one should be well controlled oneself. Difficult, indeed, is self-control.",
+        chinese: "佛经这里直接反对“只会说，不会做”。能教别人当然好，但最难的还是先把自己练出来。",
+        takeaway: "人最容易对外要求清楚，对内要求含糊。可真正难、也真正值钱的，是把自己先收住。",
+        example: "比如你老说要耐心、要节制、要不抱怨，可一碰事自己先炸，那就说明功夫还没落到自己身上。",
+        vocab: [
+          { word: "train others", pos: "phrase", meaning: "训练别人，带别人。", en: "to guide others into skill or discipline", example: "You cannot train others well if you never practice yourself." },
+          { word: "well controlled", pos: "phrase", meaning: "自己受控得好，调得住。", en: "brought under good inner control", example: "A well controlled mind speaks differently under pressure." },
+          { word: "self-control", pos: "noun", meaning: "自我控制。", en: "the ability to govern one's feelings and actions", example: "Self-control matters most when nobody is watching." }
+        ]
+      },
+      {
+        id: 160,
+        title: "One is one's own protector",
+        titleZh: "自己才真是自己的保护者",
+        literalZh: "一个人真正是自己的保护者；别的人又怎么能成为保护者呢？当一个人把自己完全调伏好时，他就得到一种很难得到的主宰力。",
+        english: "One truly is the protector of oneself; who else could the protector be? With oneself fully controlled, one gains a mastery that is hard to gain.",
+        chinese: "外面当然可以有人帮你，但最根本的保护，还是你自己能不能守住自己。",
+        takeaway: "人如果总想靠别人来替自己收心、替自己挡苦、替自己做选择，最后还是不稳。真正难得的，是对自己有主宰力。",
+        example: "比如身边再多人提醒你，如果你自己不肯收住嘴、不肯收住欲望、不肯收住脾气，谁也帮不了你到底。",
+        vocab: [
+          { word: "protector", pos: "noun", meaning: "保护者。", en: "someone who keeps another safe from harm", example: "In the end, discipline became his strongest protector." },
+          { word: "mastery", pos: "noun", meaning: "掌握，主宰力。", en: "strong control or command gained through effort", example: "Real mastery shows when pressure rises." },
+          { word: "hard to gain", pos: "phrase", meaning: "很难得到的。", en: "difficult to obtain or achieve", example: "Trust is hard to gain and easy to lose." }
+        ]
+      },
+      {
+        id: 161,
+        title: "Evil born from oneself",
+        titleZh: "自己生出的恶，会反过来磨自己",
+        literalZh: "愚人自己所做的恶，由自己生出、由自己造起，会碾磨他自己，就像钻石磨碎坚硬的宝石一样。",
+        english: "The evil a witless man does by himself, born of himself and produced by himself, grinds him as a diamond grinds a hard gem.",
+        chinese: "这句强调的是：害你的，不一定是外面先来的，很多时候正是你自己造出来的东西在回头磨你。",
+        takeaway: "人若总把苦全怪给外面，就很难醒。佛经这里逼人承认：自己造的恶，最后会精准地落回自己身上。",
+        example: "比如一个人长期说谎、嫉妒、伤人，后面最先被磨坏的，常常就是他自己的心、关系和安稳。",
+        vocab: [
+          { word: "witless", pos: "adj", meaning: "没分辨力的，愚昧的。", en: "lacking sense, judgment, or understanding", example: "A witless response can ruin a good chance." },
+          { word: "grind", pos: "verb", meaning: "磨碎，碾磨。", en: "to crush, wear down, or rub into smaller pieces", example: "Stress slowly ground down his patience." },
+          { word: "gem", pos: "noun", meaning: "宝石。", en: "a precious stone valued for beauty or rarity", example: "The jeweler examined the small red gem." }
+        ]
+      },
+      {
+        id: 162,
+        title: "A creeper harms its own tree",
+        titleZh: "恶人害自己，像藤勒死自己依附的树",
+        literalZh: "正如一根藤会勒死它所依附生长的树；同样，一个极其败坏的人伤害自己，正像敌人所盼望的那样。",
+        english: "Just as a single creeper strangles the tree on which it grows, even so, a man who is exceedingly depraved harms himself as only an enemy might wish.",
+        chinese: "这句非常形象：有些人不是被敌人先毁，而是自己里面长出的东西先把自己缠死了。",
+        takeaway: "最危险的坏，不一定是突然而来的；它也可能像藤一样，一点点爬满你，最后让你窒住。",
+        example: "比如一个人长期放任嫉妒、淫欲、怨恨和恶习，看似在顺自己，其实是在慢慢勒住自己。",
+        notes: [
+          {
+            n: 14,
+            en: "Certain reeds of the bamboo family perish immediately after producing fruits.",
+            zh: "竹类中的某些植物，一结出果实就会很快枯死。"
+          }
+        ],
+        vocab: [
+          { word: "creeper", pos: "noun", meaning: "攀缘植物，藤蔓。", en: "a plant that grows by creeping or climbing over something", example: "A wild creeper had covered the whole wall." },
+          { word: "strangle", pos: "verb", meaning: "勒住，使窒息。", en: "to choke or squeeze so tightly that breathing or growth is stopped", example: "The vine began to strangle the young tree." },
+          { word: "depraved", pos: "adj", meaning: "败坏的，品性扭曲的。", en: "morally corrupt or deeply twisted in conduct", example: "The story warns against a depraved state of mind." }
+        ]
+      },
+      {
+        id: 163,
+        title: "Evil is easy, good is hard",
+        titleZh: "坏事容易做，好事难做",
+        literalZh: "那些坏的、会伤害自己的事，很容易去做；但那些好的、真正有益的事，却极其难做。",
+        english: "Easy to do are things that are bad and harmful to oneself. But exceedingly difficult to do are things that are good and beneficial.",
+        chinese: "人往下滑通常很轻松，往上走却费力。这几乎是人人都能验证的经验。",
+        takeaway: "所以别把“我现在做不到”当奇怪。难，本来就是正常的；可正因为难，才更值得做。",
+        example: "比如熬夜、贪嘴、放纵脾气都很容易；守规律、守分寸、守口、守心却都要用功。",
+        vocab: [
+          { word: "harmful", pos: "adj", meaning: "有害的。", en: "causing damage, pain, or loss", example: "Some pleasures are immediately attractive but harmful." },
+          { word: "beneficial", pos: "adj", meaning: "有益的，有帮助的。", en: "producing good results or advantage", example: "A short daily walk can be highly beneficial." },
+          { word: "exceedingly", pos: "adv", meaning: "非常，极其。", en: "to a very great degree", example: "The task looked exceedingly difficult at first." }
+        ]
+      },
+      {
+        id: 164,
+        title: "Scorning truth destroys oneself",
+        titleZh: "轻慢正法的人，只会结果给自己毁灭",
+        literalZh: "无论是谁，因为颠倒的见解而轻慢圆满者、圣者、正直者的教法；那愚人，就像竹子一样，只会结出通向自我毁灭的果子。",
+        english: "Whoever, on account of perverted views, scorns the Teaching of the Perfected Ones, the Noble and Righteous Ones – that fool, like the bamboo, produces fruits only for self destruction.",
+        chinese: "这句不是叫人盲信，而是在说：如果人被邪见带着走，连真正能救自己的教法都看不起，最后害的还是自己。",
+        takeaway: "错见最可怕的地方，是它会让人把药当毒，把路当坑，连正确东西来了也不要。",
+        example: "比如有人总把劝善、节制、诚实、修心看成老套或软弱，结果一路照着自己的偏见活，最后只会把自己带偏。",
+        vocab: [
+          { word: "perverted views", pos: "phrase", meaning: "颠倒见，扭曲的见解。", en: "distorted ways of seeing that turn right and wrong upside down", example: "Perverted views can make a person resist good advice." },
+          { word: "scorn", pos: "verb", meaning: "轻视，蔑视。", en: "to reject or look down on with contempt", example: "He used to scorn anything that required discipline." },
+          { word: "self-destruction", pos: "noun", meaning: "自我毁灭。", en: "the process of bringing ruin upon oneself", example: "Pride pushed him toward self-destruction." }
+        ]
+      },
+      {
+        id: 165,
+        title: "By oneself defiled, by oneself made pure",
+        titleZh: "恶自己做，净也得自己成",
+        literalZh: "恶是由自己做的；染污也是由自己染上的。恶不做，也是由自己不做的；清净也是由自己成的。净与不净都依于自己；没有人能净化另一个人。",
+        english: "By oneself is evil done; by oneself is one defiled. By oneself is evil left undone; by oneself is one made pure. Purity and impurity depended on oneself; no one can purify another.",
+        chinese: "这句把责任收得很彻底。别人可以帮你、提醒你、教你，但走不走、净不净，最后还是你自己。",
+        takeaway: "若人总想等别人来改变自己，那会等很久。真正的路，是把责任重新拿回到自己手里。",
+        example: "比如你可以听很多道理、看很多书、遇到很多好老师，但如果自己不改习气、不收心，还是不会净。",
+        vocab: [
+          { word: "defile", pos: "verb", meaning: "染污，弄脏。", en: "to make something impure, unclean, or morally stained", example: "Greed can defile even a generous act." },
+          { word: "purity", pos: "noun", meaning: "清净，纯净。", en: "the state of being clean, unmixed, or morally clear", example: "Purity grows through repeated honest choices." },
+          { word: "purify", pos: "verb", meaning: "净化，使纯净。", en: "to make something clean, clear, or free from stain", example: "No one can purify another person's mind by force." }
+        ]
+      },
+      {
+        id: 166,
+        title: "Do not neglect your own welfare",
+        titleZh: "不要为了别人而荒掉自己的根本利益",
+        literalZh: "一个人不要为了别人的利益而忽略自己的利益，不管那别人的利益看起来有多大。清楚明白自己的利益以后，就应当专注在善上。",
+        english: "Let one not neglect one’s own welfare for the sake of another, however great. Clearly understanding one’s own welfare, let one be intent upon the good.",
+        chinese: "这句不是叫人自私，而是在说：不要连自己的根本方向都丢了。若自己都站不住，最后也帮不好别人。",
+        takeaway: "佛经很重“先立住自己”。真正的善，不是把自己弄空、弄乱，而是清楚知道什么对生命最根本。",
+        example: "比如你一味迁就别人、忙着成全别人，却把自己的修心、原则、健康全丢了，这并不是真善。",
+        vocab: [
+          { word: "neglect", pos: "verb", meaning: "忽略，疏忽，不照顾。", en: "to fail to give proper care or attention to something", example: "He neglected his health until it became serious." },
+          { word: "welfare", pos: "noun", meaning: "利益，福祉，真正的好处。", en: "well-being or what genuinely supports a person's good", example: "Real welfare includes both peace and integrity." },
+          { word: "be intent upon", pos: "phrase", meaning: "专注于，一心放在。", en: "to direct one's mind firmly toward something", example: "She became intent upon doing what was right." }
+        ]
+      }
+    ];
+
+    const chapter13Verses = [
+      {
+        id: 167,
+        title: "Do not linger in worldly drift",
+        titleZh: "不要跟着俗流走，也不要久留在世间执著里",
+        literalZh: "不要跟随庸俗的道路；不要活在放逸里；不要执持错误的见解；不要久留在世间存在之中。",
+        english: "Follow not the vulgar way; live not in heedlessness; hold not false views; linger not long in worldly existence.",
+        chinese: "这一章一开始就像四下连着拉你回来：别随大流，别放逸，别抓错见，也别把世间状态当成永远可以住下去的地方。",
+        takeaway: "人最容易被带走的，就是这几样：从众、放逸、错看、沉进去太久。佛经这里像在一口气把四个口子都堵上。",
+        example: "比如大家都在追名逐利，你也不加分辨地跟着冲；久了以后，连自己本来想活成什么样都忘了。",
+        vocab: [
+          { word: "vulgar", pos: "adj", meaning: "庸俗的，粗俗而低下的。", en: "common in a low or unrefined way; lacking higher value", example: "The poem contrasts vulgar noise with quiet dignity." },
+          { word: "false views", pos: "phrase", meaning: "错误见解，颠倒看法。", en: "wrong or distorted ways of seeing reality", example: "False views make harmful actions seem reasonable." },
+          { word: "linger", pos: "verb", meaning: "逗留，久停不去。", en: "to remain somewhere longer than necessary", example: "A sad mood can linger all day if you feed it." }
+        ]
+      },
+      {
+        id: 168,
+        title: "Arise and live righteously",
+        titleZh: "起来，不要放逸，要过正直的生活",
+        literalZh: "起来！不要放逸！过正直的生活。正直的人，在这个世界和下一个世界里都活得快乐。",
+        english: "Arise! Do not be heedless! Lead a righteous life. The righteous live happily both in this world and the next.",
+        chinese: "这句很有唤醒感，不是慢慢劝，而是直接叫人起身，别再混着过。",
+        takeaway: "真正让人安乐的，不是侥幸，而是正直。人若活得歪，前后都不稳；活得正，今后都比较安。",
+        example: "比如一个人虽然不算显眼，但做事正、守信、不亏人，日子常常比那些总走偏门的人踏实得多。",
+        vocab: [
+          { word: "arise", pos: "verb", meaning: "起来，起身，也有振作起来的意思。", en: "to get up, rise, or come forth into action", example: "At dawn, he arose and began again." },
+          { word: "righteous", pos: "adj", meaning: "正直的，合于正道的。", en: "morally right, upright, and just", example: "She tried to remain righteous under pressure." },
+          { word: "lead a life", pos: "phrase", meaning: "过一种生活。", en: "to live in a certain way over time", example: "He wanted to lead a quieter life." }
+        ]
+      },
+      {
+        id: 169,
+        title: "Do not live a base life",
+        titleZh: "过正直生活，不要过低下的生活",
+        literalZh: "过正直的生活；不要过卑下的生活。正直的人，在这个世界和下一个世界里都活得快乐。",
+        english: "Lead a righteous life; lead not a base life. The righteous live happily both in this world and the next.",
+        chinese: "和上一句相照，这里更直接把两条路摆出来了：正直，或者低下。",
+        takeaway: "所谓 base life，不一定是犯法犯罪才算；很多时候，明知不对还顺着贪、顺着坏习惯走，也已经是在过低的生活。",
+        example: "比如一个人总靠欺骗、占便宜、踩别人来让自己舒服，那种路也许有利，但绝不高。",
+        vocab: [
+          { word: "base", pos: "adj", meaning: "低下的，卑鄙的，不高贵的。", en: "morally low, ignoble, or unworthy", example: "He was ashamed of the base motive behind his action." },
+          { word: "lead not", pos: "phrase", meaning: "不要过，不要走那样的生活。", en: "do not live in that way", example: "Lead not a careless life if you want peace." },
+          { word: "happily", pos: "adv", meaning: "快乐地，安乐地。", en: "with genuine ease, contentment, or joy", example: "They lived happily with very little." }
+        ]
+      },
+      {
+        id: 170,
+        title: "The world is a bubble and a mirage",
+        titleZh: "把世界看成泡沫和幻影的人，不被死王看见",
+        literalZh: "一个人若把这世界看成泡沫，也看成幻影，死王就看不见他。",
+        english: "One who looks upon the world as a bubble and a mirage, him the King of Death sees not.",
+        chinese: "这句不是说世界不存在，而是说：若你看清它虚浮、短暂、不可靠，你就不会再被它骗得那么深。",
+        takeaway: "死王看不见，并不是人肉身不死，而是那种被生死抓得死紧的状态，会因看破而松掉。",
+        example: "比如你若真看透很多名利和表相都像泡沫一样，就没那么容易为它们拼命、恐惧、沉下去。",
+        vocab: [
+          { word: "bubble", pos: "noun", meaning: "泡沫。", en: "a thin, round ball of air in liquid that quickly bursts", example: "The child watched the soap bubble vanish at once." },
+          { word: "mirage", pos: "noun", meaning: "海市蜃楼，幻影。", en: "an unreal image or illusion that appears real", example: "From far away, the water looked like a mirage." },
+          { word: "King of Death", pos: "phrase", meaning: "死王，死亡的主宰。", en: "a poetic figure representing death and its power", example: "The poem speaks of the King of Death as a hunter." }
+        ]
+      },
+      {
+        id: 171,
+        title: "The decorated royal chariot",
+        titleZh: "世界像一辆装饰华美的王车",
+        literalZh: "来吧！看这世界，它像一辆装饰起来的王车。在这里，愚人陷进去翻滚；智者却对它没有执著。",
+        english: "Come! Behold this world, which is like a decorated royal chariot. Here fools flounder, but the wise have no attachment to it.",
+        chinese: "世界很像一辆漂亮车子，远看华丽，叫人想坐上去；可愚人会整个人陷进去，智者却知道它只是一个会过的东西。",
+        takeaway: "问题不是世界好不好看，而是你会不会陷进去。智者不是看不见美，而是不再黏住。",
+        example: "比如热闹、权力、地位当然很吸引人，但若人一头栽进去，把它们当全部，那就容易翻在里面。",
+        vocab: [
+          { word: "decorated", pos: "adj", meaning: "装饰过的，打扮华美的。", en: "made more attractive by ornament or design", example: "The hall was decorated for the ceremony." },
+          { word: "royal chariot", pos: "phrase", meaning: "王家的车驾，王车。", en: "a splendid vehicle associated with royalty", example: "The royal chariot drew every eye in the square." },
+          { word: "flounder", pos: "verb", meaning: "陷进去乱挣扎，狼狈翻滚。", en: "to struggle helplessly or move in confusion", example: "Without a clear plan, the project began to flounder." }
+        ]
+      },
+      {
+        id: 172,
+        title: "Heedless no more",
+        titleZh: "本来放逸的人，后来不再放逸，就像月亮出云",
+        literalZh: "一个人从前曾经放逸，而后来不再放逸；他照亮这世界，就像脱离云层的月亮。",
+        english: "He who having been heedless is heedless no more, illuminates this world like the moon freed from clouds.",
+        chinese: "佛经没有把人判死。以前散、以前错、以前糊涂，不代表以后不能醒。",
+        takeaway: "真正重要的，不是你过去有没有放逸，而是你现在肯不肯转。能转，世界就在你身上亮起来。",
+        example: "比如一个人过去一直混日子、乱消耗，但后来真的开始守时、守口、守心，那种改变会很明显。",
+        vocab: [
+          { word: "heedless no more", pos: "phrase", meaning: "不再放逸，不再散乱。", en: "no longer careless or unwatchful", example: "After the accident, he was heedless no more." },
+          { word: "illuminate", pos: "verb", meaning: "照亮。", en: "to light up or make something bright and clear", example: "Her honesty illuminated the whole discussion." },
+          { word: "freed from clouds", pos: "phrase", meaning: "从云里出来，脱离遮蔽。", en: "released from what had been covering it", example: "The moon looked brighter once freed from clouds." }
+        ]
+      },
+      {
+        id: 173,
+        title: "Good can cover old evil",
+        titleZh: "用善覆盖旧恶的人，也像月亮出云",
+        literalZh: "一个人若用善业覆盖自己所做过的恶，他照亮这世界，就像脱离云层的月亮。",
+        english: "He, who by good deeds covers the evil he has done, illuminates this world like the moon freed from clouds.",
+        chinese: "这句不是说坏事可以轻轻抹掉，而是在说：人若真的转向善，旧恶的黑会被新的光慢慢盖过去。",
+        takeaway: "补救不是嘴上后悔，而是后面真的持续用善来改路。真正有力的，是后续的行动。",
+        example: "比如一个人过去伤人很多，后来开始真诚认错、补偿、收自己，也长期做正事，那条命的走向就会变。",
+        vocab: [
+          { word: "cover", pos: "verb", meaning: "盖住，覆盖。这里指以新的善行压过旧的恶。", en: "to spread over or hide something beneath another layer", example: "Fresh snow covered the old footprints." },
+          { word: "good deeds", pos: "phrase", meaning: "善行。", en: "acts that are kind, right, or morally good", example: "Good deeds slowly rebuild trust." },
+          { word: "moon freed from clouds", pos: "phrase", meaning: "脱离云层的月亮。", en: "an image of light appearing after obscurity", example: "Her face brightened like the moon freed from clouds." }
+        ]
+      },
+      {
+        id: 174,
+        title: "Only a few escape the net",
+        titleZh: "世间多数盲着，只有少数像鸟逃出网",
+        literalZh: "这世界是盲的；在这里，只有很少的人有洞见。只有很少的人，像鸟逃出网一样，去到安乐的境界。",
+        english: "Blind is the world; here only a few possess insight. Only a few, like birds escaping from the net, go to realms of bliss.",
+        chinese: "这句很现实：真正看见的人少，真的脱出来的人更少。",
+        takeaway: "佛经不是悲观，而是诚实。大多数人确实都被网住，可正因为少，才更要珍惜能看见的机会。",
+        example: "比如身边很多人都在同样的执著、焦虑和比较里打转，真正愿意停下来看清、走出来的，往往很少。",
+        vocab: [
+          { word: "possess insight", pos: "phrase", meaning: "具有洞见，看得明白。", en: "to have clear and penetrating understanding", example: "Few possess insight when desire is strong." },
+          { word: "escape from the net", pos: "phrase", meaning: "从网里逃出来。", en: "to break free from entrapment", example: "The bird escaped from the net at dawn." },
+          { word: "realm of bliss", pos: "phrase", meaning: "安乐境界。", en: "a state or sphere of deep peace and joy", example: "The text speaks of a realm of bliss beyond fear." }
+        ]
+      },
+      {
+        id: 175,
+        title: "The wise leave the world behind",
+        titleZh: "天鹅走日道，智者胜过魔军后离世而去",
+        literalZh: "天鹅沿着太阳的路径飞；人凭神通穿行空中；而智者在战胜魔罗和他的军队以后，被引离这世界。",
+        english: "Swans fly on the path of the sun; men pass through the air by psychic powers; the wise are led away from the world after vanquishing Mara and his host.",
+        chinese: "这句前面举的是奇特景象，最后落点却在智者真正离开缠缚世界的层次上。",
+        takeaway: "佛经常常借更大的画面来压出重点：再奇妙的能力，也不如真正脱离魔军和烦恼重要。",
+        example: "比如一个人可以很聪明、很厉害、很有本事，但如果还一直被欲望和烦恼牵着走，那还不算真正超出。",
+        vocab: [
+          { word: "vanquish", pos: "verb", meaning: "击败，战胜。", en: "to defeat completely", example: "It took years for him to vanquish that habit." },
+          { word: "host", pos: "noun", meaning: "大军，一群队伍。", en: "a large force or company, especially an army", example: "The legend describes an entire host of spirits." },
+          { word: "led away", pos: "phrase", meaning: "被带离，被引开。", en: "guided away from one place into another state or direction", example: "She felt led away from her old life." }
+        ]
+      },
+      {
+        id: 176,
+        title: "The liar can do any evil",
+        titleZh: "轻慢后世又破坏诚实的人，什么恶都做得出",
+        literalZh: "对一个说谎的人，对一个破坏那唯一法则（诚实）的人，对一个轻慢后世的人来说，没有什么恶是他做不出来的。",
+        english: "For a liar who has violated the one law (of truthfulness), and who holds in scorn the hereafter, there is no evil that he cannot do.",
+        chinese: "这句把诚实看得非常重。一个人若把“说真话”这根骨头抽掉，后面很多恶都能接着做出来。",
+        takeaway: "说谎可怕的不只是那一句假话，而是它会把整个人的底盘一起带歪。人一旦不怕假，就会越来越没有界线。",
+        example: "比如一个人为了利益开始随便改口、遮掩、编造，时间一久，很多更大的坏事也会变得容易。",
+        vocab: [
+          { word: "violate", pos: "verb", meaning: "违犯，破坏。", en: "to break or act against a rule, principle, or law", example: "They violated the agreement within a week." },
+          { word: "truthfulness", pos: "noun", meaning: "诚实，如实。", en: "the quality of being honest and true", example: "Truthfulness matters most when truth is costly." },
+          { word: "hold in scorn", pos: "phrase", meaning: "轻蔑，看不起。", en: "to treat something as worthless or beneath respect", example: "He held discipline in scorn when he was young." }
+        ]
+      },
+      {
+        id: 177,
+        title: "The wise rejoice in giving",
+        titleZh: "吝啬人不上天界，智者却会欢喜布施",
+        literalZh: "吝啬的人确实去不到天界；愚人也确实不赞叹布施。但智者在布施中欢喜，也正因此在后来得乐。",
+        english: "Truly, misers fare not to heavenly realms; nor, indeed, do fools praise generosity. But the wise man rejoices in giving, and by that alone does he become happy hereafter.",
+        chinese: "这句把心量一分就很清楚了：吝啬的人，连看见别人布施都不舒服；智者却在给出去时心会亮。",
+        takeaway: "布施不只是帮别人，也是在把自己的抓、怕、紧一点点松开。真正得乐的，常常就是这个松开。",
+        example: "比如有人总怕吃亏，什么都抓得很紧；另一些人愿意给、愿意分、愿意成全别人，心里反而更宽更安。",
+        vocab: [
+          { word: "miser", pos: "noun", meaning: "吝啬鬼，极度不肯给的人。", en: "a person who is extremely unwilling to give or spend", example: "The old miser counted every coin twice." },
+          { word: "generosity", pos: "noun", meaning: "慷慨，大方，愿意给。", en: "the quality of giving freely and gladly", example: "Generosity often softens a fearful heart." },
+          { word: "rejoice in", pos: "phrase", meaning: "在……中欢喜。", en: "to take sincere joy in something", example: "She learned to rejoice in giving without display." }
+        ]
+      },
+      {
+        id: 178,
+        title: "Stream-entry surpasses worldly rule",
+        titleZh: "得入流果，比统治世界还高",
+        literalZh: "比起独自统治大地，比起生到天上，甚至比起作一切世界的主宰，还更好的是超世间的入流果。",
+        english: "Better than sole sovereignty over the earth, better than going to heaven, better even than lordship over all the worlds is the supramundane Fruition of Stream Entrance.",
+        chinese: "这句是在重新排序价值。世间最让人羡慕的权势、地位、天福，跟真正超世间的入流相比，还是不算最高。",
+        takeaway: "佛经一直在把人的眼光往上提。你若总拿世间成功当终点，就很难理解为什么修行的果位会被放得这么高。",
+        example: "比如很多人一生想要的无非是地位、财富、名声和更好的去处；可佛经这里说，真正能改变生命结构的，是更深层的觉悟与入流。",
+        notes: [
+          {
+            n: 15,
+            en: "Stream-entry (sotapatti): the first stage of supramundane attainment.",
+            zh: "“入流（sotapatti）”指超世间证得的第一阶段果位。"
+          }
+        ],
+        vocab: [
+          { word: "sovereignty", pos: "noun", meaning: "主权，统治权，最高治理地位。", en: "supreme power or authority over a land or people", example: "The king guarded his sovereignty at any cost." },
+          { word: "supramundane", pos: "adj", meaning: "超世间的。", en: "beyond ordinary worldly experience or attainment", example: "The text calls this a supramundane fruit." },
+          { word: "Stream Entrance", pos: "phrase", meaning: "入流，进入圣道之流。", en: "the first stage of noble attainment in Buddhism", example: "Stream Entrance marks a decisive turning of the path." }
+        ]
+      }
+    ];
+
+    const chapter14Verses = [
+      {
+        id: 179,
+        title: "The trackless Buddha cannot be traced",
+        titleZh: "无迹的佛，不可循迹追到",
+        literalZh: "你要凭什么痕迹去追寻那位无迹的佛？他的境界广大无量，他的胜利没有什么能推翻，那些已被战胜的烦恼也再也追不上他。",
+        english: "By what track can you trace that trackless Buddha of limitless range, whose victory nothing can undo, whom none of the vanquished defilements can ever pursue?",
+        chinese: "这句是在说，佛不是普通人那种还能顺着旧习气、旧烦恼找到的生命状态了。他已经脱开了那些能被追踪、能被拉回去的东西。",
+        takeaway: "真正断掉烦恼的人，不只是暂时赢一下，而是已经脱离它们能重新抓住他的条件。",
+        example: "比如一般人今天清醒、明天又被老脾气拉回去；而这句说的佛，已经不是这种会反复被追回的状态。",
+        vocab: [
+          { word: "trackless", pos: "adj", meaning: "无迹的，没有可以跟随的痕迹。", en: "leaving no trace or path that can be followed", example: "The bird vanished into the trackless sky." },
+          { word: "undo", pos: "verb", meaning: "推翻，毁掉，取消已成之事。", en: "to reverse, ruin, or cancel what has been done", example: "Years of trust can be undone in one hour." },
+          { word: "vanquished", pos: "adj", meaning: "已被击败的。", en: "fully defeated or overcome", example: "The vanquished army could not rise again." }
+        ]
+      },
+      {
+        id: 180,
+        title: "Craving no longer weaves becoming",
+        titleZh: "若已没有牵缠轮回的渴爱，也就无迹可寻",
+        literalZh: "你要凭什么痕迹去追寻那位无迹的佛？他的境界广大无量；在他里面，那种纠缠、搅乱并使后有持续下去的渴爱，已经不再存在。",
+        english: "By what track can you trace that trackless Buddha of limitless range, in whom exists no longer, the entangling and embroiling craving that perpetuates becoming?",
+        chinese: "上一句说烦恼追不上，这一句更直接说根源：使人不断再成、再起、再轮回的那种渴爱，在佛那里已经没有了。",
+        takeaway: "人之所以反复被拖回老路，常常就是因为里面还有想抓、想续、想占有的东西。根若断了，轮回式的循环就松了。",
+        example: "比如一个人反复陷进同样的关系、欲望和执著，很大程度上就是因为里面那股抓取感一直没放下。",
+        vocab: [
+          { word: "embroil", pos: "verb", meaning: "卷入，搅乱，使陷入纠缠。", en: "to involve deeply in conflict or complication", example: "One careless promise embroiled him in trouble." },
+          { word: "perpetuate", pos: "verb", meaning: "使持续下去。", en: "to cause something to continue for a long time", example: "Fear can perpetuate the same old pattern." },
+          { word: "becoming", pos: "noun", meaning: "后有，再成之流。", en: "continued existence or the process of coming into renewed being", example: "The text speaks of craving as feeding becoming." }
+        ]
+      },
+      {
+        id: 181,
+        title: "Even the gods hold such Buddhas dear",
+        titleZh: "爱静修、喜出离的正念者，连诸天也敬爱",
+        literalZh: "那些专注于禅修、在出离的宁静中得乐的人，那样具正念的智者，作为无上佛者，甚至连诸天都敬爱。",
+        english: "Those wise ones who are devoted to meditation and who delight in the calm of renunciation – such mindful ones, Supreme Buddhas, even the gods hold dear.",
+        chinese: "这句把佛的气质写得很清：不是热闹、不是威势，而是喜静、喜出离、心很正念，也因此连天人都敬重。",
+        takeaway: "真正高的境界，往往不是更炫，而是更静、更净、更不被俗乐牵走。",
+        example: "比如一个人越成熟，往往越不爱表演，反而更安静、更有分寸、更不急着往外抓。",
+        vocab: [
+          { word: "renunciation", pos: "noun", meaning: "出离，舍离。", en: "the act or spirit of giving up worldly attachment", example: "His renunciation was calm rather than dramatic." },
+          { word: "mindful", pos: "adj", meaning: "具正念的。", en: "attentive, aware, and not lost in drift", example: "She remained mindful in the middle of conflict." },
+          { word: "hold dear", pos: "phrase", meaning: "珍爱，敬重。", en: "to value or love highly", example: "He still holds his first teacher dear." }
+        ]
+      },
+      {
+        id: 182,
+        title: "Rare is birth, truth, and Buddha",
+        titleZh: "做人难，闻法难，遇佛出世更难",
+        literalZh: "得人身很难；凡人的生活很难；得到听闻殊胜真理的机会很难，而佛陀出世更是难以遇到。",
+        english: "Hard is it to be born a man; hard is the life of mortals. Hard is it to gain the opportunity of hearing the Sublime Truth, and hard to encounter is the arising of the Buddhas.",
+        chinese: "这句一直在讲“难得”。不是叫人灰心，而是要你珍惜已经拥有的机会，不要把闻法和修心当成理所当然。",
+        takeaway: "人若真知道这些缘分多难得，就不会老想着以后再说。",
+        example: "比如现在能有时间、有条件、有一点点愿心去接触正法，其实已经不是很普通的事。",
+        vocab: [
+          { word: "mortal", pos: "noun", meaning: "凡人，会死的人。", en: "a human being subject to death", example: "Every mortal eventually learns the limits of the body." },
+          { word: "Sublime Truth", pos: "phrase", meaning: "殊胜真理。", en: "lofty spiritual truth of the highest kind", example: "He longed to hear the Sublime Truth for himself." },
+          { word: "encounter", pos: "verb", meaning: "遇到，遭逢。", en: "to meet or come upon something", example: "She encountered a teacher who changed her life." }
+        ]
+      },
+      {
+        id: 183,
+        title: "The Buddhas' teaching in one line",
+        titleZh: "诸佛教法可收成一行",
+        literalZh: "止一切恶，修一切善，清净自己的心 - 这就是诸佛的教导。",
+        english: "To avoid all evil, to cultivate good, and to cleanse one’s mind – this is the teaching of the Buddhas.",
+        chinese: "这句几乎就是总纲。很多说法再展开，骨架还是这三件事：不作恶、修善、净心。",
+        takeaway: "真正的修行标准并不绕。你可以一直拿这三条回头照自己。",
+        example: "比如一天结束时问自己：今天有没有伤人？有没有做一点善？心有没有比昨天更干净一点？",
+        vocab: [
+          { word: "cultivate", pos: "verb", meaning: "培养，培育；耕种；逐步建立。这里可理解成“持续修起善”。", en: "to prepare and care for something so it can grow; in farming, to cultivate land or crops; in general use, to develop a quality, habit, or relationship over time", example: "Farmers cultivate the land." },
+          { word: "cleanse", pos: "verb", meaning: "清洗，净化。", en: "to make something clean or free from impurity", example: "Time alone does not cleanse a bitter mind." },
+          { word: "teaching", pos: "noun", meaning: "教导，教法。", en: "instruction or doctrine meant to guide people", example: "The teaching stayed with her for years." }
+        ]
+      },
+      {
+        id: 184,
+        title: "Patience is the highest austerity",
+        titleZh: "忍耐是最高苦行，不害人者才算真修行人",
+        literalZh: "能忍耐的耐受，是最高的苦行。诸佛说：“涅槃最上。”一个伤害别人的人，不是真比丘；一个压迫别人的人，也不是真出离者。",
+        english: "Enduring patience is the highest austerity. “Nibbana is supreme,” say the Buddhas. He is not a true monk who harms another, nor a true renunciate who oppresses others.",
+        chinese: "这句把“真修行”从外相拉回到不害众生和能忍上。若还一直伤人压人，再多修行样子也不算真。",
+        takeaway: "真正高的苦行，不在折磨身体，而在能忍、能不害、能不顺着恶去反应。",
+        example: "比如有人表面上很苦修，却动不动就伤人、压人、恶口，那佛经这里会说这还不算真的修。",
+        vocab: [
+          { word: "austerity", pos: "noun", meaning: "苦行，严厉修持。", en: "severe self-discipline or self-denial", example: "He mistook austerity for wisdom." },
+          { word: "enduring", pos: "adj", meaning: "能忍受的，持久承受的。", en: "lasting or able to bear hardship steadily", example: "Her enduring patience changed the whole room." },
+          { word: "oppress", pos: "verb", meaning: "压迫，欺压。", en: "to treat others with harsh power or force", example: "A ruler who oppresses people cannot create real peace." }
+        ]
+      },
+      {
+        id: 185,
+        title: "This is the Buddhas' discipline",
+        titleZh: "不轻蔑、不伤害、守律、节食、独住、修禅",
+        literalZh: "不轻蔑，不伤害，依照僧团戒律而有约束，在食上有分寸，住于独处，专心禅修 - 这就是诸佛的教导。",
+        english: "Not despising, not harming, restraint according to the code of monastic discipline, moderation in food, dwelling in solitude, devotion to meditation – this is the teaching of the Buddhas.",
+        chinese: "这一句很像把修行生活的日常骨架列出来了，不夸张，很具体。",
+        takeaway: "佛法不是空想，而是落实到怎么看人、怎么吃、怎么住、怎么守自己。",
+        example: "比如一个人讲话不轻蔑，吃东西不过度，也肯给自己留独处和静修时间，这就已经在往这句靠。",
+        vocab: [
+          { word: "despise", pos: "verb", meaning: "轻视，鄙视。", en: "to look down on with contempt", example: "She learned not to despise those who were slower than her." },
+          { word: "moderation", pos: "noun", meaning: "节制，有分寸。", en: "the quality of staying within a reasonable limit", example: "Moderation in food gave him more clarity." },
+          { word: "solitude", pos: "noun", meaning: "独处，清静独住。", en: "the state of being alone in quiet", example: "He began to value solitude more than noise." }
+        ]
+      },
+      {
+        id: 186,
+        title: "Gold cannot satisfy desire",
+        titleZh: "金钱雨也填不满欲望",
+        literalZh: "即使下起金钱的雨，也没有让感官欲乐得到满足这回事。因为欲乐给人的满足很少，痛苦却很多。",
+        english: "There is no satisfying sensual desire, even with the rain of gold coins. For sensual pleasures give little satisfaction and much pain.",
+        chinese: "这句把欲望讲得很透：不是你还差一点，而是这种东西本身就喂不饱。",
+        takeaway: "很多人以为再多一点就够了，可真正的问题是欲望的结构本来就不会说“够”。",
+        example: "比如买了这个还想那个，得了这个还想更大一点，总觉得下一步才会满足，结果一直都没停。",
+        vocab: [
+          { word: "sensual", pos: "adj", meaning: "感官上的、欲乐性的。", en: "related to bodily pleasure or the senses", example: "The poem warns against living only for sensual pleasure." },
+          { word: "satisfaction", pos: "noun", meaning: "满足。", en: "the feeling of having enough or of being fulfilled", example: "He kept seeking satisfaction in new things." },
+          { word: "rain of gold coins", pos: "phrase", meaning: "金钱之雨。", en: "an image of endless wealth pouring down", example: "Even a rain of gold coins would not settle that craving." }
+        ]
+      },
+      {
+        id: 187,
+        title: "The wise do not delight even in heaven",
+        titleZh: "连天上的乐，智者也不迷",
+        literalZh: "明白了这一点以后，智者就连天上的欲乐也不以为可喜。无上佛的弟子，是以渴爱的灭尽为乐的。",
+        english: "Having understood this, the wise man finds no delight even in heavenly pleasures. The disciple of the Supreme Buddha delights in the destruction of craving.",
+        chinese: "佛经这里把标准又提了一层：不是只说世间享乐不够，连更高一级的天福，也还不是终点。",
+        takeaway: "真正的自由，不是换一种更高级的享受，而是连“非要靠享受才好”的结构都松开。",
+        example: "比如一个人慢慢发现，最稳的快乐不是刺激，而是欲望少一点、心清一点、抓取轻一点。",
+        vocab: [
+          { word: "heavenly pleasures", pos: "phrase", meaning: "天界的快乐，高层次的享受。", en: "refined or celestial forms of pleasure", example: "He no longer chased heavenly pleasures in his imagination." },
+          { word: "disciple", pos: "noun", meaning: "弟子，追随学习的人。", en: "a learner or follower of a teacher", example: "The disciple listened more than he spoke." },
+          { word: "destruction of craving", pos: "phrase", meaning: "渴爱的灭尽。", en: "the ending of craving and grasping", example: "The path points toward the destruction of craving." }
+        ]
+      },
+      {
+        id: 188,
+        title: "Fear sends people to many refuges",
+        titleZh: "因为害怕，人会跑去许多地方求靠",
+        literalZh: "只是被恐惧驱赶着，人们就去投靠很多地方 - 山、树林、林苑、树木和神祠。",
+        english: "Driven only by fear, do men go for refuge to many places – to hills, woods, groves, trees and shrines.",
+        chinese: "害怕的时候，人很容易乱找依靠，抓什么都像救命绳。",
+        takeaway: "问题不在于你有没有找依靠，而在于你找的是不是真的能救苦的东西。",
+        example: "比如一出事就到处求神问卜、抓外相、抓形式，可内心真正的问题并没有碰到。",
+        vocab: [
+          { word: "refuge", pos: "noun", meaning: "依靠，归依，避难处。", en: "a place or thing one turns to for safety", example: "In fear, people look for refuge anywhere." },
+          { word: "grove", pos: "noun", meaning: "小树林。", en: "a small group of trees growing together", example: "They stopped to rest in a quiet grove." },
+          { word: "shrine", pos: "noun", meaning: "神祠，圣所。", en: "a place regarded as holy and visited for worship", example: "Villagers gathered near the small shrine." }
+        ]
+      },
+      {
+        id: 189,
+        title: "That is not the supreme refuge",
+        titleZh: "那并不是最高、最稳的归依",
+        literalZh: "那样的归依，确实不是稳妥的归依；那也不是最高的归依。人并不是靠投到那些地方，就能从一切苦中解脱出来。",
+        english: "Such, indeed, is no safe refuge; such is not the refuge supreme. Not by resorting to such a refuge is one released from all suffering.",
+        chinese: "上一句列外在依靠，这一句直接说破：靠那些，不能彻底出苦。",
+        takeaway: "能暂时安慰你的东西，不一定能真正救你。",
+        example: "比如一个人靠环境、仪式、热闹感来让自己心安一点，但一回到自己的烦恼结构里，苦还是照旧。",
+        vocab: [
+          { word: "supreme", pos: "adj", meaning: "最高的，最上的。", en: "greatest in rank, value, or degree", example: "Truth mattered more than any other goal; it was supreme." },
+          { word: "safe refuge", pos: "phrase", meaning: "稳妥的归依。", en: "a refuge that truly protects", example: "Temporary comfort is not always a safe refuge." },
+          { word: "resort to", pos: "verb", meaning: "转去依靠，诉诸。", en: "to turn to something for help or relief", example: "People often resort to habits when stressed." }
+        ]
+      },
+      {
+        id: 190,
+        title: "Go for refuge to Buddha, Dhamma, Sangha",
+        titleZh: "真正归依，是归依佛法僧",
+        literalZh: "凡是去归依佛、归依法、归依僧的人，就会以超越世间的智慧，洞穿四圣谛 - 苦、苦的止息，以及导向苦灭的八正道。",
+        english: "He who has gone for refuge to the Buddha, the Teaching and his Order, penetrates with transcendental wisdom the Four Noble Truths – suffering, the cessation of suffering, and the Noble Eightfold Path leading to the cessation of suffering.",
+        chinese: "真正的归依，不是心理安慰，而是把人带到看见苦、看见苦因、看见苦灭、也看见路。",
+        takeaway: "归依若没有走到智慧和实践，还是停在表层。佛经这里说的是会改变生命方向的归依。",
+        example: "比如一个人不只是口头说信佛，而是真的开始依佛法去看自己的苦、改自己的习气、走自己的路。",
+        notes: [
+          {
+            n: 16,
+            en: "The Order: both the monastic Order (bhikkhu sangha) and the Order of Noble Ones (ariya sangha) who have reached the four supramundane stages.",
+            zh: "这里的“僧（Order）”既指出家僧团（bhikkhu sangha），也指已证四种超世间阶段的圣者僧团（ariya sangha）。"
+          }
+        ],
+        vocab: [
+          { word: "transcendental", pos: "adj", meaning: "超越世间的。", en: "beyond ordinary worldly experience", example: "The text speaks of transcendental wisdom rather than clever thought." },
+          { word: "cessation", pos: "noun", meaning: "止息，停止。", en: "the ending or stopping of something", example: "They longed for the cessation of conflict." },
+          { word: "Noble Eightfold Path", pos: "phrase", meaning: "八正道。", en: "the Buddhist path of right view, conduct, and mental cultivation", example: "The Noble Eightfold Path is presented as a workable way." }
+        ]
+      },
+      {
+        id: 191,
+        title: "The Four Noble Truths release suffering",
+        titleZh: "看见四圣谛，才走向解苦",
+        literalZh: "他以超越世间的智慧洞穿四圣谛 - 苦、苦的止息，以及导向苦灭的八正道。",
+        english: "He who has gone for refuge to the Buddha, the Teaching and his Order, penetrates with transcendental wisdom the Four Noble Truths – suffering, the cessation of suffering, and the Noble Eightfold Path leading to the cessation of suffering.",
+        chinese: "这一句和上一句合着看，就是把归依的内容收拢到四圣谛上。",
+        takeaway: "不是知道一点佛教名词就够，而是要真正看见：苦是什么，怎么停，路在哪里。",
+        example: "比如一个人终于不再只是抱怨人生苦，而是开始学习苦的结构、苦因和出路，这就已经走上正路。",
+        vocab: [
+          { word: "penetrate", pos: "verb", meaning: "洞穿，看透。", en: "to see deeply into something and understand it clearly", example: "She began to penetrate the real cause of her fear." },
+          { word: "Four Noble Truths", pos: "phrase", meaning: "四圣谛。", en: "the core Buddhist truths about suffering, its cause, its end, and the path", example: "The Four Noble Truths form the spine of early Buddhist teaching." },
+          { word: "leading to", pos: "phrase", meaning: "导向，通往。", en: "bringing toward a result or destination", example: "Small habits can become a path leading to peace." }
+        ]
+      },
+      {
+        id: 192,
+        title: "This is the safe refuge",
+        titleZh: "这才是稳妥而最高的归依",
+        literalZh: "这确实就是稳妥的归依，这就是最高的归依。归依到这样的归依之后，人就从一切苦中解脱出来。",
+        english: "This indeed is the safe refuge, this the refuge supreme. Having gone to such a refuge, one is released from all suffering.",
+        chinese: "佛经在这里把结论落得很稳：真正的归依，是能带人出苦的归依。",
+        takeaway: "归依若不能让生命越来越离苦，就还没有落到核心。",
+        example: "比如一个人的归依让他越来越诚实、越来越不害、越来越有智慧，那这归依就不是空的。",
+        vocab: [
+          { word: "released from", pos: "phrase", meaning: "从……中解脱出来。", en: "set free from a burden, bond, or state", example: "He felt released from an old compulsion." },
+          { word: "indeed", pos: "adv", meaning: "确实，实在。", en: "used to emphasize that something is true", example: "This is indeed a rare chance." },
+          { word: "refuge supreme", pos: "phrase", meaning: "最高归依。", en: "the highest and most reliable refuge", example: "The verse contrasts surface refuge with refuge supreme." }
+        ]
+      },
+      {
+        id: 193,
+        title: "Rare is the thoroughbred man",
+        titleZh: "真正上等的人，很难出现",
+        literalZh: "那种良种的人（佛）很难遇到；他不是处处都会出生。在哪里有这样一个智者出生，那个家族就会安乐兴盛。",
+        english: "Hard to find is the thoroughbred man (the Buddha); he is not born everywhere. Where such a wise man is born, that clan thrives happily.",
+        chinese: "这里拿良种马作比喻，讲的是佛这样真正高贵而难得的生命，不是随处都有。",
+        takeaway: "真智者出现，是一整个群体的福气，不只是他个人的事。",
+        example: "比如一个家庭、一个群体里若真有一个清明正直、能带路的人，整个气质都会不一样。",
+        vocab: [
+          { word: "thoroughbred", pos: "adj", meaning: "纯种的，良种的；这里比喻真正上等。", en: "of high breed or excellent quality", example: "The thoroughbred horse stood out at once." },
+          { word: "thrive", pos: "verb", meaning: "兴盛，发展得好。", en: "to grow well, prosper, or flourish", example: "The small town began to thrive again." },
+          { word: "clan", pos: "noun", meaning: "家族，宗族。", en: "a large family group or kinship line", example: "The whole clan gathered for the festival." }
+        ]
+      },
+      {
+        id: 194,
+        title: "Blessed is the birth of Buddhas",
+        titleZh: "佛出世可喜，法被宣说可喜，僧团和合也可喜",
+        literalZh: "诸佛的出生，是有福的；神圣教法的宣说，是有福的；僧团的和合，是有福的；合一求真者的修行，也是有福的。",
+        english: "Blessed is the birth of the Buddhas; blessed is the enunciation of the sacred Teaching; blessed is the harmony in the Order, and blessed is the spiritual pursuit of the united truth-seeker.",
+        chinese: "这一句把几样真正值得庆幸的事排出来了：佛出世、法被说、僧团和合、一起修真理。",
+        takeaway: "真正值得欢喜的，不只是个人好运，而是能引人离苦的这些大因缘。",
+        example: "比如一个团体里彼此不争、一起朝真理用功，这种和合本身就是很大的福报。",
+        vocab: [
+          { word: "blessed", pos: "adj", meaning: "有福的，可庆幸的。", en: "holy, fortunate, or worthy of gratitude", example: "It was a blessed chance to meet such a teacher." },
+          { word: "enunciation", pos: "noun", meaning: "宣说，讲明。", en: "the act of clearly stating or proclaiming something", example: "The enunciation of the teaching changed many lives." },
+          { word: "harmony", pos: "noun", meaning: "和合，和谐。", en: "peaceful agreement and balance", example: "Harmony in a group takes real effort." }
+        ]
+      },
+      {
+        id: 195,
+        title: "Revering the worthy brings immeasurable merit",
+        titleZh: "敬礼真正值得敬礼的人，功德无量",
+        literalZh: "凡是敬礼那些真正值得敬礼的人 - 诸佛以及他们的弟子，他们已经越过一切障碍，也已经超出忧与哀的范围 -",
+        english: "He who reveres those worthy of reverence, the Buddhas and their disciples, who have transcended all obstacles and passed beyond the reach of sorrow and lamentation – he who reveres such peaceful and fearless ones, his merit none can compute by any measure.",
+        chinese: "佛经这里不是鼓励盲目崇拜，而是在说：敬重真正清净无畏的人，会让自己的心向正确方向靠拢。",
+        takeaway: "人敬什么，心就会往什么样子靠。敬真正值得敬的人，本身就是在校正自己。",
+        example: "比如一个人常常亲近并尊敬有德的人，他会慢慢学会什么才是真正值得追求的。",
+        vocab: [
+          { word: "revere", pos: "verb", meaning: "恭敬，敬礼，深深尊重。", en: "to regard with deep respect or devotion", example: "Many still revere her for her integrity." },
+          { word: "worthy of reverence", pos: "phrase", meaning: "值得敬礼的。", en: "deserving deep respect", example: "Not everyone admired is worthy of reverence." },
+          { word: "transcend", pos: "verb", meaning: "超越。", en: "to rise above or go beyond", example: "He wanted to transcend the old cycle of blame." }
+        ]
+      },
+      {
+        id: 196,
+        title: "Their merit cannot be measured",
+        titleZh: "敬礼这样安稳无畏的人，功德不可量",
+        literalZh: "凡是敬礼这样安稳而无畏的人，他的功德，没有任何量器能够算得出来。",
+        english: "He who reveres such peaceful and fearless ones, his merit none can compute by any measure.",
+        chinese: "落点很简单：面对真正超出忧苦的人，恭敬之心本身就会结出极大的善果。",
+        takeaway: "有些善不是靠大动作，而是靠心的方向正不正。",
+        example: "比如同样是见到善知识，有人只是看看，有人心里真敬重、真愿意学，后面的果会很不同。",
+        vocab: [
+          { word: "fearless", pos: "adj", meaning: "无畏的。", en: "not ruled by fear", example: "She seemed fearless because she had let go of so much." },
+          { word: "compute", pos: "verb", meaning: "计算，算出来。", en: "to calculate or determine by counting", example: "No one could compute the full cost of the disaster." },
+          { word: "measure", pos: "noun", meaning: "尺度，量器。", en: "a standard or means of measuring something", example: "Their kindness was beyond any ordinary measure." }
+        ]
+      }
+    ];
+
+    const chapter15Verses = [
+      {
+        id: 197,
+        title: "Live friendly among the hostile",
+        titleZh: "在敌意里，仍友善地活",
+        literalZh: "我们实在快乐地活着，在敌对的人群中仍然友善；在敌对的人们中间，我们住而无恨。",
+        english: "Happy indeed we live, friendly amidst the hostile. Amidst hostile men we dwell free from hatred.",
+        chinese: "真正的快乐，不是周围所有人都顺，而是外面有敌意时，里面还不被恨拖走。",
+        takeaway: "你能不能在坏环境里还不长出坏心，这很见功夫。",
+        example: "比如有人对你不友好，你却不急着反咬回去，心里还能保持清醒和善意，这种快乐就更稳。",
+        vocab: [
+          { word: "hostile", pos: "adj", meaning: "敌对的，不友善的。", en: "showing anger, opposition, or unfriendliness", example: "The meeting turned hostile within minutes." },
+          { word: "amidst", pos: "prep", meaning: "在……之中。", en: "in the middle of or surrounded by", example: "She stayed calm amidst the noise." },
+          { word: "free from hatred", pos: "phrase", meaning: "离开仇恨。", en: "not filled with hatred", example: "He wanted to stay free from hatred." }
+        ]
+      },
+      {
+        id: 198,
+        title: "Free from affliction among the afflicted",
+        titleZh: "在被欲恼的人中，自己不被恼",
+        literalZh: "我们实在快乐地活着，在受烦恼折磨的人群中仍然友善；在受烦恼的人们中间，我们住而不受烦恼。",
+        english: "Happy indeed we live, friendly amidst the afflicted (by craving). Amidst afflicted men we dwell free from affliction.",
+        chinese: "这句把快乐定义得更清楚：周围人都被欲望烧着时，你自己没被卷进去，这就是很大的福。",
+        takeaway: "外面再乱，里面若不跟着乱，就已经赢了很多。",
+        example: "比如别人都在攀比、急躁、焦虑抢夺，你却还能守住分寸和清醒，那就是这里的快乐。",
+        vocab: [
+          { word: "afflicted", pos: "adj", meaning: "受苦的，被折磨的。", en: "troubled, burdened, or made to suffer", example: "He was afflicted by constant anxiety." },
+          { word: "affliction", pos: "noun", meaning: "痛苦，烦恼折磨。", en: "a state of suffering or distress", example: "Greed became his deepest affliction." },
+          { word: "dwell free from", pos: "phrase", meaning: "住而不受……。", en: "to live without being burdened by something", example: "She learned to dwell free from resentment." }
+        ]
+      },
+      {
+        id: 199,
+        title: "Free from avarice among the greedy",
+        titleZh: "在贪的人中，自己不贪",
+        literalZh: "我们实在快乐地活着，在贪婪的人中间自己离贪而住。",
+        english: "Happy indeed we live, free from avarice amidst the avaricious. Amidst the avaricious men we dwell free from avarice.",
+        chinese: "别人都在抓时，你不抓，这会让心轻很多。",
+        takeaway: "快乐很多时候不是加东西，而是少一点贪。",
+        example: "比如大家都急着争名额、争利益时，你还能守住不贪不抢，心会轻得多。",
+        vocab: [
+          { word: "avarice", pos: "noun", meaning: "贪婪，吝贪。", en: "extreme greed for gain or possession", example: "Avarice made him suspicious of everyone." },
+          { word: "avaricious", pos: "adj", meaning: "贪婪的。", en: "marked by strong greed", example: "The avaricious merchant never thought he had enough." },
+          { word: "free from avarice", pos: "phrase", meaning: "离贪而住。", en: "not governed by greed", example: "She stayed free from avarice even in success." }
+        ]
+      },
+      {
+        id: 200,
+        title: "Possessing nothing, feeding on joy",
+        titleZh: "无所有，也能以喜为食",
+        literalZh: "我们实在快乐地活着，我们一无所有；我们将以喜悦为食，如同光音天众那样。",
+        english: "Happy indeed we live, we who possess nothing. Feeders on joy we shall be, like the Radiant Gods.",
+        chinese: "这句不是鼓吹穷，而是在讲：快乐并不全靠外物支撑。",
+        takeaway: "若人只能靠拥有来快乐，那就很容易一直怕失去。",
+        example: "比如一个人东西不多、处境普通，但心很轻、省欲知足，也会活得比很多“拥有很多”的人更安。",
+        vocab: [
+          { word: "possess", pos: "verb", meaning: "拥有，占有。", en: "to own or have something", example: "He possessed little but worried even less." },
+          { word: "feeder on joy", pos: "phrase", meaning: "以喜为食者。", en: "one sustained inwardly by joy", example: "The verse imagines a feeder on joy rather than possessions." },
+          { word: "Radiant Gods", pos: "phrase", meaning: "光音天众。", en: "a class of radiant heavenly beings in Buddhist cosmology", example: "The text compares them to the Radiant Gods." }
+        ]
+      },
+      {
+        id: 201,
+        title: "Victory brings enmity",
+        titleZh: "胜利会生怨，败者住在痛里",
+        literalZh: "胜利生出怨敌；被打败的人住在痛苦里。安和平静的人，舍下胜与败，就快乐地活。",
+        english: "Victory begets enmity; the defeated dwell in pain. Happily the peaceful live, discarding both victory and defeat.",
+        chinese: "很多人以为赢就是快乐，可佛经说，赢也会带来新的敌对。",
+        takeaway: "若快乐必须建立在赢别人上，那就很难真正平静。",
+        example: "比如争论里你赢了面子，却让关系更坏，那种胜利并不划算。",
+        vocab: [
+          { word: "beget", pos: "verb", meaning: "生出，引出。", en: "to cause or bring about", example: "Harsh words often beget more harsh words." },
+          { word: "enmity", pos: "noun", meaning: "敌意，仇怨。", en: "deep hostility or hatred", example: "Their long enmity began over a small insult." },
+          { word: "discard", pos: "verb", meaning: "丢下，舍弃。", en: "to throw away or let go of something", example: "He had to discard the need to always win." }
+        ]
+      },
+      {
+        id: 202,
+        title: "No fire like lust",
+        titleZh: "没有火像欲，没有罪像恨",
+        literalZh: "没有火像欲；没有罪像恨。没有病患像五蕴之苦，也没有比涅槃之安更高的乐。",
+        english: "There is no fire like lust and no crime like hatred. There is no ill like the aggregates (of existence) and no bliss higher than the peace (of Nibbana).",
+        chinese: "这句一口气列出几种最大：欲像火，恨像重罪，五蕴之苦最深，而涅槃安乐最高。",
+        takeaway: "佛经在这里帮你重新标尺：什么最烧人，什么最伤人，什么才是真正最高的乐。",
+        example: "比如欲望一起来，人会整夜睡不着；恨一起来，又会做出很多后悔的事，这些都像火。",
+        notes: [
+          {
+            n: 17,
+            en: "Aggregates (of existence) (khandha): the five groups of factors into which the Buddha analyzes the living being – material form, feeling, perception, mental formations, and consciousness.",
+            zh: "“五蕴（khandha）”指佛陀分析生命时所说的五类因素：色、受、想、行、识。"
+          }
+        ],
+        vocab: [
+          { word: "lust", pos: "noun", meaning: "欲，强烈贪欲。", en: "intense craving, especially sensual desire", example: "Lust can flare up faster than reason." },
+          { word: "aggregate", pos: "noun", meaning: "蕴，集合成分。", en: "a collection of elements taken together as a whole", example: "The teaching analyzes the person into aggregates." },
+          { word: "bliss", pos: "noun", meaning: "至乐，深安。", en: "deep, complete happiness or joy", example: "He spoke of a bliss beyond excitement." }
+        ]
+      },
+      {
+        id: 203,
+        title: "Hunger is the worst disease",
+        titleZh: "饥饿最苦，诸行之苦最重",
+        literalZh: "饥饿是最坏的病；诸有为法是最坏的苦。如此如实知道以后，智者就证知涅槃，那最高的乐。",
+        english: "Hunger is the worst disease, conditioned things the worst suffering. Knowing this as it really is, the wise realize Nibbana, the highest bliss.",
+        chinese: "这句前半很贴近生活，后半一下拉回佛法核心：一切有为法本身就带苦。",
+        takeaway: "真正看见世间结构的苦，人就会开始懂得为什么佛法一直指向涅槃。",
+        example: "比如人表面上解决了一个问题，很快又有下一个问题起来，这就是有为法难安。",
+        vocab: [
+          { word: "conditioned things", pos: "phrase", meaning: "有为法，由条件和合而成的事物。", en: "things that arise dependently and do not last", example: "All conditioned things change." },
+          { word: "as it really is", pos: "phrase", meaning: "如实地。", en: "in accordance with reality, without distortion", example: "He wanted to see the situation as it really is." },
+          { word: "realize Nibbana", pos: "phrase", meaning: "证知涅槃。", en: "to directly know or attain Nibbana", example: "The texts speak of sages who realize Nibbana." }
+        ]
+      },
+      {
+        id: 204,
+        title: "Health, contentment, trust, and Nibbana",
+        titleZh: "健康最宝，知足最富，可信之人最好，涅槃最乐",
+        literalZh: "健康是最珍贵的得益，知足是最大的财富。可信赖的人是最好的亲族，涅槃是最高的乐。",
+        english: "Health is the most precious gain and contentment the greatest wealth. A trustworthy person is the best kinsman, Nibbana the highest bliss.",
+        chinese: "这一句很适合拿来校正人心里对“好”的排序。",
+        takeaway: "很多人到失去时才知道，健康、知足、可信的人，比很多外在拥有都值钱。",
+        example: "比如再忙再能赚，若身体坏了、心不知足、身边也没有可信的人，日子其实并不算好。",
+        vocab: [
+          { word: "contentment", pos: "noun", meaning: "知足，满足。", en: "a quiet sense of enoughness", example: "Contentment gave her more rest than success did." },
+          { word: "trustworthy", pos: "adj", meaning: "可信赖的。", en: "worthy of trust", example: "A trustworthy friend is rare." },
+          { word: "kinsman", pos: "noun", meaning: "亲人，近亲。", en: "a relative or close family member", example: "In danger, he turned first to his kinsman." }
+        ]
+      },
+      {
+        id: 205,
+        title: "The taste of solitude and truth",
+        titleZh: "尝过独处与真理之味，便无痛无垢",
+        literalZh: "尝过独处与安宁（涅槃）的味道以后，人就会无痛而无垢，深深饮入真理之乐的味道。",
+        english: "Having savored the taste of solitude and peace (of Nibbana), pain-free and stainless he becomes, drinking deep the taste of the bliss of the Truth.",
+        chinese: "这句把修行写得很有味道：真理不是冷概念，而是能被“尝到”的。",
+        takeaway: "当人真的尝过静和净的味道，很多粗重刺激自然就没那么吸引了。",
+        example: "比如一个人真正尝到独处不乱、内心清明的安稳后，就不再那么离不开外面的喧闹。",
+        vocab: [
+          { word: "savor", pos: "verb", meaning: "品尝，细细体会。", en: "to taste or enjoy slowly and deeply", example: "She savored the silence after the storm." },
+          { word: "stainless", pos: "adj", meaning: "无垢的，没有污点的。", en: "free from stain or moral taint", example: "He longed for a stainless mind." },
+          { word: "drink deep", pos: "phrase", meaning: "深深饮入，充足领受。", en: "to take in fully and deeply", example: "He wanted to drink deep of wisdom, not just sample it." }
+        ]
+      },
+      {
+        id: 206,
+        title: "Good to see the noble ones",
+        titleZh: "见圣者好，与他们同住也好",
+        literalZh: "见到圣者是好的；和他们同住总是安乐的。不遇见愚人，人就会常常快乐。",
+        english: "Good is it to see the Noble Ones; to live with them is ever blissful. One will always be happy by not encountering fools.",
+        chinese: "这句很实在：亲近谁，会决定你心的走向。",
+        takeaway: "你常常看、常常听、常常跟着谁，最后自己就会越来越像谁。",
+        example: "比如跟抱怨重、爱挑事的人待久了心会浊；跟稳重清明的人待久了，心会慢慢安。",
+        vocab: [
+          { word: "Noble Ones", pos: "phrase", meaning: "圣者，已入圣道的人。", en: "those of noble realization and character", example: "The text urges one to seek the Noble Ones." },
+          { word: "encounter", pos: "verb", meaning: "遇见，遇上。", en: "to meet or come upon", example: "He hoped not to encounter that trouble again." },
+          { word: "blissful", pos: "adj", meaning: "安乐的，充满喜悦的。", en: "full of deep happiness or peace", example: "The quiet retreat felt blissful." }
+        ]
+      },
+      {
+        id: 207,
+        title: "Company of fools brings grief",
+        titleZh: "和愚人同行，像和仇人同伙",
+        literalZh: "和愚人同行的人，会因久长地相处而忧苦。与愚人为伴，总是痛苦的，就像和敌人为伍；而与智者为伴，是快乐的，像见到自己的亲人。",
+        english: "Indeed, he who moves in the company of fools grieves for long. Association with fools is ever painful, like partnership with an enemy. But association with the wise is happy, like meeting one’s own kinsmen.",
+        chinese: "这句不是骂人，而是在提醒：糊涂人的影响很深，会把你整条路都带偏。",
+        takeaway: "有些痛不是事情本身，而是你长期跟错了人。",
+        example: "比如总和爱说谎、爱占便宜、爱起哄的人混在一起，久了以后你自己也会被拖坏。",
+        vocab: [
+          { word: "association", pos: "noun", meaning: "来往，结伴，相处。", en: "the state of being connected or keeping company with someone", example: "Association with honest people changed him." },
+          { word: "partnership", pos: "noun", meaning: "同伴关系，合伙。", en: "a relationship of working or living together", example: "That partnership ended badly." },
+          { word: "kinsmen", pos: "noun", meaning: "亲人们，亲族。", en: "relatives or those as close as family", example: "He was welcomed like a returning kinsman." }
+        ]
+      },
+      {
+        id: 208,
+        title: "Follow the steadfast and discerning",
+        titleZh: "要跟随坚定、聪明、尽责、虔敬的人",
+        literalZh: "所以，要跟随那位坚定、智慧、学识广、尽责而虔敬的圣者。人只应跟随这样真正良善、真正有辨别力的人，就像月亮跟随群星的轨道一样。",
+        english: "Therefore, follow the Noble One, who is steadfast, wise, learned, dutiful and devout. One should follow only such a man, who is truly good and discerning, even as the moon follows the path of the stars.",
+        chinese: "前面讲别跟愚人混，这句就给出正面标准：该跟什么样的人。",
+        takeaway: "不是会说话、会出头就值得跟。要看他稳不稳、正不正、有没有辨别力。",
+        example: "比如一个人也许不张扬，但做事稳、守责、看得清、心也正，这种人才适合跟。",
+        vocab: [
+          { word: "steadfast", pos: "adj", meaning: "坚定的，稳住不变的。", en: "firm and not easily moved", example: "Her steadfast practice slowly changed her life." },
+          { word: "dutiful", pos: "adj", meaning: "尽责的。", en: "careful to do what one ought to do", example: "He was dutiful even in small tasks." },
+          { word: "discerning", pos: "adj", meaning: "有辨别力的。", en: "able to judge well and notice what matters", example: "A discerning mind sees through show." }
+        ]
+      }
+    ];
+
+    const chapter16Verses = [
+      {
+        id: 209,
+        title: "Pleasure-seeking envies the well-directed",
+        titleZh: "人若追着欲乐跑，就会嫉妒那些守住正路的人",
+        literalZh: "把自己交给那些应当避开的事，又不在该用力的地方用力；一个寻求欲乐的人，放掉了自己真正的利益，就会嫉妒那些专注于自己利益的人。",
+        english: "Giving himself to things to be shunned and not exerting where exertion is needed, a seeker after pleasures, having given up his true welfare, envies those intent upon theirs.",
+        chinese: "这句讲得很现实：人一旦一路顺着享乐走，后面看到别人认真、稳定、往正路走，心里常常会不舒服。",
+        takeaway: "很多嫉妒，根子不是别人太好，而是自己知道自己放掉了本来该守的东西。",
+        example: "比如你一直拖延、散漫，看到别人稳稳在进步，心里冒出的不一定是欣赏，反而可能是酸。",
+        vocab: [
+          { word: "shun", pos: "verb", meaning: "避开，躲开。", en: "to keep away from something on purpose", example: "She learned to shun needless conflict." },
+          { word: "exert", pos: "verb", meaning: "用力，付出努力。", en: "to apply effort, force, or energy", example: "He finally exerted himself where it mattered." },
+          { word: "true welfare", pos: "phrase", meaning: "真正利益，真正对自己好的东西。", en: "one's real good or lasting well-being", example: "Temporary comfort is not always true welfare." }
+        ]
+      },
+      {
+        id: 210,
+        title: "Beloved and unloved both bring pain",
+        titleZh: "看不见所爱会苦，看见所厌也会苦",
+        literalZh: "不要和所爱之人太亲密，也不要和所不爱之人太亲近；因为见不到所爱是苦，看见所不爱也是苦。",
+        english: "Seek no intimacy with the beloved and also not with the unloved, for not to see the beloved and to see the unloved, both are painful.",
+        chinese: "这句不是叫人变冷，而是在提醒：一旦黏得太重，后面无论见不见、得不得，都会带苦。",
+        takeaway: "爱若变成黏，喜欢若变成非有不可，就已经在为后面的苦铺路了。",
+        example: "比如一个人太把某段关系当全部，一见不到就空，一遇不顺就苦，这就是这里在点的东西。",
+        vocab: [
+          { word: "intimacy", pos: "noun", meaning: "亲密，过近的贴近。", en: "close personal connection or nearness", example: "Too much intimacy can blur wise judgment." },
+          { word: "beloved", pos: "adj", meaning: "所爱的，被深爱的。", en: "deeply loved or cherished", example: "He waited all winter for his beloved friend." },
+          { word: "unloved", pos: "adj", meaning: "所不爱的，不喜欢的。", en: "not loved or not wanted", example: "The unloved task still had to be done." }
+        ]
+      },
+      {
+        id: 211,
+        title: "Hold nothing dear",
+        titleZh: "不要把什么抓成很可爱、非要不可",
+        literalZh: "因此，不要把什么东西执为可爱；因为和可爱的分离是苦。对于那些没有所爱、也没有所厌的人，就没有束缚。",
+        english: "Therefore hold nothing dear, for separation from the dear is painful. There are no bonds for those who have nothing beloved or unloved.",
+        chinese: "这句的重点不是“不要爱”，而是不要抓成“我一定不能失去”。",
+        takeaway: "越把东西抓成“这是我的、我不能没有”，后面就越容易被分离刺痛。",
+        example: "比如你喜欢一个人、一件事、一个位置，本来没问题；可一旦抓成“没它我不行”，苦就跟着来了。",
+        vocab: [
+          { word: "hold dear", pos: "phrase", meaning: "视为珍爱，抓成很重要。", en: "to prize or cherish deeply", example: "He held the old letters dear for many years." },
+          { word: "separation", pos: "noun", meaning: "分离，别离。", en: "the state of being apart from someone or something", example: "Separation tested what she was clinging to." },
+          { word: "bond", pos: "noun", meaning: "束缚，系缚。", en: "a tie that binds or holds one fast", example: "Fear became a hidden bond on the mind." }
+        ]
+      },
+      {
+        id: 212,
+        title: "From endearment springs grief",
+        titleZh: "从亲爱感里，会生出悲和怕",
+        literalZh: "从亲爱感之中生出悲伤；从亲爱感之中生出恐惧。对那完全离开亲爱感的人来说，就没有悲伤；那么恐惧又从哪里来呢？",
+        english: "From endearment springs grief, from endearment springs fear. From him who is wholly free from endearment there is no grief, whence then fear?",
+        chinese: "这一组句子开始一层层拆：只是“觉得可爱、舍不得”这一层，就已经会生出悲和怕了。",
+        takeaway: "你越觉得某样东西特别可爱、特别不能失去，心里就越容易同时长出失去它的恐惧。",
+        example: "比如很怕一段关系变掉，正是因为你心里已经把它抱得太紧了。",
+        vocab: [
+          { word: "endearment", pos: "noun", meaning: "亲爱感，爱怜感。", en: "a feeling of fond affection or tenderness", example: "Her endearment slowly turned into anxiety." },
+          { word: "spring from", pos: "phrase", meaning: "从……生出。", en: "to arise or come out from something", example: "Most of his fear sprang from attachment." },
+          { word: "whence", pos: "adv", meaning: "从哪里，由何而来。", en: "from where or from what source", example: "If there is no clinging, whence comes grief?" }
+        ]
+      },
+      {
+        id: 213,
+        title: "From affection springs grief",
+        titleZh: "从 affection 里，也会生出悲和怕",
+        literalZh: "从爱恋之中生出悲伤；从爱恋之中生出恐惧。对那完全离开爱恋的人来说，就没有悲伤；那么恐惧又从哪里来呢？",
+        english: "From affection springs grief, from affection springs fear. From him who is wholly free from affection there is no grief, whence then fear?",
+        chinese: "这里把词往前推进了一步。表面看是感情，往深里走，还是会和悲、怕连在一起。",
+        takeaway: "佛经不是在骂感情，而是在提醒你：感情一旦缠住，后面一定会带着失去它的怕。",
+        example: "比如你越依赖某个亲密对象来定义自己，一想到变动就越难安。",
+        vocab: [
+          { word: "affection", pos: "noun", meaning: "爱恋，亲近之情。", en: "warm feeling of liking or love toward someone", example: "Affection can be warm, but it can also cling." },
+          { word: "wholly free from", pos: "phrase", meaning: "完全离开。", en: "completely free from something", example: "He was not yet wholly free from fear." },
+          { word: "grief", pos: "noun", meaning: "悲伤。", en: "deep sorrow, especially after loss", example: "Grief took time to soften." }
+        ]
+      },
+      {
+        id: 214,
+        title: "From attachment springs grief",
+        titleZh: "从 attachment 里，更会生出悲和怕",
+        literalZh: "从执著之中生出悲伤；从执著之中生出恐惧。对那完全离开执著的人来说，就没有悲伤；那么恐惧又从哪里来呢？",
+        english: "From attachment springs grief, from attachment springs fear. From him who is wholly free from attachment there is no grief, whence then fear?",
+        chinese: "到了 attachment，就更明显了：这里已经不是温柔喜欢，而是黏住、挂住、放不下。",
+        takeaway: "attachment 比 affection 更重，也更直接地把人绑进苦里。",
+        example: "比如你明明知道一件事在拖累你，却还是死抓不放，这就是 attachment 的味道。",
+        vocab: [
+          { word: "attachment", pos: "noun", meaning: "执著，黏着，放不下。", en: "clinging or emotional fastening to something", example: "His attachment made every small change feel threatening." },
+          { word: "spring", pos: "verb", meaning: "生出，跳出来。", en: "to arise suddenly or naturally from something", example: "Old fear sprang up at once." },
+          { word: "fear", pos: "noun", meaning: "害怕，恐惧。", en: "a strong feeling of danger or loss", example: "Fear often hides behind attachment." }
+        ]
+      },
+      {
+        id: 215,
+        title: "From lust springs grief",
+        titleZh: "从 lust 里，会生出悲和怕",
+        literalZh: "从欲之中生出悲伤；从欲之中生出恐惧。对那完全离开渴爱的人来说，就没有悲伤；那么恐惧又从哪里来呢？",
+        english: "From lust springs grief, from lust springs fear. From him who is wholly free from craving there is no grief; whence then fear?",
+        chinese: "这句把欲和苦的关系讲得很直接：越是燃烧式的想要，越会带出失去它的苦和怕。",
+        takeaway: "欲望不只是让人兴奋，它也会让人脆弱，因为你一下子就有了很多可失去的东西。",
+        example: "比如你越执著某种快感、某段激情，后面越容易因为得不到、留不住而痛。",
+        vocab: [
+          { word: "lust", pos: "noun", meaning: "欲，强烈的贪爱。", en: "intense craving, especially sensual desire", example: "Lust can quickly turn rest into agitation." },
+          { word: "craving", pos: "noun", meaning: "渴爱，强烈想要。", en: "deep wanting that keeps reaching for more", example: "Craving kept the mind from settling." },
+          { word: "whence then", pos: "phrase", meaning: "那么又从哪里来呢。", en: "from what source, then", example: "If clinging is gone, whence then fear?" }
+        ]
+      },
+      {
+        id: 216,
+        title: "From craving springs grief",
+        titleZh: "从 craving 里，会生出悲和怕",
+        literalZh: "从渴爱之中生出悲伤；从渴爱之中生出恐惧。对那完全离开渴爱的人来说，就没有悲伤；那么恐惧又从哪里来呢？",
+        english: "From craving springs grief, from craving springs fear. From him who is wholly free from craving there is no grief; whence then fear?",
+        chinese: "这一串句子最后落在 craving 上，像是把前面那些亲近、爱恋、执著都收到了根上。",
+        takeaway: "真正要看的，不只是对象是什么，而是心里有没有那股非要不可的渴爱。",
+        example: "比如你真正苦的，很多时候不是那个人、那件事本身，而是你里面那股一定要得到、一定不能失去的 craving。",
+        vocab: [
+          { word: "craving", pos: "noun", meaning: "渴爱，非要不可的想要。", en: "intense desire that keeps reaching and holding", example: "Craving makes even small losses feel unbearable." },
+          { word: "springs grief", pos: "phrase", meaning: "生出悲伤。", en: "gives rise to sorrow", example: "Attachment often springs grief." },
+          { word: "free from craving", pos: "phrase", meaning: "离开渴爱。", en: "not driven by grasping desire", example: "He wanted to become free from craving, not just better at hiding it." }
+        ]
+      },
+      {
+        id: 217,
+        title: "People love the one with virtue and insight",
+        titleZh: "有德、有见、自己也照着做的人，会被人喜爱",
+        literalZh: "人们会喜爱那种具足德行和洞见、守原则、已见真理、并且自己做自己应做之事的人。",
+        english: "People hold dear him who embodies virtue and insight, who is principled, has realized the truth, and who himself does what he ought to be doing.",
+        chinese: "这句把“真正可爱的人”写得很清楚：不是嘴甜，不是会表现，而是有德、有见、有原则，自己也做得到。",
+        takeaway: "真正让人长久信服的，不是花样，而是人品和内外一致。",
+        example: "比如一个人不一定最会说，但他稳、正、看得清，也自己照着活，大家自然会信他。",
+        vocab: [
+          { word: "embody", pos: "verb", meaning: "体现，活出来。", en: "to show or express something in visible form", example: "She embodied calm under pressure." },
+          { word: "principled", pos: "adj", meaning: "有原则的。", en: "guided by firm moral standards", example: "He stayed principled even when it cost him." },
+          { word: "ought to", pos: "phrase", meaning: "应当，应该。", en: "should do because it is right", example: "We often know what we ought to do." }
+        ]
+      },
+      {
+        id: 218,
+        title: "One Bound Upstream",
+        titleZh: "心向不可说之处、又不被欲缚的人，叫作逆流而上者",
+        literalZh: "一个人若心志放在那不可言说者（涅槃）上，心也因超世间智慧而被提起，不再被感官欲乐束缚 - 这样的人，被称为“逆流而上者”。",
+        english: "One who is intent upon the Ineffable (Nibbana), dwells with mind inspired (by supramundane wisdom), and is no more bound by sense pleasures – such a man is called “One Bound Upstream.”",
+        chinese: "这句是在写一种方向已经转掉的人：他不是顺着欲流往下滑，而是在逆着流往上走。",
+        takeaway: "真正的修行，不只是少做坏事，而是整颗心的朝向都换了。",
+        example: "比如一个人慢慢不再把“多一点享受”当目标，而是越来越想走向更净、更自由的地方，这就已经是在转流向。",
+        notes: [
+          {
+            n: 18,
+            en: "One Bound Upstream: a Non-returner (anagami).",
+            zh: "“One Bound Upstream（逆流而上者）”指“不还者（anagami）”。"
+          }
+        ],
+        vocab: [
+          { word: "Ineffable", pos: "adj", meaning: "不可言说的。", en: "too deep or great to be fully expressed in words", example: "He felt something ineffable in the stillness." },
+          { word: "bound", pos: "adj", meaning: "被束缚的，被绑住的。", en: "tied, constrained, or held by something", example: "She no longer felt bound by old praise." },
+          { word: "sense pleasures", pos: "phrase", meaning: "感官欲乐。", en: "pleasures sought through the senses", example: "Sense pleasures are easy to chase and hard to finish." }
+        ]
+      },
+      {
+        id: 219,
+        title: "A safe return after long absence",
+        titleZh: "久别之后平安归来，亲友都会来迎",
+        literalZh: "一个人离开很久以后，若从远方平安回来，他的亲族、朋友和善意者都会在到达时欢迎他。",
+        english: "When, after a long absence, a man safely returns from afar, his relatives, friends and well-wishers welcome him home on arrival.",
+        chinese: "这句先拿人间很熟悉的场景作比：久别归来、平安到家，大家自然来迎。",
+        takeaway: "佛经常先举一个我们都懂的画面，再把后面的法义带出来。",
+        example: "比如一个人在外面漂了很多年，终于平安回来，家里人自然很高兴。",
+        vocab: [
+          { word: "absence", pos: "noun", meaning: "不在，离开。", en: "a period of being away", example: "His long absence changed the whole family." },
+          { word: "afar", pos: "adv", meaning: "从远处，在远方。", en: "from a great distance", example: "She could hear the bell from afar." },
+          { word: "well-wisher", pos: "noun", meaning: "善意关心者。", en: "a person who wishes another well", example: "Old well-wishers wrote to welcome him back." }
+        ]
+      },
+      {
+        id: 220,
+        title: "Good deeds welcome the doer",
+        titleZh: "人离世而去时，善业会像亲人那样来迎",
+        literalZh: "正如亲人欢迎一个所爱的人回到家里一样；同样，一个行善的人从这个世界去到下一个世界时，他自己的善业也会来欢迎他。",
+        english: "As kinsmen welcome a dear one on arrival, even so his own good deeds will welcome the doer of good who has gone from this world to the next.",
+        chinese: "这句把前一句的人间画面翻成了业果：你带得走的，不是你抓过什么，而是你做过什么。",
+        takeaway: "真正跟着你走的，不是面子、财物、关系网络，而是你自己的业。",
+        example: "比如一个人这一生一直积善、守德、帮助别人，到了真正要离开的时候，能护他的还是这些善业。",
+        vocab: [
+          { word: "kinsmen", pos: "noun", meaning: "亲人们。", en: "relatives or those bound like family", example: "His kinsmen waited at the gate." },
+          { word: "arrival", pos: "noun", meaning: "到达，归来。", en: "the act of coming to a place", example: "Their arrival changed the mood of the house." },
+          { word: "doer of good", pos: "noun", meaning: "行善的人。", en: "a person who does good actions", example: "The doer of good often leaves a quiet trace." }
+        ]
+      }
+    ];
+
+    const chapter17Verses = [
+      {
+        id: 221,
+        title: "Give up anger and pride",
+        titleZh: "舍怒、舍慢，也要越过一切系缚",
+        literalZh: "人应当舍下愤怒，舍下骄慢，并且越过一切系缚。对于那个不执著于名与色、已经离开的的人，苦不会落到他身上。",
+        english: "One should give up anger, renounce pride, and overcome all fetters. Suffering never befalls him who clings not to mind and body and is detached.",
+        chinese: "怒和慢常常一起出现。人一被碰到，就想顶回去、撑住自己，这里面就已经有很多苦的种子。",
+        takeaway: "不只是别发火而已，而是连那个“我不能输、我不能被碰”的东西都要慢慢放。",
+        example: "比如有人一句话刺到你，你最先起的不是智慧，而是慢和怒；若能看见并放下，后面就轻很多。",
+        vocab: [
+          { word: "renounce", pos: "verb", meaning: "舍下，放弃。", en: "to give up deliberately", example: "He chose to renounce the need to be right every time." },
+          { word: "fetter", pos: "noun", meaning: "系缚，束缚。", en: "a bond or chain that holds one fast", example: "Resentment became a fetter on his mind." },
+          { word: "detached", pos: "adj", meaning: "离著的，不黏住的。", en: "not clinging or emotionally stuck", example: "She stayed detached without becoming cold." }
+        ]
+      },
+      {
+        id: 222,
+        title: "Check anger like a charioteer",
+        titleZh: "能勒住怒，就像御者勒住冲车",
+        literalZh: "那个能拦住正在升起之怒的人，就像御车者拦住一辆滚动中的车；我称他为真正的御者。别的人，不过只是握着缰绳而已。",
+        english: "He who checks rising anger as a charioteer checks a rolling chariot, him I call a true charioteer. Others only hold the reins.",
+        chinese: "会发怒不稀奇，能在怒刚起来时就勒住，才真有本事。",
+        takeaway: "真正的控制，不是事后后悔，而是怒要冲出去的那一秒你能拦下它。",
+        example: "比如你已经想回一句狠话了，但在出口前停住，这就是这句要的功夫。",
+        vocab: [
+          { word: "check", pos: "verb", meaning: "拦住，制止。", en: "to stop or restrain something in motion", example: "She checked her anger before answering." },
+          { word: "charioteer", pos: "noun", meaning: "御车者。", en: "one who drives a chariot", example: "The skilled charioteer steadied the horses at once." },
+          { word: "rein", pos: "noun", meaning: "缰绳。", en: "a strap used to control a horse", example: "He pulled hard on the reins." }
+        ]
+      },
+      {
+        id: 223,
+        title: "Overcome anger by non-anger",
+        titleZh: "用不怒胜怒，用善胜恶",
+        literalZh: "用不怒去胜怒的人；用善去胜恶的人；用布施去胜吝啬的人；用真实去胜说谎的人。",
+        english: "Overcome the angry by non-anger; overcome the wicked by goodness; overcome the miser by generosity; overcome the liar by truth.",
+        chinese: "这句的路数很清：不是顺着对方的坏起反应，而是拿相反的德行来化它。",
+        takeaway: "真正有力量的，不是复制对方，而是拿更高的东西去截断循环。",
+        example: "比如别人对你恶，你不一定要立刻同样恶回去；那样只是把火接过去继续烧。",
+        vocab: [
+          { word: "overcome", pos: "verb", meaning: "胜过，压过去。", en: "to defeat or rise above", example: "She overcame panic by slowing her breath." },
+          { word: "generosity", pos: "noun", meaning: "布施，慷慨。", en: "the quality of giving freely", example: "Generosity softened the whole room." },
+          { word: "truth", pos: "noun", meaning: "真实，真话。", en: "what is true or in accordance with reality", example: "Truth is stronger than performance." }
+        ]
+      },
+      {
+        id: 224,
+        title: "Truth, non-anger, and giving",
+        titleZh: "说真话，不发怒，就算只有一点也肯给",
+        literalZh: "说真实的话；不要让步给愤怒；当别人来求时，即使你只有一点，也要给。凭这三样，人就能到达诸天之前。",
+        english: "Speak the truth; yield not to anger; when asked, give even if you only have a little. By these three means can one reach the presence of the gods.",
+        chinese: "佛经这里把三个很实用的点拎出来：真话、不怒、肯给。",
+        takeaway: "修行不一定总是很复杂，有时就是先把这三件事守住。",
+        example: "比如有人让你烦，但你还是尽量说真话、不炸掉，也不小气到一点都不给人方便。",
+        vocab: [
+          { word: "yield to", pos: "phrase", meaning: "向……让步，被……带走。", en: "to give way to or be taken over by something", example: "He almost yielded to anger but stopped." },
+          { word: "when asked", pos: "phrase", meaning: "当别人来求时。", en: "when someone requests something", example: "When asked, she shared what little she had." },
+          { word: "means", pos: "noun", meaning: "方式，途径。", en: "methods or ways of achieving something", example: "These simple means changed his life." }
+        ]
+      },
+      {
+        id: 225,
+        title: "The harmless go to the Deathless",
+        titleZh: "不害而自制的人，会去到不死境",
+        literalZh: "那些不伤人的圣者，身体上也常常受约束，他们去到那不死境；一到了那里，就不再忧伤。",
+        english: "Those sages who are inoffensive and ever restrained in body, go to the Deathless State, where, having gone, they grieve no more.",
+        chinese: "不害不是软，而是一种很高的力量。能在身业上先收住，路就已经不一样了。",
+        takeaway: "佛法一直把“不害”看得很高，因为这是一切深修的底板。",
+        example: "比如一个人不只是嘴上说善，而是真的不去伤害众生，这种力量会把他整个人的路带高。",
+        vocab: [
+          { word: "inoffensive", pos: "adj", meaning: "无害的，不冒犯人的。", en: "not harmful, aggressive, or threatening", example: "He seemed quiet and inoffensive." },
+          { word: "restrained", pos: "adj", meaning: "受约束的，有节制的。", en: "controlled and kept within limits", example: "Her speech stayed restrained even under pressure." },
+          { word: "Deathless State", pos: "phrase", meaning: "不死境。", en: "the undying liberated state in Buddhism", example: "The verse points toward the Deathless State." }
+        ]
+      },
+      {
+        id: 226,
+        title: "The vigilant wear away defilements",
+        titleZh: "日夜警醒、日夜自调的人，染污会慢慢退",
+        literalZh: "那些常常警醒、日夜调伏自己、心也常常向着涅槃的人，他们的染污就会慢慢褪去。",
+        english: "Those who are ever vigilant, who discipline themselves day and night, and are ever intent upon Nibbana – their defilements fade away.",
+        chinese: "染污不是一下子断完的，更多时候是日夜一点点淡下去。",
+        takeaway: "真正有用的，不是偶尔热一阵，而是长期警醒、长期收自己。",
+        example: "比如你不是今天发愿、明天就散，而是每天都守一点点，旧习气真的会退。",
+        vocab: [
+          { word: "vigilant", pos: "adj", meaning: "警醒的，留心的。", en: "watchful and alert", example: "A vigilant mind notices anger earlier." },
+          { word: "discipline themselves", pos: "phrase", meaning: "自我调伏。", en: "to train and govern themselves", example: "They disciplined themselves day by day." },
+          { word: "fade away", pos: "phrase", meaning: "渐渐退去。", en: "to slowly become less strong or visible", example: "The old resentment began to fade away." }
+        ]
+      },
+      {
+        id: 227,
+        title: "Everyone gets blamed",
+        titleZh: "不说会被嫌，说多也会被嫌，说得刚好也照样会被嫌",
+        literalZh: "阿图拉啊，这是一件古老的事，并不是今天才有：人们会责怪沉默的人，也会责怪说很多的人，也会责怪说得适中的人。这世上，没有一个人是不被责怪的。",
+        english: "O Atula! Indeed, this is an ancient practice, not one only of today: they blame those who remain silent, they blame those who speak much, they blame those who speak in moderation. There is none in the world who is not blamed.",
+        chinese: "这一句很解人。它直接告诉你：别幻想自己能做到让所有人都满意。",
+        takeaway: "若你把“不被人说”当目标，就会活得非常累。",
+        example: "比如你少说，别人嫌你冷；你多说，别人嫌你烦；你说得刚好，也还是有人有意见。",
+        vocab: [
+          { word: "ancient", pos: "adj", meaning: "古老的，早就如此的。", en: "very old or long-existing", example: "This is an ancient problem, not a new one." },
+          { word: "moderation", pos: "noun", meaning: "适中，有分寸。", en: "staying in the middle without excess", example: "Moderation in speech is harder than it sounds." },
+          { word: "blame", pos: "verb", meaning: "责怪，指责。", en: "to say someone is at fault", example: "People will blame no matter what you do." }
+        ]
+      },
+      {
+        id: 228,
+        title: "No one is wholly blamed or praised",
+        titleZh: "没有人会被全然责怪，也没有人会被全然赞美",
+        literalZh: "从来没有，也将来不会有，现在也没有 - 一个完全被责怪的人，或一个完全被赞美的人。",
+        english: "There never was, there never will be, nor is there now, a person who is wholly blamed or wholly praised.",
+        chinese: "这句是把前一句说死：你不用再做那个不可能的梦了。",
+        takeaway: "接受这一点，人会轻松很多，也更容易把心放回到真正该做的事上。",
+        example: "比如再好的人也会被误解，再差的人也总有人捧，所以别把评价当全部。",
+        vocab: [
+          { word: "wholly", pos: "adv", meaning: "完全地，全然地。", en: "entirely or in every respect", example: "No person is wholly understood by everyone." },
+          { word: "praised", pos: "adj", meaning: "被赞美的。", en: "spoken well of by others", example: "Even the most praised person has critics." },
+          { word: "nor", pos: "conj", meaning: "也不。", en: "used to continue a negative statement", example: "He did not shout, nor did he run away." }
+        ]
+      },
+      {
+        id: 229,
+        title: "The wise praise character tested over time",
+        titleZh: "智者赞叹的，是日复一日看下来无瑕的人",
+        literalZh: "但那位被智者日复一日地观察以后还赞叹的人，是品格无瑕、智慧而且具足知识与德行的人。",
+        english: "But the man whom the wise praise, after observing him day after day, is one of flawless character, wise, and endowed with knowledge and virtue.",
+        chinese: "真正的称赞，不是看一时表现，而是看久了以后还站得住。",
+        takeaway: "时间会把很多包装洗掉，留下来的才更真。",
+        example: "比如一个人不是偶尔一次表现好，而是长时间都稳、都正，那才让人信服。",
+        vocab: [
+          { word: "flawless", pos: "adj", meaning: "无瑕的，没有明显缺点的。", en: "without fault or defect", example: "Her calm conduct was almost flawless." },
+          { word: "character", pos: "noun", meaning: "品格，性格底色。", en: "the moral nature of a person", example: "Character shows most under pressure." },
+          { word: "endowed with", pos: "phrase", meaning: "具足，拥有。", en: "furnished or supplied with", example: "He was endowed with patience and good judgment." }
+        ]
+      },
+      {
+        id: 230,
+        title: "Refined gold is hard to blame",
+        titleZh: "像精炼金那样的人，谁能责怪",
+        literalZh: "像一枚精炼金那样可贵的人，谁能责怪他呢？甚至诸天也赞叹他，连梵天也赞叹他。",
+        english: "Who can blame such a one, as worthy as a coin of refined gold? Even the gods praise him; by Brahma, too, is he praised.",
+        chinese: "这句不是抬高虚名，而是在说：人若真净真稳，到某种程度，责怪也就很难落得住。",
+        takeaway: "最强的回答，不一定是回嘴，而是你自己真的站得住。",
+        example: "比如一个人长期清白、稳重、有德，外面的闲话就很难真正伤到他。",
+        vocab: [
+          { word: "refined gold", pos: "phrase", meaning: "精炼金，纯净的金子。", en: "gold purified to a high degree", example: "The coin shone like refined gold." },
+          { word: "worthy", pos: "adj", meaning: "值得的，可敬的。", en: "deserving respect or value", example: "She proved worthy of trust." },
+          { word: "praise", pos: "verb", meaning: "赞叹，称赞。", en: "to speak well of", example: "Even his critics had to praise that act." }
+        ]
+      },
+      {
+        id: 231,
+        title: "Guard against bodily irritability",
+        titleZh: "先防身体上的躁怒和失控",
+        literalZh: "一个人应当防护自己，不让自己在身体行为上起躁怒；他应当在身业上受控。舍下身体上的恶行，应当修习身体上的善行。",
+        english: "Let a man guard himself against irritability in bodily action; let him be controlled in deed. Abandoning bodily misconduct, let him practice good conduct in deed.",
+        chinese: "怒不只是嘴上发，也会变成动作、姿态、压迫和伤害。",
+        takeaway: "很多坏事是在身体先动出去的那一刻发生的，所以先守身业很重要。",
+        example: "比如你一生气就拍桌、摔门、推人，这已经不只是情绪，而是身业在坏。",
+        vocab: [
+          { word: "bodily action", pos: "phrase", meaning: "身体行为，身业。", en: "action done through the body", example: "Bodily action often shows anger before words do." },
+          { word: "misconduct", pos: "noun", meaning: "恶行，不正行为。", en: "wrong or improper conduct", example: "He later regretted that misconduct." },
+          { word: "guard against", pos: "phrase", meaning: "防备，防止。", en: "to protect oneself from", example: "She tried to guard against rash action." }
+        ]
+      },
+      {
+        id: 232,
+        title: "Guard against verbal irritability",
+        titleZh: "再防口上的躁怒和失控",
+        literalZh: "一个人应当防护自己，不让自己在言语上起躁怒；他应当在言语上受控。舍下口上的恶行，应当修习口上的善行。",
+        english: "Let a man guard himself against irritability in speech; let him be controlled in speech. Abandoning verbal misconduct, let him practice good conduct in speech.",
+        chinese: "很多伤害最常见的形式，不是动手，而是动口。",
+        takeaway: "嘴一出去，很多东西就收不回来了，所以守口是很硬的功夫。",
+        example: "比如一时怒上来，说一句刺人话，后面可能要花很久才补得回来。",
+        vocab: [
+          { word: "speech", pos: "noun", meaning: "言语，说话。", en: "spoken words or expression", example: "His speech stayed calm under pressure." },
+          { word: "verbal misconduct", pos: "phrase", meaning: "口业恶行。", en: "wrong speech such as lying or abuse", example: "Verbal misconduct can leave deep wounds." },
+          { word: "controlled in speech", pos: "phrase", meaning: "在说话上受控。", en: "restrained and careful in speech", example: "She became more controlled in speech with age." }
+        ]
+      },
+      {
+        id: 233,
+        title: "Guard against mental irritability",
+        titleZh: "更要防心里的躁怒和失控",
+        literalZh: "一个人应当防护自己，不让自己在心里起躁怒；他应当在心上受控。舍下心里的恶行，应当修习心里的善行。",
+        english: "Let a man guard himself against irritability in thought; let him be controlled in mind. Abandoning mental misconduct, let him practice good conduct in thought.",
+        chinese: "最后还是回到心，因为身和口都是从这里流出去的。",
+        takeaway: "若心里一直翻腾，身口再怎么压，也很难长久稳住。",
+        example: "比如你表面没说什么，但心里一直在演、一直在恨，迟早还是会从别处漏出来。",
+        vocab: [
+          { word: "thought", pos: "noun", meaning: "念头，心念。", en: "an idea or movement in the mind", example: "One bitter thought can shape the whole mood." },
+          { word: "mental misconduct", pos: "phrase", meaning: "意业恶行。", en: "wrong mental action such as hatred or harmful intention", example: "Mental misconduct often starts before outer action." },
+          { word: "controlled in mind", pos: "phrase", meaning: "在心上受控。", en: "steady and governed in the mind", example: "He wanted to become controlled in mind, not just in appearance." }
+        ]
+      },
+      {
+        id: 234,
+        title: "The wise are well-controlled",
+        titleZh: "身口意都受控的人，才真叫调好了",
+        literalZh: "智者在身体行为上受控，在言语上受控，也在心念上受控。这样的人，才真正是调伏得好的。",
+        english: "The wise are controlled in bodily action, controlled in speech and controlled in thought. They are truly well-controlled.",
+        chinese: "最后一句把整章收住：真正成熟的人，不是只守一块，而是身口意都慢慢整合起来。",
+        takeaway: "真正的稳，是三处一起稳，不是只做表面工夫。",
+        example: "比如一个人不只是表面客气，心里也清、嘴里也正、行动也稳，这才是真的受调伏。",
+        vocab: [
+          { word: "well-controlled", pos: "adj", meaning: "调得很好的，受调伏的。", en: "brought into firm and balanced control", example: "A well-controlled life feels different from a merely tidy one." },
+          { word: "bodily", pos: "adj", meaning: "身体上的。", en: "related to the body", example: "Bodily habits often reveal inner habits." },
+          { word: "truly", pos: "adv", meaning: "真正地。", en: "really and in the fullest sense", example: "He was truly changed, not just acting better." }
+        ]
+      }
+    ];
+
     const chapterVerseMap = {
       1: chapter1Verses,
       2: chapter2Verses,
@@ -3409,7 +4808,14 @@
       7: chapter7Verses,
       8: chapter8Verses,
       9: chapter9Verses,
-      10: chapter10Verses
+      10: chapter10Verses,
+      11: chapter11Verses,
+      12: chapter12Verses,
+      13: chapter13Verses,
+      14: chapter14Verses,
+      15: chapter15Verses,
+      16: chapter16Verses,
+      17: chapter17Verses
     };
 
     const chapterNav = document.getElementById("chapter-nav");
