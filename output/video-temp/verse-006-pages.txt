@@ -1,0 +1,13 @@
+file 'C:/Users/chanz/Documents/GitHub/sendpdfonline/output/video-temp/verse-006-page-01-title.png'
+duration 1.600
+file 'C:/Users/chanz/Documents/GitHub/sendpdfonline/output/video-temp/verse-006-page-02-s1.png'
+duration 8.367
+file 'C:/Users/chanz/Documents/GitHub/sendpdfonline/output/video-temp/verse-006-page-03-s2.png'
+duration 8.602
+file 'C:/Users/chanz/Documents/GitHub/sendpdfonline/output/video-temp/verse-006-page-04-v1.png'
+duration 9.713
+file 'C:/Users/chanz/Documents/GitHub/sendpdfonline/output/video-temp/verse-006-page-05-v2.png'
+duration 9.708
+file 'C:/Users/chanz/Documents/GitHub/sendpdfonline/output/video-temp/verse-006-page-06-v3.png'
+duration 9.318
+file 'C:/Users/chanz/Documents/GitHub/sendpdfonline/output/video-temp/verse-006-page-06-v3.png'

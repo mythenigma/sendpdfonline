@@ -1,0 +1,5 @@
+file 'verse-001-intro.wav'
+file 'verse-001-en-zira.wav'
+file 'verse-001-gap.wav'
+file 'verse-001-zh-huihui.wav'
+file 'verse-001-outro.wav'

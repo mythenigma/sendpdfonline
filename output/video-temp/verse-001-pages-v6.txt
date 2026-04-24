@@ -1,0 +1,15 @@
+file 'output/video-temp/verse-001-page-01-title.png'
+duration 2.000000
+file 'output/video-temp/verse-001-page-02-s1.png'
+duration 7.092382
+file 'output/video-temp/verse-001-page-03-s2.png'
+duration 9.625896
+file 'output/video-temp/verse-001-page-04-s3.png'
+duration 17.857552
+file 'output/video-temp/verse-001-page-05-v1.png'
+duration 5.218867
+file 'output/video-temp/verse-001-page-06-v2.png'
+duration 5.223764
+file 'output/video-temp/verse-001-page-07-v3.png'
+duration 6.598821
+file 'output/video-temp/verse-001-page-07-v3.png'

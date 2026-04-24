@@ -1,0 +1,64 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1920" height="1080" viewBox="0 0 1920 1080">
+  <defs>
+    <linearGradient id="halo" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#f5d9a0" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#d5a85d" stop-opacity="0.18"/>
+    </linearGradient>
+    <linearGradient id="trace" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#9a7342" stop-opacity="0.00"/>
+      <stop offset="35%" stop-color="#9a7342" stop-opacity="0.45"/>
+      <stop offset="100%" stop-color="#9a7342" stop-opacity="0.00"/>
+    </linearGradient>
+    <filter id="softGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16"/>
+    </filter>
+  </defs>
+
+  <rect width="1920" height="1080" fill="none"/>
+
+  <circle cx="1460" cy="338" r="160" fill="url(#halo)" filter="url(#softGlow)"/>
+  <circle cx="1460" cy="338" r="118" fill="none" stroke="#c89b55" stroke-width="4" stroke-opacity="0.48"/>
+  <circle cx="1460" cy="338" r="82" fill="none" stroke="#c89b55" stroke-width="3" stroke-opacity="0.34"/>
+
+  <path d="M1288 610
+           C1320 556 1382 520 1452 518
+           C1528 516 1608 556 1648 630
+           C1678 686 1680 740 1662 804"
+        fill="none" stroke="#8b6437" stroke-width="6" stroke-linecap="round" stroke-opacity="0.34"/>
+
+  <path d="M1344 818
+           C1358 742 1410 694 1476 690
+           C1556 686 1622 754 1626 840"
+        fill="none" stroke="#8b6437" stroke-width="6" stroke-linecap="round" stroke-opacity="0.28"/>
+
+  <circle cx="1456" cy="470" r="72" fill="none" stroke="#8b6437" stroke-width="6" stroke-opacity="0.35"/>
+  <path d="M1414 486 C1434 506 1478 514 1510 500" fill="none" stroke="#8b6437" stroke-width="4" stroke-linecap="round" stroke-opacity="0.28"/>
+
+  <path d="M1180 356
+           C1248 312 1312 292 1388 292
+           C1462 292 1540 314 1618 362"
+        fill="none" stroke="#c89b55" stroke-width="3" stroke-linecap="round" stroke-opacity="0.24"/>
+
+  <path d="M1228 404
+           C1302 364 1366 346 1450 346
+           C1532 346 1606 370 1670 420"
+        fill="none" stroke="#c89b55" stroke-width="2.5" stroke-linecap="round" stroke-opacity="0.18"/>
+
+  <path d="M240 850
+           C368 808 500 790 640 792
+           C798 794 952 828 1098 896"
+        fill="none" stroke="url(#trace)" stroke-width="14" stroke-linecap="round"/>
+
+  <g transform="translate(1040 828)" opacity="0.36">
+    <circle cx="0" cy="0" r="88" fill="none" stroke="#8b6437" stroke-width="6"/>
+    <circle cx="0" cy="0" r="16" fill="#8b6437"/>
+    <path d="M0 -72 L0 72 M-72 0 L72 0 M-50 -50 L50 50 M50 -50 L-50 50"
+          stroke="#8b6437" stroke-width="5" stroke-linecap="round"/>
+  </g>
+
+  <g transform="translate(1170 808)" opacity="0.18" stroke="#8b6437" stroke-width="5" fill="none" stroke-linecap="round">
+    <path d="M0 0 C18 -22 42 -20 56 2"/>
+    <path d="M74 18 C92 -4 116 -2 130 20"/>
+    <path d="M146 38 C164 16 188 18 202 40"/>
+  </g>
+</svg>

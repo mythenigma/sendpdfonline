@@ -1,0 +1,2283 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="robots" content="noindex,nofollow">
+  <title>Jataka 故事学习页</title>
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+  <style>
+    :root{
+      --bg:#f3eee3;
+      --panel:#fbf7ef;
+      --panel-soft:#f7f1e6;
+      --line:#d8cebd;
+      --line-strong:#b29d79;
+      --text:#2f2a24;
+      --muted:#7b7265;
+      --muted-2:#5b5348;
+      --accent:#6f6048;
+      --accent-soft:#efe4cf;
+      --green:#6f8a66;
+      --gold:#af7e1d;
+      --shadow:0 16px 34px rgba(108,88,58,.08);
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family:Arial,Helvetica,sans-serif;
+      background:var(--bg);
+      color:var(--text);
+      line-height:1.68;
+    }
+    .page{
+      max-width:1180px;
+      margin:0 auto;
+      padding:24px;
+    }
+    .hero{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:20px;
+      background:linear-gradient(135deg,#faf5ea,#f3ecdf 58%,#ece3d3);
+      border:1px solid var(--line);
+      border-radius:20px;
+      padding:26px 28px;
+      box-shadow:var(--shadow);
+      margin-bottom:20px;
+    }
+    .hero-main{
+      flex:1 1 420px;
+      min-width:280px;
+    }
+    .hero-side{
+      flex:0 0 430px;
+      max-width:430px;
+      display:flex;
+      flex-direction:column;
+      gap:12px;
+    }
+    .kicker{
+      color:#7f6d4d;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.08em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    h1{
+      margin:0;
+      font-size:34px;
+      line-height:1.12;
+    }
+    .subtitle{
+      margin-top:10px;
+      font-size:15px;
+      color:var(--muted);
+    }
+    .chip{
+      display:inline-flex;
+      align-items:center;
+      gap:8px;
+      padding:10px 14px;
+      border-radius:999px;
+      border:1px solid #d3c4a8;
+      background:var(--accent-soft);
+      color:#5f5037;
+      font-size:13px;
+      font-weight:700;
+    }
+    .hero-nav,.section-nav,.story-nav{
+      display:flex;
+      gap:10px;
+      flex-wrap:wrap;
+    }
+    .hero-btn,.section-btn,.story-btn{
+      border:1px solid #d3c4a8;
+      background:#f8f0e1;
+      color:#6c5b40;
+      cursor:pointer;
+      transition:all .2s ease;
+    }
+    .hero-btn,.section-btn{
+      padding:9px 14px;
+      border-radius:999px;
+      font-size:13px;
+      font-weight:700;
+    }
+    .story-btn{
+      padding:10px 12px;
+      border-radius:10px;
+      font-size:15px;
+      font-weight:700;
+      min-width:0;
+      text-align:left;
+    }
+    .hero-btn:hover,.section-btn:hover,.story-btn:hover{
+      background:#efe4cf;
+      color:#4f412d;
+    }
+    .hero-btn.active,.section-btn.active,.story-btn.active{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fffdf9;
+    }
+    .hero-panel,.section-panel{
+      display:none;
+    }
+    .hero-panel.active,.section-panel.active{
+      display:block;
+    }
+    .panel{
+      background:var(--panel);
+      border:1px solid var(--line);
+      border-radius:20px;
+      box-shadow:var(--shadow);
+    }
+    .section-shell{
+      overflow:hidden;
+      margin-bottom:20px;
+    }
+    .section-header{
+      padding:18px 22px;
+      border-bottom:1px solid var(--line);
+      background:#f7efdf;
+    }
+    .section-body{
+      padding:22px;
+    }
+    .current-focus{
+      margin-bottom:12px;
+    }
+    .hero-copy{
+      color:var(--muted-2);
+      font-size:15px;
+    }
+    .meta-grid{
+      display:grid;
+      grid-template-columns:repeat(3,minmax(0,1fr));
+      gap:14px;
+      margin-top:16px;
+    }
+    .meta-card{
+      background:rgba(255,251,243,.72);
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px;
+    }
+    .meta-label{
+      color:#8a7653;
+      font-size:12px;
+      font-weight:700;
+      letter-spacing:.06em;
+      text-transform:uppercase;
+      margin-bottom:8px;
+    }
+    .meta-value{
+      font-size:25px;
+      font-weight:800;
+      line-height:1.18;
+    }
+    .meta-note{
+      margin-top:8px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .story-browser{
+      display:grid;
+      grid-template-columns:210px minmax(0,1fr);
+      gap:16px;
+      align-items:start;
+    }
+    .story-nav{
+      flex-direction:column;
+      position:sticky;
+      top:20px;
+      max-height:calc(100vh - 48px);
+      overflow:auto;
+      padding-right:4px;
+      gap:8px;
+    }
+    .story-num{
+      display:block;
+      font-size:10px;
+      font-weight:700;
+      letter-spacing:.05em;
+      opacity:.85;
+      margin-bottom:2px;
+      text-transform:uppercase;
+    }
+    .story-title{
+      display:block;
+      line-height:1.25;
+    }
+    .story-card{
+      background:#fdf9f1;
+      border:1px solid var(--line);
+      border-radius:18px;
+      padding:28px 30px;
+      min-height:520px;
+    }
+    .story-head{
+      display:flex;
+      flex-wrap:wrap;
+      justify-content:space-between;
+      gap:14px;
+      align-items:flex-start;
+      margin-bottom:18px;
+    }
+    .story-head h2{
+      margin:8px 0 0;
+      font-size:40px;
+      line-height:1.12;
+    }
+    .story-head p{
+      margin:10px 0 0;
+      color:var(--muted);
+      font-size:18px;
+    }
+    .story-badges{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      justify-content:flex-end;
+    }
+    .badge{
+      display:inline-flex;
+      align-items:center;
+      padding:8px 12px;
+      border-radius:999px;
+      background:#efe4cf;
+      border:1px solid #d5c4a5;
+      color:#5a4b32;
+      font-size:13px;
+      font-weight:700;
+      white-space:nowrap;
+    }
+    .story-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:16px;
+    }
+    .story-block{
+      background:#faf4e8;
+      border:1px solid #e3d7c4;
+      border-radius:16px;
+      padding:18px;
+    }
+    .story-block.full{
+      grid-column:1 / -1;
+    }
+    .story-block h3{
+      margin:0 0 10px;
+      font-size:18px;
+      color:var(--green);
+    }
+    .story-block-header{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:12px;
+      margin-bottom:10px;
+    }
+    .story-block-header h3{
+      margin:0;
+    }
+    .story-block p{
+      margin:0;
+      color:var(--muted-2);
+      font-size:16px;
+    }
+    .story-block p + p{
+      margin-top:10px;
+    }
+    .scene-list{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted-2);
+      font-size:15px;
+    }
+    .scene-list li + li{
+      margin-top:8px;
+    }
+    .original-text{
+      margin:0;
+      color:#3c342c;
+      font-size:15px;
+      line-height:1.82;
+      white-space:pre-line;
+    }
+    .vocab-list{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    .vocab-item{
+      background:#fffaf1;
+      border:1px solid #e2d6c1;
+      border-radius:14px;
+      padding:14px 15px;
+    }
+    .vocab-head{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:baseline;
+      justify-content:space-between;
+      margin-bottom:8px;
+    }
+    .vocab-title{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      align-items:baseline;
+    }
+    .vocab-term{
+      font-size:22px;
+      font-weight:800;
+      color:#2f2a24;
+      line-height:1.15;
+    }
+    .vocab-pos{
+      color:#8a7653;
+      font-size:12px;
+      font-weight:700;
+      text-transform:lowercase;
+      letter-spacing:.04em;
+    }
+    .vocab-lines{
+      display:grid;
+      gap:8px;
+    }
+    .vocab-line{
+      color:var(--muted-2);
+      font-size:14px;
+      line-height:1.72;
+    }
+    .vocab-line strong{
+      color:#3b3329;
+    }
+    .speech-controls{
+      display:flex;
+      flex-wrap:wrap;
+      gap:10px;
+      align-items:center;
+      justify-content:flex-end;
+    }
+    .speech-controls button,
+    .speech-controls select{
+      border:1px solid #ccb994;
+      border-radius:12px;
+      background:#fffaf1;
+      color:#4f412d;
+      font-size:15px;
+      min-height:42px;
+    }
+    .speech-controls button{
+      padding:0 16px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .speech-controls button:hover,
+    .speech-controls select:hover{
+      background:#f3e8d7;
+    }
+    .speech-controls button.is-speaking{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fffdf9;
+    }
+    .speech-controls select{
+      padding:0 12px;
+      min-width:220px;
+    }
+    .study-tabs{
+      display:flex;
+      flex-wrap:wrap;
+      gap:8px;
+      margin-bottom:16px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:10px;
+    }
+    .study-tab-btn{
+      border:1px solid #d3c4a8;
+      background:#f8f0e1;
+      color:#6c5b40;
+      border-radius:999px;
+      padding:8px 14px;
+      font-size:13px;
+      font-weight:700;
+      cursor:pointer;
+    }
+    .study-tab-btn.active{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fffdf9;
+    }
+    .study-panel{
+      display:none;
+    }
+    .study-panel.active{
+      display:block;
+    }
+    .study-paragraph{
+      padding:22px 0;
+      border-bottom:1px solid #e1d4bf;
+    }
+    .study-paragraph:first-child{
+      padding-top:0;
+    }
+    .study-paragraph:last-child{
+      border-bottom:0;
+      padding-bottom:0;
+    }
+    .study-label{
+      display:inline-flex;
+      align-items:center;
+      padding:6px 10px;
+      border-radius:999px;
+      background:#efe4cf;
+      color:#6c5b40;
+      font-size:13px;
+      font-weight:800;
+      margin-bottom:10px;
+    }
+    .study-english{
+      margin:0 0 12px;
+      color:#2f2a24;
+      font-size:24px;
+      line-height:1.62;
+    }
+    .study-row{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:14px;
+      margin-top:12px;
+    }
+    .study-note-box{
+      border-left:4px solid #b29d79;
+      background:#f8f1e5;
+      border-radius:0 12px 12px 0;
+      padding:12px 14px;
+      color:var(--muted-2);
+      font-size:17px;
+      line-height:1.8;
+    }
+    .study-note-box strong{
+      color:#3b3329;
+    }
+    .mini-vocab{
+      display:flex;
+      flex-direction:column;
+      gap:10px;
+      margin-top:14px;
+    }
+    .mini-vocab-item{
+      background:#fffaf1;
+      border:1px solid #e2d6c1;
+      border-radius:12px;
+      padding:12px 13px;
+    }
+    .mini-vocab-title{
+      display:flex;
+      flex-wrap:wrap;
+      align-items:center;
+      justify-content:space-between;
+      gap:8px;
+      margin-bottom:6px;
+    }
+    .mini-vocab-term{
+      font-weight:800;
+      color:#2f2a24;
+      font-size:24px;
+    }
+    .mini-vocab-line{
+      color:var(--muted-2);
+      font-size:16px;
+      line-height:1.7;
+    }
+    .mini-vocab-line strong{
+      color:#3b3329;
+    }
+    .vocab-head .speak-btn{
+      border:1px solid #ccb994;
+      border-radius:12px;
+      background:#fffaf1;
+      color:#4f412d;
+      font-size:14px;
+      font-weight:700;
+      min-height:36px;
+      padding:0 13px;
+      cursor:pointer;
+    }
+    .vocab-head .speak-btn:hover{
+      background:#f3e8d7;
+    }
+    .vocab-head .speak-btn.is-speaking{
+      background:var(--accent);
+      border-color:var(--accent);
+      color:#fffdf9;
+    }
+    .index-grid{
+      display:grid;
+      grid-template-columns:repeat(2,minmax(0,1fr));
+      gap:14px;
+    }
+    .index-card{
+      background:#fbf7ef;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:16px 18px;
+    }
+    .index-card h3{
+      margin:0 0 10px;
+      font-size:18px;
+    }
+    .index-card ul{
+      margin:0;
+      padding-left:18px;
+      color:var(--muted-2);
+      font-size:15px;
+    }
+    .index-card li + li{
+      margin-top:8px;
+    }
+    .quiet-note{
+      margin-top:14px;
+      color:var(--muted);
+      font-size:14px;
+    }
+    .placeholder{
+      padding:22px;
+      border:1px dashed #ccb994;
+      border-radius:16px;
+      background:#faf4e8;
+      color:var(--muted-2);
+      font-size:15px;
+    }
+    .icon-line{
+      display:flex;
+      align-items:flex-start;
+      gap:12px;
+      margin-bottom:14px;
+    }
+    .icon-dot{
+      flex:0 0 34px;
+      width:34px;
+      height:34px;
+      border-radius:12px;
+      background:#e7dbc6;
+      border:1px solid #ccb994;
+      color:#5d4f39;
+      display:inline-flex;
+      align-items:center;
+      justify-content:center;
+      font-size:16px;
+      font-weight:700;
+    }
+    .icon-line strong{
+      display:block;
+      margin-bottom:4px;
+      font-size:16px;
+    }
+    @media (max-width:980px){
+      .meta-grid,.story-grid,.index-grid,.story-browser,.vocab-list{
+        grid-template-columns:1fr;
+      }
+      .study-row{
+        grid-template-columns:1fr;
+      }
+      .story-nav{
+        position:static;
+        flex-direction:row;
+        overflow:auto;
+        padding-bottom:6px;
+      }
+      .story-btn{
+        min-width:220px;
+      }
+      .hero-side{
+        flex:1 1 100%;
+        max-width:none;
+      }
+    }
+    @media (max-width:640px){
+      .page{
+        padding:14px;
+      }
+      .hero,.section-header,.section-body,.story-card{
+        padding-left:16px;
+        padding-right:16px;
+      }
+      h1{
+        font-size:28px;
+      }
+      .story-head h2{
+        font-size:28px;
+      }
+      .story-btn{
+        font-size:16px;
+        min-width:180px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="page">
+    <section class="hero">
+      <div class="hero-main">
+        <div class="kicker">Jataka Reader</div>
+        <h1>本生故事学习页</h1>
+        <div class="subtitle">单页阅读 · 故事切换 · 先做可读版，再继续往后补细节</div>
+        <div class="meta-grid">
+          <div class="meta-card">
+            <div class="meta-label">Source</div>
+            <div class="meta-value">Jataka.pdf</div>
+            <div class="meta-note">当前依据项目里的 Borobudur Jataka 版本整理。</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Current Scope</div>
+            <div class="meta-value">前 10 则</div>
+            <div class="meta-note">前 10 个故事已做成可读、可切换的学习结构。</div>
+          </div>
+          <div class="meta-card">
+            <div class="meta-label">Layout</div>
+            <div class="meta-value">单网页</div>
+            <div class="meta-note">不拆很多页面，后面继续往同一页里追加。</div>
+          </div>
+        </div>
+      </div>
+      <div class="hero-side">
+        <div class="current-focus">
+          <span class="chip">当前重点：Jataka Relief Stories · Top Row</span>
+        </div>
+        <div class="hero-nav" id="heroInfoNav"></div>
+        <div id="heroInfoPanels"></div>
+      </div>
+    </section>
+
+    <section class="panel section-shell">
+      <div class="section-header">
+        <div class="section-nav" id="sectionNav"></div>
+      </div>
+      <div class="section-body">
+        <div id="sectionPanels"></div>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const heroInfoStorageKey = "jataka-hero-info-tab";
+    const sectionStorageKey = "jataka-section-tab";
+    const storyStorageKey = "jataka-top-story-tab";
+    const ttsVoiceStorageKey = "jataka-tts-voice";
+    const ttsRateStorageKey = "jataka-tts-rate";
+    const supportsSpeech = "speechSynthesis" in window && "SpeechSynthesisUtterance" in window;
+    const studyTabStorageKey = "jataka-study-tab";
+    let availableVoices = [];
+    let activeSpeechKey = null;
+
+    const heroInfoTabs = [
+      {
+        id: "what",
+        label: "这是什么",
+        html: `
+          <div class="hero-panel" data-panel="what">
+            <div class="hero-copy">
+              <strong>Jataka</strong> 一般就是“本生故事”，讲的是佛陀过去生里作为菩萨时，怎样一点点把布施、忍辱、决心、慈悲这些德目练出来。<br><br>
+              这本 PDF 还有一个很特别的角度：它不是单纯抄故事文本，而是把 <strong>Borobudur 浮雕</strong> 上的故事场景，一格一格对应出来看，所以它很适合做成“故事 + 场景”式阅读页。
+            </div>
+          </div>`
+      },
+      {
+        id: "read",
+        label: "怎么读",
+        html: `
+          <div class="hero-panel" data-panel="read">
+            <div class="hero-copy">
+              这页我先按一个比较顺手的阅读法来排：<br><br>
+              先抓故事主轴，再看它强调哪一种德目，然后再顺着 panel range 去看场景推进。<br>
+              这样读不会一开始就被 400 多页吓住，而是先把“这个故事到底在讲什么”抓稳。
+            </div>
+          </div>`
+      },
+      {
+        id: "scope",
+        label: "这一版做到哪",
+        html: `
+          <div class="hero-panel" data-panel="scope">
+            <div class="hero-copy">
+              这一版不是空壳页。现在已经先把 <strong>Top Row 前 10 则故事</strong> 做成可切换内容：<br><br>
+              The Tigress、King of the Sibis、Gruel、The Head of a Guild、Aviṣahya、The Hare、Agastya、Maitrībala、Viśvantara、The Sacrifice。<br>
+              每则里现在会区分 <strong>原书英文</strong> 和 <strong>中文整理</strong>，不再把印尼语放进主阅读页。后面可以继续按同一套格式，一则一则往下补。
+            </div>
+          </div>`
+      }
+    ];
+
+    const topStories = [
+      {
+        id: "tigress",
+        shortLabel: "1. The Tigress",
+        number: "Story 1",
+        english: "The Tigress",
+        chinese: "母虎故事",
+        range: "Panels 1-4",
+        virtue: "Giving One's own Body",
+        virtueCn: "布施自己的身体",
+        parallel: "No Pali parallel noted",
+        originalEnglish: `The Bodhisattva was born in a family of eminent brahmins, but soon renounced the world, and became a teacher, having many disciples. One day while out with his disciple Ajita he saw a tigress, who, ravaged by starvation, was contemplating eating her own offspring.
+
+By a ruse the Bodhisattva sent off his disciple and threw himself down the chasm so the tigress can be saved from such an ignoble act, and that he may fulfil the perfection of giving, for the sake of attaining Awakening. (No Pāḷi parallel exists)
+
+1. The Birth Ceremony of the Bodhisattva
+The Bodhisattva sits on his mother's lap while the brahmin priests pour libations over his head. It appears the Bodhisattva's father is on the far right, holding gifts for the priests. Unfortunately the boy's head has been lost. Notice his left leg rests on a lotus cushion.`,
+        summary: [
+          "菩萨出生在显赫婆罗门家，后来出离世间，成了一位老师。有一天他和弟子 Ajita 外出，看见一只母虎因饥饿到极点，竟要吃自己的幼崽。",
+          "菩萨设法先支开弟子，然后把自己投下山谷，宁愿舍身，也不愿让母虎造下那样的恶业；同时，他也借此圆满布施的修行。"
+        ],
+        why: "这则故事的力度很大，因为它把“布施”推到了极端版本：不是拿出剩余的东西，而是连自己都舍得给。它很适合作为进入 Jataka 世界的第一篇，因为一开头就把菩萨道的气质立住了。",
+        scenes: [
+          "1. Birth Ceremony: 菩萨坐在母亲膝上，婆罗门祭司为他灌顶祝福。",
+          "2. Learns Dharma: 菩萨受学，画面里能看出老师、学生和书写工具。",
+          "3. Sacrifices Himself: 同一小面板里可能放了两幕，一边是洞中与弟子相处，一边是准备舍身喂虎。",
+          "4. Paying Respect: 菩萨遗骨被安葬，弟子与诸天向其致敬。"
+        ],
+        note: "这则故事的读法重点，不只是“感动”，而是去看：作者为什么要把“母虎将吃幼崽”设成转折点。那一刻不是单纯救动物，而是同时避免母虎堕入更重的恶业。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "The Bodhisattva was born in a family of eminent brahmins, but soon renounced the world, and became a teacher, having many disciples.",
+                  literalZh: "菩萨出生在一个显赫婆罗门的家庭中，但不久就舍弃世俗生活，并成为一位老师，拥有许多弟子。",
+                  plainZh: "这一句先交代身份反差：他本来出身很高，却没有沿着荣华富贵走，而是选择出离，后来成为修行老师。",
+                  note: "重点看 but soon：前面说出身高贵，后面马上转到出离，故事一开始就把价值选择摆出来了。",
+                  vocab: [
+                    { term: "eminent", pos: "adj", chinese: "杰出的，显赫的，有声望的", english: "well-known and highly respected, especially in a profession or social group", example: "She is an eminent scholar of Buddhist art." },
+                    { term: "brahmin", pos: "noun", chinese: "婆罗门；古印度宗教和社会阶层中的祭司阶层成员", english: "a member of the priestly class in traditional Indian society", example: "The story says he was born in a brahmin family." },
+                    { term: "renounce", pos: "verb", chinese: "正式放弃，舍弃，宣布不再追求", english: "to formally give up a claim, way of life, belief, or possession", example: "He renounced wealth and chose a religious life." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "One day while out with his disciple Ajita he saw a tigress, who, ravaged by starvation, was contemplating eating her own offspring.",
+                  literalZh: "有一天，他和弟子 Ajita 在外面时，看见一只母虎；这只母虎被饥饿严重折磨，正在考虑吃掉自己的幼崽。",
+                  plainZh: "这里把冲突推出来了：母虎不是普通饥饿，而是饿到快要违背本能，连自己的孩子都要吃。",
+                  note: "ravaged by starvation 是很强的表达，不是 hungry，而是身体和状态都被饥饿摧毁。",
+                  vocab: [
+                    { term: "disciple", pos: "noun", chinese: "弟子，门徒，追随并学习的人", english: "a person who follows and learns from a teacher, especially a spiritual teacher", example: "Ajita was his disciple." },
+                    { term: "ravaged by", pos: "phrase", chinese: "被……严重摧残，被……折磨得很厉害", english: "badly damaged or harmed by something", example: "The village was ravaged by years of war." },
+                    { term: "contemplate", pos: "verb", chinese: "考虑，沉思，认真想着要做某事", english: "to think carefully about doing something", example: "She contemplated leaving the city." },
+                    { term: "offspring", pos: "noun", chinese: "后代，子女，动物的幼崽", english: "a person's children or an animal's young", example: "The tigress looked at her own offspring." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "By a ruse the Bodhisattva sent off his disciple and threw himself down the chasm so the tigress can be saved from such an ignoble act, and that he may fulfil the perfection of giving, for the sake of attaining Awakening.",
+                  literalZh: "通过一个计策，菩萨把他的弟子支开，并把自己投下深谷，这样母虎就可以从那样不高贵的行为中被救出，而他也可以圆满布施的完美，为了达到觉悟。",
+                  plainZh: "这一段是故事核心：他不是一时冲动，而是有两个目的，一是救母虎不造重业，二是圆满自己的布施修行。",
+                  note: "for the sake of 是正式书面表达，意思是“为了……”。这里的 Awakening 是佛教语境里的觉悟，不是普通“醒来”。",
+                  vocab: [
+                    { term: "ruse", pos: "noun", chinese: "计策，策略，通常带一点巧妙的安排", english: "a trick or clever plan used to achieve something", example: "By a ruse, he sent the disciple away." },
+                    { term: "chasm", pos: "noun", chinese: "深谷，裂口，深而宽的裂缝", english: "a deep opening or gap in the ground", example: "He threw himself down the chasm." },
+                    { term: "ignoble", pos: "adj", chinese: "不高尚的，卑下的，不体面的", english: "morally low, dishonorable, or not noble", example: "He wanted to prevent an ignoble act." },
+                    { term: "fulfil", pos: "verb", chinese: "履行，完成，实现，使圆满", english: "to complete or achieve something that is expected, promised, or required", example: "He wished to fulfil the perfection of giving." },
+                    { term: "Awakening", pos: "noun", chinese: "觉悟；佛教语境里的证悟", english: "spiritual awakening or enlightenment", example: "He acted for the sake of attaining Awakening." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 1",
+                  english: "The Bodhisattva sits on his mother's lap while the brahmin priests pour libations over his head. It appears the Bodhisattva's father is on the far right, holding gifts for the priests. Unfortunately the boy's head has been lost. Notice his left leg rests on a lotus cushion.",
+                  literalZh: "菩萨坐在他母亲的膝上，同时婆罗门祭司把祭礼用液体倒在他的头上。菩萨的父亲似乎在最右边，拿着给祭司的礼物。不幸的是，这个男孩的头已经遗失。注意他的左腿放在一个莲花垫上。",
+                  plainZh: "这是浮雕第一幕，讲的是菩萨出生时的仪式。作者也提醒我们看细节：父亲、祭司、礼物、莲花垫，以及因为石刻损坏而缺失的头部。",
+                  note: "这一段是艺术说明，不是故事情节推进。读的时候要把它当成“看图讲解”。",
+                  vocab: [
+                    { term: "libations", pos: "noun", chinese: "祭礼中倒出的液体供品；奠酒", english: "liquid offerings poured out in a religious ceremony", example: "The priests poured libations over his head." },
+                    { term: "on the far right", pos: "phrase", chinese: "在最右边", english: "at the extreme right side of a picture or scene", example: "The father appears on the far right." },
+                    { term: "lotus cushion", pos: "noun", chinese: "莲花垫；带有莲花象征的坐垫或垫座", english: "a cushion shaped like or associated with a lotus", example: "His leg rests on a lotus cushion." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "eminent brahmins", pos: "phrase", chinese: "显赫的婆罗门；地位很高、很受尊敬的婆罗门阶层", english: "very respected and high-status brahmins", example: "He was born in a family of eminent brahmins." },
+          { term: "renounce the world", pos: "phrase", chinese: "出离世间；放下世俗生活去修行", english: "to leave ordinary worldly life behind, often for a spiritual life", example: "He renounced the world and became a teacher." },
+          { term: "ravaged by starvation", pos: "phrase", chinese: "被饥饿折磨得不成样子", english: "badly damaged or exhausted because of severe hunger", example: "The animal was ravaged by starvation." },
+          { term: "offspring", pos: "noun", chinese: "后代；幼崽；子女", english: "a person's children or an animal's young", example: "The tigress was about to eat her own offspring." },
+          { term: "by a ruse", pos: "phrase", chinese: "用一个计策；靠一个小策略", english: "by using a trick or clever plan", example: "By a ruse, he sent his disciple away." },
+          { term: "ignoble act", pos: "phrase", chinese: "不光彩的行为；卑下的举动", english: "an action that is morally low or shameful", example: "He wanted to save the tigress from such an ignoble act." },
+          { term: "libations", pos: "noun", chinese: "奠酒；祭礼中倒出的液体供奉", english: "liquid offerings poured out in a religious ceremony", example: "The priests pour libations over his head." }
+        ]
+      },
+      {
+        id: "sibis",
+        shortLabel: "2. King Śibi",
+        number: "Story 2",
+        english: "The King of the Sibis",
+        chinese: "尸毗王故事",
+        range: "Panels 5-9",
+        virtue: "Giving One's Bodily Parts",
+        virtueCn: "布施自己的身体部分",
+        parallel: "cp. Pali Jataka 499",
+        originalEnglish: `The Bodhisattva once grew up to become the King of the Śibis. His generosity attracted people from far and wide, and he rejoiced in giving. However, he longed to give, not just his wealth, but also his bodily parts, all for the sake of Awakening.
+
+Śakra, the lord of the gods, took the form of a brahmin, and begged from him his eyes. His ministers objected, but the King gladly gave them, and when asked for one, gave two. Later, Śakra returned, and—following an asservation of truth—restored his vision, but with eyes that now had divine vision. (cp. Pāḷi Jātaka 499)
+
+7. Śakra requests an Eye from the King
+Śakra has here taken on the form of an old and blind brahmin, and is standing in front of the king requesting his eye.`,
+        summary: [
+          "菩萨这一生做了尸毗王，最出名的是慷慨好施。他不满足于只舍财物，还想把身体部分也布施出去，为的是成就觉悟之道。",
+          "帝释天化成老而盲的婆罗门，来向他索眼。大臣们反对，但国王不仅肯给，甚至别人要一只，他给两只。后来帝释显现真实身份，又以真实语恢复了他的视力，并赋予更高层次的“天眼”。"
+        ],
+        why: "这一则比《母虎》更容易让人看到“王者身份”与“修行目标”的冲突。一个国王最需要的就是治理、威严和形象，但他却愿意把眼睛给出去，说明他的优先级已经完全放在觉悟上了。",
+        scenes: [
+          "5. Meets a Supplicant: 画面损坏严重，但大概能看出王在接受请求。",
+          "6. Gives to Supplicants: 国王和王后在位上，前方多人伸手受施。",
+          "7. Śakra Requests an Eye: 帝释化成老盲婆罗门，当面求眼。",
+          "8. Sight is Restored: 王在园中失明静坐，帝释准备恢复其视力。",
+          "9. Teaches Dharma: 王重返都城，把自己的经历讲成法。"
+        ],
+        note: "这则故事很适合和后来的佛教布施观连起来看：真正难舍的，往往不是钱，而是自己最依赖、最珍惜的那部分。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "The Bodhisattva once grew up to become the King of the Śibis. His generosity attracted people from far and wide, and he rejoiced in giving.",
+                  literalZh: "菩萨曾经长大后成为 Śibis 的国王。他的慷慨吸引了从远处和各地而来的人们，并且他以布施为乐。",
+                  plainZh: "这一段先把人物立起来：他是国王，而且不是勉强做慈善，而是真的喜欢给、乐于给。",
+                  note: "rejoiced in giving 比 liked giving 更正式，也更有宗教气息，表示“以布施为欢喜”。",
+                  vocab: [
+                    { term: "generosity", pos: "noun", chinese: "慷慨，乐于给予", english: "the quality of being willing to give money, help, or kindness", example: "His generosity was known throughout the kingdom." },
+                    { term: "from far and wide", pos: "phrase", chinese: "从四面八方，从很远很广的地方", english: "from many places, including distant ones", example: "People came from far and wide." },
+                    { term: "rejoice in", pos: "verb", chinese: "以……为乐，因……而欢喜", english: "to feel joy because of something", example: "He rejoiced in giving." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "However, he longed to give, not just his wealth, but also his bodily parts, all for the sake of Awakening.",
+                  literalZh: "然而，他渴望布施的，不只是他的财富，也包括他的身体部分，全部都是为了觉悟的缘故。",
+                  plainZh: "这一句把故事推深了：他不只想做一个大方的国王，而是愿意把最难舍的身体也拿出来修布施。",
+                  note: "not just A, but also B 是很常见的加强结构，读到这里要抓住“从财物推进到身体”的层次。",
+                  vocab: [
+                    { term: "long to", pos: "verb", chinese: "渴望，强烈想要", english: "to want something very much", example: "He longed to give more than wealth." },
+                    { term: "bodily parts", pos: "phrase", chinese: "身体部位，肢体器官", english: "parts of the body", example: "He wished to give even his bodily parts." },
+                    { term: "for the sake of", pos: "phrase", chinese: "为了……，为了……的缘故", english: "for the purpose or benefit of something", example: "He acted for the sake of Awakening." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "Śakra, the lord of the gods, took the form of a brahmin, and begged from him his eyes. His ministers objected, but the King gladly gave them, and when asked for one, gave two.",
+                  literalZh: "Śakra，诸神之主，采取了一个婆罗门的形相，并向他乞求他的眼睛。他的大臣们反对，但国王高兴地给了它们；当被要求给一只时，他给了两只。",
+                  plainZh: "这一段是考验本身。帝释天化身来求眼，大臣反对也很正常，但国王的回答是超出要求地给。",
+                  note: "begged from him his eyes 这个语序比较书面，可以理解为 begged his eyes from him。",
+                  vocab: [
+                    { term: "take the form of", pos: "phrase", chinese: "采取……形相，化成……样子", english: "to appear as a particular person or thing", example: "The god took the form of a brahmin." },
+                    { term: "beg from", pos: "verb", chinese: "向……乞求，向……讨要", english: "to ask someone humbly or urgently for something", example: "He begged from the king his eyes." },
+                    { term: "object", pos: "verb", chinese: "反对，提出异议", english: "to say that you disagree with something", example: "The ministers objected." }
+                  ]
+                },
+                {
+                  label: "Paragraph 4",
+                  english: "Later, Śakra returned, and following an asservation of truth restored his vision, but with eyes that now had divine vision.",
+                  literalZh: "后来，Śakra 回来了，并且在一段真实宣言之后恢复了他的视力，但恢复的是现在具有神圣视觉的眼睛。",
+                  plainZh: "故事最后不是简单把眼睛还回来，而是让国王获得更高层次的视力，表示他的布施没有白费。",
+                  note: "asservation of truth 是很宗教化的表达，意思接近“以真实语作证”。divine vision 则是超越普通肉眼的视力。",
+                  vocab: [
+                    { term: "restore", pos: "verb", chinese: "恢复，使复原", english: "to bring something back to its earlier state", example: "His vision was restored." },
+                    { term: "vision", pos: "noun", chinese: "视力；也可指洞见、愿景", english: "the ability to see; also insight or a future idea", example: "The king received divine vision." },
+                    { term: "divine", pos: "adj", chinese: "神圣的，神的", english: "connected with a god or sacred power", example: "The story speaks of divine vision." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 5",
+                  english: "The panel is very damaged. What we can make out is as follows: In the centre, atop a seat, sits a person of rank, probably the king. Behind him are two women, on the thigh on one of the women he rests his hand. In front are two people, sitting lower. It may have been someone making a request.",
+                  literalZh: "这个面板损坏很严重。我们能辨认出的如下：在中央，一个有地位的人坐在座位上，大概是国王。他身后有两个女人，他把手放在其中一个女人的大腿上。前面有两个人坐得更低。这可能是某个正在提出请求的人。",
+                  plainZh: "这一幕主要是考古式说明：画面破损，只能推测是国王面对求请者。",
+                  note: "make out 在这里不是“亲热”，而是“看清、辨认出”。",
+                  vocab: [
+                    { term: "make out", pos: "verb", chinese: "辨认出，看清楚", english: "to manage to see, hear, or understand something with difficulty", example: "We can make out a seated figure." },
+                    { term: "person of rank", pos: "phrase", chinese: "有地位的人，有身份的人", english: "a person with high social or official status", example: "A person of rank sits in the centre." }
+                  ]
+                },
+                {
+                  label: "Panel 7",
+                  english: "Śakra has here taken on the form of an old and blind brahmin, and is standing in front of the king requesting his eye.",
+                  literalZh: "Śakra 在这里采取了一个又老又盲的婆罗门形相，并站在国王面前，请求他的眼睛。",
+                  plainZh: "这是关键浮雕：帝释天化成弱者来索取最难给出的东西。",
+                  note: "requesting his eye 是现在分词结构，补充说明他站在那里正在做什么。",
+                  vocab: [
+                    { term: "blind", pos: "adj", chinese: "失明的，看不见的", english: "unable to see", example: "He appeared as a blind brahmin." },
+                    { term: "request", pos: "verb", chinese: "请求，正式要求", english: "to ask for something politely or formally", example: "He requested the king's eye." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "from far and wide", pos: "phrase", chinese: "从四面八方；从很远很广的地方", english: "from many different places, often distant ones", example: "People came from far and wide to see the king." },
+          { term: "rejoice in", pos: "verb", chinese: "以……为乐；因……而欢喜", english: "to take joy in something", example: "He rejoiced in giving." },
+          { term: "bodily parts", pos: "phrase", chinese: "身体的部分；肢体器官", english: "parts of the body", example: "He wished to give even his bodily parts." },
+          { term: "for the sake of", pos: "phrase", chinese: "为了；为了……的缘故", english: "for the purpose of achieving or helping something", example: "He gave everything for the sake of Awakening." },
+          { term: "beg from", pos: "verb", chinese: "向……乞求；向……讨要", english: "to ask someone for something in an urgent or humble way", example: "The brahmin begged from him his eyes." },
+          { term: "object", pos: "verb", chinese: "反对", english: "to express disagreement with something", example: "His ministers objected to the request." },
+          { term: "divine vision", pos: "phrase", chinese: "神圣的视力；天眼", english: "supernatural or godlike sight", example: "His sight was restored as divine vision." }
+        ]
+      },
+      {
+        id: "gruel",
+        shortLabel: "3. Gruel",
+        number: "Story 3",
+        english: "Gruel",
+        chinese: "粥食故事",
+        range: "Panels 10-14",
+        virtue: "Giving even a Little",
+        virtueCn: "哪怕只有一点，也能布施",
+        parallel: "cp. Pali Jataka 415",
+        originalEnglish: `The Bodhisattva in this life was the king of the Kośalans, who excelled at giving gifts to the ascetics and brahmins, the poor and the beggars. One day the king remembered his former existence as a servant, in which he had joyfully served rice gruel to four ascetics. He then began to recite two verses telling how even a small gift produces great results.
+
+The queen eventually summoned up courage and asked him about the verses, and he explained what had happened previously. She then also recalled her previous existence, in which, as a slave girl, she had given the remnants of a meal to a sage, with the result that she was now queen in this existence.
+
+The king then gave a talk on Dharma to the assembled audience explaining the benefits of giving. (cp. Pāḷi Jātaka 415)`,
+        summary: [
+          "菩萨这一生是拘萨罗王，平日就很爱布施。有一天他忽然想起过去生，自己曾是个贫穷仆人，却还是欢喜地把米粥供养给四位苦行者。",
+          "后来王后也忆起自己的前生，曾以奴婢身份把残食供养给智者。两人因此都明白：一个小小的善业，不一定立刻显大，但因果并不会丢失。"
+        ],
+        why: "这则故事非常适合现代人，因为它不要求“先有很多再去给”。它讲得很朴素：一点点善意、很少的食物、很普通的供养，只要心是正的，也会慢慢长成果报。",
+        scenes: [
+          "10. Servant Invites the Ascetics: 贫穷仆人遇见四位苦行者，仍邀请他们来家里吃饭。",
+          "11. Slave Girl gives Remnants: 奴婢把剩食供给一位苦行者。",
+          "12. King recounts Former Life: 王向王后讲起自己过去的善行。",
+          "13. King teaches Dharma: 王与王后在树下对众人说法。",
+          "14. Dancers and Courtiers: 周边人物一同庆贺并见证善业果报。"
+        ],
+        note: "如果以后这页要做成更细读的学习版，这一则很适合配“你不需要等条件完美才开始行善”这条线。它的气质比前两篇更贴近日常。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "The Bodhisattva in this life was the king of the Kośalans, who excelled at giving gifts to the ascetics and brahmins, the poor and the beggars.",
+                  literalZh: "菩萨在这一生是 Kośalans 的国王，他在向苦行者和婆罗门、穷人和乞丐布施礼物方面非常出色。",
+                  plainZh: "开头先说明他这一生的身份和习惯：他是国王，也特别擅长布施给各种需要帮助的人。",
+                  note: "excel at 是英语里很实用的表达，比 be good at 更书面一些。",
+                  vocab: [
+                    { term: "excel at", pos: "verb", chinese: "擅长，在……方面表现出色", english: "to be very good at something", example: "He excelled at giving gifts." },
+                    { term: "ascetic", pos: "noun", chinese: "苦行者，禁欲修行者", english: "a person who lives a strict life without ordinary pleasures for religious reasons", example: "The ascetic accepted the food." },
+                    { term: "beggar", pos: "noun", chinese: "乞丐，乞讨者", english: "a person who asks others for money or food", example: "The king gave gifts to beggars." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "One day the king remembered his former existence as a servant, in which he had joyfully served rice gruel to four ascetics. He then began to recite two verses telling how even a small gift produces great results.",
+                  literalZh: "有一天，国王想起了他过去作为仆人的存在；在那一生里，他曾欢喜地把米粥供给四位苦行者。然后他开始诵出两首偈，讲述即使一个小礼物也会产生大的结果。",
+                  plainZh: "这一段讲的是因果记忆：他现在是王，但过去只是仆人；当时给的东西很少，结果却很大。",
+                  note: "former existence 是佛教语境里“前生”的书面说法。rice gruel 就是米粥、稀粥。",
+                  vocab: [
+                    { term: "former existence", pos: "phrase", chinese: "前生，过去的存在", english: "a previous life or earlier state of existence", example: "He remembered his former existence." },
+                    { term: "rice gruel", pos: "noun", chinese: "米粥，稀饭", english: "thin porridge made from rice", example: "He served rice gruel to the ascetics." },
+                    { term: "recite", pos: "verb", chinese: "背诵，吟诵，诵出", english: "to say a poem, verse, or passage aloud from memory", example: "The king began to recite two verses." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "The queen eventually summoned up courage and asked him about the verses, and he explained what had happened previously.",
+                  literalZh: "王后最终鼓起勇气，问他那些偈是什么意思，而他解释了以前发生过的事情。",
+                  plainZh: "王后注意到国王不断念偈，但一开始不敢问，后来才鼓起勇气问清楚。",
+                  note: "summon up courage 是非常好用的表达，表示“把勇气聚起来”。",
+                  vocab: [
+                    { term: "eventually", pos: "adv", chinese: "最终，终于", english: "in the end, especially after some time", example: "She eventually asked him." },
+                    { term: "summon up courage", pos: "phrase", chinese: "鼓起勇气", english: "to make yourself brave enough to do something", example: "The queen summoned up courage." },
+                    { term: "previously", pos: "adv", chinese: "以前，先前", english: "before the present time or event", example: "He explained what had happened previously." }
+                  ]
+                },
+                {
+                  label: "Paragraph 4",
+                  english: "She then also recalled her previous existence, in which, as a slave girl, she had given the remnants of a meal to a sage, with the result that she was now queen in this existence.",
+                  literalZh: "然后她也回忆起自己的前生；在那一生里，她作为一个女奴，曾把一顿饭的剩余给了一位贤者，结果就是她在这一生成为王后。",
+                  plainZh: "王后的故事和国王互相呼应：一个小小的布施，也能成为后来巨大果报的因。",
+                  note: "with the result that 是结果结构，意思是“其结果是……”。",
+                  vocab: [
+                    { term: "recall", pos: "verb", chinese: "回忆起，想起", english: "to remember something", example: "She recalled her previous existence." },
+                    { term: "remnants of a meal", pos: "phrase", chinese: "饭菜剩余，残食", english: "the leftover parts of a meal", example: "She gave the remnants of a meal to a sage." },
+                    { term: "sage", pos: "noun", chinese: "贤者，智者", english: "a very wise person, often a spiritual teacher", example: "The sage received the food." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 10",
+                  english: "In a former life the king is a poor servant. When he sees four ascetics one day he invites them to eat at his house, even though he barely had enough for himself and his family.",
+                  literalZh: "在一个前生中，国王是一个贫穷仆人。有一天当他看见四位苦行者时，他邀请他们到自己家吃饭，尽管他几乎没有足够的食物给自己和家人。",
+                  plainZh: "浮雕把“少中还能给”的重点画出来了：不是有余才供养，而是自己也不宽裕时仍愿意给。",
+                  note: "barely had enough 是非常日常的表达，意思是“几乎不够”。",
+                  vocab: [
+                    { term: "barely", pos: "adv", chinese: "几乎不，勉强才", english: "only just; almost not", example: "He barely had enough food." },
+                    { term: "invite", pos: "verb", chinese: "邀请", english: "to ask someone to come somewhere or do something", example: "He invited them to eat at his house." }
+                  ]
+                },
+                {
+                  label: "Panel 13",
+                  english: "The king and the queen sit of a raised seat in a scene that is set in the outdoors, under trees. Before them sit an entourage who are listening to the teaching.",
+                  literalZh: "国王和王后坐在一个高座上，场景设置在户外、树下。在他们面前坐着一群随从，正在听教导。",
+                  plainZh: "这一幕是故事的总结：国王把自己的经验变成法的教导，讲给众人听。",
+                  note: "entourage 指随行人员、侍从群，常用于王室或重要人物。",
+                  vocab: [
+                    { term: "raised seat", pos: "noun", chinese: "高座，高起来的座位", english: "a seat placed higher than the surrounding level", example: "They sat on a raised seat." },
+                    { term: "entourage", pos: "noun", chinese: "随从，随行人员", english: "a group of people who travel with an important person", example: "The entourage listened to the teaching." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "excel at", pos: "verb", chinese: "擅长；在……方面很出色", english: "to be very good at something", example: "He excelled at giving gifts." },
+          { term: "ascetic", pos: "noun", chinese: "苦行者；修苦行的人", english: "a person who lives a strict life without ordinary pleasures, often for religious reasons", example: "He offered food to four ascetics." },
+          { term: "gruel", pos: "noun", chinese: "稀粥；薄粥", english: "a thin porridge made by boiling grain in water", example: "He served rice gruel to the ascetics." },
+          { term: "summon up courage", pos: "phrase", chinese: "鼓起勇气", english: "to force yourself to become brave enough to do something", example: "The queen summoned up courage and asked him." },
+          { term: "remnants of a meal", pos: "phrase", chinese: "饭菜剩余；残食", english: "the leftover parts of a meal", example: "She gave the remnants of a meal to a sage." },
+          { term: "assembled audience", pos: "phrase", chinese: "聚集起来的听众", english: "a group of people gathered together to listen or watch", example: "The king spoke to the assembled audience." }
+        ]
+      },
+      {
+        id: "guild",
+        shortLabel: "4. Head of a Guild",
+        number: "Story 4",
+        english: "The Head of a Guild",
+        chinese: "行会首领故事",
+        range: "Panels 15-18",
+        virtue: "Determination when Giving",
+        virtueCn: "布施时的决心",
+        parallel: "cp. Pali Jataka 40",
+        originalEnglish: `The Bodhisattva in this life, through his merit, became the head of a guild, and excelled in the giving of gifts to those in need. One day while taking his meal, a Pratyekabuddha appeared outside his gate with his bowl in hand. The Bodhisattva immediately requested his wife to take alms food for him.
+
+As she approached, Māra made an apparition of the Great Hell appear to separate her from the supplicant, and she turned back afraid. The Bodhisattva took the dishes from her, and prepared to give alms.
+
+Māra then appeared and tried to persuade him otherwise, but the Bodhisattva prevailed with his determination, and, as he approached the Pratyekabuddha, a large lotus sprang up from the hell and sustained his steps. After receiving, the Pratyekabuddha showed his glory as he ascended into the sky and departed. (cp. Pāḷi Jāṭaka 40)`,
+        summary: [
+          "菩萨以善业成为一位行会首领，常向需要的人施舍。有一天，一位辟支佛拿着钵来到门外，他立刻让妻子拿食物去供养。",
+          "可就在这时，魔王现起大地狱的可怕幻象，把妻子吓退。菩萨亲自端起食物去供养，魔王又继续阻挠，但他不退；当他迈向辟支佛时，地狱之上竟涌起莲花托住他的脚步。"
+        ],
+        why: "这一则最有画面感的地方，不是“供养”本身，而是“阻挠中的供养”。真正检验布施心的，往往不是平顺时给得出去，而是害怕、犹豫、外界拦阻时，你还要不要继续走过去。",
+        scenes: [
+          "15. The Bodhisattva and his Wife: 菩萨和妻子坐于高座，可能是事情发生前后的家中场景。",
+          "16. Takes Food for the Pratyekabuddha: 两人都端着食物，表示供养行动已经展开。",
+          "17. Hell Scene Appears: 魔王制造地狱幻境，辟支佛站在对面，场面充满压迫感。",
+          "18. Ascends into the Sky: 辟支佛受供后显神变升空离去，众人合掌。"
+        ],
+        note: "这个故事里“莲花托步”特别值得保留。它不是只为了神奇，而是在视觉上把“穿过恐惧继续行善”做成了一个记忆点。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "The Bodhisattva in this life, through his merit, became the head of a guild, and excelled in the giving of gifts to those in need.",
+                  literalZh: "菩萨在这一生中，通过他的福德，成为一个行会的首领，并且在向那些有需要的人布施礼物方面很出色。",
+                  plainZh: "开头说明他的社会位置：他不是国王，而是一个行业组织的领头人，也把能力用于帮助别人。",
+                  note: "through his merit 是佛教故事里常见表达，表示今生处境来自过去善业或福德。",
+                  vocab: [
+                    { term: "merit", pos: "noun", chinese: "福德，功德，善业的力量", english: "spiritual goodness or karmic credit gained by good actions", example: "Through his merit, he became a leader." },
+                    { term: "head of a guild", pos: "phrase", chinese: "行会首领，行业组织的负责人", english: "the leader of a trade or craft association", example: "He became the head of a guild." },
+                    { term: "those in need", pos: "phrase", chinese: "有需要的人，困苦的人", english: "people who need help", example: "He gave gifts to those in need." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "One day while taking his meal, a Pratyekabuddha appeared outside his gate with his bowl in hand. The Bodhisattva immediately requested his wife to take alms food for him.",
+                  literalZh: "有一天，当他正在吃饭时，一位辟支佛手持钵出现在他的门外。菩萨立刻请求他的妻子为他拿布施食物去。",
+                  plainZh: "这一段动作很快：看见修行者来乞食，他没有犹豫，马上安排供养。",
+                  note: "with his bowl in hand 是画面感很强的短语，说明他拿着钵站在门外。",
+                  vocab: [
+                    { term: "with his bowl in hand", pos: "phrase", chinese: "手里拿着钵", english: "holding his bowl in his hand", example: "He stood outside with his bowl in hand." },
+                    { term: "immediately", pos: "adv", chinese: "立刻，马上", english: "at once, without delay", example: "He immediately requested food." },
+                    { term: "alms food", pos: "noun", chinese: "布施食物，供养食", english: "food given as a religious offering", example: "She took alms food for him." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "As she approached, Māra made an apparition of the Great Hell appear to separate her from the supplicant, and she turned back afraid.",
+                  literalZh: "当她接近时，Māra 使一个大地狱的幻象出现，用来把她和那个求施者隔开，于是她害怕地转身回去了。",
+                  plainZh: "魔王制造恐怖幻象，让她在快要完成供养时退缩。这里讲的是布施时遇到的心理阻力。",
+                  note: "apparition 是“显现、幻影”，比 image 更有神秘和惊吓感。",
+                  vocab: [
+                    { term: "apparition", pos: "noun", chinese: "幻象，幽灵般的显现", english: "a strange or frightening appearance, often like a ghost", example: "An apparition of hell appeared." },
+                    { term: "separate A from B", pos: "phrase", chinese: "把 A 和 B 分开", english: "to keep two people or things apart", example: "The vision separated her from the supplicant." },
+                    { term: "turn back", pos: "verb", chinese: "折回，回头", english: "to stop going forward and return", example: "She turned back afraid." }
+                  ]
+                },
+                {
+                  label: "Paragraph 4",
+                  english: "Māra then appeared and tried to persuade him otherwise, but the Bodhisattva prevailed with his determination.",
+                  literalZh: "Māra 然后出现，并试图说服他不要这样做，但菩萨凭借他的决心胜过了他。",
+                  plainZh: "这里不是外在力量赢，而是决心赢。魔王用话来动摇他，他靠坚定继续向前。",
+                  note: "persuade him otherwise 是固定味道很强的说法，意思是“劝他改变主意”。",
+                  vocab: [
+                    { term: "persuade someone otherwise", pos: "phrase", chinese: "劝某人改主意，劝某人不要那样做", english: "to convince someone to change their mind", example: "Māra tried to persuade him otherwise." },
+                    { term: "prevail", pos: "verb", chinese: "获胜，占上风，坚持成功", english: "to succeed or win after difficulty", example: "The Bodhisattva prevailed." },
+                    { term: "determination", pos: "noun", chinese: "决心，坚定意志", english: "firm intention to do something despite difficulty", example: "He prevailed with determination." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 17",
+                  english: "Between the Bodhisattva and the Pratyekabuddha Māra has made a hellish apparition. Here we see fire under a cauldron in which people are being boiled in retribution for their bad deeds.",
+                  literalZh: "在菩萨和辟支佛之间，Māra 制造了一个地狱般的幻象。这里我们看到一口大锅下面有火，人们正在锅中被煮，作为他们恶行的报应。",
+                  plainZh: "这段是浮雕最强的画面：恐怖地狱横在布施者和受施者之间。",
+                  note: "in retribution for 是因果报应语气，意思是“作为……的惩罚/报应”。",
+                  vocab: [
+                    { term: "hellish", pos: "adj", chinese: "地狱般的，极可怕的", english: "extremely unpleasant or like hell", example: "A hellish apparition appeared." },
+                    { term: "cauldron", pos: "noun", chinese: "大锅，大釜", english: "a large round metal pot used for boiling", example: "Fire burned under the cauldron." },
+                    { term: "retribution", pos: "noun", chinese: "报应，惩罚", english: "punishment for wrongdoing", example: "They suffered retribution for bad deeds." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "head of a guild", pos: "phrase", chinese: "行会首领；行业组织的领头人", english: "the leader of a trade or craft association", example: "He became the head of a guild." },
+          { term: "through his merit", pos: "phrase", chinese: "由于他的福德；凭他的善业", english: "as a result of his good karma or virtue", example: "Through his merit, he rose to that position." },
+          { term: "alms food", pos: "noun", chinese: "布施的食物；供养食", english: "food given as a religious offering", example: "His wife carried alms food to the gate." },
+          { term: "apparition", pos: "noun", chinese: "幻影；显现出来的可怕景象", english: "an appearance, especially a strange or ghostlike one", example: "Māra made an apparition of the Great Hell appear." },
+          { term: "supplicant", pos: "noun", chinese: "恳求者；祈求施舍的人", english: "a person who asks humbly or earnestly for something", example: "The apparition separated her from the supplicant." },
+          { term: "prevail", pos: "verb", chinese: "占上风；最终坚持住", english: "to succeed or remain strong in a difficult situation", example: "He prevailed with his determination." },
+          { term: "sustain his steps", pos: "phrase", chinese: "托住他的脚步；支撑他往前走", english: "to support him as he walked", example: "A lotus sustained his steps." }
+        ]
+      },
+      {
+        id: "avisahya",
+        shortLabel: "5. Aviṣahya",
+        number: "Story 5",
+        english: "Aviṣahya, the Head of a Guild",
+        chinese: "阿毗沙诃故事",
+        range: "Panels 19-22",
+        virtue: "Giving when Indigent",
+        virtueCn: "自己困难时仍继续布施",
+        parallel: "cp. Pali Jataka 340",
+        originalEnglish: `The Bodhisattva was again a rich merchant in this life, and was called Aviṣahya (the Invincible One) on account of his resistence to wrong ways. He rejoiced in giving gifts, and seeing this, Śakra, the lord of the gods, decided to test him.
+
+The next day he made the Bodhisattva's gifts disappear as soon as they were prepared, but Aviṣahya kept calling for more to be brought from his house so as to satisfy the supplicants.
+
+Śakra then made all his wealth disappear overnight, except a rope and a sickle. The Bodhisattva then took them and earned his living, so as to persist in his habit of giving gifts to those in need. Later, Śakra, seeing Aviṣahya's resolve returned all his wealth to him, and begged his forgiveness. (cp. Pāḷi Jātaka 340)`,
+        summary: [
+          "菩萨这一生是富商，名叫 Aviṣahya，意思大致可以理解为“不可战胜者”。他乐于布施，帝释天看见后，决定试一试他。",
+          "先是让他准备好的供物一次次消失；后来又在一夜之间让他的财富都不见，只剩一根绳子和一把镰刀。可他没有因此停下，反而靠劳动维生，继续把所得拿去布施。最后帝释天被他的坚决打动，把财富还给他，并请求原谅。"
+        ],
+        why: "这篇很适合放在前五则里收束，因为它把布施从“王者能给”“富人能给”继续往前推，变成“当我自己也不好过的时候，还能不能继续给”。这一下，故事就更贴近现实压力了。",
+        scenes: [
+          "19. Sits with his Wife: 菩萨作为富商和妻子同坐，座下还有钱袋。",
+          "20. Gives Gifts to Brahmins: 与妻子一同向求者布施。",
+          "21. Continues Good Deeds: 即使已经靠劳动谋生，仍未停止善行。",
+          "22. Receives back his Wealth: 场景损坏严重，但大致可看作帝释天归还财富。"
+        ],
+        note: "如果后面你想把 Jataka 做成更偏“人生提醒”的版本，这篇会很有用，因为它讲的不是容易的时候，而是手头紧的时候，习惯还在不在。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "The Bodhisattva was again a rich merchant in this life, and was called Aviṣahya (the Invincible One) on account of his resistence to wrong ways.",
+                  literalZh: "菩萨在这一生又是一位富商，并且因为他对错误道路的抵抗，被称为 Aviṣahya，也就是不可战胜者。",
+                  plainZh: "这句交代他的名字和性格：Aviṣahya 不是普通名字，而是在说他不容易被错误的路打败。",
+                  note: "on account of 是 because of 的书面表达。PDF 里 resistence 应为 resistance，这里保留原书拼法，同时学习时记标准拼写 resistance。",
+                  vocab: [
+                    { term: "merchant", pos: "noun", chinese: "商人", english: "a person who buys and sells goods", example: "He was a rich merchant." },
+                    { term: "invincible", pos: "adj", chinese: "不可战胜的，无法击败的", english: "too strong to be defeated", example: "He was called the Invincible One." },
+                    { term: "on account of", pos: "phrase", chinese: "因为，由于", english: "because of something", example: "He received the name on account of his character." },
+                    { term: "resistance", pos: "noun", chinese: "抵抗，抵制", english: "the act of refusing to accept or give in to something", example: "His resistance to wrong ways was firm." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "He rejoiced in giving gifts, and seeing this, Śakra, the lord of the gods, decided to test him.",
+                  literalZh: "他以布施礼物为乐；看见这一点后，Śakra，诸神之主，决定考验他。",
+                  plainZh: "帝释天不是随便出现，而是因为看见他的布施心，想测试这份心到底有多稳。",
+                  note: "seeing this 是分词结构，意思是“看见这一点之后”。",
+                  vocab: [
+                    { term: "seeing this", pos: "phrase", chinese: "看到这一点后", english: "after seeing this situation or behavior", example: "Seeing this, Śakra decided to test him." },
+                    { term: "test", pos: "verb", chinese: "考验，测试", english: "to check how strong, true, or good something is", example: "Śakra decided to test him." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "The next day he made the Bodhisattva's gifts disappear as soon as they were prepared, but Aviṣahya kept calling for more to be brought from his house so as to satisfy the supplicants.",
+                  literalZh: "第二天，他使菩萨的礼物一准备好就消失，但 Aviṣahya 不断叫人从他的家里带来更多，以便满足那些求施者。",
+                  plainZh: "第一轮考验是让供物不断消失。一般人会停下，他却继续叫人再拿。",
+                  note: "as soon as 是“一……就……”。so as to 是正式的“为了”。",
+                  vocab: [
+                    { term: "as soon as", pos: "phrase", chinese: "一……就……", english: "immediately after something happens", example: "The gifts disappeared as soon as they were prepared." },
+                    { term: "keep doing", pos: "phrase", chinese: "一直继续做某事", english: "to continue doing something repeatedly", example: "He kept calling for more." },
+                    { term: "so as to", pos: "phrase", chinese: "为了，以便", english: "in order to", example: "He brought more gifts so as to satisfy the supplicants." },
+                    { term: "supplicant", pos: "noun", chinese: "求施者，恳求者", english: "a person who asks humbly for something", example: "The supplicants waited outside." }
+                  ]
+                },
+                {
+                  label: "Paragraph 4",
+                  english: "Śakra then made all his wealth disappear overnight, except a rope and a sickle. The Bodhisattva then took them and earned his living, so as to persist in his habit of giving gifts to those in need.",
+                  literalZh: "Śakra 接着使他所有的财富在一夜之间消失，除了一根绳子和一把镰刀。菩萨于是拿起它们去谋生，以便坚持他向有需要的人布施礼物的习惯。",
+                  plainZh: "第二轮考验更狠：财富没了，只剩劳动工具。但他还是靠劳动维生，并继续布施。",
+                  note: "earn his living 是英语高频表达，意思是“谋生”。persist in 后面接名词或动名词。",
+                  vocab: [
+                    { term: "overnight", pos: "adv", chinese: "一夜之间", english: "during the night; suddenly or very quickly", example: "His wealth disappeared overnight." },
+                    { term: "sickle", pos: "noun", chinese: "镰刀", english: "a curved tool used for cutting grass or crops", example: "Only a rope and a sickle remained." },
+                    { term: "earn his living", pos: "phrase", chinese: "谋生，挣钱生活", english: "to get the money or resources needed to live", example: "He earned his living with simple tools." },
+                    { term: "persist in", pos: "verb", chinese: "坚持继续做", english: "to continue doing something despite difficulty", example: "He persisted in giving." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panels 19-21",
+                  english: "In the first relief of this series we see the Bodhisattva as a rich merchant, sitting on a comfortable raised seat, with his beautiful wife alongside him. Later, Aviṣahya and his wife are standing and giving alms. Aviṣahya's gift-giving was prodigal.",
+                  literalZh: "在这一组的第一个浮雕中，我们看见菩萨作为一位富商，坐在一个舒适的高座上，他美丽的妻子在他旁边。后来，Aviṣahya 和他的妻子站着布施。Aviṣahya 的布施是非常慷慨的。",
+                  plainZh: "浮雕先画他的富足，再画他和妻子一起布施，让后面的“财富消失”更有对比。",
+                  note: "prodigal 在这里不是“浪子”，而是“非常慷慨、花费很多”的意思。",
+                  vocab: [
+                    { term: "alongside", pos: "prep", chinese: "在……旁边", english: "next to or together with someone or something", example: "His wife sat alongside him." },
+                    { term: "giving alms", pos: "phrase", chinese: "布施，施舍", english: "giving food, money, or help as charity", example: "They were giving alms." },
+                    { term: "prodigal", pos: "adj", chinese: "非常慷慨的；也可指挥霍的", english: "giving or spending a lot, sometimes too much", example: "His gift-giving was prodigal." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "merchant", pos: "noun", chinese: "商人", english: "a person who buys and sells goods", example: "He was a rich merchant in that life." },
+          { term: "on account of", pos: "phrase", chinese: "由于；因为", english: "because of something", example: "He was known by that name on account of his resistance to wrong ways." },
+          { term: "satisfy the supplicants", pos: "phrase", chinese: "满足求施者的需要", english: "to provide what the people asking for help needed", example: "He kept calling for more food to satisfy the supplicants." },
+          { term: "disappear overnight", pos: "phrase", chinese: "一夜之间消失", english: "to vanish completely by the next morning", example: "All his wealth disappeared overnight." },
+          { term: "earn his living", pos: "phrase", chinese: "谋生", english: "to get the money or resources needed to live", example: "He took the tools and earned his living." },
+          { term: "persist in", pos: "verb", chinese: "坚持继续做", english: "to continue doing something despite difficulty", example: "He persisted in his habit of giving." },
+          { term: "resolve", pos: "noun", chinese: "决心；坚定意志", english: "strong determination", example: "Śakra was moved by Aviṣahya's resolve." }
+        ]
+      },
+      {
+        id: "hare",
+        shortLabel: "6. The Hare",
+        number: "Story 6",
+        english: "The Hare",
+        chinese: "兔王故事",
+        range: "Panels 23-25",
+        virtue: "Giving One's own Body",
+        virtueCn: "布施自己的身体",
+        parallel: "cp. Pali Jataka 316",
+        originalEnglish: `On one occasion the Bodhisattva was reborn as a hare in a forest. Although small he was respected, like the king of the forest. He had three friends with whom he was especially close: an otter, a jackal, and an ape.
+
+Being also a teacher, when he saw the full moon fast day (poṣadha) was approaching he gave a Dharma talk to his friends on how they should not eat on the morrow without having first entertained a guest, and resolved to give even his own body should a guest come to him.
+
+Śakra, hearing of this resolve, took the form of a brahmin and entered the forest, and wailing and crying, asked for succour. The three animals all brought according to their abilities, but the hare offered his own body, and sacrificed himself for the brahmin on a charcoal grill. (cp. Pāḷi Jātaka 316)`,
+        summary: [
+          "菩萨这一生做兔子，虽然身体很小，却像森林之王一样受尊敬。他有三个亲近朋友：水獭、豺和猿。",
+          "满月斋日快到时，他教朋友们先供养来客再进食，并发愿如果有客人来，自己愿意连身体都布施出去。帝释天听闻后化成婆罗门来测试，最后兔子献出自己的身体。"
+        ],
+        why: "这则和 The Tigress 形成呼应，同样是舍身，但主角变成弱小的兔子。故事的力量在于：小，并不等于不能有大的德行。",
+        scenes: [
+          "23. Śakra enters the Forest: 帝释天化成婆罗门进入兔子和朋友们居住的森林。",
+          "24. Śakra begs from the Four Friends: 四个朋友各按能力供养，兔子只有自己的身体可给。",
+          "25. The Hare prepares to sacrifice Himself: 兔子和帝释天对话，后方有献身用的炭火。"
+        ],
+        note: "这里的重点不是动物故事的可爱，而是 according to their abilities：每个人按能力给，兔子的能力就是把自己给出去。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "On one occasion the Bodhisattva was reborn as a hare in a forest. Although small he was respected, like the king of the forest.",
+                  literalZh: "有一次，菩萨在森林中重生为一只兔子。虽然身体小，他却受到尊敬，像森林之王一样。",
+                  plainZh: "故事一开始就把反差立住：兔子很小，但德行让它被尊重。",
+                  note: "Although small 是让步结构，后面接 he was respected，重点是“小”和“受尊敬”的反差。",
+                  vocab: [
+                    { term: "on one occasion", pos: "phrase", chinese: "有一次，在某个场合", english: "once; at a particular time", example: "On one occasion, he entered the forest." },
+                    { term: "be reborn as", pos: "phrase", chinese: "转生为，重生为", english: "to be born again in another form", example: "He was reborn as a hare." },
+                    { term: "respected", pos: "adj", chinese: "受尊敬的", english: "admired and treated as important", example: "Although small, he was respected." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "Being also a teacher, when he saw the full moon fast day was approaching he gave a Dharma talk to his friends.",
+                  literalZh: "由于他也是一位老师，当他看见满月斋日正在临近时，他给朋友们作了一场法的开示。",
+                  plainZh: "兔子不仅是朋友中的领头者，也承担老师角色，提醒大家在斋日修布施。",
+                  note: "Being also a teacher 是分词短语，说明他为什么会给朋友们讲法。",
+                  vocab: [
+                    { term: "fast day", pos: "noun", chinese: "斋日，禁食修行日", english: "a day when people refrain from eating or follow religious discipline", example: "The full moon fast day was approaching." },
+                    { term: "approach", pos: "verb", chinese: "临近，接近", english: "to come near in time or place", example: "The fast day was approaching." },
+                    { term: "Dharma talk", pos: "noun", chinese: "法的开示，佛法讲谈", english: "a religious teaching or discourse", example: "He gave a Dharma talk to his friends." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "The three animals all brought according to their abilities, but the hare offered his own body, and sacrificed himself for the brahmin on a charcoal grill.",
+                  literalZh: "三只动物都按照自己的能力带来了东西，但兔子献出自己的身体，并且为了那个婆罗门在炭火架上牺牲了自己。",
+                  plainZh: "别人给的是食物，兔子给的是自己。这一句就是整篇的核心。",
+                  note: "according to their abilities 是很实用的表达，意思是“按照各自能力”。",
+                  vocab: [
+                    { term: "according to", pos: "phrase", chinese: "按照，根据", english: "in a way that follows or depends on something", example: "They gave according to their abilities." },
+                    { term: "ability", pos: "noun", chinese: "能力，本事", english: "the power or skill to do something", example: "Each gave according to his ability." },
+                    { term: "charcoal grill", pos: "noun", chinese: "炭火烤架", english: "a grill heated by charcoal", example: "The hare climbed onto the charcoal grill." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 24",
+                  english: "The hare is on the highest level, next comes the jackal with his bowl of milk; on the floor sits the ape with mangoes, and the otter with seven fish.",
+                  literalZh: "兔子在最高的一层，接着是带着一碗奶的豺；地上坐着带芒果的猿，以及带七条鱼的水獭。",
+                  plainZh: "这个画面把四个朋友各自能给的东西摆出来，兔子没有食物，所以后面才会舍身。",
+                  note: "with his bowl of milk / with mangoes / with seven fish 都是 with 短语，用来补充手里带着什么。",
+                  vocab: [
+                    { term: "on the highest level", pos: "phrase", chinese: "在最高的一层", english: "at the top level or highest position", example: "The hare is on the highest level." },
+                    { term: "otter", pos: "noun", chinese: "水獭", english: "a small animal that lives near water and eats fish", example: "The otter brought seven fish." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "hare", pos: "noun", chinese: "野兔", english: "an animal like a rabbit but usually larger and faster", example: "The Bodhisattva was reborn as a hare." },
+          { term: "fast day", pos: "noun", chinese: "斋日", english: "a religious day of fasting or restraint", example: "The full moon fast day was near." },
+          { term: "succour", pos: "noun", chinese: "援助，救助", english: "help given to someone in difficulty", example: "He asked for succour." },
+          { term: "charcoal grill", pos: "noun", chinese: "炭火烤架", english: "a grill heated by charcoal", example: "The hare sacrificed himself on a charcoal grill." }
+        ]
+      },
+      {
+        id: "agastya",
+        shortLabel: "7. Agastya",
+        number: "Story 7",
+        english: "Agastya",
+        chinese: "阿伽斯提亚故事",
+        range: "Panels 26-30",
+        virtue: "Determination in Giving",
+        virtueCn: "布施中的坚定",
+        parallel: "cp. Pali Jataka 480",
+        originalEnglish: `The Bodhisattva was once born into a family of eminent brahmins. He was named Agastya and became well-known for his virtues. Seeking, however, to do penance he retired to a small island in the southern ocean and built a hermitage there, and welcomed guests with what little he had.
+
+Śakra, wishing to test his constancy, first caused his food to disappear, and then seeing him unperturbed, came as a guest each day and ate up all the food the sage had. Agastya, however, was unmoved and indeed still delighted in the opportunity to give gifts.
+
+Śakra then offered Agastya six boons, and he asked for freedom from covetousness, hatred, the company of fools and to be joined with the wise. He also asked for the opportunity and means to give alms. And lastly, he requested that Śakra no more appear in all his splendour lest he be diverted from his ascetic path.
+
+In fulfilment of the 4th boon, at dawn there appeared hundreds of Pratyekabuddhas, and various sons-of-god (devaputra) to serve them with the abundant food provided. (cp. Pāḷi Jātaka 480)`,
+        summary: [
+          "Agastya 出身显赫，后来为了修行退隐到南海小岛，建了隐修处，用自己仅有的一点东西招待客人。",
+          "帝释天为了考验他的坚定，先让食物消失，又每天来把食物吃完。Agastya 仍不动摇，反而高兴还有布施机会。后来他求的愿望，也都围绕远离贪嗔痴友、亲近智者、继续布施和不被华丽神相扰乱。"
+        ],
+        why: "这篇的重点不在“给了什么”，而在“没有了还高兴能给”。它把布施从动作推进到心态。",
+        scenes: [
+          "26. Householder and Ascetic: 同一浮雕里分出在家布施和出家隐修两个阶段。",
+          "27-30. Gifts for Pratyekabuddhas: Agastya 准备布施，辟支佛受供，帝释天和侍从带来天食。"
+        ],
+        note: "这一则很适合学一组心理状态词：constancy、unperturbed、unmoved、delighted。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "Seeking, however, to do penance he retired to a small island in the southern ocean and built a hermitage there, and welcomed guests with what little he had.",
+                  literalZh: "然而，为了修苦行，他退隐到南方海洋中的一个小岛，并在那里建了一处隐修所，用他所拥有的很少东西接待客人。",
+                  plainZh: "他不是因为穷才少给，而是主动过清贫修行生活；即便东西很少，还是欢迎客人。",
+                  note: "with what little he had 是漂亮表达，意思是“用他仅有的一点东西”。",
+                  vocab: [
+                    { term: "penance", pos: "noun", chinese: "苦行，赎罪式修行", english: "religious self-discipline or hardship undertaken for spiritual reasons", example: "He sought to do penance." },
+                    { term: "hermitage", pos: "noun", chinese: "隐修处，隐士住处", english: "a place where a hermit or ascetic lives", example: "He built a hermitage on the island." },
+                    { term: "what little he had", pos: "phrase", chinese: "他仅有的那一点东西", english: "the small amount that he had", example: "He welcomed guests with what little he had." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "Śakra, wishing to test his constancy, first caused his food to disappear, and then seeing him unperturbed, came as a guest each day and ate up all the food the sage had.",
+                  literalZh: "Śakra 想要考验他的坚定，先使他的食物消失；然后看见他不受扰动，就每天作为客人来，并吃光这位贤者拥有的所有食物。",
+                  plainZh: "考验分两步：先让食物没了，再天天来吃光。Agastya 的反应才是重点。",
+                  note: "unperturbed 是很值得学的词：外面变化很大，但心没有被搅乱。",
+                  vocab: [
+                    { term: "constancy", pos: "noun", chinese: "坚定，恒常不变", english: "the quality of staying firm and faithful", example: "Śakra tested his constancy." },
+                    { term: "unperturbed", pos: "adj", chinese: "不慌乱的，不受扰动的", english: "calm and not worried by something difficult", example: "He remained unperturbed." },
+                    { term: "eat up", pos: "verb", chinese: "吃光，耗尽", english: "to eat all of something", example: "The guest ate up all the food." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "Agastya, however, was unmoved and indeed still delighted in the opportunity to give gifts.",
+                  literalZh: "然而，Agastya 没有被动摇，而且实际上仍然为有布施礼物的机会而欢喜。",
+                  plainZh: "这一句就是故事的心脏：别人吃光他的东西，他看到的却是还能布施的机会。",
+                  note: "indeed still delighted in 语气很强，表示“不但没受影响，反而依然欢喜”。",
+                  vocab: [
+                    { term: "unmoved", pos: "adj", chinese: "不动摇的，不受影响的", english: "not emotionally affected or shaken", example: "Agastya was unmoved." },
+                    { term: "delighted in", pos: "verb", chinese: "因……而欢喜，乐于……", english: "to take great pleasure in something", example: "He delighted in the chance to give." },
+                    { term: "opportunity", pos: "noun", chinese: "机会", english: "a chance to do something", example: "He welcomed the opportunity to give." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 26",
+                  english: "There are two scenes presented in this one relief, which, as we see elsewhere, are seperated by a tree.",
+                  literalZh: "这个浮雕中呈现了两个场景；正如我们在别处看到的，它们由一棵树隔开。",
+                  plainZh: "这个浮雕用一棵树把人生阶段分开：左边是在家布施，右边是退隐修行。",
+                  note: "PDF 里 seperated 应为 separated。学习时记标准拼写 separated。",
+                  vocab: [
+                    { term: "presented", pos: "verb", chinese: "呈现，展示", english: "shown or displayed", example: "Two scenes are presented." },
+                    { term: "separated by", pos: "phrase", chinese: "被……隔开", english: "kept apart by something", example: "The scenes are separated by a tree." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "constancy", pos: "noun", chinese: "坚定，恒常", english: "firmness and faithfulness over time", example: "His constancy was tested." },
+          { term: "unperturbed", pos: "adj", chinese: "不受扰动的", english: "calm despite trouble", example: "He remained unperturbed." },
+          { term: "boon", pos: "noun", chinese: "恩赐，愿望", english: "a favor or blessing granted", example: "Śakra offered six boons." },
+          { term: "covetousness", pos: "noun", chinese: "贪求，贪婪", english: "strong desire to possess what others have", example: "He asked for freedom from covetousness." }
+        ]
+      },
+      {
+        id: "maitribala",
+        shortLabel: "8. Maitrībala",
+        number: "Story 8",
+        english: "Maitrībala",
+        chinese: "慈力王故事",
+        range: "Panels 31-34",
+        virtue: "Giving away Bodily Parts",
+        virtueCn: "布施身体部分",
+        parallel: "No Pali parallel noted",
+        originalEnglish: `The Bodhisattva was once a king strong in loving-kindness, called Maitrībala, and ruled his kingdom by righteousness. One day five yakṣas who were exiled by the Lord Kubera came to his kingdom. They were of the kind that took away people's vigor, and they sought to steal away the strength of the people of the land, but in this case were unable to do so.
+
+They therefore took the form of brahmins and approached a cowherd, and asked him why they could not achieve their aims. He replied the virtue of the king protected his subjects. They determined to test the king and went to the palace, dressed as brahmins and asked for a meal, which the king ordered prepared for them. They, however, rejected it as not suitable, and asked for human flesh and blood.
+
+The king seeing no other recourse that was fit to follow, had his physicians cut his own veins, and took a sword and cut off his own flesh to feed them. The yakṣas, amazed, were converted by the king's virtue and his Dharma teaching, and he promised them they would later be his first five disciples when he had attained Awakening. Śakra, hearing of the king's deeds, came and healed his body and made him whole again. (No Pāḷi parallel exists)`,
+        summary: [
+          "Maitrībala 是一位以慈心和正义治理国家的王。五个夜叉想吸走人民的气力，却因为国王的德行护持而不能成功。",
+          "他们化成婆罗门求食，又故意要求人肉和血。国王找不到更合适的办法，便割开自己的血脉、割下自己的肉供给他们。夜叉被感化，后来帝释天前来治愈国王。"
+        ],
+        why: "这一则很强烈，讲的不是普通善良，而是“慈心有保护力”。国王的德行先保护人民，后来又转化伤害者。",
+        scenes: [
+          "31-32. Cowherd and Yakṣas: 夜叉向牧牛人打听为什么不能夺走人民气力。",
+          "33-34. Maitrībala and Yakṣas: 国王接见夜叉，夜叉听他说法。"
+        ],
+        note: "这一篇词汇更硬：loving-kindness、righteousness、vigor、recourse、physicians、veins 都很值得学。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "The Bodhisattva was once a king strong in loving-kindness, called Maitrībala, and ruled his kingdom by righteousness.",
+                  literalZh: "菩萨曾经是一位在慈爱方面很强的国王，名叫 Maitrībala，并以正义治理他的国家。",
+                  plainZh: "这个名字和性格直接相关：他是“慈力王”，靠慈心和正义来治国。",
+                  note: "loving-kindness 是佛教英语里很重要的词，常对应 mettā。",
+                  vocab: [
+                    { term: "loving-kindness", pos: "noun", chinese: "慈爱，慈心", english: "warm, benevolent kindness toward living beings", example: "He was strong in loving-kindness." },
+                    { term: "righteousness", pos: "noun", chinese: "正义，正直，合乎道德", english: "morally right conduct", example: "He ruled by righteousness." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "They were of the kind that took away people's vigor, and they sought to steal away the strength of the people of the land, but in this case were unable to do so.",
+                  literalZh: "他们属于会夺走人们活力的那一类，并且试图偷走这片土地人民的力量，但在这个情况中他们不能这样做。",
+                  plainZh: "夜叉想伤害人民，却被国王的德行挡住。这里把“德行护国”的主题说出来了。",
+                  note: "steal away 比 steal 更有“悄悄夺走”的感觉。",
+                  vocab: [
+                    { term: "vigor", pos: "noun", chinese: "活力，精力，生命力", english: "physical or mental strength and energy", example: "The yakṣas took away people's vigor." },
+                    { term: "seek to", pos: "verb", chinese: "试图，设法", english: "to try to do something", example: "They sought to steal away strength." },
+                    { term: "in this case", pos: "phrase", chinese: "在这种情况下", english: "in this particular situation", example: "In this case, they failed." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "The king seeing no other recourse that was fit to follow, had his physicians cut his own veins, and took a sword and cut off his own flesh to feed them.",
+                  literalZh: "国王看不到其他适合遵循的办法，就让他的医生割开自己的血管，并拿起剑割下自己的肉来喂他们。",
+                  plainZh: "这是最激烈的一句：国王不是惩罚夜叉，而是用自己的身体回应他们的索求。",
+                  note: "recourse 是难词，意思是“可采用的办法、依靠的手段”。",
+                  vocab: [
+                    { term: "recourse", pos: "noun", chinese: "办法，依靠，求助途径", english: "a possible action or source of help in a difficult situation", example: "He saw no other recourse." },
+                    { term: "physician", pos: "noun", chinese: "医生，医师", english: "a doctor, especially in formal usage", example: "The physicians cut his veins." },
+                    { term: "vein", pos: "noun", chinese: "静脉，血管", english: "a blood vessel that carries blood toward the heart", example: "The vein was cut." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 31",
+                  english: "The cowherd sits under a tree, and was probably engaged in twisting rope, as is stated in the text, but his hands are broken now so we cannot see what he was doing with them.",
+                  literalZh: "牧牛人坐在树下，可能正在搓绳，正如文本中所说；但他的手现在已经损坏，所以我们看不见他正在用手做什么。",
+                  plainZh: "这一段是浮雕细读，作者把文本和残缺画面互相对照。",
+                  note: "engaged in doing something 表示“正在从事某事”。",
+                  vocab: [
+                    { term: "cowherd", pos: "noun", chinese: "牧牛人", english: "a person who looks after cows", example: "The cowherd sits under a tree." },
+                    { term: "engaged in", pos: "phrase", chinese: "正在从事", english: "busy doing something", example: "He was engaged in twisting rope." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "loving-kindness", pos: "noun", chinese: "慈爱，慈心", english: "benevolent kindness toward beings", example: "The king was strong in loving-kindness." },
+          { term: "vigor", pos: "noun", chinese: "活力，精力", english: "strength and energy", example: "They tried to take away people's vigor." },
+          { term: "recourse", pos: "noun", chinese: "办法，依靠", english: "a possible way to deal with difficulty", example: "He saw no other recourse." }
+        ]
+      },
+      {
+        id: "visvantara",
+        shortLabel: "9. Viśvantara",
+        number: "Story 9",
+        english: "Viśvantara",
+        chinese: "毗输安多罗故事",
+        range: "Panels 35-39",
+        virtue: "Giving without Reserve",
+        virtueCn: "毫无保留地布施",
+        parallel: "cp. Pali Jataka 547",
+        originalEnglish: `The Bodhisattva was once born to Sañjaya, the king of the Śibis, and was named Viśvantara. He excelled in virtue, like his father, and also in generosity. When a neighbouring king heard of this he sent some brahmins to beg the state elephant from him. Viśvantara gave away the elephant with pleasure.
+
+The Śibis, however, were displeased with this act, and begged the king to banish him, which eventually he had to agree to, and sent his chamberlain to inform the prince. Viśvantara gave away all his wealth to mendicants before leaving, and headed for the forest. On the way more brahmins asked for his horses, and then his chariot, and he gave them. Then he set up home in a leaf hut in the forest.
+
+After some time abiding there, another brahmin came along and begged his children, whom he wanted for servants for his wife, and he gave them. Śakra noticing this, and the reason for it, put on the form of a brahmin and asked for the prince's wife, which again he gave. Śakra then revealed his own form, and foretold the future in which Viśvantara's children, and the royal dignity, both, would be returned to him. And so it turned out. (cp. Pāḷi Jātaka 547)`,
+        summary: [
+          "Viśvantara 是极著名的本生故事。他先把国家宝象布施出去，引起人民不满，被迫流放。",
+          "离开前他又布施财富；路上有人要马和车，他也给。后来又给出孩子、妻子。帝释天最后显现，预言孩子和王位尊严都会归还给他。"
+        ],
+        why: "这篇是“布施无保留”的极端故事，也最容易引发争议。读的时候要区分故事的宗教理想和现代伦理直觉。",
+        scenes: [
+          "35. King Sañjaya and Viśvantara: 父王和儿子对话。",
+          "36-37. Elephant: 婆罗门索要国象，Viśvantara 以水注手完成布施。",
+          "38-39. Banishment and Return: 被放逐与凯旋归来。"
+        ],
+        note: "这篇很重要，但读的时候不要急着吞结论。它是 Jataka 传统里关于布施极限的巨大案例。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "He excelled in virtue, like his father, and also in generosity. When a neighbouring king heard of this he sent some brahmins to beg the state elephant from him.",
+                  literalZh: "他像他的父亲一样在德行方面出色，也在慷慨方面出色。当一位邻国国王听说这件事时，他派一些婆罗门去向他乞求国象。",
+                  plainZh: "国象不是普通财物，而是国家象征。故事一开始就让布施和政治责任发生冲突。",
+                  note: "state elephant 指属于国家或王权象征的象，不是私人宠物。",
+                  vocab: [
+                    { term: "neighbouring", pos: "adj", chinese: "邻近的，邻国的", english: "near or next to another place", example: "A neighbouring king heard of this." },
+                    { term: "state elephant", pos: "noun", chinese: "国象，国家象征性大象", english: "an elephant belonging to or symbolizing the state", example: "They begged the state elephant from him." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "The Śibis, however, were displeased with this act, and begged the king to banish him.",
+                  literalZh: "然而，Śibis 人对这个行为不高兴，并请求国王放逐他。",
+                  plainZh: "人民觉得这种布施伤害了国家利益，于是要求把他赶走。",
+                  note: "be displeased with 是正式表达，意思是“对……不满”。banish 是强词，指放逐。",
+                  vocab: [
+                    { term: "displeased with", pos: "phrase", chinese: "对……不满", english: "unhappy or dissatisfied with something", example: "They were displeased with this act." },
+                    { term: "banish", pos: "verb", chinese: "放逐，驱逐", english: "to force someone to leave a place as punishment", example: "They asked the king to banish him." },
+                    { term: "chamberlain", pos: "noun", chinese: "王室侍臣，内侍官", english: "an official who manages a royal household", example: "The chamberlain informed the prince." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "Viśvantara gave away all his wealth to mendicants before leaving, and headed for the forest.",
+                  literalZh: "Viśvantara 在离开之前把他的所有财富布施给乞行者，并且朝森林出发。",
+                  plainZh: "被放逐前，他没有先保住自己，而是继续布施，甚至把离开后的保障也给掉。",
+                  note: "head for 是很日常的短语，意思是“朝……去”。",
+                  vocab: [
+                    { term: "mendicant", pos: "noun", chinese: "托钵者，乞行修士", english: "a religious person who lives by begging", example: "He gave wealth to mendicants." },
+                    { term: "head for", pos: "verb", chinese: "前往，朝……去", english: "to go toward a place", example: "He headed for the forest." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 37",
+                  english: "Viśvantara here pours the waters of donation over the brahmin's hand, and behind him stands the magnificent elephant he is giving away.",
+                  literalZh: "Viśvantara 在这里把布施之水倒在婆罗门的手上，而在他身后站着他正在布施出去的壮丽大象。",
+                  plainZh: "这是正式布施的仪式动作，用水表示赠与完成。",
+                  note: "waters of donation 是宗教仪式里的表达，不要按普通喝水理解。",
+                  vocab: [
+                    { term: "waters of donation", pos: "phrase", chinese: "布施之水，赠与仪式中的水", english: "water poured as part of a formal act of giving", example: "He poured the waters of donation." },
+                    { term: "magnificent", pos: "adj", chinese: "壮丽的，宏伟的", english: "very beautiful, impressive, or grand", example: "The magnificent elephant stood behind him." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "without reserve", pos: "phrase", chinese: "毫无保留地", english: "without holding anything back", example: "He gave without reserve." },
+          { term: "banish", pos: "verb", chinese: "放逐", english: "to force someone to leave", example: "The people asked the king to banish him." },
+          { term: "foretell", pos: "verb", chinese: "预言", english: "to say what will happen in the future", example: "Śakra foretold the future." }
+        ]
+      },
+      {
+        id: "sacrifice",
+        shortLabel: "10. The Sacrifice",
+        number: "Story 10",
+        english: "The Sacrifice",
+        chinese: "祭祀故事",
+        range: "Panels 40-43",
+        virtue: "Maintaining Virtue and Extending Weal",
+        virtueCn: "守住德行并扩大福祉",
+        parallel: "No Pali parallel noted",
+        originalEnglish: `The Bodhisattva was once a righteous king, and for a long time his kingdom was at peace and prosperous. But onetime, not through his own fault, the country fell into a drought. His priests advised he perform a sacrifice of living beings, but the king's heart was against it.
+
+Nevertheless to appease them he told he would offer a sacrifice of thousands of humans, and sent out a proclamation that those who were virtuous would be spared, while those who did wrong would be sacrificed for the good of the land. The people, of course, became very restrained so as not to become victims.
+
+Now again the rains fell and the kingdom became prosperous, and the king decided to further enhance the general weal by distributing wealth to his virtuous subjects, and the people in return praised the wisdom and munificence of the king. (No Pāḷi parallel exists)`,
+        summary: [
+          "国家遇到旱灾，祭司建议杀生祭祀。国王心里反对，但他用一个巧妙办法让人民自我约束：宣布有德者免祭，作恶者才会被祭。",
+          "人民因此变得谨慎守德，雨又降下，国家恢复繁荣。国王又分发财物，让整体福祉扩大。"
+        ],
+        why: "这则很有政治智慧：国王没有直接顺从残酷祭祀，也没有粗暴对抗祭司，而是把危机转成全民守德。",
+        scenes: [
+          "40. Urged to Sacrifice: 婆罗门敦促国王举行大祭。",
+          "41-42. Orders and Proclamation: 国王下令，传令者在城中宣布。",
+          "43. People praise the King: 人民赞叹国王智慧。"
+        ],
+        note: "这篇不是讲牺牲自己，而是讲如何在压力下不破戒，同时让社会变好。",
+        study: {
+          tabs: [
+            {
+              id: "text",
+              label: "故事正文",
+              paragraphs: [
+                {
+                  label: "Paragraph 1",
+                  english: "The Bodhisattva was once a righteous king, and for a long time his kingdom was at peace and prosperous.",
+                  literalZh: "菩萨曾经是一位正义的国王，并且在很长一段时间里，他的王国和平而繁荣。",
+                  plainZh: "开头说明这是一个本来治理良好的国家，后面的危机不是国王失德造成的。",
+                  note: "at peace and prosperous 是并列形容状态：和平、繁荣。",
+                  vocab: [
+                    { term: "righteous", pos: "adj", chinese: "正义的，正直的", english: "morally right and just", example: "He was a righteous king." },
+                    { term: "prosperous", pos: "adj", chinese: "繁荣的，兴旺的", english: "successful, wealthy, and doing well", example: "The kingdom was prosperous." }
+                  ]
+                },
+                {
+                  label: "Paragraph 2",
+                  english: "His priests advised he perform a sacrifice of living beings, but the king's heart was against it.",
+                  literalZh: "他的祭司建议他举行活物祭祀，但国王的心反对它。",
+                  plainZh: "这里冲突很清楚：传统压力要求杀生，国王的道德直觉不允许。",
+                  note: "his heart was against it 很好用，表示内心不赞同。",
+                  vocab: [
+                    { term: "sacrifice", pos: "noun", chinese: "祭祀；牺牲", english: "an offering made in a religious ritual, sometimes involving killing", example: "They advised a sacrifice." },
+                    { term: "living beings", pos: "noun", chinese: "众生，活着的生命", english: "creatures that are alive", example: "He opposed a sacrifice of living beings." },
+                    { term: "be against it", pos: "phrase", chinese: "反对它，不赞同它", english: "to oppose or disagree with something", example: "His heart was against it." }
+                  ]
+                },
+                {
+                  label: "Paragraph 3",
+                  english: "He sent out a proclamation that those who were virtuous would be spared, while those who did wrong would be sacrificed for the good of the land.",
+                  literalZh: "他发出一项公告：那些有德的人将被免除，而那些做错事的人将为了土地的利益被祭祀。",
+                  plainZh: "这是国王的转化策略：表面同意祭祀，实际让大家为了避免被祭而自我约束。",
+                  note: "be spared 是“被免除、被放过”。for the good of 是“为了……的利益”。",
+                  vocab: [
+                    { term: "proclamation", pos: "noun", chinese: "公告，宣告", english: "an official public announcement", example: "The king sent out a proclamation." },
+                    { term: "virtuous", pos: "adj", chinese: "有德的，品行好的", english: "having good moral qualities", example: "The virtuous would be spared." },
+                    { term: "be spared", pos: "verb", chinese: "被免除，被放过", english: "to be saved from harm or punishment", example: "Those who were virtuous would be spared." }
+                  ]
+                },
+                {
+                  label: "Paragraph 4",
+                  english: "The king decided to further enhance the general weal by distributing wealth to his virtuous subjects.",
+                  literalZh: "国王决定通过向他的有德臣民分发财物，进一步增强公共福祉。",
+                  plainZh: "国家恢复后，他没有只停在免灾，而是继续奖励有德者，让社会整体变好。",
+                  note: "weal 是古雅词，意思是 welfare / well-being，现代日常英语很少用。",
+                  vocab: [
+                    { term: "enhance", pos: "verb", chinese: "增强，提高", english: "to improve or increase the quality or value of something", example: "He enhanced the general weal." },
+                    { term: "weal", pos: "noun", chinese: "福祉，福利，安康", english: "well-being or welfare, especially of a community", example: "The king cared for the general weal." },
+                    { term: "munificence", pos: "noun", chinese: "慷慨，大方", english: "great generosity", example: "The people praised the king's munificence." }
+                  ]
+                }
+              ]
+            },
+            {
+              id: "relief",
+              label: "浮雕场景",
+              paragraphs: [
+                {
+                  label: "Panel 42",
+                  english: "Heralds now go round the city and make the proclamation. One man beats the drum to gain attention, and the other speaks the command the king has given.",
+                  literalZh: "传令者现在绕城而行并发布公告。一个人击鼓以吸引注意，另一个人说出国王已经给出的命令。",
+                  plainZh: "这个浮雕画的是公告传播：先击鼓聚众，再宣布王令。",
+                  note: "gain attention 是常用表达，意思是“吸引注意”。",
+                  vocab: [
+                    { term: "herald", pos: "noun", chinese: "传令者，公告员", english: "a person who makes official announcements", example: "The heralds went round the city." },
+                    { term: "gain attention", pos: "phrase", chinese: "吸引注意", english: "to make people notice something", example: "He beat the drum to gain attention." }
+                  ]
+                }
+              ]
+            }
+          ]
+        },
+        vocab: [
+          { term: "righteous", pos: "adj", chinese: "正义的，正直的", english: "morally right and just", example: "He was a righteous king." },
+          { term: "proclamation", pos: "noun", chinese: "公告，宣告", english: "an official public announcement", example: "The proclamation went through the city." },
+          { term: "weal", pos: "noun", chinese: "福祉", english: "well-being or welfare", example: "He enhanced the general weal." },
+          { term: "munificence", pos: "noun", chinese: "慷慨", english: "great generosity", example: "They praised his munificence." }
+        ]
+      }
+    ];
+
+    const roadmapStories = [
+      "44-47a Śakra",
+      "47b The Brahmin",
+      "48-52 Unmādayantī",
+      "53-55 Supāraga",
+      "56-57 The Fish",
+      "58 The Quail's Young",
+      "59-61 The Jar",
+      "62-63 The Childless One",
+      "64-68 The Lotus-Stalks",
+      "69-72 The Treasurer",
+      "73-76 Cuḍḍabodhi"
+    ];
+
+    const sectionTabs = [
+      {
+        id: "overview",
+        label: "先看总览",
+        render() {
+          return `
+            <div class="section-panel" data-panel="overview">
+              <div class="icon-line">
+                <div class="icon-dot">1</div>
+                <div>
+                  <strong>这个网页在做什么</strong>
+                  这页先把 <strong>Jataka.pdf</strong> 处理成一个更适合人读的入口。它不是把 400 多页原样堆上来，而是先抽出故事主线、德目和场景推进。
+                </div>
+              </div>
+              <div class="icon-line">
+                <div class="icon-dot">2</div>
+                <div>
+                  <strong>为什么从前 10 则开始</strong>
+                  前面这十则很适合作为开门：从舍身、舍眼、小布施，到困乏中布施、慈心护国、无保留布施和守德治国，主题逐步展开。
+                </div>
+              </div>
+              <div class="icon-line">
+                <div class="icon-dot">3</div>
+                <div>
+                  <strong>这一版先求稳</strong>
+                  我先把结构做顺，后面你要的话，我们可以继续一则一则补，把它做成和《法句经》一样能长期扩展的单页。
+                </div>
+              </div>
+            </div>
+          `;
+        }
+      },
+      {
+        id: "index",
+        label: "故事索引",
+        render() {
+          return `
+            <div class="section-panel" data-panel="index">
+              <div class="index-grid">
+                <div class="index-card">
+                  <h3>当前已做精读</h3>
+                  <ul>
+                    <li>1-4 The Tigress</li>
+                    <li>5-9 The King of the Śibis</li>
+                    <li>10-14 Gruel</li>
+                    <li>15-18 The Head of a Guild</li>
+                    <li>19-22 Aviṣahya</li>
+                    <li>23-25 The Hare</li>
+                    <li>26-30 Agastya</li>
+                    <li>31-34 Maitrībala</li>
+                    <li>35-39 Viśvantara</li>
+                    <li>40-43 The Sacrifice</li>
+                  </ul>
+                </div>
+                <div class="index-card">
+                  <h3>后续上排故事路线</h3>
+                  <ul>${roadmapStories.map((item) => `<li>${item}</li>`).join("")}</ul>
+                </div>
+              </div>
+              <div class="quiet-note">
+                这份索引目前先依据 PDF 第 16 页的 Jātaka relief diagram 整理。下排（lower row）我先把区域预留出来，后面再继续补细。
+              </div>
+            </div>
+          `;
+        }
+      },
+      {
+        id: "top",
+        label: "上排精读",
+        render() {
+          return `
+            <div class="section-panel" data-panel="top">
+              <div class="story-browser">
+                <div class="story-nav" id="storyNav"></div>
+                <div class="story-card" id="storyCard"></div>
+              </div>
+            </div>
+          `;
+        }
+      },
+      {
+        id: "lower",
+        label: "下排预留",
+        render() {
+          return `
+            <div class="section-panel" data-panel="lower">
+              <div class="placeholder">
+                这里我先给你留成同一页里的第二阶段区域。<br><br>
+                现在不再拆出很多页面，后面如果你要继续做 lower row，我就沿用这页的布局，继续往下补故事索引、切换 tabs 和具体故事整理。
+              </div>
+            </div>
+          `;
+        }
+      }
+    ];
+
+    function renderHeroInfo() {
+      const nav = document.getElementById("heroInfoNav");
+      const panels = document.getElementById("heroInfoPanels");
+      nav.innerHTML = heroInfoTabs.map((tab) => (
+        `<button class="hero-btn" data-hero-tab="${tab.id}">${tab.label}</button>`
+      )).join("");
+      panels.innerHTML = heroInfoTabs.map((tab) => tab.html).join("");
+      nav.querySelectorAll(".hero-btn").forEach((btn) => {
+        btn.addEventListener("click", () => activateHeroInfo(btn.dataset.heroTab));
+      });
+      activateHeroInfo(localStorage.getItem(heroInfoStorageKey) || heroInfoTabs[0].id);
+    }
+
+    function activateHeroInfo(id) {
+      document.querySelectorAll(".hero-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.heroTab === id);
+      });
+      document.querySelectorAll(".hero-panel").forEach((panel) => {
+        panel.classList.toggle("active", panel.dataset.panel === id);
+      });
+      localStorage.setItem(heroInfoStorageKey, id);
+    }
+
+    function renderSections() {
+      const nav = document.getElementById("sectionNav");
+      const panels = document.getElementById("sectionPanels");
+      nav.innerHTML = sectionTabs.map((tab) => (
+        `<button class="section-btn" data-section="${tab.id}">${tab.label}</button>`
+      )).join("");
+      panels.innerHTML = sectionTabs.map((tab) => tab.render()).join("");
+      nav.querySelectorAll(".section-btn").forEach((btn) => {
+        btn.addEventListener("click", () => activateSection(btn.dataset.section));
+      });
+      activateSection(localStorage.getItem(sectionStorageKey) || "top");
+    }
+
+    function activateSection(id) {
+      document.querySelectorAll(".section-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.section === id);
+      });
+      document.querySelectorAll(".section-panel").forEach((panel) => {
+        panel.classList.toggle("active", panel.dataset.panel === id);
+      });
+      localStorage.setItem(sectionStorageKey, id);
+      if (id === "top") {
+        renderStoryBrowser();
+      }
+    }
+
+    function renderStoryBrowser() {
+      const nav = document.getElementById("storyNav");
+      const card = document.getElementById("storyCard");
+      if (!nav || !card) return;
+      nav.innerHTML = topStories.map((story) => `
+        <button class="story-btn" data-story="${story.id}">
+          <span class="story-num">${story.number}</span>
+          <span class="story-title">${story.english}</span>
+        </button>
+      `).join("");
+      nav.querySelectorAll(".story-btn").forEach((btn) => {
+        btn.addEventListener("click", () => activateStory(btn.dataset.story));
+      });
+      activateStory(localStorage.getItem(storyStorageKey) || topStories[0].id);
+    }
+
+    function escapeHtml(value) {
+      return String(value).replace(/[&<>"']/g, (char) => ({
+        "&": "&amp;",
+        "<": "&lt;",
+        ">": "&gt;",
+        '"': "&quot;",
+        "'": "&#39;"
+      }[char]));
+    }
+
+    function getStoredRate() {
+      return localStorage.getItem(ttsRateStorageKey) || "1";
+    }
+
+    function getStoredVoice() {
+      return localStorage.getItem(ttsVoiceStorageKey) || "";
+    }
+
+    function pickDefaultVoice() {
+      const stored = getStoredVoice();
+      if (stored && availableVoices.some((voice) => voice.name === stored)) {
+        return stored;
+      }
+      const preferred = availableVoices.find((voice) => (
+        /^en/i.test(voice.lang) && /google|aria|zira|david|samantha|serena|mark|jenny|george/i.test(voice.name)
+      )) || availableVoices.find((voice) => /^en/i.test(voice.lang)) || availableVoices[0];
+      return preferred ? preferred.name : "";
+    }
+
+    function loadVoices() {
+      if (!supportsSpeech) return;
+      availableVoices = window.speechSynthesis.getVoices().filter((voice) => (
+        /^en/i.test(voice.lang) || /en/i.test(voice.name)
+      ));
+      if (!availableVoices.length) {
+        availableVoices = window.speechSynthesis.getVoices();
+      }
+      populateVoiceSelects();
+      updateSpeakButtons();
+    }
+
+    function populateVoiceSelects() {
+      const selects = document.querySelectorAll(".voice-select");
+      const selectedVoice = pickDefaultVoice();
+      selects.forEach((select) => {
+        select.innerHTML = (availableVoices.map((voice) => {
+          const selected = voice.name === selectedVoice ? " selected" : "";
+          return `<option value="${voice.name.replace(/"/g, "&quot;")}"${selected}>${voice.name} · ${voice.lang}</option>`;
+        }).join("")) || '<option value="">默认声音</option>';
+      });
+      if (selectedVoice) {
+        localStorage.setItem(ttsVoiceStorageKey, selectedVoice);
+      }
+    }
+
+    function syncRateSelects() {
+      const rate = getStoredRate();
+      document.querySelectorAll(".rate-select").forEach((select) => {
+        select.value = rate;
+      });
+    }
+
+    function updateSpeakButtons() {
+      document.querySelectorAll(".speak-btn").forEach((btn) => {
+        const isActive = btn.dataset.speechKey === activeSpeechKey;
+        btn.classList.toggle("is-speaking", isActive);
+        btn.textContent = isActive ? (btn.dataset.activeLabel || "正在朗读") : (btn.dataset.idleLabel || "朗读英文");
+      });
+    }
+
+    function stopSpeaking() {
+      if (!supportsSpeech) return;
+      window.speechSynthesis.cancel();
+      activeSpeechKey = null;
+      updateSpeakButtons();
+    }
+
+    function speakText(text, speechKey) {
+      if (!supportsSpeech) {
+        window.alert("当前浏览器不支持语音朗读。可以换用最新版 Chrome、Edge 或 Safari 试试。");
+        return;
+      }
+      if (!text) return;
+
+      window.speechSynthesis.cancel();
+      const utterance = new SpeechSynthesisUtterance(text);
+      const selectedVoice = getStoredVoice();
+      const voice = availableVoices.find((item) => item.name === selectedVoice) || availableVoices[0];
+      if (voice) utterance.voice = voice;
+      utterance.lang = voice && voice.lang ? voice.lang : "en-US";
+      utterance.rate = Number(getStoredRate() || 1);
+      utterance.pitch = 1;
+
+      utterance.onstart = function() {
+        activeSpeechKey = speechKey;
+        updateSpeakButtons();
+      };
+      utterance.onend = function() {
+        activeSpeechKey = null;
+        updateSpeakButtons();
+      };
+      utterance.onerror = function() {
+        activeSpeechKey = null;
+        updateSpeakButtons();
+      };
+      window.speechSynthesis.speak(utterance);
+    }
+
+    function bindSpeechControls() {
+      document.querySelectorAll(".speak-btn[data-speak-text]").forEach((button) => {
+        button.addEventListener("click", function() {
+          speakText(button.dataset.speakText, button.dataset.speechKey);
+        });
+      });
+      document.querySelectorAll(".voice-select").forEach((select) => {
+        select.addEventListener("change", function() {
+          localStorage.setItem(ttsVoiceStorageKey, select.value);
+          document.querySelectorAll(".voice-select").forEach((other) => {
+            other.value = select.value;
+          });
+        });
+      });
+      document.querySelectorAll(".rate-select").forEach((select) => {
+        select.addEventListener("change", function() {
+          localStorage.setItem(ttsRateStorageKey, select.value);
+          document.querySelectorAll(".rate-select").forEach((other) => {
+            other.value = select.value;
+          });
+        });
+      });
+      populateVoiceSelects();
+      syncRateSelects();
+      updateSpeakButtons();
+    }
+
+    function renderParagraphVocab(story, paragraph) {
+      if (!paragraph.vocab || !paragraph.vocab.length) return "";
+      return `
+        <div class="mini-vocab">
+          ${paragraph.vocab.map((item) => `
+            <div class="mini-vocab-item">
+              <div class="mini-vocab-title">
+                <span class="mini-vocab-term">${item.term} <span class="vocab-pos">${item.pos}</span></span>
+                <button type="button" class="speak-btn" data-idle-label="发音" data-active-label="朗读中" data-speech-key="${escapeHtml(`mini-${story.id}-${paragraph.label}-${item.term}`)}" data-speak-text="${escapeHtml(item.term)}">发音</button>
+              </div>
+              <div class="mini-vocab-line"><strong>English：</strong>${item.english}</div>
+              <div class="mini-vocab-line"><strong>中文：</strong>${item.chinese}</div>
+              <div class="mini-vocab-line"><strong>Example：</strong>${item.example}</div>
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function renderStudyPanels(story) {
+      if (!story.study) return "";
+      return `
+        <div class="story-block full">
+          <div class="story-block-header">
+            <h3>原书英文精读</h3>
+            <div class="speech-controls">
+              <button type="button" class="speak-btn" data-idle-label="朗读全文" data-active-label="正在朗读" data-speech-key="study-full-${story.id}" data-speak-text="${escapeHtml(story.originalEnglish)}">朗读全文</button>
+              <button type="button" onclick="stopSpeaking()">停止</button>
+              <select class="voice-select" aria-label="选择英文声音"></select>
+              <select class="rate-select" aria-label="选择朗读速度">
+                <option value="0.85">慢一点</option>
+                <option value="1">正常</option>
+                <option value="1.12">快一点</option>
+              </select>
+            </div>
+          </div>
+          <div class="study-tabs">
+            ${story.study.tabs.map((tab) => `
+              <button type="button" class="study-tab-btn" data-study-tab="${tab.id}">${tab.label}</button>
+            `).join("")}
+          </div>
+          ${story.study.tabs.map((tab) => `
+            <div class="study-panel" data-study-panel="${tab.id}">
+              ${tab.paragraphs.map((paragraph, index) => `
+                <div class="study-paragraph">
+                  <div class="story-block-header">
+                    <span class="study-label">${paragraph.label}</span>
+                    <div class="speech-controls">
+                      <button type="button" class="speak-btn" data-idle-label="读本段" data-active-label="朗读中" data-speech-key="${escapeHtml(`paragraph-${story.id}-${tab.id}-${index}`)}" data-speak-text="${escapeHtml(paragraph.english)}">读本段</button>
+                    </div>
+                  </div>
+                  <p class="study-english">${paragraph.english}</p>
+                  <div class="study-row">
+                    <div class="study-note-box"><strong>直译：</strong>${paragraph.literalZh}</div>
+                    <div class="study-note-box"><strong>白话：</strong>${paragraph.plainZh}</div>
+                  </div>
+                  <div class="study-note-box" style="margin-top:12px;"><strong>本段在说什么：</strong>${paragraph.note}</div>
+                  ${renderParagraphVocab(story, paragraph)}
+                </div>
+              `).join("")}
+            </div>
+          `).join("")}
+        </div>
+      `;
+    }
+
+    function activateStudyTab(id) {
+      const nextId = id || localStorage.getItem(studyTabStorageKey) || "text";
+      document.querySelectorAll(".study-tab-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.studyTab === nextId);
+      });
+      document.querySelectorAll(".study-panel").forEach((panel) => {
+        panel.classList.toggle("active", panel.dataset.studyPanel === nextId);
+      });
+      localStorage.setItem(studyTabStorageKey, nextId);
+    }
+
+    function bindStudyTabs(story) {
+      if (!story.study) return;
+      document.querySelectorAll(".study-tab-btn").forEach((btn) => {
+        btn.addEventListener("click", function() {
+          activateStudyTab(btn.dataset.studyTab);
+        });
+      });
+      const saved = localStorage.getItem(studyTabStorageKey);
+      const hasSaved = story.study.tabs.some((tab) => tab.id === saved);
+      activateStudyTab(hasSaved ? saved : story.study.tabs[0].id);
+    }
+
+    function activateStory(id) {
+      const story = topStories.find((item) => item.id === id) || topStories[0];
+      document.querySelectorAll(".story-btn").forEach((btn) => {
+        btn.classList.toggle("active", btn.dataset.story === story.id);
+      });
+      const card = document.getElementById("storyCard");
+      card.innerHTML = `
+        <div class="story-head">
+          <div>
+            <span class="chip">${story.range}</span>
+            <h2>${story.english}</h2>
+            <p>${story.chinese} · ${story.virtueCn}</p>
+          </div>
+          <div class="story-badges">
+            <span class="badge">${story.virtue}</span>
+            <span class="badge">${story.parallel}</span>
+          </div>
+        </div>
+        <div class="story-grid">
+          ${story.study ? renderStudyPanels(story) : `
+            <div class="story-block full">
+            <div class="story-block-header">
+              <h3>原书英文</h3>
+              <div class="speech-controls">
+                <button type="button" class="speak-btn" data-speech-key="story-${story.id}" data-speak-text="${escapeHtml(story.originalEnglish)}">朗读英文</button>
+                <button type="button" onclick="stopSpeaking()">停止</button>
+                <select class="voice-select" aria-label="选择英文声音"></select>
+                <select class="rate-select" aria-label="选择朗读速度">
+                  <option value="0.85">慢一点</option>
+                  <option value="1">正常</option>
+                  <option value="1.12">快一点</option>
+                </select>
+              </div>
+            </div>
+            <p class="original-text">${story.originalEnglish}</p>
+          </div>`}
+          <div class="story-block">
+            <h3>故事主线</h3>
+            ${story.summary.map((para) => `<p>${para}</p>`).join("")}
+          </div>
+          <div class="story-block">
+            <h3>这一则为什么重要</h3>
+            <p>${story.why}</p>
+          </div>
+          <div class="story-block full">
+            <h3>场景推进</h3>
+            <ol class="scene-list">
+              ${story.scenes.map((scene) => `<li>${scene}</li>`).join("")}
+            </ol>
+          </div>
+          <div class="story-block full">
+            <h3>阅读提醒</h3>
+            <p>${story.note}</p>
+          </div>
+          <div class="story-block full">
+            <h3>难词短语</h3>
+            <div class="vocab-list">
+              ${story.vocab.map((item) => `
+                <div class="vocab-item">
+                  <div class="vocab-head">
+                    <div class="vocab-title">
+                      <span class="vocab-term">${item.term}</span>
+                      <span class="vocab-pos">${item.pos}</span>
+                    </div>
+                    <button type="button" class="speak-btn" data-idle-label="发音" data-active-label="朗读中" data-speech-key="${escapeHtml(`word-${story.id}-${item.term}`)}" data-speak-text="${escapeHtml(item.term)}">发音</button>
+                  </div>
+                  <div class="vocab-lines">
+                    <div class="vocab-line"><strong>中文：</strong>${item.chinese}</div>
+                    <div class="vocab-line"><strong>English：</strong>${item.english}</div>
+                    <div class="vocab-line"><strong>Example：</strong>${item.example}</div>
+                  </div>
+                </div>
+              `).join("")}
+            </div>
+          </div>
+        </div>
+      `;
+      bindSpeechControls();
+      bindStudyTabs(story);
+      localStorage.setItem(storyStorageKey, story.id);
+    }
+
+    window.speakText = speakText;
+    window.stopSpeaking = stopSpeaking;
+
+    if (supportsSpeech) {
+      loadVoices();
+      window.speechSynthesis.onvoiceschanged = loadVoices;
+    }
+
+    renderHeroInfo();
+    renderSections();
+  </script>
+</body>
+</html>

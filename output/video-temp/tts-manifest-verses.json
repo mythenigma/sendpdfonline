@@ -1,0 +1,434 @@
+[
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s2-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s2-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s2-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s3-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s3-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s3-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s4-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s4-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s4-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-s4-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-021-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-022-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-023-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-024-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-025-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-026-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s2-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s2-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s2-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s3-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s3-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-s3-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-027-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-028-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-029-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-030-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-031-vocab3-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s1-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s1-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s1-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s2-en-david.wav"
+  },
+  {
+    "voice": "Huihui",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s2-zh.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-s2-zh-huihui.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-vocab1-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-vocab1-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-vocab2-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-vocab2-en-david.wav"
+  },
+  {
+    "voice": "David",
+    "rate": 0,
+    "textFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-vocab3-en.txt",
+    "outputFile": "C:\\Users\\chanz\\Documents\\GitHub\\sendpdfonline\\output\\video-temp\\verse-032-vocab3-en-david.wav"
+  }
+]
