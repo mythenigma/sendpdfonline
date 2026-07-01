@@ -80,7 +80,37 @@
         footer a { color: #9ca3af; text-decoration: none; }
         footer a:hover { color: white; }
 
-        @media (max-width: 768px) { .hero h1 { font-size: 1.8rem; } .hero { padding: 3rem 0 2.5rem; } }
+        @media (max-width: 768px) {
+            .hero h1 { font-size: 1.8rem; }
+            .hero { padding: 3rem 0 2.5rem; }
+            .feature-card {
+                display: flex;
+                align-items: center;
+                gap: 0.85rem;
+                padding: 0.9rem 1rem;
+                min-height: 64px;
+            }
+            .feature-icon {
+                width: 42px;
+                height: 42px;
+                margin-bottom: 0;
+            }
+            .feature-card h3 {
+                flex: 1;
+                margin: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 0.98rem;
+            }
+            .feature-card p { display: none; }
+            .feature-card .arrow {
+                margin-top: 0;
+                margin-left: auto;
+                white-space: nowrap;
+                flex-shrink: 0;
+            }
+        }
     </style>
 </head>
 <body>
@@ -94,7 +124,7 @@
                 <span class="text-white-50">Features</span>
             </nav>
             <h1>All MaiPDF Features</h1>
-            <p class="lead mt-3">Everything you need to share PDFs securely — view limits, expiration, watermarks, QR codes, analytics, and more. All free, no sign-up required.</p>
+            <p class="lead mt-3">Everything you need to share PDFs securely — online cloud links, QR codes, view limits, expiration, watermarks, analytics, and MaiPDF App DRM / .maipdf options for stronger protection.</p>
             <div class="d-flex gap-3 mt-4 flex-wrap">
                 <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
                     <i class="fas fa-paper-plane me-2"></i>Try MaiPDF Free

@@ -64,6 +64,43 @@
             font-size: 0.75rem;
             margin-left: 10px;
         }
+        .platform-note {
+            background: #eef6ff;
+            border: 1px solid #bfdbfe;
+            border-radius: 14px;
+            color: #1e3a8a;
+            margin: 20px auto 0;
+            max-width: 900px;
+            padding: 14px 18px;
+        }
+        @media (max-width: 768px) {
+            .hero { padding: 34px 18px; margin: 18px 12px; }
+            .category-section { padding: 22px 16px; margin: 18px 12px; }
+            .article-card { padding: 12px 14px; margin: 0; }
+            .article-card h5 {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .article-card h5 a {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                min-width: 0;
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .article-card h5 a i {
+                width: 22px;
+                text-align: center;
+                flex-shrink: 0;
+            }
+            .article-card p { display: none; }
+            .badge-new { margin-left: 6px; flex-shrink: 0; }
+        }
     </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
@@ -72,6 +109,7 @@
         <h1><i class="fas fa-book"></i> MaiPDF 中文文章索引</h1>
         <p class="lead">完整的PDF安全分享、密码保护、查看追踪等教程和指南</p>
         <p class="text-muted">所有文章均包含详细的流程图和步骤说明，帮助您快速掌握PDF分享技巧</p>
+        <div class="platform-note"><i class="fas fa-cloud-upload-alt"></i> 新增重点：普通文件优先用在线云分享生成链接/二维码；重要资料可升级 MaiPDF App DRM，使用 .maipdf 文件做更强访问控制。</div>
         <a href="https://maipdf.com" class="btn btn-primary btn-lg mt-3" target="_blank">立即使用 MaiPDF</a>
     </div>
 

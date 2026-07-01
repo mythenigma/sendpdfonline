@@ -136,7 +136,7 @@ All Chinese articles include:
 ### MaiImg - Image Hosting & Sharing
 Free image hosting and sharing platform with Cloudflare CDN, QR codes, view analytics, and access control:
 
-**MaiImg Articles (13 articles)**
+**MaiImg Articles (9 articles)**
 - [MaiImg Articles Index](https://sendpdfonline.com/maiimg-articles/index.html): Complete index of MaiImg articles
 - [Free Image Hosting & Sharing Guide](https://sendpdfonline.com/maiimg-articles/free-image-hosting-sharing.html): Free image hosting solutions
 - [Batch Image Upload & Sharing](https://sendpdfonline.com/maiimg-articles/batch-image-upload-sharing.html): Upload up to 25 images at once
@@ -144,12 +144,8 @@ Free image hosting and sharing platform with Cloudflare CDN, QR codes, view anal
 - [Image View Analytics](https://sendpdfonline.com/maiimg-articles/image-view-tracking-analytics.html): Review image views and engagement
 - [Social Media Image Sharing](https://sendpdfonline.com/maiimg-articles/social-media-image-sharing.html): Share images on social platforms
 - [Email Image Sharing Without Attachments](https://sendpdfonline.com/maiimg-articles/email-image-sharing-no-attachments.html): Email sharing solutions
-- [Image Password Protection](https://sendpdfonline.com/maiimg-articles/image-password-protection.html): Password protect shared images
-- [Image Expiration & Access Control](https://sendpdfonline.com/maiimg-articles/image-expiration-access-control.html): Set expiration dates for images
 - [Image Compression & Optimization](https://sendpdfonline.com/maiimg-articles/image-compression-optimization.html): Optimize images for fast loading
-- [Image Watermark Protection](https://sendpdfonline.com/maiimg-articles/image-watermark-protection.html): Add watermarks to protect images
 - [Image Sharing Best Practices](https://sendpdfonline.com/maiimg-articles/image-sharing-best-practices.html): Professional sharing tips
-- [Image Format Guide](https://sendpdfonline.com/maiimg-articles/image-format-guide.html): Choose the right image format
 
 ## Key Topics Covered
 
@@ -189,9 +185,6 @@ Free image hosting and sharing platform with Cloudflare CDN, QR codes, view anal
 - Batch upload (25 images)
 - QR code generation
 - View analytics
-- Password protection
-- Expiration dates
-- Watermarking
 - Social media integration
 - Email sharing without attachments
 - Cloudflare CDN for fast delivery

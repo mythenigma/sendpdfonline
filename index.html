@@ -74,7 +74,45 @@
         footer a { color: #9ca3af; text-decoration: none; }
         footer a:hover { color: white; }
 
-        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } .analytics-section-img { max-width: 100%; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
+        @media (max-width: 768px) {
+            body { overflow-x: hidden; }
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 3rem 0 2.5rem; }
+            .hero-screenshot { max-width: 100%; margin-top: 2rem; }
+            .analytics-section-img { max-width: 100%; }
+            img.screenshot { max-width: 100% !important; }
+            .step-card { overflow: visible; }
+            .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; }
+            .feature-card {
+                display: grid;
+                grid-template-columns: auto minmax(0, 1fr) auto;
+                align-items: center;
+                gap: 0.85rem;
+                padding: 0.95rem 1rem;
+                min-height: 64px;
+            }
+            .feature-card .feature-icon {
+                grid-column: 1;
+                width: 42px;
+                height: 42px;
+                margin-bottom: 0;
+                font-size: 1.1rem;
+            }
+            .feature-card h3 {
+                grid-column: 2;
+                margin: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+                font-size: 0.98rem;
+            }
+            .feature-card p { display: none; }
+            .feature-card a {
+                grid-column: 3;
+                white-space: nowrap;
+                justify-self: end;
+            }
+        }
     </style>
 </head>
 <body>
@@ -90,8 +128,8 @@
                         <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
                             <i class="fas fa-paper-plane me-2"></i>Send PDF Now
                         </a>
-                        <a href="/features/" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-th me-2"></i>See All Features
+                        <a href="#updated-hubs" class="btn btn-outline-light btn-lg">
+                            <i class="fas fa-star me-2"></i>See Updated Pages
                         </a>
                     </div>
                     <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> Free to use &nbsp; <i class="fas fa-check me-1"></i> No sign-up required &nbsp; <i class="fas fa-check me-1"></i> Works on any device</p>
@@ -139,8 +177,69 @@
         </div>
     </section>
 
+    <!-- Updated Hubs -->
+    <section id="updated-hubs" class="py-5" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-5">
+                <p class="section-label">New & Updated</p>
+                <h2 class="section-heading">Start from the Updated MaiPDF Hubs</h2>
+                <p class="text-muted mx-auto" style="max-width: 720px;">The latest homepage, feature directory, article index, use-case hub, Chinese hub, Japanese hub, and MaiImg guide index now highlight Online Cloud Sharing plus MaiPDF App DRM / <code>.maipdf</code> protection.</p>
+            </div>
+            <div class="row g-4">
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-th-large"></i></div>
+                        <h3 class="h5 fw-bold">All Features Hub</h3>
+                        <p class="text-muted mb-2">A compact directory for link sharing, QR codes, view limits, tracking, watermarks, and stronger DRM options.</p>
+                        <a href="/features/" class="text-decoration-none small">Open hub →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-book-open"></i></div>
+                        <h3 class="h5 fw-bold">Articles & Guides</h3>
+                        <p class="text-muted mb-2">Updated guides explain when to use quick browser sharing and when to upgrade to App DRM.</p>
+                        <a href="/article/" class="text-decoration-none small">Read guides →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#fef3c7;color:#d97706;"><i class="fas fa-briefcase"></i></div>
+                        <h3 class="h5 fw-bold">Use Case Hub</h3>
+                        <p class="text-muted mb-2">Business, sales, education, design, and confidential-document examples with the right protection level.</p>
+                        <a href="/usecase/" class="text-decoration-none small">View use cases →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#ede9fe;color:#7c3aed;"><i class="fas fa-language"></i></div>
+                        <h3 class="h5 fw-bold">中文教程索引</h3>
+                        <p class="text-muted mb-2">中文入口已突出在线云分享、链接/二维码、以及 .maipdf 强保护路径。</p>
+                        <a href="/features/zh/" class="text-decoration-none small">打开中文 →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#fce7f3;color:#db2777;"><i class="fas fa-globe-asia"></i></div>
+                        <h3 class="h5 fw-bold">Japanese Hub</h3>
+                        <p class="text-muted mb-2">Japanese visitors now see the updated cloud-sharing and App DRM route on the entry page.</p>
+                        <a href="/japanese/" class="text-decoration-none small">Open Japanese →</a>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-4">
+                    <div class="feature-card">
+                        <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-images"></i></div>
+                        <h3 class="h5 fw-bold">MaiImg Guide Index</h3>
+                        <p class="text-muted mb-2">Image sharing, QR delivery, password control, watermarking, and view analytics are linked from one place.</p>
+                        <a href="/maiimg-articles/" class="text-decoration-none small">Explore MaiImg →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
     <!-- Key Features -->
-    <section class="py-5" style="background: var(--gray-100);">
+    <section class="py-5">
         <div class="container">
             <div class="text-center mb-5">
                 <p class="section-label">Key Features</p>

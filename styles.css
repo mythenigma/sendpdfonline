@@ -152,4 +152,32 @@ h3 {
     .feature-grid {
         grid-template-columns: 1fr;
     }
+
+    .feature-card {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        align-items: center;
+        gap: 0.85rem;
+        padding: 0.95rem 1rem;
+        min-height: 64px;
+    }
+
+    .feature-card h3 {
+        margin: 0;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        font-size: 1rem;
+    }
+
+    .feature-card h3 i,
+    .feature-card > i {
+        width: 42px;
+        margin: 0;
+        text-align: center;
+        flex-shrink: 0;
+        font-size: 1.25rem;
+    }
+
+    .feature-card p { display: none; }
 }

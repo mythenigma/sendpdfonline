@@ -64,6 +64,34 @@
             font-size: 0.75rem;
             margin-left: 10px;
         }
+        @media (max-width: 768px) {
+            .hero { padding: 34px 18px; margin: 18px 12px; }
+            .category-section { padding: 22px 16px; margin: 18px 12px; }
+            .article-card { padding: 12px 14px; margin: 0; }
+            .article-card h5 {
+                margin: 0;
+                display: flex;
+                align-items: center;
+                gap: 0.5rem;
+            }
+            .article-card h5 a {
+                display: flex;
+                align-items: center;
+                gap: 0.6rem;
+                min-width: 0;
+                flex: 1;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
+            }
+            .article-card h5 a i {
+                width: 22px;
+                text-align: center;
+                flex-shrink: 0;
+            }
+            .article-card p { display: none; }
+            .badge-new { margin-left: 6px; flex-shrink: 0; }
+        }
     </style>
     <link rel="icon" type="image/x-icon" href="/favicon.ico">
 </head>
@@ -131,7 +159,7 @@
         <div class="row">
             <div class="col-md-6 mb-3">
                 <div class="article-card">
-                    <h5><a href="图片访问统计分析.html"><i class="fas fa-chart-bar"></i> 图片访问统计分析</a> <span class="badge-new">新</span></h5>
+                    <h5><a href="图片查看追踪分析.html"><i class="fas fa-chart-bar"></i> 图片访问统计分析</a> <span class="badge-new">新</span></h5>
                     <p class="text-muted small mb-0">全面了解谁在何时查看了您的图片</p>
                 </div>
             </div>
