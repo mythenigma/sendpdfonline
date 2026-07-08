@@ -58,6 +58,13 @@
         .article-card h3 a { color: var(--gray-900); text-decoration: none; }
         .article-card h3 a:hover { color: var(--blue-600); }
 
+        /* Quick decision block */
+        .decision-strip { background:#f8fafc; border:1px solid #e5e7eb; border-radius:16px; padding:1.25rem; }
+        .decision-strip .decision-item { background:white; border:1px solid #e5e7eb; border-radius:12px; padding:1rem; height:100%; }
+        .decision-strip h3 { font-size:1.05rem; margin-bottom:.5rem; }
+        .decision-strip p { margin-bottom:.75rem; }
+        @media (max-width:768px){ .decision-strip{padding:1rem;border-radius:12px}.decision-strip .decision-item{padding:.9rem}.decision-strip h3{font-size:1rem} }
+
         /* CTA */
         .cta-section { background: linear-gradient(135deg, #1e3a8a, #2563eb); color: white; border-radius: 16px; padding: 3rem 2rem; }
 
@@ -73,8 +80,77 @@
         footer a { color: #9ca3af; text-decoration: none; }
         footer a:hover { color: white; }
 
-        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; padding: 1.5rem; } .feature-card { padding: 1.5rem; } .feature-section .step-card ul { column-count: 1 !important; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
-    </style>
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; padding: 1.5rem; } .feature-card { padding: 1.5rem; } .feature-section .step-card ul { column-count: 1 !important; } .step-card img { width: 100% !important; max-width: 100% !important; margin-left: 0; margin-right: 0; height: auto; display: block; box-sizing: border-box; border-radius: 8px; } }
+    
+        /* Mobile compact icon-title layout: keep icon and title on one row */
+        @media (max-width: 768px) {
+            .feature-card, .benefit-card, .use-case-card, .method-card, .option-card, .security-card, .tool-card {
+                padding: 0.95rem 1rem !important;
+                min-height: auto !important;
+                display: grid !important;
+                grid-template-columns: 42px minmax(0, 1fr) !important;
+                align-items: center !important;
+                column-gap: 0.75rem !important;
+                row-gap: 0.2rem !important;
+                text-align: left !important;
+            }
+
+            .feature-card .feature-icon, .benefit-card .benefit-icon, .use-case-card .use-case-icon, .method-card .method-icon, .option-card .option-icon, .security-card .security-icon, .tool-card .tool-icon,
+            .feature-card > .feature-icon, .benefit-card > .feature-icon, .use-case-card > .feature-icon, .method-card > .feature-icon, .option-card > .feature-icon, .security-card > .feature-icon, .tool-card > .feature-icon {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                width: 40px !important;
+                height: 40px !important;
+                margin: 0 !important;
+                font-size: 1.15rem !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                flex-shrink: 0 !important;
+                align-self: center !important;
+            }
+
+            .feature-card h2, .benefit-card h2, .use-case-card h2, .method-card h2, .option-card h2, .security-card h2, .tool-card h2,
+            .feature-card h3, .benefit-card h3, .use-case-card h3, .method-card h3, .option-card h3, .security-card h3, .tool-card h3,
+            .feature-card h4, .benefit-card h4, .use-case-card h4, .method-card h4, .option-card h4, .security-card h4, .tool-card h4 {
+                grid-column: 2 !important;
+                margin: 0 !important;
+                font-size: 1rem !important;
+                line-height: 1.28 !important;
+            }
+
+            .feature-card h2 .feature-icon, .feature-card h3 .feature-icon, .feature-card h4 .feature-icon,
+            .benefit-card h2 .benefit-icon, .benefit-card h3 .benefit-icon, .benefit-card h4 .benefit-icon,
+            .use-case-card h2 .use-case-icon, .use-case-card h3 .use-case-icon, .use-case-card h4 .use-case-icon {
+                display: inline-flex !important;
+                margin: 0 0.45rem 0 0 !important;
+                vertical-align: middle !important;
+            }
+
+            .feature-card p, .benefit-card p, .use-case-card p, .method-card p, .option-card p, .security-card p, .tool-card p,
+            .feature-card ul, .benefit-card ul, .use-case-card ul, .method-card ul, .option-card ul, .security-card ul, .tool-card ul {
+                grid-column: 2 !important;
+                margin: 0.15rem 0 0 !important;
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
+            }
+        }
+
+        /* Mobile compact reset: do not reserve icon column on iconless cards */
+        @media (max-width: 768px) {
+            .feature-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .benefit-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .use-case-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .method-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .option-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .security-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .tool-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)) {
+                display: block !important;
+                text-align: left !important;
+            }
+        }
+</style>
 
     <!-- Structured Data for Article -->
     <script type="application/ld+json">
@@ -255,7 +331,7 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h1>Share PDF Online Free — Secure Sharing with Control</h1>
-                    <p class="lead mt-3">Share PDFs with password protection, view limits, expiration dates, dynamic watermarks, and real-time access analytics. No registration required.</p>
+                    <p class="lead mt-3">Share a PDF as a browser link. If the real requirement is to stop screenshots, use MaiPDF App DRM so readers open a protected .maipdf file in the app.</p>
                     <div class="d-flex gap-3 mt-4 flex-wrap">
                         <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
                             <i class="fas fa-paper-plane me-2"></i>Start Sharing Free
@@ -292,7 +368,7 @@
                 <p class="section-label mt-5">Article</p>
                 <section class="py-5" style="background: var(--gray-100);">
                     <p class="section-label">Choose protection level</p>
-                    <h2 class="section-heading mb-4">Browser sharing vs MaiPDF App</h2>
+                    <h2 class="section-heading mb-4">Browser link vs screenshot-blocking App</h2>
                     <div class="row g-4">
                         <div class="col-md-6">
                             <div class="feature-card h-100" style="border-top:4px solid #2563eb;">
@@ -304,8 +380,8 @@
                         <div class="col-md-6">
                             <div class="feature-card h-100" style="border-top:4px solid #16a34a;">
                                 <span class="badge bg-success mb-3">MaiPDF App / .maipdf</span>
-                                <h3 class="h5 fw-bold">Best when the file must stay controlled</h3>
-                                <p class="text-muted small mb-0">Use <a href="https://drm.maipdf.com" target="_blank" rel="noopener">MaiPDF App</a> for protected <code>.maipdf</code> files, device binding, revocation, license checks, and screenshot-aware controls.</p>
+                                <h3 class="h5 fw-bold">Best when screenshots must be blocked</h3>
+                                <p class="text-muted small mb-0">Use <a href="https://drm.maipdf.com" target="_blank" rel="noopener">MaiPDF App</a> when screenshots are the problem: protected <code>.maipdf</code> files open in the app with screenshot blocking where supported, plus device binding, revocation, and license checks.</p>
                             </div>
                         </div>
                     </div>

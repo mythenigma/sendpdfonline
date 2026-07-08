@@ -64,6 +64,7 @@ Comprehensive feature documentation organized by category:
 - [Email Verification Access Control](https://sendpdfonline.com/features/en/security/email-verification-secure-pdf-access.html): Email-based access control
 - [Anonymous PDF Sharing](https://sendpdfonline.com/features/en/security/anonymous-pdf-sharing.html): Anonymous sharing options
 - [Prevent Document Content Copying](https://sendpdfonline.com/features/en/security/prevent-document-content-copying.html): Content protection features
+- [Anti-Screenshot PDF DRM with MaiPDF App](https://sendpdfonline.com/features/en/security/anti-screenshot-pdf-drm.html): App DRM, protected .maipdf files, screenshot-aware viewing, device binding, revoke control, and watermark trace.
 - [Set PDF Expiration Date](https://sendpdfonline.com/features/en/security/set-pdf-expiration-date.html): Expiration date settings
 - [Convert PDF to Secure Links](https://sendpdfonline.com/features/en/security/convert-pdf-to-secure-links.html): Secure link generation
 

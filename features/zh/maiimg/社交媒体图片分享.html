@@ -129,8 +129,77 @@
         footer a:hover { color: white; }
         .flowchart-wrap { background: white; border-radius: 12px; padding: 1.5rem; box-shadow: 0 2px 12px rgba(0,0,0,0.06); }
         .flowchart-wrap img { max-width: 100%; height: auto; }
-        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
-    </style>
+        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100% !important; max-width: 100% !important; margin-left: 0; margin-right: 0; height: auto; display: block; box-sizing: border-box; border-radius: 8px; } }
+    
+        /* Mobile compact icon-title layout: keep icon and title on one row */
+        @media (max-width: 768px) {
+            .feature-card, .benefit-card, .use-case-card, .method-card, .option-card, .security-card, .tool-card {
+                padding: 0.95rem 1rem !important;
+                min-height: auto !important;
+                display: grid !important;
+                grid-template-columns: 42px minmax(0, 1fr) !important;
+                align-items: center !important;
+                column-gap: 0.75rem !important;
+                row-gap: 0.2rem !important;
+                text-align: left !important;
+            }
+
+            .feature-card .feature-icon, .benefit-card .benefit-icon, .use-case-card .use-case-icon, .method-card .method-icon, .option-card .option-icon, .security-card .security-icon, .tool-card .tool-icon,
+            .feature-card > .feature-icon, .benefit-card > .feature-icon, .use-case-card > .feature-icon, .method-card > .feature-icon, .option-card > .feature-icon, .security-card > .feature-icon, .tool-card > .feature-icon {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                width: 40px !important;
+                height: 40px !important;
+                margin: 0 !important;
+                font-size: 1.15rem !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                flex-shrink: 0 !important;
+                align-self: center !important;
+            }
+
+            .feature-card h2, .benefit-card h2, .use-case-card h2, .method-card h2, .option-card h2, .security-card h2, .tool-card h2,
+            .feature-card h3, .benefit-card h3, .use-case-card h3, .method-card h3, .option-card h3, .security-card h3, .tool-card h3,
+            .feature-card h4, .benefit-card h4, .use-case-card h4, .method-card h4, .option-card h4, .security-card h4, .tool-card h4 {
+                grid-column: 2 !important;
+                margin: 0 !important;
+                font-size: 1rem !important;
+                line-height: 1.28 !important;
+            }
+
+            .feature-card h2 .feature-icon, .feature-card h3 .feature-icon, .feature-card h4 .feature-icon,
+            .benefit-card h2 .benefit-icon, .benefit-card h3 .benefit-icon, .benefit-card h4 .benefit-icon,
+            .use-case-card h2 .use-case-icon, .use-case-card h3 .use-case-icon, .use-case-card h4 .use-case-icon {
+                display: inline-flex !important;
+                margin: 0 0.45rem 0 0 !important;
+                vertical-align: middle !important;
+            }
+
+            .feature-card p, .benefit-card p, .use-case-card p, .method-card p, .option-card p, .security-card p, .tool-card p,
+            .feature-card ul, .benefit-card ul, .use-case-card ul, .method-card ul, .option-card ul, .security-card ul, .tool-card ul {
+                grid-column: 2 !important;
+                margin: 0.15rem 0 0 !important;
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
+            }
+        }
+
+        /* Mobile compact reset: do not reserve icon column on iconless cards */
+        @media (max-width: 768px) {
+            .feature-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .benefit-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .use-case-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .method-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .option-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .security-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .tool-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)) {
+                display: block !important;
+                text-align: left !important;
+            }
+        }
+</style>
 </head>
 <body>
 

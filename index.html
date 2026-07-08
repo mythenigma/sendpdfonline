@@ -1,9 +1,9 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Send PDF online with a secure browser link. Upload a PDF, generate a link or QR code, limit views, add watermarks, track opens, and choose MaiPDF App DRM when you need protected .maipdf files.">
+    <meta name="description" content="Send PDFs online with links and QR codes. When you need to stop screenshots, use MaiPDF App DRM to open protected .maipdf files with screenshot blocking, device rules, revoke control, and watermark tracing.">
     <meta name="keywords" content="send pdf online, share pdf online, upload pdf online, pdf link generator, share pdf link, pdf qr code, secure pdf sharing, pdf view limit, pdf watermark, pdf analytics">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large">
     <title>Send PDF Online | Upload & Share PDFs with Secure Links</title>
@@ -39,6 +39,13 @@
         .hero h1 { font-size: 2.8rem; font-weight: 800; line-height: 1.2; }
         .hero .lead { font-size: 1.25rem; opacity: 0.9; max-width: 560px; }
         .hero-screenshot { border-radius: 12px; box-shadow: 0 20px 60px rgba(0,0,0,0.4); max-width: 480px; width: 100%; }
+
+        /* Product path chooser */
+        .path-choice-card { background: white; border: 1px solid #e5e7eb; border-radius: 16px; padding: 1.5rem; height: 100%; box-shadow: 0 6px 22px rgba(15,23,42,0.06); }
+        .path-choice-card .badge { font-size: 0.78rem; }
+        .path-choice-card ul { margin: 0.85rem 0 1rem; padding-left: 1.1rem; color: var(--gray-600); }
+        .path-choice-card li { margin-bottom: 0.35rem; }
+        @media (max-width: 768px) { .path-choice-card { padding: 1rem; border-radius: 12px; } .path-choice-card h2 { font-size: 1.15rem; } .path-choice-card ul { font-size: 0.92rem; } }
 
         /* Steps */
         .step-num { width: 48px; height: 48px; border-radius: 50%; background: var(--blue-600); color: white; display: flex; align-items: center; justify-content: center; font-weight: 700; font-size: 1.25rem; flex-shrink: 0; }
@@ -82,7 +89,7 @@
             .analytics-section-img { max-width: 100%; }
             img.screenshot { max-width: 100% !important; }
             .step-card { overflow: visible; }
-            .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; }
+            .step-card img { width: 100% !important; max-width: 100% !important; margin-left: 0; margin-right: 0; height: auto; display: block; box-sizing: border-box; border-radius: 8px; }
             .feature-card {
                 display: grid;
                 grid-template-columns: auto minmax(0, 1fr) auto;
@@ -113,7 +120,76 @@
                 justify-self: end;
             }
         }
-    </style>
+    
+        /* Mobile compact icon-title layout: keep icon and title on one row */
+        @media (max-width: 768px) {
+            .feature-card, .benefit-card, .use-case-card, .method-card, .option-card, .security-card, .tool-card {
+                padding: 0.95rem 1rem !important;
+                min-height: auto !important;
+                display: grid !important;
+                grid-template-columns: 42px minmax(0, 1fr) !important;
+                align-items: center !important;
+                column-gap: 0.75rem !important;
+                row-gap: 0.2rem !important;
+                text-align: left !important;
+            }
+
+            .feature-card .feature-icon, .benefit-card .benefit-icon, .use-case-card .use-case-icon, .method-card .method-icon, .option-card .option-icon, .security-card .security-icon, .tool-card .tool-icon,
+            .feature-card > .feature-icon, .benefit-card > .feature-icon, .use-case-card > .feature-icon, .method-card > .feature-icon, .option-card > .feature-icon, .security-card > .feature-icon, .tool-card > .feature-icon {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                width: 40px !important;
+                height: 40px !important;
+                margin: 0 !important;
+                font-size: 1.15rem !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                flex-shrink: 0 !important;
+                align-self: center !important;
+            }
+
+            .feature-card h2, .benefit-card h2, .use-case-card h2, .method-card h2, .option-card h2, .security-card h2, .tool-card h2,
+            .feature-card h3, .benefit-card h3, .use-case-card h3, .method-card h3, .option-card h3, .security-card h3, .tool-card h3,
+            .feature-card h4, .benefit-card h4, .use-case-card h4, .method-card h4, .option-card h4, .security-card h4, .tool-card h4 {
+                grid-column: 2 !important;
+                margin: 0 !important;
+                font-size: 1rem !important;
+                line-height: 1.28 !important;
+            }
+
+            .feature-card h2 .feature-icon, .feature-card h3 .feature-icon, .feature-card h4 .feature-icon,
+            .benefit-card h2 .benefit-icon, .benefit-card h3 .benefit-icon, .benefit-card h4 .benefit-icon,
+            .use-case-card h2 .use-case-icon, .use-case-card h3 .use-case-icon, .use-case-card h4 .use-case-icon {
+                display: inline-flex !important;
+                margin: 0 0.45rem 0 0 !important;
+                vertical-align: middle !important;
+            }
+
+            .feature-card p, .benefit-card p, .use-case-card p, .method-card p, .option-card p, .security-card p, .tool-card p,
+            .feature-card ul, .benefit-card ul, .use-case-card ul, .method-card ul, .option-card ul, .security-card ul, .tool-card ul {
+                grid-column: 2 !important;
+                margin: 0.15rem 0 0 !important;
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
+            }
+        }
+
+        /* Mobile compact reset: do not reserve icon column on iconless cards */
+        @media (max-width: 768px) {
+            .feature-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .benefit-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .use-case-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .method-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .option-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .security-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .tool-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)) {
+                display: block !important;
+                text-align: left !important;
+            }
+        }
+</style>
 </head>
 <body>
 
@@ -123,19 +199,56 @@
             <div class="row align-items-center">
                 <div class="col-lg-6 mb-4 mb-lg-0">
                     <h1>Send PDF Online with a Secure Link</h1>
-                    <p class="lead mt-3">Upload your PDF, get a browser link or QR code, then control access with view limits, watermarks, expiration dates, and real-time analytics. If you need device binding or screenshot-aware protection, move up to MaiPDF App DRM.</p>
+                    <p class="lead mt-3">Upload a PDF and share it as a link or QR code. If the real problem is screenshots, use MaiPDF App DRM: readers open a protected <code>.maipdf</code> file in the app with screenshot blocking, device rules, revoke control, and watermark tracing.</p>
                     <div class="d-flex gap-3 mt-4 flex-wrap">
                         <a href="https://maipdf.com" class="btn btn-light btn-lg fw-semibold" target="_blank" rel="noopener">
                             <i class="fas fa-paper-plane me-2"></i>Send PDF Now
                         </a>
                         <a href="#updated-hubs" class="btn btn-outline-light btn-lg">
-                            <i class="fas fa-star me-2"></i>See Updated Pages
+                            <i class="fas fa-book-open me-2"></i>Read the Guides
                         </a>
                     </div>
                     <p class="mt-3 small opacity-75"><i class="fas fa-check me-1"></i> Free to use &nbsp; <i class="fas fa-check me-1"></i> No sign-up required &nbsp; <i class="fas fa-check me-1"></i> Works on any device</p>
                 </div>
                 <div class="col-lg-6 text-center">
                     <img src="/images/maipdf landing page.png" alt="MaiPDF upload interface — send a PDF online and get a secure link" class="hero-screenshot" loading="eager">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Choose Path -->
+    <section class="py-4" style="background: var(--gray-100);">
+        <div class="container">
+            <div class="text-center mb-4">
+                <p class="section-label">Choose your path</p>
+                <h2 class="section-heading">Need a link, or need to block screenshots?</h2>
+                <p class="text-muted mx-auto" style="max-width:760px;">Most files only need a browser link. If users must not casually screenshot or pass the file around, move the PDF to MaiPDF App DRM and protected <code>.maipdf</code> files.</p>
+            </div>
+            <div class="row g-3">
+                <div class="col-md-6">
+                    <div class="path-choice-card" style="border-top:4px solid #2563eb;">
+                        <span class="badge bg-primary mb-2">Online Cloud Sharing</span>
+                        <h2 class="h4 fw-bold">Send a PDF link quickly</h2>
+                        <ul>
+                            <li>Upload PDF, create link or QR code</li>
+                            <li>Set expiry, open limits, watermark, and access records</li>
+                            <li>Best for proposals, handouts, public downloads, and quick review</li>
+                        </ul>
+                        <a href="https://maipdf.com" class="btn btn-primary btn-sm" target="_blank" rel="noopener">Send PDF online</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="path-choice-card" style="border-top:4px solid #16a34a;">
+                        <span class="badge bg-success mb-2">MaiPDF App DRM / .maipdf</span>
+                        <h2 class="h4 fw-bold">Block screenshots in the app</h2>
+                        <ul>
+                            <li>Package the PDF into a protected <code>.maipdf</code> file</li>
+                            <li>Open inside MaiPDF App with screenshot blocking where supported</li>
+                            <li>Add device rules, revoke access, and trace leaks with watermarks</li>
+                        </ul>
+                        <a href="https://drm.maipdf.com" class="btn btn-success btn-sm" target="_blank" rel="noopener">Explore App DRM</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -183,14 +296,14 @@
             <div class="text-center mb-5">
                 <p class="section-label">New & Updated</p>
                 <h2 class="section-heading">Start from the Updated MaiPDF Hubs</h2>
-                <p class="text-muted mx-auto" style="max-width: 720px;">The latest homepage, feature directory, article index, use-case hub, Chinese hub, Japanese hub, and MaiImg guide index now highlight Online Cloud Sharing plus MaiPDF App DRM / <code>.maipdf</code> protection.</p>
+                <p class="text-muted mx-auto" style="max-width: 720px;">The latest homepage, feature directory, article index, use-case hub, and Chinese hub now separate quick PDF links from App DRM screenshot blocking and <code>.maipdf</code> protection.</p>
             </div>
             <div class="row g-4">
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-card">
                         <div class="feature-icon" style="background:#dbeafe;color:#2563eb;"><i class="fas fa-th-large"></i></div>
                         <h3 class="h5 fw-bold">All Features Hub</h3>
-                        <p class="text-muted mb-2">A compact directory for link sharing, QR codes, view limits, tracking, watermarks, and stronger DRM options.</p>
+                        <p class="text-muted mb-2">A compact directory for link sharing, QR codes, view limits, tracking, watermarks, and App DRM screenshot blocking.</p>
                         <a href="/features/" class="text-decoration-none small">Open hub →</a>
                     </div>
                 </div>
@@ -198,7 +311,7 @@
                     <div class="feature-card">
                         <div class="feature-icon" style="background:#dcfce7;color:#16a34a;"><i class="fas fa-book-open"></i></div>
                         <h3 class="h5 fw-bold">Articles & Guides</h3>
-                        <p class="text-muted mb-2">Updated guides explain when to use quick browser sharing and when to upgrade to App DRM.</p>
+                        <p class="text-muted mb-2">Updated guides explain when a browser link is enough and when users need App DRM to block screenshots.</p>
                         <a href="/article/" class="text-decoration-none small">Read guides →</a>
                     </div>
                 </div>
@@ -220,18 +333,10 @@
                 </div>
                 <div class="col-md-6 col-lg-4">
                     <div class="feature-card">
-                        <div class="feature-icon" style="background:#fce7f3;color:#db2777;"><i class="fas fa-globe-asia"></i></div>
-                        <h3 class="h5 fw-bold">Japanese Hub</h3>
-                        <p class="text-muted mb-2">Japanese visitors now see the updated cloud-sharing and App DRM route on the entry page.</p>
-                        <a href="/japanese/" class="text-decoration-none small">Open Japanese →</a>
-                    </div>
-                </div>
-                <div class="col-md-6 col-lg-4">
-                    <div class="feature-card">
-                        <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-images"></i></div>
-                        <h3 class="h5 fw-bold">MaiImg Guide Index</h3>
-                        <p class="text-muted mb-2">Image sharing, QR delivery, password control, watermarking, and view analytics are linked from one place.</p>
-                        <a href="/maiimg-articles/" class="text-decoration-none small">Explore MaiImg →</a>
+                        <div class="feature-icon" style="background:#ccfbf1;color:#0d9488;"><i class="fas fa-shield-halved"></i></div>
+                        <h3 class="h5 fw-bold">App DRM Upgrade Path</h3>
+                        <p class="text-muted mb-2">For paid course files, contracts, or confidential PDFs, use App DRM to block screenshots, bind devices, revoke access, and deliver protected <code>.maipdf</code> files.</p>
+                        <a href="https://drm.maipdf.com" class="text-decoration-none small" target="_blank" rel="noopener">Explore App DRM →</a>
                     </div>
                 </div>
             </div>
@@ -274,7 +379,7 @@
                     <div class="feature-card">
                         <div class="feature-icon" style="background: #ede9fe; color: #7c3aed;"><i class="fas fa-ban"></i></div>
                         <h3 class="h5 fw-bold">Reduce Download & Print</h3>
-                        <p class="text-muted mb-2">Hide or disable common viewer controls for online reading. For stronger post-distribution control, use MaiPDF App DRM.</p>
+                        <p class="text-muted mb-2">Hide common browser controls for online reading. If screenshots are the issue, use MaiPDF App DRM.</p>
                         <a href="/features/en/security/prevent-document-content-copying" class="text-decoration-none small">Learn more →</a>
                     </div>
                 </div>
@@ -304,9 +409,9 @@
             <div class="row align-items-center g-4">
                 <div class="col-lg-5">
                     <p class="section-label">Choose the right level</p>
-                    <h2 class="section-heading">Browser link first. App DRM for high-risk files.</h2>
+                    <h2 class="section-heading">Browser link for speed. App DRM to block screenshots.</h2>
                     <p class="text-muted">SendPDFOnline is the fast path: upload once, share a link or QR code, and manage online access. But a browser cannot fully control operating-system screenshots or copied local files.</p>
-                    <p class="text-muted mb-0">For paid course files, confidential decks, contracts, or documents that need device binding and revocation after distribution, use MaiPDF App DRM and protected <code>.maipdf</code> files.</p>
+                    <p class="text-muted mb-0">For paid course files, confidential decks, contracts, or documents where screenshots are the main risk, use MaiPDF App DRM and protected <code>.maipdf</code> files.</p>
                 </div>
                 <div class="col-lg-7">
                     <div class="row g-3">
@@ -321,8 +426,8 @@
                         <div class="col-md-6">
                             <div class="feature-card h-100" style="border-top:4px solid #16a34a;">
                                 <span class="badge bg-success mb-3">App DRM / .maipdf</span>
-                                <h3 class="h5 fw-bold">Best for stronger control</h3>
-                                <p class="text-muted small">Protected reader, license checks, device binding, recipient rules, revocation, and screenshot-aware controls where supported.</p>
+                                <h3 class="h5 fw-bold">Best for blocking screenshots</h3>
+                                <p class="text-muted small">App reader screenshot blocking where supported, plus license checks, device binding, recipient rules, revocation, and watermark tracing.</p>
                                 <a href="https://drm.maipdf.com" class="text-decoration-none small" target="_blank" rel="noopener">Explore App DRM →</a>
                             </div>
                         </div>
@@ -471,31 +576,6 @@
         </div>
     </section>
 
-    <!-- Image Sharing (MaiImg) -->
-    <section class="py-5" style="background: var(--gray-100);">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-6 mb-4 mb-lg-0">
-                    <p class="section-label">Also Available</p>
-                    <h2 class="section-heading">Share Images Securely with MaiImg</h2>
-                    <p class="text-muted">Everything MaiPDF does for documents, MaiImg does for images — free hosting, QR codes, view limits, watermarks, and analytics.</p>
-                    <div class="d-flex gap-2 mt-3 flex-wrap">
-                        <a href="/maiimg-articles/" class="btn btn-outline-primary">Read Guides</a>
-                        <a href="https://maiimg.com" class="btn btn-primary" target="_blank" rel="noopener">Visit MaiImg.com</a>
-                    </div>
-                </div>
-                <div class="col-lg-6">
-                    <div class="row g-3">
-                        <div class="col-6"><div class="feature-card p-3 text-center"><i class="fas fa-images text-primary fa-2x mb-2"></i><p class="small mb-0 fw-semibold">Batch Upload</p></div></div>
-                        <div class="col-6"><div class="feature-card p-3 text-center"><i class="fas fa-qrcode text-success fa-2x mb-2"></i><p class="small mb-0 fw-semibold">Image QR Code</p></div></div>
-                        <div class="col-6"><div class="feature-card p-3 text-center"><i class="fas fa-lock text-warning fa-2x mb-2"></i><p class="small mb-0 fw-semibold">Password Protection</p></div></div>
-                        <div class="col-6"><div class="feature-card p-3 text-center"><i class="fas fa-chart-bar text-info fa-2x mb-2"></i><p class="small mb-0 fw-semibold">View Analytics</p></div></div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
     <!-- Final CTA -->
     <section class="py-5">
         <div class="container">
@@ -515,12 +595,27 @@
     </section>
 
     <!-- Footer -->
-    <footer class="text-white py-5 mt-0">
+    
+    <!-- 2026 MaiPDF App DRM feature update -->
+    <section class="py-5" style="background:#eefdfb;">
+        <div class="container">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-8">
+                    <p class="section-label">2026 App DRM update</p>
+                    <h2 class="section-heading">New focus: block screenshots with protected <code>.maipdf</code> files</h2>
+                    <p class="text-muted">SendPDFOnline is now positioned as the promotion and education hub for MaiPDF. Use this site to explain fast Online Cloud Sharing, then say the App clearly: use MaiPDF App DRM when the job is to block screenshots, bind devices, revoke access, and trace leaks.</p>
+                </div>
+                <div class="col-lg-4 text-lg-end"><a class="btn btn-primary btn-lg" href="/features/en/security/anti-screenshot-pdf-drm.html">Read the App DRM guide</a></div>
+            </div>
+        </div>
+    </section>
+
+<footer class="text-white py-5 mt-0">
         <div class="container">
             <div class="row">
                 <div class="col-md-4 mb-4 mb-md-0">
                     <h5 class="fw-bold mb-3"><i class="fas fa-file-pdf me-2"></i>SendPDFOnline.com</h5>
-                    <p class="small" style="color: #9ca3af;">Your guide to secure PDF sharing — upload, protect, and share PDFs with confidence using MaiPDF.</p>
+                    <p class="small" style="color: #9ca3af;">Your guide to sending PDF links and using MaiPDF App DRM when you need to block screenshots.</p>
                     <p class="small mb-0" style="color: #6b7280;">© 2026 SendPDFOnline.com</p>
                 </div>
                 <div class="col-md-2 mb-4 mb-md-0">
@@ -528,7 +623,6 @@
                     <ul class="list-unstyled small">
                         <li class="mb-2"><a href="https://maipdf.com" target="_blank" rel="noopener">Send PDF</a></li>
                         <li class="mb-2"><a href="https://drm.maipdf.com" target="_blank" rel="noopener">App DRM</a></li>
-                        <li class="mb-2"><a href="https://maiimg.com" target="_blank" rel="noopener">Share Images</a></li>
                         <li class="mb-2"><a href="/features/">Features</a></li>
                     </ul>
                 </div>
@@ -537,7 +631,6 @@
                     <ul class="list-unstyled small">
                         <li class="mb-2"><a href="/article/">Blog</a></li>
                         <li class="mb-2"><a href="/usecase/">Use Cases</a></li>
-                        <li class="mb-2"><a href="/maiimg-articles/">Image Guides</a></li>
                     </ul>
                 </div>
                 <div class="col-md-2 mb-4 mb-md-0">

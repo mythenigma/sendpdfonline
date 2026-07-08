@@ -60,8 +60,92 @@
         footer a { color: #9ca3af; text-decoration: none; }
         footer a:hover { color: white; }
 
-        @media (max-width: 768px) { body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } .analytics-section-img { max-width: 100%; } img.screenshot { max-width: 100% !important; } .step-card { overflow: visible; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
-    </style>
+        @media (max-width: 768px) {
+            body { overflow-x: hidden; }
+            .hero h1 { font-size: 2rem; }
+            .hero { padding: 3rem 0 2.5rem; }
+            .hero-screenshot { max-width: 100%; margin-top: 2rem; }
+            .section-heading { font-size: 1.55rem; }
+            section.py-5 { padding-top: 2.25rem !important; padding-bottom: 2.25rem !important; }
+            .analytics-section-img { max-width: 100%; }
+            img.screenshot { max-width: 100% !important; }
+            .step-card { overflow: visible; }
+            .step-card img { width: 100% !important; max-width: 100% !important; margin-left: 0; margin-right: 0; height: auto; display: block; box-sizing: border-box; border-radius: 8px; }
+            .feature-card { padding: 1rem; min-height: auto; display: grid; grid-template-columns: 52px 1fr; column-gap: 0.9rem; row-gap: 0.2rem; align-items: center; }
+            .feature-icon { width: 48px; height: 48px; font-size: 1.25rem; margin-bottom: 0; grid-row: 1 / 3; }
+            .feature-card h3 { grid-column: 2; margin: 0; font-size: 1.02rem; line-height: 1.3; }
+            .feature-card p { grid-column: 2; margin: 0; font-size: 0.92rem; line-height: 1.55; }
+        }
+    
+        /* Mobile compact icon-title layout: keep icon and title on one row */
+        @media (max-width: 768px) {
+            .feature-card, .benefit-card, .use-case-card, .method-card, .option-card, .security-card, .tool-card {
+                padding: 0.95rem 1rem !important;
+                min-height: auto !important;
+                display: grid !important;
+                grid-template-columns: 42px minmax(0, 1fr) !important;
+                align-items: center !important;
+                column-gap: 0.75rem !important;
+                row-gap: 0.2rem !important;
+                text-align: left !important;
+            }
+
+            .feature-card .feature-icon, .benefit-card .benefit-icon, .use-case-card .use-case-icon, .method-card .method-icon, .option-card .option-icon, .security-card .security-icon, .tool-card .tool-icon,
+            .feature-card > .feature-icon, .benefit-card > .feature-icon, .use-case-card > .feature-icon, .method-card > .feature-icon, .option-card > .feature-icon, .security-card > .feature-icon, .tool-card > .feature-icon {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                width: 40px !important;
+                height: 40px !important;
+                margin: 0 !important;
+                font-size: 1.15rem !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                flex-shrink: 0 !important;
+                align-self: center !important;
+            }
+
+            .feature-card h2, .benefit-card h2, .use-case-card h2, .method-card h2, .option-card h2, .security-card h2, .tool-card h2,
+            .feature-card h3, .benefit-card h3, .use-case-card h3, .method-card h3, .option-card h3, .security-card h3, .tool-card h3,
+            .feature-card h4, .benefit-card h4, .use-case-card h4, .method-card h4, .option-card h4, .security-card h4, .tool-card h4 {
+                grid-column: 2 !important;
+                margin: 0 !important;
+                font-size: 1rem !important;
+                line-height: 1.28 !important;
+            }
+
+            .feature-card h2 .feature-icon, .feature-card h3 .feature-icon, .feature-card h4 .feature-icon,
+            .benefit-card h2 .benefit-icon, .benefit-card h3 .benefit-icon, .benefit-card h4 .benefit-icon,
+            .use-case-card h2 .use-case-icon, .use-case-card h3 .use-case-icon, .use-case-card h4 .use-case-icon {
+                display: inline-flex !important;
+                margin: 0 0.45rem 0 0 !important;
+                vertical-align: middle !important;
+            }
+
+            .feature-card p, .benefit-card p, .use-case-card p, .method-card p, .option-card p, .security-card p, .tool-card p,
+            .feature-card ul, .benefit-card ul, .use-case-card ul, .method-card ul, .option-card ul, .security-card ul, .tool-card ul {
+                grid-column: 2 !important;
+                margin: 0.15rem 0 0 !important;
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
+            }
+        }
+
+        /* Mobile compact reset: do not reserve icon column on iconless cards */
+        @media (max-width: 768px) {
+            .feature-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .benefit-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .use-case-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .method-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .option-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .security-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .tool-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)) {
+                display: block !important;
+                text-align: left !important;
+            }
+        }
+</style>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"Article","headline":"PDF 生成分享链接教程","description":"免费生成 PDF 分享链接，支持在线预览、下载控制与访问统计。","author":{"@type":"Organization","name":"MaiPDF"},"publisher":{"@type":"Organization","name":"MaiPDF"},"datePublished":"2025-01-15","dateModified":"2026-03-05","mainEntityOfPage":{"@type":"WebPage","@id":"https://sendpdfonline.com/article/pdf-link-sharing-guide-zh"}}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"BreadcrumbList","itemListElement":[{"@type":"ListItem","position":1,"name":"首页","item":"https://sendpdfonline.com/"},{"@type":"ListItem","position":2,"name":"文章","item":"https://sendpdfonline.com/article/"},{"@type":"ListItem","position":3,"name":"PDF 生成分享链接教程","item":"https://sendpdfonline.com/article/pdf-link-sharing-guide-zh"}]}</script>
     <script type="application/ld+json">{"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"生成分享链接是免费的吗？","acceptedAnswer":{"@type":"Answer","text":"是的，MaiPDF 提供完全免费的 PDF 分享链接生成服务，无需注册账号。"}},{"@type":"Question","name":"分享链接会永久有效吗？","acceptedAnswer":{"@type":"Answer","text":"默认不会过期，但你可以主动设置有效期，例如 7 天、30 天后自动失效。"}},{"@type":"Question","name":"别人能下载我的 PDF 吗？","acceptedAnswer":{"@type":"Answer","text":"可以完全控制，可设为仅在线查看、禁止下载，也可允许下载。"}}]}</script>
@@ -307,24 +391,25 @@
             </div>
         </section>
     <!-- MaiPDF App DRM upgrade path -->
-    <section class="py-5" style="background:#f8fafc;">
+    <section class="py-5 maipdf-app-drm-update" style="background:#f8fafc;">
         <div class="container">
             <div class="row align-items-center g-4">
                 <div class="col-lg-8">
-                    <p class="section-label mb-2">更强保护路径</p>
-                    <h2 class="section-heading mb-3">浏览器链接适合快速分享；敏感文件请升级到 MaiPDF App DRM</h2>
-                    <p class="text-muted mb-3">普通 Online Cloud Sharing 适合发送链接、二维码和临时查看；如果文件包含合同、报价、培训资料、客户方案或内部文档，建议使用 MaiPDF App 生成 <strong>.maipdf</strong> 文件，通过 App DRM 做更强的打开控制。</p>
+                    <p class="section-label mb-2">Updated MaiPDF protection path</p>
+                    <h2 class="section-heading mb-3">Use Online Cloud Sharing for speed; use MaiPDF App DRM when screenshots, forwarding, or device access matter</h2>
+                    <p class="text-muted mb-3">SendPDFOnline pages now describe MaiPDF as a two-level product family: <strong>Online Cloud Sharing</strong> creates quick browser links and QR codes, while the <strong>MaiPDF App</strong> creates protected <code>.maipdf</code> packages for sensitive PDFs that need App DRM controls.</p>
                     <div class="row g-3">
-                        <div class="col-md-4"><div class="feature-card h-100"><strong>网页分享</strong><p class="small text-muted mb-0">快速上传、生成链接，适合低风险 PDF 分发。</p></div></div>
-                        <div class="col-md-4"><div class="feature-card h-100"><strong>App DRM</strong><p class="small text-muted mb-0">把 PDF 转成 .maipdf，限制设备、身份、次数和有效期。</p></div></div>
-                        <div class="col-md-4"><div class="feature-card h-100"><strong>可撤回</strong><p class="small text-muted mb-0">分享后仍可调整权限，降低转发和失控风险。</p></div></div>
+                        <div class="col-md-4"><div class="feature-card h-100"><strong>Fast cloud link</strong><p class="small text-muted mb-0">Upload a PDF, share a browser link or QR code, and keep read code / modify code management.</p></div></div>
+                        <div class="col-md-4"><div class="feature-card h-100"><strong>Protected .maipdf file</strong><p class="small text-muted mb-0">Package the PDF in the MaiPDF App with local encryption, license rules, expiry, open limits, and revoke control.</p></div></div>
+                        <div class="col-md-4"><div class="feature-card h-100"><strong>App-only protections</strong><p class="small text-muted mb-0">Use protected viewer, device binding, screenshot-aware controls, watermark trace, and license management where supported.</p></div></div>
                     </div>
+                    <p class="small text-muted mt-3 mb-0">No web page can fully stop screenshots. MaiPDF App DRM is positioned as the stronger path: reduce casual copying, bind access to identity/devices, revoke licenses, and trace leaks with visible watermark information.</p>
                 </div>
                 <div class="col-lg-4">
                     <div class="cta-section text-center">
-                        <h3 class="h4 mb-3">需要更强保护？</h3>
-                        <p class="mb-4">使用 MaiPDF App / App DRM 创建 .maipdf 安全文档。</p>
-                        <a href="https://drm.maipdf.com" class="btn btn-light btn-lg" target="_blank" rel="noopener">打开 MaiPDF App DRM</a>
+                        <h3 class="h4 mb-3">Need stronger control?</h3>
+                        <p class="mb-4">Create protected <code>.maipdf</code> documents with MaiPDF App DRM.</p>
+                        <a href="https://drm.maipdf.com" class="btn btn-light btn-lg" target="_blank" rel="noopener">Open MaiPDF App DRM</a>
                     </div>
                 </div>
             </div>

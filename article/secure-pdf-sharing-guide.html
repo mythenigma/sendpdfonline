@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Secure PDF sharing guide for MaiPDF Online Cloud Sharing and MaiPDF App. Learn browser-link controls like passwords, access control, watermarks, view limits, expiration, and when to use protected .maipdf files for stronger App DRM.">
+    <meta name="description" content="Secure PDF sharing guide for MaiPDF Online Cloud Sharing and MaiPDF App. Use browser links for quick sharing, and use MaiPDF App DRM when the main requirement is blocking screenshots with protected .maipdf files.">
     <meta name="keywords" content="secure PDF sharing, how to share PDF securely, share PDF with password, share PDF with DRM, share PDF with watermark, share PDF with tracking, share PDF with access control, share PDF with expiration, share PDF with view limit, PDF security features guide, PDF protection guide, secure document sharing, PDF access control, PDF security best practices, password protected PDF sharing, PDF sharing security, business PDF security, confidential PDF sharing, PDF sharing encryption, PDF sharing compliance">
     <meta name="author" content="MaiPDF Team">
     <meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
@@ -57,8 +57,77 @@
         footer { background: var(--gray-900); }
         footer a { color: #9ca3af; text-decoration: none; }
         footer a:hover { color: white; }
-        @media (max-width: 768px) { .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card img { width: 100vw !important; max-width: 100vw !important; margin-left: calc(50% - 50vw); margin-right: calc(50% - 50vw); height: auto; display: block; box-sizing: border-box; border-radius: 0; } }
-    </style>
+        @media (max-width: 768px) { html, body { overflow-x: hidden; } .hero h1 { font-size: 2rem; } .hero { padding: 3rem 0 2.5rem; } .hero-screenshot { max-width: 100%; margin-top: 2rem; } img.screenshot { max-width: 100% !important; } .step-card { overflow: hidden; } .step-card img { width: 100%; max-width: 100% !important; margin-left: 0; margin-right: 0; height: auto; display: block; box-sizing: border-box; border-radius: 8px; } }
+    
+        /* Mobile compact icon-title layout: keep icon and title on one row */
+        @media (max-width: 768px) {
+            .feature-card, .benefit-card, .use-case-card, .method-card, .option-card, .security-card, .tool-card {
+                padding: 0.95rem 1rem !important;
+                min-height: auto !important;
+                display: grid !important;
+                grid-template-columns: 42px minmax(0, 1fr) !important;
+                align-items: center !important;
+                column-gap: 0.75rem !important;
+                row-gap: 0.2rem !important;
+                text-align: left !important;
+            }
+
+            .feature-card .feature-icon, .benefit-card .benefit-icon, .use-case-card .use-case-icon, .method-card .method-icon, .option-card .option-icon, .security-card .security-icon, .tool-card .tool-icon,
+            .feature-card > .feature-icon, .benefit-card > .feature-icon, .use-case-card > .feature-icon, .method-card > .feature-icon, .option-card > .feature-icon, .security-card > .feature-icon, .tool-card > .feature-icon {
+                grid-column: 1 !important;
+                grid-row: 1 !important;
+                width: 40px !important;
+                height: 40px !important;
+                margin: 0 !important;
+                font-size: 1.15rem !important;
+                display: flex !important;
+                align-items: center !important;
+                justify-content: center !important;
+                text-align: center !important;
+                flex-shrink: 0 !important;
+                align-self: center !important;
+            }
+
+            .feature-card h2, .benefit-card h2, .use-case-card h2, .method-card h2, .option-card h2, .security-card h2, .tool-card h2,
+            .feature-card h3, .benefit-card h3, .use-case-card h3, .method-card h3, .option-card h3, .security-card h3, .tool-card h3,
+            .feature-card h4, .benefit-card h4, .use-case-card h4, .method-card h4, .option-card h4, .security-card h4, .tool-card h4 {
+                grid-column: 2 !important;
+                margin: 0 !important;
+                font-size: 1rem !important;
+                line-height: 1.28 !important;
+            }
+
+            .feature-card h2 .feature-icon, .feature-card h3 .feature-icon, .feature-card h4 .feature-icon,
+            .benefit-card h2 .benefit-icon, .benefit-card h3 .benefit-icon, .benefit-card h4 .benefit-icon,
+            .use-case-card h2 .use-case-icon, .use-case-card h3 .use-case-icon, .use-case-card h4 .use-case-icon {
+                display: inline-flex !important;
+                margin: 0 0.45rem 0 0 !important;
+                vertical-align: middle !important;
+            }
+
+            .feature-card p, .benefit-card p, .use-case-card p, .method-card p, .option-card p, .security-card p, .tool-card p,
+            .feature-card ul, .benefit-card ul, .use-case-card ul, .method-card ul, .option-card ul, .security-card ul, .tool-card ul {
+                grid-column: 2 !important;
+                margin: 0.15rem 0 0 !important;
+                font-size: 0.9rem !important;
+                line-height: 1.45 !important;
+            }
+        }
+
+        /* Mobile compact reset: do not reserve icon column on iconless cards */
+        @media (max-width: 768px) {
+            .feature-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .benefit-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .use-case-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .method-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .option-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .security-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
+            .tool-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)) {
+                display: block !important;
+                text-align: left !important;
+            }
+        }
+</style>
 
     <script type="application/ld+json">
     {"@context":"https://schema.org","@type":"Article","headline":"Secure PDF Sharing Guide","description":"How to share PDFs securely with MaiPDF: password, view limits, expiration, watermark, tracking. Best practices.","author":{"@type":"Organization","name":"MaiPDF"},"publisher":{"@type":"Organization","name":"MaiPDF","logo":{"@type":"ImageObject","url":"https://maipdf.com/logo.png"}},"datePublished":"2025-01-15","dateModified":"2026-03-05"}
@@ -172,13 +241,13 @@
 
         <section class="py-5" style="background: var(--gray-100);">
             <p class="section-label">App DRM upgrade</p>
-            <h2 class="section-heading mb-4">MaiPDF App for high-risk PDFs</h2>
-            <p class="mb-4">Online sharing is convenient and controlled, but a browser cannot fully control the operating system. If the PDF is paid content, a confidential deck, a contract, or internal training material, use <a href="https://drm.maipdf.com" target="_blank" rel="noopener">MaiPDF App</a> to create a protected <code>.maipdf</code> file.</p>
+            <h2 class="section-heading mb-4">MaiPDF App to block screenshots</h2>
+            <p class="mb-4">Online sharing is convenient, but a browser cannot stop operating-system screenshots. If the PDF is paid content, a confidential deck, a contract, or internal training material, use <a href="https://drm.maipdf.com" target="_blank" rel="noopener">MaiPDF App</a> to create a protected <code>.maipdf</code> file that opens in the app.</p>
             <div class="row g-4">
                 <div class="col-md-3"><div class="feature-card h-100"><h3 class="h6 fw-bold">Protected reader</h3><p class="small text-muted mb-0">Open inside MaiPDF App instead of a generic browser or PDF viewer.</p></div></div>
                 <div class="col-md-3"><div class="feature-card h-100"><h3 class="h6 fw-bold">License checks</h3><p class="small text-muted mb-0">Control expiry, opens, recipients, and revocation after sending.</p></div></div>
                 <div class="col-md-3"><div class="feature-card h-100"><h3 class="h6 fw-bold">Device binding</h3><p class="small text-muted mb-0">Make forwarded files less useful on unapproved devices.</p></div></div>
-                <div class="col-md-3"><div class="feature-card h-100"><h3 class="h6 fw-bold">Screenshot-aware</h3><p class="small text-muted mb-0">Use stronger screen-capture controls where the platform supports them.</p></div></div>
+                <div class="col-md-3"><div class="feature-card h-100"><h3 class="h6 fw-bold">Block screenshots</h3><p class="small text-muted mb-0">Use App screenshot blocking where the platform supports it.</p></div></div>
             </div>
         </section>
 
@@ -354,7 +423,7 @@
                     <div class="col-md-4">
                         <div class="feature-card h-100">
                             <h3 class="h5">If forwarding would be costly</h3>
-                            <p class="text-muted mb-0">Use MaiPDF App DRM and distribute a .maipdf file so access can be governed more tightly than a normal browser link.</p>
+                            <p class="text-muted mb-0">Use MaiPDF App DRM and distribute a .maipdf file when screenshots must be blocked and access must remain revocable.</p>
                         </div>
                     </div>
             </div>

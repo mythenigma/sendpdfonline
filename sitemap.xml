@@ -775,36 +775,6 @@
     <priority>0.80</priority>
   </url>
   <url>
-    <loc>https://sendpdfonline.com/japanese/</loc>
-    <lastmod>2026-07-02</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.95</priority>
-  </url>
-  <url>
-    <loc>https://sendpdfonline.com/japanese/convert-pdf-features</loc>
-    <lastmod>2026-03-03</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-    <loc>https://sendpdfonline.com/japanese/internal-company-docs-sharing</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-    <loc>https://sendpdfonline.com/japanese/time-limited-whitepapers-case-studies</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
-    <loc>https://sendpdfonline.com/korean/convert-pdf-features</loc>
-    <lastmod>2026-02-21</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.60</priority>
-  </url>
-  <url>
     <loc>https://sendpdfonline.com/maiimg-articles/</loc>
     <lastmod>2026-07-02</lastmod>
     <changefreq>weekly</changefreq>
@@ -951,6 +921,12 @@
   <url>
     <loc>https://sendpdfonline.com/usecase/secure-pdf-sharing</loc>
     <lastmod>2026-06-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.80</priority>
+  </url>
+  <url>
+    <loc>https://sendpdfonline.com/features/en/security/anti-screenshot-pdf-drm.html</loc>
+    <lastmod>2026-07-08</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.80</priority>
   </url>
