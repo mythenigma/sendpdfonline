@@ -83,30 +83,30 @@
 <body>
   <div class="plan-section" style="border:2px solid #f59e0b;background:linear-gradient(135deg,#111827,#1e293b);margin-bottom:18px;">
     <h2 style="color:#fbbf24;border-bottom-color:#f59e0b;margin-bottom:12px">🔝 下一步行动 / 当前置顶</h2>
-    <p style="margin:0 0 12px;color:#fde68a"><strong>最后更新：</strong>2026-07-09 09:29:11 CST ｜ <strong>执行者：</strong>Hermes ｜ <strong>当前原则：</strong>一篇一篇精修，不做大范围批量替换；优先英文核心页，暂不碰 MaiImg、world-time/time、佛经/测试内容等无关目录。</p>
+    <p style="margin:0 0 12px;color:#fde68a"><strong>最后更新：</strong>2026-07-09 15:55:56 CST ｜ <strong>执行者：</strong>Hermes ｜ <strong>当前原则：</strong>一篇一篇精修，不做大范围批量替换；优先英文核心页，暂不碰 MaiImg、world-time/time、佛经/测试内容等无关目录。</p>
     <table class="plan-table">
       <thead><tr><th>顺序</th><th>下一步要做什么</th><th>目标文件/页面</th><th>具体动作</th><th>状态</th></tr></thead>
       <tbody>
         <tr>
           <td>1</td>
-          <td><strong>继续第 2 篇单篇精修</strong></td>
+          <td><strong>第 2 篇单篇精修</strong></td>
           <td><code>article/prevent-pdf-forwarding-guide.html</code></td>
-          <td>人工阅读现有段落，只补 App DRM 截图/截图页入口/防截图边界说明；验证图片、链接、手机/桌面视觉；写单篇记录。</td>
-          <td><span class="badge badge-yellow">下一步</span></td>
+          <td>已人工阅读现有段落，局部重写 App DRM 防转发/防截图段落，加入 Protected viewer + Trace watermark 两张视觉图，验证图片、链接、桌面视觉，并写入单篇记录。</td>
+          <td><span class="badge badge-green">已完成</span></td>
         </tr>
         <tr>
           <td>2</td>
-          <td><strong>继续第 3 篇单篇精修</strong></td>
+          <td><strong>第 3 篇单篇精修</strong></td>
           <td><code>features/en/security/maipdf_strong_protection.html</code></td>
-          <td>围绕“强保护不是网页万能，而是 App DRM + .maipdf + license + watermark trace”重写局部段落；加入合适截图；验证。</td>
-          <td><span class="badge badge-blue">排队</span></td>
+          <td>已围绕“强保护不是网页万能，而是 Online Cloud Sharing + App DRM / .maipdf 分层选择”精修页面，更新标题/摘要/FAQ/对比表，加入浏览器 viewer + App protected viewer 双图，并验证。</td>
+          <td><span class="badge badge-green">已完成</span></td>
         </tr>
         <tr>
           <td>3</td>
-          <td><strong>再选 1 篇高价值英文页</strong></td>
-          <td>候选：screenshot protection / confidential documents / online course DRM 相关页</td>
-          <td>先查页面是否已有价值；只做有搜索意图的增强，不硬造新内容。</td>
-          <td><span class="badge badge-blue">排队</span></td>
+          <td><strong>再精修 1 篇高价值英文页</strong></td>
+          <td><code>article/pdf-sharing-methods.html</code></td>
+          <td>方法对比页适合做 Online Cloud Sharing vs App DRM 决策表；先读现有结构，再补图/内链/诚实边界，不批量改其他文章。</td>
+          <td><span class="badge badge-yellow">下一步</span></td>
         </tr>
         <tr>
           <td>4</td>
@@ -118,7 +118,7 @@
       </tbody>
     </table>
     <div class="callout" style="margin-bottom:0">
-      <strong>已完成的最近动作：</strong>2026-07-09 09:06 新增 <code>/app-drm-screenshots/</code> 截图页并补齐 10 张 App DRM 图；2026-07-09 09:29 单篇精修 <code>article/secure-pdf-sharing-guide.html</code>，加入 License manager 图、App DRM 截图页入口、更新 <code>dateModified</code>，并完成本地/视觉验证。详细记录见下方“项目现状概况”。
+      <strong>已完成的最近动作：</strong>2026-07-09 09:06 新增 <code>/app-drm-screenshots/</code> 截图页并补齐 10 张 App DRM 图；2026-07-09 09:29 单篇精修 <code>article/secure-pdf-sharing-guide.html</code>；2026-07-09 15:32 单篇精修 <code>article/prevent-pdf-forwarding-guide.html</code>；2026-07-09 15:55 单篇精修 <code>features/en/security/maipdf_strong_protection.html</code>，补强 Online Cloud Sharing vs App DRM / .maipdf 分层解释、双图和对比表。详细记录见下方“项目现状概况”。
     </div>
   </div>
 
@@ -160,6 +160,14 @@
       <div class="callout callout-success">
         <strong>2026-07-09 09:29:11 CST — 单篇精修记录｜署名：Hermes</strong><br>
         按用户要求改为逐篇处理；本轮只精修 <code>article/secure-pdf-sharing-guide.html</code>。将 App DRM 段落改成更明确的“screenshots are the real risk”决策说明，加入 License manager 视觉图、<strong>See App DRM screenshots</strong> 内链，并更新 Article schema 的 <code>dateModified</code> 为 2026-07-09。已逐项验证：页面本地 200、图片 6 张无缺失、<code>/app-drm-screenshots/</code> 内链 2 个、<code>drm.maipdf.com</code> 外链 1 个；浏览器视觉检查显示 App DRM 新段落和截图均正常。
+      </div>
+      <div class="callout callout-success">
+        <strong>2026-07-09 15:32:04 CST — 单篇精修记录｜署名：Hermes</strong><br>
+        按置顶计划精修第 2 篇 <code>article/prevent-pdf-forwarding-guide.html</code>。只改局部 App DRM upgrade section：将标题改为“Prevent forwarding by making copied files and screenshots less useful”，解释普通 PDF 附件会被永久转发、Online Cloud Sharing 适合降低转发风险、App DRM / <code>.maipdf</code> 适合让转发后的文件仍受 license 控制；加入 Protected viewer 与 Trace watermark 两张视觉图，强调 screenshot-aware reader、device/integrity checks、watermark trace 和诚实边界（无法阻止手机翻拍）。同步更新 Article schema <code>dateModified</code> 为 2026-07-09。已验证：页面本地 200、图片 8 张无缺失、<code>/app-drm-screenshots/</code> 内链 1 个、<code>drm.maipdf.com</code> 外链 1 个；浏览器视觉检查显示双图和 CTA 布局正常。
+      </div>
+      <div class="callout callout-success">
+        <strong>2026-07-09 15:55:56 CST — 单篇精修记录｜署名：Hermes</strong><br>
+        按用户确认继续处理，精修第 3 篇 <code>features/en/security/maipdf_strong_protection.html</code>。将页面从泛“PDF Download &amp; Copy Prevention”强化为“Online Cloud Sharing vs MaiPDF App DRM / <code>.maipdf</code> 分层保护”解释：更新 title/meta/OG/Twitter、Article schema <code>dateModified</code>、hero CTA、功能卡片、FAQ、对比表；移除“PDF-to-image / Offline HTML”作为核心强保护卖点，改为 Protected <code>.maipdf</code>、Revoke &amp; License Checks；新增浏览器 view-only viewer + App protected viewer 双图，并保留 App 截图页与 <code>drm.maipdf.com</code> 入口。已验证：本地页面 200、图片 7 张无缺失、JSON-LD 可解析、<code>/app-drm-screenshots/</code> 内链 2 个、<code>drm.maipdf.com</code> 外链 2 个；首次视觉检查发现中部 lazy 图片未显示，已改为 eager 加载并复验，双图、对比表、CTA 布局正常。
       </div>
       <div class="stat-grid">
         <div class="stat-card"><div class="num">161</div><div class="label">可索引页面 (原427)</div></div>
@@ -306,9 +314,9 @@
           </tr>
           <tr>
             <td><span class="badge badge-red">错目录 / 错语言页</span></td>
-            <td><code>features/en/design/share-design-portfolio.html</code><br><code>features/en/security/maipdf_strong_protection.html</code><br><code>features/en/sharing/pdf-link-sharing.html</code><br><code>features/en/sharing/sharepdf.html</code><br><code>features/en/sharing/maipdfexamples.html</code></td>
-            <td>英文路径挂中文内容，本质是错位页；修正文案不如直接清掉错资产，避免继续制造重复和语言混乱。</td>
-            <td>若已有对应中文页保留原页，错位页直接 404。</td>
+            <td><code>features/en/design/share-design-portfolio.html</code><br><code>features/en/sharing/pdf-link-sharing.html</code><br><code>features/en/sharing/sharepdf.html</code><br><code>features/en/sharing/maipdfexamples.html</code></td>
+            <td>英文路径挂中文内容，本质是错位页；修正文案不如直接清掉错资产，避免继续制造重复和语言混乱。<code>features/en/security/maipdf_strong_protection.html</code> 已在 2026-07-09 重新精修为英文 App DRM / .maipdf 强保护页，不再归入错位页清单。</td>
+            <td>若已有对应中文页保留原页，错位页直接 404；已修正的英文核心页继续保留。</td>
           </tr>
           <tr>
             <td><span class="badge badge-red">非内容页</span></td>
@@ -687,7 +695,7 @@
           <tr><td>75</td><td><a href="https://sendpdfonline.com/features/en/security/time-limits-pdf-files" target="_blank" style="color:#93c5fd"><code>features/en/security/time-limits-pdf-files.html</code></a></td><td>13.0K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修 ✓</span></td></tr>
           <tr><td>76</td><td><a href="https://sendpdfonline.com/features/en/security/advanced-security-configurations" target="_blank" style="color:#93c5fd"><code>features/en/security/advanced-security-configurations.html</code></a></td><td>11.5K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">已精修 ✓</span></td></tr>
           <tr><td>77</td><td><a href="https://sendpdfonline.com/features/en/security/share-pdf-online-securely" target="_blank" style="color:#93c5fd"><code>features/en/security/share-pdf-online-securely.html</code></a></td><td>11.5K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修</span> <small>2026-03-23；index 蓝色模板 + 对比表 + FAQ</small></td></tr>
-          <tr><td>78</td><td><a href="https://sendpdfonline.com/features/en/security/maipdf_strong_protection" target="_blank" style="color:#93c5fd"><code>features/en/security/maipdf_strong_protection.html</code></a></td><td>11.2K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已精修</span> <small>2026-03-23；中→英 + index 蓝色模板 + DRM 对比表 + FAQ</small></td></tr>
+          <tr><td>78</td><td><a href="https://sendpdfonline.com/features/en/security/maipdf_strong_protection" target="_blank" style="color:#93c5fd"><code>features/en/security/maipdf_strong_protection.html</code></a></td><td>11.2K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">再精修 2026-07-09</span> <small>Online Cloud Sharing vs App DRM/.maipdf 分层、双图、对比表、FAQ、dateModified 更新</small></td></tr>
           <tr><td>79</td><td><a href="https://sendpdfonline.com/features/en/security/set-expiration-date-for-pdfs" target="_blank" style="color:#93c5fd"><code>features/en/security/set-expiration-date-for-pdfs.html</code></a></td><td>10.4K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">再精修 2026-03-04</span> <small>统一蓝色模板+查询面板重构+补步骤图+移动端双侧延伸</small></td></tr>
           <tr><td>80</td><td><a href="https://sendpdfonline.com/features/en/security/secure-pdf-access-control" target="_blank" style="color:#93c5fd"><code>features/en/security/secure-pdf-access-control.html</code></a></td><td>10.1K</td><td>✅</td><td>—</td><td>✅</td><td><span class="badge badge-green">已精修</span> <small>2026-03-23；index 蓝色模板 + 访问控制层级表 + FAQ</small></td></tr>
           <tr><td>81</td><td><a href="https://sendpdfonline.com/features/zh/security/prevent-document-content-copying-cn" target="_blank" style="color:#93c5fd"><code>features/zh/security/prevent-document-content-copying-cn.html</code></a></td><td>13.2K</td><td>✅</td><td>✅</td><td>✅</td><td><span class="badge badge-green">已迁移 2026-03-03（zh主页+en noindex跳转）</span></td></tr>
