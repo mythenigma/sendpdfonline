@@ -177,6 +177,10 @@
         <strong>2026-07-10 16:30:15 CST — 首页移动端卡片修正记录｜署名：Hermes</strong><br>
         针对用户截图反馈首页 <strong>Key Features</strong> 卡片在手机端仍显示“图标一行、标题下一行”的旧样式，复查根首页 CSS 与线上 HTML。线上已有 390px 移动端规则，但为避免手机内置浏览器/缓存/宽布局视口继续走桌面卡片样式，将首页 icon-title compact override 从 <code>max-width:768px</code> 扩展为 <code>max-width:1024px</code>，并保留 iconless-card reset；同时在该范围隐藏卡片描述，确保首页 feature-card 在更宽的移动/内置浏览器视口下也强制使用“图标 + 小标题 + Learn more 同一行”的紧凑布局。已用 CDP 本地检查 390px / 980px / 1024px：<code>View Limits &amp; Expiration</code> 卡片均为 grid 布局，图标、标题、动作链接处于第一行，横向溢出为 0。
       </div>
+      <div class="callout callout-success">
+        <strong>2026-07-10 16:38:05 CST — MaiPDF 双路径视觉素材保存记录｜署名：Hermes</strong><br>
+        已按用户提示保存三张有用素材到 <code>images/maipdf2026/concepts/</code>：<code>maipdf-two-path-homepage-concept-en.jpg</code>（英文首页概念）、<code>maipdf-two-path-product-intro-zh.jpg</code>（中文产品介绍长图）、<code>maipdf-two-path-taiji-hero-visual.jpg</code>（太极主视觉）。同时新增 <code>images/maipdf2026/concepts/README.md</code>，记录用途：后续用于 MaiPDF / SendPDFOnline 首页 hero、Online Sharing vs App DRM 双路径介绍、中文推广图、宣传视频开场等；注意不要复用未验证的客户 logo、SOC2 等信任声明。
+      </div>
       <div class="stat-grid">
         <div class="stat-card"><div class="num">161</div><div class="label">可索引页面 (原427)</div></div>
         <div class="stat-card"><div class="num">156</div><div class="label">Sitemap URL 数 (含 App 截图页)</div></div>
