@@ -1,0 +1,87 @@
+{
+  "unique_count": 8,
+  "skipped_duplicates": [
+    {
+      "source": "/home/adminjoe/.hermes/image_cache/img_28f0d993e6e2.jpg",
+      "duplicate_of": "img_64b4186bc552.jpg"
+    },
+    {
+      "source": "/home/adminjoe/.hermes/image_cache/img_94d45e9f7ce0.jpg",
+      "duplicate_of": "img_91a6d148ced5.jpg"
+    }
+  ],
+  "assets": [
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-two-ways-wide-compact-zh.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_339a3c5ed90e.jpg",
+      "description": "Chinese wide hero: One PDF, two ways, Online Sharing vs App DRM, compact feature strip.",
+      "sha256": "6398c42ba7f95d658ef2bc1f90c2efdbc00f30607b22dc56b112318a3b0e65b4",
+      "sha16": "6398c42ba7f95d65",
+      "size": 188573,
+      "action": "copied"
+    },
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-two-ways-wide-blue-zh.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_501a67398916.jpg",
+      "description": "Chinese wide hero: blue/gold Online Sharing vs App DRM with detailed icon lists.",
+      "sha256": "9b18a7ee2df13e70a66ef52b3bb1c37ba5b11fa327a6696cd877e888cfa20513",
+      "sha16": "9b18a7ee2df13e70",
+      "size": 210350,
+      "action": "copied"
+    },
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-two-ways-wide-gold-zh.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_c0c1fa981c11.jpg",
+      "description": "Chinese wide hero: gold headline, large yin-yang, bottom feature strip.",
+      "sha256": "92aea539c31fb9b3af23e11b62af39cbc172ad783b00ec8c0556400a2f839229",
+      "sha16": "92aea539c31fb9b3",
+      "size": 225323,
+      "action": "copied"
+    },
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-hero-square-en.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_e4015defaea5.jpg",
+      "description": "Square ink taiji concept: Online Sharing and App DRM as two complementary paths.",
+      "sha256": "42121019f28dbafd783f56464d7c664e893392033b8110c265792ddcd3e8600b",
+      "sha16": "42121019f28dbafd",
+      "size": 211614,
+      "action": "copied"
+    },
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-one-pdf-two-ways-en.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_91a6d148ced5.jpg",
+      "description": "English long poster: One PDF. Two Ways to Share. Total Control.",
+      "sha256": "528de11cc0546d8755065b3db11c6ac73af9ecee8353901d2de2e130c126881e",
+      "sha16": "528de11cc0546d87",
+      "size": 229454,
+      "action": "copied"
+    },
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-product-intro-zh.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_64b4186bc552.jpg",
+      "description": "Chinese product intro poster: Online Sharing, App DRM, use cases, and workflow.",
+      "sha256": "8a030fe30267a631ec229da88011e6308d8c767fda03ef81616246e8fbcaedb4",
+      "sha16": "8a030fe30267a631",
+      "size": 216023,
+      "action": "copied"
+    },
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-product-intro-detailed-zh.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_17d457829493.jpg",
+      "description": "Chinese detailed product intro poster: Online Sharing vs APP DRM, feature panels, more powerful features.",
+      "sha256": "ba9383be262502c5621272ce56406aed1a110f5ae70ee73ecbda724817b99cfd",
+      "sha16": "ba9383be262502c5",
+      "size": 246828,
+      "action": "copied"
+    },
+    {
+      "file": "images/maipdf2026/app-drm/maipdf-taiji-homepage-concept-en.jpg",
+      "source": "/home/adminjoe/.hermes/image_cache/img_77241b501e41.jpg",
+      "description": "English homepage concept mockup: Two Ways to Secure Every PDF with comparison sections.",
+      "sha256": "a2702f5adbdfe0f7c318650ac58d87868b6a2c16ecd49c527ed2b30b0d926c29",
+      "sha16": "a2702f5adbdfe0f7",
+      "size": 173690,
+      "action": "copied"
+    }
+  ]
+}
