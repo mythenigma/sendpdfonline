@@ -83,7 +83,7 @@
 <body>
   <div class="plan-section" style="border:2px solid #f59e0b;background:linear-gradient(135deg,#111827,#1e293b);margin-bottom:18px;">
     <h2 style="color:#fbbf24;border-bottom-color:#f59e0b;margin-bottom:12px">🔝 下一步行动 / 当前置顶</h2>
-    <p style="margin:0 0 12px;color:#fde68a"><strong>最后更新：</strong>2026-07-09 15:55:56 CST ｜ <strong>执行者：</strong>Hermes ｜ <strong>当前原则：</strong>一篇一篇精修，不做大范围批量替换；优先英文核心页，暂不碰 MaiImg、world-time/time、佛经/测试内容等无关目录。</p>
+    <p style="margin:0 0 12px;color:#fde68a"><strong>最后更新：</strong>2026-07-10 08:35:22 CST ｜ <strong>执行者：</strong>Hermes ｜ <strong>当前原则：</strong>一篇一篇精修，不做大范围批量替换；优先英文核心页，暂不碰 MaiImg、world-time/time、佛经/测试内容等无关目录。</p>
     <table class="plan-table">
       <thead><tr><th>顺序</th><th>下一步要做什么</th><th>目标文件/页面</th><th>具体动作</th><th>状态</th></tr></thead>
       <tbody>
@@ -103,22 +103,22 @@
         </tr>
         <tr>
           <td>3</td>
-          <td><strong>再精修 1 篇高价值英文页</strong></td>
+          <td><strong>第 4 篇高价值英文页精修</strong></td>
           <td><code>article/pdf-sharing-methods.html</code></td>
-          <td>方法对比页适合做 Online Cloud Sharing vs App DRM 决策表；先读现有结构，再补图/内链/诚实边界，不批量改其他文章。</td>
-          <td><span class="badge badge-yellow">下一步</span></td>
+          <td>已把方法对比页改成 link / QR / controlled viewer / App DRM 决策页，加入 App DRM 行、protected viewer 图、截图页入口、<code>drm.maipdf.com</code> CTA，并更新 schema。</td>
+          <td><span class="badge badge-green">已完成</span></td>
         </tr>
         <tr>
           <td>4</td>
-          <td><strong>英文核心页完成后再做中文对应页</strong></td>
-          <td>中文教程/功能页</td>
-          <td>中文只做实用解释：PDF 防截图怎么选、.maipdf 怎么打开、在线分享 vs App 防截图。</td>
-          <td><span class="badge badge-purple">后续</span></td>
+          <td><strong>下一步：线上同步 / 再检查旧入口</strong></td>
+          <td><code>index.html</code> / <code>convert-pdf-features.html</code> / <code>flowcharts.html</code></td>
+          <td>当前用户指出线上根首页没有 App 信息；本地已补 hero App DRM 按钮，下一步优先推送并验证线上，再继续检查旧入口是否保留/合并/下线。</td>
+          <td><span class="badge badge-yellow">下一步</span></td>
         </tr>
       </tbody>
     </table>
     <div class="callout" style="margin-bottom:0">
-      <strong>已完成的最近动作：</strong>2026-07-09 09:06 新增 <code>/app-drm-screenshots/</code> 截图页并补齐 10 张 App DRM 图；2026-07-09 09:29 单篇精修 <code>article/secure-pdf-sharing-guide.html</code>；2026-07-09 15:32 单篇精修 <code>article/prevent-pdf-forwarding-guide.html</code>；2026-07-09 15:55 单篇精修 <code>features/en/security/maipdf_strong_protection.html</code>，补强 Online Cloud Sharing vs App DRM / .maipdf 分层解释、双图和对比表。详细记录见下方“项目现状概况”。
+      <strong>已完成的最近动作：</strong>2026-07-09 09:06 新增 <code>/app-drm-screenshots/</code> 截图页并补齐 10 张 App DRM 图；2026-07-09 15:55 单篇精修 <code>features/en/security/maipdf_strong_protection.html</code>；2026-07-10 08:35 修正根首页首屏 App DRM 可见性，并单篇精修 <code>article/pdf-sharing-methods.html</code>。详细记录见下方“项目现状概况”。
     </div>
   </div>
 
@@ -168,6 +168,10 @@
       <div class="callout callout-success">
         <strong>2026-07-09 15:55:56 CST — 单篇精修记录｜署名：Hermes</strong><br>
         按用户确认继续处理，精修第 3 篇 <code>features/en/security/maipdf_strong_protection.html</code>。将页面从泛“PDF Download &amp; Copy Prevention”强化为“Online Cloud Sharing vs MaiPDF App DRM / <code>.maipdf</code> 分层保护”解释：更新 title/meta/OG/Twitter、Article schema <code>dateModified</code>、hero CTA、功能卡片、FAQ、对比表；移除“PDF-to-image / Offline HTML”作为核心强保护卖点，改为 Protected <code>.maipdf</code>、Revoke &amp; License Checks；新增浏览器 view-only viewer + App protected viewer 双图，并保留 App 截图页与 <code>drm.maipdf.com</code> 入口。已验证：本地页面 200、图片 7 张无缺失、JSON-LD 可解析、<code>/app-drm-screenshots/</code> 内链 2 个、<code>drm.maipdf.com</code> 外链 2 个；首次视觉检查发现中部 lazy 图片未显示，已改为 eager 加载并复验，双图、对比表、CTA 布局正常。
+      </div>
+      <div class="callout callout-success">
+        <strong>2026-07-10 08:35:22 CST — 首页修正 + 单篇精修记录｜署名：Hermes</strong><br>
+        针对用户反馈“线上桌面首页根本没有 App 相关信息”，先检查本地与线上差异：线上首页仍是旧版，缺少 App DRM / 防截图首屏入口；本地 <code>index.html</code> 已有 App 内容但 hero 只有普通发送与 guides 按钮，因此在根首页首屏新增醒目的绿色按钮 <strong>Block Screenshots with App DRM</strong> 和 <strong>View App Screenshots</strong>，确保桌面打开首页上方就能看到 App DRM / screenshot blocking。随后按计划单篇精修 <code>article/pdf-sharing-methods.html</code>：更新 title/meta/schema <code>dateModified</code>、hero、方法矩阵，新增 App DRM / <code>.maipdf</code> 行与“When a browser link is enough — and when to move to App DRM”决策区，加入 Protected viewer 图、App 截图页入口和 <code>drm.maipdf.com</code> CTA。已验证：首页与文章页本地 200、图片无缺失、JSON-LD 可解析；浏览器视觉检查确认首页 hero App DRM 按钮可见，文章页 App DRM 行、protected viewer 图和底部 CTA 布局正常。注意：线上旧首页需要本轮相关文件推送后才会更新。
       </div>
       <div class="stat-grid">
         <div class="stat-card"><div class="num">161</div><div class="label">可索引页面 (原427)</div></div>
