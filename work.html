@@ -83,7 +83,7 @@
 <body>
   <div class="plan-section" style="border:2px solid #f59e0b;background:linear-gradient(135deg,#111827,#1e293b);margin-bottom:18px;">
     <h2 style="color:#fbbf24;border-bottom-color:#f59e0b;margin-bottom:12px">🔝 下一步行动 / 当前置顶</h2>
-    <p style="margin:0 0 12px;color:#fde68a"><strong>最后更新：</strong>2026-07-10 08:35:22 CST ｜ <strong>执行者：</strong>Hermes ｜ <strong>当前原则：</strong>一篇一篇精修，不做大范围批量替换；优先英文核心页，暂不碰 MaiImg、world-time/time、佛经/测试内容等无关目录。</p>
+    <p style="margin:0 0 12px;color:#fde68a"><strong>最后更新：</strong>2026-07-10 16:30:15 CST ｜ <strong>执行者：</strong>Hermes ｜ <strong>当前原则：</strong>一篇一篇精修，不做大范围批量替换；优先英文核心页，暂不碰 MaiImg、world-time/time、佛经/测试内容等无关目录。</p>
     <table class="plan-table">
       <thead><tr><th>顺序</th><th>下一步要做什么</th><th>目标文件/页面</th><th>具体动作</th><th>状态</th></tr></thead>
       <tbody>
@@ -172,6 +172,10 @@
       <div class="callout callout-success">
         <strong>2026-07-10 08:35:22 CST — 首页修正 + 单篇精修记录｜署名：Hermes</strong><br>
         针对用户反馈“线上桌面首页根本没有 App 相关信息”，先检查本地与线上差异：线上首页仍是旧版，缺少 App DRM / 防截图首屏入口；本地 <code>index.html</code> 已有 App 内容但 hero 只有普通发送与 guides 按钮，因此在根首页首屏新增醒目的绿色按钮 <strong>Block Screenshots with App DRM</strong> 和 <strong>View App Screenshots</strong>，确保桌面打开首页上方就能看到 App DRM / screenshot blocking。随后按计划单篇精修 <code>article/pdf-sharing-methods.html</code>：更新 title/meta/schema <code>dateModified</code>、hero、方法矩阵，新增 App DRM / <code>.maipdf</code> 行与“When a browser link is enough — and when to move to App DRM”决策区，加入 Protected viewer 图、App 截图页入口和 <code>drm.maipdf.com</code> CTA。已验证：首页与文章页本地 200、图片无缺失、JSON-LD 可解析；浏览器视觉检查确认首页 hero App DRM 按钮可见，文章页 App DRM 行、protected viewer 图和底部 CTA 布局正常。注意：线上旧首页需要本轮相关文件推送后才会更新。
+      </div>
+      <div class="callout callout-success">
+        <strong>2026-07-10 16:30:15 CST — 首页移动端卡片修正记录｜署名：Hermes</strong><br>
+        针对用户截图反馈首页 <strong>Key Features</strong> 卡片在手机端仍显示“图标一行、标题下一行”的旧样式，复查根首页 CSS 与线上 HTML。线上已有 390px 移动端规则，但为避免手机内置浏览器/缓存/宽布局视口继续走桌面卡片样式，将首页 icon-title compact override 从 <code>max-width:768px</code> 扩展为 <code>max-width:1024px</code>，并保留 iconless-card reset；同时在该范围隐藏卡片描述，确保首页 feature-card 在更宽的移动/内置浏览器视口下也强制使用“图标 + 小标题 + Learn more 同一行”的紧凑布局。已用 CDP 本地检查 390px / 980px / 1024px：<code>View Limits &amp; Expiration</code> 卡片均为 grid 布局，图标、标题、动作链接处于第一行，横向溢出为 0。
       </div>
       <div class="stat-grid">
         <div class="stat-card"><div class="num">161</div><div class="label">可索引页面 (原427)</div></div>

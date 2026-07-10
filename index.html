@@ -121,13 +121,15 @@
             }
         }
     
-        /* Mobile compact icon-title layout: keep icon and title on one row */
-        @media (max-width: 768px) {
+        /* Mobile compact icon-title layout: keep icon and title on one row.
+           Use 1024px as a fallback because some mobile in-app browsers can report
+           a wider layout viewport; the homepage cards must still stay compact. */
+        @media (max-width: 1024px) {
             .feature-card, .benefit-card, .use-case-card, .method-card, .option-card, .security-card, .tool-card {
                 padding: 0.95rem 1rem !important;
                 min-height: auto !important;
                 display: grid !important;
-                grid-template-columns: 42px minmax(0, 1fr) !important;
+                grid-template-columns: 42px minmax(0, 1fr) auto !important;
                 align-items: center !important;
                 column-gap: 0.75rem !important;
                 row-gap: 0.2rem !important;
@@ -173,11 +175,12 @@
                 margin: 0.15rem 0 0 !important;
                 font-size: 0.9rem !important;
                 line-height: 1.45 !important;
+                display: none !important;
             }
         }
 
         /* Mobile compact reset: do not reserve icon column on iconless cards */
-        @media (max-width: 768px) {
+        @media (max-width: 1024px) {
             .feature-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
             .benefit-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
             .use-case-card:not(:has(.feature-icon)):not(:has(.benefit-icon)):not(:has(.use-case-icon)):not(:has(.method-icon)):not(:has(.option-icon)):not(:has(.security-icon)):not(:has(.tool-icon)):not(:has(i)),
